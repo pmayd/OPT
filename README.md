@@ -5,7 +5,7 @@ Github der Operation Pandora Trigger
 [3.Jgkp]James
 
 ## Version
-Aktuelle Version ist 1.00
+Aktuelle Version ist 1.028 (ohne meine Änderungen)
 
 ## Current Work
 
@@ -23,4 +23,4 @@ Aktuelle Version ist 1.00
 (OPT_PLAYTIME - (serverTime - opt_startTime)) 
 ```
 #### TODO
-- [ ] JIP testen!
+- [x] JIP testen!
