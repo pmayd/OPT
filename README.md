@@ -23,4 +23,4 @@ Aktuelle Version ist 1.028 (ohne meine Änderungen)
 (OPT_PLAYTIME - (serverTime - opt_startTime)) 
 ```
 #### TODO
-- [ ] JIP testen!
+- [x] JIP testen!
