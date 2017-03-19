@@ -24,3 +24,4 @@ Aktuelle Version ist 1.028 (ohne meine Änderungen)
 ```
 #### TODO
 - [x] JIP testen!
+- player respawn komplett umgestellt. `fn_playerrespawn.sqf` gelöscht, ebenso irgendwelche dubiosen Eventhandler und jede Menge boiler plate code. Einfach eine `onPlayerResapwn.sqf` in root eingeführt und dort den Inhalt aus `jip.sqf` reingetan. Dazu in `description.ext` den Parameter respawnOnStart auf 0 gesetzt. Funktioniert bisher ohne Fehler.
