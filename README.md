@@ -9,6 +9,8 @@ Aktuelle Version ist 1.00
 
 ## Current Work
 
+l
+
 ## SITREP
 
 ### 2017-03-19
@@ -18,3 +20,4 @@ Aktuelle Version ist 1.00
 ```SQF
 (OPT_PLAYTIME - (serverTime - opt_startTime)) 
 ```
+TODO: JIP testen!
