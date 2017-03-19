@@ -1,0 +1,1361 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ctrlSetC",
+				"ctrlSetTextColor"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"list-style",
+				"list-style-image"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"box-s",
+				"box-shadow"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"list-st",
+				"list-style-type"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"transi",
+				"transition"
+			],
+			[
+				"border-c",
+				"border-collapse"
+			],
+			[
+				"space",
+				"space-between"
+			],
+			[
+				"transition",
+				"transition-timing-function"
+			],
+			[
+				"deleteMar",
+				"deleteMarker"
+			],
+			[
+				"_marker",
+				"_markerList"
+			],
+			[
+				"JGKP_DC_marker_unit_",
+				"JGKP_DC_marker_unit_last_pos"
+			],
+			[
+				"JGKP_",
+				"JGKP_DC_marker_dead"
+			],
+			[
+				"JGKP",
+				"JGKP_DC_marker_dead"
+			],
+			[
+				"_market",
+				"_markerGrpType"
+			],
+			[
+				"_markerV",
+				"_markerVecType"
+			],
+			[
+				"deleteM",
+				"deleteMarker"
+			],
+			[
+				"_marekr",
+				"_markerVec"
+			],
+			[
+				"JGKP_DC_marker_vec",
+				"JGKP_DC_marker_vec_type"
+			],
+			[
+				"JGKP_DC",
+				"JGKP_DC_marker_unit"
+			],
+			[
+				"_type",
+				"_type_car"
+			],
+			[
+				"pushBa",
+				"pushBack"
+			],
+			[
+				"addIte",
+				"canAddItemToUniform"
+			],
+			[
+				"setma",
+				"setMarkerPos"
+			],
+			[
+				"preprocess",
+				"preprocessFileLineNumbers"
+			],
+			[
+				"_excl",
+				"_excludeClasses"
+			],
+			[
+				"_exclude",
+				"_excludeVanilla"
+			],
+			[
+				"_start",
+				"_startPos"
+			],
+			[
+				"_end",
+				"_endPos"
+			],
+			[
+				"vec",
+				"vectorDiff"
+			],
+			[
+				"vectorA",
+				"vectorAdd"
+			],
+			[
+				"vector",
+				"vectorMultiply"
+			],
+			[
+				"_sign",
+				"_sign_center"
+			],
+			[
+				"_sign_",
+				"_sign_corner_pos"
+			],
+			[
+				"getMarker",
+				"getMarkerSize"
+			],
+			[
+				"vectorM",
+				"vectorMultiply"
+			],
+			[
+				"setMarker",
+				"setMarkerSize"
+			],
+			[
+				"setMarkerS",
+				"setMarkerShape"
+			],
+			[
+				"_ex",
+				"_excludeVanilla"
+			],
+			[
+				"configSo",
+				"configSourceMod"
+			],
+			[
+				"_exc",
+				"_excludeClasses"
+			],
+			[
+				"configSour",
+				"configSourceModList"
+			],
+			[
+				"prerp",
+				"preprocessFileLineNumbers"
+			],
+			[
+				"CBA_fnc",
+				"CBA_fnc_localEvent"
+			],
+			[
+				"jgkp_perf_",
+				"jgkp_perf_select_last"
+			],
+			[
+				"perf_log",
+				"perf_logquery"
+			],
+			[
+				"_vec",
+				"_vec_small_FH_tropen"
+			],
+			[
+				"_class",
+				"_class_array"
+			],
+			[
+				"_ACT",
+				"_action2"
+			],
+			[
+				"_A",
+				"_action1"
+			],
+			[
+				"getplayer",
+				"getPlayerUID"
+			],
+			[
+				"wait",
+				"waitUntil"
+			],
+			[
+				"_ty",
+				"_typeName"
+			],
+			[
+				"isEm",
+				"isFlatEmpty"
+			],
+			[
+				"findE",
+				"findEmptyPosition"
+			],
+			[
+				"getPlayer",
+				"getPlayerUID"
+			],
+			[
+				"nearestLoca",
+				"nearestLocations"
+			],
+			[
+				"eixt",
+				"exitWith"
+			],
+			[
+				"pushBack",
+				"pushBackUnique"
+			],
+			[
+				"isN",
+				"isNull"
+			],
+			[
+				"displa",
+				"displayNull"
+			],
+			[
+				"_ID",
+				"_IDCancle"
+			],
+			[
+				"fnc_",
+				"fnc_log_fps"
+			],
+			[
+				"UPSMO",
+				"UPSMON_Debug"
+			],
+			[
+				"JGKP_vs",
+				"JGKP_var_Shooter"
+			],
+			[
+				"JGKPO",
+				"JGKP_var_lastShot"
+			],
+			[
+				"setTrig",
+				"setTriggerType"
+			],
+			[
+				"distan",
+				"distance2D"
+			],
+			[
+				"_x",
+				"_xmin"
+			],
+			[
+				"_squareS",
+				"_squareSize"
+			],
+			[
+				"_squa",
+				"_squarePos"
+			],
+			[
+				"addMagaz",
+				"addMagazineCargo"
+			],
+			[
+				"_sub",
+				"_subSquareWidth"
+			],
+			[
+				"_height",
+				"_subSquareHeight"
+			],
+			[
+				"_subs",
+				"_subSquareHeight"
+			],
+			[
+				"_Squa",
+				"_squareSize"
+			],
+			[
+				"_subS",
+				"_subSquareHeight"
+			],
+			[
+				"_sq",
+				"_squareSize"
+			],
+			[
+				"f",
+				"for\tfrom 0 to XX do"
+			],
+			[
+				"createM",
+				"createMarker"
+			],
+			[
+				"for",
+				"for\tfrom 0 to XX do"
+			],
+			[
+				"_new",
+				"_newAngle"
+			],
+			[
+				"_de",
+				"_deltaX"
+			],
+			[
+				"_ori",
+				"_ori_z"
+			],
+			[
+				"resi",
+				"resize"
+			],
+			[
+				"enableS",
+				"enableSimulation"
+			],
+			[
+				"_deta",
+				"_delta_z"
+			],
+			[
+				"fo",
+				"for\tfrom 0 to XX step -1 do"
+			],
+			[
+				"getpos",
+				"getPosASL"
+			],
+			[
+				"_newOb",
+				"_newObject"
+			],
+			[
+				"getPos",
+				"getPosASL"
+			],
+			[
+				"_query",
+				"_queryVar"
+			],
+			[
+				"prepro",
+				"preprocessFileLineNumbers"
+			],
+			[
+				"EquipLo",
+				"EquipLocal_ID"
+			],
+			[
+				"removeAllA",
+				"removeAllAssignedItems"
+			],
+			[
+				"removeMaga",
+				"removeMagazines"
+			],
+			[
+				"JGK",
+				"JGKP_TFAR_RADIO_IDS"
+			],
+			[
+				"parse",
+				"parseText"
+			],
+			[
+				"public",
+				"publicVariable"
+			],
+			[
+				"_delta",
+				"_delta_X"
+			],
+			[
+				"magaz",
+				"magazineCargo"
+			],
+			[
+				"publicV",
+				"publicVariable"
+			],
+			[
+				"_edit",
+				"_edit_content"
+			],
+			[
+				"_ite",
+				"_items"
+			],
+			[
+				"_wea",
+				"_weapons"
+			],
+			[
+				"_uni",
+				"_uniformitems"
+			],
+			[
+				"CBA_",
+				"CBA_fnc_addClientToServerEventhandler"
+			],
+			[
+				"OFFSET",
+				"OFFSET_HOEHE"
+			],
+			[
+				"publi",
+				"publicVariableClient"
+			],
+			[
+				"_EF_na",
+				"_EF_name"
+			],
+			[
+				"_EF_",
+				"_EF_gruppe"
+			],
+			[
+				"_EF",
+				"_EF_gruppe"
+			],
+			[
+				"ctrlEn",
+				"ctrlEnable"
+			],
+			[
+				"_CB_",
+				"_CB_insignia"
+			],
+			[
+				"DB_connect_",
+				"DB_connect_User"
+			],
+			[
+				"swic",
+				"switch\tswitch_SQF"
+			],
+			[
+				"_is",
+				"_isMedic"
+			],
+			[
+				"_Button_",
+				"_Button_Save"
+			],
+			[
+				"_Butt",
+				"_Button_Refresh"
+			],
+			[
+				"_Button",
+				"_Button_LoadLoadout"
+			],
+			[
+				"forea",
+				"foreach"
+			],
+			[
+				"foreac",
+				"_forEachIndex"
+			],
+			[
+				"_CB",
+				"_CB_gruppe"
+			],
+			[
+				"_backpack",
+				"_backpack"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"last_filter": "sqf",
+		"selected_items":
+		[
+			[
+				"sqf",
+				"Snippet: switch_SQF"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"beaut",
+				"Javascript Beautify"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"setsy jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntax j",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"cssor",
+				"CssOrder"
+			],
+			[
+				"ord",
+				"CssOrder"
+			],
+			[
+				"syntax hr",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"syntax ",
+				"Set Syntax: YAML"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"set Syntax: C",
+				"Set Syntax: C"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"c+",
+				"Set Syntax: C++"
+			],
+			[
+				"syn ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"s",
+				"Sort Lines"
+			],
+			[
+				"sync",
+				"Set Syntax: C"
+			],
+			[
+				"colr",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"color su",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"sq",
+				"Set Syntax: SQF"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packa inst",
+				"Package Control: Install Package"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"sy",
+				"Set Syntax: SQF"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: while"
+			],
+			[
+				"package u",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"set sy",
+				"Set Syntax: SQF"
+			],
+			[
+				"sy xml",
+				"Set Syntax: XML"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"syn sq",
+				"Set Syntax: SQF"
+			],
+			[
+				"set s",
+				"Set Syntax: SQF"
+			],
+			[
+				"m",
+				"View: Toggle Minimap"
+			],
+			[
+				"sideb",
+				"View: Toggle Open Files in Side Bar"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"view.encoding()",
+			"show.encoding()",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa"
+	],
+	"file_history":
+	[
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/setup_classnames.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/addons/opt3_sectorControl/opt_startMission.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/setup.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/fn_updateHUD.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/fn_randomIndexArray.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/fn_handleDeadVehicle.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/fn_failedTask.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/fn_CheckMTShotHD.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/fn_arrayPushStack.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/fn_arrayInsert.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/opt_countdown.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/initaddkilledhandler.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/createPoleMarker.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/init.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/i_server.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/description.ext",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/setup_publicvariable.sqf",
+		"/C/Users/Michael/AppData/Local/Temp/scp44310/var/www/wiki/drupal-8.2.6/themes/jgkp/css/style.css",
+		"/N/Michael/homepage/strat_all/index.php",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/macros.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/func/fn_calculateDominator.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/func/fn_checkVehicleEmpty.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/func/fn_logPScore.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/func/fn_spawnVehicle.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/func/fn_updateVehiclePool.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/func/fn_vehicleLogEvent.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/fn_succeedTask.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/netEvents.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_maintainerActions.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/RscTitles.hpp",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/far_blackscreen.hpp",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/RscBasicDefines.hpp",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/opt_flag.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/fn_preinit.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/macros.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/fsms/setup.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/setup.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/net/fn_netsetjip.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/net/fn_netrunevent.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/net/fn_netcallevent.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/net/fn_netaddeventcts.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/net/fn_netaddevent.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/net/fn_localcallevent.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/net/setup.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/func/net/fn_netcalleventtoclients.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/mission_settings/apply_settings.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/vehiclePool_war.hpp",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/i_client.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/x_reload.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/func/fn_setFlagOwner.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/server/func/fn_handleDeadVehicle.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/fn_briefing.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/killcam.sqf",
+		"/E/Git/3jgkp_database/Build/sk3yn3t_server/config.cpp",
+		"/E/Git/3jgkp_database/Build/sk3yn3t_client/config.cpp",
+		"/E/Git/3jgkp_database/Build/jgkp_dc_client/config.cpp",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/[J]Insurgency_Alpha09.Tanoa/description.ext",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/[J]Insurgency_Alpha09.Tanoa/functions/fn_createT8Template.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/[J]Insurgency_Alpha09.Tanoa/functions/fn_randomT8Grp.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/macros.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/opt_endMission.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/jip.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/intro.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/x_perframe.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_removeperFrame.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/player_marker.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_playerrespawn.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_addperFrame.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_checkGroupPower.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_dynamicGroups.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_earplugs.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_globalChat.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_flipCheck.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_HQchat.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_iconColor.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_iconDrawGPS.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_iconDrawMap.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_iconSize.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_iconText.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_iconType.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_perFrame.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_maintainerDialog.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_screen.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_maintainerOrderVehicle.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_MarkerPlayers.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_radio.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_sendVehicleOrder.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_sideChat.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_spectating.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_teleport.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_unFlip.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/client/func/fn_vehiclechat.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/setup.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/common/x_netinit.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/init_custom.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/addons/opt3_magRepack/Scripts/MagRepack_Misc.sqf",
+		"/C/Users/Michael/AppData/Local/Temp/scp36616/var/www/wiki/drupal-8.2.6/themes/jgkp/js/toggleMenu.js",
+		"/E/Git/3jgkp_database/Build/sk3yn3t_server/functions/fn_db/db_log.sqf",
+		"/C/Users/Michael/AppData/Local/Temp/scp14066/var/www/wiki/drupal-8.2.6/themes/jgkp/js/toggleMenu.js",
+		"/C/Users/Michael/AppData/Local/Temp/scp26573/var/www/wiki/drupal-8.2.6/themes/jgkp/css/block.css",
+		"/C/Users/Michael/AppData/Local/Temp/scp22726/var/www/wiki/drupal-8.2.6/drupal-8.2.7/composer.json",
+		"/C/Users/Michael/AppData/Local/Temp/scp26621/var/www/wiki/drupal-8.2.6/composer.json",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/fn_maintainerVecList.sqf",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/mt_dialog.hpp",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/dialogs/orderDialog.hpp",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/cfgFunctions.hpp",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/fsms/macros.sqf",
+		"/C/Users/Michael/AppData/Local/Temp/scp52532/var/www/wiki/drupal-8.2.6/themes/jgkp/css/block.css",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/onPlayerKilled.sqf",
+		"/C/Users/Michael/AppData/Local/Temp/scp22634/var/www/wiki/drupal-8.2.6/themes/jgkp/js/toggleMenu.js",
+		"/C/Users/Michael/Documents/Arma 3 - Other Profiles/[3%2eJgKp]James/missions/schlacht11_test-alt.Tanoa/fsms/NotAliveRemover.fsm",
+		"/E/Git/3jgkp_database/Build/jgkp_dc_client/functions/fn_marker.sqf",
+		"/C/Users/Michael/AppData/Local/Temp/scp12712/var/www/wiki/drupal-8.2.6/themes/jgkp/css/style.css",
+		"/C/Users/Michael/AppData/Local/Temp/scp15965/var/www/wiki/drupal-8.2.6/themes/jgkp/jgkp.libraries.yml",
+		"/C/Users/Michael/AppData/Local/Temp/scp03830/var/www/wiki/drupal-8.2.6/themes/jgkp/js/toggleMenu.js",
+		"/C/Users/Michael/AppData/Local/Temp/scp31964/var/www/wiki/drupal-8.2.6/themes/jgkp/js/progressBar.js",
+		"/C/Users/Michael/AppData/Local/Temp/scp14372/var/www/wiki/drupal-8.2.6/themes/jgkp/css/paragraph.css",
+		"/C/Users/Michael/AppData/Local/Temp/scp33263/var/www/wiki/drupal-8.2.6/themes/jgkp/jgkp.info.yml",
+		"/C/Users/Michael/AppData/Local/Temp/scp41600/var/www/wiki/drupal-8.2.6/themes/jgkp/css/block.css",
+		"/C/Users/Michael/AppData/Local/Temp/scp58782/var/www/wiki/drupal-8.2.6/themes/jgkp/css/paragraph.css",
+		"/C/Users/Michael/AppData/Local/Temp/scp18278/var/www/wiki/drupal-8.2.6/core/misc/menu-expanded.png",
+		"/C/Users/Michael/AppData/Local/Temp/scp34576/var/www/wiki/drupal-8.2.6/themes/jgkp/css/progress-bar.css",
+		"/C/Users/Michael/AppData/Local/Temp/scp27740/var/www/wiki/drupal-8.2.6/themes/jgkp/css/mobile.css",
+		"/C/Users/Michael/AppData/Local/Temp/scp10846/var/www/wiki/drupal-8.2.6/core/themes/seven/seven.libraries.yml",
+		"/C/Users/Michael/AppData/Local/Temp/scp12496/var/www/wiki/drupal-8.2.6/core/themes/seven/js/nav-tabs.js",
+		"/C/Users/Michael/AppData/Local/Temp/scp10989/var/www/wiki/drupal-8.2.6/core/themes/seven/seven.info.yml",
+		"/C/Users/Michael/AppData/Local/Temp/scp35554/var/www/wiki/drupal-8.2.6/themes/jgkp/js/progressBar",
+		"/C/Users/Michael/AppData/Local/Temp/scp35540/var/www/wiki/drupal-8.2.6/themes/jgkp/css/style.css"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Users\\Michael\\Documents\\Arma 3 - Other Profiles\\[3%2eJgKp]James\\missions\\schlacht11_test-alt.Tanoa",
+			"C:\\Users\\Michael\\Documents\\Arma 3 - Other Profiles\\[3%2eJgKp]James\\missions\\[J]OPT_Train.Tanoa\\Scripts",
+			"E:\\Git\\3jgkp_database",
+			"C:\\Users\\Michael\\Documents\\Arma 3 - Other Profiles\\[3%2eJgKp]James\\mpmissions\\[Wiesel]_Gungnir_v1_4.pja310",
+			"G:\\Workplace\\[3%2eJgKp]James\\missions\\[James]Kartrennen_v1.Altis",
+			"C:\\Users\\Michael\\Documents\\Arma 3 - Other Profiles\\[3%2eJgKp]James\\missions\\[Steff]Sandbox_V14.Takistan,D:\\Meine Daten\\Dropbox\\Git\\Duala-up\\[James&Ahab]Duala-Up.IslaDuala3\\modules\\Upsmon",
+			"C:\\Users\\Michael\\Documents\\Arma 3 - Other Profiles\\[3%2eJgKp]James\\missions\\[Steff]Sandbox_V14.Takistan",
+			"C:\\Users\\Michael\\Documents\\Arma 3 - Other Profiles\\[3%2eJgKp]James\\missions\\[COY]_BW_Zargabad_v0_5.Zargabad",
+			"C:\\Users\\Michael\\Documents\\Arma 3 - Other Profiles\\[3%2eJgKp]James\\missions\\[3JgKp]RKB_v02.Altis\\modules\\Upsmon"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"OPT_CSAT_FLAGs",
+			"opt_startMission.sqf",
+			"opt_showCountdown",
+			"Waffenruhe",
+			"opt_startMission",
+			"MissionStarted",
+			"opt_localServerTimeOffset",
+			"playTime",
+			"OPT_TRUCETIME",
+			"waffenruhe",
+			"xC",
+			"IGUI_BCG_RGB_R",
+			"IGUIBack",
+			"IGUI",
+			"background",
+			"#include \"macros.sqf\"",
+			"#include \"setup.sqf\"",
+			"_displayGeneralInfo",
+			"budget",
+			"bufget",
+			"/\\*",
+			"updateHUD",
+			"5091",
+			"Score",
+			"HEADINGLABEL_X",
+			"\\s_p\\s",
+			"_p",
+			"__LINE__",
+			"drupal.nav-tabs",
+			"drupal-nav-tabs",
+			"</p>",
+			"<p>",
+			"tfar",
+			"librarie",
+			"ACRE_PRC77",
+			"ACRE_SEM52SL",
+			"upload",
+			"client",
+			"name",
+			"task",
+			"tfar",
+			"ACRE_SEM52SL",
+			"ACRE_SEM52SL;",
+			"tf_anprc148jem",
+			"G38",
+			"1Rnd",
+			"1Rnd_Smoke_Grenade_shell",
+			"1Rnd_SmokeRed_Grenade_shell",
+			"1Rnd_HE_Grenade_shell",
+			"rhs_weap_hk416d145_AG",
+			"G38",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag_Tracer",
+			"BWA3_30Rnd_556x45_G36",
+			"BWA3_G38",
+			"[\"\"Hit\"\", {[\"\"PES5_hit\"\"] execVM \"\"scripts\\increaseCounter.sqf\"\"; (_this select 0) animate [\"\"terc\"\", 1];}]",
+			"[\"\"Hit\"\", {[\"\"PES6_hit\"\"] execVM \"\"scripts\\increaseCounter.sqf\"\"; (_this select 0) animate [\"\"terc\"\", 1];}]",
+			"[\"\"Hit\"\", {[\"\"GES6_hit\"\"] execVM \"\"scripts\\increaseCounter.sqf\"\"; (_this select 0) animate [\"\"terc\"\", 1];}]",
+			"GES",
+			"sk3y",
+			"getVar",
+			"getVariable",
+			"_marker",
+			"ibr_fab",
+			"rve",
+			"hemtt",
+			"RVE",
+			"RVE_Black",
+			"RVE",
+			"achil",
+			"A3_Signs_F",
+			"type=\"\";",
+			"glt",
+			"teleport",
+			"(A3_[a-zA-z_0-9]*)",
+			"(A3_.*,)",
+			"user",
+			"userconfig",
+			"Beispiel",
+			", _excludeVanilla, _excludeClasses]",
+			", ]",
+			"_excludeVanilla, _excludeClasses]",
+			"result",
+			"(JGKP\\w*)",
+			"JGKP_Classes_fnc_addClass",
+			"(JGKP\\w*)",
+			"_friend_land",
+			"_x",
+			"[_x",
+			"_x iskindof",
+			"GLT",
+			"\\[_x, (.*)\\] call JGKP_Classes_fnc_addClass;",
+			"\\[_x, .*\\] call JGKP_Classes_fnc_addClass;",
+			"JGKP Limiter",
+			"JGKP",
+			"sk3yn3t_server\\",
+			"fn_db",
+			"0",
+			"fps",
+			"JGKP_var_debug",
+			"typeOf _x",
+			"pxs_satcom_oa",
+			"3jgkp_dc_client",
+			"pxs_satcom_oa",
+			"RscLine2",
+			"GLT",
+			"CST",
+			"tf_anprc*",
+			"(tf_anprc",
+			"(tf_anprc148jem)_(\\d)",
+			"(tf_anprc148jem)",
+			"(tf_anprc148jem)_",
+			"(tf_anprc148jem)_(\\d)+",
+			"tf_anprc148jem_(\\d+)",
+			"(tf_anprc148jem)_(\\d)",
+			"flecktarn",
+			"GLT",
+			"Fennek",
+			"47",
+			"Item47",
+			"flecktarn",
+			"GLT",
+			"CBA_fnc_clientToServerEvent",
+			"CBA",
+			"CBA_fnc_clientToServerEvent",
+			"equip_pl",
+			"CBA",
+			"CBA_fnc_clientToServerEvent",
+			"CBA_fnc_addClientToServerEventhandler"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"/\\*\\*",
+			"",
+			"ACRE_PRC117F",
+			"ACRE_PRC117",
+			"ACRE_PRC148",
+			"",
+			"ACRE_SEM52SL",
+			"rhs_mag_M585_white",
+			"rhs_mag_m18_red",
+			"rhs_mag_M441_HE",
+			"rhs_weap_hk416d145_m320",
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Green",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_weap_hk416d145",
+			"[\"\"Hit\"\", {nul = [\"\"PES5_hit\"\"] execVM \"\"scripts\\increaseCounter.sqf\"\"; (_this select 0) animate [\"\"terc\"\", 1];}]",
+			"[\"\"Hit\"\", {nul = [\"\"PES6_hit\"\"] execVM \"\"scripts\\increaseCounter.sqf\"\"; (_this select 0) animate [\"\"terc\"\", 1];}]",
+			"[\"\"Hit\"\", {nul = [\"\"GES6_hit\"\"] execVM \"\"scripts\\increaseCounter.sqf\"\"; (_this select 0) animate [\"\"terc\"\", 1];}]",
+			"",
+			"]",
+			"_result",
+			"_$1",
+			"_fnc_addClass",
+			"_$1",
+			"_template",
+			"[_config",
+			"_lass iskindof",
+			"\\[_x, $1, _excludeVanilla, _excludeClasses\\] call JGKP_Classes_fnc_addClass;",
+			"\\[_x, .*, _excludeVanilla, _excludeClasses\\] call JGKP_Classes_fnc_addClass;",
+			"Jaegerkompanie",
+			"sk3yn3t_server\\functions\\",
+			"sk3yn3t_server\\fn_db",
+			"JGKP_var_startParams",
+			"_class",
+			"jgkp_dc_client\\pxs_satcom_oa",
+			"jgkp_dc_client",
+			"3gkp_dc_client",
+			"3jgkp_dc_client\\pxs_satcom_oa",
+			"3jgkp_dc_client\\pxs_satcom_oa\\",
+			"3jgkp_dc_client\\pxs_satcom_oa",
+			"PXS_RscLine2",
+			"\\1",
+			"CBA_fnc_serverEvent",
+			"CBA_fnc_localEvent",
+			"CBA_fnc_addEventHandler",
+			"BWA3_30Rnd_556x45_G36_Tracer",
+			"BWA3_30Rnd_556x45_G36",
+			"BWA3_G38",
+			"tf_anprc148jem",
+			"BWA3_30Rnd_556x45_G36",
+			"BWA3_30Rnd_556x45_G36_Tracer",
+			"tf_anprc148jem_3",
+			"BWA3_acc_LLM01_irlaser",
+			"BWA3_G38",
+			"BWA3_G38_AG",
+			"BWA3_G38",
+			"*/",
+			"/*",
+			"BWA3_Rifleman_unarmed_Fleck",
+			"http://doku.3jgkp.de/sig/",
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_rifle_G36A1AG36",
+			"hlc_rifle_G36A1",
+			"hlc_30rnd_556x45_Tracers_G36",
+			"hlc_30rnd_556x45_EPR_G36",
+			"hlc_30rnd_556x45_Tracers_G36",
+			"(_result select \\d+) joinString \",\",",
+			"(_result select \\d+) joinString \";\",",
+			"{1,1,1,1}",
+			"IPSCTimer",
+			"class IPSCTimer",
+			"IPSCTimer",
+			"\"modules\\T8_Units\\T8\\fnc\"",
+			"_cam",
+			"pushBack",
+			"dialog\\DBCrateDialog\\",
+			"dialog\\DBLoadoutDialog\\",
+			"_magazines",
+			"_weapons",
+			"_backpacks",
+			"_items",
+			"sk3yn3t_server\\functions\\",
+			"PBW_Helm1_tropen_BO",
+			"PBW_Helm2_fleck",
+			"PBW_Helm1_fleck_BOD",
+			"PBW_Uniform1H_fleck",
+			"PBW_muetze2_fleck",
+			"PBW_muetze2_tropen",
+			"Land_Hbarrier_3_F",
+			"Land_",
+			"Land_IronPipes_F",
+			"Land_Mil_WallBig_Corner_F",
+			"Land_Mil_WallBig_4m_F",
+			"Land_HBarrier_Big_F",
+			"Land_HBarrier_3_F",
+			"Land_HBarrier_Big_F",
+			"\"this enableSimulation false; this allowDamage false;\"",
+			"Race1",
+			"Race2",
+			"Race3",
+			"\"\"Race\"\",1",
+			"\"\"Race\"\",2",
+			"\"\"Race\"\",3",
+			"11.10.2015",
+			"'sk3yn3t_client\\dialog",
+			"'dialog\\selectColumn.sqf'; JGKP_DB_column = ",
+			"\"~\"",
+			"ACE",
+			"ace",
+			":",
+			"",
+			"_queryResult",
+			"BWA3_Vest_Rifleman1_Fleck",
+			"BW_BACKPACK2_SAN_FLECK",
+			"BW_BACKPACK2_SAN_TROPEN",
+			"BWA3_Vest_Medic_Tropen",
+			"BWA3_Vest_Medic_Fleck",
+			"GLT_Carryall_Tropentarn",
+			"GLT_Carryall_Flecktarn",
+			"BWA3_Vest_Autorifleman_Tropen",
+			"BWA3_Vest_Autorifleman_Fleck",
+			"'CAN_COLLIDE']; _newObject enableSimulationGlobal false;",
+			"_unit",
+			"_camo_",
+			"camo",
+			"STR"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "OPT.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pare",
+				"dialog\\parent.hpp"
+			],
+			[
+				"small",
+				"scripts\\DAC\\fn_createSmallRandomCamp.sqf"
+			],
+			[
+				"change",
+				"scripts\\provinzen\\fn_changeCityStatus.sqf"
+			],
+			[
+				"mis",
+				"mission.sqm"
+			],
+			[
+				"mapper",
+				"scripts\\misc\\fn_objectsMapper.sqf"
+			],
+			[
+				"temp",
+				"scripts\\misc\\templates.sqf"
+			],
+			[
+				"zeus",
+				"scripts\\zg\\zeusForZgFhr.sqf"
+			],
+			[
+				"initp",
+				"initPlayerLocal.sqf"
+			],
+			[
+				"des",
+				"Description.ext"
+			],
+			[
+				"grps",
+				"scripts\\1.grp\\loadouts\\GrpSchrfSchtz.sqf"
+			],
+			[
+				"pio",
+				"scripts\\1.grp\\loadouts\\Pio.sqf"
+			],
+			[
+				"shtz",
+				"scripts\\1.grp\\loadouts\\Schtz.sqf"
+			],
+			[
+				"san",
+				"scripts\\1.grp\\loadouts\\San.sqf"
+			],
+			[
+				"gren",
+				"scripts\\1.grp\\loadouts\\Gren.sqf"
+			],
+			[
+				"pzf",
+				"scripts\\1.grp\\loadouts\\PzF.sqf"
+			],
+			[
+				"mg5_h",
+				"scripts\\1.grp\\loadouts\\MG5_H.sqf"
+			],
+			[
+				"mg5",
+				"scripts\\1.grp\\loadouts\\MG5.sqf"
+			],
+			[
+				"mg4",
+				"scripts\\1.grp\\loadouts\\MG4.sqf"
+			],
+			[
+				"mg3",
+				"scripts\\1.grp\\loadouts\\MG3_H.sqf"
+			],
+			[
+				"grpf",
+				"scripts\\1.grp\\loadouts\\GrpF.sqf"
+			],
+			[
+				"tr",
+				"scripts\\1.grp\\loadouts\\TrpF.sqf"
+			],
+			[
+				"in",
+				"functions\\fn_inline.sqf"
+			],
+			[
+				"scope",
+				"scripts\\scope.sqf"
+			],
+			[
+				"cop",
+				"scripts\\copy.sqf"
+			],
+			[
+				"d",
+				"scripts\\loadouts\\daz_jg_start.sqf"
+			],
+			[
+				"dz",
+				"scripts\\loadouts\\daz_uo_start.sqf"
+			],
+			[
+				"init",
+				"initPlayerLocal.sqf"
+			],
+			[
+				"j",
+				"scripts\\loadouts\\daz_jg_start.sqf"
+			],
+			[
+				"fn",
+				"scripts\\fn_changeModulState.sqf"
+			],
+			[
+				"kiste",
+				"scripts\\module\\kiste8.sqf"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 276.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
