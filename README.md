@@ -9,7 +9,9 @@ Aktuelle Version ist 1.00
 
 ## Current Work
 
-l
+* Codebasis durchsehen, verstehen, wo veraltet ersetzen
+* am liebsten die komplette Funktionssammlung net rausschmeißen und durch CBA Eventhandling ersetzen, wesentlich lesbarer und sauberer
+* Features sichten, Liste neuer Features sammeln, alte Features, die nicht gebraucht werden löschen
 
 ## SITREP
 
@@ -20,4 +22,4 @@ l
 ```SQF
 (OPT_PLAYTIME - (serverTime - opt_startTime)) 
 ```
-TODO: JIP testen!
+TODO: -[] JIP testen!
