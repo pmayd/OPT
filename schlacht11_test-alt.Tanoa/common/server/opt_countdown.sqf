@@ -19,9 +19,13 @@ waitUntil {MissionStarted};
 _breaker = false;
 _ticker = 0;
 
+// playTime unverändert, da wir die volle Zeit spielen wollen!
+// Daher von playTime in 1 sec Schritten bis 0.
 for "_i" from (playTime) to 0 step -1 do {
 
-	playTime = OPT_PLAYTIME  - time;
+	// Bestimme noch zu spielende Zeit: Gesamtzeit - Waffenruhe - Zeit seit Missionsstart = Gesamtzeit - vergangene Zeit
+	private _timeElapsed = (serverTime - opt_startTime);
+	playTime = OPT_PLAYTIME  - _timeElapsed;
 	_ticker = _ticker + 1;
 
 	// every 60 seconds: locking for domination, sync time to clients and transmit public vars

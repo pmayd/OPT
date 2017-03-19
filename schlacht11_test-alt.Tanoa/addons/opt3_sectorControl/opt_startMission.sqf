@@ -59,6 +59,9 @@ if (isnil "opt_showCountdown") then {
 // FOR SERVER ONLY
 if (isServer) then {
 	// By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen
+	// bestimme Zeit, die bis hierher vergangen ist. Es kann nicht angenommen werden
+	// dass Time bei 0 startet. Da der Client mit der vergangenen Zeit rechnet, muss hier
+	// ebenfalls die korrekte Zeit berechnet werden. Wie immer serverTime - opt_startTime.
 	private _timeElapsed = (serverTime - opt_startTime);
 	truceTime = OPT_TRUCETIME - _timeElapsed;
 	_ticker = 0;
@@ -72,7 +75,8 @@ if (isServer) then {
 
 	// nach Ablauf der Waffenruhe (timeout), starte Mission und gib Variable an alle Clients weiter
 	MissionStarted = true; 
-	publicVariable "MissionStarted";
+	// side: schaltet Zeit in HUD frei, schaltet opt_countdown frei
+	publicVariable "MissionStarted"; 
 };
 
 if (local player) then {
