@@ -1,5 +1,5 @@
-﻿#include "../../setup.sqf"
-diag_log format ["%1 --- TcB player_jip.sqf startet",diag_ticktime];
+#include "setup.sqf"
+diag_log format ["%1 --- TcB onPlayerRespawn.sqf startet",diag_ticktime];
 if (!X_Client || {!isNil "jip_started"}) exitWith {};
 jip_started = true;
 
@@ -22,7 +22,6 @@ if (!isNil "TCB_CURATOR") then {
 
 ["addToCurator", player] call tcb_fnc_netCallEventCTS;
 */
-
 if (isMultiplayer && !isServer) then {
 	if (OPT_TEAMBALANCE > 0) then {
 		_en_pa = if (playerSide == blufor) then {playersNumber opfor} else {playersNumber blufor};
@@ -68,13 +67,13 @@ removeAllMissionEventHandlers "Draw3D";
 tcb_draw3D_reset_done = true;
 
 #ifdef __FIRSTPERSON__
-if (difficultyEnabled "3rdPersonView") then {
-	addMissionEventHandler ["Draw3D", {
-		if ((cameraView == "EXTERNAL") && {vehicle player == player}) then {
-			vehicle player switchCamera "INTERNAL";
-		};
-	}];
-};
+	if (difficultyEnabled "3rdPersonView") then {
+		addMissionEventHandler ["Draw3D", {
+			if ((cameraView == "EXTERNAL") && {vehicle player == player}) then {
+				vehicle player switchCamera "INTERNAL";
+			};
+		}];
+	};
 #endif
 
 // Wenn HUD in setup.sqf ein, füge EH für HUD hinzu
@@ -84,41 +83,42 @@ if (difficultyEnabled "3rdPersonView") then {
 Runs the EH code each frame in unscheduled environment. Client side EH only (presence of UI). Will stop executing when UI loses focus (if user Alt+Tabs for example). Usually used with drawIcon3D, drawLine3D. 
 */
 #ifdef __HUD_ON__
-("opt_HUD" call BIS_fnc_rscLayer) cutRsc ["opt_HudDisplay","PLAIN"];
-addMissionEventHandler ["Draw3D", {
-	[] spawn opt_fnc_updateHUD;
-}];
+	("opt_HUD" call BIS_fnc_rscLayer) cutRsc ["opt_HudDisplay","PLAIN"];
+	addMissionEventHandler ["Draw3D", {
+		[] spawn opt_fnc_updateHUD;
+		uiSleep 1;
+	}];
 #endif
 
 // known issue: missionEH wont remove if the player switch during the mission the slot! that means if the mEH was set one time it will be activated regardless if you switch the lobby slot f.e. - maybee line 32 will fix this(?)
 #ifdef __ONLY_PILOTS_CAN_FLY__
-if (tcb_b_check_pilot == 1) then {
-	if (!(typeOf player in tcb_pilots) && {!(typeOf player in ["O_Helipilot_F","B_Helipilot_F"])}) then {
-		addMissionEventHandler ["Draw3D", {
-			if ((vehicle player) isKindOf "Air" && player == assignedDriver (vehicle player) || {player == (vehicle player) turretUnit [0] && (vehicle player) isKindOf "Air"}) then {
-				if (!(typeOf (vehicle player) in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
-					player action ["GetOut",vehicle player];
-					TitleRsc ["only_pilots", "plain", 0.5];
+	if (tcb_b_check_pilot == 1) then {
+		if (!(typeOf player in tcb_pilots) && {!(typeOf player in ["O_Helipilot_F","B_Helipilot_F"])}) then {
+			addMissionEventHandler ["Draw3D", {
+				if ((vehicle player) isKindOf "Air" && player == assignedDriver (vehicle player) || {player == (vehicle player) turretUnit [0] && (vehicle player) isKindOf "Air"}) then {
+					if (!(typeOf (vehicle player) in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
+						player action ["GetOut",vehicle player];
+						TitleRsc ["only_pilots", "plain", 0.5];
+					};
 				};
-			};
-		}];
+			}];
+		};
 	};
-};
 
 #endif
 #ifdef __ONLY_CREW_CAN_DRIVE__
-if (tcb_b_check_crew == 1) then {
-	if (!(typeOf player in tcb_crew) && {!(typeOf player in ["O_crew_F","B_crew_F"])}) then {
-		addMissionEventHandler ["Draw3D", {
-			if (player == driver (vehicle player)) then {
-				if (typeOf (vehicle player) in tcb_crewVecs || {(vehicle player) isKindOf "Tank"}) then {
-					player action ["GetOut",vehicle player];
-					TitleRsc ["only_crew", "plain", 0.5];
+	if (tcb_b_check_crew == 1) then {
+		if (!(typeOf player in tcb_crew) && {!(typeOf player in ["O_crew_F","B_crew_F"])}) then {
+			addMissionEventHandler ["Draw3D", {
+				if (player == driver (vehicle player)) then {
+					if (typeOf (vehicle player) in tcb_crewVecs || {(vehicle player) isKindOf "Tank"}) then {
+						player action ["GetOut",vehicle player];
+						TitleRsc ["only_crew", "plain", 0.5];
+					};
 				};
-			};
-		}];
+			}];
+		};
 	};
-};
 #endif
 
 // call OPT specific items
@@ -145,18 +145,18 @@ client_jip_init_trigger = nil;
 
 
 #ifndef __INTRO_ENABLED__
-waitUntil {!isNil "BIS_fnc_init"};
-waitUntil {!isNull (findDisplay 46)};
-[] spawn {
-	sleep 6;
-	[parseText format [ "<t align='right' size='1.2'><t font='PuristaBold' size='1.6'>""%1""</t><br/>
-	%2</t>", __MISSION_NAME__, "von: " + __MADEBY__], true, nil, 7, 0.7, 0] spawn BIS_fnc_textTiles;
-};
+	waitUntil {!isNil "BIS_fnc_init"};
+	waitUntil {!isNull (findDisplay 46)};
+	[] spawn {
+		sleep 6;
+		[parseText format [ "<t align='right' size='1.2'><t font='PuristaBold' size='1.6'>""%1""</t><br/>
+		%2</t>", __MISSION_NAME__, "von: " + __MADEBY__], true, nil, 7, 0.7, 0] spawn BIS_fnc_textTiles;
+	};
 
-_layer = "tcbIntroLayer" call BIS_fnc_rscLayer;
-_layer cutRsc ["mission_Label", "PLAIN"];
-[] spawn tcb_fnc_JukeBox;
-intro_done = true;
+	_layer = "tcbIntroLayer" call BIS_fnc_rscLayer;
+	_layer cutRsc ["mission_Label", "PLAIN"];
+	[] spawn tcb_fnc_JukeBox;
+	intro_done = true;
 #endif
 
 [] spawn {

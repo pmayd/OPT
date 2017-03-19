@@ -14,7 +14,7 @@ waitUntil {MissionStarted};
 ["opt_logEvent", "########## Mission wurde gestartet ##########"] call tcb_fnc_NetCallEvent;
 
 // calculate first time the dominator (it's needed if assynchrone number of flags are defined)
-[civilian, objNull] call opt_fnc_setFlagOwner;
+[civilian, objNull] spawn opt_fnc_setFlagOwner;
 
 _breaker = false;
 _ticker = 0;

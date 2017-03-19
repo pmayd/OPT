@@ -56,7 +56,6 @@ class tcb {
 		addf(HQchat);
 		addf(sidechat);
 		addf(globalchat);
-		addf(playerRespawn);
 		addf(addperframe);
 		addf(perframe);
 		addf(removeperframe);

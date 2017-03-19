@@ -59,8 +59,11 @@ if (isnil "opt_showCountdown") then {
 // FOR SERVER ONLY
 if (isServer) then {
 	// By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen
+	private _timeElapsed = (serverTime - opt_startTime);
+	truceTime = OPT_TRUCETIME - _timeElapsed;
 	_ticker = 0;
-	for "_t" from _timeout to 0 step -1 do {
+
+	for "_t" from ceil(_timeout-_timeElapsed) to 0 step -1 do {
 		truceTime = truceTime - 1;	// verringert truceTime pro Iteration um 1 Sekunde
 		// if (local player) then {[] call opt_showCountdown};
 		uisleep 1;
