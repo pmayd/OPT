@@ -1,6 +1,8 @@
 # Documentation of OPT Mission
 Diese Datei dient ausschließlich der Dokumentation aller Features und Zusammenhänge und erfüllt keinen direkten Nutzen nach außen bzw. erklärt keinerlei Optionen für den Endbenutzer. Diese Datei ist als umfassende Dokumentation für Missionsbauer und Maintainer gedacht.
 
+*Warnung*: Um die Mission sinnvoll zu testen, _muss_ im MP getestet werden, wenigstens auf einem lokalen Server, da ansonsten grundlegende Trigger/Bedingungen wie Respawn nicht erfüllt sind. Daher sollte man auch im EDEN EDITOR grundsätzlich auf einem lokalen Server hosten. Hat man keinen Testserver zu Hand, kann man den ArmA Client einfach zweimal starten und die eine Instanz als lokalen Host verwenden, die andere als lokalen Client.
+
 ## Missionsstart
 Liste aller verfügbaren [Event Scripts](https://community.bistudio.com/wiki/Event_Scripts)
 
@@ -20,5 +22,11 @@ Aktuell verwendet:
 - `init.sqf`
 - `onPlayerKilled.sqf`
 - `onPlayerRespawn.sqf`
+
+### `init.sqf`
+- Falls __INTRO_ENABLED__, färbt Bildschirm zu Beginn schwarz TODO: Wo wird das aufgehoben? 
+- liest alle Missions-Parameter aus der description.ext aus, mit den eingestellten Werten aus der Lobby und macht sie als Variablen verfügbar (OPT_PLAYTIME usw)
+- 
+
 
 
