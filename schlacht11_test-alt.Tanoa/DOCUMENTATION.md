@@ -3,7 +3,8 @@ Diese Datei dient ausschließlich der Dokumentation aller Features und Zusammenh
 
 ## Missionsstart
 Liste aller verfügbaren Event Scripts
-[Event Scripts|https://community.bistudio.com/wiki/Event_Scripts]
+[Event Scripts](https://community.bistudio.com/wiki/Event_Scripts)
+
 - init.sqf 	Executed when mission is started (before briefing screen)
 - initIntro.sqf 	Executed when intro, outro win or outro lose is started.
 - exit.sqs 	Executed when mission is finished (before debriefing screen). In Arma 3, "ended" mission event handler has the same functionality. 	`[endType:String]`
