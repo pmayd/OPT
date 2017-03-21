@@ -11,5 +11,5 @@ https://community.bistudio.com/wiki/Event_Scripts
 - initServer.sqf 	Executed only on server when mission is started. See initialization order for details about when the script is exactly executed.
 - initPlayerServer.sqf 	Executed only on server when a player joins mission (includes both mission start and JIP). See initialization order for details about when the script is exactly executed. 	[player:Object, didJIP:Boolean] 	
 - initPlayerLocal.sqf 	Executed locally when player joins mission (includes both mission start and JIP). See initialization order for details about when the script is exactly executed. 	[player:Object, didJIP:Boolean]
-- onPlayerKilled.sqf 	Executed when player is killed in singleplayer or in multiplayer mission. 	[<oldUnit>, <killer>, <respawn>, <respawnDelay>]
+- onPlayerKilled.sqf 	Executed when player is killed in singleplayer or in multiplayer mission. ```SQF [<oldUnit>, <killer>, <respawn>, <respawnDelay>] ```
 - onPlayerRespawn.sqf  Executed locally when player respawns in a multiplayer mission. This event script will also fire at the beginning of a mission if respawnOnStart is 0 or 1, oldUnit will be objNull in this instance. This script will not fire at mission start if respawnOnStart equals -1. 	[<newUnit>, <oldUnit>, <respawn>, <respawnDelay>]
