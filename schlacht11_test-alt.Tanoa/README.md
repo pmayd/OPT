@@ -1,6 +1,5 @@
---------------------------------------------- README ------------------------------------------------------
------------------------------------------------------------------------------------------------------------
-How to use:
+
+## How to use:
 
 Do not edit in any file! Everything you can change you can found in the different setup files.
 First and importants setup file is the SETUP.SQF <-- there you can find the most settings.
@@ -21,7 +20,7 @@ If you change again anything on the setup files you have to repeat this step aga
 
 
 
-Changelog:
+## Changelog:
 
 ----Version 1.028
 - fixed: broken weapon check function since 1.60 (another issue)
@@ -84,38 +83,38 @@ Changelog:
 - Bilder in paa Format eingebaut (Mod) -> description.ext
 - Bilder in paa Format eingebaut (Mod) -> RscTitles.hpp
 - Schreibfehler bereinigt. -> RscTitles.hpp
-- Marine-Ausrüstung: Bild eingebaut.
+- Marine-AusrÃ¼stung: Bild eingebaut.
 - Fehlender Raketenwerfer in abfrage eingebaut. -> common/client/opt_checkWeapon.sqf
 
 ----Version 1.020
 - Statisches GMG (hoch) war nicht richtig im R3F eingetragen.
-- Preis des Mörser stimmt nun.
-- addons/attach_exp/EtV.sqf: -> Sprengladung an Fahrzeuge -> Auf Deutsch übersetzt.
+- Preis des MÃ¶rser stimmt nun.
+- addons/attach_exp/EtV.sqf: -> Sprengladung an Fahrzeuge -> Auf Deutsch Ã¼bersetzt.
 - Preise der Munition-Container stimmen nun.
-- description.ext: -> Auf Deutsch übersetzt -> UTF-8 Koodiert und umlaute funzen nun auch. Die OPT3 Bildpfade waren noch nicht alle richtig.
+- description.ext: -> Auf Deutsch Ã¼bersetzt -> UTF-8 Koodiert und umlaute funzen nun auch. Die OPT3 Bildpfade waren noch nicht alle richtig.
 - Neue NATO Basen eingebaut.
 - dialogs/fn_maintainerVecList.sqf -> Aktualisiert
-- dialogs/far_blackscreen.hpp -> Text auf Deutsch übersetzt -> "Sie sind verwundet."
-- Flug-Drohnen können nun von jedem gekauft werden. ->client/func/fn_sendVehicleOrder.sqf + setup_classnames.sqf
+- dialogs/far_blackscreen.hpp -> Text auf Deutsch Ã¼bersetzt -> "Sie sind verwundet."
+- Flug-Drohnen kÃ¶nnen nun von jedem gekauft werden. ->client/func/fn_sendVehicleOrder.sqf + setup_classnames.sqf
 - Offizier kann nun nicht mehr fliegen + Schwere Kampfahrzeuge fahren. -> common/client/jip.sqf
-- "Gruppenführer" gegen "Offizier" getauscht (15-25)
-- "Offizier" gegen "Gruppenführer" getauscht (50-70)
+- "GruppenfÃ¼hrer" gegen "Offizier" getauscht (15-25)
+- "Offizier" gegen "GruppenfÃ¼hrer" getauscht (50-70)
 
 ----Version 1.019
 - Altes Rep-LKW Script deaktiviert.
 - Von zwei Basis Rep-LKW wurde einer entfernt. Zudem FARP Script deaktiviert.
-- Bestellschilder: Bilder-pfade geändert. (Mod)
-- dialogs\Rsc_titel.hpp: opt3_logo Pfad geändert. (Mod)
-- description.ext: opt3_logo Pfad geändert. (Mod)
-- Preisänderungen (PCML-Kiste, Boote, HAT-Kiste, Static-MGs, Static-GMGs)
-- Marker für Beamfahrzeuge entfernt. (zeigt die hauptbase an was unerwünscht ist)
-- Marker für Basis-LKW entfernt. (zeigt die hauptbase an was unerwünscht ist)
-- Alle Bilder unter Pics gelöscht.
-- common\x_reload.sqf: -> Systemchat Meldungen auf deutsch übersetzt.
+- Bestellschilder: Bilder-pfade geÃ¤ndert. (Mod)
+- dialogs\Rsc_titel.hpp: opt3_logo Pfad geÃ¤ndert. (Mod)
+- description.ext: opt3_logo Pfad geÃ¤ndert. (Mod)
+- PreisÃ¤nderungen (PCML-Kiste, Boote, HAT-Kiste, Static-MGs, Static-GMGs)
+- Marker fÃ¼r Beamfahrzeuge entfernt. (zeigt die hauptbase an was unerwÃ¼nscht ist)
+- Marker fÃ¼r Basis-LKW entfernt. (zeigt die hauptbase an was unerwÃ¼nscht ist)
+- Alle Bilder unter Pics gelÃ¶scht.
+- common\x_reload.sqf: -> Systemchat Meldungen auf deutsch Ã¼bersetzt.
 
 ----Version 1.018
 - fixed: marine H
-- changed: Nachschu Picture to Marine-Ausrüstung
+- changed: Nachschu Picture to Marine-AusrÃ¼stung
 - changed: Schutzzone to 150m 
 
 ----Version 1.017
@@ -154,7 +153,7 @@ Changelog:
 - changed: new animation when player go agony
 
 ----Version 1.012
-- added: Ausrüstungskiste added to shopping list for $5000
+- added: AusrÃ¼stungskiste added to shopping list for $5000
 - changed: several price changes implemented
 - added: Rep-LKW now in shopping list
 - changed: MT-order list updated
@@ -169,11 +168,11 @@ Changelog:
 
 ----Version 1.011
 - added: base structures added/revamped at NATO locations
-- added: different quantities added to "überhangregel" (description.ext)
+- added: different quantities added to "Ã¼berhangregel" (description.ext)
 - changed: beamfahrzeuge reduced and switched (max number place - need to be reduced depending on player slot count)
 - added: maximum number of playable slots added and configured (need to be reduced depending on player count)
 - changed: main bases switched and configured (csat almyra, nato aaf airfield)
-- removed: all additional elements removed from FOBs (additional ausrüstungskisten and base-lkw f.i.)
+- removed: all additional elements removed from FOBs (additional ausrÃ¼stungskisten and base-lkw f.i.)
 - added/changed: all new equipment (boats) added to shopsystem and implementation of new prices
 
 ----Version 1.010
@@ -189,7 +188,7 @@ Changelog:
 - added: new optional lobby paramater for team balancing
 - added: remaining base positions have bases now (with one being the main base including respawn point)
 - added: teleport function for base-to-base teleport
-- changed: truppführerslots are now COM-slots again in order to be able to teleport
+- changed: truppfÃ¼hrerslots are now COM-slots again in order to be able to teleport
 - changed: updated vehicle pool (some crates and boats added into shopping list)
 - changed: several details changed regarding dialogues and action menue entires (helicopters is now luftwaffe f.i.)
 - changed: translation of most english elements to german text
@@ -236,7 +235,7 @@ Changelog:
 - changed: new dynamic text animations in different places (looks better and don't cut to long text blocks)
 - changed: remove TFAR frequencies module (standard frequencies are set by a script)
 - changed: switch OPT_GPSunits definition to setup_classnames.sqf
-- changed: switch "Truppführer" to "Offizier" on both sides (again 3 units per side have access to the GPS)
+- changed: switch "TruppfÃ¼hrer" to "Offizier" on both sides (again 3 units per side have access to the GPS)
 - changed: remove some unused functions / clean-up
 - changed: disable those fucking rabbits (performance+)
 - added: lobby parameter to enable/disable possibility for intercept enemys vehicle radios (default: disabled) (if enabled, every vehicle channel is reset to 30 MHz by entering)
@@ -253,7 +252,7 @@ Changelog:
 - changed: clean up and sort lobby-playerslots, give ranks
 - minor changes in HUD (color, wide, order)
 - added: complete rewriten unconcious marker handling (need testing!!!)
-- added: actual budget to HUD informations (budget will be red-colored if budget < 400k€)
+- added: actual budget to HUD informations (budget will be red-colored if budget < 400kÂ€)
 
 ----Version 1.001
 - fixed: opt_vehicleOrder.sqf, change "side player" to "playerSide"
@@ -272,7 +271,7 @@ Changelog:
 - changed: remove dead vehicle hanfdling via spawn in vehicle killed EH (senceless)
 
 ----Version 1.000
-- fixed: Waffenstillstand counter startet während des Briefings
+- fixed: Waffenstillstand counter startet wÃ¤hrend des Briefings
 - fixed: try to fix the from time to time not disapeared wounded marker from players (if it doesnt work handling will changed to missionNameSpace!)
 - fixed: define and reset earplugs after respawn
 - added: Nil check for some object variables
