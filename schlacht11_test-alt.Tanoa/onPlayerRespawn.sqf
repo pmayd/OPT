@@ -122,7 +122,7 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 #endif
 
 // call OPT specific items
-If (OPT_TFAR_INTERCEPTION == 1) then {
+if (OPT_TFAR_INTERCEPTION == 1) then {
 	_log_briefing = player createDiaryRecord ["keys", ["gegnerischer Funk", "
 	Die Option um gegnerischen Funk (Vehicle Radios) abhören zu können ist aktiv! Die eingestellte gegnerische Frequenz kann beim entern eines gegnerischen Fahrzeuges jedoch nicht direkt abgelesen werden sondern muss selber gefunden werden.
 	"]];

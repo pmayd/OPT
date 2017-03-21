@@ -32,7 +32,6 @@ wreckLimit = 10;
 wreckRemovalMiTime = 600;
 wreckRemovalMaxTime = 900;
 
-
 debriefing=1;
 disabledAI=1;
 joinUnassigned = 1;
@@ -86,7 +85,7 @@ class Params {
 		default 	= 0;
 	};
 #ifndef __GRASS_OFF__
-	class tcb_grass {
+	class OPT_GRASS {
 		title = "Grass An / Aus";
 		values[] = {1,0};
 		default = 1;
@@ -137,7 +136,6 @@ class Params {
 	};
 };
 
-
 #include "dialogs\rscBasicDefines.hpp"
 #include "dialogs\rscTitles.hpp"
 #include "dialogs\mission_settings\mission_settings.hpp"
@@ -146,7 +144,6 @@ class Params {
 #include "dialogs\far_blackscreen.hpp"
 #include "addons\R3F_LOG\desc_include.h"
 #include "addons\opt3_magRepack\MagRepack_config.hpp"
-
 
 #ifdef __STOP_ITEMS_DROPPING__
 enableItemsDropping = 0;
