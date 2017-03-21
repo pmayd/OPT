@@ -3,6 +3,7 @@ Diese Datei dient ausschließlich der Dokumentation aller Features und Zusammenh
 
 ## Missionsstart
 Liste aller verfügbaren [Event Scripts](https://community.bistudio.com/wiki/Event_Scripts)
+
 Reihenfolge der Event Scripts: [Initializiation Order](https://community.bistudio.com/wiki/Initialization_Order)
 
 - init.sqf 	Executed when mission is started (before briefing screen)
