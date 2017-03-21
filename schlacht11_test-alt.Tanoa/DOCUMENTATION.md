@@ -29,16 +29,19 @@ Aktuell verwendet:
 - Falls `__MAP__`, entfernt ItemMap und ItemGPS aus dem Spielerinventar
 - Falls `__VIEW_DISTANCE__`, setzt lokal die Sichtweite (Wert aus setup.sqf)
 - Falls `__GRASS_OFF__`, setzt lokal TerrainGrid auf 50, ansonsten den Wert aus der description.ext (50 oder 3.125)
-- **sideEffect**: führt die `setup_classnames.sqf` aus
-- **sideEffect**: führt `common\x_netinit.sqf` und `common\netEvents.sqf` aus
 - setzt `tf_give_microdagr_to_soldier` auf false
 - lädt `dialogs\vehiclePool_war.hpp`
-- **sideEffect**: falls `isServer`, lädt `i_server.sqf` TODO: `initServer.sqf` einführen
-- **sideEffect**: falls `!isDedicated`, lädt `i_client.sqf` TODO: initPlayerLocal.sqf einführen
 - Falls __STARTTIME__, setzt Uhrzeit auf OPT_DAYTIME (Stunden)
+ `OPT_TRAINING`, mit 30. Script ist zuständig, die eigentliche Mission zu starten!
+ 
+#### Side Effects
 - **sideEffect**: führt `addons\far_revive\FAR_revive_init.sqf` aus
 - **sideEffect**: post-init area: Lädt weitere Scripte und setzte Werte 
-- **sideEffect**: startet `addons\opt3_sectorControl\opt_startMission.sqf`, entweder mit `OPT_TRUCETIME`, oder falls `OPT_TRAINING`, mit 30. Script ist zuständig, die eigentliche Mission zu starten!
+- **sideEffect**: startet `addons\opt3_sectorControl\opt_startMission.sqf`, entweder mit `OPT_TRUCETIME`, oder falls
+- **sideEffect**: führt die `setup_classnames.sqf` aus
+- **sideEffect**: führt `common\x_netinit.sqf` und `common\netEvents.sqf` aus
+- **sideEffect**: falls `isServer`, lädt `i_server.sqf` TODO: `initServer.sqf` einführen
+- **sideEffect**: falls `!isDedicated`, lädt `i_client.sqf` TODO: initPlayerLocal.sqf einführen
 
 
 
