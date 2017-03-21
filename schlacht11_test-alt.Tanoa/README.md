@@ -2,22 +2,16 @@
 ## How to use:
 
 Do not edit in any file! Everything you can change you can found in the different setup files.
-First and importants setup file is the SETUP.SQF <-- there you can find the most settings.
-For a little bit more finetuning have a look in the SETUP_CLASSNAMES.SQF. Here you make further settings.
-Some are important for the function of choosen options in the setup.sqf.
-Third file is the SETUP_PUBLICVARIABLE.SQF --> in these file you have to define every publicVariable you want to use.
+First and importants setup file is the `setup.sqf` <-- there you can find the most settings.
+For a little bit more finetuning have a look in the `setup_classnames.sqf`. Here you make further settings.
+Some are important for the function of choosen options in the `setup.sqf`.
+Third file is the `setup_publicvariable.sqf` --> in this file you have to define every publicVariable you want to use.
 This file is executed only one time and only from the server.
 
-If you want to start some custom files or make your own init commands you can do this in the INIT_CUSTOM.SQF.
+If you want to start some custom files or make your own init commands you can do this in the `init_custom.sqf`.
 This file will be executed from every machine one time like a normal init.sqf.
 
 To update/change the vehicle pool you have to change the data files. You can found them here: dialogs\vehiclePool_war.hpp
-
-VERY IMPORTANT: Before you start a test session or release the mission and you have made all your changes, it is
-essential to open the mission folder and execute one time the SETUPCOPY.BAT file. (simple doubble klick on LMB)
-If you change again anything on the setup files you have to repeat this step again.
-
-
 
 
 ## Changelog:
