@@ -15,6 +15,12 @@ Aktuelle Version ist 1.028 (ohne meine Änderungen)
 
 ## SITREP
 
+### 2017-03-21
+- description vereinheitlicht
+- `init.sqf` umfangreich geändert, kompletten Anfangscode entsorgt, Parameterauslese deutlich verschlankt. TODO: Aufteilen in initServer und initLocalPlayer
+- mission.sqm debinarisiert
+
+
 ### 2017-03-19
 - ``setup.sqf`` überarbeitet, neue Parameter für HUD, kann jetzt ganz ausgestellt bzw. individuell angepasst werden (jedes Feld ein/ausblendbar). FPS per default aus
 - Flaggen werden jetzt automatisch erkannt. Umfangreiche Änderungen an `setup_classnames.sqf`, `opt_flag.sqf`, `fn_setFlagOwner.sqf` und anderen beteiligten Skripts. Komplett überholt. Alle Flaggen, deren Variablenname mit `OPT_CSAT_FLAG` bzw mit `OPT_NATO_FLAG` beginnt, werden automatisch als Sektorflaggen erkannt und auf der Karte markiert (einstellbar in `setup.sqf`). Ebenso wird automatisch ein Actionmenüeintrag hinzugefügt, der es erlaubt, die Flagge zu ziehen. Eintrag ist nur sichtbar, wenn Mission gestartet (nach Waffenruhe) und wenn noch Spielzeit übrig (playTime > 0). Code stark refactored und vereinfacht.
