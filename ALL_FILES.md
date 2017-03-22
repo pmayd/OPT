@@ -5,8 +5,8 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
   <thead>
     <tr>
       <th rowspan="2"> Skript </th>
-      <th rowspawn="2"> Pfad </th>      <th colspan="5"> Aufruf </th>
-      <th rowspawn="2"> Anmerkung </th>
+      <th rowspan="2"> Pfad </th>      <th colspan="5"> Aufruf </th>
+      <th rowspan="2"> Anmerkung </th>
     </tr>
     <tr>
       <th></th>
