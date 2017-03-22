@@ -4,10 +4,9 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
 <table>
   <thead>
     <tr>
-      <th> Skript </th>
-      <th> Pfad </th>
-      <th colspan="5"> Aufruf </th>
-      <th> Anmerkung </th>
+      <th rowspan="2"> Skript </th>
+      <th rowspawn="2"> Pfad </th>      <th colspan="5"> Aufruf </th>
+      <th rowspawn="2"> Anmerkung </th>
     </tr>
     <tr>
       <th></th>
