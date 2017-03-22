@@ -29,7 +29,7 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <td></td>
       <td></td>
       <td></td>
-      <td>Wird in MP als letztes Skript ausgeführt, ruft weitere Skripte auf</td>
+      <td>Wird im MP als letztes Skript ausgeführt, ruft weitere Skripte auf</td>
     </tr> 
     <tr>
       <td><code>onPlayerRespawn.sqf</code></td>      
