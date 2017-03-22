@@ -1,7 +1,7 @@
 # Übersicht über alle Skripte
 Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel aufgerufen werden. Die Tabelle soll vor allem helfen, auf einen Blick wesentliche Zusammenhänge zu erkennen
 
-<table>
+<table text-align="center">
   <thead>
     <tr>
       <th> Skript </th>
