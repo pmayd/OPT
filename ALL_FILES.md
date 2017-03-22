@@ -19,10 +19,10 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
     </tr>
   </thead>
   <tbody>
-    <tr text-align="center">
+    <tr>
       <td><code>init.sqf</code></td>      
       <td>./</td>
-      <td>[x]</td>
+      <td text-align="center">[x]</td>
       <td></td>
       <td></td>
       <td></td>
