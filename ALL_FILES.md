@@ -18,8 +18,8 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <th>Trigger</th>
     </tr>
   </thead>
-  <tbody style="text-align: center">
-    <tr>
+  <tbody>
+    <tr text-align="center">
       <td><code>init.sqf</code></td>      
       <td>./</td>
       <td>[x]</td>
