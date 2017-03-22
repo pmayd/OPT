@@ -22,7 +22,7 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
     <tr>
       <td><code>init.sqf</code></td>      
       <td>./</td>
-      <td><center>[x]</center></td>
+      <th>[x]</th>
       <td></td>
       <td></td>
       <td></td>
