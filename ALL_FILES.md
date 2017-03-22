@@ -9,14 +9,11 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <th rowspan="2"> Anmerkung </th>
     </tr>
     <tr>
-      <th></th>
-      <th></th>
       <th>Event Script</th>
       <th>Script</th>
       <th>addAction</th>
       <th>Event Handler</th>
       <th>Trigger</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
