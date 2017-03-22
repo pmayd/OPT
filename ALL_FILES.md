@@ -7,6 +7,7 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <th> Skript </th>
       <th> Pfad </th>
       <th colspan="5"> Aufruf </th>
+      <th> Anmerkung </th>
     </tr>
     <tr>
       <th></th>
@@ -16,6 +17,7 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <th>addAction</th>
       <th>Event Handler</th>
       <th>Trigger</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -27,6 +29,17 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <td></td>
       <td></td>
       <td></td>
+      <td>Wird in MP als letztes Skript ausgeführt, ruft weitere Skripte auf</td>
+    </tr> 
+    <tr>
+      <td><code>onPlayerRespawn.sqf</code></td>      
+      <td>./</td>
+      <th>[x]</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Wird nach Respawn **und** zu Missionsbeginn ausgewählt, da <code>respawnOnStart=0</code></td>
     </tr>  
   </tbody>
 </table>
