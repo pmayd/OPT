@@ -1,7 +1,7 @@
 # Übersicht über alle Skripte
 Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel aufgerufen werden. Die Tabelle soll vor allem helfen, auf einen Blick wesentliche Zusammenhänge zu erkennen
 
-<table text-align="center">
+<table>
   <thead>
     <tr>
       <th> Skript </th>
@@ -18,7 +18,7 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <th>Trigger</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody style="text-align: center">
     <tr>
       <td><code>init.sqf</code></td>      
       <td>./</td>
