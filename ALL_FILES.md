@@ -39,7 +39,7 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <td></td>
       <td></td>
       <td></td>
-      <td>Wird nach Respawn **und** zu Missionsbeginn ausgewählt, da <code>respawnOnStart=0</code></td>
+      <td>Wird nach Respawn <strong>und</strong> zu Missionsbeginn ausgewählt, da <code>respawnOnStart=0</code></td>
     </tr>  
   </tbody>
 </table>
