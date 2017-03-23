@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=137;
+	toggles=9;
 	class ItemIDProvider
 	{
 		nextID=747;
@@ -8870,7 +8870,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11656.768,6.9514389,13153.935};
+						position[]={11657.656,6.9514389,13154.763};
 					};
 					side="West";
 					flags=6;
@@ -8953,10 +8953,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11660.938,6.9499998,13154.42};
+				position[]={11661.826,6.949707,13155.248};
 			};
 			id=746;
 			type="ModuleCurator_F";
+			atlOffset=-0.00029277802;
 			class CustomAttributes
 			{
 				class Attribute0
