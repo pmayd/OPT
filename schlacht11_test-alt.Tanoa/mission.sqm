@@ -15,7 +15,7 @@ class EditorData
 		pos[]={7630.6997,40.809166,14771.649};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -28,7 +28,7 @@ addons[]=
 	"A3_Structures_F_Mil_Flags",
 	"opt_a3_vehicles",
 	"A3_Modules_F",
-	"tfar_core",
+	"task_force_radio_items",
 	"opt_a3_core",
 	"opt_a3_characters",
 	"A3_Modules_F_Curator_Curator"
@@ -78,9 +78,10 @@ class AddonsMetaData
 		};
 		class Item6
 		{
-			className="tfar_core";
-			name="TFAR - Core";
-			author="Task Force Arrowhead Radio Team";
+			className="task_force_radio_items";
+			name="task_force_radio_items";
+			author="[TF]Nkey";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
 		};
 		class Item7
 		{
@@ -1120,6 +1121,7 @@ class Mission
 			description="Maintainer";
 			id=389;
 			type="Logic";
+			atlOffset=-0.00050735474;
 		};
 		class Item57
 		{
@@ -1130,12 +1132,12 @@ class Mission
 				angles[]={5.8509469,0,0.18969145};
 			};
 			id=390;
-			type="TFAR_ModuleTaskForceRadioEnforceUsage";
+			type="tfar_ModuleTaskForceRadioEnforceUsage";
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="TFAR_ModuleTaskForceRadioEnforceUsage_radio_channel_password";
+					property="tfar_ModuleTaskForceRadioEnforceUsage_radio_channel_password";
 					expression="_this setVariable ['radio_channel_password',_value,true];";
 					class Value
 					{
@@ -1154,7 +1156,7 @@ class Mission
 				};
 				class Attribute1
 				{
-					property="TFAR_ModuleTaskForceRadioEnforceUsage_RiflemanRadio";
+					property="tfar_ModuleTaskForceRadioEnforceUsage_RiflemanRadio";
 					expression="_this setVariable ['RiflemanRadio',_value,true];";
 					class Value
 					{
@@ -1173,7 +1175,7 @@ class Mission
 				};
 				class Attribute2
 				{
-					property="TFAR_ModuleTaskForceRadioEnforceUsage_radio_channel_name";
+					property="tfar_ModuleTaskForceRadioEnforceUsage_radio_channel_name";
 					expression="_this setVariable ['radio_channel_name',_value,true];";
 					class Value
 					{
@@ -1192,7 +1194,7 @@ class Mission
 				};
 				class Attribute3
 				{
-					property="TFAR_ModuleTaskForceRadioEnforceUsage_same_sw_frequencies_for_side";
+					property="tfar_ModuleTaskForceRadioEnforceUsage_same_sw_frequencies_for_side";
 					expression="_this setVariable ['same_sw_frequencies_for_side',_value,true];";
 					class Value
 					{
@@ -1211,7 +1213,7 @@ class Mission
 				};
 				class Attribute4
 				{
-					property="TFAR_ModuleTaskForceRadioEnforceUsage_TeamLeaderRadio";
+					property="tfar_ModuleTaskForceRadioEnforceUsage_TeamLeaderRadio";
 					expression="_this setVariable ['TeamLeaderRadio',_value,true];";
 					class Value
 					{
@@ -1230,8 +1232,8 @@ class Mission
 				};
 				class Attribute5
 				{
-					property="TFAR_ModuleTaskForceRadioEnforceUsage_full_duplex";
-					expression="_this setVariable ['full_duplex',_value,true];";
+					property="tfar_ModuleTaskForceRadioEnforceUsage_same_lr_frequencies_for_side";
+					expression="_this setVariable ['same_lr_frequencies_for_side',_value,true];";
 					class Value
 					{
 						class data
@@ -1249,26 +1251,7 @@ class Mission
 				};
 				class Attribute6
 				{
-					property="TFAR_ModuleTaskForceRadioEnforceUsage_same_lr_frequencies_for_side";
-					expression="_this setVariable ['same_lr_frequencies_for_side',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="TFAR_ModuleTaskForceRadioEnforceUsage_terrain_interception_coefficient";
+					property="tfar_ModuleTaskForceRadioEnforceUsage_terrain_interception_coefficient";
 					expression="_this setVariable ['terrain_interception_coefficient',_value,true];";
 					class Value
 					{
@@ -1285,7 +1268,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=8;
+				nAttributes=7;
 			};
 		};
 		class Item58
