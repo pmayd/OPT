@@ -102,7 +102,7 @@ class opt_vehicleorder_dialog
 			colorBackgroundActive[] = {1,0,0,0.7};
 			colorActive[] = {1,0,0,0.7};
 			tooltip = "Verkaufe Fahrzeug auf dem Bestell-Pad";
-			action = "[] call opt_fnc_sellVehicle";
+			action = "[] call opt_fnc_sellVehicle; closeDialog 0";
 		};
 		#endif
 	};
