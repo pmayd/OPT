@@ -1,20 +1,10 @@
 /**
 registriert alle Events via CBA Event Handling 
-wird in der init.sqf aufgerufen
+wird in der initServer.sqf aufgerufen
 */
-
-// fügt einen AddAction Eintrag hinzu
-["opt_eh_client_add_action", {
-	params ["_obj", "_parameter"];
-
-	_obj addAction _parameter;
-
-}] call CBA_fnc_addEventHandler;
 
 // loggt zerstörte Fahrzeuge
 ["opt_eh_server_log_vec_destroyed", {
-	if (!isServer) exitWith{};
-
 	private _vec = param [0, objNull];
 	private _killer = param [1, objNull];
 
@@ -61,8 +51,6 @@ wird in der init.sqf aufgerufen
 
 // schreibt eine log Nachricht in die SERVER-RPT
 ["opt_eh_server_log_write", {
-	if (!isServer) exitWith{};
-
 	params ["_category","_message"];
 
 	private _timestemp = [serverTime - opt_startTime] call CBA_fnc_formatElapsedTime;
@@ -74,8 +62,6 @@ wird in der init.sqf aufgerufen
 
 // update budget
 ["opt_eh_server_update_budget", {
-	if (!isServer) exitWith{};
-
 	params ["_side", "_unitCost", "_sign"];
 
 	private _cat = "Budget aktualisiert";

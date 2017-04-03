@@ -17,7 +17,7 @@ onLoadMissionTime = 0;
 respawnButton = 0;
 respawnDialog = 0;
 respawn = 3; //auf 3 zurückgesetzt
-respawnOnStart = 0;//Dont respawn on start. Run respawn script on start.
+respawnOnStart = -1;//Dont respawn on start. Dont run respawn script on start.
 #ifdef __RESPAWN_DELAY__
 respawndelay = __RESPAWN_DELAY__;
 #endif

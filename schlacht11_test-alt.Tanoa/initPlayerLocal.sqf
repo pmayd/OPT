@@ -1,6 +1,11 @@
-﻿//by psycho
+//by psycho
 //init only by client
-diag_log format ["%1 --- TcB i_client.sqf startet",diag_ticktime];
+#include "setup\setup.sqf";
+diag_log format ["%1 --- TcB initPlayerLocal.sqf startet",diag_ticktime];
+
+// legt alle wichtigen classnames wie Flaggen und Einheiten fest
+#include "setup\setup_classnames.sqf"
+
 if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehicleLocal [0,0,0]};
 
 // starte alle addon Scripte
@@ -21,6 +26,9 @@ if (OPT_TFAR_INTERCEPTION == 1) then {
 // startet das End-Skript. Wartet, bis Ende eintrifft
 [] execVM "common\client\opt_endMission.sqf";
 
+// lädt die CBA EH für clients
+#include "common\client\i_events.sqf"
+
 /**
 Display Event Handler auf Tastendruck
 Sind auch nach Respawn persistent
@@ -38,8 +46,6 @@ if (player isKindOf "OPT_Maintainer" || getPlayerUID player == "7656119797767603
 Event Handler für Spieler
 Sind auch nach Respawn persistent
 */
-// entferne alle zugewiesenen Event Handler
-
 #ifdef __WEAPON_SAVER__
 	/* aktuell keine Bedeutung? */
 	player addEventHandler ["killed", {[_this select 0, [missionNamespace, "tcb_inv"]] call BIS_fnc_saveInventory}];
@@ -229,6 +235,9 @@ if (isNil "respawndelay") then {
 	missionNamespace setVariable ["tcb_ais_respawndelay", 999];
 };
 
+// legt alle bestellbaren Fahrzeuge und Kisten fest
+#include "dialogs\vehiclePool_war.hpp"
+
 tcb_ais_killcam_quotes = [
 	[(localize "STR_QUOTE_1"),(localize "STR_AUTHOR_1")],
 	[(localize "STR_QUOTE_2"),(localize "STR_AUTHOR_2")],
@@ -275,4 +284,4 @@ tcb_ais_killcam_quotes = [
 	[(localize "STR_QUOTE_LAST"),(localize "STR_AUTHOR_LAST")]
 ];
 
-diag_log format ["%1 --- TcB i_client.sqf processed",diag_ticktime];
+diag_log format ["%1 --- TcB initPlayerLocal.sqf processed",diag_ticktime];

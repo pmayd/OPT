@@ -1,4 +1,5 @@
 #include "..\macros.sqf"
+
 /**
 * SETUP FILE
 */
@@ -196,3 +197,19 @@
 // wenn __ORDER_CAN_SELL__ aktiv, legt __ORDER_SELL_WITH_DAMAGE__ fest, ob beim Verkauf Schaden berücksichtigt wird
 // wenn aktiv, wird der Verkaufspreis um den Schaden reduziert
 //#define __ORDER_SELL_WITH_DAMAGE__
+
+/**
+* KOSTEN
+*/
+
+// Startbudget NATO
+#define __BUDGET_NATO__ 2e6
+
+// Startbudget CSAT
+#define __BUDGET_CSAT__ 2e6
+
+// Dispo-Kredit für beide Seiten, falls Budget < 0
+#define __BUDGET_DISPO__ 1e5
+
+// wie viel ist eine Einheit wert? Wird für jeden Respawn vom Budget abgezogen.
+#define __RESPAWN_COST__ 5000

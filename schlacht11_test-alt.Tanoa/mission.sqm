@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11668.505,10.720817,13151.21};
-		dir[]={-0.95806098,-0.1739116,0.22786106};
-		up[]={-0.16920787,0.98475939,0.040244073};
-		aside[]={0.23138726,-2.3984467e-007,0.97288859};
+		pos[]={11649.964,16.912138,13128.406};
+		dir[]={0.10253022,-0.20577972,0.97323811};
+		up[]={0.021561533,0.9785946,0.20466293};
+		aside[]={0.99452317,-2.1752203e-007,-0.10477235};
 	};
 };
 binarizationWanted=0;
@@ -28,7 +28,7 @@ addons[]=
 	"A3_Structures_F_Mil_Flags",
 	"opt_a3_vehicles",
 	"A3_Modules_F",
-	"task_force_radio_items",
+	"tfar_core",
 	"opt_a3_core",
 	"opt_a3_characters",
 	"A3_Modules_F_Curator_Curator"
@@ -78,10 +78,9 @@ class AddonsMetaData
 		};
 		class Item6
 		{
-			className="task_force_radio_items";
-			name="task_force_radio_items";
-			author="[TF]Nkey";
-			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+			className="tfar_core";
+			name="TFAR - Core";
+			author="Task Force Arrowhead Radio Team";
 		};
 		class Item7
 		{
@@ -121,25 +120,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -171,6 +151,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
 				};
 			};
 		};
@@ -1156,12 +1155,12 @@ class Mission
 				angles[]={5.8509469,0,0.18969145};
 			};
 			id=390;
-			type="tfar_ModuleTaskForceRadioEnforceUsage";
+			type="TFAR_ModuleTaskForceRadioEnforceUsage";
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="tfar_ModuleTaskForceRadioEnforceUsage_radio_channel_password";
+					property="TFAR_ModuleTaskForceRadioEnforceUsage_radio_channel_password";
 					expression="_this setVariable ['radio_channel_password',_value,true];";
 					class Value
 					{
@@ -1180,7 +1179,7 @@ class Mission
 				};
 				class Attribute1
 				{
-					property="tfar_ModuleTaskForceRadioEnforceUsage_RiflemanRadio";
+					property="TFAR_ModuleTaskForceRadioEnforceUsage_RiflemanRadio";
 					expression="_this setVariable ['RiflemanRadio',_value,true];";
 					class Value
 					{
@@ -1199,7 +1198,7 @@ class Mission
 				};
 				class Attribute2
 				{
-					property="tfar_ModuleTaskForceRadioEnforceUsage_radio_channel_name";
+					property="TFAR_ModuleTaskForceRadioEnforceUsage_radio_channel_name";
 					expression="_this setVariable ['radio_channel_name',_value,true];";
 					class Value
 					{
@@ -1218,7 +1217,7 @@ class Mission
 				};
 				class Attribute3
 				{
-					property="tfar_ModuleTaskForceRadioEnforceUsage_same_sw_frequencies_for_side";
+					property="TFAR_ModuleTaskForceRadioEnforceUsage_same_sw_frequencies_for_side";
 					expression="_this setVariable ['same_sw_frequencies_for_side',_value,true];";
 					class Value
 					{
@@ -1237,7 +1236,7 @@ class Mission
 				};
 				class Attribute4
 				{
-					property="tfar_ModuleTaskForceRadioEnforceUsage_TeamLeaderRadio";
+					property="TFAR_ModuleTaskForceRadioEnforceUsage_TeamLeaderRadio";
 					expression="_this setVariable ['TeamLeaderRadio',_value,true];";
 					class Value
 					{
@@ -1256,8 +1255,8 @@ class Mission
 				};
 				class Attribute5
 				{
-					property="tfar_ModuleTaskForceRadioEnforceUsage_same_lr_frequencies_for_side";
-					expression="_this setVariable ['same_lr_frequencies_for_side',_value,true];";
+					property="TFAR_ModuleTaskForceRadioEnforceUsage_full_duplex";
+					expression="_this setVariable ['full_duplex',_value,true];";
 					class Value
 					{
 						class data
@@ -1275,7 +1274,26 @@ class Mission
 				};
 				class Attribute6
 				{
-					property="tfar_ModuleTaskForceRadioEnforceUsage_terrain_interception_coefficient";
+					property="TFAR_ModuleTaskForceRadioEnforceUsage_same_lr_frequencies_for_side";
+					expression="_this setVariable ['same_lr_frequencies_for_side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="TFAR_ModuleTaskForceRadioEnforceUsage_terrain_interception_coefficient";
 					expression="_this setVariable ['terrain_interception_coefficient',_value,true];";
 					class Value
 					{
@@ -1292,7 +1310,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=7;
+				nAttributes=8;
 			};
 		};
 		class Item58
@@ -8877,7 +8895,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11657.656,6.9514389,13154.763};
+						position[]={11644.573,6.9514093,13148.058};
 					};
 					side="West";
 					flags=6;
@@ -8889,6 +8907,7 @@ class Mission
 					};
 					id=744;
 					type="OPT_NATO_Offizier_T";
+					atlOffset=-2.9563904e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -8937,6 +8956,7 @@ class Mission
 			{
 			};
 			id=742;
+			atlOffset=-2.9563904e-005;
 		};
 		class Item99
 		{

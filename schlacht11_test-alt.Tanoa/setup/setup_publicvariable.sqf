@@ -1,10 +1,13 @@
 // setup PublicVariable
 // executed only from the Server one time
 // define all public variables here
+#include "setup.sqf"
 
 // Budget wird im Trainingsmodus überschrieben und auf unendlich gesetzt!
-opt_west_budget = 2000000;
-opt_east_budget = 2000000;
+opt_west_budget = __BUDGET_NATO__;
+opt_east_budget = __BUDGET_CSAT__;
+opt_dispo = __BUDGET_DISPO__; // kann für zusätzliche Einkäufe belastet werden
+opt_respawn_cost = __RESPAWN_COST__;
 
 if (OPT_TRAINING == 1) then {
 	opt_west_budget = 1e10;
@@ -13,6 +16,8 @@ if (OPT_TRAINING == 1) then {
 
 publicVariable "opt_west_budget";
 publicVariable "opt_east_budget";
+publicVariable "opt_dispo";
+publicVariable "opt_respawn_cost";
 
 opt_startTime = serverTime;			// nicht time! time ist 0, da time Zeit von Missionsbeginn mitteilt. serverTime hingegen wird
 // immer synchronisiert und beinhaltet Zeit seit Serverstart

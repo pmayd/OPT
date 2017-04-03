@@ -1,5 +1,10 @@
-﻿//by psycho
-#include "macros.sqf"
+//by psycho
+#include "setup\setup.sqf"
+
+diag_log format ["%1 --- TcB initServer.sqf startet", diag_ticktime];
+
+// legt alle wichtigen classnames wie Flaggen und Einheiten fest
+#include "setup\setup_classnames.sqf"
 
 //init only by server
 ["Initialize"] call BIS_fnc_dynamicGroups;
@@ -18,6 +23,7 @@ addMissionEventHandler ["HandleDisconnect", {
 }];
 
 #include "setup\setup_publicVariable.sqf"
+#include "common\server\i_events.sqf"
 
 #ifdef __OPT_Sector_Message__
 	_allFlagPoles = [];
@@ -67,9 +73,12 @@ addMissionEventHandler ["HandleDisconnect", {
 		}];
 	};
 
+	// Beginnt mit dem Counter für die Spielzeit
+	// startet erst, wenn MissionStarted = true gesetzt wird
 	execVM "common\server\opt_countdown.sqf";
 	//[] spawn compileFinal preprocessFileLineNumbers "addons\opt3_sidemissions\sm3_createTrucks.sqf";
 	
+	// EH für alle im Editor gesetzten Fahrzeuge: loggt Zerstörung
 	{
 		_x addMPEventHandler ["MPkilled", {
 			params ["_vec", "_killer"];
@@ -80,4 +89,4 @@ addMissionEventHandler ["HandleDisconnect", {
 	execVM "addons\garbage\garbageCollector.sqf";
 };
 
-diag_log format ["%1 --- TcB i_server.sqf processed", diag_ticktime];
+diag_log format ["%1 --- TcB initServer.sqf processed", diag_ticktime];

@@ -1,5 +1,15 @@
+/**
+* EVENT Script, wird bei Respawn ausgeführt.
+* Wegen respawnOnStart = -1 in description.ext nicht bei Missionsbeginn
+*/
 #include "setup\setup.sqf"
 diag_log format ["%1 --- TcB onPlayerRespawn.sqf startet", diag_ticktime];
+
+params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
+
+// Kosten für Seite abziehen + log
+["opt_eh_server_update_budget", [playerSide, opt_respawn_cost, "-"]] call CBA_fnc_serverEvent;
+["opt_eh_server_log_write", ["Spieler Respawn", format["Spieler: %1 - Kosten: %2", name player, opt_respawn_cost]]] call CBA_fnc_localEvent;
 
 /*
 _curators = [];

@@ -45,8 +45,11 @@ if (OPT_TRAINING == 0) then {
 _side_Budget = if (playerSide == west) then {opt_west_budget} else {opt_east_budget};
 
 _displayName = getText (configFile >> "CfgVehicles" >> _unitType >> "displayName");
-if (_unitCost > _side_Budget) exitWith {
-	txt = "Nicht ausreichend Budget";
+
+// Prüfe, ob aktuelle Kosten größer sind als aktuelles Budget + Dispo
+// wenn Budget < 0, dann kann noch bis dispo eingekauft werden (siehe setup_publicvariable)
+if (_unitCost > (_side_Budget + opt_dispo)) exitWith {
+	txt = "Budget reicht nicht aus, Dispo überzogen!";
 	[format ["<t size='0.8' shadow='1' color='#ff0000'>%1</t>",txt], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
 };
 
