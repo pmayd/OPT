@@ -44,18 +44,6 @@ if (isnil "opt_timeFormat") then {
 	};
 };
 
-/*
-// By James: Ersetzt durch Timer in HUD
-if (isnil "opt_showCountdown") then {
-	opt_showCountdown = {
-		
-		if (MissionStarted) then {
-			["<t size='0.8' shadow='1' color='#ffffff'>Mission gestartet!</t>", (safeZoneX - 0.2), (safeZoneY + 0.3), 3, 1, 0, 2] spawn BIS_fnc_dynamicText;
-		};
-	};
-};
-*/
-
 // FOR SERVER ONLY
 if (isServer) then {
 	// By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen

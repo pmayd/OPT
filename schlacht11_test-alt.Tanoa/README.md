@@ -228,7 +228,7 @@ To update/change the vehicle pool you have to change the data files. You can fou
 - fixed: add some security checks for possible nil states of some vars
 - changed: new dynamic text animations in different places (looks better and don't cut to long text blocks)
 - changed: remove TFAR frequencies module (standard frequencies are set by a script)
-- changed: switch OPT_GPSunits definition to setup_classnames.sqf
+- changed: switch opt_gps_units definition to setup_classnames.sqf
 - changed: switch "Truppführer" to "Offizier" on both sides (again 3 units per side have access to the GPS)
 - changed: remove some unused functions / clean-up
 - changed: disable those fucking rabbits (performance+)

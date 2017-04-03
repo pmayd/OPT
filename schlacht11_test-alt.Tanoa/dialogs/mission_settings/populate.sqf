@@ -32,7 +32,7 @@ if(isNil "group_index_distance") then {group_index_distance = 0};
 
 
 // Populate the viewdistance setting list box
-{_viewDistance lbAdd str(tcb_v_distance_list select _forEachIndex)} forEach tcb_v_distance_list;
+{_viewDistance lbAdd str(opt_v_distance_list select _forEachIndex)} forEach opt_v_distance_list;
 if(lbCurSel _viewDistance < 0) then {
 	_viewDistance lbSetCurSel group_index_distance;
 } else {

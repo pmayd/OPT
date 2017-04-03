@@ -1,15 +1,18 @@
 // by psycho
 // check if vehicle need a flip
-private ["_cond","_obj"];
+params ["_target", "_caller"];
 
-_obj = cursorTarget;
+_cond = false;
 
-_cond = [true, false] select {
-	(speed _obj < 1) and 
-	((_obj distance player) < 10) and 
-	(_obj isKindOf 'landVehicle') and 
-	(alive _obj) and 
-	((vectorUp _obj) select 2 < 0.4)
+if 
+	(
+		(speed _target < 1) and 
+		((_target distance _caller) < 10) and 
+		(_target isKindOf 'landVehicle') and 
+		(alive _target) and 
+		((vectorUp _target) select 2 < 0.4)
+	) then {
+	_cond = true;
 };
 
 _cond

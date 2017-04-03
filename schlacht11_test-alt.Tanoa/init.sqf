@@ -16,12 +16,6 @@ _paramNames = ("true" configClasses (missionConfigFile >> "Params")) apply {conf
 	missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue];
 } forEach _paramNames;
 
-// By James: Verschoben aus i_server hierher, da init.sqf für jeden Spieler ausgeführt wird!
-#ifdef __MAP__
-	if (player hasWeapon "ItemMap") then {player removeWeapon "ItemMap"};
-	if (player hasWeapon "ItemGPS") then {player removeWeapon "ItemGPS"};
-#endif
-
 #ifdef __VIEWDISTANCE__
 	setViewDistance __VIEWDISTANCE__;
 #endif
@@ -36,7 +30,11 @@ _paramNames = ("true" configClasses (missionConfigFile >> "Params")) apply {conf
 	};
 #endif
 
+// legt alle wichtigen classnames wie Flaggen und Einheiten fest
 #include "setup\setup_classnames.sqf"
+
+// registriert auf allen Systemen die CBA EH
+#include "i_events.sqf";
 
 if (isNil "tcb_netinit") then {
 	__ccppfln(common\x_netinit.sqf);
@@ -45,6 +43,7 @@ if (isNil "tcb_netinit") then {
 };
 tf_give_microdagr_to_soldier = false;
 
+// legt alle bestellbaren Fahrzeuge und Kisten fest
 #include "dialogs\vehiclePool_war.hpp"
 if (isServer) then {
 

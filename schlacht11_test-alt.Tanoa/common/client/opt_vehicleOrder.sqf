@@ -17,7 +17,7 @@ opt_vehicleType = _this select 3;
 
 
 opt_orderDialogObjects = switch (opt_vehicleType) do {
-    case "vehicles" : {if (_side == west) then {opt_vehiclesNato} else {opt_vehiclesCsat}};
+  case "vehicles" : {if (_side == west) then {opt_vehiclesNato} else {opt_vehiclesCsat}};
 	case "choppers" : {if (_side == west) then {opt_choppersNato} else {opt_choppersCsat}};
 	case "armored" : {if (_side == west) then {opt_armoredNato} else {opt_armoredCsat}};
 	case "supplies" : {if (_side == west) then {opt_suppliesNato} else {opt_suppliesCsat}};
@@ -25,7 +25,6 @@ opt_orderDialogObjects = switch (opt_vehicleType) do {
 };
 
 // player sideChat format ["%1", opt_orderDialogObjects];
-
 createDialog "opt_vehicleorder_dialog";
 disableSerialization;
 
@@ -44,7 +43,10 @@ _txt = if (_side_Budget > 999999) then {
 _budget ctrlSetText _txt;
 
 _pool = [];
-{if ((_x select 1) > 0) then {_pool pushBack _x}} forEach opt_orderDialogObjects;
+{
+	if ((_x select 1) > 0) then {_pool pushBack _x}
+
+} forEach opt_orderDialogObjects;
 opt_orderDialogObjects = _pool;
 
 {

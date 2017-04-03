@@ -41,7 +41,7 @@ closeDialog 0;
 
 [1,nil,false] spawn BIS_fnc_cinemaBorder;
 sleep 1;
-[parseText format [ "<t align='right' size='1.2'><t font='PuristaBold' size='1.6'>""%1""</t><br/>%2</t>", __MISSION_NAME__, "von: " + __MADEBY__], true, nil, 7, 0.7, 0] spawn BIS_fnc_textTiles;
+[parseText format [ "<t align='right' size='1.2'><t font='PuristaBold' size='1.6'>""%1""</t><br/>%2</t>", __MISSION_NAME__, "von: " + __MADE_BY__], true, nil, 7, 0.7, 0] spawn BIS_fnc_textTiles;
 setViewDistance _viewDistance;
 
 sleep 3;

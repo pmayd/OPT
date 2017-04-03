@@ -23,4 +23,4 @@ waitUntil {time > 1};
 	_marker setMarkerBrush "SOLID";
 	_marker setMarkerAlpha 1;
 	_flag setVariable ["opt_flagMarker", _marker];
-} forEach (OPT_CSAT_FLAGs + OPT_NATO_FLAGs);
+} forEach (opt_csat_flags + opt_nato_flags);

@@ -3,7 +3,7 @@ params ["_unitType", "_spawnID", "_isFlat"];
 
 // create Vehicle
 _spawnpos = if (typeName _spawnID == "OBJECT") then {getPosATL _spawnID} else {_spawnID};
-_unit = createVehicle [_unitType, _spawnpos, [], 0, "NONE"];
+_unit = createVehicle [_unitType, _spawnpos, [], 0, "CAN_COLLIDE"];
 
 //added by psycho - check for free space to place the vehicle
 _svec = sizeOf _unitType;
@@ -25,26 +25,15 @@ if (surfaceIsWater _spawnpos) then {
 };
 
 _unit addMPEventHandler ["MPKilled", {
-	private "_vec";
-	_vec = _this select 0;
-	if (isNil "_vec") exitWith {diag_log "undefined vehicle destroyed"};
-	_faction = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'faction'));
-	_name = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'displayName'));
-	_txt = format ['########## Fahrzeug zerstoert: %1 %2 ##########', _faction, _name];
-	diag_log _txt;
+	params ["_vec", "_killer"];
+	["opt_eh_server_log_vec_destroyed", [_vec, _killer]] call CBA_fnc_serverEvent;	
 }];
 
-/*
-_unit addEventHandler ["Killed", {
-	[_this select 0] call opt_fnc_vehicleLogEvent;
-	
-	[_this select 0] spawn {
-		(_this select 0) removeAllEventHandlers 'killed';
-		sleep 240;
-		deleteVehicle (_this select 0);
-	};
-}];
-*/
+// fügt auf allen clients einen Add Action Eintrag für umgekippte Fahrzeuge hinzu
+// ersetzt player add action in onPlayerRespawn (viel performanter, da kein pulling)
+if (_unit isKindOf "AllVehicles") then {
+	["opt_eh_client_add_action", [_unit, ["Fahrzeug aufrichten" call XTuerkiesText, "call opt_fnc_unFlip", [], 0, false, true, "", "[_target, _this] call opt_fnc_flipCheck"]]] call CBA_fnc_globalEvent;
+};
 
 // Create Vehicle Crew
 _uavs = [

@@ -5,8 +5,8 @@ _typeOfPlayer = typeOf _player;
 _bad_item_used = false;
 
 // check launcher
-if !(_typeOfPlayer in opt_Rocketmen) then {
-	{if (_x in opt_Launchers) then {_player removeWeapon _x; _bad_item_used = true}} forEach (weapons _player);
+if !(_typeOfPlayer in opt_rocketmen) then {
+	{if (_x in opt_launchers) then {_player removeWeapon _x; _bad_item_used = true}} forEach (weapons _player);
 };
 // check UAV Terminal
 if !(_typeOfPlayer in opt_operator) then {
@@ -30,10 +30,10 @@ if (_pw != "") then {
 	
 		_remove_pm = false;
 		switch (true) do {
-			case (_typeOfPlayer in opt_Snipers) : {if (_w_typeString != "SRIFLE") then {_remove_pm = true}};	// sniper
-			case (_typeOfPlayer in opt_SoldatMG) : {if (!(_w_typeString in ["LMG","MMG"])) then {_remove_pm = true}};	// machine gunner
-			case (_typeOfPlayer in tcb_crew || {_typeOfPlayer in tcb_pilots}) : {if (!(_w_typeString in ["HGUN","SMG"])) then {_remove_pm = true;}};	// crew
-			case (_typeOfPlayer in opt_Grenadiers) : {
+			case (_typeOfPlayer in opt_snipers) : {if (_w_typeString != "SRIFLE") then {_remove_pm = true}};	// sniper
+			case (_typeOfPlayer in opt_soldatMG) : {if (!(_w_typeString in ["LMG","MMG"])) then {_remove_pm = true}};	// machine gunner
+			case (_typeOfPlayer in opt_crew || {_typeOfPlayer in opt_pilots}) : {if (!(_w_typeString in ["HGUN","SMG"])) then {_remove_pm = true;}};	// crew
+			case (_typeOfPlayer in opt_grenadiers) : {
 				_w_typeString = if (toUpper(_w_typeStringArray select 0) == "OPT") then {toUpper(_w_typeStringArray select 3)} else {toUpper(_w_typeStringArray select 2)};
 				if (_w_typeString != "GL") then {_remove_pm = true};	// grenadier
 			};

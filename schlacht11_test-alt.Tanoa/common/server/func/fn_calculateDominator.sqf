@@ -10,7 +10,7 @@ _west_owner = 0;
 	if (_side_flag == east) then {
 		_east_owner = _east_owner + 1;
 	};
-} forEach OPT_CSAT_FLAGs;
+} forEach opt_csat_flags;
 
 {
 	_flag = format ["%1",_x];
@@ -18,11 +18,11 @@ _west_owner = 0;
 	if (_side_flag == west) then {
 		_west_owner = _west_owner + 1;
 	};
-} forEach OPT_NATO_FLAGs;
+} forEach opt_nato_flags;
 */
 
 // calculate every flag, regardless witch side was defined before - make it possible to generate assyncrone gameplay
-_allFlags = OPT_CSAT_FLAGs + OPT_NATO_FLAGs;
+_allFlags = opt_csat_flags + opt_nato_flags;
 {
 	_side_flag = _x getVariable ["owner", nil];
 	if (_side_flag == west) then {

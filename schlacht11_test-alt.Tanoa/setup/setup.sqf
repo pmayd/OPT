@@ -12,9 +12,9 @@
 // hier den Missionsnamen festlegen
 #define __MISSION_NAME__ "OPT - Schlacht Nr xx"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
-#define __VERSION__ Build on version 1.028
+#define __VERSION__ Build on version 1.03
 // made by
-#define __MADEBY__ "Psychobastard und X-one"
+#define __MADE_BY__ "Psychobastard, X-one und James"
 // short description
 #define __MISSION_DESCRIPTION__ "This is a Operation Pandora Trigger Mission"
 
@@ -113,7 +113,7 @@
 #define __REMOVE_DEAD_AI_AND_VECS__ [east,resistance,west]
 
 // wenn nicht auskommentiert mit // dann werden für definierte Spieler Marker auf der Karte erzeugt
-// sollen alle Spieler einen Marker erhalten muß auch jeder einzeln unter dem Array tcb_p_entities definiert werden --> siehe setup_classnames.sqf
+// sollen alle Spieler einen Marker erhalten muß auch jeder einzeln unter dem Array opt_p_entities definiert werden --> siehe setup_classnames.sqf
 //#define __SHOW_CUSTOM_PLAYERMARKER__
 
 // wenn nicht auskommentiert mit // dann wird ein Lobbyparameter erzeugt, mit dem man Spielerklassen die keine Piloten sind daran hindern kann ein Flugzeug/Heli zu fliegen
@@ -139,8 +139,8 @@
 // auskommentieren und weder der Spieler noch sonst eine KI Einheit hat ein NVG
 //#define __NO_NVG__
 
-// wenn nicht auskommentiert mit // spawnen alle Units (auch Spieler) ohne Map. Die Map muss explizit hinzugefügt werden (player/unit addWeapon "ACE_Map")
-//#define __MAP__
+// wenn auskommentiert mit // spawnen alle Units (auch Spieler) ohne Map. Die Map muss explizit hinzugefügt werden (player/unit addWeapon "ACE_Map")
+//#define __NO_MAP__
 
 // wenn nicht auskommentiert mit // verlieren die Spieler im Wasser nicht mehr ihre Austrüstung
 #define __STOP_ITEMS_DROPPING__
@@ -181,3 +181,18 @@
 
 // aktiviert Anzeige der Waffenruhe + Spielzeit
 #define __HUD_TIMER__
+
+/**
+* ORDER DIALOG
+*/
+
+// aktiviert eine VErkauf-Option am Bestell-Pad
+#define __ORDER_CAN_SELL__
+
+// wenn __ORDER_CAN_SELL__ aktiv, legt __ORDER_SELL_RETURN_VALUE__ den Rückgewinnungswert fest
+// sprich, Fahrzeug bringt beim Verkauf Einkaufspreis * __ORDER_SELL_RETURN_VALUE__
+#define __ORDER_SELL_RETURN_VALUE__ 0.75
+
+// wenn __ORDER_CAN_SELL__ aktiv, legt __ORDER_SELL_WITH_DAMAGE__ fest, ob beim Verkauf Schaden berücksichtigt wird
+// wenn aktiv, wird der Verkaufspreis um den Schaden reduziert
+//#define __ORDER_SELL_WITH_DAMAGE__

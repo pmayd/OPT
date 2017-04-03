@@ -1,6 +1,6 @@
 #include "setup\setup.sqf"
 
-author = "Psychobastard und X-one";
+author = __MADE_BY__;
 onLoadName = __MISSION_NAME__;
 onLoadMission = __VERSION__;
 loadScreen = "opt_a3_core\bilder\opt4_logo.paa";
@@ -93,7 +93,7 @@ class Params {
 	};
 #endif
 #ifdef __ONLY_PILOTS_CAN_FLY__
-	class tcb_b_check_pilot {
+	class OPT_ONLY_PILOTS {
 		title = "Nur Piloten können fliegen";
 		values[] = {0,1};
 		default = 1;
@@ -101,7 +101,7 @@ class Params {
 	};
 #endif
 #ifdef __ONLY_CREW_CAN_DRIVE__
-	class tcb_b_check_crew {
+	class OPT_ONLY_CREW {
 		title = "Nur Besatzungsmitglieder können Schwere Kampffahrzeuge fahren";
 		values[] = {0,1};
 		default = 1;
@@ -109,7 +109,7 @@ class Params {
 	};
 #endif
 #ifdef __ONLY_PIO_CAN_BUILD_FARPS__
-	class tcb_b_check_pio {
+	class OPT_FARP_ONLY_PIO {
 		title = "Nur Pioniere können FARP aufbauen";
 		values[] = {0,1};
 		default = 0;

@@ -1,4 +1,6 @@
-﻿#define COLOR_BUTTON_BACKGROUND {0,0,0,0.7}
+﻿#include "..\setup\setup.sqf"
+
+#define COLOR_BUTTON_BACKGROUND {0,0,0,0.7}
 #define COLOR_BUTTON_ACTIVE {0.2,0.8,0.2,0.7}
 #define COLOR_LISTBOX_BACKGROUND {0,0,0,0.85}
 
@@ -51,7 +53,7 @@ class opt_vehicleorder_dialog
 			idc = 20102;
 			colorText[] = Color_Green;
 			text = "Budget";
-			x = 0.572 * safezoneW + safezoneX;
+			x = 0.600 * safezoneW + safezoneX;
 			y = 0.798 * safezoneH + safezoneY;
 			w = 0.2515625 * safezoneW;
 			h = 0.033 * safezoneH;
@@ -86,5 +88,22 @@ class opt_vehicleorder_dialog
 			tooltip = "Dialog schliessen";
 			action = "closeDialog 0";
 		};
+		#ifdef __ORDER_CAN_SELL__
+		class order_button_verkaufen: RscButton_OPT
+		{
+			idc = 20003;
+			text = "Verkaufen";
+			x = 0.519 * safezoneW + safezoneX;
+			y = 0.798 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorText[] = {1,1,1,1};
+			colorBackground[] = COLOR_BUTTON_BACKGROUND;
+			colorBackgroundActive[] = {1,0,0,0.7};
+			colorActive[] = {1,0,0,0.7};
+			tooltip = "Verkaufe Fahrzeug auf dem Bestell-Pad";
+			action = "[] call opt_fnc_sellVehicle";
+		};
+		#endif
 	};
 };

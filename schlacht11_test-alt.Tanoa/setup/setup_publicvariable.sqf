@@ -43,7 +43,7 @@ publicVariable "opt_dominator";
 			_x setVariable ["owner", east, true];
 		};
 	};
-} forEach OPT_CSAT_FLAGs;
+} forEach opt_csat_flags;
 
 {
 	if (!isNil {_x}) then {
@@ -51,4 +51,4 @@ publicVariable "opt_dominator";
 			_x setVariable ["owner", west, true];
 		};
 	};
-} forEach OPT_NATO_FLAGs;
+} forEach opt_nato_flags;

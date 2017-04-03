@@ -21,7 +21,7 @@ addMissionEventHandler ["HandleDisconnect", {
 
 #ifdef __OPT_Sector_Message__
 	_allFlagPoles = [];
-	_allFlagPoles = OPT_CSAT_FLAGs + OPT_NATO_FLAGs;
+	_allFlagPoles = opt_csat_flags + opt_nato_flags;
 	{
 		_flag = _x;
 		_m_name = str(_flag) + str(_forEachIndex);
@@ -71,15 +71,9 @@ addMissionEventHandler ["HandleDisconnect", {
 	//[] spawn compileFinal preprocessFileLineNumbers "addons\opt3_sidemissions\sm3_createTrucks.sqf";
 	
 	{
-		diag_log format ["%1",_x];
 		_x addMPEventHandler ["MPkilled", {
-			private "_vec";
-			_vec = _this select 0;
-			if (isNil "_vec") exitWith {diag_log "undifened vehicle destroyed"};
-			_faction = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'faction'));
-			_name = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'displayName'));
-			_txt = format ['########## Fahrzeug zerstört: %1 %2 ##########', _faction, _name];
-			diag_log _txt;
+			params ["_vec", "_killer"];
+			["opt_eh_server_log_vec_destroyed", [_vec, _killer]] call CBA_fnc_serverEvent;
 		}];
 	} forEach vehicles;
 	

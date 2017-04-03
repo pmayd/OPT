@@ -7,7 +7,7 @@ _color = switch (playerSide) do {
 	default {"ColorUnknown"};
 };
 
-{[(_x select 0), [0,0],"ICON",_color,[1,1],"",0,"hd_dot"] call tcb_fnc_CreateMarkerLocal} forEach tcb_p_entities;
+{[(_x select 0), [0,0],"ICON",_color,[1,1],"",0,"hd_dot"] call tcb_fnc_CreateMarkerLocal} forEach opt_p_entities;
 
 [] spawn {
 	sleep 10;

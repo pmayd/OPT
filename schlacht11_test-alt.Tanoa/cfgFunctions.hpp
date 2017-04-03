@@ -108,6 +108,7 @@ class opt {
 		addf(iconColor);
 		addf(teleport);
 		addf(sendVehicleOrder);
+		addf(sellVehicle);
 		addf(maintainerDialog);
 		addf(maintainerActions);
 		addf(maintainerOrderVehicle);
@@ -122,7 +123,6 @@ class opt {
 		addf(spawnVehicle);
 		addf(setFlagOwner);
 		addf(calculateDominator);
-		addf(vehicleLogEvent);
 		addf(logPScore);
 	};
 };

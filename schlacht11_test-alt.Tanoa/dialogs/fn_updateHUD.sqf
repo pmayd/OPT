@@ -41,7 +41,7 @@ _control = _currentCutDisplay displayCtrl 5090;
 
 		if (_playTime > 0) then {
 
-			_timeStr = format ["Time: %1", _timeLeft];
+			_timeStr = format ["Rest-Spielzeit: %1", _timeLeft];
 			_control ctrlSetTextColor [1, 1, 1, 0.9];
 		} else {
 
@@ -81,7 +81,7 @@ _control = _currentCutDisplay displayCtrl 5090;
 _control = _currentCutDisplay displayCtrl 5101;
 #ifdef __HUD_NUMBER_PLAYERS__
 
-	_playersStr = format ["NATO %1 vs %2 CSAT (total: %3)", playersNumber west, playersNumber east, (playersNumber west) + (playersNumber east)];
+	_playersStr = format ["NATO %1 vs %2 CSAT (ges.: %3)", playersNumber west, playersNumber east, (playersNumber west) + (playersNumber east)];
 
 	// Anzeige updaten
 	// Update Text
@@ -95,7 +95,7 @@ _control = _currentCutDisplay displayCtrl 5101;
 _control = _currentCutDisplay displayCtrl 5102;
 #ifdef __HUD_SCORE__
 
-	_scoreStr = format ["Score: NATO %1:%2 CSAT", WestPoints, EastPoints];
+	_scoreStr = format ["Punktestand: NATO %1:%2 CSAT", WestPoints, EastPoints];
 
 	// Anzeige updaten
 	// Update Text

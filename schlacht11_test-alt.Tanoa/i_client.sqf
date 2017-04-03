@@ -9,10 +9,21 @@ __ccppfln(common\client\func\x_perframe.sqf);
 __cppfln(opt_TFARfrequencies,common\client\opt_TFARfrequencies.sqf);
 __cppfln(opt_tfarVehicleLr,common\client\opt_tfarVehicleLr.sqf);
 
-if ((typeOf player) in OPT_GPSunits) then {execVM "common\client\opt3_gps.sqf"};
+if ((typeOf player) in opt_gps_units) then {execVM "common\client\opt3_gps.sqf"};
+
+// call OPT specific items
+if (OPT_TFAR_INTERCEPTION == 1) then {
+	_log_briefing = player createDiaryRecord ["keys", ["gegnerischer Funk", "
+	Die Option um gegnerischen Funk (Vehicle Radios) abhören zu können ist aktiv! Die eingestellte gegnerische Frequenz kann beim entern eines gegnerischen Fahrzeuges jedoch nicht direkt abgelesen werden sondern muss selber gefunden werden.
+	"]];
+};
+
+// startet das End-Skript. Wartet, bis Ende eintrifft
+[] execVM "common\client\opt_endMission.sqf";
 
 /**
 Display Event Handler auf Tastendruck
+Sind auch nach Respawn persistent
 */
 waitUntil {!isNull (findDisplay 46)};
 // Ear Plugs
@@ -23,8 +34,110 @@ if (player isKindOf "OPT_Maintainer" || getPlayerUID player == "7656119797767603
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call opt_fnc_maintainerDialog}];
 };
 
+/**
+Event Handler für Spieler
+Sind auch nach Respawn persistent
+*/
+// entferne alle zugewiesenen Event Handler
+
+#ifdef __WEAPON_SAVER__
+	/* aktuell keine Bedeutung? */
+	player addEventHandler ["killed", {[_this select 0, [missionNamespace, "tcb_inv"]] call BIS_fnc_saveInventory}];
+#endif
+
+// EH bei Aufnahme von Waffen
+// ruft client/func/fn_weaponCheck
+player setVariable ["opt_pw_storage", primaryWeapon player];
+player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}];
+
+//player addEventHandler ["HandleRating", {0}];
+
+// lösche Körper nach respawn delay
+if (__RESPAWN_TYPE__ != 0 || __RESPAWN_TYPE__ != 1) then {
+	player AddEventHandler ["killed",{
+		_this spawn {
+			sleep (__RESPAWN_DELAY__ + random 5);
+			deleteVehicle (_this select 0);
+		};
+	}];
+};
+
+// lösche alle alten Draw3D EH
+removeAllMissionEventHandlers "Draw3D";
+removeAllMissionEventHandlers "Map";
+tcb_draw3D_reset_done = true;
+
+// erzwinge first person kamera
+#ifdef __FIRSTPERSON__
+	if (difficultyEnabled "3rdPersonView") then {
+		addMissionEventHandler ["Draw3D", {
+			if ((cameraView == "EXTERNAL") && {vehicle player == player}) then {
+				vehicle player switchCamera "INTERNAL";
+			};
+		}];
+	};
+#endif
+
+// Wenn HUD in setup/setup.sqf ein, füge EH für HUD hinzu
+// HUD wird dann jedes Frame neu gezeichnet
+// belastet nur Client FPS, wenn überhaupt
+/**
+Runs the EH code each frame in unscheduled environment. Client side EH only (presence of UI). Will stop executing when UI loses focus (if user Alt+Tabs for example). Usually used with drawIcon3D, drawLine3D. 
+*/
+#ifdef __HUD_ON__
+	("opt_HUD" call BIS_fnc_rscLayer) cutRsc ["opt_HudDisplay","PLAIN"];
+
+	// Aktualisierung des HUD
+	// each frame
+	addMissionEventHandler ["Draw3D", {
+		[] spawn opt_fnc_updateHUD;
+
+	}];
+
+	// only when opening or closing map
+	addMissionEventHandler ["Map", {
+		while {visibleMap} do {
+			[] spawn opt_fnc_updateHUD;
+		}
+	}];
+#endif
+
+// known issue: missionEH wont remove if the player switch during the mission the slot! that means if the mEH was set one time it will be activated regardless if you switch the lobby slot f.e. - maybee line 32 will fix this(?)
+#ifdef __ONLY_PILOTS_CAN_FLY__
+	if (OPT_ONLY_PILOTS == 1) then {
+		if (!(typeOf player in opt_pilots) && {!(typeOf player in ["O_Helipilot_F","B_Helipilot_F"])}) then {
+			addMissionEventHandler ["Draw3D", {
+				if ((vehicle player) isKindOf "Air" && player == assignedDriver (vehicle player) || {player == (vehicle player) turretUnit [0] && (vehicle player) isKindOf "Air"}) then {
+					if (!(typeOf (vehicle player) in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
+						player action ["GetOut",vehicle player];
+						TitleRsc ["only_pilots", "plain", 0.5];
+					};
+				};
+			}];
+		};
+	};
+
+#endif
+
+#ifdef __ONLY_CREW_CAN_DRIVE__
+	if (OPT_ONLY_CREW == 1) then {
+		if (!(typeOf player in opt_crew) && {!(typeOf player in ["O_crew_F","B_crew_F"])}) then {
+			addMissionEventHandler ["Draw3D", {
+				if (player == driver (vehicle player)) then {
+					if (typeOf (vehicle player) in opt_crew_vecs || {(vehicle player) isKindOf "Tank"}) then {
+						player action ["GetOut",vehicle player];
+						TitleRsc ["only_crew", "plain", 0.5];
+					};
+				};
+			}];
+		};
+	};
+
+#endif
+
 #ifdef __SHOW_CUSTOM_PLAYERMARKER__
 	__ccppfln(common\client\func\player_marker.sqf);
+
 #endif
 
 #ifdef __INTRO_ENABLED__
@@ -36,18 +149,30 @@ if (player isKindOf "OPT_Maintainer" || getPlayerUID player == "7656119797767603
 	[] spawn {
 		sleep 6;
 		[parseText format [ "<t align='right' size='1.2'><t font='PuristaBold' size='1.6'>""%1""</t><br/>
-		%2</t>", __MISSION_NAME__, "von: " + __MADEBY__], true, nil, 7, 0.7, 0] spawn BIS_fnc_textTiles;
+		%2</t>", __MISSION_NAME__, "von: " + __MADE_BY__], true, nil, 7, 0.7, 0] spawn BIS_fnc_textTiles;
 	};
 
 	_layer = "tcbIntroLayer" call BIS_fnc_rscLayer;
 	_layer cutRsc ["mission_Label", "PLAIN"];
 	[] spawn tcb_fnc_JukeBox;
 	intro_done = true;
+
+
+	[] spawn {
+		titleCut ["","BLACK IN", 3.5];
+		"dynamicblur" ppeffectenable true;
+		"dynamicblur" ppeffectadjust [5];
+		"dynamicblur" ppeffectcommit 0;
+		"dynamicblur" ppeffectadjust [0];
+		"dynamicblur" ppeffectcommit 5;
+	};
 	*/
+	
 #endif
 
 #ifdef __BREATH_VISIBLE__
 	execVM "common\client\foggy_breath.sqf";
+
 #endif
 
 #ifdef __BLOOD_SCREEN__
@@ -60,17 +185,7 @@ if (player isKindOf "OPT_Maintainer" || getPlayerUID player == "7656119797767603
 		"dynamicblur" ppeffectadjust [0];
 		"dynamicblur" ppeffectcommit (1 + random 1);
 	}];
-#endif
 
-#ifndef __INTRO_ENABLED__
-	[] spawn {
-		titleCut ["","BLACK IN", 3.5];
-		"dynamicblur" ppeffectenable true;
-		"dynamicblur" ppeffectadjust [5];
-		"dynamicblur" ppeffectcommit 0;
-		"dynamicblur" ppeffectadjust [0];
-		"dynamicblur" ppeffectcommit 5;
-	};
 #endif
 
 // checking for failed player init

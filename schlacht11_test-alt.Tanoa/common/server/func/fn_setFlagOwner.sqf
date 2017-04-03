@@ -4,8 +4,8 @@
 params ["_side","_flag"];
 
 /*
-_count_east_flags = count OPT_CSAT_FLAGs; //mincer
-_count_west_flags = count OPT_NATO_FLAGs;
+_count_east_flags = count opt_csat_flags; //mincer
+_count_west_flags = count opt_nato_flags;
 _east_owner = 0;
 _west_owner = 0;//mincer
 */
@@ -43,7 +43,7 @@ switch (_side) do {
 	if (_side_flag == east) then {
 		_east_owner = _east_owner + 1;
 	};
-} forEach OPT_CSAT_FLAGs;
+} forEach opt_csat_flags;
 
 //hier werden alle nato flaggen gezählt
 {
@@ -52,7 +52,7 @@ switch (_side) do {
 	if (_side_flag == west) then {
 		_west_owner = _west_owner + 1;
 	};
-} forEach OPT_NATO_FLAGs;
+} forEach opt_nato_flags;
 //mincer das hier ist für debug
 systemChat format ["FAHNEN WURDEN GEZAEHLT(NATO %1 | CSAT %2) fahnen sind gezogen", _west_owner, _east_owner];
 //abfrage, wer hat mehr fahnen und besteht gleichstand?

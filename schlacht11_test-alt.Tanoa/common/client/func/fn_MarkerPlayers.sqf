@@ -1,8 +1,8 @@
 #include "..\..\..\setup\setup.sqf"
 private ["_ap","_as"];
-if (isNil "tcb_p_entities") then {tcb_p_entities = []};
+if (isNil "opt_p_entities") then {opt_p_entities = []};
 
-if (count tcb_p_entities > 0) then {
+if (count opt_p_entities > 0) then {
 	{
 		_ap = __getMNsVar2((_x select 0));
 		_as = _x select 0;
@@ -21,7 +21,7 @@ if (count tcb_p_entities > 0) then {
 			_as setMarkerTextLocal "";
 			_as setMarkerAlphaLocal 0;
 		};
-	} forEach tcb_p_entities;
+	} forEach opt_p_entities;
 };
 
 true

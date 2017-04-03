@@ -10,10 +10,10 @@
 // automatisches Auslesen aller Flaggen mit dem Variablenname OPT_CSAT_FLAG_x und OPT_NATO_FLAG_x
 // d.h. es können beliebig viele Flaggen gesetzt werden, der Name kann wie beim Kopieren automatisch
 // übernommen mit OPT_CSAT_FLAG beginnen und eine beliebige Nummer haben.
-OPT_CSAT_FLAGs = [];
+opt_csat_flags = [];
 {
 	if ( (str _x find "OPT_CSAT_FLAG") != -1) then {
-		OPT_CSAT_FLAGs pushBack _x;
+		opt_csat_flags pushBack _x;
 
 		// erzeuge für jede gefundene Flagge einen Marker auf der Karte
 		#ifdef __OPT_FLAG_MARKER__
@@ -26,10 +26,10 @@ OPT_CSAT_FLAGs = [];
 
 } foreach allMissionObjects "FLAG_CSAT_F";
 
-OPT_NATO_FLAGs = [];
+opt_nato_flags = [];
 {
 	if ( (str _x find "OPT_NATO_FLAG") != -1) then {
-		OPT_NATO_FLAGs pushBack _x;
+		opt_nato_flags pushBack _x;
 		
 		// erzeuge für jede gefundene Flagge einen Marker auf der Karte
 		#ifdef __OPT_FLAG_MARKER__
@@ -45,7 +45,6 @@ OPT_NATO_FLAGs = [];
 Für jede Flagge in einem Sektor: unverwundbar, Logistik-Script aus
 Sowie Actionmenüeintrag für Spieler
 */
-
 {
 	_x addAction [
 		'Flagge ziehen' call XRedText, 	// Anzeigetext
@@ -59,14 +58,14 @@ Sowie Actionmenüeintrag für Spieler
 	];
 	_x allowDamage false; 						// Flagge kann nicht beschädigt werden
 	_x setVariable ["R3F_LOG_disabled", true]; // Flagge kann nicht verladen werden
-} foreach (OPT_CSAT_FLAGs + OPT_NATO_FLAGs);
+} foreach (opt_csat_flags + opt_nato_flags);
 
 //-------------------------------------------------------------------------- Playermarker --------------------------------------------------------------------------
 #ifdef __SHOW_CUSTOM_PLAYERMARKER__
 	// Funktioniert nur wenn in setup/setup.sqf aktiviert...
 	// im folgenden Beispiel werden 5 Gruppenführer und ein Pilot mit einem Marker ausgestattet, im folgenden die Syntax:
 	// ["name des spielers als string (im editor definieren)" , "Markertext" , "Markertyp"]
-	tcb_p_entities = [
+	opt_p_entities = [
 		["alpha_leader","Alpha","b_inf"],
 		["bravo_leader","Bravo","b_inf"],
 		["charlie_leader","Charlie","b_inf"],
@@ -79,7 +78,7 @@ Sowie Actionmenüeintrag für Spieler
 //-------------------------------------------------------------------------- Sichtweiten --------------------------------------------------------------------------
 #ifdef __PLAYER_GRAPHIC_SETTINGS__
 	// hier können die einstellbaren Sichtweiten für den Spieler definiert werden
-	tcb_v_distance_list = [500,900,1200,1500,1800,2200,3000,4000,5000,6000];
+	opt_v_distance_list = [500,900,1200,1500,1800,2200,3000,4000,5000,6000];
 #endif
 
 
@@ -90,9 +89,9 @@ Sowie Actionmenüeintrag für Spieler
 //-------------------------------------------------------------------------- Pilotenklassen --------------------------------------------------------------------------
 #ifdef __ONLY_PILOTS_CAN_FLY__
 	// hier sind alle Classnames aufgelistet, welche als Piloten definiert werden um fliegen zu dürfen
-	tcb_pilots = ["OPT_NATO_Pilot_T","OPT_CSAT_Pilot_T"];
+	opt_pilots = ["OPT_NATO_Pilot_T","OPT_CSAT_Pilot_T"];
 
-	tcb_pilotsVecs = [
+	opt_pilots_vecs = [
 					"OPT_O_Heli_Light_03_unarmed_F",			// WY-55 Hellcat
 					"OPT_O_Heli_Light_03_F",					// WY-55 Hellcat (DAR)	
 					"OPT_O_Heli_Light_02_unarmed_F",			// PO-30 Orca
@@ -119,9 +118,9 @@ Sowie Actionmenüeintrag für Spieler
 //-------------------------------------------------------------------------- Crewklassen --------------------------------------------------------------------------
 #ifdef __ONLY_CREW_CAN_DRIVE__
 	// hier sind alle Classnames aufgelistet, welche als Crew definiert werden um gepanzerte Fahrzeuge fahren zu dürfen (und Schützenposition)
-	tcb_crew = ["OPT_NATO_Besatzungsmitglied_T","OPT_CSAT_Besatzungsmitglied_T"];
+	opt_crew = ["OPT_NATO_Besatzungsmitglied_T","OPT_CSAT_Besatzungsmitglied_T"];
 
-	tcb_crewVecs = [
+	opt_crew_vecs = [
 		"OPT_B_MBT_03_cannon_F",				// MBT-52 Kuma
 		"OPT_B_MBT_01_cannon_F",				// M2A4 Slammer
 		"OPT_B_MBT_01_TUSK_F",					// M2A4 SlammerUp
@@ -141,11 +140,11 @@ Sowie Actionmenüeintrag für Spieler
 #endif
 //-------------------------------------------------------------------------- Pioklassen --------------------------------------------------------------------------
 #ifdef __ONLY_PIO_CAN_BUILD_FARPS__
-	tcb_engineers = ["OPT_NATO_Pionier_T","OPT_CSAT_Pionier_T"];
+	opt_engineers = ["OPT_NATO_Pionier_T","OPT_CSAT_Pionier_T"];
 #endif
 
 //-------------------------------------------------------------------------- Launcher Klassen --------------------------------------------------------------------------
-opt_Rocketmen = [
+opt_rocketmen = [
 	"OPT_NATO_Luftabwehrspezialist",
 	"OPT_CSAT_Luftabwehrspezialist",
 	"OPT_NATO_PA_Schuetze",
@@ -155,7 +154,8 @@ opt_Rocketmen = [
 	"OPT_NATO_Aufklaerung_Spaeher_AT",
 	"OPT_CSAT_Aufklaerung_Spaeher_AT"
 ];
-opt_Launchers = ["OPT_launch_RPG32_F","OPT_launch_NLAW_F","OPT_launch_NLAW_M_F","OPT_launch_B_Titan_F","OPT_launch_O_Titan_F","OPT_launch_O_Titan_short_F","OPT_launch_B_Titan_short_F"];
+
+opt_launchers = ["OPT_launch_RPG32_F","OPT_launch_NLAW_F","OPT_launch_NLAW_M_F","OPT_launch_B_Titan_F","OPT_launch_O_Titan_F","OPT_launch_O_Titan_short_F","OPT_launch_B_Titan_short_F"];
 
 opt_operator = [
 	"OPT_NATO_Operator_T",
@@ -167,7 +167,7 @@ opt_medic = [
 	"OPT_CSAT_Sanitaeter_T"
 ];
 
-opt_Snipers = [
+opt_snipers = [
 	"OPT_NATO_Scharfschuetze_T",
 	"OPT_NATO_Scharfschuetze_2",
 	"OPT_CSAT_Scharfschuetze_T",
@@ -178,21 +178,21 @@ opt_Snipers = [
 	"OPT_CSAT_Aufklaerung_Scharfschutze_2"
 ];
 
-opt_SoldatMG = [
+opt_soldatMG = [
 	"OPT_CSAT_MG_Schuetze_T",
 	"OPT_NATO_MG_Schuetze_T",
 	"OPT_CSAT_SMG_Schuetze_T",
 	"OPT_NATO_SMG_Schuetze_T"
 ];
 
-opt_Grenadiers = [
+opt_grenadiers = [
 	"OPT_CSAT_Grenadier_T",
 	"OPT_NATO_Grenadier_T",
 	"OPT_CSAT_Aufklaerung_JTAC",
 	"OPT_NATO_Aufklaerung_JTAC"
 ];
 
-OPT_GPSunits = [
+opt_gps_units = [
 	"OPT_Maintainer",
 	"OPT_NATO_Offizier_T",
 	"OPT_CSAT_Offizier_T",
