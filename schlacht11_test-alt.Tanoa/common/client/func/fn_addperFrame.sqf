@@ -1,4 +1,4 @@
-#include "../../../setup.sqf"
+#include "..\..\..\setup\setup.sqf"
 #define GV2(obje,varname) (obje getVariable varname)
 private ["_name", "_code", "_time", "_ar"];
 _name = _this select 0;

@@ -1,4 +1,4 @@
-#include "../../../setup.sqf"
+#include "..\..\..\setup\setup.sqf"
 private ["_ap","_as"];
 if (isNil "tcb_p_entities") then {tcb_p_entities = []};
 

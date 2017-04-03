@@ -1,10 +1,9 @@
-#include "macros.sqf"
+#include "..\macros.sqf"
 /**
 * SETUP FILE
 */
 // -------- setup all stuff in this file
 // #define __DEBUG__
-
 
 /**
 * Allgemeine Einstellungen
@@ -63,7 +62,6 @@
 /**
 * Umwelt und Grafik 
 */
-
 // Wenn __STARTTIME__ definiert ist, wird die Zeit auf dem Server geskipt. Der Server synchronisiert die Zeit mit den Clients
 // möglich sind Werte von 0-23, also ganze Zahlen mit den Stunden oder die Zahl 99 für "vorgegebene Uhrzeit" in Mission
 // die hier angegebene Zeit ist dann der Default Wert der Mission, Schaltet den Lobbyparameter frei um die Zeit vor Missionsstart zu wählen
@@ -91,7 +89,6 @@
 /**
 * Gameplay 
 */
-
 // wenn nicht auskommentiert mit // kann an Servicepunkten keine Munition mehr aufgenommen werden (nur noch Repair / Refuel)
 #define __OPT_SERVICE_NO_AMMO__
 
@@ -170,12 +167,17 @@
 // globale Option, schaltet das ganze HUD aus, wenn auskommentiert
 #define __HUD_ON__
 
+// aktiviert Anzeige der Spieleranzahl
 #define __HUD_NUMBER_PLAYERS__
 
+// aktiviert lokale FPS-Anzeige für Client
 //#define __HUD_FPS__
 
+// aktiviert Budget-Anzeige der eigenen Seite
 #define __HUD_BUDGET__
 
+// aktiviert Anzeige Punktestand
 #define __HUD_SCORE__
 
+// aktiviert Anzeige der Waffenruhe + Spielzeit
 #define __HUD_TIMER__

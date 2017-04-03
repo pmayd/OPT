@@ -2,14 +2,7 @@
 // executed only from the Server one time
 // define all public variables here
 
-
-//["tcb_targets", 0] call tcb_fnc_NetSetJIP;
-
-// defined trough vehiclePool
-//{publicVariable _x} forEach ["opt_vehiclesNato", "opt_choppersNato", "opt_armoredNato", "opt_vehiclesCsat", "opt_choppersCsat", "opt_armoredCsat", "opt_suppliesNato", "opt_suppliesCsat"];
-
 // Budget wird im Trainingsmodus überschrieben und auf unendlich gesetzt!
-
 opt_west_budget = 2000000;
 opt_east_budget = 2000000;
 
@@ -25,8 +18,8 @@ opt_startTime = serverTime;			// nicht time! time ist 0, da time Zeit von Missio
 // immer synchronisiert und beinhaltet Zeit seit Serverstart
 publicVariable "opt_startTime"; // gibt allen Clients die Startzeit des Servers bekannt
 EastPoints		= 0;
-playTime = OPT_PLAYTIME;
-truceTime = OPT_TRUCETIME;
+playTime = OPT_PLAYTIME; // globale var für den Server
+truceTime = OPT_TRUCETIME; // globale var für den Server
 publicVariable "EastPoints";
 WestPoints		= 0;
 publicVariable "WestPoints";
@@ -51,6 +44,7 @@ publicVariable "opt_dominator";
 		};
 	};
 } forEach OPT_CSAT_FLAGs;
+
 {
 	if (!isNil {_x}) then {
 		if (_x != objNull) then {

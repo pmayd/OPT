@@ -1,4 +1,4 @@
-#include "../setup.sqf"
+#include "..\setup\setup.sqf"
 diag_log format ["############################# %1 #############################", missionName];
 
 XGreyText = {"<t color='#f0bfbfbf'>" + _this + "</t>"};

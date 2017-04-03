@@ -106,8 +106,13 @@ randomSeed=1124049;
 class ScenarioData
 {
 	author="[3.JgKp]James";
+	disabledAI=1;
 	respawn=3;
 	respawnDelay=10;
+	class Header
+	{
+		gameType="SC";
+	};
 };
 class CustomAttributes
 {
@@ -150,7 +155,26 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=1;
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		nAttributes=2;
 	};
 };
 class Mission
@@ -8859,6 +8883,8 @@ class Mission
 					flags=6;
 					class Attributes
 					{
+						name="tester";
+						description="Tester";
 						isPlayer=1;
 					};
 					id=744;
@@ -8936,11 +8962,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11661.826,6.949707,13155.248};
+				position[]={11661.826,6.9499998,13155.248};
 			};
 			id=746;
 			type="ModuleCurator_F";
-			atlOffset=-0.00029277802;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8958,7 +8983,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="";
+							value="tester";
 						};
 					};
 				};
@@ -9015,7 +9040,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=2;
+							value=3;
 						};
 					};
 				};

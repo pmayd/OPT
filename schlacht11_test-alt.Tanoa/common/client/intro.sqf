@@ -1,4 +1,4 @@
-#include "../../setup.sqf"
+#include "..\..\setup\setup.sqf"
 private ["_camera"];
 
 _viewDistance = viewDistance;

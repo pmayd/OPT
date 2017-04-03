@@ -2,9 +2,9 @@
 ## How to use:
 
 Do not edit in any file! Everything you can change you can found in the different setup files.
-First and importants setup file is the `setup.sqf` <-- there you can find the most settings.
+First and importants setup file is the `setup/setup.sqf` <-- there you can find the most settings.
 For a little bit more finetuning have a look in the `setup_classnames.sqf`. Here you make further settings.
-Some are important for the function of choosen options in the `setup.sqf`.
+Some are important for the function of choosen options in the `setup/setup.sqf`.
 Third file is the `setup_publicvariable.sqf` --> in this file you have to define every publicVariable you want to use.
 This file is executed only one time and only from the server.
 
@@ -114,7 +114,7 @@ To update/change the vehicle pool you have to change the data files. You can fou
 ----Version 1.017
 - added: dummyflags and hot flags added to big airfield again
 - added: new launchers added to setup_classnames.sqf
-- changed: max playernumber changed to 162 (81 each side) in setup.sqf
+- changed: max playernumber changed to 162 (81 each side) in setup/setup.sqf
 - added: marker added to teleport flags in all bases
 
 ----Version 1.016

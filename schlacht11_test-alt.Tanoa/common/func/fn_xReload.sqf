@@ -1,7 +1,7 @@
 ﻿// by Xeno
 
 //angepasst von psycho
-//#include "x_setup.sqf"
+//#include "x_setup/setup.sqf"
 private ["_config","_count","_i","_magazines","_object","_type","_type_name"];
 _object = _this select 0;
 _type = typeof _object;

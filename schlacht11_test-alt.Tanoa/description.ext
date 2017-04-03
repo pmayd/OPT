@@ -1,4 +1,4 @@
-#include "setup.sqf"
+#include "setup\setup.sqf"
 
 author = "Psychobastard und X-one";
 onLoadName = __MISSION_NAME__;

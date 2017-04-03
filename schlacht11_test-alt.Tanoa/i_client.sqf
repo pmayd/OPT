@@ -3,6 +3,7 @@
 diag_log format ["%1 --- TcB i_client.sqf startet",diag_ticktime];
 if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehicleLocal [0,0,0]};
 
+// starte alle addon Scripte
 __ccppfln(common\client\func\x_perframe.sqf);
 [] execVM "addons\opt3_magRepack\MagRepack_init_sv.sqf";
 __cppfln(opt_TFARfrequencies,common\client\opt_TFARfrequencies.sqf);
@@ -10,40 +11,66 @@ __cppfln(opt_tfarVehicleLr,common\client\opt_tfarVehicleLr.sqf);
 
 if ((typeOf player) in OPT_GPSunits) then {execVM "common\client\opt3_gps.sqf"};
 
+/**
+Display Event Handler auf Tastendruck
+*/
+waitUntil {!isNull (findDisplay 46)};
+// Ear Plugs
+(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call opt_fnc_earplugs}];
+
+// OPT Maintainer
+if (player isKindOf "OPT_Maintainer" || getPlayerUID player == "76561197977676036" || getPlayerUID player == "76561198095507681" || getPlayerUID player == "76561197998124797" || getPlayerUID player == "76561197970731085") then {
+	(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call opt_fnc_maintainerDialog}];
+};
 
 #ifdef __SHOW_CUSTOM_PLAYERMARKER__
-__ccppfln(common\client\func\player_marker.sqf);
+	__ccppfln(common\client\func\player_marker.sqf);
 #endif
 
 #ifdef __INTRO_ENABLED__
-execVM "common\client\intro.sqf";
+	execVM "common\client\intro.sqf";
+
+	/* veraltet? siehe Skript oben
+	waitUntil {!isNil "BIS_fnc_init"};
+	waitUntil {!isNull (findDisplay 46)};
+	[] spawn {
+		sleep 6;
+		[parseText format [ "<t align='right' size='1.2'><t font='PuristaBold' size='1.6'>""%1""</t><br/>
+		%2</t>", __MISSION_NAME__, "von: " + __MADEBY__], true, nil, 7, 0.7, 0] spawn BIS_fnc_textTiles;
+	};
+
+	_layer = "tcbIntroLayer" call BIS_fnc_rscLayer;
+	_layer cutRsc ["mission_Label", "PLAIN"];
+	[] spawn tcb_fnc_JukeBox;
+	intro_done = true;
+	*/
 #endif
 
 #ifdef __BREATH_VISIBLE__
-execVM "common\client\foggy_breath.sqf";
+	execVM "common\client\foggy_breath.sqf";
 #endif
 
 #ifdef __BLOOD_SCREEN__
-player addeventhandler ["hit",{
-	_hit = _this select 2;
-	_sqf = [0.7 + _hit] spawn tcb_fnc_screen;
-	"dynamicblur" ppeffectenable true;
-	"dynamicblur" ppeffectadjust [1];
-	"dynamicblur" ppeffectcommit 0;
-	"dynamicblur" ppeffectadjust [0];
-	"dynamicblur" ppeffectcommit (1 + random 1);
-}];
+	player addeventhandler ["hit",{
+		_hit = _this select 2;
+		_sqf = [0.7 + _hit] spawn tcb_fnc_screen;
+		"dynamicblur" ppeffectenable true;
+		"dynamicblur" ppeffectadjust [1];
+		"dynamicblur" ppeffectcommit 0;
+		"dynamicblur" ppeffectadjust [0];
+		"dynamicblur" ppeffectcommit (1 + random 1);
+	}];
 #endif
 
 #ifndef __INTRO_ENABLED__
-[] spawn {
-	titleCut ["","BLACK IN", 3.5];
-	"dynamicblur" ppeffectenable true;
-	"dynamicblur" ppeffectadjust [5];
-	"dynamicblur" ppeffectcommit 0;
-	"dynamicblur" ppeffectadjust [0];
-	"dynamicblur" ppeffectcommit 5;
-};
+	[] spawn {
+		titleCut ["","BLACK IN", 3.5];
+		"dynamicblur" ppeffectenable true;
+		"dynamicblur" ppeffectadjust [5];
+		"dynamicblur" ppeffectcommit 0;
+		"dynamicblur" ppeffectadjust [0];
+		"dynamicblur" ppeffectcommit 5;
+	};
 #endif
 
 // checking for failed player init
@@ -60,10 +87,23 @@ if (isMultiplayer && !isServer) then {	// only on dedicated environment
 	};
 };
 
+// TEAM BALANCE - end mission for player if side is full
+// nicht in onPlayerRespawn, da nur zu Missionsbeginn prüfen
+if (isMultiplayer && !isServer) then {
+	if (OPT_TEAMBALANCE > 0) then {
+		_en_pa = if (playerSide == blufor) then {playersNumber opfor} else {playersNumber blufor};
+		if ((playersNumber playerSide) > (_en_pa + OPT_TEAMBALANCE)) then {
+			endMission (switch (playerSide) do {
+				case (blufor) : {"balanceBLUFOR"};
+				case (opfor) : {"balanceOPFOR"};
+				default {"LOSER"};
+			});
+		};
+	};
+};
+
 _pos = if (playerSide == blufor) then {getMarkerPos "respawn_east"} else {getMarkerPos "respawn_west"};
 ["ProtectionZone_Invisible_F", _pos, 150, 20] spawn opt_fnc_wallChain;
-
-
 
 if (isNil "respawndelay") then {
 	_num = getNumber (missionConfigFile/"respawndelay");

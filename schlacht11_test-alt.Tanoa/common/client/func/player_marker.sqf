@@ -1,4 +1,4 @@
-﻿#include "../../../setup.sqf"
+﻿#include "..\..\..\setup\setup.sqf"
 _color = switch (playerSide) do {
 	case (west) : {"ColorBlufor"};
 	case (east) : {"ColorOpfor"};

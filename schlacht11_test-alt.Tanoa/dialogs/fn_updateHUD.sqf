@@ -1,7 +1,7 @@
 ﻿// from AAS, changed by psycho
 
 // include setup
-#include "../setup.sqf"
+#include "..\setup\setup.sqf"
 
 // positions for info display which includes:
 #define PLAYERSLABEL_X      0.02 	// number of players

@@ -1,4 +1,4 @@
-#include "../../../setup.sqf"
+#include "..\..\..\setup\setup.sqf"
 #define GV2(obje,varname) (obje getVariable varname)
 private ["_ar", "_wf", "_nt"];
 _cf = diag_frameno;

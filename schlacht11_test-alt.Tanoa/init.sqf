@@ -1,6 +1,6 @@
 ﻿//by psycho
 diag_log format ["%1 --- Executing TcB init.sqf",diag_ticktime];
-#include "setup.sqf"
+#include "setup\setup.sqf"
 
 #ifdef __INTRO_ENABLED__
 	titleCut ["","BLACK IN", 999];
@@ -36,7 +36,7 @@ _paramNames = ("true" configClasses (missionConfigFile >> "Params")) apply {conf
 	};
 #endif
 
-#include "setup_classnames.sqf"
+#include "setup\setup_classnames.sqf"
 
 if (isNil "tcb_netinit") then {
 	__ccppfln(common\x_netinit.sqf);

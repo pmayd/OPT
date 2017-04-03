@@ -1,4 +1,4 @@
-#include "../../../setup.sqf"
+#include "..\..\..\setup\setup.sqf"
 private ["_v", "_type", "_dir", "_pos", "_vel", "_dv"];
 _v = _this select 0;
 _type = typeOf _v;

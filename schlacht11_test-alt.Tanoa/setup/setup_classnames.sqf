@@ -1,19 +1,11 @@
-//---------------------------------------------------------- SETUP FILE Classnames ---------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// -------- setup all needed classnames or variables here
-
+/**
+* SETUP FILE Classnames 
+*  setup all needed classnames or variables here
+*/
 // alle funktionierenden und für die Wertung relevanten Flaggenmarker definieren
 // Name hier eintragen so wie die Flaggen benannt sind - Dominator ist derjenige der mehr Flaggen als die gegnerische Seite besitzt (das gilt immer - wenn hier also eine Seite mehr Flaggen definiert bekommen hat ist sie autom. Dominator)
 // wenn __OPT_Sector_Message__ in setup aktiviert werden automatisch die Marker um die Flaggen generiert. Achtung - Dummyflaggen benötigen weiterhin manuelle einen Marker
-/*
-OPT_CSAT_FLAGs = [
-	OPT_CSAT_FLAG_1
-];
 
-OPT_NATO_FLAGs = [
-	OPT_NATO_FLAG_1
-];
-*/
 /* BY JAMES */
 // automatisches Auslesen aller Flaggen mit dem Variablenname OPT_CSAT_FLAG_x und OPT_NATO_FLAG_x
 // d.h. es können beliebig viele Flaggen gesetzt werden, der Name kann wie beim Kopieren automatisch
@@ -23,6 +15,7 @@ OPT_CSAT_FLAGs = [];
 	if ( (str _x find "OPT_CSAT_FLAG") != -1) then {
 		OPT_CSAT_FLAGs pushBack _x;
 
+		// erzeuge für jede gefundene Flagge einen Marker auf der Karte
 		#ifdef __OPT_FLAG_MARKER__
 			_markerName = format["marker_%1_%2", _x, _forEachIndex];
 			_marker = createMarker [_markerName, getPos _x];
@@ -38,6 +31,7 @@ OPT_NATO_FLAGs = [];
 	if ( (str _x find "OPT_NATO_FLAG") != -1) then {
 		OPT_NATO_FLAGs pushBack _x;
 		
+		// erzeuge für jede gefundene Flagge einen Marker auf der Karte
 		#ifdef __OPT_FLAG_MARKER__
 			_markerName = format["marker_%1_%2", _x, _forEachIndex];
 			_marker = createMarker [_markerName, getPos _x];
@@ -69,7 +63,7 @@ Sowie Actionmenüeintrag für Spieler
 
 //-------------------------------------------------------------------------- Playermarker --------------------------------------------------------------------------
 #ifdef __SHOW_CUSTOM_PLAYERMARKER__
-	// Funktioniert nur wenn in setup.sqf aktiviert...
+	// Funktioniert nur wenn in setup/setup.sqf aktiviert...
 	// im folgenden Beispiel werden 5 Gruppenführer und ein Pilot mit einem Marker ausgestattet, im folgenden die Syntax:
 	// ["name des spielers als string (im editor definieren)" , "Markertext" , "Markertyp"]
 	tcb_p_entities = [

@@ -1,4 +1,4 @@
-#include "../../../setup.sqf"
+#include "..\..\..\setup\setup.sqf"
 private "_name";
 _name = _this select 0;
 _name = toLower _name;

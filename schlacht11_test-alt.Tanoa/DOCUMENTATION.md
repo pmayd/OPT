@@ -27,7 +27,7 @@ Aktuell verwendet:
 - Falls `__INTRO_ENABLED__`, färbt Bildschirm zu Beginn schwarz TODO: Wo wird das aufgehoben? 
 - liest alle Missions-Parameter aus der description.ext aus, mit den eingestellten Werten aus der Lobby und macht sie als Variablen verfügbar (OPT_PLAYTIME usw)
 - Falls `__MAP__`, entfernt ItemMap und ItemGPS aus dem Spielerinventar
-- Falls `__VIEW_DISTANCE__`, setzt lokal die Sichtweite (Wert aus setup.sqf)
+- Falls `__VIEW_DISTANCE__`, setzt lokal die Sichtweite (Wert aus setup/setup.sqf)
 - Falls `__GRASS_OFF__`, setzt lokal TerrainGrid auf 50, ansonsten den Wert aus der description.ext (50 oder 3.125)
 - setzt `tf_give_microdagr_to_soldier` auf false
 - lädt `dialogs\vehiclePool_war.hpp`

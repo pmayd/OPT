@@ -1,11 +1,13 @@
 ﻿//by psycho
+#include "macros.sqf"
+
 //init only by server
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 #ifdef __REMOVE_DEAD_AI_AND_VECS__
-tcb_addkilledhandler = __REMOVE_DEAD_AI_AND_VECS__;
-tcb_allunits_add = [];
-__cppfln(common\server\initaddkilledhandler.sqf);
+	tcb_addkilledhandler = __REMOVE_DEAD_AI_AND_VECS__;
+	tcb_allunits_add = [];
+	__cppfln(common\server\initaddkilledhandler.sqf);
 #endif
 
 // ensure that disconnected players body will be removed - wont work with BI corpseManagerMode(!)
@@ -15,7 +17,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	false
 }];
 
-#include "setup_publicVariable.sqf"
+#include "setup\setup_publicVariable.sqf"
 
 #ifdef __OPT_Sector_Message__
 	_allFlagPoles = [];
@@ -83,3 +85,5 @@ addMissionEventHandler ["HandleDisconnect", {
 	
 	execVM "addons\garbage\garbageCollector.sqf";
 };
+
+diag_log format ["%1 --- TcB i_server.sqf processed", diag_ticktime];

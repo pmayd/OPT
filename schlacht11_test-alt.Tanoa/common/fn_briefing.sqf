@@ -1,4 +1,4 @@
-#include "../setup.sqf"
+#include "..\setup\setup.sqf"
 if (isDedicated) exitWith {};
 /*
 _subject = player createDiarySubject ["made", "Credits"];

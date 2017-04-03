@@ -1,6 +1,6 @@
 // by psycho 
 // set the flagowner on server 
-#include "../../../setup.sqf"
+#include "..\..\..\setup\setup.sqf"
 params ["_side","_flag"];
 
 /*

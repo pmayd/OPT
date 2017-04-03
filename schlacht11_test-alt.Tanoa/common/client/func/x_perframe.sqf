@@ -1,5 +1,5 @@
 ﻿// by Xeno
-#include "../../../setup.sqf"
+#include "..\..\..\setup\setup.sqf"
 #define GV2(obje,varname) (obje getVariable varname)
 
 perframe_store = "Land_HelipadEmpty_F" createVehicleLocal [0,0,0];

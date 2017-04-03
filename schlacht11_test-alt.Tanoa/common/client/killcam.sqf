@@ -1,4 +1,4 @@
-#include "../../setup.sqf"
+#include "..\..\setup\setup.sqf"
 private ["_victim","_killer","_pos","_deadcam"];
 _victim = _this select 0;
 _killer = _this select 1;
