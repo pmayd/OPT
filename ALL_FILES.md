@@ -6,7 +6,7 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
     <tr>
       <th rowspan="2"> Skript </th>
       <th rowspan="2"> Pfad </th>      
-      <th colspan="5"> Aufruf </th>
+      <th colspan="6"> Aufruf </th>
       <th rowspan="2"> Anmerkung </th>
     </tr>
     <tr>
@@ -27,12 +27,14 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <td></td>
       <td></td>
       <td></td>
+      <td></td>
       <td>Wird im MP als letztes Skript ausgeführt, ruft weitere Skripte auf</td>
     </tr> 
     <tr>
       <td><code>onPlayerRespawn.sqf</code></td>      
       <td>./</td>
       <th>[x]</th>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
