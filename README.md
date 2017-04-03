@@ -19,6 +19,7 @@ Aktuelle Version ist 1.028 (ohne meine Änderungen)
 - umfangreiche Änderungen an allen Skripten, Coderefactoring, einheitliche Benennung
 - umfangreiche Änderungen an der onPlayerRespawn, das meiste ist in die init.sqf btw. i_client.sqf gewandert. TODO: Umstellen auf initPlayerLocal.sqf. In der onPlayerRespawn ist jetzt nur noch, was unbedingt nach einem Respawn erneuert werden muss -> AddAction Einträge. Alle MissionEH wie Draw3D sind persistent und müssen nicht erneuert werden.
 - Zeitupdate jetzt auch auf der Karte dank MissionEH "Map"
+- überarbeitete Killed-Log: Ab sofort wird bei einem zerstörten Fahrzeug auch der Zerstörer angezeigt
 - Performanceoptimierung: Dauerabfrage durch AddAction Skript flipVehicle entfernt, dies jetzt beim spawn an Fahrzeug geheftet. 
 - alle Setup-Dateien in einen neuen Unterordner setup verlegt. Einige Dateien werden noch dazukommen wie die vehicle.hpp
 - Neue EH per CBA EH-System für Server-Logs und Budget Updates
