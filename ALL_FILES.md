@@ -14,6 +14,7 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
       <th>Script</th>
       <th>addAction</th>
       <th>Event Handler</th>
+      <th>Dialog</th>
       <th>Trigger</th>
     </tr>
   </thead>
