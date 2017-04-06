@@ -9665,7 +9665,7 @@ class Mission
 			{
 				name="trg_nato_repair";
 				text="Auslöser für Rep-Script";
-				condition="!isNull (objectParent player) && driver (vehicle player) == player";
+				condition="this && !isNull (objectParent player) && driver (vehicle player) == player";
 				onActivation="_nul = [objectParent player, true] spawn opt_fnc_repairSystem";
 				onDeactivation="_nul = [objectParent player, false] spawn opt_fnc_repairSystem";
 				sizeA=6;

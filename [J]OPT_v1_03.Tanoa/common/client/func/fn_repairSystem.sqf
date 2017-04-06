@@ -26,7 +26,9 @@ if (_state) then {
 
 	// Aktionseinträge müssen dem Fahrzeug gegeben werden, da im Fahrzeug nicht mehr nutzbar
 	// nur für den auslösenden Spieler sichtbar, da addAction immer LOCAL!
-	private _action1 = _vec addAction ["Fahrzeug auftanken", {
+	private _action1 = _vec addAction ["<t size=""1.2"">Fahrzeug auftanken</t>", {
+
+		params ["_vec"];
 
 		// als erstes Fahrzeug anhalten
 		_vec engineOn false;
@@ -39,9 +41,11 @@ if (_state) then {
 
 		_vec setFuel 1;
 
-	}];
+	}, [_vec], 100];
 
-	private _action2 = _vec addAction ["Fahrzeug reparieren", {
+	private _action2 = _vec addAction ["<t size=""1.2"">Fahrzeug reparieren</t>", {
+		
+		params ["_vec"];
 
 		// als erstes Fahrzeug anhalten
 		_vec engineOn false;
@@ -55,7 +59,7 @@ if (_state) then {
 		_vec setFuel 1;
 		_vec setDamage 0;
 
-	}];
+	}, [_vec], 100];
 
 	_vec setVariable ["opt_repairSystem", [_action1, _action2]];
 
