@@ -14,16 +14,13 @@
 // arguments
 private _state = param [0, false, [true]]; // Bereich aktiv oder inaktiv
 
-// begin of script
-// Fehlerbehandlung
-if (isNull _vec) exitWith {"Kein gültiges Fahrzeug übergeben"};
-
 // Skriptteil für aktiven Bereich
 // Aktioneinträge zuweisen
 if (_state) then {
 
 	// binde Fahrzeug an Spieler
-	player setVariable ["opt_repairSystem_vec", objectParent];
+	_vec = objectParent player;
+	player setVariable ["opt_repairSystem_vec", _vec];
 
 	// Aktionseinträge müssen dem Fahrzeug gegeben werden, da im Fahrzeug nicht mehr nutzbar
 	// nur für den auslösenden Spieler sichtbar, da addAction immer LOCAL!
@@ -67,10 +64,11 @@ if (_state) then {
 } // Skriptteil für deaktivierten Bereich
 else {
 
+	_vec = player getVariable ["opt_repairSystem_vec", objNull];
 	// entferne vorherige Aktioneinträge
 	{
 		_vec removeAction _x;
-	} foreach (_vec getVariable ["opt_repairSystem", []])
+	} foreach (_vec getVariable ["opt_repairSystem", []]);
 
 	player setVariable ["opt_repairSystem_vec", objNull];
 	
