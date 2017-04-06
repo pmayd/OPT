@@ -110,8 +110,8 @@
 #define __WEAPON_SAVER__
 
 // wenn nicht auskommentiert mit // dann werden tote KI Einheiten und zerstörte KI Fahrzeuge nach einiger Zeit gelöscht
-// ACHTUNG! in dem Array müßen die Seiten angegeben werden welche gelöscht werden sollen
-#define __REMOVE_DEAD_AI_AND_VECS__ [east,resistance,west]
+// ACHTUNG! Fahrzeug wird nach angegebener Anzahl Sekunden gelöscht
+#define __REMOVE_DEAD_AI_AND_VECS__ 60
 
 // wenn nicht auskommentiert mit // dann werden für definierte Spieler Marker auf der Karte erzeugt
 // sollen alle Spieler einen Marker erhalten muß auch jeder einzeln unter dem Array opt_p_entities definiert werden --> siehe setup_classnames.sqf

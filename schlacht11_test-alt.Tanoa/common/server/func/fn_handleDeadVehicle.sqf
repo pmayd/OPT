@@ -1,3 +1,5 @@
+#include "..\..\..\setup\setup.sqf"
+
 params ["_vec", "_killer"];
 
 // log destroyed vehicle and killer
@@ -7,7 +9,7 @@ params ["_vec", "_killer"];
 #ifdef __REMOVE_DEAD_AI_AND_VECS__
 	(_this) spawn {
 		params ["_vec", "_killer"];
-		sleep 60;
+		sleep __REMOVE_DEAD_AI_AND_VECS__;
 		{deleteVehicle _x} foreach (crew _vec);
 		deleteVehicle _vec;
 	};

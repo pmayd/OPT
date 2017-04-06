@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11649.964,16.912138,13128.406};
-		dir[]={0.10253022,-0.20577972,0.97323811};
-		up[]={0.021561533,0.9785946,0.20466293};
-		aside[]={0.99452317,-2.1752203e-007,-0.10477235};
+		pos[]={11667.621,19.279186,13155.86};
+		dir[]={-0.89083725,-0.35773417,0.28006893};
+		up[]={-0.34126735,0.93382317,0.10729055};
+		aside[]={0.299916,8.7195076e-008,0.95396709};
 	};
 };
 binarizationWanted=0;
@@ -496,29 +496,115 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Fahrzeuge' call XRedText,'common\client\opt_vehicleOrder.sqf','vehicles', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; this allowDamage false; this SetObjectTexture [0,""opt_a3_core\bilder\csat_radfahrzeuge.jpg""]; this enableSimulation false;";
+				init="this addAction['Fahrzeuge' call XRedText,'common\client\opt_vehicleOrder.sqf','vehicles', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+				disableSimulation=1;
 			};
 			id=70;
 			type="Land_InfoStand_V1_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\csat_radfahrzeuge.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item24
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11726.219,5.400703,3118.238};
-				angles[]={0.0053265258,4.0056248,6.2805333};
+				position[]={11726.219,5.4009404,3118.2383};
+				angles[]={0.0053232545,4.0056181,6.2805324};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Luftwaffe' call XRedText,'common\client\opt_vehicleOrder.sqf','choppers', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; this allowDamage false; this SetObjectTexture [0,""opt_a3_core\bilder\csat_luftfahrzeuge.jpg""]; this enableSimulation false;";
+				init="this addAction['Luftwaffe' call XRedText,'common\client\opt_vehicleOrder.sqf','choppers', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; ";
+				disableSimulation=1;
 			};
 			id=71;
 			type="Land_InfoStand_V1_F";
-			atlOffset=-0.014238358;
+			atlOffset=-0.013999939;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\csat_luftfahrzeuge.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item25
 		{
@@ -533,17 +619,41 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Panzer' call XRedText,'common\client\opt_vehicleOrder.sqf','armored', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; this allowDamage false;  this SetObjectTexture [0,""opt_a3_core\bilder\csat_kettenfahrzeuge.jpg""];  this enableSimulation false;";
+				init="this addAction['Panzer' call XRedText,'common\client\opt_vehicleOrder.sqf','armored', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+				disableSimulation=1;
 			};
 			id=72;
 			type="Land_InfoStand_V1_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\csat_kettenfahrzeuge.jpg";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item26
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6932.3374,3.2353563,7409.4702};
+				position[]={6932.3369,3.2353642,7409.4702};
 				angles[]={0,1.3673782,0};
 			};
 			side="Empty";
@@ -551,11 +661,53 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Nachschub' call XRedText,'common\client\opt_vehicleOrder.sqf','supplies', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; this allowDamage false; this SetObjectTexture [0,""opt_a3_core\bilder\csat_nachschub.jpg""]; this enableSimulation false;";
+				init="this addAction['Nachschub' call XRedText,'common\client\opt_vehicleOrder.sqf','supplies', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+				disableSimulation=1;
 			};
 			id=73;
 			type="Land_InfoStand_V1_F";
-			atlOffset=-7.8678131e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\csat_nachschub.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item27
 		{
@@ -832,26 +984,69 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2218.1484,14.021074,13386.93};
-				angles[]={0,3.073282,0};
+				position[]={2218.1479,14.021364,13386.93};
+				angles[]={0,3.0732803,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Luft-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','choppers']; this allowDamage false; this SetObjectTexture [0,""opt_a3_core\bilder\nato_luftfahrzeuge.jpg""]; this enableSimulation false;";
+				init="this addAction['Luft-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','choppers'];";
+				disableSimulation=1;
 			};
 			id=137;
 			type="Land_InfoStand_V1_F";
-			atlOffset=-0.0042896271;
+			atlOffset=-0.0039997101;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\nato_luftfahrzeuge.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item43
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11646.517,7.5254068,13147.912};
+				position[]={11646.517,7.5253639,13147.912};
 				angles[]={0,1.7978462,0};
 			};
 			side="Empty";
@@ -859,11 +1054,53 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Ketten-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','armored']; this allowDamage false; this SetObjectTexture [0,""opt_a3_core\bilder\nato_kettenfahrzeuge.jpg""]; this enableSimulation false;";
+				init="this addAction['Ketten-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','armored'];";
+				disableSimulation=1;
 			};
 			id=138;
 			type="Land_InfoStand_V1_F";
-			atlOffset=4.2915344e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\nato_kettenfahrzeuge.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item44
 		{
@@ -871,17 +1108,60 @@ class Mission
 			class PositionInfo
 			{
 				position[]={11602.566,7.5253639,13158.303};
-				angles[]={0,6.0371346,0};
+				angles[]={0,6.0371289,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Rad-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','vehicles']; this allowDamage false;  this SetObjectTexture [0,""opt_a3_core\bilder\nato_radfahrzeuge.jpg""]; this enableSimulation false;";
+				init="this addAction['Rad-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','vehicles'];";
+				disableSimulation=1;
 			};
 			id=139;
 			type="Land_InfoStand_V1_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\nato_radfahrzeuge.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item45
 		{
@@ -896,10 +1176,53 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Nachschub' call XBlueText,'common\client\opt_vehicleOrder.sqf','supplies']; this allowDamage false; this SetObjectTexture [0,""opt_a3_core\bilder\nato_nachschub.jpg""]; this enableSimulation false;";
+				init="this addAction['Nachschub' call XBlueText,'common\client\opt_vehicleOrder.sqf','supplies']; ";
+				disableSimulation=1;
 			};
 			id=140;
 			type="Land_InfoStand_V1_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\nato_nachschub.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item46
 		{
@@ -1336,10 +1659,33 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="this addAction [""Teleport zu Hauptbasis"", ""addons\base_teleport\teleport_csat_basis_1.sqf"", false, 5, false, true, """", ""player getVariable ['r3f_isFreeHandling',true]""]; this allowDamage false;";
+				init="this addAction [""Teleport zu Hauptbasis"", ""addons\base_teleport\teleport_csat_basis_1.sqf"", false, 5, false, true, """", ""player getVariable ['r3f_isFreeHandling',true]""]; ";
 			};
 			id=554;
 			type="Flag_CSAT_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item60
 		{
@@ -1380,7 +1726,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2207.9727,17.673164,13405.893};
+				position[]={2207.9729,17.672806,13405.893};
 				angles[]={0,5.6926179,0};
 			};
 			side="Empty";
@@ -1388,29 +1734,96 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction [""Teleport zu Athanos"", ""addons\base_teleport\teleport_nato_basis_1.sqf"", false, 5, false, true, """", ""player getVariable ['r3f_isFreeHandling',true]""];  this allowDamage false; object setVariable [""R3F_LOG_disabled"", true];";
+				init="this addAction [""Teleport zu Athanos"", ""addons\base_teleport\teleport_nato_basis_1.sqf"", false, 5, false, true, """", ""player getVariable ['r3f_isFreeHandling',true]""]; object setVariable [""R3F_LOG_disabled"", true];";
 			};
 			id=557;
 			type="Flag_NATO_F";
-			atlOffset=0.24635983;
+			atlOffset=0.24600029;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item63
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11500.979,15.638339,13142.008};
-				angles[]={0,3.8956814,0};
+				position[]={11519.671,7.5580845,13142.837};
+				angles[]={0.0053407075,3.5219173,6.2591867};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Marine-Ausrüstung' call XBlueText,'common\client\opt_vehicleOrder.sqf','sea']; this allowDamage false; this enableSimulation false; this SetObjectTexture [0,""opt_a3_core\bilder\nato_nachschub.jpg""]; ";
+				init="this addAction['Marine-Ausrüstung' call XBlueText,'common\client\opt_vehicleOrder.sqf','sea']; ";
+				disableSimulation=1;
 			};
 			id=558;
 			type="Land_InfoStand_V1_F";
-			atlOffset=6.7333136;
+			atlOffset=-0.00020647049;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\nato_nachschub.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item64
 		{
@@ -1424,11 +1837,54 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Marine-Ausrüstung' call XRedText,'common\client\opt_vehicleOrder.sqf','sea', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; this allowDamage false; this enableSimulation false; this SetObjectTexture [0,""opt_a3_core\bilder\csat_marine_ausruestung.jpg""];";
+				init="this addAction['Marine-Ausrüstung' call XRedText,'common\client\opt_vehicleOrder.sqf','sea', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+				disableSimulation=1;
 			};
 			id=559;
 			type="Land_InfoStand_V1_F";
 			atlOffset=0.35899997;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\csat_marine_ausruestung.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item65
 		{
@@ -1462,8 +1918,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11516.35,7.1057129,13136.524};
-				angles[]={0.0026520467,5.4773145,6.2485328};
+				position[]={11516.35,7.1058083,13136.524};
+				angles[]={0.0026529003,5.4773145,6.2485409};
 			};
 			side="Empty";
 			flags=4;
@@ -1473,7 +1929,6 @@ class Mission
 			};
 			id=575;
 			type="Land_HelipadCircle_F";
-			atlOffset=-9.5367432e-005;
 		};
 		class Item68
 		{
@@ -1590,19 +2045,62 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11721.509,5.2191429,3146.0225};
-				angles[]={6.2778587,4.8449697,6.2671871};
+				position[]={11721.509,5.2190843,3146.0227};
+				angles[]={6.2778621,4.8449645,6.2671809};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Nachschub' call XRedText,'common\client\opt_vehicleOrder.sqf','supplies', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; this allowDamage false; this SetObjectTexture [0,""opt_a3_core\bilder\csat_nachschub.jpg""]; this enableSimulation false;";
+				init="this addAction['Nachschub' call XRedText,'common\client\opt_vehicleOrder.sqf','supplies', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+				disableSimulation=1;
 			};
 			id=584;
 			type="Land_InfoStand_V1_F";
-			atlOffset=-0.040938854;
+			atlOffset=-0.040999889;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\csat_nachschub.jpg";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 		class Item73
 		{
@@ -1610,17 +2108,40 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2200.4089,14.025364,13394.012};
-				angles[]={0,3.5387454,0};
+				angles[]={0,3.5387423,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction['Nachschub' call XBlueText,'common\client\opt_vehicleOrder.sqf','supplies']; this allowDamage false; this SetObjectTexture [0,""opt_a3_core\bilder\nato_nachschub.jpg""]; this enableSimulation false;";
+				init="this addAction['Nachschub' call XBlueText,'common\client\opt_vehicleOrder.sqf','supplies']; ";
 			};
 			id=585;
 			type="Land_InfoStand_V1_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="opt_a3_core\bilder\nato_nachschub.jpg";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item74
 		{
@@ -1663,11 +2184,34 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction [""Teleport zu Flugfeld"", ""addons\base_teleport\teleport_csat_basis_2.sqf"", false, 5, false, true, """", ""player getVariable ['r3f_isFreeHandling',true]""]; " \n "this allowDamage false;";
+				init="this addAction [""Teleport zu Flugfeld"", ""addons\base_teleport\teleport_csat_basis_2.sqf"", false, 5, false, true, """", ""player getVariable ['r3f_isFreeHandling',true]""]; ";
 			};
 			id=588;
 			type="Flag_CSAT_F";
 			atlOffset=0.28299975;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item77
 		{
