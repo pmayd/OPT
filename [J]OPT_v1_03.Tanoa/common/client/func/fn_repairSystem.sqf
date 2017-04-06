@@ -12,7 +12,7 @@
 */
 
 // arguments
-private _state = param[1, false, [true]]; // Bereich aktiv oder inaktiv
+private _state = param [0, false, [true]]; // Bereich aktiv oder inaktiv
 private _vec = player getVariable "opt_repairSystem_vec"; //Variable wird vom Trigger gesetzt, damit ist das Fahrezug immer 100% bestimmt
 
 // begin of script
