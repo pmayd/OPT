@@ -18,8 +18,8 @@ opt_csat_flags = [];
 		// erzeuge für jede gefundene Flagge einen Marker auf der Karte
 		#ifdef __OPT_FLAG_MARKER__
 			_markerName = format["marker_%1_%2", _x, _forEachIndex];
-			_marker = createMarker [_markerName, getPos _x];
-			_marker setMarkerType "flag_CSAT";
+			_marker = createMarkerLocal [_markerName, getPos _x];
+			_marker setMarkerTypeLocal "flag_CSAT";
 		#endif
 
 	};
@@ -34,8 +34,8 @@ opt_nato_flags = [];
 		// erzeuge für jede gefundene Flagge einen Marker auf der Karte
 		#ifdef __OPT_FLAG_MARKER__
 			_markerName = format["marker_%1_%2", _x, _forEachIndex];
-			_marker = createMarker [_markerName, getPos _x];
-			_marker setMarkerType "flag_NATO";
+			_marker = createMarkerLocal [_markerName, getPos _x];
+			_marker setMarkerTypeLocal "flag_NATO";
 		#endif
 	};
 

@@ -3,13 +3,42 @@
 #include "setup\setup.sqf";
 diag_log format ["%1 --- TcB initPlayerLocal.sqf startet",diag_ticktime];
 
+// checking for failed player init
+if (isMultiplayer && !isServer) then {	// only on dedicated environment
+	true spawn {
+		private "_puid";
+		waitUntil {player == player && local player};
+		_puid = getPlayerUID player;
+		if (isNil "_puid") exitWith {diag_log "UID is Nil - init stoped"; endMission "LOSER";};
+		if (_puid == "") exitWith {diag_log "UID is empty - init stoped"; endMission "LOSER";};
+		if (!isNil "opt_allowedSides") then {
+			if !(playerSide in opt_allowedSides) exitWith {diag_log format ["wrong side: %1", playerSide]; endMission "LOSER";};
+		};
+	};
+};
+
+// TEAM BALANCE - end mission for player if side is full
+// nicht in onPlayerRespawn, da nur zu Missionsbeginn prüfen
+if (isMultiplayer && !isServer) then {
+	if (OPT_TEAMBALANCE > 0) then {
+		_en_pa = if (playerSide == blufor) then {playersNumber opfor} else {playersNumber blufor};
+		if ((playersNumber playerSide) > (_en_pa + OPT_TEAMBALANCE)) then {
+			endMission (switch (playerSide) do {
+				case (blufor) : {"balanceBLUFOR"};
+				case (opfor) : {"balanceOPFOR"};
+				default {"LOSER"};
+			});
+		};
+	};
+};
+
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
 #include "setup\setup_classnames.sqf"
 
 if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehicleLocal [0,0,0]};
 
 // starte alle addon Scripte
-__ccppfln(common\client\func\x_perframe.sqf);
+__ccppfln(common\client\func\x_perframe.sqf); // startet Rsc für Anzeige von Meldungen
 [] execVM "addons\opt3_magRepack\MagRepack_init_sv.sqf";
 __cppfln(opt_TFARfrequencies,common\client\opt_TFARfrequencies.sqf);
 __cppfln(opt_tfarVehicleLr,common\client\opt_tfarVehicleLr.sqf);
@@ -108,39 +137,6 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 	}];
 #endif
 
-// known issue: missionEH wont remove if the player switch during the mission the slot! that means if the mEH was set one time it will be activated regardless if you switch the lobby slot f.e. - maybee line 32 will fix this(?)
-#ifdef __ONLY_PILOTS_CAN_FLY__
-	if (OPT_ONLY_PILOTS == 1) then {
-		if (!(typeOf player in opt_pilots) && {!(typeOf player in ["O_Helipilot_F","B_Helipilot_F"])}) then {
-			addMissionEventHandler ["Draw3D", {
-				if ((vehicle player) isKindOf "Air" && player == assignedDriver (vehicle player) || {player == (vehicle player) turretUnit [0] && (vehicle player) isKindOf "Air"}) then {
-					if (!(typeOf (vehicle player) in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
-						player action ["GetOut",vehicle player];
-						TitleRsc ["only_pilots", "plain", 0.5];
-					};
-				};
-			}];
-		};
-	};
-
-#endif
-
-#ifdef __ONLY_CREW_CAN_DRIVE__
-	if (OPT_ONLY_CREW == 1) then {
-		if (!(typeOf player in opt_crew) && {!(typeOf player in ["O_crew_F","B_crew_F"])}) then {
-			addMissionEventHandler ["Draw3D", {
-				if (player == driver (vehicle player)) then {
-					if (typeOf (vehicle player) in opt_crew_vecs || {(vehicle player) isKindOf "Tank"}) then {
-						player action ["GetOut",vehicle player];
-						TitleRsc ["only_crew", "plain", 0.5];
-					};
-				};
-			}];
-		};
-	};
-
-#endif
-
 #ifdef __SHOW_CUSTOM_PLAYERMARKER__
 	__ccppfln(common\client\func\player_marker.sqf);
 
@@ -193,35 +189,6 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 	}];
 
 #endif
-
-// checking for failed player init
-if (isMultiplayer && !isServer) then {	// only on dedicated environment
-	true spawn {
-		private "_puid";
-		waitUntil {player == player && local player};
-		_puid = getPlayerUID player;
-		if (isNil "_puid") exitWith {diag_log "UID is Nil - init stoped"; endMission "LOSER";};
-		if (_puid == "") exitWith {diag_log "UID is empty - init stoped"; endMission "LOSER";};
-		if (!isNil "opt_allowedSides") then {
-			if !(playerSide in opt_allowedSides) exitWith {diag_log format ["wrong side: %1", playerSide]; endMission "LOSER";};
-		};
-	};
-};
-
-// TEAM BALANCE - end mission for player if side is full
-// nicht in onPlayerRespawn, da nur zu Missionsbeginn prüfen
-if (isMultiplayer && !isServer) then {
-	if (OPT_TEAMBALANCE > 0) then {
-		_en_pa = if (playerSide == blufor) then {playersNumber opfor} else {playersNumber blufor};
-		if ((playersNumber playerSide) > (_en_pa + OPT_TEAMBALANCE)) then {
-			endMission (switch (playerSide) do {
-				case (blufor) : {"balanceBLUFOR"};
-				case (opfor) : {"balanceOPFOR"};
-				default {"LOSER"};
-			});
-		};
-	};
-};
 
 _pos = if (playerSide == blufor) then {getMarkerPos "respawn_east"} else {getMarkerPos "respawn_west"};
 ["ProtectionZone_Invisible_F", _pos, 150, 20] spawn opt_fnc_wallChain;

@@ -9,12 +9,6 @@ diag_log format ["%1 --- TcB initServer.sqf startet", diag_ticktime];
 //init only by server
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
-#ifdef __REMOVE_DEAD_AI_AND_VECS__
-	tcb_addkilledhandler = __REMOVE_DEAD_AI_AND_VECS__;
-	tcb_allunits_add = [];
-	__cppfln(common\server\initaddkilledhandler.sqf);
-#endif
-
 // ensure that disconnected players body will be removed - wont work with BI corpseManagerMode(!)
 addMissionEventHandler ["HandleDisconnect", {
 	_unit = _this select 0;
@@ -79,14 +73,14 @@ addMissionEventHandler ["HandleDisconnect", {
 	//[] spawn compileFinal preprocessFileLineNumbers "addons\opt3_sidemissions\sm3_createTrucks.sqf";
 	
 	// EH für alle im Editor gesetzten Fahrzeuge: loggt Zerstörung
+	execVM "addons\garbage\garbageCollector.sqf";
+
 	{
 		_x addMPEventHandler ["MPkilled", {
-			params ["_vec", "_killer"];
-			["opt_eh_server_log_vec_destroyed", [_vec, _killer]] call CBA_fnc_serverEvent;
+			(_this select [0,2]) call tcb_fnc_handleDeadVehicle;
 		}];
 	} forEach vehicles;
 	
-	execVM "addons\garbage\garbageCollector.sqf";
 };
 
 diag_log format ["%1 --- TcB initServer.sqf processed", diag_ticktime];

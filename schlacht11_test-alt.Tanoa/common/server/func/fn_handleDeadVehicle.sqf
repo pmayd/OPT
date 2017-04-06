@@ -1,16 +1,15 @@
-#include "..\..\..\setup\setup.sqf"
-private ["_v", "_type", "_dir", "_pos", "_vel", "_dv"];
-_v = _this select 0;
-_type = typeOf _v;
-_dir = direction _v;
-_pos = position _v;
-_vel = velocity _v;
-{deleteVehicle _x} forEach ([_v] + crew _v);
-_dv = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
-_dv setDir _dir;
-_dv setPos _pos;
-_dv setVelocity _vel;
-_dv setFuel 0;
-_dv setDamage 1;
-_dv setVariable ["ai_ddeadt", diag_tickTime];
-__addDead(_dv)
+params ["_vec", "_killer"];
+
+// log destroyed vehicle and killer
+["opt_eh_server_log_vec_destroyed", [_vec, _killer]] call CBA_fnc_serverEvent;
+
+// remove vehicle and ai crew
+#ifdef __REMOVE_DEAD_AI_AND_VECS__
+	(_this) spawn {
+		params ["_vec", "_killer"];
+		sleep 60;
+		{deleteVehicle _x} foreach (crew _vec);
+		deleteVehicle _vec;
+	};
+
+#endif	

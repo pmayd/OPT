@@ -49,5 +49,6 @@ xfperFrame = {
 		} forEach perframe_array;
 	};
 };
+
 _layer = "tcbFrameLayer" call BIS_fnc_rscLayer;
 _layer cutRsc ["FrameHandlerRsc","PLAIN"];
