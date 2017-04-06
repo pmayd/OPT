@@ -15,6 +15,10 @@ Aktuelle Version ist 1.028 (ohne meine Änderungen)
 
 ## SITREP
 
+### 2017-04-06
+- Einbau eines neuen Reparatur-Systems für Auftanken und Reparieren via Aktionmenü
+- Umbau der Draw3D-EH für Crewerkennung auf EH "Getin" beim Spawn
+
 ### 2017-04-03
 - Umstellung auf Event Scripts abgeschlossen (initPlayerLocal.sqf und initServer.sqf)
 - Respawn-Kosten implementiert. onPlayerRespawn.sqf regelt jetzt den Abzug von 5000 € pro Respawn. Einstellbar wie immer in der setup.sqf
