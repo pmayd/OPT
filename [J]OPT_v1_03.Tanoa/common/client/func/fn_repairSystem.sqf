@@ -5,7 +5,6 @@
 	date: 			2017-04-06	
 	purpose: 		Gibt jedem Fahrzeug im Bereich des Triggers 2 Einträge zum Auftanken und Reparieren. Entfernt die Einträge beim Verlassen des Triggers. Führt ebenfalls die entsprechenden Arbeiten bei Aufruf durch	
 	arguments: 	
-		- vec: Fahrzeug, das den Trigger ausgelöst hat
 		- state(bool): true - Bereich aktiv, false - Bereich inaktiv	
 	return value:		none
 
@@ -13,8 +12,8 @@
 */
 
 // arguments
-private _vec = param[0, objNull, [objNull]];
 private _state = param[1, false, [true]]; // Bereich aktiv oder inaktiv
+private _vec = player getVariable "opt_repairSystem_vec"; //Variable wird vom Trigger gesetzt, damit ist das Fahrezug immer 100% bestimmt
 
 // begin of script
 // Fehlerbehandlung

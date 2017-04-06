@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=755;
+		nextID=756;
 	};
 	class LayerIndexProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11698.54,11.598449,13162.003};
-		dir[]={0.28254795,-0.2170454,0.93440175};
-		up[]={0.062825136,0.97615761,0.20776589};
-		aside[]={0.95721817,5.3559779e-007,-0.28944764};
+		pos[]={7022.085,9.7863417,7493.8896};
+		dir[]={-0.25694913,-0.72596174,0.63793468};
+		up[]={-0.27123028,0.68773359,0.67339098};
+		aside[]={0.92758423,2.3050234e-008,0.37361541};
 	};
 };
 binarizationWanted=0;
@@ -204,7 +204,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=39;
 		class Item0
 		{
 			dataType="Marker";
@@ -9666,8 +9666,8 @@ class Mission
 				name="trg_nato_repair";
 				text="Auslöser für Rep-Script";
 				condition="this && !isNull (objectParent player) && driver (vehicle player) == player";
-				onActivation="_nul = [objectParent player, true] spawn opt_fnc_repairSystem";
-				onDeactivation="_nul = [objectParent player, false] spawn opt_fnc_repairSystem";
+				onActivation="player setVariable [""opt_repairSystem_vec"", objectParent player]; nul = [objectParent player, true] spawn opt_fnc_repairSystem";
+				onDeactivation="nul = [objectParent player, false] spawn opt_fnc_repairSystem";
 				sizeA=6;
 				sizeB=6;
 				sizeC=5;
@@ -9677,6 +9677,29 @@ class Mission
 			};
 			id=754;
 			type="EmptyDetectorArea10x10";
+		};
+		class Item38
+		{
+			dataType="Trigger";
+			position[]={7019.5586,2.6599827,7502.1655};
+			angle=2.9429018;
+			class Attributes
+			{
+				name="trg_nato_repair_1";
+				text="Auslöser für Rep-Script";
+				condition="this && !isNull (objectParent player) && driver (vehicle player) == player";
+				onActivation="player setVariable [""opt_repairSystem_vec"", objectParent player]; nul = [objectParent player, true] spawn opt_fnc_repairSystem";
+				onDeactivation="nul = [objectParent player, false] spawn opt_fnc_repairSystem";
+				sizeA=6;
+				sizeB=6;
+				sizeC=5;
+				repeatable=1;
+				activationBy="ANYPLAYER";
+				isRectangle=1;
+			};
+			id=755;
+			type="EmptyDetectorArea10x10";
+			atlOffset=-1.7404556e-005;
 		};
 	};
 	class Connections
