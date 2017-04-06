@@ -9647,8 +9647,8 @@ class Mission
 				name="trg_nato_repair";
 				text="Auslöser für Rep-Script";
 				condition="this && !isNull (objectParent player) && driver (vehicle player) == player";
-				onActivation="player setVariable [""opt_repairSystem_vec"", objectParent player]; nul = [true] spawn opt_fnc_repairSystem;";
-				onDeactivation="nul = [false] spawn opt_fnc_repairSystem; player setVariable [""opt_repairSystem_vec"", objectParent player]";
+				onActivation="nul = [true] spawn opt_fnc_repairSystem;";
+				onDeactivation="nul = [false] spawn opt_fnc_repairSystem; ";
 				sizeA=6;
 				sizeB=6;
 				sizeC=5;
@@ -9663,7 +9663,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7019.5591,2.6600001,7502.166};
-			angle=2.9429042;
+			angle=2.942904;
 			class Attributes
 			{
 				name="trg_csat_repair";
