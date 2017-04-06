@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=756;
+		nextID=757;
 	};
 	class LayerIndexProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7022.085,9.7863417,7493.8896};
-		dir[]={-0.25694913,-0.72596174,0.63793468};
-		up[]={-0.27123028,0.68773359,0.67339098};
-		aside[]={0.92758423,2.3050234e-008,0.37361541};
+		pos[]={11699.626,11.814693,13166.16};
+		dir[]={0.2240988,-0.4678854,0.85490984};
+		up[]={0.11863998,0.8837871,0.45259663};
+		aside[]={0.96732068,1.3853423e-007,-0.25356597};
 	};
 };
 binarizationWanted=0;
@@ -204,7 +204,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=39;
+		items=40;
 		class Item0
 		{
 			dataType="Marker";
@@ -5813,7 +5813,7 @@ class Mission
 			name="CSAT BASE";
 			class Entities
 			{
-				items=26;
+				items=25;
 				class Item0
 				{
 					dataType="Object";
@@ -6018,25 +6018,6 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={7019.6968,2.659977,7502.1362};
-						angles[]={0,6.0694523,0};
-					};
-					side="Empty";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="o_pad_3";
-					};
-					id=80;
-					type="Land_HelipadRescue_F";
-					atlOffset=-2.3126602e-005;
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
 						position[]={6942.1143,2.6599579,7411.4717};
 						angles[]={0,1.4139255,0};
 					};
@@ -6050,7 +6031,7 @@ class Mission
 					type="Land_HelipadCircle_F";
 					atlOffset=-4.2200089e-005;
 				};
-				class Item7
+				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6069,7 +6050,7 @@ class Mission
 					type="OPT_O_CargoNet_01_ammo_F";
 					atlOffset=-3.0755997e-005;
 				};
-				class Item8
+				class Item7
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6088,7 +6069,7 @@ class Mission
 					type="OPT_O_Truck_03_medical_F";
 					atlOffset=-0.0010812283;
 				};
-				class Item9
+				class Item8
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6106,7 +6087,7 @@ class Mission
 					type="OPT_O_Truck_03_ammo_F";
 					atlOffset=-0.00052976608;
 				};
-				class Item10
+				class Item9
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6147,7 +6128,7 @@ class Mission
 						nAttributes=1;
 					};
 				};
-				class Item11
+				class Item10
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6208,7 +6189,7 @@ class Mission
 						nAttributes=2;
 					};
 				};
-				class Item12
+				class Item11
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6225,7 +6206,7 @@ class Mission
 					type="Land_HelipadCircle_F";
 					atlOffset=0.44413733;
 				};
-				class Item13
+				class Item12
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6266,7 +6247,7 @@ class Mission
 						nAttributes=1;
 					};
 				};
-				class Item14
+				class Item13
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6307,7 +6288,7 @@ class Mission
 						nAttributes=1;
 					};
 				};
-				class Item15
+				class Item14
 				{
 					dataType="Object";
 					class PositionInfo
@@ -6324,7 +6305,7 @@ class Mission
 					id=589;
 					type="Land_HelipadEmpty_F";
 				};
-				class Item16
+				class Item15
 				{
 					dataType="Group";
 					side="East";
@@ -6425,7 +6406,7 @@ class Mission
 					id=591;
 					atlOffset=0.62959313;
 				};
-				class Item17
+				class Item16
 				{
 					dataType="Group";
 					side="East";
@@ -7072,7 +7053,7 @@ class Mission
 					id=594;
 					atlOffset=0.53037429;
 				};
-				class Item18
+				class Item17
 				{
 					dataType="Group";
 					side="East";
@@ -7592,7 +7573,7 @@ class Mission
 					id=609;
 					atlOffset=0.40137768;
 				};
-				class Item19
+				class Item18
 				{
 					dataType="Group";
 					side="East";
@@ -7779,7 +7760,7 @@ class Mission
 					id=621;
 					atlOffset=-6.1273575e-005;
 				};
-				class Item20
+				class Item19
 				{
 					dataType="Group";
 					side="East";
@@ -8069,7 +8050,7 @@ class Mission
 					id=626;
 					atlOffset=-1.1920929e-006;
 				};
-				class Item21
+				class Item20
 				{
 					dataType="Group";
 					side="East";
@@ -8756,7 +8737,7 @@ class Mission
 					id=633;
 					atlOffset=0.33507442;
 				};
-				class Item22
+				class Item21
 				{
 					dataType="Group";
 					side="East";
@@ -9030,7 +9011,7 @@ class Mission
 					id=649;
 					atlOffset=1.502037e-005;
 				};
-				class Item23
+				class Item22
 				{
 					dataType="Group";
 					side="East";
@@ -9305,7 +9286,7 @@ class Mission
 					id=656;
 					atlOffset=-4.0531158e-006;
 				};
-				class Item24
+				class Item23
 				{
 					dataType="Group";
 					side="East";
@@ -9406,7 +9387,7 @@ class Mission
 					id=663;
 					atlOffset=0.39078474;
 				};
-				class Item25
+				class Item24
 				{
 					dataType="Trigger";
 					position[]={6926.1099,2.6600001,7412.0059};
@@ -9663,11 +9644,11 @@ class Mission
 			angle=3.4641471;
 			class Attributes
 			{
-				name="trg_csat_repair";
+				name="trg_nato_repair";
 				text="Auslöser für Rep-Script";
 				condition="this && !isNull (objectParent player) && driver (vehicle player) == player";
-				onActivation="player setVariable [""opt_repairSystem_vec"", objectParent player]; nul = [true]";
-				onDeactivation="nul = [false] spawn opt_fnc_repairSystem";
+				onActivation="player setVariable [""opt_repairSystem_vec"", objectParent player]; nul = [true] spawn opt_fnc_repairSystem;";
+				onDeactivation="nul = [false] spawn opt_fnc_repairSystem; player setVariable [""opt_repairSystem_vec"", objectParent player]";
 				sizeA=6;
 				sizeB=6;
 				sizeC=5;
@@ -9685,11 +9666,11 @@ class Mission
 			angle=2.9429042;
 			class Attributes
 			{
-				name="trg_nato_repair_1";
+				name="trg_csat_repair";
 				text="Auslöser für Rep-Script";
 				condition="this && !isNull (objectParent player) && driver (vehicle player) == player";
 				onActivation="player setVariable [""opt_repairSystem_vec"", objectParent player]; nul = [true] spawn opt_fnc_repairSystem";
-				onDeactivation="nul = [false] spawn opt_fnc_repairSystem";
+				onDeactivation="nul = [false] spawn opt_fnc_repairSystem; player setVariable [""opt_repairSystem_vec"", objectParent player]";
 				sizeA=6;
 				sizeB=6;
 				sizeC=5;
@@ -9699,6 +9680,23 @@ class Mission
 			};
 			id=755;
 			type="EmptyDetectorArea10x10";
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7019.5288,2.659997,7502.0674};
+				angles[]={0,6.0968714,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=756;
+			type="Land_HelipadSquare_F";
+			atlOffset=-3.0994415e-006;
 		};
 	};
 	class Connections
