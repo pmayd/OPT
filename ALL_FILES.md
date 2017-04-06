@@ -44,12 +44,12 @@ Diese Seite zeigt tabellarisch, wie alle Skripte zusammenhängen bzw. im Spiel a
      <tr>
       <td><code>fn_repairSystem.sqf</code></td>      
       <td>/common/client/func</td>
-      <th></th>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
-      <td>[x]</td>
+      <td></td>
+      <th>[x]</th>
       <td>Wird ausgelöst, sobald ein Spieler als Fahrer in einem Fahrzeug das Service-Pad befährt</td>
     </tr>  
   </tbody>
