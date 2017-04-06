@@ -18,7 +18,8 @@ Name: [J]OPT_v1_03
 
 ### 2017-04-06
 - Einbau eines neuen Reparatur-Systems für Auftanken und Reparieren via Aktionmenü
-- Umbau der Draw3D-EH für Crewerkennung auf EH "Getin" beim Spawn
+- Performanceoptimierung: Umbau der Draw3D-EH für Crewerkennung auf EH "Getin" beim Spawn, keine Belastung des Spielers mehr
+- TODO: HUD per CBA Keybind auf eine Taste legen!
 
 ### 2017-04-03
 - Umstellung auf Event Scripts abgeschlossen (initPlayerLocal.sqf und initServer.sqf)
