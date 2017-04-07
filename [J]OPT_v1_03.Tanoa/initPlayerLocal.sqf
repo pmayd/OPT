@@ -97,6 +97,44 @@ if (__RESPAWN_TYPE__ != 0 || __RESPAWN_TYPE__ != 1) then {
 	}];
 };
 
+player addEventHandler ["GetInMan", {
+		/*  
+	   	unit: Object - Unit the event handler is assigned to
+	    position: String - Can be either "driver", "gunner" or "cargo"
+	    vehicle: Object - Vehicle the unit entered
+	    turret: Array - turret path
+    */
+    params ["_unit", "_pos", "_vec", "_turret"];
+
+    #ifdef __ONLY_PILOTS_CAN_FLY__
+			if (OPT_ONLY_PILOTS == 1) then {
+				if (!(typeOf _unit in opt_pilots) && {!(typeOf _unit in ["O_Helipilot_F","B_Helipilot_F"])}) then {
+					if (_vec isKindOf "Air" && (_unit == assignedDriver _vec || _unit == _vec turretUnit [0])) then {
+						if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
+							_unit action ["GetOut", _vec];
+							TitleRsc ["only_pilots", "plain", 0.5];
+						};
+					};
+				};
+			};
+			
+		#endif
+
+		#ifdef __ONLY_CREW_CAN_DRIVE__
+			if (OPT_ONLY_CREW == 1) then {
+				if (!(typeOf _unit in opt_crew) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
+					if (_unit == driver _vec || _unit == gunner _vec || _unit == commander _vec) then {
+						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
+							_unit action ["GetOut", _vec];
+							TitleRsc ["only_crew", "plain", 0.5];
+						};
+					};
+				};
+			};
+
+		#endif
+}];
+
 // lösche alle alten Draw3D EH
 removeAllMissionEventHandlers "Draw3D";
 removeAllMissionEventHandlers "Map";
