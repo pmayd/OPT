@@ -16,6 +16,9 @@ Name: [J]OPT_v1_03
 
 ## SITREP
 
+### 2017-04-07
+- Performanceupdate: Umbau auf neuen GetInMan-EH, kein Polling mehr, auch nicht an Fahrzeugen
+
 ### 2017-04-06
 - Einbau eines neuen Reparatur-Systems für Auftanken und Reparieren via Aktionmenü
 - Performanceoptimierung: Umbau der Draw3D-EH für Crewerkennung auf EH "Getin" beim Spawn, keine Belastung des Spielers mehr
