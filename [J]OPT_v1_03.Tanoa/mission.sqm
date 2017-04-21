@@ -12,7 +12,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12;
+		nextID=20;
 	};
 	class Camera
 	{
@@ -178,6 +178,30 @@ class CustomAttributes
 			};
 		};
 		nAttributes=2;
+	};
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="EnableDebugConsole";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		nAttributes=1;
 	};
 };
 class Mission
@@ -9663,7 +9687,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={7019.5591,2.6600001,7502.166};
-			angle=2.942904;
+			angle=2.9429035;
 			class Attributes
 			{
 				name="trg_csat_repair";

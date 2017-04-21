@@ -11,9 +11,12 @@
 //changed by psycho
 // auto-mission end is possible now
 if (!local player) exitWith {};
-waitUntil {sleep 4; (WinEast == 1 || WinWest == 1 || Draw == 1 || playTime <= 0)};
+waitUntil {!isNil "opt_startTime"};
 
-if (playTime <= 0) then {
+waitUntil {sleep 4; _timeElapsed = (serverTime - opt_startTime); (WinEast == 1 || WinWest == 1 || Draw == 1 || (OPT_PLAYTIME - _timeElapsed) <= 0)};
+
+_timeElapsed = (serverTime - opt_startTime);
+if ((OPT_PLAYTIME - _timeElapsed) <= 0) then {
 	diag_log format ["########## Schlacht automatisch beendet. Endpunktestand: NATO %1 | CSAT %2 ##########", WestPoints, EastPoints];
 } else {
 	diag_log format ["########## Schlacht von MT beendet. Endpunktestand: NATO %1 | CSAT %2 ##########", WestPoints, EastPoints];
@@ -28,7 +31,7 @@ if (EastPoints != WestPoints) then {
 	};
 };
 
-_camPos = vehicle Player;
+_camPos = vehicle player;
 _text = switch (true) do {
 	case (WinEast == 1) : {"CSAT hat gewonnen!"};
 	case (WinWest == 1) : {"NATO hat gewonnen!"};

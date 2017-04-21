@@ -7,6 +7,7 @@ diag_log format ["%1 --- Executing TcB init.sqf", diag_ticktime];
 	setViewDistance __VIEWDISTANCE__;
 #endif
 
+waitUntil {!isNil "OPT_GRASS"};
 #ifdef __GRASS_OFF__
 	setTerrainGrid 50;
 #else

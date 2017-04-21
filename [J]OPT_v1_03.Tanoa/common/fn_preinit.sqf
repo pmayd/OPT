@@ -32,14 +32,4 @@ tcb_gamemaster addEventHandler [
 ];
 */
 
-// Startparameter auslesen und als globale Variablen verfügbar machen
-// By James: moderner Ansatz ohne 20 Zeilen Code
-// Das spiel liest bereits alle Parameter aus und speichert sie in "BIS_fnc_storeParamsValues_data"
-// 1. Namen aller Parameter, 2. führe globale Variable mit diesem Namen ein
-_paramNames = ("true" configClasses (missionConfigFile >> "Params")) apply {configName _x};
-{	
-	// braucht nicht global sein, da init.sqf für jeden ausgeführt wird
-	missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue];
-} forEach _paramNames;
-
-diag_log format ["%1 --- preinit.sqf is processed",diag_ticktime];
+diag_log format ["%1 --- preInit.sqf is processed",diag_ticktime];

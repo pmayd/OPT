@@ -69,9 +69,9 @@ class tcb {
 		addf(checkVehicleEmpty);
 		addf(handleDeadVehicle);
 	};
-	class tcb_preinit {
+	class tcb_preInit {
 		file = "common";
-		class preinit {
+		class preInit {
 			preInit = 1;
 			headerType = -1;
 		};
