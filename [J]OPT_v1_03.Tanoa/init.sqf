@@ -7,16 +7,7 @@ diag_log format ["%1 --- Executing TcB init.sqf", diag_ticktime];
 	setViewDistance __VIEWDISTANCE__;
 #endif
 
-waitUntil {!isNil "OPT_GRASS"};
-#ifdef __GRASS_OFF__
-	setTerrainGrid 50;
-#else
-	if (OPT_GRASS == 0) then {
-		setTerrainGrid 50;
-	} else {
-		setTerrainGrid 3.125;
-	};
-#endif
+setTerrainGrid 3.125;
 
 if (isNil "tcb_netinit") then {
 	__ccppfln(common\x_netinit.sqf);

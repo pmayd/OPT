@@ -84,14 +84,6 @@ class Params {
 		texts[] 	= {"Deaktiviert","Aktiviert"};
 		default 	= 0;
 	};
-#ifndef __GRASS_OFF__
-	class OPT_GRASS {
-		title = "Grass An / Aus";
-		values[] = {1,0};
-		default = 1;
-		texts[] = {"An","Aus"};
-	};
-#endif
 #ifdef __ONLY_PILOTS_CAN_FLY__
 	class OPT_ONLY_PILOTS {
 		title = "Nur Piloten können fliegen";

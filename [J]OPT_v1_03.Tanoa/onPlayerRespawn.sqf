@@ -56,9 +56,12 @@ if (OPT_TELEPORT == 1) then {
 };
 
 [] spawn {
-	sleep 5;	// delay... make sure TFAR had initialized
 	[] spawn opt_TFARfrequencies;
 	[] spawn opt_tfarVehicleLr;
+	__ccppfln(addons\fastrope\zlt_fastrope.sqf); 													//fastropescript
+	__ccppfln(addons\zlt_fieldrepair\zlt_fieldrepair.sqf);								//repscript
+	execVM "addons\R3F_LOG\init.sqf";																			// r3f Logistics
+	execVM "addons\attach_exp\init.sqf";																	// etv charges
 };
 
 // prüft, ob ein Fahrzeug auf dem Kopf liegt.
