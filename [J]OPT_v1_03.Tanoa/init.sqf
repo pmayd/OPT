@@ -3,6 +3,9 @@ diag_log format ["%1 --- Executing TcB init.sqf", diag_ticktime];
 
 #include "setup\setup.sqf"
 
+// sicherstellen, dass alle Parameter eingelesen wurden
+waitUntil {!isNil "OPT_PLAYTIME"};
+
 #ifdef __VIEWDISTANCE__
 	setViewDistance __VIEWDISTANCE__;
 #endif
