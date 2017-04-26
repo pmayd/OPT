@@ -72,10 +72,6 @@
 // wenn nicht auskommentiert mit // dann legt das die Viewdistance für die Spieler und den Server fest
 #define __VIEWDISTANCE__ 3500
 
-// wenn nicht auskommentiert mit // dann kann in der Lobby die Voreinstellung getroffen werden und der Spieler
-// per Dialog ingame das Gras an/abschalten
-//#define __GRASS_OFF__
-
 // wenn nicht auskommentiert mit // dann sieht man bei allen spielbaren Einheiten den Atem
 //#define __BREATH_VISIBLE__
 
