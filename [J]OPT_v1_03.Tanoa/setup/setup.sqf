@@ -80,7 +80,7 @@
 
 // wenn nicht auskommentiert mit // wird ein Intro mit autmoatischer Kamerafahrt gestartet
 // benötigt 2x unsichtbares Heli-H ---> tcb_camstart & tcb_cam_dir
-#define __INTRO_ENABLED__
+//#define __INTRO_ENABLED__
 
 
 /**

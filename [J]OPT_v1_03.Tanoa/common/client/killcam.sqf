@@ -44,7 +44,7 @@ if ((_killer == player) or (!alive _killer) or (isNull _killer)) then {
 	camDestroy _deadcam;
 } else {
 	if (isPlayer _killer) then {
-		titleText [format ["You were killed from %1",name _killer],"PLAIN DOWN",0.5];
+		titleText [format ["You were killed from %1", name _killer],"PLAIN DOWN",0.5];
 	};
 	sleep 1;
 	_deadcam camCommand "inertia on";

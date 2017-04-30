@@ -7,17 +7,14 @@
 */
 
 // changed by psycho
-private ["_remaining", "_timeout", "_msg1", "_msg2"];
+params ["_timeout"];							// Zeit der Waffenruhe in Sekunden!
+private ["_remaining", "_msg1", "_msg2"];
 
-_timeout = _this select 0;							// Zeit der Waffenruhe in Sekunden!
 _msg2 = "Die Waffenruhe ist beendet!";
 
-if (MissionStarted) exitWith {};
-waitUntil {time > 1};
+if (missionStarted) exitWith {};
 
-if (isServer) then {
-	["opt_logEvent", format ["########## Startbudget: (NATO %1 | CSAT %2) ##########", opt_west_budget, opt_east_budget]] call tcb_fnc_NetCallEvent;
-};
+waitUntil {time > 1};
 
 // FOR ALL CLIENTS
 "opt_timeoutMsg" addPublicVariableEventHandler {[] call opt_showCountdown};
@@ -46,6 +43,15 @@ if (isnil "opt_timeFormat") then {
 
 // FOR SERVER ONLY
 if (isServer) then {
+
+	waitUntil {serverTime < 1e6};
+	opt_startTime = serverTime;			// nicht time! time ist 0, da time Zeit von Missionsbeginn mitteilt. serverTime hingegen wird
+	// immer synchronisiert und beinhaltet Zeit seit Serverstart
+	publicVariable "opt_startTime"; // gibt allen Clients die Startzeit des Servers bekannt
+
+	_log_msg = format["NATO %1 - CSAT %2", opt_west_budget, opt_east_budget];
+	["opt_eh_server_log_write", ["Startbudget", _log_msg]] call CBA_fnc_serverEvent;
+
 	// By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen
 	// bestimme Zeit, die bis hierher vergangen ist. Es kann nicht angenommen werden
 	// dass Time bei 0 startet. Da der Client mit der vergangenen Zeit rechnet, muss hier
@@ -62,13 +68,17 @@ if (isServer) then {
 	};
 
 	// nach Ablauf der Waffenruhe (timeout), starte Mission und gib Variable an alle Clients weiter
-	MissionStarted = true; 
+	missionStarted = true; 
 	// side: schaltet Zeit in HUD frei, schaltet opt_countdown frei
-	publicVariable "MissionStarted"; 
+	publicVariable "missionStarted"; 
+
+	// Beginnt mit dem Counter für die Spielzeit
+	// startet erst, wenn MissionStarted = true gesetzt wird
+	execVM "common\server\opt_countdown.sqf";
 };
 
 if (local player) then {
-	waitUntil {sleep 1; MissionStarted;};
+	waitUntil {missionStarted;};
 	// Benachrichtigung über Missionsstart
 	["<t size='0.8' shadow='1' color='#ffffff'>Mission gestartet!</t>", (safeZoneX - 0.2), (safeZoneY + 0.3), 3, 1, 0, 2] spawn BIS_fnc_dynamicText;
 };

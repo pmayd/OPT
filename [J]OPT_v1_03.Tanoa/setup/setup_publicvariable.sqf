@@ -19,12 +19,7 @@ publicVariable "opt_east_budget";
 publicVariable "opt_dispo";
 publicVariable "opt_respawn_cost";
 
-opt_startTime = serverTime;			// nicht time! time ist 0, da time Zeit von Missionsbeginn mitteilt. serverTime hingegen wird
-// immer synchronisiert und beinhaltet Zeit seit Serverstart
-publicVariable "opt_startTime"; // gibt allen Clients die Startzeit des Servers bekannt
 EastPoints		= 0;
-playTime = OPT_PLAYTIME; // globale var für den Server
-truceTime = OPT_TRUCETIME; // globale var für den Server
 publicVariable "EastPoints";
 WestPoints		= 0;
 publicVariable "WestPoints";

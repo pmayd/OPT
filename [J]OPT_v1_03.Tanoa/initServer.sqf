@@ -78,9 +78,6 @@ addMissionEventHandler ["HandleDisconnect", {
 		}];
 	};
 
-	// Beginnt mit dem Counter für die Spielzeit
-	// startet erst, wenn MissionStarted = true gesetzt wird
-	execVM "common\server\opt_countdown.sqf";
 	//[] spawn compileFinal preprocessFileLineNumbers "addons\opt3_sidemissions\sm3_createTrucks.sqf";
 	
 	// EH für alle im Editor gesetzten Fahrzeuge: loggt Zerstörung

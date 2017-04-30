@@ -10,7 +10,8 @@
 private ["_breaker","_ticker"];
 if (isMultiplayer && !isServer) exitWith {};
 
-waitUntil {MissionStarted};
+if (!missionStarted) exitWith {diag_log format["OPT LOG: ERROR: opt_countdown.sqf started before missionStarted=true!"]};
+	
 ["opt_logEvent", "########## Mission wurde gestartet ##########"] call tcb_fnc_NetCallEvent;
 
 // calculate first time the dominator (it's needed if assynchrone number of flags are defined)
