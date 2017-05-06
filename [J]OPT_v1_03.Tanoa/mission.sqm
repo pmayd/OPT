@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=137;
+	toggles=9;
 	class ItemIDProvider
 	{
 		nextID=782;
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6937.3667,21.599995,7395};
-		dir[]={0.14700334,-0.41642407,-0.89725786};
-		up[]={0.067330971,0.90916061,-0.41096368};
-		aside[]={-0.9868871,2.4447218e-008,-0.16168839};
+		pos[]={11627.16,49.573963,13118.973};
+		dir[]={-0.16671063,-0.61329806,0.77206808};
+		up[]={-0.12944512,0.78985143,0.59948593};
+		aside[]={0.97748047,3.7529389e-007,0.2110645};
 	};
 };
 binarizationWanted=0;
@@ -1609,7 +1609,6 @@ class Mission
 								rank="LIEUTENANT";
 								init="(group this) setGroupIdGlobal [""Fantom""];";
 								description="Fantom - Operator";
-								isPlayer=1;
 								isPlayable=1;
 							};
 							id=672;
@@ -2501,7 +2500,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={11609.522,6.9514389,13147.723};
-								angles[]={0,0.033241004,0};
+								angles[]={0,0.033248521,0};
 							};
 							side="West";
 							flags=4;
@@ -2509,6 +2508,7 @@ class Mission
 							{
 								init="(group this) setGroupIdGlobal [""Bravo""];";
 								description="Bravo (DEF) - Sprengmeister";
+								isPlayer=1;
 								isPlayable=1;
 							};
 							id=688;
@@ -10296,7 +10296,7 @@ class Mission
 			};
 			id=772;
 			type="Land_CampingChair_V1_F";
-			atlOffset=0.59274673;
+			atlOffset=0.65893221;
 			class CustomAttributes
 			{
 				class Attribute0

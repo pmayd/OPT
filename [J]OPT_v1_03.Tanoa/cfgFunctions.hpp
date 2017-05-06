@@ -165,4 +165,5 @@ class opt_addons {
 
 #include "addons\AME\Core\cfgFunctions.hpp" // basic framework
 #include "addons\Core\cfgFunctions.hpp" // display Text
-#include "addons\UAV\cfgFunctions.hpp"
+#include "addons\UAV\cfgFunctions.hpp" // addon für Drohnenstation
+#include "addons\MineDetector\cfgFunctions.hpp" // addon für Minendetektor

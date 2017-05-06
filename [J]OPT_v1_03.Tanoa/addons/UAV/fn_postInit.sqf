@@ -1,5 +1,5 @@
 ﻿if (isDedicated || !hasInterface) exitWith {};
-if (!(typeOf player in (opt_pilot + opt_operator))) exitWith {};
+if (!(typeOf player in (opt_pilots + opt_operator))) exitWith {};
 
 _pcs = entities "Land_PCSet_01_screen_F";
 

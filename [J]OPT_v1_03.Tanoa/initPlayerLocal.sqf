@@ -43,9 +43,6 @@ if (isMultiplayer && !isServer) then {
 	};
 };
 
-// legt alle wichtigen classnames wie Flaggen und Einheiten fest
-#include "setup\setup_classnames.sqf"
-
 if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehicleLocal [0,0,0]};
 
 // starte alle addon Scripte

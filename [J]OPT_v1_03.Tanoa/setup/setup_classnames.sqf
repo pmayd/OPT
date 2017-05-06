@@ -199,3 +199,8 @@ opt_gps_units = [
 	"OPT_NATO_Gruppenfuehrer_T",
 	"OPT_CSAT_Gruppenfuehrer_T"
 ];
+
+opt_pioniers = [
+	"OPT_NATO_Pionier_T",
+	"OPT_CSAT_Pionier_T"
+];
