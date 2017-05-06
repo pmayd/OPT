@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={11627.16,49.573963,13118.973};
-		dir[]={-0.16671063,-0.61329806,0.77206808};
-		up[]={-0.12944512,0.78985143,0.59948593};
-		aside[]={0.97748047,3.7529389e-007,0.2110645};
+		dir[]={-0.04335263,-0.72739935,0.68485922};
+		up[]={-0.045953423,0.68621421,0.72594965};
+		aside[]={0.99801153,3.9392398e-007,0.063175589};
 	};
 };
 binarizationWanted=0;
@@ -1438,8 +1438,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11624.05,6.9514055,13142.007};
-								angles[]={0,0.25927874,0};
+								position[]={11624.05,6.9514389,13142.007};
+								angles[]={0,0.25928611,0};
 							};
 							side="West";
 							flags=4;
@@ -1447,11 +1447,11 @@ class Mission
 							{
 								rank="LIEUTENANT";
 								init="(group this) setGroupIdGlobal [""OPZ""];";
+								isPlayer=1;
 								isPlayable=1;
 							};
 							id=668;
 							type="OPT_NATO_Operator_T";
-							atlOffset=-3.3378601e-005;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -2508,7 +2508,6 @@ class Mission
 							{
 								init="(group this) setGroupIdGlobal [""Bravo""];";
 								description="Bravo (DEF) - Sprengmeister";
-								isPlayer=1;
 								isPlayable=1;
 							};
 							id=688;
