@@ -5,10 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=9;
+	toggles=137;
 	class ItemIDProvider
 	{
-		nextID=780;
+		nextID=782;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class LayerIndexProvider
 	{
@@ -16,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6940.543,23.84601,7430.3804};
-		dir[]={-0.83098924,-0.494719,-0.25453588};
-		up[]={-0.47303301,0.86904699,-0.14489242};
-		aside[]={-0.29288557,9.4827556e-008,0.95618665};
+		pos[]={6937.3667,21.599995,7395};
+		dir[]={0.14700334,-0.41642407,-0.89725786};
+		up[]={0.067330971,0.90916061,-0.41096368};
+		aside[]={-0.9868871,2.4447218e-008,-0.16168839};
 	};
 };
 binarizationWanted=0;
@@ -255,7 +259,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=62;
+		items=63;
 		class Item0
 		{
 			dataType="Marker";
@@ -10574,6 +10578,16 @@ class Mission
 			};
 			id=779;
 			type="Land_Research_house_V1_F";
+		};
+		class Item62
+		{
+			dataType="Marker";
+			position[]={6906.3901,7.27001e-029,7426.8569};
+			name="marker_0";
+			text="Drohnenstation";
+			type="o_uav";
+			id=781;
+			atlOffset=-2.6600001;
 		};
 	};
 	class Connections
