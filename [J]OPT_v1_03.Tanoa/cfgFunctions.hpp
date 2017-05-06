@@ -162,3 +162,7 @@ class opt_addons {
 		addf(Unconcious);
 	};
 };
+
+#include "addons\AME\Core\cfgFunctions.hpp" // basic framework
+#include "addons\Core\cfgFunctions.hpp" // display Text
+#include "addons\UAV\cfgFunctions.hpp"

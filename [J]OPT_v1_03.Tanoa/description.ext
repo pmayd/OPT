@@ -136,6 +136,7 @@ class Params {
 #include "dialogs\far_blackscreen.hpp"
 #include "addons\R3F_LOG\desc_include.h"
 #include "addons\opt3_magRepack\MagRepack_config.hpp"
+#include "dialogs\BarDlg.hpp"
 
 #ifdef __STOP_ITEMS_DROPPING__
 enableItemsDropping = 0;
