@@ -1,5 +1,5 @@
 ﻿if (isDedicated || !hasInterface) exitWith {};
-if (!(typeOf player in ["OPT_NATO_Pilot_T","OPT_CSAT_Pilot_T","OPT_NATO_Operator_T","OPT_CSAT_Operator_T"])) exitWith {};
+if (!(typeOf player in (opt_pilot + opt_operator))) exitWith {};
 
 _pcs = entities "Land_PCSet_01_screen_F";
 
