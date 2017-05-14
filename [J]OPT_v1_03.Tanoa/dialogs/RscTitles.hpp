@@ -264,18 +264,18 @@
 
 		class BackgroundBarLeft: IGUIBack {
 			idc = 2201;
-			x = 0 * safezoneW + safezoneX;
-			y = 0.975 * safezoneH + safezoneY;
-			w = 0.20 * safezoneW;
+			x = safezoneX;
+			y = safezoneY + safezoneH - 0.025 * safezoneH;
+			w = 0.30 * safezoneW;
 			h = 0.025 * safezoneH;
 			colorbackground[] = CA_UI_background_2;
 		}
 
 		class BackgroundBarRight: IGUIBack {
 			idc = 2202;
-			x = 0.8 * safezoneW + safezoneX;
-			y = 0.975 * safezoneH + safezoneY;
-			w = 0.20 * safezoneW;
+			x = safezoneX + safezoneW - 0.30 * safezoneW;
+			y = safezoneY + safezoneH - 0.025 * safezoneH;
+			w = 0.30 * safezoneW;
 			h = 0.025 * safezoneH;
 			colorbackground[] = CA_UI_background_2;
 		}
@@ -283,10 +283,10 @@
 		// 1. Feld
 		class PlayersDisplay : GUILargeText {
 			idc = 5101;
-			x = 0.02 * safezoneW + safezoneX;
-			y = 0.975 * safezoneH + safezoneY;
-			w = 0.3;
-			h = 0.06;
+			x = safezoneX + 0.02 * safezoneW;
+			y = safezoneY + safezoneH - 0.025 * safezoneH;
+			w = 0.08 * safezoneW;
+			h = 0.025 * safezoneH;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
 			text = "test 2";
@@ -295,10 +295,10 @@
 		// 2. Feld
 		class FrameDisplay : GUILargeText {
 			idc = 5091;
-			x = (0.02 * safezoneW + safezoneX) + 0.28;
-			y = 0.975 * safezoneH + safezoneY;
-			w = 0.2;
-			h = 0.06;
+			x = safezoneX + 0.12 * safezoneW;
+			y = safezoneY + safezoneH - 0.025 * safezoneH;
+			w = 0.08 * safezoneW;
+			h = 0.025 * safezoneH;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
 			text = "test 4";
@@ -307,10 +307,10 @@
 		// 3. Feld
 		class BudgetDisplay : GUILargeText {
 			idc = 5092;
-			x = (0.02 * safezoneW + safezoneX) + 0.4;
-			y = 0.975 * safezoneH + safezoneY;
-			w = 0.35;
-			h = 0.06;
+			x = safezoneX + 0.22 * safezoneW;
+			y = safezoneY + safezoneH - 0.025 * safezoneH;
+			w = 0.08 * safezoneW;
+			h = 0.025 * safezoneH;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
 			text = "test 5";
@@ -319,11 +319,10 @@
 		// 4. Feld
 		class HeadingDisplay : GUILargeText {
 			idc = 5102;
-			x = 0.82 * safezoneW + safezoneX;
-			y = 0.975 * safezoneH + safezoneY;
-			colorText[] = Color_WhiteLight;
-			w = 0.22;
-			h = 0.06;
+			x = safezoneX + safezoneW - 0.28 * safezoneW;
+			y = safezoneY + safezoneH - 0.025 * safezoneH;
+			w = 0.08 * safezoneW;
+			h = 0.025 * safezoneH;
 			shadow = 1;
 			text = "test 1";
 		};
@@ -331,10 +330,10 @@
 		// 5. Feld
 		class TimerDisplay : GUILargeText {
 			idc = 5090;
-			x = (0.83 * safezoneW + safezoneX) + 0.22;
-			y = 0.975 * safezoneH + safezoneY;
-			w = 0.2;
-			h = 0.06;
+			x = safezoneX + safezoneW - 0.18 * safezoneW;
+			y = safezoneY + safezoneH - 0.025 * safezoneH;
+			w = 0.08 * safezoneW;
+			h = 0.025 * safezoneH;
 			colorText[] = Color_WhiteLight;
 			shadow = 1;
 			text = "test 3";
