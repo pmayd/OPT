@@ -3,6 +3,9 @@ diag_log format ["%1 --- Executing TcB init.sqf", diag_ticktime];
 
 #include "setup\setup.sqf"
 
+// legt alle wichtigen classnames wie Flaggen und Einheiten fest
+#include "setup\setup_classnames.sqf"
+
 // sicherstellen, dass alle Parameter eingelesen wurden
 waitUntil {!isNil "OPT_PLAYTIME"};
 

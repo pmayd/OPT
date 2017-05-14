@@ -22,7 +22,7 @@ _ticker = 0;
 
 // playTime unverändert, da wir die volle Zeit spielen wollen!
 // Daher von playTime in 1 sec Schritten bis 0.
-for "_i" from (playTime) to 0 step -1 do {
+for "_i" from OPT_PLAYTIME to 0 step -1 do {
 
 	// Bestimme noch zu spielende Zeit: Gesamtzeit - Waffenruhe - Zeit seit Missionsstart = Gesamtzeit - vergangene Zeit
 	private _timeElapsed = (serverTime - opt_startTime);

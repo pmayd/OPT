@@ -1,9 +1,6 @@
 #include "..\setup\setup.sqf"
 diag_log format ["############################# %1 #############################", missionName];
 
-// legt alle wichtigen classnames wie Flaggen und Einheiten fest
-#include "..\setup\setup_classnames.sqf"
-
 XGreyText = {"<t color='#f0bfbfbf'>" + _this + "</t>"};
 XRedText = {"<t color='#f0ff0000'>" + _this + "</t>"};
 XOrangeText = {"<t color='#F3B601'>" + _this + "</t>"};
