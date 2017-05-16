@@ -42,6 +42,7 @@ if ((_killer == player) or (!alive _killer) or (isNull _killer)) then {
 	waitUntil {alive player};
 	player cameraEffect ["terminate","back"];
 	camDestroy _deadcam;
+
 } else {
 	if (isPlayer _killer) then {
 		titleText [format ["You were killed from %1", name _killer],"PLAIN DOWN",0.5];
@@ -55,4 +56,8 @@ if ((_killer == player) or (!alive _killer) or (isNull _killer)) then {
 	waitUntil {alive player};
 	player cameraEffect ["terminate","back"];
 	camDestroy _deadcam;
+
 };
+
+// log
+["opt_eh_server_log_player_killed", [_player, _killer]] call CBA_fnc_serverEvent;

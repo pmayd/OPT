@@ -7,9 +7,19 @@ diag_log format ["%1 --- TcB onPlayerRespawn.sqf startet", diag_ticktime];
 
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 
-// Kosten für Seite abziehen + log
-["opt_eh_server_update_budget", [playerSide, opt_respawn_cost, "-"]] call CBA_fnc_serverEvent;
-["opt_eh_server_log_write", ["Spieler Respawn", format["Spieler: %1 - Kosten: %2", name player, opt_respawn_cost]]] call CBA_fnc_localEvent;
+
+/* NUR ZU BEGINN */
+if (_oldUnit isEqualTo objNull) then {
+
+} /* NUR NACH RESPAWN */
+else {
+	
+	// Kosten für Seite abziehen + log
+	["opt_eh_server_update_budget", [playerSide, opt_respawn_cost, "-"]] call CBA_fnc_serverEvent;
+	["opt_eh_server_log_write", ["Spieler Respawn", format["Spieler: %1 - Kosten: %2", name player, opt_respawn_cost]]] call CBA_fnc_serverEvent;
+
+};
+
 
 /*
 _curators = [];
@@ -31,7 +41,6 @@ if (!isNil "TCB_CURATOR") then {
 ["addToCurator", player] call tcb_fnc_netCallEventCTS;
 */
 
-// By James: Verschoben aus i_server hierher, da init.sqf für jeden Spieler ausgeführt wird!
 #ifdef __NO_MAP__
 	if (player hasWeapon "ItemMap") then {player removeWeapon "ItemMap"};
 	if (player hasWeapon "ItemGPS") then {player removeWeapon "ItemGPS"};
@@ -61,7 +70,5 @@ if (OPT_TELEPORT == 1) then {
 // Mine detector
 call OPT_Detector_fnc_postInit;
 
-// prüft, ob ein Fahrzeug auf dem Kopf liegt.
-// TODO: Als EH bei Fahrzeug?
 
 diag_log format ["%1 --- TcB player_jip.sqf processed",diag_ticktime];

@@ -24,8 +24,6 @@ _encryption = switch (playerSide) do {
 
 // sleep 5;
 //waitUntil {player call TFAR_fnc_isTeamSpeakPluginEnabled; sleep 4};
-
-
 _hasLR = player call TFAR_fnc_haveLRRadio;
 _hasSW = player call TFAR_fnc_haveSWRadio;
 

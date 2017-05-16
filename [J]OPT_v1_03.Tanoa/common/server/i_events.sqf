@@ -10,7 +10,6 @@ wird in der initServer.sqf aufgerufen
 
 	private _cat = "Fahrzeug zerstört";
 	private _message = "";
-	private _side = sideUnknown;
 
 	// Falls Selbstzerstörung
 	if (isNull _vec) then {
@@ -45,7 +44,28 @@ wird in der initServer.sqf aufgerufen
 	};
 
 	// übergib Kategorie und Nachricht an log-FUnktion
-	["opt_eh_server_log_write", ["Fahrzeug zerstört", _message]] call CBA_fnc_localEvent;
+	["opt_eh_server_log_write", [_cat, _message]] call CBA_fnc_localEvent;
+
+}] call CBA_fnc_addEventHandler;
+
+// loggt zerstörte Fahrzeuge
+["opt_eh_server_log_player_killed", {
+	private _player = param [0, objNull];
+	private _killer = param [1, objNull];
+
+	private _cat = "Abschuss Spieler";
+	private _message = "";
+
+	if (_player == _killer) then {
+		_message = format["%1 hat sich selbst umgebracht.", _player];
+
+	} else {
+		_message = format["%1 wurde von %2 getötet.", _player, _killer];
+
+	};
+
+	// übergib Kategorie und Nachricht an log-FUnktion
+	["opt_eh_server_log_write", [_cat, _message]] call CBA_fnc_localEvent;
 
 }] call CBA_fnc_addEventHandler;
 

@@ -70,7 +70,7 @@ for "_i" from 1 to _count do {
 	//_obj setObjectTexture [0,"#(argb,8,8,3)color(1,0,0,0.3,ca)"];
     _obj setPosATL [_new_pos select 0, _new_pos select 1, 114];
 	_obj setVectorUp [0,0,1];
-	_objs = _objs + [_obj];
+	_objs pushBack _obj;
 };
 
 {_x enableSimulation false} forEach _objs;

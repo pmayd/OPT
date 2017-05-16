@@ -78,10 +78,6 @@
 // wenn nicht auskommentiert mit // dann kann der Spieler selbst die Sichtweite bestimmen und Gras an/abschalten
 //#define __PLAYER_GRAPHIC_SETTINGS__
 
-// wenn nicht auskommentiert mit // wird ein Intro mit autmoatischer Kamerafahrt gestartet
-// benötigt 2x unsichtbares Heli-H ---> tcb_camstart & tcb_cam_dir
-//#define __INTRO_ENABLED__
-
 
 /**
 * Gameplay 

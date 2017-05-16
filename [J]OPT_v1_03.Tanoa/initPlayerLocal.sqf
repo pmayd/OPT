@@ -105,21 +105,21 @@ if (__RESPAWN_TYPE__ != 0 || __RESPAWN_TYPE__ != 1) then {
 	}];
 };
 
-player addEventHandler ["GetInMan", {
+player addEventHandler ["SeatSwitchedMan", {
 		/*  
 	   	unit: Object - Unit the event handler is assigned to
 	    position: String - Can be either "driver", "gunner" or "cargo"
 	    vehicle: Object - Vehicle the unit entered
 	    turret: Array - turret path
     */
-    params ["_unit", "_pos", "_vec", "_turret"];
+    params ["_unit1", "_unit2", "_vec"];
 
     #ifdef __ONLY_PILOTS_CAN_FLY__
 			if (OPT_ONLY_PILOTS == 1) then {
-				if (!(typeOf _unit in opt_pilots) && {!(typeOf _unit in ["O_Helipilot_F","B_Helipilot_F"])}) then {
-					if (_vec isKindOf "Air" && (_unit == assignedDriver _vec || _unit == _vec turretUnit [0])) then {
+				if (!(typeOf _unit1 in opt_pilots) && {!(typeOf _unit1 in ["O_Helipilot_F","B_Helipilot_F"])}) then {
+					if (_vec isKindOf "Air" && (_unit1 == assignedDriver _vec || _unit1 == _vec turretUnit [0])) then {
 						if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
-							_unit action ["GetOut", _vec];
+							_unit1 action ["GetOut", _vec];
 							TitleRsc ["only_pilots", "plain", 0.5];
 						};
 					};
@@ -130,10 +130,10 @@ player addEventHandler ["GetInMan", {
 
 		#ifdef __ONLY_CREW_CAN_DRIVE__
 			if (OPT_ONLY_CREW == 1) then {
-				if (!(typeOf _unit in opt_crew) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
-					if (_unit == driver _vec || _unit == gunner _vec || _unit == commander _vec) then {
+				if (!(typeOf _unit1 in opt_crew) && {!(typeOf _unit1 in ["O_crew_F","B_crew_F"])}) then {
+					if (_unit1 == driver _vec || _unit1 == gunner _vec || _unit1 == commander _vec) then {
 						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
-							_unit action ["GetOut", _vec];
+							_unit1 action ["GetOut", _vec];
 							TitleRsc ["only_crew", "plain", 0.5];
 						};
 					};
@@ -144,8 +144,6 @@ player addEventHandler ["GetInMan", {
 }];
 
 // lösche alle alten Draw3D EH
-removeAllMissionEventHandlers "Draw3D";
-removeAllMissionEventHandlers "Map";
 tcb_draw3D_reset_done = true;
 
 // erzwinge first person kamera
@@ -177,45 +175,13 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 
 	// only when opening or closing map
 	addMissionEventHandler ["Map", {
-		while {visibleMap} do {
-			[] spawn opt_fnc_updateHUD;
-		}
+		waitUntil {[] spawn opt_fnc_updateHUD; not visibleMap};
 	}];
 #endif
 
 #ifdef __SHOW_CUSTOM_PLAYERMARKER__
 	__ccppfln(common\client\func\player_marker.sqf);
 
-#endif
-
-#ifdef __INTRO_ENABLED__
-	execVM "common\client\intro.sqf";
-
-	/* veraltet? siehe Skript oben
-	waitUntil {!isNil "BIS_fnc_init"};
-	waitUntil {!isNull (findDisplay 46)};
-	[] spawn {
-		sleep 6;
-		[parseText format [ "<t align='right' size='1.2'><t font='PuristaBold' size='1.6'>""%1""</t><br/>
-		%2</t>", __MISSION_NAME__, "von: " + __MADE_BY__], true, nil, 7, 0.7, 0] spawn BIS_fnc_textTiles;
-	};
-
-	_layer = "tcbIntroLayer" call BIS_fnc_rscLayer;
-	_layer cutRsc ["mission_Label", "PLAIN"];
-	[] spawn tcb_fnc_JukeBox;
-	intro_done = true;
-
-
-	[] spawn {
-		titleCut ["","BLACK IN", 3.5];
-		"dynamicblur" ppeffectenable true;
-		"dynamicblur" ppeffectadjust [5];
-		"dynamicblur" ppeffectcommit 0;
-		"dynamicblur" ppeffectadjust [0];
-		"dynamicblur" ppeffectcommit 5;
-	};
-	*/
-	
 #endif
 
 #ifdef __BREATH_VISIBLE__
