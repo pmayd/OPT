@@ -50,13 +50,12 @@ wird in der initServer.sqf aufgerufen
 
 // loggt zerstörte Fahrzeuge
 ["opt_eh_server_log_player_killed", {
-	private _player = param [0, objNull];
-	private _killer = param [1, objNull];
+	params ["_player", "_killer"];
 
 	private _cat = "Abschuss Spieler";
 	private _message = "";
 
-	if (_player == _killer) then {
+	if (_player == _killer || isNull _killer) then {
 		_message = format["%1 hat sich selbst umgebracht.", name _player];
 
 	} else {

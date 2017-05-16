@@ -1,7 +1,7 @@
 #include "..\..\setup\setup.sqf"
 private ["_victim","_killer","_pos","_deadcam"];
-_victim = _this select 0;
-_killer = _this select 1;
+
+params 	["_victim", "_killer", "_respawn", "_respawnDelay"];
 
 if (dialog) then {
 	[] spawn {
@@ -58,6 +58,3 @@ if ((_killer == _victim) or (!alive _killer) or (isNull _killer)) then {
 	camDestroy _deadcam;
 
 };
-
-// log
-["opt_eh_server_log_player_killed", [_victim, _killer]] call CBA_fnc_serverEvent;
