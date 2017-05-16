@@ -179,7 +179,7 @@
 * ORDER DIALOG
 */
 
-// aktiviert eine VErkauf-Option am Bestell-Pad
+// aktiviert eine Verkauf-Option am Bestell-Pad
 #define __ORDER_CAN_SELL__
 
 // wenn __ORDER_CAN_SELL__ aktiv, legt __ORDER_SELL_RETURN_VALUE__ den Rückgewinnungswert fest

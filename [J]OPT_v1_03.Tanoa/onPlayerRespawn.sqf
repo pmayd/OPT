@@ -62,10 +62,12 @@ if (OPT_TELEPORT == 1) then {
 	player addAction ["Teleport" call XGreyText, {[] call opt_fnc_teleport}, [], 0, false];
 };
 
+/*
 [] spawn {
 	[] spawn opt_TFARfrequencies;
 	[] spawn opt_tfarVehicleLr;
 };
+*/
 
 // Mine detector
 call OPT_Detector_fnc_postInit;

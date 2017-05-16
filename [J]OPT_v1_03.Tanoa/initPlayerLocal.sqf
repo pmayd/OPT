@@ -48,8 +48,15 @@ if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehic
 // starte alle addon Scripte
 __ccppfln(common\client\func\x_perframe.sqf); // startet Rsc für Anzeige von Meldungen
 [] execVM "addons\opt3_magRepack\MagRepack_init_sv.sqf";
-__cppfln(opt_TFARfrequencies,common\client\opt_TFARfrequencies.sqf);
-__cppfln(opt_tfarVehicleLr,common\client\opt_tfarVehicleLr.sqf);
+//__cppfln(opt_TFARfrequencies,common\client\opt_TFARfrequencies.sqf);
+//__cppfln(opt_tfarVehicleLr,common\client\opt_tfarVehicleLr.sqf);
+
+
+// ------------------- Check for TFAR
+if (isClass(configFile >> "cfgPatches" >> "task_force_radio")) then {
+    __ccppfln(addons\TFAR\TFAR_settings.sqf);      //
+};
+
 
 if ((typeOf player) in opt_gps_units) then {execVM "common\client\opt3_gps.sqf"};
 

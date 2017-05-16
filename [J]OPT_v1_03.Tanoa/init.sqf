@@ -20,7 +20,8 @@ if (isNil "tcb_netinit") then {
 	__ccppfln(common\netEvents.sqf);
 	tcb_netinit = true;
 };
-tf_give_microdagr_to_soldier = false;
+
+//tf_give_microdagr_to_soldier = false;
 
 #ifdef __STARTTIME__
 	if (OPT_DAYTIME != 99) then {

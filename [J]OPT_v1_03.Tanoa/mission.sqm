@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=782;
+		nextID=790;
 	};
 	class MarkerIDProvider
 	{
@@ -136,6 +136,10 @@ class AddonsMetaData
 		};
 	};
 };
+class DynamicSimulation
+{
+	enable=0;
+};
 randomSeed=1124049;
 class ScenarioData
 {
@@ -147,6 +151,12 @@ class ScenarioData
 	{
 		gameType="SC";
 	};
+	wreckManagerMode=1;
+	wreckLimit=0;
+	wreckRemovalMaxTime=3600;
+	corpseManagerMode=2;
+	corpseLimit=0;
+	minPlayerDistance=500;
 };
 class CustomAttributes
 {
@@ -259,7 +269,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=63;
+		items=67;
 		class Item0
 		{
 			dataType="Marker";
@@ -478,7 +488,7 @@ class Mission
 		class Item19
 		{
 			dataType="Marker";
-			position[]={6925.3765,2.6600001,7411.7856};
+			position[]={6926.7886,2.6600001,7412.4912};
 			name="Todeszone_CSAT";
 			text="Todeszone_CSAT";
 			markerType="ELLIPSE";
@@ -487,7 +497,7 @@ class Mission
 			fillName="Border";
 			a=2000;
 			b=2000;
-			angle=265.96945;
+			angle=265.9689;
 			drawBorder=1;
 			id=58;
 		};
@@ -613,11 +623,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7570.354,8.4218626,14838.888};
-				angles[]={5.8509469,0,0.18969145};
+				position[]={7571.0972,8.6201172,14839.025};
+				angles[]={5.902679,0,0.12993059};
 			};
 			id=390;
 			type="TFAR_ModuleTaskForceRadioEnforceUsage";
+			atlOffset=-0.00055980682;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -10588,21 +10599,211 @@ class Mission
 			id=781;
 			atlOffset=-2.6600001;
 		};
+		class Item63
+		{
+			dataType="Trigger";
+			position[]={11629.186,6.9499998,13149.384};
+			class Attributes
+			{
+				text="TFAR Frequencies";
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANYPLAYER";
+			};
+			id=785;
+			type="EmptyDetector";
+		};
+		class Item64
+		{
+			dataType="Trigger";
+			position[]={6926.5801,2.6600001,7411.2158};
+			class Attributes
+			{
+				text="TFAR Frequencies";
+				sizeA=250;
+				sizeB=250;
+				activationBy="ANYPLAYER";
+			};
+			id=786;
+			type="EmptyDetector";
+		};
+		class Item65
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={11629.475,6.9499998,13152.562};
+			};
+			id=788;
+			type="TFAR_ModuleTaskForceRadioFrequencies";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TFAR_ModuleTaskForceRadioFrequencies_LrFreq";
+					expression="_this setVariable ['LrFreq',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[""31"",""32"",""33"",""34"",""35"",""36"",""37"",""38"",""39""]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="TFAR_ModuleTaskForceRadioFrequencies_Units";
+					expression="_this setVariable ['Units',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="TFAR_ModuleTaskForceRadioFrequencies_PrFreq";
+					expression="_this setVariable ['PrFreq',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[""101"",""102"",""103"",""104"",""105"",""106"",""107"",""108""]";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item66
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6928.4678,2.6600001,7411.2578};
+			};
+			id=789;
+			type="TFAR_ModuleTaskForceRadioFrequencies";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="TFAR_ModuleTaskForceRadioFrequencies_LrFreq";
+					expression="_this setVariable ['LrFreq',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[""31"",""32"",""33"",""34"",""35"",""36"",""37"",""38"",""39""]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="TFAR_ModuleTaskForceRadioFrequencies_Units";
+					expression="_this setVariable ['Units',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="2";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="TFAR_ModuleTaskForceRadioFrequencies_PrFreq";
+					expression="_this setVariable ['PrFreq',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[""101"",""102"",""103"",""104"",""105"",""106"",""107"",""108""]";
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=1;
+			nextID=3;
 		};
 		class Links
 		{
-			items=1;
+			items=3;
 			class Item0
 			{
 				linkID=0;
 				item0=746;
 				item1=744;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
+				item0=788;
+				item1=785;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item2
+			{
+				linkID=2;
+				item0=789;
+				item1=786;
 				class CustomData
 				{
 					type="Sync";
