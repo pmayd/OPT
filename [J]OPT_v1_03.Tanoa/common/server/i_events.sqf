@@ -57,10 +57,10 @@ wird in der initServer.sqf aufgerufen
 	private _message = "";
 
 	if (_player == _killer) then {
-		_message = format["%1 hat sich selbst umgebracht.", _player];
+		_message = format["%1 hat sich selbst umgebracht.", name _player];
 
 	} else {
-		_message = format["%1 wurde von %2 getötet.", _player, _killer];
+		_message = format["%1 wurde von %2 getötet.", name _player, name _killer];
 
 	};
 
