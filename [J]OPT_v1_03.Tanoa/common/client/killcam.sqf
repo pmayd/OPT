@@ -34,7 +34,7 @@ if (__RESPAWN_TYPE__ == 0) then {
 };
 waitUntil {camCommitted _deadcam};
 
-if ((_killer == player) or (!alive _killer) or (isNull _killer)) then {
+if ((_killer == _victim) or (!alive _killer) or (isNull _killer)) then {
 	_deadcam camPrepareTarget _victim;
 	_deadcam camsetrelpos [-3, 20, 10];
 	_deadcam camPrepareFOV 0.474;
@@ -60,4 +60,4 @@ if ((_killer == player) or (!alive _killer) or (isNull _killer)) then {
 };
 
 // log
-["opt_eh_server_log_player_killed", [_player, _killer]] call CBA_fnc_serverEvent;
+["opt_eh_server_log_player_killed", [_victim, _killer]] call CBA_fnc_serverEvent;
