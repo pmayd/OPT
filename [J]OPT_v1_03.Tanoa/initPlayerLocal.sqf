@@ -215,7 +215,11 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 
 	// only when opening or closing map
 	addMissionEventHandler ["Map", {
-		waitUntil {[] spawn opt_fnc_updateHUD; not visibleMap};
+		// no sheduled environment -> create one
+		[] spawn {
+			waitUntil{[] spawn opt_fnc_updateHUD; not visibleMap};
+
+		};
 
 	}];
 #endif
