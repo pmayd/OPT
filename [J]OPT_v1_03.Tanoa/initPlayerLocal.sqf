@@ -113,7 +113,7 @@ player addEventHandler ["GetInMan", {
 	    vehicle: Object - Vehicle the unit entered
 	    turret: Array - turret path
     */
-    params ["_unit", "_pos", "_vehicle", "_turret"];
+    params ["_unit", "_pos", "_vec", "_turret"];
 
     #ifdef __ONLY_PILOTS_CAN_FLY__
 			if (OPT_ONLY_PILOTS == 1) then {
@@ -132,7 +132,7 @@ player addEventHandler ["GetInMan", {
 		#ifdef __ONLY_CREW_CAN_DRIVE__
 			if (OPT_ONLY_CREW == 1) then {
 				if (!(typeOf _unit in opt_crew) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
-					if (_pos in ["driver","gunner", "commander"]) then {
+					if (_pos in ["driver", "gunner", "commander"]) then {
 						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
 							_unit1 action ["GetOut", _vec];
 							TitleRsc ["only_crew", "plain", 0.5];
