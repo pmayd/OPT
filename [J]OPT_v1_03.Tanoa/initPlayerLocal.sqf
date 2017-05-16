@@ -92,7 +92,12 @@ Sind auch nach Respawn persistent
 */
 #ifdef __WEAPON_SAVER__
 	/* aktuell keine Bedeutung? */
-	player addEventHandler ["killed", {[_this select 0, [missionNamespace, "tcb_inv"]] call BIS_fnc_saveInventory}];
+	player addEventHandler ["killed", {
+
+	[_this select 0, [missionNamespace, "tcb_inv"]] call BIS_fnc_saveInventory;
+
+	["opt_eh_server_log_player_killed", [(_this select 0), name (_this select 0), (_this select 1), name (_this select 1)]] call CBA_fnc_serverEvent;
+}];
 #endif
 
 // EH bei Aufnahme von Waffen

@@ -1,7 +1,7 @@
 #include "..\..\setup\setup.sqf"
-private ["_victim","_killer","_pos","_deadcam"];
 
-params 	["_victim", "_killer", "_respawn", "_respawnDelay"];
+params 	["_victim", "_killer"];
+private ["_pos","_deadcam"];
 
 if (dialog) then {
 	[] spawn {

@@ -50,16 +50,16 @@ wird in der initServer.sqf aufgerufen
 
 // loggt zerstörte Fahrzeuge
 ["opt_eh_server_log_player_killed", {
-	params ["_player", "_killer"];
+	params ["_victim", "_victimName", "_killer", "_killerName"];
 
 	private _cat = "Abschuss Spieler";
 	private _message = "";
 
-	if (_player == _killer || isNull _killer) then {
-		_message = format["%1 hat sich selbst umgebracht.", name _player];
+	if (_victim == _killer || isNull _killer) then {
+		_message = format["%1 hat sich selbst umgebracht.", _victimName];
 
 	} else {
-		_message = format["%1 wurde von %2 getötet.", name _player, name _killer];
+		_message = format["%1 wurde von %2 getötet.", _victimName, _killerName];
 
 	};
 
