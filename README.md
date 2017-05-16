@@ -16,6 +16,16 @@ Name: [J]OPT_v1_03
 
 ## SITREP
 
+### 2017-05-16
+- Umbau auf respawnOnStart = 0, dadurch wieder Ausführung von onPlayerRespawn.sqf zu Beginn, hier waren wichtige Skripte, die sonst nicht laden. Budgetabzug von 5000 pro Player dennoch erst ab 2. Respawn
+- Einbau eines SeatSwitchedMan EH, der verhindert, dass Spieler in Fahrzeugen auf Besatzungsslots wechseln, die eigentlich gesperrt sind
+- Timer geht nun auch auf Karte auf Anhieb
+- Korrektur HUD y-Koordinate, Neuberechnung mit safeZoneH.
+- neue Log-Funktion für Spielerabschüsse (killkam.sqf ruft auf, Event in i_events.sqf für Server)
+- TFAR neu eingebaut, Modulsettings dank: https://armaworld.de/index.php?thread/2739-arma-3-task-force-radio-installation-auf-dem-server/. Alle eigenen Funktionen auskommentiert
+- GarbageCollector entfernt, dafür EDEN Garbage Collector aktiviert
+- kleine Anpassungen wie unnötige Variablen und Codeabschnitte enfernt (Intro, etc.)
+
 ### 2017-04-07
 - Performanceupdate: Umbau auf neuen GetInMan-EH, kein Polling mehr, auch nicht an Fahrzeugen
 
