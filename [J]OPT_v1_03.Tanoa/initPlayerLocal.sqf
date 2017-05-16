@@ -134,7 +134,7 @@ player addEventHandler ["GetInMan", {
 				if (!(typeOf _unit in opt_crew) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
 					if (_pos in ["driver", "gunner", "commander"]) then {
 						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
-							_unit1 action ["GetOut", _vec];
+							_unit action ["GetOut", _vec];
 							TitleRsc ["only_crew", "plain", 0.5];
 						};
 					};
