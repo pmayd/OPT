@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=56;
+		nextID=60;
 	};
 	class Camera
 	{
-		pos[]={11627.16,49.573963,13118.973};
-		dir[]={-0.04335263,-0.72739935,0.68485922};
-		up[]={-0.045953423,0.68621421,0.72594965};
-		aside[]={0.99801153,3.9392398e-007,0.063175589};
+		pos[]={11696.731,31.950001,13112.793};
+		dir[]={-0.82942051,-0.32545295,0.45403072};
+		up[]={-0.28547981,0.94555765,0.15627381};
+		aside[]={0.48017156,2.6251655e-008,0.87717557};
 	};
 };
 binarizationWanted=0;
@@ -165,25 +165,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -215,6 +196,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
 				};
 			};
 		};
@@ -580,11 +580,11 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
+				init="call{this setVariable [""opt_csat_flag"", true]}";
 				name="OPT_CSAT_FLAG_1";
 			};
 			id=362;
 			type="Flag_CSAT_F";
-			atlOffset=-4.7683716e-007;
 		};
 		class Item25
 		{
@@ -599,6 +599,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
+				init="call{this setVariable [""opt_nato_flag"", true]}";
 				name="OPT_NATO_FLAG_1";
 			};
 			id=363;
@@ -5709,7 +5710,7 @@ class Mission
 				};
 			};
 			id=750;
-			atlOffset=-56.624634;
+			atlOffset=0.15000582;
 		};
 		class Item34
 		{
@@ -9521,7 +9522,7 @@ class Mission
 				};
 			};
 			id=752;
-			atlOffset=12.712773;
+			atlOffset=0.11149287;
 		};
 		class Item36
 		{

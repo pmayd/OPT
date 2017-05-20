@@ -17,7 +17,7 @@ _paramNames = ("true" configClasses (getMissionConfig "Params")) apply {configNa
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
 #include "setup\setup_classnames.sqf"
 
-//init only by server
+//Function that adds dynamic groups to the mission as seen in End Game
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 // ensure that disconnected players body will be removed - wont work with BI corpseManagerMode(!)

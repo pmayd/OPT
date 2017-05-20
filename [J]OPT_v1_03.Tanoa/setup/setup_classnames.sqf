@@ -12,7 +12,7 @@
 // übernommen mit OPT_CSAT_FLAG beginnen und eine beliebige Nummer haben.
 opt_csat_flags = [];
 {
-	if ( (str _x find "OPT_CSAT_FLAG") != -1) then {
+	if (_x getVariable ["opt_csat_flag", false]) then {
 		opt_csat_flags pushBack _x;
 
 		// erzeuge für jede gefundene Flagge einen Marker auf der Karte
@@ -28,7 +28,7 @@ opt_csat_flags = [];
 
 opt_nato_flags = [];
 {
-	if ( (str _x find "OPT_NATO_FLAG") != -1) then {
+	if (_x getVariable ["opt_nato_flag", false]) then {
 		opt_nato_flags pushBack _x;
 		
 		// erzeuge für jede gefundene Flagge einen Marker auf der Karte

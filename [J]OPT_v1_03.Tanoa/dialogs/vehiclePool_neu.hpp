@@ -1,5 +1,3 @@
-// Psycho: um Fahrzeuge zu deaktivieren: Kosten <= 0 setzen!
-
 opt_vehiclesNato = [
 	["OPT_B_Quadbike_01_F",1000],							// Quadbike, 1000 von 500
 	["OPT_B_G_Offroad_01_F",0],								// Pickup,1000, ersetzt durch Prawler

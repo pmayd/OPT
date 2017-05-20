@@ -33,7 +33,10 @@ _vec addMPEventHandler ["MPKilled", {
 // fügt auf allen clients einen Add Action Eintrag für umgekippte Fahrzeuge hinzu
 // ersetzt player add action in onPlayerRespawn (viel performanter, da kein pulling)
 if (_vec isKindOf "AllVehicles") then {
-	["opt_eh_client_add_action", [_vec, ["Fahrzeug aufrichten" call XTuerkiesText, "call opt_fnc_unFlip", [], 0, false, true, "", "[_target, _this] call opt_fnc_flipCheck"]]] call CBA_fnc_globalEvent;
+	["opt_eh_client_add_action", [
+		_vec, 
+		["Fahrzeug aufrichten" call XTuerkiesText, "call opt_fnc_unFlip", [], 0, false, true, "", "[_target, _this] call opt_fnc_flipCheck"]]
+	] call CBA_fnc_globalEvent;
 };
 
 // Create Vehicle Crew

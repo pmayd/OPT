@@ -56,13 +56,14 @@ if (_unitCost > (_side_Budget + opt_dispo)) exitWith {
 _spawnpos = nearestObject [player, "Land_HelipadCircle_F"];
 
 // prüfe, ob Bereich frei. Wenn nicht, Abbruch
+#ifdef __ORDER_CHECK_SPAWN__
 _objs = nearestObjects [_spawnpos, ["AllVehicles","Thing"], 5];
 if (count _objs > 0) exitWith {
 	[format ["<t size='0.8' shadow='1' color='#ff0000'>Bereich blockiert durch %1. Bereich räumen.</t>", getText (configFile >> "CfgVehicles" >> typeOf (_objs select 0) >> "displayName")], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
 };
+#endif
 
 ["opt_eh_server_update_budget", [playerSide, _unitCost, "-"]] call CBA_fnc_serverEvent;
 ["vehicleOrder", [_unitType, _unitCost, _spawnpos, str(playerSide)]] call tcb_fnc_NetCallEventCTS;
 
 [format ["<t size='0.8' shadow='1' color='#ffffff'>%1 geliefert</t>",_displayName], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
-closeDialog 0;

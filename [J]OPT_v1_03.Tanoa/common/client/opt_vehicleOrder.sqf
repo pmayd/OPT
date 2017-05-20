@@ -15,7 +15,6 @@ _side = playerSide;
 opt_orderDialogObjects 	= [];
 opt_vehicleType = _this select 3;
 
-
 opt_orderDialogObjects = switch (opt_vehicleType) do {
   case "vehicles" : {if (_side == west) then {opt_vehiclesNato} else {opt_vehiclesCsat}};
 	case "choppers" : {if (_side == west) then {opt_choppersNato} else {opt_choppersCsat}};

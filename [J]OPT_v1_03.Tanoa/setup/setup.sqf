@@ -179,6 +179,9 @@
 * ORDER DIALOG
 */
 
+// aktiviert Überprüfung, ob Spawnplatz frei
+#define __ORDER_CHECK_SPAWN__
+
 // aktiviert eine Verkauf-Option am Bestell-Pad
 #define __ORDER_CAN_SELL__
 
