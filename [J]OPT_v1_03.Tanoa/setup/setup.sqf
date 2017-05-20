@@ -94,9 +94,6 @@
 // wenn nicht auskommentiert mit // wird eine Textnachricht angezeigt wenn eine Flagge gezogen wird und die Marker wechseln die Farbe
 //#define __OPT_Sector_Message__
 
-// wenn nicht auskommentiert mit // wird First Person ausserhalb von Vehikeln forciert
-#define __FIRSTPERSON__
-
 // wenn nicht auskommentiert mit // dann werden die Waffen und Ausrüstung des Spielers zum Todeszeitpunkt gespeichert
 // macht nur Sinn wenn es einen Respawn gibt
 #define __WEAPON_SAVER__

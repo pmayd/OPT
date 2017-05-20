@@ -198,17 +198,6 @@ player addEventHandler ["SeatSwitchedMan", {
 // lösche alle alten Draw3D EH
 tcb_draw3D_reset_done = true;
 
-// erzwinge first person kamera
-#ifdef __FIRSTPERSON__
-	if (difficultyEnabled "3rdPersonView") then {
-		addMissionEventHandler ["Draw3D", {
-			if ((cameraView == "EXTERNAL") && {vehicle player == player}) then {
-				vehicle player switchCamera "INTERNAL";
-			};
-		}];
-	};
-#endif
-
 // Wenn HUD in setup/setup.sqf ein, füge EH für HUD hinzu
 // HUD wird dann jedes Frame neu gezeichnet
 // belastet nur Client FPS, wenn überhaupt

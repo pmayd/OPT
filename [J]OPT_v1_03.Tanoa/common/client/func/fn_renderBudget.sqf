@@ -11,7 +11,7 @@ private _txt = if (_side_Budget > 1e6-1) then {
 
 // Warnung, wenn Budget niedrig wird
 if (_side_Budget < 4e5) then {
-	_control ctrlSetTextColor [0.8, 0.2, 0.2, 1];
+	_budget_field ctrlSetTextColor [0.97, 0.63, 0.02, 1];
 };
 
 // Falls Budget negativ: Zeige Dispo
