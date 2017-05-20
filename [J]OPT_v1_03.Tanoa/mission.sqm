@@ -5711,7 +5711,7 @@ class Mission
 				};
 			};
 			id=750;
-			atlOffset=0.15000582;
+			atlOffset=-56.624634;
 		};
 		class Item34
 		{
@@ -9523,7 +9523,7 @@ class Mission
 				};
 			};
 			id=752;
-			atlOffset=0.11149287;
+			atlOffset=12.712773;
 		};
 		class Item36
 		{
