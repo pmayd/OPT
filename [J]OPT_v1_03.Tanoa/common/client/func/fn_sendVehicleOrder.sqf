@@ -5,7 +5,7 @@
 
 	v2014-10-31 | this script is part of OperationPandoraTrigger ArmA3 script collection
 */
-
+#include "..\..\..\setup\setup.sqf"
 
 //changed by psycho
 
@@ -54,16 +54,16 @@ if (_unitCost > (_side_Budget + opt_dispo)) exitWith {
 };
 
 _spawnpos = nearestObject [player, "Land_HelipadCircle_F"];
+_empty_pos = (position _spawnpos) findEmptyPosition [0, __ORDER_SPAWN_RADIUS__, _unitType];
 
-// prüfe, ob Bereich frei. Wenn nicht, Abbruch
-#ifdef __ORDER_CHECK_SPAWN__
-_objs = nearestObjects [_spawnpos, ["AllVehicles","Thing"], 5];
-if (count _objs > 0) exitWith {
-	[format ["<t size='0.8' shadow='1' color='#ff0000'>Bereich blockiert durch %1. Bereich räumen.</t>", getText (configFile >> "CfgVehicles" >> typeOf (_objs select 0) >> "displayName")], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
+if (count _empty_pos == 0) exitWith {
+	[format ["<t size='0.8' shadow='1' color='#ff0000'>Kein freier Platz im Umkreis von %1m. Bereich räumen.</t>", __ORDER_SPAWN_RADIUS__], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
 };
-#endif
 
 ["opt_eh_server_update_budget", [playerSide, _unitCost, "-"]] call CBA_fnc_serverEvent;
 ["vehicleOrder", [_unitType, _unitCost, _spawnpos, str(playerSide)]] call tcb_fnc_NetCallEventCTS;
 
 [format ["<t size='0.8' shadow='1' color='#ffffff'>%1 geliefert</t>",_displayName], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
+
+// neu öffnen
+[] call opt_fnc_updateBudget;

@@ -125,20 +125,7 @@ _control = _currentCutDisplay displayCtrl 5091;
 _control = _currentCutDisplay displayCtrl 5092;
 #ifdef __HUD_BUDGET__
 
-	_side_Budget = if (playerSide == west) then {opt_west_budget} else {opt_east_budget};
-	if (_side_Budget < 400000) then {
-		_control ctrlSetTextColor [0.9, 0.2, 0.2, 1];
-	};
-	_BudgetStr = if (_side_Budget > 999999) then {
-		_side_Budget = _side_Budget / 1000000;
-		format ["Budget: %1 Mio. €", str(_side_Budget)];	// psycho: budget muss numerisch reduziert werden um Darstellung aufrecht zu erhalten
-	} else {
-		format ["Budget: %1 €", str(_side_Budget)];
-	};
-
-	// Anzeige updaten
-	// Update Text
-	_control ctrlSetText _BudgetStr;
+	[_control] call opt_fnc_renderBudget;
 
 #else
 

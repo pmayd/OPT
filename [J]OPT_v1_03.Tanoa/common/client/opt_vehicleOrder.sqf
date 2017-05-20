@@ -32,21 +32,7 @@ _listbox_vehicle = _display displayCtrl vhOrder_vehiclelist;
 _listbox_price = _display displayCtrl vhOrder_pricelist;
 _budget = _display displayCtrl 20102;
 
-_side_Budget = if (_side == west) then {opt_west_budget} else {opt_east_budget};
-_txt = if (_side_Budget > 999999) then {
-	_side_Budget = _side_Budget / 1000000;
-	format ["Budget: %1 Mio. €", _side_Budget];	// psycho: budget muss numerisch reduziert werden um Darstellung aufrecht zu erhalten
-} else {
-	format ["Budget: %1 €", _side_Budget];
-};
-
-// Falls Budget negativ: Zeige Dispo
-if (_side_Budget < 0) then {
-	_txt = format["Dispo: %1 €", _side_Budget];
-	_budget ctrlSetTextColor [1,0,0,1];
-};
-
-_budget ctrlSetText _txt;
+[_budget] call opt_fnc_renderBudget;
 
 _pool = [];
 {

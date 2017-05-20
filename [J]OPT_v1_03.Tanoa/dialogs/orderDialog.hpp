@@ -9,6 +9,7 @@ class opt_vehicleorder_dialog
 {
 	idd = 20000;
 	movingenable = false;
+	onLoad = "uiNamespace setVariable ['opt_orderDialog' , _this select 0];";
 	
 	class controlsBackground
 	{

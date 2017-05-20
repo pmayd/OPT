@@ -89,6 +89,7 @@ class opt {
 		file = "dialogs";
 		addf(maintainerVecList);
 		addf(updateHUD);
+		addf(updateBudget);
 	};
 	class common {
 		file = "common\func";
@@ -110,6 +111,7 @@ class opt {
 		addf(maintainerActions);
 		addf(maintainerDialog);
 		addf(maintainerOrderVehicle);
+		addf(renderBudget);
 		addf(repairSystem);
 		addf(sellVehicle);
 		addf(sendVehicleOrder);
