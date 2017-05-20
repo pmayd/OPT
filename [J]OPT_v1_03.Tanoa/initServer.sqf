@@ -30,6 +30,11 @@ addMissionEventHandler ["HandleDisconnect", {
 #include "setup\setup_publicVariable.sqf"
 #include "common\server\i_events.sqf"
 
+// Schutzwall um die Basis für Arti- und Mörserbeschuss
+// nur auf dem Server, da createVehicle global funktioniert
+["ProtectionZone_Invisible_F", getMarkerPos "respawn_east"}, 150, 20] spawn opt_fnc_wallChain;
+["ProtectionZone_Invisible_F", getMarkerPos "respawn_west"}, 150, 20] spawn opt_fnc_wallChain;
+
 #ifdef __OPT_Sector_Message__
 	_allFlagPoles = [];
 	_allFlagPoles = opt_csat_flags + opt_nato_flags;

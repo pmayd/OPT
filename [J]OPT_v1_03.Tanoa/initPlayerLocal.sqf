@@ -248,9 +248,6 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 
 #endif
 
-_pos = if (playerSide == blufor) then {getMarkerPos "respawn_east"} else {getMarkerPos "respawn_west"};
-["ProtectionZone_Invisible_F", _pos, 150, 20] spawn opt_fnc_wallChain;
-
 if (isNil "respawndelay") then {
 	_num = getNumber (missionConfigFile/"respawndelay");
 	if (_num != 0) then {

@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=137;
+	toggles=9;
 	class ItemIDProvider
 	{
 		nextID=790;
@@ -5711,7 +5711,7 @@ class Mission
 				};
 			};
 			id=750;
-			atlOffset=-56.624634;
+			atlOffset=0.15000582;
 		};
 		class Item34
 		{
@@ -9523,7 +9523,7 @@ class Mission
 				};
 			};
 			id=752;
-			atlOffset=12.712773;
+			atlOffset=0.11149287;
 		};
 		class Item36
 		{
