@@ -10,11 +10,31 @@ Name: [J]OPT_v1_03
 
 ## Current Work
 
-* Codebasis durchsehen, verstehen, wo veraltet ersetzen
-* am liebsten die komplette Funktionssammlung net rausschmeißen und durch CBA Eventhandling ersetzen, wesentlich lesbarer und sauberer
-* Features sichten, Liste neuer Features sammeln, alte Features, die nicht gebraucht werden löschen
+* Nicht mehr gebrauchte Skripte löschen
+* Fehler beheben, gewünschte Verbesserungen durchführen
 
 ## SITREP
+
+### 2017-05-20
+
+- Sehr viele kleine Änderungen und Verbesserungen
+- R3F config angepasst
+- vehiclePool_war von aktueller Schlacht übernommen, damit Preise und Fahrzeuge aktuell
+- attach_exp Skript überarbeitet, nun nach Respawn keine alten Einträge mehr zum Sprengen
+- Verkaufspad extra, jetzt werden in der Liste alle verfügbaren Fahrzeuge und Verkaufspreise angezeigt
+- alle Menüs bleiben offen (bestellen wie verkaufen)
+- CSAT Teleport Fehler von Airfield zur Basis behoben
+- globaler Chat wieder freigegeben
+- ViewDistance aus init.sqf entfernt, dafür Settings-Menü für Spieler wieder aktiviert. Graseinstellungen entfernt, aber individuelle ViewDistance möglich
+- TFAR Module neu gesetzt, nach wie vor Probleme -> TODO
+- Schrift im HUD vergrößert und verkürzt
+- TODO: Animation für Pionier beim Reparieren ersetzen! (aktuell Medic)
+- wallChain in initServer.sqf verschoben -> TODO: Testen ob Basisschutz noch aktiv
+- weitere nicht benötigte Teile entfernt
+- Budget wird in drei Stufen angezeigt: weiß: > 4e5, orange: zwischen 0 und 4e5, rot: im Negativen (Dispo)
+- Budget wird nun auch im Bestelldialog aktualisiert, ohne ihn zu schließen
+- neue Parameter in der setup.sqf für Bestellvorgang. __ORDER_SPAWN_RADIUS__ und __ORDER_SELL_RADIUS__ legen Prüfradius um Spawnplatz fest. 
+- magRepack gefixt
 
 ### 2017-05-16
 - Umbau auf respawnOnStart = 0, dadurch wieder Ausführung von onPlayerRespawn.sqf zu Beginn, hier waren wichtige Skripte, die sonst nicht laden. Budgetabzug von 5000 pro Player dennoch erst ab 2. Respawn
