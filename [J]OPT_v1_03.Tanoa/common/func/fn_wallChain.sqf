@@ -48,24 +48,22 @@ for "_i" from 1 to _count do {
     _new_pos set [1, _ypos];
     _new_pos set [2, 0];    
     
-    
     if(_flip_walls) then { _angle = 180 + _angle; };
     if(_noise != 0) then { _angle = _angle + (random _noise) - (_noise/2); };
 
-
-    _obj = createVehicle [_class, _new_pos, [], 0, "CAN_COLLIDE"];
+    _obj = createVehicleLocal [_class, _new_pos, [], 0, "CAN_COLLIDE"];
 	//_obj = _class createVehicleLocal _new_pos;
 	//_obj setObjectTexture [0,"#(argb,8,8,3)color(1,0,0,0.3,ca)"];
     _obj setPosATL [_new_pos select 0, _new_pos select 1, 18];
     _obj setVectorUp [0,0,1];
     _objs = _objs + [_obj];
-	_obj = createVehicle [_class, _new_pos, [], 0, "CAN_COLLIDE"];
+	_obj = createVehicleLocal [_class, _new_pos, [], 0, "CAN_COLLIDE"];
 	//_obj = _class createVehicleLocal _new_pos;
 	//_obj setObjectTexture [0,"#(argb,8,8,3)color(1,0,0,0.3,ca)"];
     _obj setPosATL [_new_pos select 0, _new_pos select 1, 66];
 	_obj setVectorUp [0,0,1];
 	_objs = _objs + [_obj];
-	_obj = createVehicle [_class, _new_pos, [], 0, "CAN_COLLIDE"];
+	_obj = createVehicleLocal [_class, _new_pos, [], 0, "CAN_COLLIDE"];
 	//_obj = _class createVehicleLocal _new_pos;
 	//_obj setObjectTexture [0,"#(argb,8,8,3)color(1,0,0,0.3,ca)"];
     _obj setPosATL [_new_pos select 0, _new_pos select 1, 114];
