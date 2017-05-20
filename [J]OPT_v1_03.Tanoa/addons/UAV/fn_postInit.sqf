@@ -2,6 +2,8 @@
 waitUntil {!isNil "opt_pilots"};
 if (!(typeOf player in (opt_pilots + opt_operator))) exitWith {};
 
+diag_log format ["%1 --- OPT_UAV_fnc_postInit startet", diag_ticktime];
+
 _pcs = entities "Land_PCSet_01_screen_F";
 
 // add to each UAV PC addaction menu
@@ -126,3 +128,5 @@ _pcs = entities "Land_PCSet_01_screen_F";
 		};
 	};
 };
+
+diag_log format ["%1 --- OPT_UAV_fnc_postInit beendet", diag_ticktime];

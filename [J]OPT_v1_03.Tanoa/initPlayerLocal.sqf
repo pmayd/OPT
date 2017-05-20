@@ -3,6 +3,9 @@
 #include "setup\setup.sqf";
 diag_log format ["%1 --- TcB initPlayerLocal.sqf startet",diag_ticktime];
 
+// legt alle wichtigen classnames wie Flaggen und Einheiten fest
+__ccppfln(setup\setup_classnames.sqf);
+
 // Startparameter auslesen und als globale Variablen verfügbar machen
 // By James: moderner Ansatz ohne 20 Zeilen Code
 // Das spiel liest bereits alle Parameter aus und speichert sie in "BIS_fnc_storeParamsValues_data"
@@ -50,13 +53,6 @@ __ccppfln(common\client\func\x_perframe.sqf); // startet Rsc für Anzeige von Me
 [] execVM "addons\opt3_magRepack\MagRepack_init_sv.sqf";
 //__cppfln(opt_TFARfrequencies,common\client\opt_TFARfrequencies.sqf);
 //__cppfln(opt_tfarVehicleLr,common\client\opt_tfarVehicleLr.sqf);
-
-
-// ------------------- Check for TFAR
-if (isClass(configFile >> "cfgPatches" >> "task_force_radio")) then {
-    __ccppfln(addons\TFAR\TFAR_settings.sqf);      //
-};
-
 
 if ((typeOf player) in opt_gps_units) then {execVM "common\client\opt3_gps.sqf"};
 

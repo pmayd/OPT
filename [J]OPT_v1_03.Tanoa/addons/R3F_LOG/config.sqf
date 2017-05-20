@@ -202,8 +202,14 @@ R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
  // e.g. : ["MyTransporterClassName1", itsCapacity], ["MyTransporterClassName2", itsCapacity]
 R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 [
+    ["OPT_B_Quadbike_01_F",15],							// Quadbike		
+	["OPT_O_T_Quadbike_01_ghex_F",15],					// Quadbike	
 	["OPT_B_G_Offroad_01_F", 30],						// Pickup
 	["OPT_B_G_Offroad_01_armed_F", 30],					// Pickup HMG
+	["OPT_B_T_LSV_01_unarmed_F",30], 					// Prowler unarmed
+	["OPT_B_T_LSV_01_armed_F",30],                      // Prowler armed
+	["OPT_O_T_LSV_02_unarmed_F",30], 					// Quilin unarmed
+	["OPT_O_T_LSV_02_armed_F",30],						// Quilin armed
 	["OPT_B_MRAP_03_F", 30],							// Strider
 	["OPT_B_MRAP_03_hmg_F", 30],						// Strider HMG
 	["OPT_B_MRAP_03_gmg_F", 30],						// Strider GMG
@@ -229,7 +235,16 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["OPT_O_APC_Wheeled_02_rcws_F", 30],				// MSE-3 Marid
 	["OPT_O_UGV_01_F", 30],								// UGV Saif	
 	["OPT_O_APC_Tracked_02_cannon_F", 30],				// BTR-K Kamysh (Titan)
-	["OPT_O_APC_Tracked_02_cannon_light_F", 30]			// BTR-K Kamysh	
+	["OPT_O_APC_Tracked_02_cannon_light_F", 30],		// BTR-K Kamysh	
+	["OPT_B_Heli_Light_01_F",30],						// MH-9 Hummingbird
+	["OPT_B_Heli_Transport_01_F",30],					// UH-80 Ghosthawk
+	["OPT_B_Heli_Transport_02_F",30],					// CH-49 Mohawk (Transport+Lift)
+	["OPT_B_Heli_Transport_03_unarmed_F",30],			// CH-67 Huron unarmed (Transport+Lift)
+	["OPT_B_Heli_Transport_03_F",30],					// CH-67 Huron armed (Transport+Lift)
+	["OPT_O_Heli_Light_03_unarmed_F",30],				// WY-55 Hellcat,70000
+	["OPT_O_Heli_Light_03_unarmed_green_F",30],			// WY-55 Hellcat,70000
+	["OPT_O_Heli_Light_02_unarmed_F",30],				// PO-30 Orca,100000
+	["OPT_O_Heli_Light_02_unarmed_black_F",30]			// PO-30 Orca,100000
 ];
 
 /**
@@ -282,7 +297,21 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["OPT_B_Boat_Transport_01_F", 50],					// Assault Boat
 	["OPT_O_Boat_Transport_01_F", 50],					// Assault Boat
 	["OPT_B_SDV_01_F", 80],								// SDV
-	["OPT_O_SDV_01_F", 80]								// SDV
+	["OPT_O_SDV_01_F", 80],								// SDV
+	["OPT_B_Mortar_01_F", 15],				// Mk6 Mortar
+	["OPT_O_Mortar_01_F",15],				// Mk6 Mortar
+	["OPT_B_HMG_01_F",15],					// Mk30 HMG .50
+	["OPT_O_HMG_01_F",15],					// Mk30 HMG .50	
+	["OPT_B_HMG_01_high_F",15],				// Mk30 HMG .50 (Raised)
+	["OPT_O_HMG_01_high_F",15],				// Mk30 HMG .50 (Raised)
+	["OPT_B_GMG_01_F",15],					// Mk32 GMG 20 mm
+	["OPT_O_GMG_01_F",15],	 				// Mk32 GMG 20 mm
+	["OPT_B_GMG_01_high_F",15],				// Mk32 GMG 20 mm (Raised)
+	["OPT_O_GMG_01_high_F",15],				// Mk32 GMG 20 mm (Raised)
+	["OPT_B_static_AA_F",15],				// Static Titan Launcher (AA)
+	["OPT_O_static_AA_F",15],				// Static Titan Launcher (AA)
+	["OPT_B_static_AT_F",15],				// Static Titan Launcher (AT)
+	["OPT_O_static_AT_F",15]				// Static Titan Launcher (AT)	
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/

@@ -2,6 +2,7 @@
 * SETUP FILE Classnames 
 *  setup all needed classnames or variables here
 */
+if (!isNil "opt_csat_flags") exitWith{};
 // alle funktionierenden und für die Wertung relevanten Flaggenmarker definieren
 // Name hier eintragen so wie die Flaggen benannt sind - Dominator ist derjenige der mehr Flaggen als die gegnerische Seite besitzt (das gilt immer - wenn hier also eine Seite mehr Flaggen definiert bekommen hat ist sie autom. Dominator)
 // wenn __OPT_Sector_Message__ in setup aktiviert werden automatisch die Marker um die Flaggen generiert. Achtung - Dummyflaggen benötigen weiterhin manuelle einen Marker

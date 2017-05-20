@@ -1,8 +1,8 @@
 #define addf(fname) class fname {headerType = -1;}
 
 class tcb {
-	tag = "tcb";
-	class Common_Net {
+
+		class Common_Net {
 		file = "common\func\net";
 		addf(localcallevent);
 		addf(netaddevent);
@@ -84,7 +84,7 @@ class tcb {
 
 // OPT
 class opt {
-	tag = "opt";
+
 	class dialogs {
 		file = "dialogs";
 		addf(maintainerVecList);
@@ -132,7 +132,7 @@ class opt {
 
 // OPT_addons
 class opt_addons {
-	tag = "opt_addons";
+
 	class common {
 		file = "addons\far_revive\func";
 		addf(arrayPush);

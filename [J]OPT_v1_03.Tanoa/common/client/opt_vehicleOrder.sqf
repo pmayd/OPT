@@ -21,6 +21,7 @@ opt_orderDialogObjects = switch (opt_vehicleType) do {
 	case "armored" : {if (_side == west) then {opt_armoredNato} else {opt_armoredCsat}};
 	case "supplies" : {if (_side == west) then {opt_suppliesNato} else {opt_suppliesCsat}};
 	case "sea" : {if (_side == west) then {opt_seaNato} else {opt_seaCsat}};
+	case "sell" : {[]};
 };
 
 // player sideChat format ["%1", opt_orderDialogObjects];
@@ -31,6 +32,7 @@ _display = findDisplay vhOrder_dialog;
 _listbox_vehicle = _display displayCtrl vhOrder_vehiclelist;
 _listbox_price = _display displayCtrl vhOrder_pricelist;
 _budget = _display displayCtrl 20102;
+_sell = _display displayCtrl 20003;
 
 [_budget] call opt_fnc_renderBudget;
 
@@ -46,3 +48,8 @@ opt_orderDialogObjects = _pool;
 	_listbox_vehicle lbAdd format ["%1", _displayName];
 	_listbox_price lbAdd format ["%1 €", (_x select 1)];
 } forEach opt_orderDialogObjects;
+
+// deaktiviere Verkaufenbutton für alle Dialoge außer "sell"
+if (count opt_orderDialogObjects != 0) then {
+	_sell ctrlEnable false;
+};

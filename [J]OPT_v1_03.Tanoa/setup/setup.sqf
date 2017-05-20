@@ -76,7 +76,7 @@
 //#define __BREATH_VISIBLE__
 
 // wenn nicht auskommentiert mit // dann kann der Spieler selbst die Sichtweite bestimmen und Gras an/abschalten
-//#define __PLAYER_GRAPHIC_SETTINGS__
+#define __PLAYER_GRAPHIC_SETTINGS__
 
 
 /**
@@ -177,7 +177,7 @@
 */
 
 // aktiviert Überprüfung, ob Spawnplatz frei
-#define __ORDER_SPAWN_RADIUS__ 30
+#define __ORDER_SPAWN_RADIUS__ 15
 
 // aktiviert eine Verkauf-Option am Bestell-Pad
 #define __ORDER_CAN_SELL__

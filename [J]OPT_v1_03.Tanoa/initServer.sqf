@@ -15,7 +15,7 @@ _paramNames = ("true" configClasses (getMissionConfig "Params")) apply {configNa
 } forEach _paramNames;
 
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
-#include "setup\setup_classnames.sqf"
+__ccppfln(setup\setup_classnames.sqf);
 
 //Function that adds dynamic groups to the mission as seen in End Game
 ["Initialize"] call BIS_fnc_dynamicGroups;
@@ -32,8 +32,8 @@ addMissionEventHandler ["HandleDisconnect", {
 
 // Schutzwall um die Basis für Arti- und Mörserbeschuss
 // nur auf dem Server, da createVehicle global funktioniert
-["ProtectionZone_Invisible_F", getMarkerPos "respawn_east"}, 150, 20] spawn opt_fnc_wallChain;
-["ProtectionZone_Invisible_F", getMarkerPos "respawn_west"}, 150, 20] spawn opt_fnc_wallChain;
+["ProtectionZone_Invisible_F", getMarkerPos "respawn_east", 150, 20] spawn opt_fnc_wallChain;
+["ProtectionZone_Invisible_F", getMarkerPos "respawn_west", 150, 20] spawn opt_fnc_wallChain;
 
 #ifdef __OPT_Sector_Message__
 	_allFlagPoles = [];

@@ -4,7 +4,7 @@ diag_log format ["%1 --- Executing TcB init.sqf", diag_ticktime];
 #include "setup\setup.sqf"
 
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
-#include "setup\setup_classnames.sqf"
+__ccppfln(setup\setup_classnames.sqf);
 
 // sicherstellen, dass alle Parameter eingelesen wurden
 waitUntil {!isNil "OPT_PLAYTIME"};
@@ -21,7 +21,10 @@ if (isNil "tcb_netinit") then {
 	tcb_netinit = true;
 };
 
-//tf_give_microdagr_to_soldier = false;
+// ------------------- Check for TFAR
+if (isClass(configFile >> "cfgPatches" >> "task_force_radio")) then {
+    __ccppfln(addons\TFAR\TFAR_settings.sqf);      //
+};
 
 #ifdef __STARTTIME__
 	if (OPT_DAYTIME != 99) then {

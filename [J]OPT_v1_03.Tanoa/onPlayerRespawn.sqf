@@ -18,6 +18,12 @@ else {
 	["opt_eh_server_update_budget", [playerSide, opt_respawn_cost, "-"]] call CBA_fnc_serverEvent;
 	["opt_eh_server_log_write", ["Spieler Respawn", format["Spieler: %1 - Kosten: %2", name player, opt_respawn_cost]]] call CBA_fnc_serverEvent;
 
+	waitUntil {!isNil "EtVInitialized"};
+	[player] spawn EtV_Actions;
+
+	// Mine detector
+	call OPT_Detector_fnc_postInit;
+
 };
 
 
@@ -68,9 +74,5 @@ if (OPT_TELEPORT == 1) then {
 	[] spawn opt_tfarVehicleLr;
 };
 */
-
-// Mine detector
-call OPT_Detector_fnc_postInit;
-
 
 diag_log format ["%1 --- TcB player_jip.sqf processed",diag_ticktime];

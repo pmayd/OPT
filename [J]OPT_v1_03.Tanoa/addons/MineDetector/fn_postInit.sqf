@@ -1,5 +1,7 @@
 if (isDedicated || !hasInterface) exitWith {};
 if (!(typeOf player in opt_pioniers)) exitWith{};
+
+diag_log format ["%1 --- MineDetector_fnc_postInit startet", diag_ticktime];
 	
 player setVariable ["OPT_Detector_in_use", false];
 
@@ -27,7 +29,7 @@ player addAction [
 	false,
 	true,
 	"",
-	"'MineDetector' in (items _target) && {!(player getVariable ['OPT_Detector_in_use', false])}"
+	"'MineDetector' in (items player) && !(player getVariable ['OPT_Detector_in_use', false])"
 ];
 
 player addAction [
@@ -54,3 +56,5 @@ player addAction [
 	"",
 	"player getVariable ['OPT_Detector_in_use', true]"
 ];
+
+diag_log format ["%1 --- MineDetector_fnc_postInit beendet", diag_ticktime];
