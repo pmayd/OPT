@@ -20,6 +20,7 @@ else {
 
 	waitUntil {!isNil "EtVInitialized"};
 	[player] spawn EtV_Actions;
+	player setVariable ["charges",[]]; // alte Sprengladungen löschen
 
 	// Mine detector
 	call OPT_Detector_fnc_postInit;

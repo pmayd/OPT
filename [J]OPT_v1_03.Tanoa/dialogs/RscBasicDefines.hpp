@@ -368,6 +368,10 @@ class RscListBox {
 	soundSelect[] = {"",0.1,1};
 	soundExpand[] = {"",0.1,1};
 	soundCollapse[] = {"",0.1,1};
+	soundEnter[] = {"",0.1,1};
+	soundPush[] = {"",0.1,1};
+	soundClick[] = {"",0.1,1};
+	soundEscape[] = {"",0.1,1};
 	maxHistoryDelay = 1;
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
@@ -447,6 +451,16 @@ class UIComboBox : RscListBox {
 	idc = -1;
 	sizeEx = 0.025;
 	wholeHeight = 0.3;
+	class ComboScrollBar : ScrollBar {
+	  color[] = {1,1,1,0.6};
+	  colorActive[] = {1,1,1,1};
+	  colorDisabled[] = {1,1,1,0.3};
+	  thumb = "#(argb,8,8,3)color(1,1,1,1)";
+	  arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)";
+	  arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
+	  border = "#(argb,8,8,3)color(1,1,1,1)";
+	  shadow = 0;
+	};
 };
 
 class RscCombo {
@@ -561,7 +575,13 @@ class RscShortcutButton {
 	colorBackground[] = {0.8, 0.8, 0.8, 0.9};
 	colorbackground2[] = {1, 1, 1, 0.4};
 	colorDisabled[] = {1, 1, 1, 0.25};
+	colorFocused[] = { 1, 1, 1, 1 };
+	colorBackgroundFocused[] = { 1, 1, 1, 0 };
 	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
+	soundEnter[] = {"",0.1,1};
+	soundPush[] = {"",0.1,1};
+	soundClick[] = {"",0.1,1};
+	soundEscape[] = {"",0.1,1};
 	periodFocus = 1.2;
 	periodOver = 0.8;
 	class HitZone {
@@ -616,6 +636,7 @@ class RscIGUIShortcutButton : RscShortcutButton {
 	colorBackground[] = {0.8, 0.8, 0.8, 0.9};
 	colorbackground2[] = {1, 1, 1, 0.4};
 	colorDisabled[] = {1, 1, 1, 0.4};
+	colorFocused[] = {0,0,0,1};
 	class HitZone {
 		left = 0.002;
 		top = 0.003;

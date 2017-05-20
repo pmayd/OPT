@@ -206,8 +206,12 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 	// Aktualisierung des HUD
 	// each frame
 	addMissionEventHandler ["Draw3D", {
-		[] spawn opt_fnc_updateHUD;
-
+		if (!isNil "opt_startTime") then {
+			[] spawn {
+				[] call opt_fnc_updateHUD;
+				sleep 1;		
+			};
+		};
 	}];
 
 	// only when opening or closing map
@@ -215,7 +219,6 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 		// no sheduled environment -> create one
 		[] spawn {
 			waitUntil{[] spawn opt_fnc_updateHUD; not visibleMap};
-
 		};
 
 	}];

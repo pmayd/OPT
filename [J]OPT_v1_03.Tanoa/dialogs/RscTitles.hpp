@@ -285,11 +285,12 @@
 			idc = 5101;
 			x = safezoneX + 0.02 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.08 * safezoneW;
+			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
+			sizeEx = 0.032;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
-			text = "test 2";
+			text = "#Spieler";
 		};	
 
 		// 2. Feld
@@ -297,11 +298,12 @@
 			idc = 5091;
 			x = safezoneX + 0.12 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.08 * safezoneW;
+			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
+			sizeEx = 0.032;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
-			text = "test 4";
+			text = "FPS";
 		};	
 
 		// 3. Feld
@@ -309,11 +311,12 @@
 			idc = 5092;
 			x = safezoneX + 0.22 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.08 * safezoneW;
+			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
+			sizeEx = 0.032;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
-			text = "test 5";
+			text = "Budget";
 		};
 
 		// 4. Feld
@@ -321,10 +324,11 @@
 			idc = 5102;
 			x = safezoneX + safezoneW - 0.28 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.08 * safezoneW;
+			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
+			sizeEx = 0.032;
 			shadow = 1;
-			text = "test 1";
+			text = "Heading";
 		};
 		
 		// 5. Feld
@@ -332,11 +336,12 @@
 			idc = 5090;
 			x = safezoneX + safezoneW - 0.18 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.08 * safezoneW;
+			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
+			sizeEx = 0.032;
 			colorText[] = Color_WhiteLight;
 			shadow = 1;
-			text = "test 3";
+			text = "Spielzeit";
 		};		
 		
 	};

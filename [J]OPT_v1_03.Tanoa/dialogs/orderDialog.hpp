@@ -76,7 +76,7 @@ class opt_vehicleorder_dialog
 		};
 		class order_button_schliessen: RscButton_OPT
 		{
-			idc = 20002;
+			idc = 20003;
 			text = "Schliessen";
 			x = 0.452 * safezoneW + safezoneX;
 			y = 0.798 * safezoneH + safezoneY;
@@ -92,7 +92,7 @@ class opt_vehicleorder_dialog
 		#ifdef __ORDER_CAN_SELL__
 		class order_button_verkaufen: RscButton_OPT
 		{
-			idc = 20003;
+			idc = 20004;
 			text = "Verkaufen";
 			x = 0.519 * safezoneW + safezoneX;
 			y = 0.798 * safezoneH + safezoneY;
@@ -103,7 +103,7 @@ class opt_vehicleorder_dialog
 			colorBackgroundActive[] = {1,0,0,0.7};
 			colorActive[] = {1,0,0,0.7};
 			tooltip = "Verkaufe Fahrzeug auf dem Bestell-Pad";
-			action = "[] call opt_fnc_sellVehicle; closeDialog 0";
+			action = "[] call opt_fnc_sellVehicle;";
 		};
 		#endif
 	};

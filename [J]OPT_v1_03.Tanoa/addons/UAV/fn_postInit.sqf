@@ -2,7 +2,7 @@
 waitUntil {!isNil "opt_pilots"};
 if (!(typeOf player in (opt_pilots + opt_operator))) exitWith {};
 
-diag_log format ["%1 --- OPT_UAV_fnc_postInit startet", diag_ticktime];
+diag_log format ["%1 --- OPT_UAV_fnc_postInit startet für %2", diag_ticktime, name player];
 
 _pcs = entities "Land_PCSet_01_screen_F";
 

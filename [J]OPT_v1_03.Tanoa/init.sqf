@@ -9,10 +9,6 @@ __ccppfln(setup\setup_classnames.sqf);
 // sicherstellen, dass alle Parameter eingelesen wurden
 waitUntil {!isNil "OPT_PLAYTIME"};
 
-#ifdef __VIEWDISTANCE__
-	setViewDistance __VIEWDISTANCE__;
-#endif
-
 setTerrainGrid 3.125;
 
 if (isNil "tcb_netinit") then {

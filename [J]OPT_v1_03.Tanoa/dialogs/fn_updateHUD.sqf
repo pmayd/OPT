@@ -95,7 +95,7 @@ _control = _currentCutDisplay displayCtrl 5101;
 _control = _currentCutDisplay displayCtrl 5102;
 #ifdef __HUD_SCORE__
 
-	_scoreStr = format ["Punktestand: NATO %1:%2 CSAT", WestPoints, EastPoints];
+	_scoreStr = format ["Punkte: NATO %1:%2 CSAT", WestPoints, EastPoints];
 
 	// Anzeige updaten
 	// Update Text
@@ -110,7 +110,7 @@ _control = _currentCutDisplay displayCtrl 5102;
 _control = _currentCutDisplay displayCtrl 5091;
 #ifdef __HUD_FPS__
 
-	_frameStr = format ["Fps: %1", round (diag_fps)];
+	_frameStr = format ["FPS: %1", round (diag_fps)];
 
 	// Anzeige updaten
 	// Update Text

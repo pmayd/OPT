@@ -21,18 +21,18 @@
 
 // festlegen des Respawn Typs:
 // 0 = No Respawn (NONE)
-// 1 = Respawn als Möwe/Rabe/Schmetterling (BIRD)
+// 1 = Respawn als MÃ¶we/Rabe/Schmetterling (BIRD)
 // 2 = Instant, also an der Stelle an der man stirbt
 // 3 = Respawn an der Base (BASE)
 // 4 = Respawn in der Gruppe, nur wenn noch KI da ist (GROUP)
 // 5 = Respawn in eine KI der eigenen Seite, sofern vorhanden (SIDE)
 #define __RESPAWN_TYPE__ 3
 
-// Anzahl max. möglicher Spieler eingeben
+// Anzahl max. mÃ¶glicher Spieler eingeben
 #define __PLNUM__ 162
 
 // falls die Mission respawn haben soll, dann die folgende Zeile auskommentieren und respawn Zeit festlegen
-// wenn das Respawndelay größer als 10 Sekunden ist erscheint ein berühmtes Zitat während die Kamera den leblosen Körper zeigt
+// wenn das Respawndelay grÃ¶ÃŸer als 10 Sekunden ist erscheint ein berÃ¼hmtes Zitat wÃ¤hrend die Kamera den leblosen KÃ¶rper zeigt
 #define __RESPAWN_DELAY__ 12
 
 // wenn nicht auskommentiert mit // dann verdoppelt sich das Respawndelay des Spielers mit jedem Respawn
@@ -49,7 +49,7 @@
 // Hold - Hold Location
 #define __GAMETYPE__ SC
 
-// wenn nicht auskommentiert mit // dann werden die in der Klammer definierten Channels blockiert und sind nur für den Admin frei
+// wenn nicht auskommentiert mit // dann werden die in der Klammer definierten Channels blockiert und sind nur fÃ¼r den Admin frei
 // 	0 = 	Global
 // 	1 = 	Side
 // 	2 = 	Command
@@ -57,20 +57,17 @@
 // 	4 = 	Vehicle
 // 	5 = 	Direct
 // 	6 = 	System
-#define __DISABLE_CHAT_CHANNELS__ {0}
+//#define __DISABLE_CHAT_CHANNELS__ {0}
 
 
 /**
 * Umwelt und Grafik 
 */
 // Wenn __STARTTIME__ definiert ist, wird die Zeit auf dem Server geskipt. Der Server synchronisiert die Zeit mit den Clients
-// möglich sind Werte von 0-23, also ganze Zahlen mit den Stunden oder die Zahl 99 für "vorgegebene Uhrzeit" in Mission
-// die hier angegebene Zeit ist dann der Default Wert der Mission, Schaltet den Lobbyparameter frei um die Zeit vor Missionsstart zu wählen
-// ACHTUNG: Dafür muss die Missionszeit auf 0:00 Uhr gestellt werden
+// mÃ¶glich sind Werte von 0-23, also ganze Zahlen mit den Stunden oder die Zahl 99 fÃ¼r "vorgegebene Uhrzeit" in Mission
+// die hier angegebene Zeit ist dann der Default Wert der Mission, Schaltet den Lobbyparameter frei um die Zeit vor Missionsstart zu wÃ¤hlen
+// ACHTUNG: DafÃ¼r muss die Missionszeit auf 0:00 Uhr gestellt werden
 #define __STARTTIME__ 12
-
-// wenn nicht auskommentiert mit // dann legt das die Viewdistance für die Spieler und den Server fest
-#define __VIEWDISTANCE__ 3500
 
 // wenn nicht auskommentiert mit // dann sieht man bei allen spielbaren Einheiten den Atem
 //#define __BREATH_VISIBLE__
@@ -94,29 +91,29 @@
 // wenn nicht auskommentiert mit // wird eine Textnachricht angezeigt wenn eine Flagge gezogen wird und die Marker wechseln die Farbe
 //#define __OPT_Sector_Message__
 
-// wenn nicht auskommentiert mit // dann werden die Waffen und Ausrüstung des Spielers zum Todeszeitpunkt gespeichert
+// wenn nicht auskommentiert mit // dann werden die Waffen und AusrÃ¼stung des Spielers zum Todeszeitpunkt gespeichert
 // macht nur Sinn wenn es einen Respawn gibt
 #define __WEAPON_SAVER__
 
-// wenn nicht auskommentiert mit // dann werden tote KI Einheiten und zerstörte KI Fahrzeuge nach einiger Zeit gelöscht
-// ACHTUNG! Fahrzeug wird nach angegebener Anzahl Sekunden gelöscht
+// wenn nicht auskommentiert mit // dann werden tote KI Einheiten und zerstÃ¶rte KI Fahrzeuge nach einiger Zeit gelÃ¶scht
+// ACHTUNG! Fahrzeug wird nach angegebener Anzahl Sekunden gelÃ¶scht
 #define __REMOVE_DEAD_AI_AND_VECS__ 60
 
-// wenn nicht auskommentiert mit // dann werden für definierte Spieler Marker auf der Karte erzeugt
-// sollen alle Spieler einen Marker erhalten muß auch jeder einzeln unter dem Array opt_p_entities definiert werden --> siehe setup_classnames.sqf
+// wenn nicht auskommentiert mit // dann werden fÃ¼r definierte Spieler Marker auf der Karte erzeugt
+// sollen alle Spieler einen Marker erhalten muÃŸ auch jeder einzeln unter dem Array opt_p_entities definiert werden --> siehe setup_classnames.sqf
 //#define __SHOW_CUSTOM_PLAYERMARKER__
 
 // wenn nicht auskommentiert mit // dann wird ein Lobbyparameter erzeugt, mit dem man Spielerklassen die keine Piloten sind daran hindern kann ein Flugzeug/Heli zu fliegen
-// die Pilotenklassen können auch angepasst werden --> siehe setup_classnames.sqf
+// die Pilotenklassen kÃ¶nnen auch angepasst werden --> siehe setup_classnames.sqf
 // wirkt sich global auf alle Vehicle des Typs "Air" aus
 #define __ONLY_PILOTS_CAN_FLY__
 
 // wenn nicht auskommentiert mit // dann wird ein Lobbyparameter erzeugt, mit dem man Spielerklassen die keine Crew sind daran hindern kann ein APC/Panzer zu fahren
-// die Crewklassen können auch angepasst werden --> siehe setup_classnames.sqf
+// die Crewklassen kÃ¶nnen auch angepasst werden --> siehe setup_classnames.sqf
 #define __ONLY_CREW_CAN_DRIVE__
 
 // wenn nicht auskommentiert mit // dann wird ein Lobbyparameter erzeugt, mit dem man Spielerklassen die keine Crew sind daran hindern kann ein APC/Panzer zu fahren
-// die Pioklassen können auch angepasst werden --> siehe setup_classnames.sqf
+// die Pioklassen kÃ¶nnen auch angepasst werden --> siehe setup_classnames.sqf
 #define __ONLY_PIO_CAN_BUILD_FARPS__
 
 #define __BLOOD_SCREEN__
@@ -129,10 +126,10 @@
 // auskommentieren und weder der Spieler noch sonst eine KI Einheit hat ein NVG
 //#define __NO_NVG__
 
-// wenn auskommentiert mit // spawnen alle Units (auch Spieler) ohne Map. Die Map muss explizit hinzugefügt werden (player/unit addWeapon "ACE_Map")
+// wenn auskommentiert mit // spawnen alle Units (auch Spieler) ohne Map. Die Map muss explizit hinzugefÃ¼gt werden (player/unit addWeapon "ACE_Map")
 //#define __NO_MAP__
 
-// wenn nicht auskommentiert mit // verlieren die Spieler im Wasser nicht mehr ihre Austrüstung
+// wenn nicht auskommentiert mit // verlieren die Spieler im Wasser nicht mehr ihre AustrÃ¼stung
 #define __STOP_ITEMS_DROPPING__
 
 
@@ -151,7 +148,7 @@
 /**
 * Ingame HUD Overlay
 */
-// alle Optionen können durch "//" auskommentiert werden
+// alle Optionen kÃ¶nnen durch "//" auskommentiert werden
 // nur nicht auskommentierte Optionen werden angezeigt.
 
 // globale Option, schaltet das ganze HUD aus, wenn auskommentiert
@@ -160,7 +157,7 @@
 // aktiviert Anzeige der Spieleranzahl
 #define __HUD_NUMBER_PLAYERS__
 
-// aktiviert lokale FPS-Anzeige für Client
+// aktiviert lokale FPS-Anzeige fÃ¼r Client
 //#define __HUD_FPS__
 
 // aktiviert Budget-Anzeige der eigenen Seite
@@ -176,17 +173,20 @@
 * ORDER DIALOG
 */
 
-// aktiviert Überprüfung, ob Spawnplatz frei
+// Ã¼berprÃ¼ft, ob noch ein freier Platz in x m um Spawnplatz existiert
 #define __ORDER_SPAWN_RADIUS__ 15
+
+// zeigt alle mÃ¶glichen Fahrzeuge fÃ¼r den Verkauf in x m um das Verkaufspad
+#define __ORDER_SELL_RADIUS__ 15
 
 // aktiviert eine Verkauf-Option am Bestell-Pad
 #define __ORDER_CAN_SELL__
 
-// wenn __ORDER_CAN_SELL__ aktiv, legt __ORDER_SELL_RETURN_VALUE__ den Rückgewinnungswert fest
+// wenn __ORDER_CAN_SELL__ aktiv, legt __ORDER_SELL_RETURN_VALUE__ den RÃ¼ckgewinnungswert fest
 // sprich, Fahrzeug bringt beim Verkauf Einkaufspreis * __ORDER_SELL_RETURN_VALUE__
 #define __ORDER_SELL_RETURN_VALUE__ 0.75
 
-// wenn __ORDER_CAN_SELL__ aktiv, legt __ORDER_SELL_WITH_DAMAGE__ fest, ob beim Verkauf Schaden berücksichtigt wird
+// wenn __ORDER_CAN_SELL__ aktiv, legt __ORDER_SELL_WITH_DAMAGE__ fest, ob beim Verkauf Schaden berÃ¼cksichtigt wird
 // wenn aktiv, wird der Verkaufspreis um den Schaden reduziert
 //#define __ORDER_SELL_WITH_DAMAGE__
 
@@ -200,8 +200,8 @@
 // Startbudget CSAT
 #define __BUDGET_CSAT__ 2e6
 
-// Dispo-Kredit für beide Seiten, falls Budget < 0
+// Dispo-Kredit fÃ¼r beide Seiten, falls Budget < 0
 #define __BUDGET_DISPO__ 1e5
 
-// wie viel ist eine Einheit wert? Wird für jeden Respawn vom Budget abgezogen.
+// wie viel ist eine Einheit wert? Wird fÃ¼r jeden Respawn vom Budget abgezogen.
 #define __RESPAWN_COST__ 5000
