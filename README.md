@@ -15,6 +15,16 @@ Name: [J]OPT_v1_03
 
 ## SITREP
 
+### 2017-05-21
+
+- Intro eingebaut, dass nur bei Missiosstart lädt (nicht für JIP)
+- Freeze Time eingebaut, die Spieler einfriert. Addiert zur Waffenruhe.
+- Beides über neue Paremeter in setup.sqf und in der Lobby einstellbar
+- Bugfix mit dem Fahrzeugdialog: Verkaufenbutton war aktiv, Schließen inaktiv
+- Parameter werden nun in der preInit ausgeführt, allerdings nur vom Server und an den Client übertragen, da dieser in der preInit keinen Zugriff auf die Parameter hat.
+- Brücke eingebaut -> TODO: Leitplanken entfernen?
+
+
 ### 2017-05-20
 
 - Sehr viele kleine Änderungen und Verbesserungen
