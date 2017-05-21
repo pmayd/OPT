@@ -27,7 +27,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	false
 }];
 
-#include "setup\setup_publicVariable.sqf"
+#include "setup\setup_publicVariables.sqf"
 #include "common\server\i_events.sqf"
 
 // Schutzwall um die Basis für Arti- und Mörserbeschuss
