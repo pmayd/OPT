@@ -20,6 +20,8 @@
 - [x] Logistik-System -> Mit R3F ist ein sehr umffangreiches Logistik-System integriert. Es erlaubt das Verladen von vorgegebenen Kisten in Fahrzeuge, die entsprechenden Inventarplatz freihaben, das Ausrichten von Objekten und vieles mehr.
 - [x] Revive-System -> Mit FAR Revive ist ein umfangreiches Revive-System verbaut, dass es einfachen Soldaten erlaubt, andere zu heilen und zu stabilisieren, während der Sanitäter der Gruppe Wiederbeleben kann. Alle können bewusstlose Kameraden ziehen.
 - [x] Aufrichten von Fahrzeugen -> sollte ein Fahrzeuge einmal auf dem Kopf landen, haben Spieler die Möglichkeit, das Fahrzeug wieder aufzurichten.
+- [x] Freeze System -> Über die Parameter kann eine Freeze Time eingestellt werden. Diese sorgt dafür, dass Spieler zu Beginn der Mission keine Handlungen ausführen können. 
+- [x] Intro -> Zusätzlich kann über die Parameter ein einfaches Intro mit zufälligem Zitat und Spielerübersicht aktiviert werden. Das Intro wird nur einmalig abgespielt.
 
 ## geplante & gewünschte Features
 - [ ] Radarcontainer
