@@ -22,10 +22,10 @@
 - [x] Aufrichten von Fahrzeugen -> sollte ein Fahrzeuge einmal auf dem Kopf landen, haben Spieler die Möglichkeit, das Fahrzeug wieder aufzurichten.
 
 ## geplante & gewünschte Features
-- [] Radarcontainer
-- [] Logistiksystem - bestenfalls auch die containerverladerei auf die dafür vorgesehenen lkw
-- [] revive mit drag und stabilisieren + 3d- und kartenmarker -> Prüfe Kartenmarker
-- [] MARKERSYSTEM (à la blueforce tracker aber mit verschiedenen abstufungen - oberkommando sieht alle einheiten, SQLs sehen untergeordnete einheiten + squadmarker, einfache soldaten sehen nur squadmarker) -> Lord
-- [] 2-minütige Pause zu Beginn mit Einblendung -> Spieler zu beginn freezen und so Server in Ruhe initialisieren lassen
-- [] Basen müssen neu auf der Karte verteilt und korrekt eingerichtet werden (alle Pads, Drohnenstation etc.)
-- [] TFAR Frequenzmodul macht Probleme
+- [ ] Radarcontainer
+- [ ] Logistiksystem - bestenfalls auch die containerverladerei auf die dafür vorgesehenen lkw
+- [ ] revive mit drag und stabilisieren + 3d- und kartenmarker -> Prüfe Kartenmarker
+- [ ] MARKERSYSTEM (à la blueforce tracker aber mit verschiedenen abstufungen - oberkommando sieht alle einheiten, SQLs sehen untergeordnete einheiten + squadmarker, einfache soldaten sehen nur squadmarker) -> Lord
+- [ ] 2-minütige Pause zu Beginn mit Einblendung -> Spieler zu beginn freezen und so Server in Ruhe initialisieren lassen
+- [ ] Basen müssen neu auf der Karte verteilt und korrekt eingerichtet werden (alle Pads, Drohnenstation etc.)
+- [ ] TFAR Frequenzmodul macht Probleme
