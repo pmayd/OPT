@@ -35,22 +35,23 @@ if (isMultiplayer && !isServer) then {
 	};
 };
 
+player action ["WeaponOnBack", player];
+sleep 1;
+
 // friere Spieler, falls freezeTime aktiv
 if (!opt_allow_movement) then {
 
 	// Server darf nicht pausiert werden
-	[_player] spawn {
-		params ["_player"];
-		sleep 0.5;
+	[] spawn {
 
 		// freeze Spieler zu Beginn
-		_player enableSimulationGlobal false;
+		player enableSimulation false;
 
 		// warte OPT_FREEZE_TIME
 		waitUntil {sleep 1; opt_allow_movement};
 
 		// gib Spieler frei
-		_player enableSimulationGlobal true;
+		player enableSimulation true;
 	};
 
 };

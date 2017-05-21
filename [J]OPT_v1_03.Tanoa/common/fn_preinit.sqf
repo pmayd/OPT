@@ -21,10 +21,11 @@ SM3_started		= false;
 // Das Spiel liest bereits alle Parameter aus und speichert sie in "BIS_fnc_storeParamsValues_data"
 // 1. Namen aller Parameter
 // 2. führe globale Variable mit diesem Namen ein
+if (!isServer) exitWith{};
 _paramNames = ("true" configClasses (getMissionConfig "Params")) apply {configName _x};
 {	
 	// braucht nicht global sein, da init.sqf für jeden ausgeführt wird
-	missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue];
+	missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue, true];
 } forEach _paramNames;
 
 diag_log format ["%1 --- preInit.sqf is processed",diag_ticktime];

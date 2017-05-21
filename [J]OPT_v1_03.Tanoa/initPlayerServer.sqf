@@ -1,8 +1,6 @@
 #include "setup\setup.sqf"
 params ["_player", "_didJIP"];
 
-_player action ["WeaponOnBack", _player];
-
 // Intro 
 #ifdef __INTRO__
 if (!_didJIP) then {

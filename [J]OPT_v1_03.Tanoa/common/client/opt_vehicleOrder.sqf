@@ -33,9 +33,9 @@ _display = findDisplay vhOrder_dialog;
 _listbox_vehicle = _display displayCtrl vhOrder_vehiclelist;
 _listbox_price = _display displayCtrl vhOrder_pricelist;
 _budget = _display displayCtrl 20102;
-_order = _display displayCtrl 20001;
-_close = _display displayCtrl 20002;
-_sell = _display displayCtrl 20003;
+_order = _display displayCtrl 20002;
+_close = _display displayCtrl 20003;
+_sell = _display displayCtrl 20004;
 
 [_budget] call opt_fnc_renderBudget;
 
