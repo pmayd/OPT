@@ -81,7 +81,7 @@ class Params {
 	class OPT_TFAR_INTERCEPTION {
 		title 		= "TFAR gegnerischen Funk abhören";
 		values[] 	= {0,1};
-		texts[] 	= {"Deaktiviert","Aktiviert"};
+		texts[] 	= {"aus","an"};
 		default 	= 0;
 	};
 #ifdef __ONLY_PILOTS_CAN_FLY__
@@ -89,7 +89,7 @@ class Params {
 		title = "Nur Piloten können fliegen";
 		values[] = {0,1};
 		default = 1;
-		texts[] = {"Deaktiviert","Aktiviert"};
+		texts[] = {"aus","an"};
 	};
 #endif
 #ifdef __ONLY_CREW_CAN_DRIVE__
@@ -97,7 +97,7 @@ class Params {
 		title = "Nur Besatzungsmitglieder können Schwere Kampffahrzeuge fahren";
 		values[] = {0,1};
 		default = 1;
-		texts[] = {"Deaktiviert","Aktiviert"};
+		texts[] = {"aus","an"};
 	};
 #endif
 #ifdef __ONLY_PIO_CAN_BUILD_FARPS__
@@ -105,7 +105,7 @@ class Params {
 		title = "Nur Pioniere können FARP aufbauen";
 		values[] = {0,1};
 		default = 0;
-		texts[] = {"Deaktiviert","Aktiviert"};
+		texts[] = {"aus","an"};
 	};
 #endif
 	class OPT_TRAINING {
@@ -117,15 +117,37 @@ class Params {
 	class OPT_TELEPORT {
 		title 		= "Jeder kann Teleporten";
 		values[] 	= {0,1};
-		texts[] 	= {"Deaktiviert","Aktiviert"};
+		texts[] 	= {"aus","an"};
 		default 	= 0;
 	};
 	class OPT_TEAMBALANCE {
 		title 		= "Überhangregel";
 		values[] 	= {0,3,4,5,6,7,8,9,10,11,12,13,14,15};
-		texts[] 	= {"deaktiviert","+3","+4","+5","+6","+7","+8","+9","+10","+11","+12","+13","+14","+15"};
+		texts[] 	= {"aus","+3","+4","+5","+6","+7","+8","+9","+10","+11","+12","+13","+14","+15"};
 		default 	= 5;
 	};
+	#ifdef __SHOW_ALL_UNITS__
+	class OPT_SHOW_ALL_UNITS {
+		title 		= "Für HL alle Einheiten auf Karte markieren";
+		values[] 	= {0,1};
+		texts[] 	= {"aus","an"};
+		default 	= 0;
+	};
+	#endif
+	class OPT_FREEZE_TIME {
+		title 		= "Zeit, in der zu Beginn alle Einheiten eingeforen sind";
+		values[] 	= {0,60,120,180,240,300};
+		texts[] 	= {"aus","1 min", "2 min", "3 min", "4 min", "5 min"};
+		default 	= 0;
+	};
+	#ifdef __INTRO__
+	class OPT_SHOW_INTRO {
+		title 		= "Intro";
+		values[] 	= {0,1};
+		texts[] 	= {"aus","an"};
+		default 	= 1;
+	};
+	#endif
 };
 
 #include "dialogs\rscBasicDefines.hpp"

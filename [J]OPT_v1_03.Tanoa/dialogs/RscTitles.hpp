@@ -80,7 +80,7 @@
 	  	controls[] = {Titelt1};
 		class Titelt1 : RscStdText {
 			font=DEFAULTFONT;
-			text = "Habt viel Spass!";
+			text = "Auf ein gutes, ehrliches und faires Gefecht!";
 			colorText[] = Color_White;
 			sizeEx = TextSize_medium;
 			x = 0.0;

@@ -3,6 +3,14 @@
 // define all public variables here
 #include "setup.sqf"
 
+[] spawn {
+	// warte OPT_FREEZE_TIME
+	waitUntil {!isNil "opt_startTime"};
+	waitUntil {sleep 1; serverTime - opt_startTime > OPT_FREEZE_TIME};
+	opt_allow_movement = true;
+	publicVariable "opt_allow_movement";
+};
+
 // Budget wird im Trainingsmodus überschrieben und auf unendlich gesetzt!
 opt_west_budget = __BUDGET_NATO__;
 opt_east_budget = __BUDGET_CSAT__;

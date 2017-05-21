@@ -108,6 +108,7 @@ class opt {
 		addf(iconSize);
 		addf(iconText);
 		addf(iconType);
+		addf(intro);
 		addf(maintainerActions);
 		addf(maintainerDialog);
 		addf(maintainerOrderVehicle);

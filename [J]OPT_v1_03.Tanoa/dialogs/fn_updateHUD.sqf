@@ -32,7 +32,7 @@ _control = _currentCutDisplay displayCtrl 5090;
 	private "_timeStr";
 	private _timeElapsed = (serverTime - opt_startTime);
 	private _playTime = OPT_PLAYTIME - _timeElapsed;
-	private _truceTime = OPT_TRUCETIME - _timeElapsed;
+	private _truceTime = (OPT_TRUCETIME + OPT_FREEZE_TIME) - _timeElapsed;
 
 	if (MissionStarted) then {
 

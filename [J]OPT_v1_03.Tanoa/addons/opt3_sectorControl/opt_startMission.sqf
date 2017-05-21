@@ -57,7 +57,7 @@ if (isServer) then {
 	// dass Time bei 0 startet. Da der Client mit der vergangenen Zeit rechnet, muss hier
 	// ebenfalls die korrekte Zeit berechnet werden. Wie immer serverTime - opt_startTime.
 	private _timeElapsed = (serverTime - opt_startTime);
-	truceTime = OPT_TRUCETIME - _timeElapsed;
+	truceTime = (OPT_TRUCETIME + OPT_FREEZE_TIME) - _timeElapsed;
 	_ticker = 0;
 
 	for "_t" from ceil(_timeout-_timeElapsed) to 0 step -1 do {

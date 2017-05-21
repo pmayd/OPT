@@ -59,6 +59,9 @@
 // 	6 = 	System
 //#define __DISABLE_CHAT_CHANNELS__ {0}
 
+// aktiviert intro
+#define __INTRO__
+
 
 /**
 * Umwelt und Grafik 
@@ -75,18 +78,27 @@
 // wenn nicht auskommentiert mit // dann kann der Spieler selbst die Sichtweite bestimmen und Gras an/abschalten
 #define __PLAYER_GRAPHIC_SETTINGS__
 
+/**
+* Markersystem
+*/
+
+// wenn nicht auskommentiert, werden alle Sektor-Flaggen mit einem Marker versehen
+#define __OPT_FLAG_MARKER__
+
+// wenn nicht auskommentiert mit // dann werden für definierte Spieler Marker auf der Karte erzeugt
+// sollen alle Spieler einen Marker erhalten muß auch jeder einzeln unter dem Array opt_p_entities definiert werden --> siehe setup_classnames.sqf
+//#define __SHOW_CUSTOM_PLAYERMARKER__
+
+// wenn nicht auskommentiert, kann in den Parametern eingestellt werden, ob HL alle Einheiten auf der Kate sieht oder nur Gruppenführer.
+#define __SHOW_ALL_UNITS__
+
 
 /**
 * Gameplay 
 */
-// wenn nicht auskommentiert mit // kann an Servicepunkten keine Munition mehr aufgenommen werden (nur noch Repair / Refuel)
-#define __OPT_SERVICE_NO_AMMO__
 
 // wenn nicht auskommentiert mit // kann an FARP's keine Munition und Fuel mehr aufgenommen werden (nur noch Repair)
 #define __OPT_FARP_NO_AMMO__
-
-// wenn nicht auskommentiert, werden alle Sektor-Flaggen mit einem Marker versehen
-#define __OPT_FLAG_MARKER__
 
 // wenn nicht auskommentiert mit // wird eine Textnachricht angezeigt wenn eine Flagge gezogen wird und die Marker wechseln die Farbe
 //#define __OPT_Sector_Message__
@@ -98,10 +110,6 @@
 // wenn nicht auskommentiert mit // dann werden tote KI Einheiten und zerstörte KI Fahrzeuge nach einiger Zeit gelöscht
 // ACHTUNG! Fahrzeug wird nach angegebener Anzahl Sekunden gelöscht
 #define __REMOVE_DEAD_AI_AND_VECS__ 60
-
-// wenn nicht auskommentiert mit // dann werden für definierte Spieler Marker auf der Karte erzeugt
-// sollen alle Spieler einen Marker erhalten muß auch jeder einzeln unter dem Array opt_p_entities definiert werden --> siehe setup_classnames.sqf
-//#define __SHOW_CUSTOM_PLAYERMARKER__
 
 // wenn nicht auskommentiert mit // dann wird ein Lobbyparameter erzeugt, mit dem man Spielerklassen die keine Piloten sind daran hindern kann ein Flugzeug/Heli zu fliegen
 // die Pilotenklassen können auch angepasst werden --> siehe setup_classnames.sqf
@@ -170,7 +178,7 @@
 #define __HUD_TIMER__
 
 /**
-* ORDER DIALOG
+* Bestellsystem ORDER DIALOG
 */
 
 // überprüft, ob noch ein freier Platz in x m um Spawnplatz existiert

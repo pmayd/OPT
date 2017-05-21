@@ -6,17 +6,6 @@ diag_log format ["%1 --- TcB initPlayerLocal.sqf startet",diag_ticktime];
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
 __ccppfln(setup\setup_classnames.sqf);
 
-// Startparameter auslesen und als globale Variablen verfügbar machen
-// By James: moderner Ansatz ohne 20 Zeilen Code
-// Das spiel liest bereits alle Parameter aus und speichert sie in "BIS_fnc_storeParamsValues_data"
-// 1. Namen aller Parameter
-// 2. führe globale Variable mit diesem Namen ein
-_paramNames = ("true" configClasses (getMissionConfig "Params")) apply {configName _x};
-{	
-	// braucht nicht global sein, da init.sqf für jeden ausgeführt wird
-	missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue];
-} forEach _paramNames;
-
 // checking for failed player init
 if (isMultiplayer && !isServer) then {	// only on dedicated environment
 	true spawn {
@@ -44,6 +33,26 @@ if (isMultiplayer && !isServer) then {
 			});
 		};
 	};
+};
+
+// friere Spieler, falls freezeTime aktiv
+if (!opt_allow_movement) then {
+
+	// Server darf nicht pausiert werden
+	[_player] spawn {
+		params ["_player"];
+		sleep 0.5;
+
+		// freeze Spieler zu Beginn
+		_player enableSimulationGlobal false;
+
+		// warte OPT_FREEZE_TIME
+		waitUntil {sleep 1; opt_allow_movement};
+
+		// gib Spieler frei
+		_player enableSimulationGlobal true;
+	};
+
 };
 
 if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehicleLocal [0,0,0]};

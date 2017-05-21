@@ -3,17 +3,6 @@
 
 diag_log format ["%1 --- TcB initServer.sqf startet", diag_ticktime];
 
-// Startparameter auslesen und als globale Variablen verfügbar machen
-// By James: moderner Ansatz ohne 20 Zeilen Code
-// Das spiel liest bereits alle Parameter aus und speichert sie in "BIS_fnc_storeParamsValues_data"
-// 1. Namen aller Parameter
-// 2. führe globale Variable mit diesem Namen ein
-_paramNames = ("true" configClasses (getMissionConfig "Params")) apply {configName _x};
-{	
-	// braucht nicht global sein, da init.sqf für jeden ausgeführt wird
-	missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue];
-} forEach _paramNames;
-
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
 __ccppfln(setup\setup_classnames.sqf);
 

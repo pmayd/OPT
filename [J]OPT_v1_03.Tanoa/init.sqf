@@ -36,7 +36,7 @@ __ccppfln(addons\far_revive\FAR_revive_init.sqf); 											//farooq
 	__ccppfln(addons\zlt_fieldrepair\zlt_fieldrepair.sqf);								//repscript
 	execVM "addons\R3F_LOG\init.sqf";																			// r3f Logistics
 	execVM "addons\attach_exp\init.sqf";																	// etv charges
-	_ws_time = if (OPT_TRAINING == 1) then {30} else {OPT_TRUCETIME};
+	_ws_time = if (OPT_TRAINING == 1) then {30} else {OPT_TRUCETIME + OPT_FREEZE_TIME};
 	[_ws_time] execVM "addons\opt3_sectorControl\opt_startMission.sqf";		// startet Timer für Waffenruhe und legt Missionsstart fest!
 
 	// new command since 1.52 - to disable the player raycasts in PvP cause not needed functionality but a lot of cpu calcuation
