@@ -37,7 +37,7 @@ if (local player) then
 			_marker = createMarkerLocal [format["W%1marker",_i],[0,0]];
 			_markerw = _markerw + [_marker];
 			_marker setMarkerTypeLocal MARKERSYMBOL;
-			_marker setMarkerColorLocal "ColorBLUEFOR";
+			_marker setMarkerColorLocal "ColorBLUFOR";
 			_marker setMarkerSizeLocal MARKERSIZE;
 			_marker setMarkerAlphaLocal MARKERALPHA;
 			sleep 0.01;

@@ -40,3 +40,7 @@ call compile deleteVehicle _selectedVehicle;
 // neu öffnen
 [] call opt_fnc_updateBudget;
 
+// lösche Option aus Verkaufsmenü!
+_listbox_vehicle lbDelete _index;
+_listbox_price lbDelete _index;
+

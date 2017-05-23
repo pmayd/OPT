@@ -57,7 +57,6 @@ if (count opt_orderDialogObjects != 0) then {
 	_sell ctrlEnable false;
 } else {
 	_order ctrlEnable false;
-	_close ctrlEnable false;
 
 	// im Falle des Verkaufsbuttons -> Liste aller gefundenen Fahrzeuge
 	// alle Objekte im Radius von __ORDER_SELL_RADIUS__ Metern um das Pad -> im Idealfall nur das zu verkaufende Fahrzeug
