@@ -1,4 +1,4 @@
-﻿//by psycho
+//by psycho
 diag_log format ["%1 --- Executing TcB init.sqf", diag_ticktime];
 
 #include "setup\setup.sqf"
@@ -19,7 +19,7 @@ if (isNil "tcb_netinit") then {
 
 // ------------------- Check for TFAR
 if (isClass(configFile >> "cfgPatches" >> "task_force_radio")) then {
-    __ccppfln(addons\TFAR\TFAR_settings.sqf);      //
+  __ccppfln(addons\TFAR\TFAR_settings.sqf); 
 };
 
 #ifdef __STARTTIME__
@@ -41,7 +41,7 @@ __ccppfln(addons\far_revive\FAR_revive_init.sqf); 											//farooq
 
 	// new command since 1.52 - to disable the player raycasts in PvP cause not needed functionality but a lot of cpu calcuation
 	disableRemoteSensors true;
-	
+
 	waitUntil {time > 0};
 	enableEnvironment true;
 	enableRadio false;

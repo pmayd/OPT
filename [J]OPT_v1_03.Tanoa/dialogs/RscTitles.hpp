@@ -253,7 +253,7 @@
 	
 	
 	//----------------------------------- BASE CAPTURE DISPLAY -------------------------------------
-
+	#define FONTSIZE 0.03
 	class DefaultMenu {
 		idd = 5000;
 		objects[] = {};
@@ -287,7 +287,7 @@
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
 			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
-			sizeEx = 0.032;
+			sizeEx = FONTSIZE;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
 			text = "#Spieler";
@@ -300,7 +300,7 @@
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
 			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
-			sizeEx = 0.032;
+			sizeEx = FONTSIZE;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
 			text = "FPS";
@@ -313,7 +313,7 @@
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
 			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
-			sizeEx = 0.032;
+			sizeEx = FONTSIZE;
 			shadow = 1;
 			colorText[] = Color_WhiteLight;
 			text = "Budget";
@@ -326,7 +326,7 @@
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
 			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
-			sizeEx = 0.032;
+			sizeEx = FONTSIZE;
 			shadow = 1;
 			text = "Heading";
 		};
@@ -338,7 +338,7 @@
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
 			w = 0.09 * safezoneW;
 			h = 0.025 * safezoneH;
-			sizeEx = 0.032;
+			sizeEx = FONTSIZE;
 			colorText[] = Color_WhiteLight;
 			shadow = 1;
 			text = "Spielzeit";

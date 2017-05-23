@@ -235,7 +235,7 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 #endif
 
 #ifdef __SHOW_CUSTOM_PLAYERMARKER__
-	__ccppfln(common\client\func\player_marker.sqf);
+[] execVM "common\client\GPS.sqf";
 
 #endif
 
