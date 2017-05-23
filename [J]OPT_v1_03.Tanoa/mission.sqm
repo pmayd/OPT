@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=2357;
+		nextID=2359;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=143;
+		nextID=148;
 	};
 	class Camera
 	{
-		pos[]={2224.9402,37.809929,13359.673};
-		dir[]={0.62730938,-0.29383212,-0.72124207};
-		up[]={0.19284619,0.9558503,-0.22172192};
-		aside[]={-0.75455076,-1.2452947e-006,-0.65627712};
+		pos[]={2241.9509,18.737057,13407.863};
+		dir[]={0.65007305,-0.33517897,-0.68206966};
+		up[]={0.23127705,0.94213516,-0.24265984};
+		aside[]={-0.72394425,1.1193333e-006,-0.68998051};
 	};
 };
 binarizationWanted=0;
@@ -227,6 +227,25 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -258,25 +277,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
 				};
 			};
 		};
@@ -6365,8 +6365,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2289.7214,14.025457,13408.714};
-						angles[]={0,5.6347246,0};
+						position[]={2289.8215,14.025457,13408.598};
+						angles[]={0,2.5178463,0};
 					};
 					side="Empty";
 					flags=4;
@@ -11976,7 +11976,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2289.7722,13.778369,13408.656};
-						angles[]={0,2.4844794,0};
+						angles[]={0,5.6507869,0};
 					};
 					side="Empty";
 					flags=4;
