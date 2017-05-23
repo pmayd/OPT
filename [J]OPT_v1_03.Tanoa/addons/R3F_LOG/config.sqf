@@ -279,6 +279,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["OPT_Box_East_Ammo_F", 30],         				// Munitionskiste
    	["OPT_Box_East_Grenades_F", 30],     				// Explosivkiste
    	["OPT_Box_East_WpsSpecial_F", 30],   				// AT Raketenkiste
+   	["OPT_Box_NATO_WpsSpecial_AT2_F", 30],			// AT Raketenkiste
 	["OPT_Box_East_WpsLaunch_F", 30],					// HAT-Kiste
    	["OPT_Land_Pod_Heli_Transport_04_fuel_F", 100],		// Fuelcontainer
    	["OPT_Land_Pod_Heli_Transport_04_ammo_F", 110],		// Munitionscontainer
@@ -378,5 +379,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_CncBarrierMedium_F",			// beton barriere (mittel)
 	"Land_CncBarrierMedium4_F",			// beton barriere (mittel - lang)
 	"Land_Mil_WiredFence_F",			// maschendrahtzaun
-	"CamoNet_BLUFOR_big_Curator_F"		// Camonet zum testen!
+	"CamoNet_BLUFOR_big_Curator_F",		// Camonet zum testen!
+	"OPT_B_CargoNet_01_ammo_F",	// Ausrüstungskiste
+	"OPT_Box_NATO_WpsSpecial_AT2_F" // RPG
 ];
