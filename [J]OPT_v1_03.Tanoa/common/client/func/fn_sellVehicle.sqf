@@ -27,7 +27,6 @@ if (_index < 0) exitWith {
 	[format ["<t size='0.8' shadow='1' color='#ff0000'>%1</t>",txt], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
 };
 
-_pool = (opt_vehiclesNato + opt_choppersNato + opt_armoredNato + opt_suppliesNato + opt_seaNato + opt_vehiclesCsat + opt_choppersCsat + opt_armoredCsat + opt_suppliesCsat + opt_seaCsat);
 _selectedVehicle = (opt_vehicles_to_sell select _index) select 0;
 _selectionText = _listbox_vehicle lbText _index;
 _unitCost = parseNumber (_listbox_price lbText _index);

@@ -64,7 +64,7 @@ if (count opt_orderDialogObjects != 0) then {
 	_objs = nearestObjects [_spawnpos, ["AllVehicles","Thing"], __ORDER_SELL_RADIUS__];
 	opt_vehicles_to_sell = [];
 
-	_pool = (opt_vehiclesNato + opt_choppersNato + opt_armoredNato + opt_suppliesNato + opt_seaNato + opt_vehiclesCsat + opt_choppersCsat + opt_armoredCsat + opt_suppliesCsat + opt_seaCsat);
+	_pool = (opt_vehiclesNato + opt_choppersNato + opt_armoredNato + opt_vehiclesCsat + opt_choppersCsat + opt_armoredCsat);
 	// gehe alle gefundenen Objekte durch und lösche sie, falls nicht in pool, oder ergänze um Preis
 
 	{
