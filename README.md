@@ -15,6 +15,13 @@ Name: [J]OPT_v1_03
 
 ## SITREP
 
+### 2017-05-23
+- neues GPS-System von Lord-MDB eingebaut
+- Parameter für HL, alle oder nur GrpFhr zu sehen
+- TFAR Optimierungen (nach wie vor bugggy)
+- Anpassung der HUD Schrift, leicht verkleinert
+- Verschieben der Basen sowie neue Brücken und Marine Basis (danke oppa)
+
 ### 2017-05-21
 
 - Intro eingebaut, dass nur bei Missiosstart lädt (nicht für JIP)
