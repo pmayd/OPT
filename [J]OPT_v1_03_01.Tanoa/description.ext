@@ -138,7 +138,7 @@ class Params {
 		title 		= "Zeit, in der zu Beginn alle Einheiten eingeforen sind";
 		values[] 	= {0,60,120,180,240,300};
 		texts[] 	= {"aus","1 min", "2 min", "3 min", "4 min", "5 min"};
-		default 	= 0;
+		default 	= 60;
 	};
 	#ifdef __INTRO__
 	class OPT_SHOW_INTRO {
@@ -148,6 +148,12 @@ class Params {
 		default 	= 1;
 	};
 	#endif
+	class OPT_ZEUS {
+		title 		= "Zeus für Gruppenführer im Trainingsmodus";
+		values[] 	= {0,1};
+		texts[] 	= {"aus", "an"};
+		default 	= 1;
+	};
 };
 
 #include "dialogs\rscBasicDefines.hpp"
