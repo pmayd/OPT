@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=2384;
+		nextID=2391;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=153;
+		nextID=158;
 	};
 	class Camera
 	{
-		pos[]={11685.643,84.166473,3030.4829};
-		dir[]={0.3085666,-0.60725379,0.73215264};
-		up[]={0.23583938,0.79450548,0.55958992};
-		aside[]={0.92151088,2.1877349e-007,-0.38837183};
+		pos[]={11787.615,30.088562,3100.5525};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -235,6 +235,25 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -266,25 +285,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
 				};
 			};
 		};
@@ -2729,8 +2729,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11778.495,4.9803152,3136.896};
-								angles[]={0,3.5095303,0};
+								position[]={11778.495,4.9804392,3136.896};
+								angles[]={0,3.5095253,0};
 							};
 							side="East";
 							flags=4;
@@ -2741,12 +2741,31 @@ class Mission
 								description="Alpha - AT";
 								isPlayable=1;
 							};
-							id=1604;
-							type="OPT_CSAT_PA_Schuetze_Heavy_T";
-							atlOffset=0.10887623;
+							id=2388;
+							type="OPT_CSAT_PA_Schuetze_T";
+							atlOffset=0.10900021;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male03PER";
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -2765,7 +2784,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=1;
+								nAttributes=2;
 							};
 						};
 					};
@@ -3587,50 +3606,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11727.025,5.0104208,3176.2036};
-								angles[]={0,3.5428982,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								rank="CORPORAL";
-								init="(group this) setGroupIDGlobal [""SF""];";
-								description="Special Forces - AT";
-								isPlayable=1;
-							};
-							id=1624;
-							type="OPT_CSAT_PA_Schuetze_Heavy_T";
-							atlOffset=0.13898182;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=1.04;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={11726.269,5.0104208,3177.5979};
 								angles[]={0,3.4036908,0};
 							};
@@ -3669,7 +3644,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item3
+						class Item2
 						{
 							dataType="Object";
 							class PositionInfo
@@ -3712,7 +3687,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item4
+						class Item3
 						{
 							dataType="Object";
 							class PositionInfo
@@ -3775,7 +3750,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item5
+						class Item4
 						{
 							dataType="Object";
 							class PositionInfo
@@ -3814,6 +3789,69 @@ class Mission
 												};
 											};
 											value="Male03PER";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1.04;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11727.025,5.0104389,3176.2041};
+								angles[]={0,3.542896,0};
+							};
+							side="East";
+							flags=4;
+							class Attributes
+							{
+								rank="CORPORAL";
+								init="(group this) setGroupIDGlobal [""SF""];";
+								description="Special Forces - AT";
+								isPlayable=1;
+							};
+							id=2386;
+							type="OPT_CSAT_PA_Schuetze_T";
+							atlOffset=1.0490417e-005;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male01PER";
 										};
 									};
 								};
@@ -4333,50 +4371,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11787.615,5.0900011,3125.6025};
-								angles[]={0,3.5417676,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								rank="CORPORAL";
-								init="(group this) setGroupIDGlobal [""Fox""];";
-								description="Foxtrot - AT";
-								isPlayable=1;
-							};
-							id=1640;
-							type="OPT_CSAT_PA_Schuetze_Heavy_T";
-							atlOffset=0.2185626;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=0.99000001;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item11
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={11789.021,5.0900011,3125.4875};
 								angles[]={0,3.8976927,0};
 							};
@@ -4416,50 +4410,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item12
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11790.229,5.0900011,3125.241};
-								angles[]={0,3.7406304,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								rank="CORPORAL";
-								init="(group this) setGroupIDGlobal [""Fox""];";
-								description="Foxtrot - AT";
-								isPlayable=1;
-							};
-							id=1642;
-							type="OPT_CSAT_PA_Schuetze_Heavy_T";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=1.04;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item13
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4502,7 +4453,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -4543,6 +4494,132 @@ class Mission
 									};
 								};
 								nAttributes=1;
+							};
+						};
+						class Item13
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11790.229,5.0904388,3125.241};
+								angles[]={0,3.7406247,0};
+							};
+							side="East";
+							flags=4;
+							class Attributes
+							{
+								rank="CORPORAL";
+								init="(group this) setGroupIDGlobal [""Fox""];";
+								description="Foxtrot - AT";
+								isPlayable=1;
+							};
+							id=2387;
+							type="OPT_CSAT_PA_Schuetze_T";
+							atlOffset=0.00043773651;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male03PER";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1.04;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11787.615,5.0904384,3125.6021};
+								angles[]={0,3.5417616,0};
+							};
+							side="East";
+							flags=4;
+							class Attributes
+							{
+								rank="CORPORAL";
+								init="(group this) setGroupIDGlobal [""Fox""];";
+								description="Foxtrot - AT";
+								isPlayable=1;
+							};
+							id=2389;
+							type="OPT_CSAT_PA_Schuetze_T";
+							atlOffset=0.00043535233;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male01PER";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=0.99000001;
+										};
+									};
+								};
+								nAttributes=2;
 							};
 						};
 					};
@@ -4760,8 +4837,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11714.433,5.0104322,3177.9795};
-								angles[]={0,3.534034,0};
+								position[]={11714.433,5.0104389,3177.979};
+								angles[]={0,3.53403,0};
 							};
 							side="East";
 							flags=4;
@@ -4772,12 +4849,31 @@ class Mission
 								description="PzGren - AT";
 								isPlayable=1;
 							};
-							id=1650;
-							type="OPT_CSAT_PA_Schuetze_Heavy_T";
-							atlOffset=0.13899374;
+							id=2384;
+							type="OPT_CSAT_PA_Schuetze_T";
+							atlOffset=0.13900042;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male01PER";
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -4796,7 +4892,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=1;
+								nAttributes=2;
 							};
 						};
 						class Item5
@@ -4804,8 +4900,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11713.663,5.0104322,3178.6301};
-								angles[]={0,3.8303037,0};
+								position[]={11713.663,5.0104384,3178.6301};
+								angles[]={0,3.8302996,0};
 							};
 							side="East";
 							flags=4;
@@ -4816,12 +4912,31 @@ class Mission
 								description="PzGren - AT";
 								isPlayable=1;
 							};
-							id=1651;
-							type="OPT_CSAT_PA_Schuetze_Heavy_T";
-							atlOffset=0.13899374;
+							id=2385;
+							type="OPT_CSAT_PA_Schuetze_T";
+							atlOffset=0.13899994;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male02PER";
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -4840,7 +4955,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=1;
+								nAttributes=2;
 							};
 						};
 					};
@@ -5446,25 +5561,24 @@ class Mission
 				class Item41
 				{
 					dataType="Trigger";
-					position[]={11627.527,5.0445366,3116.7825};
-					angle=5.3419204;
+					position[]={11627.527,5.0444131,3116.782};
+					angle=5.3419113;
 					class Attributes
 					{
 						name="trg_csat_repair";
 						text="Auslöser für Rep-Script";
-						condition="this && !isNull (objectParent player) && driver (vehicle player) == player";
+						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player}";
 						onActivation="nul = [true] spawn opt_fnc_repairSystem;";
 						onDeactivation="nul = [false] spawn opt_fnc_repairSystem;";
 						sizeA=6;
 						sizeB=6;
 						sizeC=5;
 						repeatable=1;
-						activationBy="ANYPLAYER";
+						activationBy="EAST";
 						isRectangle=1;
 					};
 					id=1671;
 					type="EmptyDetectorArea10x10";
-					atlOffset=0.00011110306;
 				};
 				class Item42
 				{
@@ -11613,20 +11727,20 @@ class Mission
 				class Item43
 				{
 					dataType="Trigger";
-					position[]={2213.1653,13.45,13334.201};
-					angle=0.97203511;
+					position[]={2213.165,13.45,13334.201};
+					angle=0.97204363;
 					class Attributes
 					{
 						name="trg_nato_repair";
 						text="Auslöser für Rep-Script";
-						condition="this && !isNull (objectParent player) && driver (vehicle player) == player";
-						onActivation="nul = [true] spawn opt_fnc_repairSystem;";
+						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player}";
+						onActivation="call{nul = [true] spawn opt_fnc_repairSystem;}";
 						onDeactivation="nul = [false] spawn opt_fnc_repairSystem; ";
 						sizeA=6;
 						sizeB=6;
 						sizeC=5;
 						repeatable=1;
-						activationBy="ANYPLAYER";
+						activationBy="WEST";
 						isRectangle=1;
 					};
 					id=1670;
