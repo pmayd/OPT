@@ -22,12 +22,11 @@
 - [x] Aufrichten von Fahrzeugen -> sollte ein Fahrzeuge einmal auf dem Kopf landen, haben Spieler die Möglichkeit, das Fahrzeug wieder aufzurichten.
 - [x] Freeze System -> Über die Parameter kann eine Freeze Time eingestellt werden. Diese sorgt dafür, dass Spieler zu Beginn der Mission keine Handlungen ausführen können. 
 - [x] Intro -> Zusätzlich kann über die Parameter ein einfaches Intro mit zufälligem Zitat und Spielerübersicht aktiviert werden. Das Intro wird nur einmalig abgespielt.
+- [x] MARKERSYSTEM (à la blueforce tracker aber mit verschiedenen abstufungen - oberkommando sieht alle einheiten, SQLs sehen untergeordnete einheiten + squadmarker, einfache soldaten sehen nur squadmarker) -> Lords GPS System
+- [x] Neuer Parameter für Zeus -> Im Trainingsmodus steht Gruppenführern und der HL Zeus zur Verfügung. Dies kann in der Lobby getrennt eingestellt werden.
 
 ## geplante & gewünschte Features
 - [ ] Radarcontainer
 - [ ] Logistiksystem - bestenfalls auch die containerverladerei auf die dafür vorgesehenen lkw
 - [ ] revive mit drag und stabilisieren + 3d- und kartenmarker -> Prüfe Kartenmarker
-- [ ] MARKERSYSTEM (à la blueforce tracker aber mit verschiedenen abstufungen - oberkommando sieht alle einheiten, SQLs sehen untergeordnete einheiten + squadmarker, einfache soldaten sehen nur squadmarker) -> Lord
-- [ ] 2-minütige Pause zu Beginn mit Einblendung -> Spieler zu beginn freezen und so Server in Ruhe initialisieren lassen
-- [ ] Basen müssen neu auf der Karte verteilt und korrekt eingerichtet werden (alle Pads, Drohnenstation etc.)
 - [ ] TFAR Frequenzmodul macht Probleme
