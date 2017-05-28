@@ -21,6 +21,8 @@ Name: [J]OPT_v1_03
 - TFAR Optimierungen (nach wie vor bugggy)
 - Anpassung der HUD Schrift, leicht verkleinert
 - Verschieben der Basen sowie neue Brücken und Marine Basis (danke oppa)
+- Korrektur an der R3F config. Rpg Kiste und Ausrüstungskiste wieder ziehbar, RPG zudem auch verladbar
+- Änderung am Verkaufspad, Rausnahme von Kisten und statischen Waffen wegen leichter Manipulierbarkeit (leere Kiste verkaufen)
 
 ### 2017-05-21
 
