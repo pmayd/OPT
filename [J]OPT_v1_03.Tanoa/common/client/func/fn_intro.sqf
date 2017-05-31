@@ -1,6 +1,10 @@
 #include "..\..\..\setup\setup.sqf"
 private ["_camera"];
 
+// wait until player is initializied
+waitUntil {!isNull player};
+waitUntil {count playableUnits == count allPlayers};
+
 enableRadio false;
 EnableEnvironment false;
 {_x disableConversation true} forEach allUnits;

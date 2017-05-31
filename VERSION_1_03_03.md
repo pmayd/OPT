@@ -11,3 +11,4 @@
 - Bugfix Reparatur-Pad war global, jetzt lokal nur noch für den aktuellen Fahrer, der drauffährt
 - Scoreboard deaktiviert
 - Platzbeschränkung auf Fahrer beschränkt -> Schütze und Kommander wieder frei, Fahrer auf Besatzung beschränkt
+- Minensperrzone eingefügt. Radius einstellbar. Aktuell default 20 m. Alle Minen um die Flagge herum können damit nicht gelegt werden.

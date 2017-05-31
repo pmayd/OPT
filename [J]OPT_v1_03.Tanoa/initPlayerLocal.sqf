@@ -144,7 +144,7 @@ if (__RESPAWN_TYPE__ != 0 || __RESPAWN_TYPE__ != 1) then {
     		// gib Spieler Mine zurück
     		player addMagazine (_this select 5);
     		// Warnhinweis
-    		_txt = "Mine in der Minensperrzone gelegt!\nMine wurde zurück ins Inventar gelegt.";
+    		_txt = "Mine in der Minensperrzone gelegt!<br/>Mine wurde zurück ins Inventar gelegt.";
     		[format ["<t size='0.8' shadow='1' color='#ff0000'>%1</t>", _txt], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
     	};  
 

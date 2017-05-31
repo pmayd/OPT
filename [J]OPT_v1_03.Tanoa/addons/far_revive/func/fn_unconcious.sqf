@@ -40,7 +40,7 @@ if (FAR_EnableDeathMessages) then {
 // Eject unit if inside vehicle
 if (vehicle _unit != _unit) then {
 	unAssignVehicle _unit;
-	_unit action ["GetOut",vehicle _unit];
+	_unit action ["GetOut", vehicle _unit];
 	sleep 2;
 };
 
@@ -48,7 +48,7 @@ _unit setDamage 0;
 _unit setVelocity [0,0,0];
 _unit allowDamage false;
 //_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-_unit playActionNow "Down";
+//_unit playActionNow "Down"; // verursacht ragdoll problem -> Stehaufmännchen
 _unit playAction "Unconscious";
 
 sleep 4;

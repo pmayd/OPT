@@ -32,8 +32,6 @@ SRS_damageThreshold =  0.95;   // damage threshold before being knocked out (0->
 FAR_ReviveMode = 3;
 
 
-
-
 //------------------------------------------//
 FAR_isDragging = false;
 FAR_Debugging = true;
@@ -47,7 +45,7 @@ if (isDedicated) exitWith {};
 
 // Player Initialization
 [] spawn {
-    waitUntil {!isNull player};	
+	waitUntil {!isNull player};	
 	[] spawn opt_addons_fnc_playerInit;
 	player addEventHandler ["Respawn", {[] spawn opt_addons_fnc_playerInit}];
 	
