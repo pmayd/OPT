@@ -24,6 +24,7 @@
 - [x] Intro -> Zusätzlich kann über die Parameter ein einfaches Intro mit zufälligem Zitat und Spielerübersicht aktiviert werden. Das Intro wird nur einmalig abgespielt.
 - [x] MARKERSYSTEM (à la blueforce tracker aber mit verschiedenen abstufungen - oberkommando sieht alle einheiten, SQLs sehen untergeordnete einheiten + squadmarker, einfache soldaten sehen nur squadmarker) -> Lords GPS System
 - [x] Neuer Parameter für Zeus -> Im Trainingsmodus steht Gruppenführern und der HL Zeus zur Verfügung. Dies kann in der Lobby getrennt eingestellt werden.
+- [x] Minensperrzone um die Flagge -> Radius ist in setup.sqf einstellbar. Alle Minen werden innerhalb der Zone gelöscht und dem Spieler wieder zurückgegeben.
 
 ## geplante & gewünschte Features
 - [ ] Radarcontainer
