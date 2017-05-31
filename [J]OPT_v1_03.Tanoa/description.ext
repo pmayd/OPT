@@ -108,6 +108,14 @@ class Params {
 		texts[] = {"aus","an"};
 	};
 #endif
+#ifdef __MINE_FREE_FLAG__
+	class OPT_MINE_FREE_FLAG {
+		title = "Minensperrzone um Flagge";
+		values[] = {0,1};
+		default = 1;
+		texts[] = {"aus","an"};
+	};
+#endif
 	class OPT_TRAINING {
 		title 		= "Schlacht oder Training";
 		values[] 	= {0,1};
@@ -140,14 +148,12 @@ class Params {
 		texts[] 	= {"aus","1 min", "2 min", "3 min", "4 min", "5 min"};
 		default 	= 60;
 	};
-	#ifdef __INTRO__
 	class OPT_SHOW_INTRO {
 		title 		= "Intro";
 		values[] 	= {0,1};
 		texts[] 	= {"aus","an"};
 		default 	= 1;
 	};
-	#endif
 	class OPT_ZEUS {
 		title 		= "Zeus für Gruppenführer im Trainingsmodus";
 		values[] 	= {0,1};

@@ -59,10 +59,6 @@
 // 	6 = 	System
 //#define __DISABLE_CHAT_CHANNELS__ {0}
 
-// aktiviert intro
-#define __INTRO__
-
-
 /**
 * Umwelt und Grafik 
 */
@@ -128,6 +124,12 @@
 #define __BLOCKED_VEHICLE_POSITIONS__ ["driver"]
 
 #define __BLOOD_SCREEN__
+
+// Aktiviert eine Minensperrzone um die Flagge
+#define __MINE_FREE_FLAG__
+
+// Größe der Minensperrzone in Meter
+#define __MINE_FREE_FLAG_RADIUS__ 20
 
 
 /**

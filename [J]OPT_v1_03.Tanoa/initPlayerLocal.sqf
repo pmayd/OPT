@@ -103,7 +103,7 @@ Sind auch nach Respawn persistent
 	[_this select 0, [missionNamespace, "tcb_inv"]] call BIS_fnc_saveInventory;
 
 	["opt_eh_server_log_player_killed", [(_this select 0), name (_this select 0), (_this select 1), name (_this select 1)]] call CBA_fnc_serverEvent;
-}];
+	}];
 #endif
 
 // EH bei Aufnahme von Waffen
@@ -123,6 +123,36 @@ if (__RESPAWN_TYPE__ != 0 || __RESPAWN_TYPE__ != 1) then {
 	}];
 };
 
+// EH für Minensperre
+#ifdef __MINE_FREE_FLAG__
+	if (OPT_MINE_FREE_FLAG == 1) then {
+
+		player addEventHandler ["FiredMan", {
+			/* 
+			  0 unit: Object - Unit the event handler is assigned to (the instigator)
+		    1 weapon: String - Fired weapon
+		    2 muzzle: String - Muzzle that was used
+		    3 mode: String - Current mode of the fired weapon
+		    4 ammo: String - Ammo used
+		    5 magazine: String - magazine name which was used
+		    6 projectile: Object - Object of the projectile that was shot out
+		    7 vehicle: Object - Vehicle, if weapon is vehicle weapon, otherwise objNull
+    	*/
+    	if (_this select 1 == "Put" && ({(_x distance player) <= __MINE_FREE_FLAG_RADIUS__} count (opt_csat_flags + opt_nato_flags) > 0)) then {
+    		// lösche Mine
+    		deleteVehicle (_this select 6);
+    		// gib Spieler Mine zurück
+    		player addMagazine (_this select 5);
+    		// Warnhinweis
+    		_txt = "Mine in der Minensperrzone gelegt!\nMine wurde zurück ins Inventar gelegt.";
+    		[format ["<t size='0.8' shadow='1' color='#ff0000'>%1</t>", _txt], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
+    	};  
+
+		}];
+
+	};
+#endif
+
 // EH fürs Einsteigen
 player addEventHandler ["GetInMan", {
 		/*  
@@ -133,7 +163,7 @@ player addEventHandler ["GetInMan", {
     */
     params ["_unit", "_pos", "_vec", "_turret"];
 		hint str(_this);
-		
+
     #ifdef __ONLY_PILOTS_CAN_FLY__
 			if (OPT_ONLY_PILOTS == 1) then {
 				if (!(typeOf _unit in opt_pilots) && {!(typeOf _unit in ["O_Helipilot_F","B_Helipilot_F"])}) then {
