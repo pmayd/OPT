@@ -37,7 +37,7 @@ _quote = localize (_quotes select (floor random 40));
 _quote = _quote splitString "-";
 
 _txt = format["<t size='1.3' align='center'>%1</t><br/><t size='1.2' align='right' color='#cccccc'>%2</t>", _quote select 0, _quote select 1];
-[_txt,0,0,8,3,-0.1,3010] spawn bis_fnc_dynamicText;
+[_txt,0,0,8,3,0,3010] spawn bis_fnc_dynamicText;
 sleep 13;
 
 // Liste alle Spieler beider Seiten
