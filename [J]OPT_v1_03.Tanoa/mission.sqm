@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=2429;
+		nextID=2435;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=183;
+		nextID=188;
 	};
 	class Camera
 	{
@@ -214,6 +214,7 @@ randomSeed=1124049;
 class ScenarioData
 {
 	author="[3.JgKp]James";
+	respawnDialog=0;
 	disabledAI=1;
 	respawn=3;
 	respawnDelay=10;
@@ -234,6 +235,25 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
 		{
 			property="RespawnTemplates";
 			expression="true";
@@ -266,25 +286,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
 				};
 			};
 		};
@@ -1911,6 +1912,7 @@ class Mission
 					};
 					id=1585;
 					type="Flag_CSAT_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5683,7 +5685,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={11627.527,5.0444131,3116.782};
-					angle=5.3419118;
+					angle=5.3419113;
 					class Attributes
 					{
 						name="trg_csat_repair";
@@ -6496,7 +6498,6 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -6505,7 +6506,7 @@ class Mission
 					};
 					id=1582;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.14878201;
+					atlOffset=1.1390946;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6735,7 +6736,7 @@ class Mission
 				};
 			};
 			id=2351;
-			atlOffset=2.3484077;
+			atlOffset=2.3513131;
 		};
 		class Item14
 		{
@@ -11788,7 +11789,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={2213.165,13.45,13334.201};
-					angle=0.97204369;
+					angle=0.97204363;
 					class Attributes
 					{
 						name="trg_nato_repair";
@@ -12479,7 +12480,7 @@ class Mission
 					};
 					id=1481;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.035318851;
+					atlOffset=0.0096483231;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -40040,7 +40041,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};
