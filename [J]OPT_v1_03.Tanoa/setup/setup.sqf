@@ -109,7 +109,7 @@
 
 // wenn nicht auskommentiert mit // dann werden tote KI Einheiten und zerstörte KI Fahrzeuge nach einiger Zeit gelöscht
 // ACHTUNG! Fahrzeug wird nach angegebener Anzahl Sekunden gelöscht
-#define __REMOVE_DEAD_AI_AND_VECS__ 60
+#define __REMOVE_DEAD_AI_AND_VECS__ 600
 
 // wenn nicht auskommentiert mit // dann wird ein Lobbyparameter erzeugt, mit dem man Spielerklassen die keine Piloten sind daran hindern kann ein Flugzeug/Heli zu fliegen
 // die Pilotenklassen können auch angepasst werden --> siehe setup_classnames.sqf
@@ -123,6 +123,9 @@
 // wenn nicht auskommentiert mit // dann wird ein Lobbyparameter erzeugt, mit dem man Spielerklassen die keine Crew sind daran hindern kann ein APC/Panzer zu fahren
 // die Pioklassen können auch angepasst werden --> siehe setup_classnames.sqf
 #define __ONLY_PIO_CAN_BUILD_FARPS__
+
+// für den Fall, dass __ONLY_PILOTS_CAN_FLY__ oder __ONLY_PILOTS_CAN_FLY__ aktiv ist, wird dieser Slot gesperrt
+#define __BLOCKED_VEHICLE_POSITIONS__ ["driver"]
 
 #define __BLOOD_SCREEN__
 

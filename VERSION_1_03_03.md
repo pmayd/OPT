@@ -9,3 +9,5 @@
 
 #### James
 - Bugfix Reparatur-Pad war global, jetzt lokal nur noch für den aktuellen Fahrer, der drauffährt
+- Scoreboard deaktiviert
+- Platzbeschränkung auf Fahrer beschränkt -> Schütze und Kommander wieder frei, Fahrer auf Besatzung beschränkt

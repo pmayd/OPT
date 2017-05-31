@@ -132,11 +132,12 @@ player addEventHandler ["GetInMan", {
 	    turret: Array - turret path
     */
     params ["_unit", "_pos", "_vec", "_turret"];
-
+		hint str(_this);
+		
     #ifdef __ONLY_PILOTS_CAN_FLY__
 			if (OPT_ONLY_PILOTS == 1) then {
 				if (!(typeOf _unit in opt_pilots) && {!(typeOf _unit in ["O_Helipilot_F","B_Helipilot_F"])}) then {
-					if (_vec isKindOf "Air" && _pos in ["driver","gunner", "commander"]) then {
+					if (_vec isKindOf "Air" && _pos in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
 							_unit action ["GetOut", _vec];
 							TitleRsc ["only_pilots", "plain", 0.5];
@@ -150,7 +151,7 @@ player addEventHandler ["GetInMan", {
 		#ifdef __ONLY_CREW_CAN_DRIVE__
 			if (OPT_ONLY_CREW == 1) then {
 				if (!(typeOf _unit in opt_crew) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
-					if (_pos in ["driver", "gunner", "commander"]) then {
+					if (_pos in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
 							_unit action ["GetOut", _vec];
 							TitleRsc ["only_crew", "plain", 0.5];
@@ -165,17 +166,17 @@ player addEventHandler ["GetInMan", {
 // EH fürs Platztauschen
 player addEventHandler ["SeatSwitchedMan", {
 		/*  
-	   	unit: Object - Unit the event handler is assigned to
-	    position: String - Can be either "driver", "gunner" or "cargo"
-	    vehicle: Object - Vehicle the unit entered
-	    turret: Array - turret path
+	   	unit1: Object - Unit switching seat.
+    	unit2: Object - Unit with which unit1 is switching seat.
+    	vehicle: Object - Vehicle where switching seats is taking place.
     */
     params ["_unit1", "_unit2", "_vec"];
+    hint str(_this);
 
     #ifdef __ONLY_PILOTS_CAN_FLY__
 			if (OPT_ONLY_PILOTS == 1) then {
 				if (!(typeOf _unit1 in opt_pilots) && {!(typeOf _unit1 in ["O_Helipilot_F","B_Helipilot_F"])}) then {
-					if (_vec isKindOf "Air" && (_unit1 == assignedDriver _vec || _unit1 == _vec turretUnit [0])) then {
+					if (_vec isKindOf "Air" && (assignedVehicleRole  _unit1 select 0) in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
 							_unit1 action ["GetOut", _vec];
 							TitleRsc ["only_pilots", "plain", 0.5];
@@ -189,7 +190,7 @@ player addEventHandler ["SeatSwitchedMan", {
 		#ifdef __ONLY_CREW_CAN_DRIVE__
 			if (OPT_ONLY_CREW == 1) then {
 				if (!(typeOf _unit1 in opt_crew) && {!(typeOf _unit1 in ["O_crew_F","B_crew_F"])}) then {
-					if (_unit1 == driver _vec || _unit1 == gunner _vec || _unit1 == commander _vec) then {
+					if ( (assignedVehicleRole _unit1 select 0) in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
 							_unit1 action ["GetOut", _vec];
 							TitleRsc ["only_crew", "plain", 0.5];
