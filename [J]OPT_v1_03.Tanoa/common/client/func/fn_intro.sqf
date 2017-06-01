@@ -34,10 +34,13 @@ sleep 3;
 
 // Zufallsauswahl eines von 40 Quotes
 _quotes = [];
-for "_i" from 0 to 40 do {
+for "_i" from 0 to 23 do {
 	_quotes pushBack format["STR_A3_Campaign_Quote_%1", _i];
 };
-_quote = localize (_quotes select (floor random 40));
+for "_i" from 30 to 44 do {
+	_quotes pushBack format["STR_A3_Campaign_Quote_%1", _i];
+};
+_quote = localize (_quotes select (floor random (count _quotes)));
 _quote = _quote splitString "-";
 
 _txt = format["<t size='1.3' align='center'>%1</t><br/><t size='1.2' align='right' color='#cccccc'>%2</t>", _quote select 0, _quote select 1];

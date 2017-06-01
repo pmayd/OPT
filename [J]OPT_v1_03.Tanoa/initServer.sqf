@@ -5,6 +5,10 @@ diag_log format ["%1 --- TcB initServer.sqf startet", diag_ticktime];
 
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
 __ccppfln(setup\setup_classnames.sqf);
+// definiert und überträgt alle public variablen vom Server an die clients
+__ccppfln(setup\setup_publicVariables.sqf);
+// definiert CBA EH auf dem Server
+__ccppfln(common\server\i_events.sqf);
 
 //Function that adds dynamic groups to the mission as seen in End Game
 ["Initialize"] call BIS_fnc_dynamicGroups;
@@ -15,9 +19,6 @@ addMissionEventHandler ["HandleDisconnect", {
 	[_unit] spawn {_torso = _this select 0; sleep 5; deleteVehicle _torso;};
 	false
 }];
-
-#include "setup\setup_publicVariables.sqf"
-#include "common\server\i_events.sqf"
 
 // Schutzwall um die Basis für Arti- und Mörserbeschuss
 // nur auf dem Server, da createVehicle global funktioniert

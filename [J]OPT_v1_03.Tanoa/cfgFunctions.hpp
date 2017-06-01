@@ -102,12 +102,6 @@ class opt {
 		addf(dynamicGroups);
 		addf(earplugs);
 		addf(flipCheck);
-		addf(iconColor);
-		addf(iconDrawGPS);
-		addf(iconDrawMap);
-		addf(iconSize);
-		addf(iconText);
-		addf(iconType);
 		addf(intro);
 		addf(maintainerActions);
 		addf(maintainerDialog);

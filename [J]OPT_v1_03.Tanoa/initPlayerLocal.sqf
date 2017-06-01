@@ -5,6 +5,8 @@ diag_log format ["%1 --- TcB initPlayerLocal.sqf startet",diag_ticktime];
 
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
 __ccppfln(setup\setup_classnames.sqf);
+// legt alle bestellbaren Fahrzeuge und Kisten fest
+__ccppfln(dialogs\vehiclePool_war.hpp);
 
 // checking for failed player init
 if (isMultiplayer && !isServer) then {	// only on dedicated environment
@@ -59,12 +61,9 @@ if (!opt_allow_movement) then {
 if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehicleLocal [0,0,0]};
 
 // starte alle addon Scripte
-__ccppfln(common\client\func\x_perframe.sqf); // startet Rsc für Anzeige von Meldungen
 [] execVM "addons\opt3_magRepack\MagRepack_init_sv.sqf";
 //__cppfln(opt_TFARfrequencies,common\client\opt_TFARfrequencies.sqf);
 //__cppfln(opt_tfarVehicleLr,common\client\opt_tfarVehicleLr.sqf);
-
-if ((typeOf player) in opt_gps_units) then {execVM "common\client\opt3_gps.sqf"};
 
 // call OPT specific items
 if (OPT_TFAR_INTERCEPTION == 1) then {
@@ -77,7 +76,7 @@ if (OPT_TFAR_INTERCEPTION == 1) then {
 [] execVM "common\client\opt_endMission.sqf";
 
 // lädt die CBA EH für clients
-#include "common\client\i_events.sqf"
+__ccppfln(common\client\i_events.sqf);
 
 /**
 Display Event Handler auf Tastendruck
@@ -266,12 +265,12 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 #endif
 
 #ifdef __SHOW_CUSTOM_PLAYERMARKER__
-[] execVM "common\client\GPS.sqf";
+	[] execVM "common\client\GPS.sqf";
 
 #endif
 
 #ifdef __BREATH_VISIBLE__
-	execVM "common\client\foggy_breath.sqf";
+	[]	execVM "common\client\foggy_breath.sqf";
 
 #endif
 
@@ -296,9 +295,6 @@ if (isNil "respawndelay") then {
 } else {
 	missionNamespace setVariable ["tcb_ais_respawndelay", 999];
 };
-
-// legt alle bestellbaren Fahrzeuge und Kisten fest
-#include "dialogs\vehiclePool_war.hpp"
 
 tcb_ais_killcam_quotes = [
 	[(localize "STR_QUOTE_1"),(localize "STR_AUTHOR_1")],

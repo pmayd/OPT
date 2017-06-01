@@ -116,25 +116,6 @@
 		duration = 0;
 		class controls {};
 	};
-
-	class FrameHandlerRsc {
-		idd = -1;
-		movingEnable = 1;
-		enableSimulation = 1;
-		enableDisplay = 1;
-		duration = 1e+011;
-		fadein  = 0;
-		fadeout = 0;
-		name = "FrameHandlerRsc";
-		class controlsBackground {
-			class dummy_map : Dummy_Map {
-				x = -1;y = -1;w = 0;h = 0;
-				onDraw = "call xfperFrame";
-			};
-		};
-		class objects {};
-		class controls {};
-	};
 	
 	class only_pilots {
 	  	idd=-1;

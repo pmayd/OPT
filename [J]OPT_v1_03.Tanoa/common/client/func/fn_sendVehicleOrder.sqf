@@ -35,12 +35,15 @@ if (isNil "opt_crew") then {opt_crew = []};
 if (isNil "opt_pilots_vecs") then {opt_pilots_vecs = []};
 if (isNil "opt_pilots") then {opt_pilots = []};
 
+/*
+* James: deaktiviert, Slots sind sowieso durch EH gesperrt. Daher kaufen nicht weiter abfragen
 if (OPT_TRAINING == 0) then {
-	if ((_unitType in opt_pilots_vecs && (!(typeOf player in (opt_pilots+opt_gps_units)))) || {_unitType in opt_crew_vecs && (!(typeOf player in (opt_crew+opt_gps_units)))}) exitWith {
+	if ( (_unitType in opt_pilots_vecs && !(typeOf player in opt_pilots)) || (_unitType in opt_crew_vecs && !(typeOf player in opt_crew)) ) exitWith {
 		closeDialog 0;
 		TitleRsc ["only_qualified", "plain", 0.5];
 	};
 };
+*/
 
 _side_Budget = if (playerSide == west) then {opt_west_budget} else {opt_east_budget};
 
