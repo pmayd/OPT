@@ -7,6 +7,8 @@ diag_log format ["%1 --- TcB initPlayerLocal.sqf startet",diag_ticktime];
 __ccppfln(setup\setup_classnames.sqf);
 // legt alle bestellbaren Fahrzeuge und Kisten fest
 __ccppfln(dialogs\vehiclePool_war.hpp);
+// lädt die CBA EH für clients
+__ccppfln(common\client\i_events.sqf);
 
 // checking for failed player init
 if (isMultiplayer && !isServer) then {	// only on dedicated environment
@@ -75,8 +77,6 @@ if (OPT_TFAR_INTERCEPTION == 1) then {
 // startet das End-Skript. Wartet, bis Ende eintrifft
 [] execVM "common\client\opt_endMission.sqf";
 
-// lädt die CBA EH für clients
-__ccppfln(common\client\i_events.sqf);
 
 /**
 Display Event Handler auf Tastendruck
@@ -161,7 +161,6 @@ player addEventHandler ["GetInMan", {
 	    turret: Array - turret path
     */
     params ["_unit", "_pos", "_vec", "_turret"];
-		hint str(_this);
 
     #ifdef __ONLY_PILOTS_CAN_FLY__
 			if (OPT_ONLY_PILOTS == 1) then {
@@ -200,7 +199,6 @@ player addEventHandler ["SeatSwitchedMan", {
     	vehicle: Object - Vehicle where switching seats is taking place.
     */
     params ["_unit1", "_unit2", "_vec"];
-    hint str(_this);
 
     #ifdef __ONLY_PILOTS_CAN_FLY__
 			if (OPT_ONLY_PILOTS == 1) then {
