@@ -19,6 +19,7 @@ if (isPlayer _healer) then {
 		private ["_anim","_healer"];
 		_healer = _this select 0;
 		_anim = _this select 1;
+		// Wenn Spieler zu Waffe greift -> beende Animation und Vorgang
 		if (primaryWeapon _healer != "") then {
 			if (time >= tcb_animDelay) then {tcb_healerStopped = true};
 		} else {
@@ -45,6 +46,13 @@ _skill_factor = if (_healer call opt_addons_fnc_isMedic) then {10+(random 5)} el
 _damage = (damage _injuredperson * _skill_factor);
 if (_damage < 13) then {_damage = 13};
 sleep 1;
+
+// solange Zeit nicht abgelaufen, 
+// beide am Leben, 
+// Abstand zu Patient kleiner 2m,
+// Heiler nicht bewusstlos und 
+// Animation nicht abgebrochen
+// -> aktualisiere Fortschrittsbalken
 while {
 	time - _time < _damage
 	&& {alive _healer}

@@ -56,6 +56,12 @@ if (_injuredperson getVariable ["FAR_isStabilized",0] == 1) then {
 	_injuredperson setVariable ["FAR_isStabilized", 1, true];
 };
 
+// solange Zeit nicht abgelaufen, 
+// beide am Leben, 
+// Abstand zu Patient kleiner 2m,
+// Heiler nicht bewusstlos und 
+// Animation nicht abgebrochen
+// -> aktualisiere Fortschrittsbalken
 while {
 	time - _time < _damage
 	&& {alive _healer}

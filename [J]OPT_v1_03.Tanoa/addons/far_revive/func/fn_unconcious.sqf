@@ -71,7 +71,7 @@ while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" 
 	sleep 0.5;
 };
 
-if (_unit getVariable ["FAR_isStabilized",1] == 1) then {
+if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
 	//Unit has been stabilized. Disregard bleedout timer and unmute player
 	[true] call opt_addons_fnc_toggleTFAR;
 			
@@ -87,7 +87,7 @@ if (_unit getVariable ["FAR_isStabilized",1] == 1) then {
 // Player bled out
 if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
 	//["tfar_removeMapMarker", _unit] call tcb_fnc_NetCallEvent;
-	_unit setDamage 1;
+	_unit setDamage 1; // sofortiger Tod -> schließt Dialog automatisch?!
 	disableUserInput false;
 	_unit allowDamage true;
 } else {
