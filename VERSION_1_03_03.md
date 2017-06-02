@@ -16,3 +16,4 @@
 - umfangreiche Änderungen an der Codebasis in den init-Skripten, hauptsächlich weiteres Ausmisten
 - Beheben 64bit Problem durch Löschen einer veralteten Zeile __ccppfln(common\client\func\x_perframe.sqf); Warum das Problem auftritt, unklar, aber die Ressource hat das Problem verursacht
 - Doppelte Marker entfernt
+- Garbage Einträge aus desctiption.ext entfernt und entsprechende EH deaktiviert

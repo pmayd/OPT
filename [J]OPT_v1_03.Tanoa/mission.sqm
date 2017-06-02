@@ -223,11 +223,11 @@ class ScenarioData
 		gameType="SC";
 	};
 	wreckManagerMode=1;
-	wreckLimit=0;
+	wreckLimit=10;
 	wreckRemovalMinTime=60.000004;
 	wreckRemovalMaxTime=600;
 	corpseManagerMode=1;
-	corpseLimit=0;
+	corpseLimit=10;
 	corpseRemovalMinTime=60.000004;
 	corpseRemovalMaxTime=600;
 };
