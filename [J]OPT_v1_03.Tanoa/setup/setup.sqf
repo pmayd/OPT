@@ -105,7 +105,8 @@
 
 // wenn nicht auskommentiert mit // dann werden tote KI Einheiten und zerstörte KI Fahrzeuge nach einiger Zeit gelöscht
 // ACHTUNG! Fahrzeug wird nach angegebener Anzahl Sekunden gelöscht
-#define __REMOVE_DEAD_AI_AND_VECS__ 600
+// auskommentiert, da Garbage System jetzt enthalten
+//#define __REMOVE_DEAD_AI_AND_VECS__ 600 
 
 // wenn nicht auskommentiert mit // dann wird ein Lobbyparameter erzeugt, mit dem man Spielerklassen die keine Piloten sind daran hindern kann ein Flugzeug/Heli zu fliegen
 // die Pilotenklassen können auch angepasst werden --> siehe setup_classnames.sqf

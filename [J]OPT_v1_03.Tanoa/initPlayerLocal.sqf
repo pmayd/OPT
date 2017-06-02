@@ -113,14 +113,17 @@ player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}];
 //player addEventHandler ["HandleRating", {0}];
 
 // lösche Körper nach respawn delay
-if (__RESPAWN_TYPE__ != 0 || __RESPAWN_TYPE__ != 1) then {
-	player AddEventHandler ["killed",{
-		_this spawn {
-			sleep (__RESPAWN_DELAY__ + random 5);
-			deleteVehicle (_this select 0);
-		};
-	}];
-};
+#ifdef __REMOVE_DEAD_AI_AND_VECS__
+	if (__RESPAWN_TYPE__ != 0 || __RESPAWN_TYPE__ != 1) then {
+		player AddEventHandler ["killed",{
+			_this spawn {
+				sleep (__RESPAWN_DELAY__ + random 5);
+				deleteVehicle (_this select 0);
+			};
+		}];
+	};
+
+#endif
 
 // EH für Minensperre
 #ifdef __MINE_FREE_FLAG__

@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=218;
+		nextID=228;
 	};
 	class Camera
 	{
@@ -224,10 +224,12 @@ class ScenarioData
 	};
 	wreckManagerMode=1;
 	wreckLimit=0;
-	wreckRemovalMaxTime=3600;
-	corpseManagerMode=2;
+	wreckRemovalMinTime=60.000004;
+	wreckRemovalMaxTime=600;
+	corpseManagerMode=1;
 	corpseLimit=0;
-	minPlayerDistance=500;
+	corpseRemovalMinTime=60.000004;
+	corpseRemovalMaxTime=600;
 };
 class CustomAttributes
 {
@@ -12452,7 +12454,7 @@ class Mission
 				};
 			};
 			id=2353;
-			atlOffset=0.0015897751;
+			atlOffset=0.0015916824;
 		};
 		class Item15
 		{

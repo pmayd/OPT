@@ -22,16 +22,6 @@ respawnOnStart = 0; //Dont respawn on start. Run respawn script on start.
 respawndelay = __RESPAWN_DELAY__;
 #endif
 
-corpseManagerMode = 1;
-corpseLimit = 1;
-corpseRemovalMinTime = 2;
-corpseRemovalMaxTime = 4;
-
-wreckManagerMode = 1;
-wreckLimit = 10;
-wreckRemovalMiTime = 600;
-wreckRemovalMaxTime = 900;
-
 debriefing=1;
 disabledAI=1;
 joinUnassigned = 1;

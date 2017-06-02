@@ -13,5 +13,4 @@ params ["_vec", "_killer"];
 		{deleteVehicle _x} foreach (crew _vec);
 		deleteVehicle _vec;
 	};
-
 #endif	
