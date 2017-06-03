@@ -244,7 +244,7 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["OPT_O_Heli_Light_03_unarmed_F",30],				// WY-55 Hellcat,70000
 	["OPT_O_Heli_Light_03_unarmed_green_F",30],			// WY-55 Hellcat,70000
 	["OPT_O_Heli_Light_02_unarmed_F",30],				// PO-30 Orca,100000
-	["OPT_O_Heli_Light_02_unarmed_black_F",30]			// PO-30 Orca,100000
+	["OPT_O_Heli_Light_02_unarmed_black_F",30]		// PO-30 Orca,100000
 ];
 
 /**
@@ -268,22 +268,22 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["CamoNet_BLUFOR_big_Curator_F", 5],				// Camonet zum testen!	*/
 	["OPT_B_supplyCrate_F", 30],						// Transportkiste (leer)													
 	["OPT_Box_NATO_Ammo_F", 30],          				// Munitionskiste
-    ["OPT_Box_NATO_Grenades_F", 30],  					// Explosivkiste
-  	["OPT_Box_NATO_WpsSpecial_F", 30],					// Raketenkiste
+  ["OPT_Box_NATO_Grenades_F", 30],  					// Explosivkiste
+  ["OPT_Box_NATO_WpsSpecial_F", 30],					// Raketenkiste
 	["OPT_Box_NATO_WpsLaunch_F", 30],					// HAT-Kiste
 	["OPT_B_Slingload_01_Fuel_F", 100],     			// Fuelcontainer
 	["OPT_B_Slingload_01_Repair_F",	100],       		// Reparaturcontainer
-    ["OPT_B_Slingload_01_Ammo_F", 110],					// Munitionscontainer
-  	["OPT_B_Slingload_01_Medevac_F", 100],				// Lazarettcontainer															
+  ["OPT_B_Slingload_01_Ammo_F", 110],					// Munitionscontainer
+  ["OPT_B_Slingload_01_Medevac_F", 100],				// Lazarettcontainer															
 	["OPT_O_supplyCrate_F", 30],						// Transportkiste (leer)
 	["OPT_Box_East_Ammo_F", 30],         				// Munitionskiste
-   	["OPT_Box_East_Grenades_F", 30],     				// Explosivkiste
-   	["OPT_Box_East_WpsSpecial_F", 30],   				// AT Raketenkiste
-   	["OPT_Box_NATO_WpsSpecial_AT2_F", 30],			// AT Raketenkiste
+  ["OPT_Box_East_Grenades_F", 30],     				// Explosivkiste
+  ["OPT_Box_East_WpsSpecial_F", 30],   				// AT Raketenkiste
+  ["OPT_Box_NATO_WpsSpecial_AT2_F", 30],			// AT Raketenkiste
 	["OPT_Box_East_WpsLaunch_F", 30],					// HAT-Kiste
-   	["OPT_Land_Pod_Heli_Transport_04_fuel_F", 100],		// Fuelcontainer
-   	["OPT_Land_Pod_Heli_Transport_04_ammo_F", 110],		// Munitionscontainer
-   	["OPT_Land_Pod_Heli_Transport_04_repair_F", 100],	// Reparaturcontainer
+  ["OPT_Land_Pod_Heli_Transport_04_fuel_F", 100],		// Fuelcontainer
+  ["OPT_Land_Pod_Heli_Transport_04_ammo_F", 110],		// Munitionscontainer
+  ["OPT_Land_Pod_Heli_Transport_04_repair_F", 100],	// Reparaturcontainer
 	["OPT_Land_Pod_Heli_Transport_04_medevac_F", 100],	// Lazarettcontainer
 	["OPT_O_supplyCrate_F",	30],						// Transportkiste
 	["OPT_FlexibleTank_01_sand_F", 30],					// Treibstoff-Fass
@@ -312,7 +312,9 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["OPT_B_static_AA_F",15],				// Static Titan Launcher (AA)
 	["OPT_O_static_AA_F",15],				// Static Titan Launcher (AA)
 	["OPT_B_static_AT_F",15],				// Static Titan Launcher (AT)
-	["OPT_O_static_AT_F",15]				// Static Titan Launcher (AT)	
+	["OPT_O_static_AT_F",15],				// Static Titan Launcher (AT)	
+	["OPT_Land_Pod_Heli_Transport_04_repair_radar_F", 100], // Radar Container CSAT
+	["OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", 100] // Radar Container NATO
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -381,5 +383,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"Land_Mil_WiredFence_F",			// maschendrahtzaun
 	"CamoNet_BLUFOR_big_Curator_F",		// Camonet zum testen!
 	"OPT_B_CargoNet_01_ammo_F",	// Ausrüstungskiste
-	"OPT_Box_NATO_WpsSpecial_AT2_F" // RPG
+	"OPT_Box_NATO_WpsSpecial_AT2_F", // RPG
+	"OPT_Land_Pod_Heli_Transport_04_repair_radar_F", // Radar Container CSAT
+	"OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F" // Radar Container NATO
 ];

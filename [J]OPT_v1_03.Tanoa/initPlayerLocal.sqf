@@ -270,6 +270,10 @@ Runs the EH code each frame in unscheduled environment. Client side EH only (pre
 
 #endif
 
+if (OPT_RADAR == 1) then {
+	[] execVM "addons\opt3_radar\init.sqf";
+};
+
 #ifdef __BREATH_VISIBLE__
 	[]	execVM "common\client\foggy_breath.sqf";
 

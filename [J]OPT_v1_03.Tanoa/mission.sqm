@@ -8,22 +8,22 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=2435;
+		nextID=2442;
 	};
 	class MarkerIDProvider
 	{
-		nextID=1;
+		nextID=3;
 	};
 	class LayerIndexProvider
 	{
-		nextID=228;
+		nextID=238;
 	};
 	class Camera
 	{
-		pos[]={2217.291,42.736755,13355.417};
-		dir[]={-0.53151816,-0.43028086,0.72962099};
-		up[]={-0.25335503,0.90269506,0.34778276};
-		aside[]={0.8082695,2.9802322e-007,0.58881265};
+		pos[]={11732.779,30.804285,3035.7419};
+		dir[]={-0.8416121,-0.40847901,0.35332388};
+		up[]={-0.37663585,0.91276759,0.15811847};
+		aside[]={0.38709089,2.537854e-008,0.92204356};
 	};
 };
 binarizationWanted=0;
@@ -342,7 +342,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=39;
+		items=43;
 		class Item0
 		{
 			dataType="Marker";
@@ -1783,8 +1783,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11660.787,7.1095986,3057.8093};
-						angles[]={0,0.67601568,0};
+						position[]={11660.31,7.1119461,3057.5159};
+						angles[]={0,0.69750881,0};
 					};
 					side="Empty";
 					flags=4;
@@ -1795,15 +1795,14 @@ class Mission
 					};
 					id=1579;
 					type="OPT_O_Truck_03_medical_F";
-					atlOffset=-0.0023474693;
 				};
 				class Item22
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11673.948,6.8368125,3047.6482};
-						angles[]={0,0.65502042,0};
+						position[]={11673.249,6.8387036,3047.0742};
+						angles[]={0,0.67651367,0};
 					};
 					side="Empty";
 					flags=4;
@@ -1813,15 +1812,14 @@ class Mission
 					};
 					id=1580;
 					type="OPT_O_Truck_03_ammo_F";
-					atlOffset=-0.0018911362;
 				};
 				class Item23
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11669.448,6.8369212,3051.1934};
-						angles[]={0,0.65501779,0};
+						position[]={11668.827,6.838665,3050.7153};
+						angles[]={0,0.67651129,0};
 					};
 					side="Empty";
 					flags=4;
@@ -1831,7 +1829,6 @@ class Mission
 					};
 					id=1581;
 					type="OPT_O_Truck_03_fuel_F";
-					atlOffset=-0.0017437935;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1861,8 +1858,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11665.286,6.8369331,3054.3691};
-						angles[]={0,0.67704254,0};
+						position[]={11664.733,6.8387036,3053.98};
+						angles[]={0,0.69853544,0};
 					};
 					side="Empty";
 					flags=4;
@@ -1872,7 +1869,6 @@ class Mission
 					};
 					id=1584;
 					type="OPT_O_Truck_03_repair_F";
-					atlOffset=-0.0017704964;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7314,7 +7310,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2262.4426,15.366004,13442.115};
+						position[]={2259.5063,15.365986,13443.635};
 						angles[]={0,4.0469227,0};
 					};
 					side="Empty";
@@ -7325,13 +7321,14 @@ class Mission
 					};
 					id=1477;
 					type="OPT_B_Truck_01_fuel_F";
+					atlOffset=-1.8119812e-005;
 				};
 				class Item24
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2268.3076,15.375586,13434.761};
+						position[]={2265.3713,15.375587,13436.28};
 						angles[]={0,4.0442142,0};
 					};
 					side="Empty";
@@ -7342,14 +7339,14 @@ class Mission
 					};
 					id=1478;
 					type="OPT_B_Truck_01_ammo_F";
-					atlOffset=-9.5367432e-007;
+					atlOffset=9.5367432e-007;
 				};
 				class Item25
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2271.1731,15.662597,13430.911};
+						position[]={2268.2368,15.662597,13432.431};
 						angles[]={0,4.0480061,0};
 					};
 					side="Empty";
@@ -7366,7 +7363,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2265.2212,15.763477,13438.321};
+						position[]={2262.2849,15.763477,13439.841};
 						angles[]={0,4.0476828,0};
 					};
 					side="Empty";
@@ -42449,6 +42446,64 @@ class Mission
 			};
 			id=2404;
 			atlOffset=0.13811684;
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2272.303,14.644597,13426.596};
+				angles[]={0,0.91998047,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this addAction[(""<t color=""""#df8601"""">"" + (""Radar aufbauen"") + ""</t>""),""addons\opt3_radar\Radaraufbauwest.sqf"",'', 1, true, true, """", ""(!(RADARContainerWEST getVariable [""""RADARWESTaufgebaut"""",false]))""]; this addAction[(""<t color=""""#df8601"""">"" + (""Radar abbauen"") + ""</t>""),""addons\opt3_radar\Radarabbauwest.sqf"",'', 1, true, true, """", ""(RADARContainerWEST getVariable [""""RADARWESTaufgebaut"""",false])""]; }";
+				name="RADARContainerWEST";
+				presenceCondition="OPT_RADAR == 1";
+			};
+			id=2436;
+			type="OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F";
+		};
+		class Item40
+		{
+			dataType="Marker";
+			position[]={2271.8821,0,13426.878};
+			name="nato_radar";
+			text=" Radar Container";
+			type="b_recon";
+			id=2438;
+			atlOffset=-13.45;
+		};
+		class Item41
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11677.248,5.8845973,3041.4241};
+				angles[]={0,3.8016937,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this addAction[(""<t color=""""#df8601"""">"" + (""Radar aufbauen"") + ""</t>""),""addons\opt3_radar\Radaraufbaueast.sqf"",'', 1, true, true, """", ""(!(RADARContainerEAST getVariable [""""RADAREASTaufgebaut"""",false]))""]; this addAction[(""<t color=""""#df8601"""">"" + (""Radar abbauen"") + ""</t>""),""addons\opt3_radar\Radarabbaueast.sqf"",'', 1, true, true, """", ""(RADARContainerEAST getVariable [""""RADAREASTaufgebaut"""",false])""]; " \n " " \n "}";
+				name="RADARContainerEAST";
+				presenceCondition="OPT_RADAR == 1";
+			};
+			id=2440;
+			type="OPT_Land_Pod_Heli_Transport_04_repair_radar_F";
+		};
+		class Item42
+		{
+			dataType="Marker";
+			position[]={11677.258,0,3041.0525};
+			name="csat_radar";
+			text=" Radar Container";
+			type="o_recon";
+			id=2441;
+			atlOffset=-4.6900001;
 		};
 	};
 	class Connections
