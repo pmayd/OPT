@@ -42,7 +42,8 @@ if (playerSide == east) exitwith {_go=false;};
 
 sleep 1;
 		
-while {((Alive _Container) and _go)} do {
+while {((Alive _Container) and _go)} do
+	{
 	if (!(RADARContainerWEST getVariable ["RADARWESTaufgebaut",false])) then
 		{
 		_Radarring setmarkerposLocal getpos _Container;
@@ -56,7 +57,7 @@ while {((Alive _Container) and _go)} do {
 	if (RADARContainerWEST getVariable ["RADARWESTaufgebaut",false]) then
 		{	
 		//systemChat format ["Turmstatus:%1",true];							
-		while {(RADARContainerWEST getVariable ["RADARWESTaufgebaut",false])} do
+		while {((RADARContainerWEST getVariable ["RADARWESTaufgebaut",false]) and (Alive _Container) and _go)} do
 			{
 						_Radaranzeige=[];
 				
@@ -118,11 +119,13 @@ while {((Alive _Container) and _go)} do {
 			};	
 		};		
 	sleep 1;	
-};
+	};
 	
 {deleteMarker _x;} foreach _markerost;
 {deleteMarker _x;} foreach _markerwest;
 deleteMarker _Radarring;
+deleteVehicle Radarturmwest;
+deleteVehicle Radarnetzwest;
 	
 	 
 
