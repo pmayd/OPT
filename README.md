@@ -16,6 +16,10 @@ Name: [J]OPT_v1_03_03
 
 ## SITREP
 
+### 2017-06-03
+- Radar Container von Lord eingebaut
+- neuer Lobby Parameter für Radar Container
+
 ### 2017-06-01
 - umfangreiche Änderungen an der Codebasis in den init-Skripten, hauptsächlich weiteres Ausmisten
 - Beheben 64bit Problem durch Löschen einer veralteten Zeile __ccppfln(common\client\func\x_perframe.sqf); Warum das Problem auftritt, unklar, aber die Ressource hat das Problem verursacht
