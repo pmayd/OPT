@@ -5,3 +5,5 @@
 - AT-schützen wieder auf rpg-schützen getauscht
 - safezones um basen auf 3km erhöht und so verschoben, dass bis zum brückenkopf alles im sicheren bereich ist nicht aber die uferstrasse
 - hunter aus natobasis entfernt (keine ahnung warum der da stand?! vielleicht noch vom beamscript?)
+- Preisanpassungen an vehiclePool_War.hpp
+- Neue Heliklassen in setup_classnames.sqf
