@@ -7,3 +7,4 @@
 - hunter aus natobasis entfernt (keine ahnung warum der da stand?! vielleicht noch vom beamscript?)
 - Preisanpassungen an vehiclePool_War.hpp
 - Neue Heliklassen in setup_classnames.sqf
+- Korrekturen an R3F config.sqf
