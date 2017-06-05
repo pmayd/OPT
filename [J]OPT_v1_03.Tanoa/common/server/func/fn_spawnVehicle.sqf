@@ -41,24 +41,9 @@ if (_vec isKindOf "AllVehicles") then {
 };
 
 // Create Vehicle Crew
-_uavs = [
-	"OPT_B_UAV_02_F",
-	"OPT_B_UAV_02_CAS_F",
-	"OPT_B_UAV_02_light_F",
-	"OPT_O_UAV_02_F",
-	"OPT_O_UAV_02_CAS_F",
-	"OPT_O_UAV_02_light_F",
-	"OPT_B_UGV_01_F",
-	"OPT_B_UGV_01_rcws_F",
-	"OPT_O_UGV_01_F",
-	"OPT_O_UGV_01_rcws_F",
-	"B_UCSV_01",
-	"O_UCSV_01",
-	"OPT_B_UAV_01_F",
-	"OPT_O_UAV_01_F"
-];
+// James: Nutze stattdessen UAV classname aus setup
 
-if (_vecType in _uavs) then {
+if (_vecType in opt_big_uavs) then {
 	createVehicleCrew (_vec);
 	_vec setSkill 0.8;
 };

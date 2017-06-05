@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=649;
+	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=2446;
+		nextID=2455;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=258;
+		nextID=278;
 	};
 	class Camera
 	{
-		pos[]={11724.29,12.581678,3017.7097};
-		dir[]={-0.76775879,-0.53407353,-0.35408339};
-		up[]={-0.485001,0.84541994,-0.22367875};
-		aside[]={-0.41881344,6.4415508e-007,0.90811205};
+		pos[]={2204.8879,16.011091,13414.667};
+		dir[]={-0.88435745,-0.37708631,-0.27516863};
+		up[]={-0.36005929,0.92617816,-0.11203296};
+		aside[]={-0.29710129,1.6391277e-007,0.95484596};
 	};
 };
 binarizationWanted=0;
@@ -1298,7 +1298,7 @@ class Mission
 			name="CSAT Base";
 			class Entities
 			{
-				items=66;
+				items=67;
 				class Item0
 				{
 					dataType="Object";
@@ -1459,7 +1459,7 @@ class Mission
 				class Item7
 				{
 					dataType="Marker";
-					position[]={11698.827,4.7148438,3050.7336};
+					position[]={11698.827,0,3050.7339};
 					name="Sicherheitsbereich CSAT";
 					markerType="ELLIPSE";
 					type="Empty";
@@ -1467,10 +1467,10 @@ class Mission
 					fillName="SolidBorder";
 					a=150;
 					b=150;
-					angle=265.96945;
+					angle=265.9689;
 					drawBorder=1;
 					id=1449;
-					atlOffset=-0.05017519;
+					atlOffset=-4.765027;
 				};
 				class Item8
 				{
@@ -1504,7 +1504,7 @@ class Mission
 				class Item11
 				{
 					dataType="Marker";
-					position[]={11739.224,5.8032222,2927.8091};
+					position[]={11739.216,-0.0043945313,2926.8953};
 					name="Todeszone_CSAT";
 					text="Todeszone_CSAT";
 					markerType="ELLIPSE";
@@ -1516,7 +1516,7 @@ class Mission
 					angle=265.9689;
 					drawBorder=1;
 					id=1460;
-					atlOffset=0.00020360947;
+					atlOffset=-5.8844123;
 				};
 				class Item12
 				{
@@ -5615,8 +5615,8 @@ class Mission
 				class Item36
 				{
 					dataType="Trigger";
-					position[]={11739.224,5.826416,2927.5442};
-					angle=4.9199414;
+					position[]={11739.224,5.8263626,2927.5439};
+					angle=4.9199419;
 					class Attributes
 					{
 						text="NATO Todeszone";
@@ -5630,7 +5630,6 @@ class Mission
 					};
 					id=1662;
 					type="EmptyDetector";
-					atlOffset=7.3432922e-005;
 				};
 				class Item37
 				{
@@ -6064,18 +6063,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11727.565,6.7087665,3157.1575};
-						angles[]={0,5.3003993,0};
+						position[]={11727.565,6.7086797,3157.157};
+						angles[]={0,5.3003902,0};
 					};
 					side="Empty";
 					flags=4;
 					class Attributes
 					{
 						init="this SetObjectTexture [0,""opt_a3_core\bilder\opt4_logo.paa""];";
+						disableSimulation=1;
 					};
 					id=1690;
 					type="Land_PCSet_01_screen_F";
-					atlOffset=0.013417244;
+					atlOffset=0.01333046;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6603,23 +6603,42 @@ class Mission
 				class Item65
 				{
 					dataType="Trigger";
-					position[]={11739.125,5.8166504,2927.6934};
-					angle=4.9199414;
+					position[]={11739.125,5.8166265,2927.6931};
+					angle=4.9199419;
 					class Attributes
 					{
 						text="befriedeter Bereich";
-						condition="";
+						condition="call{vehicle player in thisList}";
+						onActivation="call{systemChat ""Sie betreten die feindliche Sicherheitszone. Kampfhandlungen sind hier strikt untersagt.""}";
 						sizeA=4000;
 						sizeB=4000;
 						interuptable=1;
+						repeatable=1;
+						activationBy="WEST";
 					};
 					id=2443;
 					type="EmptyDetector";
-					atlOffset=4.3869019e-005;
+				};
+				class Item66
+				{
+					dataType="Marker";
+					position[]={11739.932,0,2926.75};
+					name="Sicherheitsbereich_CSAT_3";
+					text="Erweiterter Sicherheitsbereich";
+					markerType="ELLIPSE";
+					type="Empty";
+					colorName="ColorRed";
+					fillName="Border";
+					a=4000;
+					b=4000;
+					angle=324.50488;
+					drawBorder=1;
+					id=2452;
+					atlOffset=-5.8716488;
 				};
 			};
 			id=2352;
-			atlOffset=1.3369606e+008;
+			atlOffset=66848028;
 		};
 		class Item13
 		{
@@ -6638,6 +6657,7 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -6646,7 +6666,7 @@ class Mission
 					};
 					id=1582;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390946;
+					atlOffset=0.14878201;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6876,7 +6896,7 @@ class Mission
 				};
 			};
 			id=2351;
-			atlOffset=2.3513131;
+			atlOffset=2.3484077;
 		};
 		class Item14
 		{
@@ -6884,7 +6904,7 @@ class Mission
 			name="NATO Base";
 			class Entities
 			{
-				items=62;
+				items=63;
 				class Item0
 				{
 					dataType="Object";
@@ -7002,7 +7022,7 @@ class Mission
 				class Item3
 				{
 					dataType="Marker";
-					position[]={2272.2715,13.45,13318.118};
+					position[]={2272.271,0,13318.118};
 					name="Sicherheitsbereich_NATO_2";
 					markerType="ELLIPSE";
 					type="Empty";
@@ -7010,9 +7030,10 @@ class Mission
 					fillName="SolidBorder";
 					a=150;
 					b=150;
-					angle=324.50482;
+					angle=324.50485;
 					drawBorder=1;
 					id=1452;
+					atlOffset=-13.45;
 				};
 				class Item4
 				{
@@ -7079,7 +7100,7 @@ class Mission
 				class Item10
 				{
 					dataType="Marker";
-					position[]={2449.4058,15.78229,13056.129};
+					position[]={2449.406,0,13056.129};
 					name="Todeszone_NATO_2";
 					markerType="ELLIPSE";
 					type="Empty";
@@ -7087,10 +7108,10 @@ class Mission
 					fillName="Border";
 					a=3000;
 					b=3000;
-					angle=324.50485;
+					angle=324.50488;
 					drawBorder=1;
 					id=1461;
-					atlOffset=0.00040817261;
+					atlOffset=-15.781881;
 				};
 				class Item11
 				{
@@ -7122,8 +7143,8 @@ class Mission
 					class Attributes
 					{
 						text="CSAT Todeszone";
-						condition="vehicle player in thisList";
-						onActivation="{player setDamage 1} foreach thisList; systemChat ""Ein CSAT Spieler wurde auf Grund des Betretens der feindlichen Basis automatisch getötet!""";
+						condition="call{vehicle player in thisList}";
+						onActivation="call{{player setDamage 1} foreach thisList; systemChat ""Ein CSAT Spieler wurde auf Grund des Betretens der feindlichen Basis automatisch getötet!""}";
 						sizeA=3000;
 						sizeB=3000;
 						interuptable=1;
@@ -7198,7 +7219,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2251.7095,13.449512,13414.51};
-						angles[]={-0,2.4535365,0};
+						angles[]={0,2.4535365,0};
 					};
 					side="Empty";
 					flags=4;
@@ -7208,7 +7229,7 @@ class Mission
 					};
 					id=1470;
 					type="Land_HelipadCircle_F";
-					atlOffset=-0.00048732758;
+					atlOffset=-0.00048828125;
 				};
 				class Item17
 				{
@@ -7216,7 +7237,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2202.8191,13.449543,13375.33};
-						angles[]={-0,2.4868693,0};
+						angles[]={0,2.4868693,0};
 					};
 					side="Empty";
 					flags=4;
@@ -7234,7 +7255,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2223.3235,13.449322,13391.928};
-						angles[]={-0,2.4653525,0};
+						angles[]={0,2.4653525,0};
 					};
 					side="Empty";
 					flags=4;
@@ -7252,7 +7273,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2243.7258,14.025364,13425.543};
-						angles[]={-0,2.3740497,0};
+						angles[]={0,2.3740497,0};
 					};
 					side="Empty";
 					flags=4;
@@ -7313,7 +7334,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2193.6912,14.025364,13387.938};
-						angles[]={-0,2.485261,0};
+						angles[]={0,2.485261,0};
 					};
 					side="Empty";
 					flags=4;
@@ -7374,7 +7395,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2214.2324,14.025475,13403.696};
-						angles[]={-0,2.5365324,0};
+						angles[]={0,2.5365324,0};
 					};
 					side="Empty";
 					flags=4;
@@ -11759,7 +11780,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2173.7095,13.449512,13353.278};
-						angles[]={-0,2.4501808,0};
+						angles[]={0,2.4501808,0};
 					};
 					side="Empty";
 					flags=4;
@@ -11769,7 +11790,7 @@ class Mission
 					};
 					id=1565;
 					type="Land_HelipadCircle_F";
-					atlOffset=-0.00048732758;
+					atlOffset=-0.00048828125;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11800,7 +11821,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2164.5579,14.025406,13365.386};
-						angles[]={-0,2.2780905,0};
+						angles[]={0,2.2780905,0};
 					};
 					side="Empty";
 					flags=4;
@@ -11862,7 +11883,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2136.1643,14.02586,13342.856};
-						angles[]={-0,2.318059,0};
+						angles[]={0,2.318059,0};
 					};
 					side="Empty";
 					flags=4;
@@ -12145,8 +12166,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2203.2668,15.159629,13413.844};
-						angles[]={0,0.56450546,0};
+						position[]={2203.2671,15.160072,13413.844};
+						angles[]={0,0.56450933,0};
 					};
 					side="Empty";
 					flags=4;
@@ -12156,7 +12177,7 @@ class Mission
 					};
 					id=1676;
 					type="Land_Laptop_unfolded_F";
-					atlOffset=0.011703491;
+					atlOffset=0.01214695;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -12227,17 +12248,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2202.6497,15.244466,13414.075};
-						angles[]={0,4.0065479,0};
+						position[]={2202.6499,15.25468,13414.075};
+						angles[]={0,4.0065427,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						init="this SetObjectTexture [0,""opt_a3_core\bilder\opt4_logo.paa""];";
+						disableSimulation=1;
 					};
 					id=1678;
 					type="Land_PCSet_01_screen_F";
-					atlOffset=0.81093884;
+					atlOffset=0.0081472397;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -12383,7 +12406,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2136.2256,13.778057,13342.82};
-						angles[]={-0,5.4879951,0};
+						angles[]={0,5.4879951,0};
 					};
 					side="Empty";
 					flags=4;
@@ -12633,17 +12656,37 @@ class Mission
 					class Attributes
 					{
 						text="befriedeter Bereich";
-						condition="";
+						condition="call{vehicle player in thisList}";
+						onActivation="call{systemChat ""Sie betreten die feindliche Sicherheitszone. Kampfhandlungen sind hier strikt untersagt.""}";
 						sizeA=4000;
 						sizeB=4000;
 						interuptable=1;
+						repeatable=1;
+						activationBy="EAST";
 					};
 					id=2442;
 					type="EmptyDetector";
 				};
+				class Item62
+				{
+					dataType="Marker";
+					position[]={2449.748,0,13056.088};
+					name="Sicherheitsbereich_NATO_3";
+					text="Erweiterter Sicherheitsbereich";
+					markerType="ELLIPSE";
+					type="Empty";
+					colorName="ColorWEST";
+					fillName="Border";
+					a=4000;
+					b=4000;
+					angle=324.50488;
+					drawBorder=1;
+					id=2451;
+					atlOffset=-15.779618;
+				};
 			};
 			id=2353;
-			atlOffset=2.1136513;
+			atlOffset=-5.2464571;
 		};
 		class Item15
 		{
@@ -12671,7 +12714,7 @@ class Mission
 					};
 					id=1481;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.0093955994;
+					atlOffset=0.035066128;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -42635,7 +42678,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2272.303,14.644597,13426.596};
-				angles[]={-0,0.91065085,0};
+				angles[]={0,0.91065085,0};
 			};
 			side="Empty";
 			flags=4;
@@ -42694,7 +42737,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={11683.212,4.6899414,3039.3521};
-				angles[]={-0,3.1767437,0};
+				angles[]={0,3.1767437,0};
 			};
 			name="zeus_csat_recon1";
 			presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
