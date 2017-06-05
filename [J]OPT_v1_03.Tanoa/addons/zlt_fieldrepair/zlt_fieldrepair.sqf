@@ -159,13 +159,14 @@ zlt_prc_repairvehicle = {
 	player selectWeapon primaryWeapon player;	// psycho, animation only able to play while primary weapon is in use
 	sleep 1;
 	_lastPlayerState = animationState player;
-	player playActionNow "medicStartRightSide";
+	// player playActionNow "medicStartRightSide";
+	player playMove "Acts_carFixingWheel";
 	sleep 0.5;
 	_maxlength = _veh getVariable["zlt_longrepair",[_veh] call zlt_frpr_getPartsRepairTime];
 	_vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 	_length = _maxlength;
-	_cycle = 0;
-	while {alive player and (player distance _veh) < 7 and (vehicle player == player) and speed _veh < 3 and not _repairFinished and zlt_mutexAction and (_cycle < 3 or (["medic",animationState player] call BIS_fnc_inString))} do {		
+
+	while {alive player and (player distance _veh) < 7 and (vehicle player == player) and speed _veh < 3 and not _repairFinished and zlt_mutexAction} do {		
 	//	diag_log ("ANIM STATE = "+str(animationState player));	
 		(format[STR_REPAIR_MSG_STRING, _length, _vehname] ) call zlt_fnc_notify;
 		if (_length <= 0) then {_repairFinished = true;};
@@ -173,7 +174,9 @@ zlt_prc_repairvehicle = {
 		sleep 1;
 		_hastk = [] call zlt_fnc_hastk;
 		if (_hastk <= 0) exitWith {STR_NEED_TOOLKIT call zlt_fnc_notify; sleep 1.;};	
-		_cycle = _cycle + 1;
+		if (animationState player != "Acts_carFixingWheel") then {
+			player playMoveNow "Acts_carFixingWheel"; // without transition
+		};
 	};
 	if (_repairFinished) then {
 		_hastk = [] call zlt_fnc_hastk;
