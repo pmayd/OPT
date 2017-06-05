@@ -216,7 +216,8 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["OPT_B_MRAP_01_F", 30],							// Hunter
 	["OPT_B_MRAP_01_hmg_F", 30],						// Hunter HMG
 	["OPT_B_MRAP_01_gmg_F", 30],						// Hunter GMG
-	["OPT_B_Truck_01_covered_F", 100], 					// HEMTT Transport	
+	["OPT_B_Truck_01_covered_F", 60], 					// HEMTT Inf-Transport
+	["OPT_B_Truck_01_transport_F", 100],					// HEMTT Logistik - hinzugefügt
 	["OPT_B_APC_Wheeled_01_cannon_F", 30],				// AMV-7 Marshall
 	["OPT_B_APC_Wheeled_01_cannon_light_F", 30],		// AMV-7 Marshall (Leicht)
 	["OPT_B_UGV_01_F", 30],								// UGV Stomper	
@@ -229,7 +230,8 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 	["OPT_O_MRAP_02_F", 30],							// Ifrit
 	["OPT_O_MRAP_02_hmg_F", 30],						// Ifrit HMG
 	["OPT_O_MRAP_02_gmg_F", 30],						// Ifrit GMG
-	["OPT_O_Truck_03_covered_F", 100],					// Tempest Transport	
+	["OPT_O_Truck_03_covered_F", 60],					// Tempest Transport	
+	["OPT_O_T_Truck_03_transport_ghex_F",100],			// Tempest Logistik - hinzugefügt
 	["OPT_O_APC_Wheeled_03_cannon_F", 30],				// AFV-4 Gorgon
 	["OPT_O_APC_Wheeled_03_cannon_light_F", 30],		// AFV-4 Gorgon (Leicht)
 	["OPT_O_APC_Wheeled_02_rcws_F", 30],				// MSE-3 Marid
@@ -273,7 +275,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["OPT_Box_NATO_WpsLaunch_F", 30],					// HAT-Kiste
 	["OPT_B_Slingload_01_Fuel_F", 100],     			// Fuelcontainer
 	["OPT_B_Slingload_01_Repair_F",	100],       		// Reparaturcontainer
-  ["OPT_B_Slingload_01_Ammo_F", 110],					// Munitionscontainer
+  ["OPT_B_Slingload_01_Ammo_F", 100],					// Munitionscontainer - von 110 runtergesetzt damit es in lkw passt
   ["OPT_B_Slingload_01_Medevac_F", 100],				// Lazarettcontainer															
 	["OPT_O_supplyCrate_F", 30],						// Transportkiste (leer)
 	["OPT_Box_East_Ammo_F", 30],         				// Munitionskiste
@@ -282,7 +284,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
   ["OPT_Box_NATO_WpsSpecial_AT2_F", 30],			// AT Raketenkiste
 	["OPT_Box_East_WpsLaunch_F", 30],					// HAT-Kiste
   ["OPT_Land_Pod_Heli_Transport_04_fuel_F", 100],		// Fuelcontainer
-  ["OPT_Land_Pod_Heli_Transport_04_ammo_F", 110],		// Munitionscontainer
+  ["OPT_Land_Pod_Heli_Transport_04_ammo_F", 100],		// Munitionscontainer - von 110 runtergesetzt damit es in lkw passt
   ["OPT_Land_Pod_Heli_Transport_04_repair_F", 100],	// Reparaturcontainer
 	["OPT_Land_Pod_Heli_Transport_04_medevac_F", 100],	// Lazarettcontainer
 	["OPT_O_supplyCrate_F",	30],						// Transportkiste
