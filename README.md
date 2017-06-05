@@ -5,9 +5,9 @@ Github der Operation Pandora Trigger
 [3.Jgkp]James
 
 ## Version
-Aktuelle Version ist 1.03_03
+Aktuelle Version ist 1.03_05
 
-Name: [J]OPT_v1_03_03
+Name: [J]OPT_v1_03_05
 
 ## Current Work
 
@@ -15,6 +15,17 @@ Name: [J]OPT_v1_03_03
 * Fehler beheben, gewünschte Verbesserungen durchführen
 
 ## SITREP
+
+### 2017-06-05
+#### Kalle
+- Anpassung der Basen
+- Preisanpassungen an vehiclePool_War.hpp
+- Neue Heliklassen in setup_classnames.sqf
+- Korrekturen an R3F config.sqf
+
+#### James
+- Fehler im revive Script behoben: Animationen werden jetzt korrekt beendet und laufen nicht weiter
+- revive Script übersetzt
 
 ### 2017-06-03
 - Radar Container von Lord eingebaut
