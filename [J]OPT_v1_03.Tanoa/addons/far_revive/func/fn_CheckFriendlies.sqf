@@ -37,10 +37,10 @@ if (count _medics > 0) then {
 	if (!isNull _unit) then {
 		_unitName	= name _unit;
 		_distance	= floor (player distance _unit);	
-		_hintMsg = format["Nearby Medic:\n%1 is %2m away.", _unitName, _distance];
+		_hintMsg = format["Sanitäter in der Nähe:\n%1 ist %2m entfernt.", _unitName, _distance];
 	};
 } else {
-	_hintMsg = "No medic nearby.";
+	_hintMsg = "Kein Sanitäter in der Nähe.";
 };
 
 _hintMsg

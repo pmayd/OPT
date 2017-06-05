@@ -191,7 +191,7 @@
 			w = 1;
 			h = 0.6;
 			size = 0.08;
-			text = "You are dead.";
+			text = "Du bist gestorben.";
 			class Attributes {
 				font = DEFAULTFONT;
 				color = "#CC0000";	// red

@@ -13,8 +13,8 @@ player playMoveNow "AcinPknlMstpSrasWrflDnon";
 ["far_rotate", _target] call tcb_fnc_NetCallEvent;
 	
 // Add release action and save its id so it can be removed
-_id = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_release"], 10, true, true, "", "true"];
-hint "Press 'C' if you can't move.";
+_id = player addAction ["<t color=""#C90000"">" + "Ablegen" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_release"], 10, true, true, "", "true"];
+hint "Drücke 'C', falls du dich nicht bewegen kannst.";
 
 // Wait until release action is used
 waitUntil {

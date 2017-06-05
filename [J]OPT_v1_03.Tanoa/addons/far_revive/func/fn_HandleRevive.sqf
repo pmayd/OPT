@@ -5,7 +5,7 @@ private ["_injuredperson","_healer","_timenow","_relpos","_dir","_offset","_time
 _injuredperson = _this select 0;
 _healer = _this select 1;
 
-if (_healer getVariable ["FAR_isUnconscious",0] == 1) exitWith {};
+if (_healer getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
 _injuredperson setVariable ["tcb_healer", _healer, true];
 tcb_healerStopped = false;
 
@@ -32,7 +32,6 @@ if (isPlayer _healer) then {
 		};	
 	}];
 };
-
 
 _offset = [0,0,0]; _dir = 0;
 _relpos = _healer worldToModel position _injuredperson;
@@ -71,18 +70,16 @@ while {
 	&& {!tcb_healerStopped}
 } do {
 	sleep 0.5;
-	if (isPlayer _healer) then {["Applying First Aid",((time - _time) / (_damage)) min 1] spawn opt_addons_fnc_progressBar};
+	if (isPlayer _healer) then {["Beginne mit Erstversorgung",((time - _time) / (_damage)) min 1] spawn opt_addons_fnc_progressBar};
 };
 
 if (isPlayer _healer) then {_healer removeEventHandler ["AnimChanged", _animChangeEVH]};
 detach _healer;
 detach _injuredperson;
 
-if (alive _healer && {_healer getVariable "FAR_isUnconscious" > 0}) then {
-	_healer playAction "medicStop";
-};
+_healer playAction "medicStop";
 	
-if (!alive _injuredperson) exitWith {["It's already to late for this guy.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText};
+if (!alive _injuredperson) exitWith {["Für diesen Kameraden kommt jede Hilfe zu spät.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText};
 if (!alive _healer) exitWith {_injuredperson setVariable ["tcb_healer", ObjNull, true]};
 _injuredperson setVariable ["tcb_healer", ObjNull, true];
 
@@ -115,7 +112,7 @@ if (!tcb_healerStopped) then {
 		//["tfar_removeMapMarker", _injuredperson] call tcb_fnc_NetCallEvent;
 	};
 } else {
-	["You has stopped the healing process.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText;
+	["Du hast den Vorgang abgebrochen.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText;
 };
 
 true

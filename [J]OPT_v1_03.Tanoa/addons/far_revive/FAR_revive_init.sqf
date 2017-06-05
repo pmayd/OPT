@@ -7,7 +7,7 @@
 //------------------------------------------//
 
 // Seconds until unconscious unit bleeds out and dies. Set to 0 to disable.
-FAR_BleedOut = 600;
+FAR_BleedOut = 60;
 
 // Show killer's name (only local to the killed)
 FAR_EnableDeathMessages = true;

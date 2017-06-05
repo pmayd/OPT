@@ -27,7 +27,7 @@ if (FAR_EnableDeathMessages) then {
 			sleep 3.5;
 			_txt = format ["%1",(_this select 0)];
 			_print = [
-				["wounded by:","align = 'right' size = '0.8'","#f0bfbfbf"],				// grey
+				["verwundet durch:","align = 'right' size = '0.8'","#f0bfbfbf"],				// grey
 				["","<br/>"],
 				[_txt, "align = 'right' size = '1.2' font='PuristaBold'","#f07f7f00"]	// yellow
 			];
@@ -65,8 +65,8 @@ disableUserInput true;
 disableUserInput false;
 
 while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1} && {_unit getVariable "FAR_isStabilized" == 0} && {(FAR_BleedOut <= 0 || time < _bleedOut)}} do {
-	if (FAR_checkNearbyMedics) then {hintSilent format["Bleedout in %1 seconds\n\n%2", round (_bleedOut - time), call opt_addons_fnc_CheckFriendlies]};
-	public_bleedout_message = format ["Bleedout in %1 seconds", round (_bleedOut - time)];
+	if (FAR_checkNearbyMedics) then {hintSilent format["Ausgeblutet in %1 Sekunden\n\n%2", round (_bleedOut - time), call opt_addons_fnc_CheckFriendlies]};
+	public_bleedout_message = format ["Ausgeblutet in %1 Sekunden", round (_bleedOut - time)];
 	public_bleedout_timer = round (_bleedOut - time);
 	sleep 0.5;
 };
@@ -76,8 +76,8 @@ if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
 	[true] call opt_addons_fnc_toggleTFAR;
 			
 	while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1}} do {
-		if (FAR_checkNearbyMedics) then {hintSilent format ["You have been stabilized\n\n%1", call opt_addons_fnc_CheckFriendlies]};
-		public_bleedout_message = "Stabilized";
+		if (FAR_checkNearbyMedics) then {hintSilent format ["Du wurdest stabilisiert\n\n%1", call opt_addons_fnc_CheckFriendlies]};
+		public_bleedout_message = "Stabilisiert";
 		public_bleedout_timer = FAR_BleedOut;
 		sleep 0.5;
 	};

@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=521;
+	toggles=649;
 	class ItemIDProvider
 	{
 		nextID=2446;
@@ -6533,12 +6533,11 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={11660.235,4.6899185,3039.7822};
+						position[]={11660.235,4.6900001,3039.782};
 					};
 					presenceCondition="playersNumber east > 0";
 					id=1698;
 					type="TFAR_ModuleTaskForceRadioFrequencies";
-					atlOffset=-8.1539154e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -42089,14 +42088,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2230.6665,13.451439,13422.437};
-						angles[]={0,2.5047159,0};
+						position[]={2230.667,13.451439,13422.437};
+						angles[]={0,2.5047219,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
 						init="call{(group this) setGroupIdGlobal [""Recons""];}";
+						name="nato_recon1";
 						description="Recons - Truppführer";
 						isPlayable=1;
 						aiRadarUsage=85;
@@ -42266,7 +42266,6 @@ class Mission
 					class Attributes
 					{
 						init="call{(group this) setGroupIdGlobal [""Recons""];}";
-						name="nato_recon1";
 						description="Recons - Grenadier";
 						isPlayable=1;
 						aiRadarUsage=85;
@@ -42788,12 +42787,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2237.5381,13.45,13419.396};
+				position[]={2229.9087,13.449707,13424.349};
 			};
 			name="zeus_nato_recon1";
 			presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
 			id=2445;
 			type="ModuleCurator_F";
+			atlOffset=-0.00029277802;
 			class CustomAttributes
 			{
 				class Attribute0

@@ -62,18 +62,17 @@ while {
 	&& {!tcb_healerStopped}
 } do {
 	sleep 0.5;
-	if (isPlayer _healer) then {["Try to stabilize",((time - _time) / (_damage)) min 1] spawn opt_addons_fnc_progressBar};
+	if (isPlayer _healer) then {["Versuche zu stabilisieren",((time - _time) / (_damage)) min 1] spawn opt_addons_fnc_progressBar};
 };
 
 if (isPlayer _healer) then {_healer removeEventHandler ["AnimChanged", _animChangeEVH]};
 detach _healer;
 detach _injuredperson;
 
-if (alive _healer && {_healer getVariable "FAR_isUnconscious" > 0}) then {
-	_healer playAction "medicStop";
-};
+_healer playAction "medicStop";
+
 	
-if (!alive _injuredperson) exitWith {["It's already to late for this guy.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText};
+if (!alive _injuredperson) exitWith {["Für diesen Kameraden kommt jede Hilfe zu spät.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText};
 if (!alive _healer) exitWith {_injuredperson setVariable ["tcb_healer", ObjNull, true]};
 _injuredperson setVariable ["tcb_healer", ObjNull, true];
 
@@ -83,7 +82,7 @@ if (!tcb_healerStopped) then {
 		_injuredperson setVariable ["FAR_isDragged", 0, true];
 	};
 } else {
-	["You has stopped the process.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText;
+	["Du hast den Vorgang abgebrochen.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText;
 };
 
 
