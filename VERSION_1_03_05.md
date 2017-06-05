@@ -12,3 +12,4 @@
 - Refactoring der UAV classnames -> jetzt in setup_classnames für alle Skripte, nicht einmal im UAV addon und einmal im Kaufendialog getrennt
 - erweiterte Sicherheitszone als Border Marker eingefügt + HInweistext für Spieler. Keine Aktion bisher
 - NATO Montior des UAV Terminals enableSimulation false, um Umfallen zu vermeiden
+- neue Reparaturanimation
