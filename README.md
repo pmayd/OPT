@@ -31,6 +31,10 @@ Name: [J]OPT_v1_03_05
 - erweiterte Sicherheitszone als Border Marker eingefügt + HInweistext für Spieler. Keine Aktion bisher
 - NATO Montior des UAV Terminals enableSimulation false, um Umfallen zu vermeiden
 - neue Reparaturanimation
+- Änderung an den LKW-Positionen
+- Verkaufsbutton in allen Dialogen außer dem Verkaufsdialog entfernt
+- Verkaufspad CSAT rote Schrift und rotes Bild
+- Bugfix: Funk sobald man stabilisiert war -> entfernt
 
 ### 2017-06-03
 - Radar Container von Lord eingebaut
