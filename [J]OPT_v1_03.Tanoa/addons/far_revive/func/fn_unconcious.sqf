@@ -73,7 +73,7 @@ while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" 
 
 if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
 	//Unit has been stabilized. Disregard bleedout timer and unmute player
-	[true] call opt_addons_fnc_toggleTFAR;
+	//[true] call opt_addons_fnc_toggleTFAR;
 			
 	while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1}} do {
 		if (FAR_checkNearbyMedics) then {hintSilent format ["Du wurdest stabilisiert\n\n%1", call opt_addons_fnc_CheckFriendlies]};

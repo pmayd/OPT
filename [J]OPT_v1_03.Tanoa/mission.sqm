@@ -1403,14 +1403,13 @@ class Mission
 				class Item2
 				{
 					dataType="Marker";
-					position[]={11641.194,2.4662571e+027,3085.1248};
+					position[]={11641.194,0,3085.125};
 					name="marker_csat_verkaufpad";
 					text="Verkaufen";
 					type="respawn_unknown";
 					colorName="ColorEAST";
-					angle=271.56851;
 					id=1442;
-					atlOffset=2.4662571e+027;
+					atlOffset=-4.6900001;
 				};
 				class Item3
 				{
@@ -1494,11 +1493,12 @@ class Mission
 				class Item10
 				{
 					dataType="Marker";
-					position[]={11698.829,4.6900001,3048.3643};
+					position[]={11698.829,0,3048.364};
 					name="respawn_east";
 					type="respawn_unknown";
 					colorName="ColorRed";
 					id=1459;
+					atlOffset=-4.6900001;
 				};
 				class Item11
 				{
@@ -6632,7 +6632,7 @@ class Mission
 				};
 			};
 			id=2352;
-			atlOffset=66848028;
+			atlOffset=-2.0618494;
 		};
 		class Item13
 		{
