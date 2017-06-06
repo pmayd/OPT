@@ -24,14 +24,15 @@ _getTotalDamage = {
 	_totalDamage = (_head * 0.4) + (_body * 0.4) + (_legs * 0.1) + (_hands * 0.1);
 
 	if((_head >= SRS_damageThreshold) || (_body >= SRS_damageThreshold)) then{
-		_totalDamage = SRS_damageThreshold;		
+		_totalDamage = SRS_damageThreshold;		// nie höher als 0.95!
 	};
 	_totalDamage	
 };
 
 _return = 0;
 
-if ((_unit getVariable "FAR_isUnconscious") == 1) then{
+// falls Einheit bewusstlos -> mache nichts, Schaden 0!
+if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1) then{
 	_return = 0;
 } else {
 
@@ -75,8 +76,10 @@ if ((_unit getVariable "FAR_isUnconscious") == 1) then{
 	};
 
 	_return = [_unit] call _getTotalDamage;
+
 	if(_return >= SRS_damageThreshold) then {				//Psycho, Inhalt in einen Framehandler auslagern um mehrfache Auslösung zu verhindern...
 		_return = 0;
+		diag_log format["FAR REVIVE: ausgelöst für: %1", name _unit];
 		[_unit, _enemy] spawn opt_addons_fnc_Unconcious;
 		
 		[_unit, _enemy] spawn {								// Psycho: spawn == nächster Frame...

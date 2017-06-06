@@ -3,6 +3,10 @@
 ////////////////////////////////////////////////
 params ["_unit","_killer"];
 
+if (_unit getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
+_unit setVariable ["FAR_isUnconscious", 1, true];
+diag_log format["FAR REVIVE: FAR_isUnconscious gesetzt für: %1", name _unit];
+
 if (isPlayer _unit) then {
 	disableUserInput true;
 };
@@ -54,8 +58,6 @@ _unit playAction "Unconscious";
 sleep 4;
 //_unit switchMove "AinjPpneMstpSnonWrflDnon";
 _unit enableSimulation false;
-_unit setVariable ["FAR_isUnconscious", 1, true];
-	
 
 _bleedOut = time + FAR_BleedOut;
 
@@ -73,7 +75,7 @@ while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" 
 
 if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
 	//Unit has been stabilized. Disregard bleedout timer and unmute player
-	//[true] call opt_addons_fnc_toggleTFAR;
+	[true] call opt_addons_fnc_toggleTFAR;
 			
 	while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1}} do {
 		if (FAR_checkNearbyMedics) then {hintSilent format ["Du wurdest stabilisiert\n\n%1", call opt_addons_fnc_CheckFriendlies]};
