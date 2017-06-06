@@ -16,3 +16,4 @@
 - Änderung an den LKW-Positionen
 - Verkaufsbutton in allen Dialogen außer dem Verkaufsdialog entfernt
 - Verkaufspad CSAT rote Schrift und rotes Bild
+- Bugfix: Funk sobald man stabilisiert war -> entfernt
