@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=283;
+		nextID=293;
 	};
 	class Camera
 	{
-		pos[]={2221.4519,26.658314,13388.803};
-		dir[]={-0.21430257,-0.31545839,0.92442441};
-		up[]={-0.07124152,0.94893944,0.3073087};
-		aside[]={0.97416592,3.5762787e-007,0.22583389};
+		pos[]={11697.341,11.705338,3158.2778};
+		dir[]={-0.91478419,-0.34101471,0.21689746};
+		up[]={-0.33189911,0.94002116,0.078694917};
+		aside[]={0.23073103,-1.6702325e-007,0.9730987};
 	};
 };
 binarizationWanted=0;
@@ -1783,7 +1783,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11666.823,7.5259657,3146.2683};
+						position[]={11535.143,9.4477501,3243.4099};
 						angles[]={6.2778587,3.7998025,6.272521};
 					};
 					side="Empty";
@@ -1795,14 +1795,14 @@ class Mission
 					};
 					id=1579;
 					type="OPT_O_Truck_03_medical_F";
-					atlOffset=-0.00012636185;
+					atlOffset=-0.55820322;
 				};
 				class Item22
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11653.636,7.4691672,3155.7327};
+						position[]={11521.955,9.3909521,3252.8743};
 						angles[]={6.2751846,3.7788074,6.272521};
 					};
 					side="Empty";
@@ -1813,14 +1813,14 @@ class Mission
 					};
 					id=1580;
 					type="OPT_O_Truck_03_ammo_F";
-					atlOffset=-0.00013065338;
+					atlOffset=-0.75769377;
 				};
 				class Item23
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11658.197,7.384232,3152.2681};
+						position[]={11526.517,9.3060169,3249.4097};
 						angles[]={6.2751918,3.778805,6.2698536};
 					};
 					side="Empty";
@@ -1831,7 +1831,7 @@ class Mission
 					};
 					id=1581;
 					type="OPT_O_Truck_03_fuel_F";
-					atlOffset=-0.0001950264;
+					atlOffset=-0.68494368;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1861,7 +1861,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11662.416,7.3152084,3149.1667};
+						position[]={11530.735,9.2369938,3246.3083};
 						angles[]={6.2778587,3.8008292,6.272521};
 					};
 					side="Empty";
@@ -1872,7 +1872,7 @@ class Mission
 					};
 					id=1584;
 					type="OPT_O_Truck_03_repair_F";
-					atlOffset=-9.4890594e-005;
+					atlOffset=-0.62058926;
 					class CustomAttributes
 					{
 						class Attribute0

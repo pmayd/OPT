@@ -54,7 +54,8 @@ opt_orderDialogObjects = _pool;
 
 // deaktiviere Verkaufenbutton für alle Dialoge außer "sell"
 if (count opt_orderDialogObjects != 0) then {
-	_sell ctrlEnable false;
+	ctrlDelete _sell;
+
 } else {
 	_order ctrlEnable false;
 

@@ -13,3 +13,5 @@
 - erweiterte Sicherheitszone als Border Marker eingefügt + HInweistext für Spieler. Keine Aktion bisher
 - NATO Montior des UAV Terminals enableSimulation false, um Umfallen zu vermeiden
 - neue Reparaturanimation
+- Änderung an den LKW-Positionen
+- Verkaufsbutton in allen Dialogen außer dem Verkaufsdialog entfernt
