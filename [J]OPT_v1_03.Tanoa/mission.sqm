@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11697.341,11.705338,3158.2778};
-		dir[]={-0.91478419,-0.34101471,0.21689746};
-		up[]={-0.33189911,0.94002116,0.078694917};
-		aside[]={0.23073103,-1.6702325e-007,0.9730987};
+		pos[]={11650.911,26.87002,3104.6372};
+		dir[]={0.2016768,-0.31492037,0.92754316};
+		up[]={0.066930234,0.94907981,0.30781874};
+		aside[]={0.97725165,-2.272136e-007,-0.21249312};
 	};
 };
 binarizationWanted=0;
@@ -1344,20 +1344,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11640.35,5.2653446,3085.6433};
-						angles[]={0,5.3938475,0};
+						position[]={11640.35,5.2653642,3085.6431};
+						angles[]={0,5.3938532,0};
 					};
 					side="Empty";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						init="call{this addAction['Verkaufen' call XBlueText,'common\client\opt_vehicleOrder.sqf','sell'];}";
+						init="call{this addAction['Verkaufen' call XRedText,'common\client\opt_vehicleOrder.sqf','sell'];}";
 						disableSimulation=1;
 					};
 					id=1441;
 					type="Land_InfoStand_V1_F";
-					atlOffset=-1.9550323e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1375,7 +1374,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="opt_a3_core\bilder\nato_radfahrzeuge.jpg";
+									value="opt_a3_core\bilder\csat_radfahrzeuge.jpg";
 								};
 							};
 						};
@@ -1543,8 +1542,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11663.87,5.3201861,3067.6028};
-						angles[]={0,4.5062447,0.039977662};
+						position[]={11663.87,5.3206782,3067.603};
+						angles[]={0,4.506248,0.039985489};
 					};
 					side="Empty";
 					flags=4;
@@ -1556,7 +1555,6 @@ class Mission
 					};
 					id=1572;
 					type="Land_InfoStand_V1_F";
-					atlOffset=-0.00049209595;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1605,8 +1603,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11713.563,5.2653837,3023.9939};
-						angles[]={0,3.3520005,0};
+						position[]={11713.563,5.2653642,3023.9939};
+						angles[]={0,3.3519919,0};
 					};
 					side="Empty";
 					flags=4;
@@ -1618,7 +1616,6 @@ class Mission
 					};
 					id=1573;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.9550323e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1648,8 +1645,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11684.87,5.4155149,3062.95};
-						angles[]={0,0.70225692,0};
+						position[]={11684.87,5.4153643,3062.95};
+						angles[]={0,0.70225066,0};
 					};
 					side="Empty";
 					flags=4;
@@ -1661,7 +1658,6 @@ class Mission
 					};
 					id=1574;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.00015068054;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5636,20 +5632,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11703.219,5.1689043,3151.8921};
-						angles[]={0.037316564,3.7978165,6.256525};
+						position[]={11703.219,5.1694713,3151.8926};
+						angles[]={0.037315138,3.7978189,6.2565165};
 					};
 					side="Empty";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this addAction['Luftwaffe' call XRedText,'common\client\opt_vehicleOrder.sqf','choppers', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; ";
+						init="call{this addAction['Luftwaffe' call XRedText,'common\client\opt_vehicleOrder.sqf','choppers', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; }";
 						disableSimulation=1;
 					};
 					id=1664;
 					type="Land_InfoStand_V1_F";
-					atlOffset=-0.00058412552;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5733,8 +5728,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11681.021,5.4549804,3171.8228};
-						angles[]={0.0080009829,4.9254184,6.2645216};
+						position[]={11681.021,5.4551587,3171.8228};
+						angles[]={0.0079936078,4.9254236,6.2645278};
 					};
 					side="Empty";
 					flags=4;
@@ -5746,7 +5741,6 @@ class Mission
 					};
 					id=1669;
 					type="Land_InfoStand_V1_F";
-					atlOffset=-0.0001783371;
 					class CustomAttributes
 					{
 						class Attribute0
