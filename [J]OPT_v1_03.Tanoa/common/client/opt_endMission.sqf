@@ -10,9 +10,10 @@
 
 //changed by psycho
 // auto-mission end is possible now
-if (!local player) exitWith {};
+if (!local player) exitWith {}; // nicht für den Server!
 waitUntil {!isNil "opt_startTime"};
 
+// maintainer setzt WinEast, WinWest, Draw oder Zeit ist abgelaufen
 waitUntil {sleep 4; _timeElapsed = (serverTime - opt_startTime); (WinEast == 1 || WinWest == 1 || Draw == 1 || (OPT_PLAYTIME - _timeElapsed) <= 0)};
 
 _timeElapsed = (serverTime - opt_startTime);

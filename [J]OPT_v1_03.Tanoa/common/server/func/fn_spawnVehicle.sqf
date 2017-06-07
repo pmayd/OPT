@@ -27,8 +27,8 @@ if (surfaceIsWater _spawnpos) then {
 	_vec setPosATL [getPos _vec select 0, getPos _vec select 1, ((getPos _vec select 2) + .1)];
 };
 
-_vec addMPEventHandler ["MPKilled", {
-	(_this select [0,2]) call tcb_fnc_handleDeadVehicle;
+_vec addEventHandler ["Killed", {
+	_this call tcb_fnc_handleDeadVehicle;
 }];
 
 // fügt auf allen clients einen Add Action Eintrag für umgekippte Fahrzeuge hinzu

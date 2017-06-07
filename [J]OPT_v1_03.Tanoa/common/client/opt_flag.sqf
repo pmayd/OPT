@@ -31,4 +31,13 @@ if (isNil "_owner" || {_side isEqualTo _owner}/* || {_parr == "dummy"} || {_parr
 };
 
 ["setNewFlagOwner", [_side, _flag]] call tcb_fnc_NetCallEventCTS;
+// log player
+_message = "";
+if (_side == west) then {
+	_message = format ["CSAT Flagge gezogen von %1", name _caller];
+} else {
+	_message = format ["NATO Flagge gezogen von %1", name _caller];
+};
+["opt_eh_server_log_write", ["Fahne", _message]] call CBA_fnc_localEvent;
+
 if (_caller == player) then {["addScore",[_caller, 5]] call tcb_fnc_NetCallEventCTS};

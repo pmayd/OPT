@@ -7,57 +7,52 @@
 */
 
 //changed by psycho
-private ["_breaker","_ticker"];
+private ["_timeElapsed"];
 if (isMultiplayer && !isServer) exitWith {};
 
+// Waffenruhe abgelaufen?
 if (!missionStarted) exitWith {diag_log format["OPT LOG: ERROR: opt_countdown.sqf started before missionStarted=true!"]};
-	
-["opt_logEvent", "########## Mission wurde gestartet ##########"] call tcb_fnc_NetCallEvent;
 
 // calculate first time the dominator (it's needed if assynchrone number of flags are defined)
 [civilian, objNull] spawn opt_fnc_setFlagOwner;
 
-_breaker = false;
-_ticker = 0;
+// Logge und übertrage Punktestand alle 60 Sekunden, solange Spiel noch läuft
+while {_timeElapsed = (serverTime - opt_startTime); (WinEast == 0 &&  WinWest == 0 && Draw == 0 && (OPT_PLAYTIME - _timeElapsed) > 0)} do {
 
-// playTime unverändert, da wir die volle Zeit spielen wollen!
-// Daher von playTime in 1 sec Schritten bis 0.
-for "_i" from OPT_PLAYTIME to 0 step -1 do {
+	// Falls es einen Dominator gibt -> Erhöhe Punkte +1
+	if (opt_dominator != "none") then {
 
-	// Bestimme noch zu spielende Zeit: Gesamtzeit - Waffenruhe - Zeit seit Missionsstart = Gesamtzeit - vergangene Zeit
-	private _timeElapsed = (serverTime - opt_startTime);
-	playTime = OPT_PLAYTIME  - _timeElapsed;
-	_ticker = _ticker + 1;
+		if (toUpper(opt_dominator) == "CSAT") then {
 
-	// every 60 seconds: locking for domination, sync time to clients and transmit public vars
-	if (_ticker >= 60) then {
+			EastPoints = EastPoints + 1;
+			publicVariable "EastPoints";
+			systemChat "CSAT: +1 Punkt";
+			_message = format ["CSAT +1 (NATO %1 | CSAT %2)", WestPoints, EastPoints];
+			["opt_eh_server_log_write", ["Punkte", _message]] call CBA_fnc_localEvent;
 
-		_ticker = 0;
-
-		if (opt_dominator != "none") then {
-			if (toUpper(opt_dominator) == "CSAT") then {
-				EastPoints = EastPoints + 1;
-				publicVariable "EastPoints";
-				systemChat "CSAT: +1 Punkt";
-				["opt_logEvent", format ["########## Punkte: CSAT +1 (NATO %1 | CSAT %2) ##########", WestPoints, EastPoints]] call tcb_fnc_NetCallEvent;
-			} else {
-				WestPoints = WestPoints + 1;
-				publicVariable "WestPoints";
-				systemChat "NATO: +1 Punkt";
-				["opt_logEvent", format ["########## Punkte: NATO +1 (NATO %1 | CSAT %2) ##########", WestPoints, EastPoints]] call tcb_fnc_NetCallEvent;
-			};
-			_breaker = false;
 		} else {
-			if (!_breaker) then {
-				["opt_logEvent", format ["########## no Domination (NATO %1 | CSAT %2) ##########", WestPoints, EastPoints]] call tcb_fnc_NetCallEvent;
-				_breaker = true;
-			};
+
+			WestPoints = WestPoints + 1;
+			publicVariable "WestPoints";
+			systemChat "NATO: +1 Punkt";
+			_message = format ["NATO +1 (NATO %1 | CSAT %2)", WestPoints, EastPoints];
+			["opt_eh_server_log_write", ["Punkte", _message]] call CBA_fnc_localEvent;
 		};
+			
+	} else {
+
+			_message = format ["no Domination (NATO %1 | CSAT %2)", WestPoints, EastPoints];
+			["opt_eh_server_log_write", ["Punkte", _message]] call CBA_fnc_localEvent;
+
 	};
-	uiSleep 1;
+
+	uiSleep 60;
 };
 
-["opt_logEvent", "########## Missionzeit abgelaufen ##########"] call tcb_fnc_NetCallEvent;
-["opt_logEvent", format ["########## Endbudget: (NATO %1 | CSAT %2) ##########", opt_west_budget, opt_east_budget]] call tcb_fnc_NetCallEvent;
-["opt_logEvent", format ["########## Endpunktestand: (NATO %1 | CSAT %2) ##########", WestPoints, EastPoints]] call tcb_fnc_NetCallEvent;
+["opt_eh_server_log_write", ["Mission", "Missionzeit abgelaufen"]] call CBA_fnc_localEvent;
+
+_message = format ["Endbudget: (NATO %1 | CSAT %2)",  opt_west_budget, opt_east_budget];
+["opt_eh_server_log_write", ["Budget", _message]] call CBA_fnc_localEvent;
+_message = format ["Endpunktestand: (NATO %1 | CSAT %2)",  WestPoints, EastPoints];
+["opt_eh_server_log_write", ["Punkte", _message]] call CBA_fnc_localEvent;
 call opt_fnc_logPScore;

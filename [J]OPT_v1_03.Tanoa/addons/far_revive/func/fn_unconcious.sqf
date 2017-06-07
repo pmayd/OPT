@@ -4,8 +4,6 @@
 params ["_unit","_killer"];
 
 if (_unit getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
-_unit setVariable ["FAR_isUnconscious", 1, true];
-diag_log format["FAR REVIVE: FAR_isUnconscious gesetzt für: %1", name _unit];
 
 if (isPlayer _unit) then {
 	disableUserInput true;
@@ -55,9 +53,11 @@ _unit allowDamage false;
 //_unit playActionNow "Down"; // verursacht ragdoll problem -> Stehaufmännchen
 _unit playAction "Unconscious";
 
+// time for animation
 sleep 4;
 //_unit switchMove "AinjPpneMstpSnonWrflDnon";
 _unit enableSimulation false;
+_unit setVariable ["FAR_isUnconscious", 1, true];
 
 _bleedOut = time + FAR_BleedOut;
 
@@ -122,5 +122,7 @@ if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabili
 		};
 	};
 };
+
+opt_addons_var_unconciousHandle = nil;
 
 true

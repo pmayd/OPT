@@ -2,8 +2,7 @@
 private ["_camera"];
 
 // wait until player is initializied
-waitUntil {!isNull player};
-waitUntil {count playableUnits == count allPlayers};
+waitUntil {!isNull player && !((findDisplay 46) isEqualTo displayNull)};
 
 enableRadio false;
 EnableEnvironment false;

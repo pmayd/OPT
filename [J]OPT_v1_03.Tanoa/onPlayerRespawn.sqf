@@ -16,7 +16,7 @@ else {
 	
 	// Kosten für Seite abziehen + log
 	["opt_eh_server_update_budget", [playerSide, opt_respawn_cost, "-"]] call CBA_fnc_serverEvent;
-	["opt_eh_server_log_write", ["Spieler Respawn", format["Spieler: %1 - Kosten: %2", name player, opt_respawn_cost]]] call CBA_fnc_serverEvent;
+	["opt_eh_server_log_write", ["Respawn", format["Spieler: %1 - Kosten: %2", name player, opt_respawn_cost]]] call CBA_fnc_serverEvent;
 
 	waitUntil {!isNil "EtVInitialized"};
 	[player] spawn EtV_Actions;

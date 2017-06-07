@@ -95,15 +95,6 @@ if (player isKindOf "OPT_Maintainer" || getPlayerUID player == "7656119797767603
 Event Handler für Spieler
 Sind auch nach Respawn persistent
 */
-#ifdef __WEAPON_SAVER__
-	/* aktuell keine Bedeutung? */
-	player addEventHandler ["killed", {
-
-	[_this select 0, [missionNamespace, "tcb_inv"]] call BIS_fnc_saveInventory;
-
-	["opt_eh_server_log_player_killed", [(_this select 0), name (_this select 0), (_this select 1), name (_this select 1)]] call CBA_fnc_serverEvent;
-	}];
-#endif
 
 // EH bei Aufnahme von Waffen
 // ruft client/func/fn_weaponCheck
@@ -111,19 +102,6 @@ player setVariable ["opt_pw_storage", primaryWeapon player];
 player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}];
 
 //player addEventHandler ["HandleRating", {0}];
-
-// lösche Körper nach respawn delay
-#ifdef __REMOVE_DEAD_AI_AND_VECS__
-	if (__RESPAWN_TYPE__ != 0 || __RESPAWN_TYPE__ != 1) then {
-		player AddEventHandler ["killed",{
-			_this spawn {
-				sleep (__RESPAWN_DELAY__ + random 5);
-				deleteVehicle (_this select 0);
-			};
-		}];
-	};
-
-#endif
 
 // EH für Minensperre
 #ifdef __MINE_FREE_FLAG__

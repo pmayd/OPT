@@ -99,10 +99,6 @@
 // wenn nicht auskommentiert mit // wird eine Textnachricht angezeigt wenn eine Flagge gezogen wird und die Marker wechseln die Farbe
 //#define __OPT_Sector_Message__
 
-// wenn nicht auskommentiert mit // dann werden die Waffen und Ausrüstung des Spielers zum Todeszeitpunkt gespeichert
-// macht nur Sinn wenn es einen Respawn gibt
-#define __WEAPON_SAVER__
-
 // wenn nicht auskommentiert mit // dann werden tote KI Einheiten und zerstörte KI Fahrzeuge nach einiger Zeit gelöscht
 // ACHTUNG! Fahrzeug wird nach angegebener Anzahl Sekunden gelöscht
 // auskommentiert, da Garbage System jetzt enthalten
@@ -218,4 +214,4 @@
 #define __BUDGET_DISPO__ 1e5
 
 // wie viel ist eine Einheit wert? Wird für jeden Respawn vom Budget abgezogen.
-#define __RESPAWN_COST__ 5000
+#define __RESPAWN_COST__ 2500

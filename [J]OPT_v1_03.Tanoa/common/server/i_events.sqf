@@ -3,41 +3,45 @@ registriert alle Events via CBA Event Handling
 wird in der initServer.sqf aufgerufen
 */
 
-// loggt zerstörte Fahrzeuge
-["opt_eh_server_log_vec_destroyed", {
-	private _vec = param [0, objNull];
-	private _killer = param [1, objNull];
+// loggt Abschüsse
+["opt_eh_server_log_kill", {
+	params ["_victim", "_killer"];
 
-	private _cat = "Fahrzeug zerstört";
+	private _cat = "Abschuss";
 	private _message = "";
 
-	// Falls Selbstzerstörung
-	if (isNull _vec) then {
-		_message = format["Fahrzeug: unbekannt - ", _message];
+	// Abschuss war Spieler oder Fahrzeug?
+	if (_victim isKindOf "Man") then {
+
+		if (_victim == _killer || isNull _killer) then {
+			_message = format["%1 (%2) von: Selbstverschulden.", name _victim, side _victim];
+
+		} else {
+			_message = format["%1 (%2) von: %3 (%4).", name _victim, side _victim, name _killer, side _killer];
+
+		};
 
 	} else {
+
 		private _faction = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'faction'));
 		private _name = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'displayName'));
 		_message = format["Fahrzeug: %1 (%2) - ", _name, _faction];
 
-	};
-
-	if (isNull _killer) then {
-		_message = format["%1 von: unbekannt", _message];
-
-	} else {
-		if (_vec == _killer) then {
-			_message = format["%1 von: Selbstverschulden", _message];
+		// Täter nicht bekannt?
+		if (isNull _killer) then {
+			_message = format["%1 von: unbekannt", _message];
 
 		} else {
-			private _faction = (getText(configFile >> 'CfgVehicles' >> typeOf _killer >> 'faction'));
-			private _name = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'displayName'));
-			if (_killer isKindOf "Man") then {
-				_name = name _killer;
+
+			// Selbstverschulden?
+			if (_vec == _killer) then {
+				_message = format["%1 von: Selbstverschulden", _message];
+
+			} else {
+
+				_message = format["%1 von: %2 (%3).", _message, name _killer, _faction];
 
 			};
-
-			_message = format["%1 von: %2 (%3)", _message, _name, _faction];
 
 		};
 
@@ -48,25 +52,6 @@ wird in der initServer.sqf aufgerufen
 
 }] call CBA_fnc_addEventHandler;
 
-// loggt zerstörte Fahrzeuge
-["opt_eh_server_log_player_killed", {
-	params ["_victim", "_victimName", "_killer", "_killerName"];
-
-	private _cat = "Abschuss Spieler";
-	private _message = "";
-
-	if (_victim == _killer || isNull _killer) then {
-		_message = format["%1 hat sich selbst umgebracht.", _victimName];
-
-	} else {
-		_message = format["%1 wurde von %2 getötet.", _victimName, _killerName];
-
-	};
-
-	// übergib Kategorie und Nachricht an log-FUnktion
-	["opt_eh_server_log_write", [_cat, _message]] call CBA_fnc_localEvent;
-
-}] call CBA_fnc_addEventHandler;
 
 // schreibt eine log Nachricht in die SERVER-RPT
 ["opt_eh_server_log_write", {
@@ -83,7 +68,7 @@ wird in der initServer.sqf aufgerufen
 ["opt_eh_server_update_budget", {
 	params ["_side", "_unitCost", "_sign"];
 
-	private _cat = "Budget aktualisiert";
+	private _cat = "Budget";
 	private _message = "";
 	private _budget_neu = 0;
 

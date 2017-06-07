@@ -1,9 +1,9 @@
 #include "..\..\..\setup\setup.sqf"
 
-params ["_vec", "_killer"];
+params ["_vec", "_killer", "_instigator"];
 
 // log destroyed vehicle and killer
-["opt_eh_server_log_vec_destroyed", [_vec, _killer]] call CBA_fnc_serverEvent;
+["opt_eh_server_log_kill", [_vec, _instigator]] call CBA_fnc_serverEvent;
 
 // remove vehicle and ai crew
 #ifdef __REMOVE_DEAD_AI_AND_VECS__
