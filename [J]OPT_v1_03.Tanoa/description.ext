@@ -142,13 +142,13 @@ class Params {
 		title 		= "Zeit, in der zu Beginn alle Einheiten eingeforen sind";
 		values[] 	= {0,60,120,180,240,300};
 		texts[] 	= {"aus","1 min", "2 min", "3 min", "4 min", "5 min"};
-		default 	= 60;
+		default 	= 0;
 	};
 	class OPT_SHOW_INTRO {
 		title 		= "Intro";
 		values[] 	= {0,1};
 		texts[] 	= {"aus","an"};
-		default 	= 1;
+		default 	= 0;
 	};
 	class OPT_ZEUS {
 		title 		= "Zeus für Gruppenführer im Trainingsmodus";

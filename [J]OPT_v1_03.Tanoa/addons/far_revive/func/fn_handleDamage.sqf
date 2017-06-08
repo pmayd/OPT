@@ -26,8 +26,9 @@ _this select 7 (hitPoint): Hit point Cfg name
 */
 params ["_unit", "_hitSelection", "_damage", "_source", "_projectile", "_hitPartIndex", "_instigator", "_hitPoint"];
 
-systemChat format["übergabe: %1", _this];
+systemChat format["Körperteil: %1 - Schaden: %2 (gesamt: %3)", _this select 1, _this select 2, damage (_this select 0)];
 
+/*
 _getTotalDamage = {
 	_curUnit = _this select 0;
 
@@ -44,57 +45,46 @@ _getTotalDamage = {
 	};
 	_totalDamage	
 };
-
+*/
 _return = 0;
 
 // falls Einheit bewusstlos -> mache nichts, Schaden 0!
-if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1 || _hitSelection isEqualTo "" || _hitPartIndex == -1) then{
+if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1) then{
 	_return = 0;
 } else {
 	
-	/*
 	switch(_hitSelection) do{
 
-		case "body":{
-			_newDamage = (_unit getHit "body") + _damage;
-			if(_newDamage > SRS_damageThreshold) then{
-				_newDamage = SRS_damageThreshold;
-			};
-			_unit setHit ["body",_newDamage];
-		};
-
+		// Kopf
+		case "neck";
 		case "head":{
-			_newDamage = (_unit getHit "head") + _damage;
-			if(_newDamage > SRS_damageThreshold) then{
-				_newDamage = SRS_damageThreshold;
+			_return = 1.3 * _damage; // 30% erhöhter Schaden
+		};
+
+		// Extremitäten
+		case "legs";
+		case "hands";
+		case "arms": {
+			_return = 1.2 * _damage; // 20% erhöhter Schaden
+		};
+
+		// Gesamtschaden 
+		case "": {
+			// falls in Fahrzeug -> übernehme damage!
+			if (vehicle _unit != _unit) then {
+				_return = _damage;
+			} else {
+				_return = 0; // Gesamtschaden ignorieren -> one shot kill bug
 			};
-			_unit setHit ["head",_newDamage];
 		};
 
-		case "legs":{
-			_newDamage = (_unit getHit "legs") + _damage;
-			_unit setHit ["legs",_newDamage];
+		// alle anderen Teile
+		default {
+			_return = _damage
 		};
-
-		case "hands":{
-			_newDamage = (_unit getHit "hands") + _damage;
-			_unit setHit ["hands",_newDamage];
-		};
-
-		case "":{
-			_newDamage = (damage _unit) + _damage;
-			if(_newDamage > SRS_damageThreshold) then{
-				_newDamage = SRS_damageThreshold;
-			};
-			_unit setHit ["body",_newDamage];
-		};
-		default {};
 
 	};
-	*/
-	
-	_return = _damage;
-
+		
 	if(_return >= SRS_damageThreshold) then {				//Psycho, Inhalt in einen Framehandler auslagern um mehrfache Auslösung zu verhindern...
 		_return = 0;
 		diag_log format["FAR REVIVE: Schadensgrenzwert überschritten für: %1", name _unit];

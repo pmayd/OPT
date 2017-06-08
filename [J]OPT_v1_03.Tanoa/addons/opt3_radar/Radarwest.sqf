@@ -63,6 +63,7 @@ while {((Alive _Container) and _go)} do
 				
 						_Radarring setmarkerposLocal getpos _Container;
 						_Radarring setMarkerSizeLocal [_size, _size];
+						_RadarZONE setpos getpos _Container;
 						{_x setmarkerposlocal [0,0]} foreach _markerost;
 						{_x setmarkerposlocal [0,0]} foreach _markerwest;
 						{_x setMarkerTypelocal "mil_dot";} foreach _markerost;

@@ -5,4 +5,7 @@
 - Spielerabschusslog jetzt in FAR revive enthalten, dadurch wieder korrekter Log
 - Log aus killed EH entfernt
 - Handle Damage EH in FAR Revive komplett überarbeitet -> Bug in Vanilla, der bei Beinschuss Schaden abnorm hoch setzt. Aktuell wird Gesamtschaden (hitSelection "") ignoriert, so dass nur der Schaden der einzelnen Teile zählt. TODO: TESTEN
+- eigener DamageHandler, der Kopfschüsse mit 1.3 verstärkt, Arm- und Beintreffer mit 1.2, Rest unverändert. TODO: TESTEN
+- Bugfix Schaden in Fahrzeugen wurde nicht auf Spieler übertragen, jetzt wird der Spieler wieder unmächtig und automatisch ausgeladen
 - Bugfix: Manchmal Unmächtigkeit ohne Bleedout Timer. Denke ich habe es behoben
+- Radarfix

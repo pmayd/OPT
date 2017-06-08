@@ -18,9 +18,11 @@ if (isNil "tcb_netinit") then {
 };
 
 // ------------------- Check for TFAR
+/*
 if (isClass(configFile >> "cfgPatches" >> "task_force_radio")) then {
   __ccppfln(addons\TFAR\TFAR_settings.sqf); 
 };
+*/
 
 #ifdef __STARTTIME__
 	if (OPT_DAYTIME != 99) then {
