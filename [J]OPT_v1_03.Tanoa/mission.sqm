@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=137;
+	toggles=9;
 	class ItemIDProvider
 	{
 		nextID=2467;
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=328;
+		nextID=338;
 	};
 	class Camera
 	{
-		pos[]={2154.8828,22.128586,13353.624};
-		dir[]={-0.42563131,-0.11984985,0.89692795};
-		up[]={-0.051382761,0.99279195,0.10827824};
-		aside[]={0.90343946,-3.0180672e-008,0.42872176};
+		pos[]={2172.2227,22.128586,13365.16};
+		dir[]={0.47540793,-0.21389265,0.85337365};
+		up[]={0.10409605,0.97685736,0.18685596};
+		aside[]={0.8735913,-1.4225952e-007,-0.48667085};
 	};
 };
 binarizationWanted=0;
@@ -231,11 +231,11 @@ class ScenarioData
 		gameType="SC";
 	};
 	wreckManagerMode=1;
-	wreckLimit=2;
-	wreckRemovalMinTime=743.93762;
-	wreckRemovalMaxTime=2152.0205;
+	wreckLimit=10;
+	wreckRemovalMinTime=60.000004;
+	wreckRemovalMaxTime=600;
 	corpseManagerMode=1;
-	corpseLimit=2;
+	corpseLimit=10;
 	corpseRemovalMinTime=60.000004;
 	corpseRemovalMaxTime=600;
 };
@@ -42962,7 +42962,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[""31"",""32"",""33"",""34"",""35"",""36"",""37"",""38"",""39""]";
+							value="[""31"",""32"",""33"",""35"",""36"",""37"",""38"",""39""]";
 						};
 					};
 				};
@@ -43243,7 +43243,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[""31"",""32"",""33"",""34"",""35"",""36"",""37"",""38"",""39""]";
+							value="[""31"",""32"",""33"",""35"",""36"",""37"",""38"",""39""]";
 						};
 					};
 				};

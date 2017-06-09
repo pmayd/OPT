@@ -9,3 +9,7 @@
 - Bugfix Schaden in Fahrzeugen wurde nicht auf Spieler übertragen, jetzt wird der Spieler wieder unmächtig und automatisch ausgeladen
 - Bugfix: Manchmal Unmächtigkeit ohne Bleedout Timer. Denke ich habe es behoben
 - Radarfix
+- Uhrzeit Parameter entfernt
+- Garbage Collector wieder eingestellt....
+- GPS Drohnenanzeige korrigiert, statt KI jetzt UAV (operator)
+- Überarbeitung GPS: Spieler in Fahrzeugen werden jetzt mit Fahrzeugnamen angezeigt. TODO: Löse Anzeige bei mehreren Insassen

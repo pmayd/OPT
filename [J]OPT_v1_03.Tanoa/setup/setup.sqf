@@ -62,11 +62,6 @@
 /**
 * Umwelt und Grafik 
 */
-// Wenn __STARTTIME__ definiert ist, wird die Zeit auf dem Server geskipt. Der Server synchronisiert die Zeit mit den Clients
-// möglich sind Werte von 0-23, also ganze Zahlen mit den Stunden oder die Zahl 99 für "vorgegebene Uhrzeit" in Mission
-// die hier angegebene Zeit ist dann der Default Wert der Mission, Schaltet den Lobbyparameter frei um die Zeit vor Missionsstart zu wählen
-// ACHTUNG: Dafür muss die Missionszeit auf 0:00 Uhr gestellt werden
-#define __STARTTIME__ 12
 
 // wenn nicht auskommentiert mit // dann sieht man bei allen spielbaren Einheiten den Atem
 //#define __BREATH_VISIBLE__

@@ -117,40 +117,6 @@
 		class controls {};
 	};
 	
-	class only_pilots {
-	  	idd=-1;
-	  	movingEnable=0;
-	  	duration=12;
-	  	fadein=2;
-	  	name="only_pilots";
-	  	controls[] = {Titel};
-		class Titel : RscStdText {
-			text = "Es ist nur Piloten erlaubt zu fliegen!";
-			colorText[] = Color_GrayDark;
-			sizeEx = TextSize_medium;
-			x = -0.8;
-			y = -0.75;
-			w = 1;
-			h = 1;
-		};
-	};
-	class only_crew {
-	  	idd=-1;
-	  	movingEnable=0;
-	  	duration=12;
-	  	fadein=2;
-	  	name="only_crew";
-	  	controls[] = {Titel};
-		class Titel : RscStdText {
-			text = "Dieser Platz ist Besatzungsmitgliedern vorbehalten!";
-			colorText[] = Color_GrayDark;
-			sizeEx = TextSize_medium;
-			x = -0.8;
-			y = -0.75;
-			w = 1;
-			h = 1;
-		};
-	};
 	class only_qualified {
 	  	idd=-1;
 	  	movingEnable=0;

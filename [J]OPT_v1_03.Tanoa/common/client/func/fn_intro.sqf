@@ -59,7 +59,7 @@ _playerCSAT = [];
 
 _txt = format["<t size='1' align='center'> <img image='opt_a3_core\bilder\opt4_logo.paa' size='5'/>  <br/> 
 Zu dieser Schlacht haben sich zusammengefunden: <br/> 
-<t size='1.5' color='#0000ff'>NATO %1</t> vs <t size='1.5' color='#ff0000'>CSAT %2</t></t><br/><t size='0.8'>", playersNumber west, playersNumber east];
+<t size='1.5' color='#0000ff'>NATO %1</t> vs <t size='1.5' color='#ff0000'>CSAT %2</t></t><br/><t size='0.7'>", playersNumber west, playersNumber east];
 
 _playerNames = [];
 _natoIsMore = [false, true] select (count _playerNATO > count _playerCSAT);

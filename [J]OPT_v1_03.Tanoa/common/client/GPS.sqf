@@ -19,7 +19,7 @@ if (local player) then
 	_all = false;
 
 	#ifdef __SHOW_ALL_UNITS__
-	_all = true;
+		_all = true;
 	#endif
 	
 	//Modus
@@ -76,76 +76,76 @@ if (local player) then
 		_gruppeinheitenwest=[];	
 		_gruppeinheiteneast=[];
 		
-			{
+		{
 			if (side (leader _x) == west) then
 				{	
-				_leadergroupwest pushBack leader _x;
+					_leadergroupwest pushBack leader _x;
 				};					
-			} forEach allGroups;
-				
-			{
+		} forEach allGroups;
+			
+		{
 			if (_x == player) then
 				{
 				[_gruppeinheitenwest,units group _x] call BIS_fnc_arrayPushStack;
 				};
-			} foreach _leadergroupwest;
-			
-			{
+		} foreach _leadergroupwest;
+		
+		{
 			if (side (leader _x) == east) then
-				{	
-				_leadergroupeast pushBack leader _x;
-				};					
-			} forEach allGroups;
-			
-						{
-			if (_x == player) then
 				{
+					_leadergroupeast pushBack leader _x;
+				};					
+		} forEach allGroups;
+		
+		{
+			if (_x == player) then
+			{
 				[_gruppeinheiteneast,units group _x] call BIS_fnc_arrayPushStack;
-				};
-			} foreach _leadergroupeast;
+			};
+		} foreach _leadergroupeast;
 			
 		if (_Modus==0) then
-				{		
-				if (leader group player == leader player) then
-						{
-						[_westplayer,_leadergroupwest] call BIS_fnc_arrayPushStack;
-						[_eastplayer,_leadergroupeast] call BIS_fnc_arrayPushStack;
-
-						[_westplayer,_gruppeinheitenwest] call BIS_fnc_arrayPushStack;
-						[_eastplayer,_gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
-						}
-				else	
-						{						
-						[_westplayer,_leadergroupwest] call BIS_fnc_arrayPushStack;
-						[_eastplayer,_leadergroupeast] call BIS_fnc_arrayPushStack;
-						};
-				};
-				
-		if (_Modus==1) then
-				{		
+		{		
+			if (leader group player == leader player) then
+			{
 				[_westplayer,_leadergroupwest] call BIS_fnc_arrayPushStack;
 				[_eastplayer,_leadergroupeast] call BIS_fnc_arrayPushStack;
-						
+
 				[_westplayer,_gruppeinheitenwest] call BIS_fnc_arrayPushStack;
 				[_eastplayer,_gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
-				};		
+			}
+			else	
+			{						
+				[_westplayer,_leadergroupwest] call BIS_fnc_arrayPushStack;
+				[_eastplayer,_leadergroupeast] call BIS_fnc_arrayPushStack;
+			};
+		};
+				
+		if (_Modus==1) then
+		{		
+			[_westplayer,_leadergroupwest] call BIS_fnc_arrayPushStack;
+			[_eastplayer,_leadergroupeast] call BIS_fnc_arrayPushStack;
+					
+			[_westplayer,_gruppeinheitenwest] call BIS_fnc_arrayPushStack;
+			[_eastplayer,_gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
+		};		
 				
 		if (_Modus==2) then
+		{
+			{
+				if (side _x == west) then
 				{
-					{
-					if (side _x == west) then
-						{
-						_westplayer pushBack _x;
-						};
-					} foreach playableUnits;
-					
-					{
-					if (side _x == east) then
-						{
-						_eastplayer pushBack _x;
-						};
-					} foreach playableUnits;	
-				};					
+					_westplayer pushBack _x;
+				};
+			} foreach playableUnits;
+			
+			{
+				if (side _x == east) then
+				{
+					_eastplayer pushBack _x;
+				};
+			} foreach playableUnits;	
+		};					
 		//systemChat format ["G:%1",_westplayer];
 									
 		if (playerside == west) then
@@ -166,7 +166,32 @@ if (local player) then
 
 						_marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
 						_marker setmarkerdirlocal (getDirVisual (vehicle _obj));
-						_marker setmarkertextlocal format ["%1",_name];
+
+						// Fahrzeuginfo
+						if (vehicle _obj != _obj) then {
+
+							private _vec_name = getText (configFile >> "cfgVehicles" >> typeOf (vehicle _obj) >> "displayName");
+
+							// Spezialfall Drohne
+							if ((vehicle _obj) in allUnitsUAV) then {
+								private _operator = (UAVControl vehicle _obj) select 0;
+
+								// UAV Operator ja/nein
+								if (!isNull _operator) then {
+									_marker setmarkertextlocal format ["%1 (%2)", _vec_name, name _operator];
+								} else {
+									_marker setmarkertextlocal format ["%1 (---)", _vec_name];
+								};
+							} else {
+								_marker setmarkerTextLocal format["%1 (%2)", _vec_name, _name];
+							};
+							
+						} else {
+							if (isPlayer _obj) then {
+								_marker setmarkertextlocal format ["%1", _name];
+							};
+						};
+
 					} 
 					else 
 					{
@@ -175,6 +200,7 @@ if (local player) then
 				};
 			};	
 		};
+
 		if (playerside == east) then
 		{
 			{_x setmarkerposlocal [0,0]} foreach _markere;	
@@ -193,7 +219,32 @@ if (local player) then
 
 						_marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
 						_marker setmarkerdirlocal (getDirVisual (vehicle _obj));
-						_marker setmarkertextlocal format ["%1",_name];
+
+						// Fahrzeuginfo
+						if (vehicle _obj != _obj) then {
+
+							private _vec_name = getText (configFile >> "cfgVehicles" >> typeOf (vehicle _obj) >> "displayName");
+
+							// Spezialfall Drohne
+							if ((vehicle _obj) in allUnitsUAV) then {
+								private _operator = (UAVControl vehicle _obj) select 0;
+
+								// UAV Operator ja/nein
+								if (!isNull _operator) then {
+									_marker setmarkertextlocal format ["%1 (%2)", _vec_name, name _operator];
+								} else {
+									_marker setmarkertextlocal format ["%1 (---)", _vec_name];
+								};
+							} else {
+								_marker setmarkerTextLocal format["%1 (%2)", _vec_name, _name];
+							};
+
+						} else {
+							if (isPlayer _obj) then {
+								_marker setmarkertextlocal format ["%1", _name];
+							};
+						};
+
 					} 
 					else 
 					{

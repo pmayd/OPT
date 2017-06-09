@@ -26,7 +26,9 @@ _this select 7 (hitPoint): Hit point Cfg name
 */
 params ["_unit", "_hitSelection", "_damage", "_source", "_projectile", "_hitPartIndex", "_instigator", "_hitPoint"];
 
-systemChat format["Körperteil: %1 - Schaden: %2 (gesamt: %3)", _this select 1, _this select 2, damage (_this select 0)];
+if (FAR_Debugging) then {
+	systemChat format["Körperteil: %1 - Schaden: %2 (gesamt: %3)", _this select 1, _this select 2, damage (_this select 0)];
+};
 
 /*
 _getTotalDamage = {
@@ -87,7 +89,9 @@ if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1) then{
 		
 	if(_return >= SRS_damageThreshold) then {				//Psycho, Inhalt in einen Framehandler auslagern um mehrfache Auslösung zu verhindern...
 		_return = 0;
-		diag_log format["FAR REVIVE: Schadensgrenzwert überschritten für: %1", name _unit];
+		if (FAR_Debugging) then {
+			diag_log format["FAR REVIVE: Schadensgrenzwert überschritten für: %1", name _unit];
+		};
 
 		if (isNil "opt_addons_var_unconciousHandle" && !isNull _unit && isPlayer _unit) then {
 			opt_addons_var_unconciousHandle = [_unit, _instigator] spawn opt_addons_fnc_Unconcious;
