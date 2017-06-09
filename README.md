@@ -16,6 +16,22 @@ Name: [J]OPT_v1_03_05
 
 ## SITREP
 
+### 2017-06-09
+- Log System überarbeitet: Neuer Serverlog für Punktestand und Endstand, Ziehen von Flaggen
+- Intro Synchronization entfernt, spielt nun wieder zu Beginn
+- Fahrzeugabschusslog nicht mehr MPKilled, wodurch Mehrfachlog ausgelöst wurde für jeden Client
+- Spielerabschusslog jetzt in FAR revive enthalten, dadurch wieder korrekter Log
+- Log aus killed EH entfernt
+- Handle Damage EH in FAR Revive komplett überarbeitet -> Bug in Vanilla, der bei Beinschuss Schaden abnorm hoch setzt. Aktuell wird Gesamtschaden (hitSelection "") ignoriert, so dass nur der Schaden der einzelnen Teile zählt. TODO: TESTEN
+- eigener DamageHandler, der Kopfschüsse mit 1.3 verstärkt, Arm- und Beintreffer mit 1.2, Rest unverändert. TODO: TESTEN
+- Bugfix Schaden in Fahrzeugen wurde nicht auf Spieler übertragen, jetzt wird der Spieler wieder unmächtig und automatisch ausgeladen
+- Bugfix: Manchmal Unmächtigkeit ohne Bleedout Timer. Denke ich habe es behoben
+- Radarfix
+- Uhrzeit Parameter entfernt
+- Garbage Collector wieder eingestellt....
+- GPS Drohnenanzeige korrigiert, statt KI jetzt UAV (operator)
+- Überarbeitung GPS: Spieler in Fahrzeugen werden jetzt mit Fahrzeugnamen angezeigt. TODO: Löse Anzeige bei mehreren Insassen
+
 ### 2017-06-05
 ### Kalle
 - Anpassung der Basen
