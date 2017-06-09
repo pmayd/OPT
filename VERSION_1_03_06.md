@@ -13,3 +13,4 @@
 - Garbage Collector wieder eingestellt....
 - GPS Drohnenanzeige korrigiert, statt KI jetzt UAV (operator)
 - Überarbeitung GPS: Spieler in Fahrzeugen werden jetzt mit Fahrzeugnamen angezeigt. TODO: Löse Anzeige bei mehreren Insassen
+- Umstieg von RscTitle auf DisplayText für Anzeige bei falschem Fahrer/Piloten
