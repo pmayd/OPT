@@ -105,6 +105,17 @@ player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}];
 
 /* EH für das Versetzen der Flaggen im Trainingsmodus */
 if (OPT_TRAINING == 1) then {
+	player createDiaryRecord ["Training", ["Flaggen verschieben", "
+	Im Trainingsmodus kann jeder Spieler die CSAT und NATO Flagge verschieben. Dazu einfach auf der Karte ALT + Linksklick auf die Flaggenmarkierung. Unten links erscheint ein Text, wenn die Aktion erfolgreich war. Wurde die Flagge ausgewählt, so kann mit erneutem ALT + Linksklick die neue Position gewählt werden.
+	"]];
+
+	player createDiaryRecord ["Training", ["Zeus", "
+	Im Trainingsmodus hat jeder Gruppenführer Zugriff auf Zeus und kann so das Training für seine Gruppe gestalten.
+	"]];
+
+	player createDiaryRecord ["Training", ["Teleport", "
+	Im Trainingsmodus kann jeder Spieler den Teleport benutzen. Dieser findet sich im Mausradmenü unter Teleport. Einfach auf der Karte den gewünschten Zielort auswählen.
+	"]];
 	// use stackedEH, cannot override default behavior
 	["OPT_MOVE_FLAG", "onMapSingleClick", {
 		/*
