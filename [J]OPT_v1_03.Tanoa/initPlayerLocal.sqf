@@ -103,6 +103,46 @@ player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}];
 
 //player addEventHandler ["HandleRating", {0}];
 
+/* EH für das Versetzen der Flaggen im Trainingsmodus */
+if (OPT_TRAINING == 1) then {
+	// use stackedEH, cannot override default behavior
+	["OPT_MOVE_FLAG", "onMapSingleClick", {
+		/*
+	    units: Array - leader selected units, same as groupSelectedUnits (same as _units param)
+	    pos: Array - world Position3D of the click in format [x,y,0] (same as _pos param)
+	    alt: Boolean - true if Alt key was pressed (same as _alt param)
+	    shift: Boolean - true if Shift key was pressed (same as _shift param)
+		*/
+
+		// exit if no alt key was pressed
+		if (!_alt) exitWith {};
+
+		// if alt key was pressed -> was a flag chosen or should a flag be moved?
+		// is there a flag that should be moved?
+		_flag = objNull;
+		{
+			if (_x getVariable ["opt_var_flag_moveFlag", false]) exitWith {_flag = _x};
+		} foreach opt_csat_flags + opt_nato_flags;
+
+		if (_flag isEqualTo objNull) then {
+
+			// check for flag nearby
+			_obj = nearestObjects [_pos, ["FLAG_CSAT_F","FLAG_NATO_F"], 50];
+			if (count _obj == 0) exitWith {};
+
+			_obj = _obj select 0;
+			_obj setVariable ["opt_var_flag_moveFlag", true];
+			systemChat "Flagge kann verschoben werden. Platzieren mit erneutem ALT + Linksklick";
+		} else {
+			_flag setpos _pos;
+			_flag setVariable ["opt_var_flag_moveFlag", false];
+			_marker = _flag getVariable "opt_var_flag_marker";
+			_marker setMarkerPos _pos; // global new marker
+		};
+		
+	}] call BIS_fnc_addStackedEventHandler;
+};
+
 // EH für Minensperre
 #ifdef __MINE_FREE_FLAG__
 	if (OPT_MINE_FREE_FLAG == 1) then {

@@ -24,6 +24,7 @@ opt_csat_flags = [];
 			_markerName = format["marker_%1_%2", _x, _forEachIndex];
 			_marker = createMarkerLocal [_markerName, getPos _x];
 			_marker setMarkerTypeLocal "flag_CSAT";
+			_x setVariable ["opt_var_flag_marker", _marker];
 		#endif
 
 	};
@@ -40,6 +41,7 @@ opt_nato_flags = [];
 			_markerName = format["marker_%1_%2", _x, _forEachIndex];
 			_marker = createMarkerLocal [_markerName, getPos _x];
 			_marker setMarkerTypeLocal "flag_NATO";
+			_x setVariable ["opt_var_flag_marker", _marker];
 		#endif
 	};
 

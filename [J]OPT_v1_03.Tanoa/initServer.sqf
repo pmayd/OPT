@@ -20,6 +20,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	false
 }];
 
+
 // Schutzwall um die Basis für Arti- und Mörserbeschuss
 // nur auf dem Server, da createVehicle global funktioniert
 ["ProtectionZone_Invisible_F", getMarkerPos "respawn_east", 150, 20] spawn opt_fnc_wallChain;
