@@ -16,6 +16,10 @@ Name: [J]OPT_v1_03_06
 
 ## SITREP
 
+### 2017-06-12
+- neues Fahnenverschiebeskript im Trainingsmodus, erlaubt das Verschieben der Flaggen mit ALT + Linksklick auf der Karte
+- neue Tagebucheinträge für den Trainingsmodus
+
 ### 2017-06-09
 - Log System überarbeitet: Neuer Serverlog für Punktestand und Endstand, Ziehen von Flaggen
 - Intro Synchronization entfernt, spielt nun wieder zu Beginn
