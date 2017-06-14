@@ -71,6 +71,7 @@ if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1) then{
 		};
 
 		// Gesamtschaden 
+		/*
 		case "": {
 			// falls in Fahrzeug -> übernehme damage!
 			if (vehicle _unit != _unit) then {
@@ -79,10 +80,11 @@ if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1) then{
 				_return = 0; // Gesamtschaden ignorieren -> one shot kill bug
 			};
 		};
+		*/
 
 		// alle anderen Teile
 		default {
-			_return = _damage
+			_return = _damage;
 		};
 
 	};

@@ -16,3 +16,4 @@
 - Umstieg von RscTitle auf DisplayText für Anzeige bei falschem Fahrer/Piloten
 - Neues Flaggenverschiebeskript im Trainingsmodus: Ab sofort können beide Flaggen durch ALT + Linksklick verschoben werden.
 - neue NATO Basis von LORD
+- neue Gebäude bei Flagge im Sektor Red Spring surface mine

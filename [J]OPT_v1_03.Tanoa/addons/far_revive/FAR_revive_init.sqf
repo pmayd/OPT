@@ -34,7 +34,7 @@ FAR_ReviveMode = 3;
 
 //------------------------------------------//
 FAR_isDragging = false;
-FAR_Debugging = true;
+FAR_Debugging = false;
 tcb_draw3D_reset_done = false;
 opt_far_dm_running = false;
 opt_far_score_delay = false;
