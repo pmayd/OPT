@@ -55,7 +55,7 @@ _playerCSAT = [];
 	} else {
 		_playerCSAT pushBack (name _x);
 	};
-} foreach (allPlayers -  (entities "HeadlessClient_F"));
+} foreach (playableUnits -  (entities "HeadlessClient_F"));
 
 _txt = format["<t size='1' align='center'> <img image='opt_a3_core\bilder\opt4_logo.paa' size='5'/>  <br/> 
 Zu dieser Schlacht haben sich zusammengefunden: <br/> 
