@@ -127,7 +127,7 @@ class Params {
 		title 		= "Für HL alle Einheiten auf Karte markieren";
 		values[] 	= {0,1};
 		texts[] 	= {"aus","an"};
-		default 	= 0;
+		default 	= 1;
 	};
 	#endif
 	class OPT_FREEZE_TIME {

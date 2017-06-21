@@ -19,14 +19,16 @@ if (local player) then
 	_all = false;
 
 	#ifdef __SHOW_ALL_UNITS__
-		_all = true;
+		if (OPT_SHOW_ALL_UNITS == 1) then {
+			_all = true;
+		};
 	#endif
 	
 	//Modus
 	//_all=Schalter;
 	//if ((player isKindOf "OPT_NATO_Gruppenfuehrer_T") or (player isKindOf "OPT_CSAT_Gruppenfuehrer_T")) then {_Modus=1;};
 	if (((player isKindOf "OPT_NATO_Offizier_T") or (player isKindOf "OPT_CSAT_Offizier_T")) and _all) then {_Modus=2;};
-	
+
 	_markerw = [];
 	_markere = [];
 
@@ -78,24 +80,22 @@ if (local player) then
 		
 		{
 			if (side (leader _x) == west) then
-				{	
-					_leadergroupwest pushBack leader _x;
-				};					
+			{	
+				_leadergroupwest pushBack leader _x;
+			};	
+
+			if (side (leader _x) == east) then
+			{
+				_leadergroupeast pushBack leader _x;
+			};					
 		} forEach allGroups;
 			
 		{
 			if (_x == player) then
-				{
+			{
 				[_gruppeinheitenwest,units group _x] call BIS_fnc_arrayPushStack;
-				};
+			};
 		} foreach _leadergroupwest;
-		
-		{
-			if (side (leader _x) == east) then
-				{
-					_leadergroupeast pushBack leader _x;
-				};					
-		} forEach allGroups;
 		
 		{
 			if (_x == player) then
@@ -137,21 +137,20 @@ if (local player) then
 				{
 					_westplayer pushBack _x;
 				};
-			} foreach playableUnits;
 			
-			{
 				if (side _x == east) then
 				{
 					_eastplayer pushBack _x;
 				};
-			} foreach playableUnits;	
+			} foreach allUnits;	// Drohnen für HL sichtbar machen
 		};					
 		//systemChat format ["G:%1",_westplayer];
 									
 		if (playerside == west) then
 		{
 			{_x setmarkerposlocal [0,0]} foreach _markerw;
-			_markerplayer setmarkerposlocal (getPosATLVisual (vehicle player));												
+			_markerplayer setmarkerposlocal (getPosATLVisual (vehicle player));		
+
 			if ((count _westplayer) > 0) then
 			{
 				for "_i" from 1 to (count _westplayer) do
@@ -189,9 +188,11 @@ if (local player) then
 						} else {
 							if (isPlayer _obj) then {
 								_marker setmarkertextlocal format ["%1", _name];
+							} else {
+								_marker setmarkertextlocal "";
+								_marker setMarkerPosLocal [0,0];
 							};
 						};
-
 					} 
 					else 
 					{
@@ -242,6 +243,9 @@ if (local player) then
 						} else {
 							if (isPlayer _obj) then {
 								_marker setmarkertextlocal format ["%1", _name];
+							} else {
+								_marker setmarkertextlocal "";
+								_marker setMarkerPosLocal [0,0];
 							};
 						};
 
