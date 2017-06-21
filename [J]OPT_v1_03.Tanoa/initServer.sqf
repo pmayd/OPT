@@ -77,9 +77,8 @@ addMissionEventHandler ["HandleDisconnect", {
 	//[] spawn compileFinal preprocessFileLineNumbers "addons\opt3_sidemissions\sm3_createTrucks.sqf";
 	
 	// EH für alle im Editor gesetzten Fahrzeuge: loggt Zerstörung
-
 	{
-		_x addMPEventHandler ["MPkilled", {
+		_x addMPEventHandler ["killed", {
 			(_this select [0,2]) call tcb_fnc_handleDeadVehicle;
 		}];
 	} forEach vehicles;

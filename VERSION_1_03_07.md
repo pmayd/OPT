@@ -4,3 +4,4 @@
 - onPlayerKilled.sqf entfernt jetzt auch Funkgeräte (LR und SR) aus dem Inventar
 - FAR Revive angepasst -> Nach Ziehen wird nun der down-marker aktualisiert
 - Funk nach Stabilisieren wieder raus...
+- MPKilled überall gelöscht, Fahrzeuglogger jetzt hoffentlich nur noch 1 mal
