@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=114;
+		nextID=139;
 	};
 	class Camera
 	{
-		pos[]={11793.323,66.49926,3154.219};
-		dir[]={-0.5910573,-0.24543838,-0.76840276};
-		up[]={-0.14965227,0.96940947,-0.19455382};
-		aside[]={-0.79264915,3.3767719e-007,0.60970628};
+		pos[]={2268.2725,57.848282,13330.342};
+		dir[]={-0.54469681,-0.53264767,0.64776748};
+		up[]={-0.3428081,0.84633529,0.40767613};
+		aside[]={0.7653743,-2.1629967e-007,0.64359289};
 	};
 };
 binarizationWanted=0;
@@ -32611,6 +32611,7 @@ class Mission
 			};
 			id=5373;
 			type="Flag_CSAT_F";
+			atlOffset=4.7683716e-007;
 		};
 		class Item11
 		{
@@ -32630,6 +32631,7 @@ class Mission
 			};
 			id=5374;
 			type="Flag_NATO_F";
+			atlOffset=9.5367432e-007;
 		};
 		class Item12
 		{
@@ -35382,6 +35384,7 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -35390,7 +35393,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390946;
+					atlOffset=0.14878201;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35620,7 +35623,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3513131;
+			atlOffset=2.3484077;
 		};
 		class Item17
 		{
@@ -36180,8 +36183,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2201.6675,14.275304,13402.208};
-						angles[]={0,2.5556638,0};
+						position[]={2208.7825,14.275303,13398.358};
+						angles[]={0,4.0178757,0};
 					};
 					side="Empty";
 					flags=4;
@@ -36193,7 +36196,6 @@ class Mission
 					};
 					id=5565;
 					type="OPT_B_CargoNet_01_ammo_F";
-					atlOffset=9.5367432e-007;
 				};
 				class Item23
 				{
@@ -44256,6 +44258,7 @@ class Mission
 							};
 							id=5767;
 							type="OPT_CSAT_Offizier_T";
+							atlOffset=4.7683716e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -44304,6 +44307,7 @@ class Mission
 					{
 					};
 					id=5765;
+					atlOffset=4.7683716e-007;
 				};
 				class Item1
 				{
@@ -45696,7 +45700,7 @@ class Mission
 							};
 							id=5793;
 							type="OPT_CSAT_Pionier_T";
-							atlOffset=-0.024999619;
+							atlOffset=-0.024999142;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -45758,7 +45762,7 @@ class Mission
 							};
 							id=5794;
 							type="OPT_CSAT_Grenadier_T";
-							atlOffset=-0.024999619;
+							atlOffset=-0.024999142;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -45946,7 +45950,7 @@ class Mission
 							};
 							id=5797;
 							type="OPT_CSAT_Gruppenfuehrer_T";
-							atlOffset=-0.025000095;
+							atlOffset=-0.024999619;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46070,7 +46074,7 @@ class Mission
 							};
 							id=5799;
 							type="OPT_CSAT_LMG_Schuetze_T";
-							atlOffset=-0.024999619;
+							atlOffset=-0.024999142;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46132,7 +46136,7 @@ class Mission
 							};
 							id=5800;
 							type="OPT_CSAT_MG_Schuetze_T";
-							atlOffset=-0.025424004;
+							atlOffset=-0.025423527;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46195,7 +46199,7 @@ class Mission
 							};
 							id=5848;
 							type="OPT_CSAT_Sanitaeter_T";
-							atlOffset=-0.025000095;
+							atlOffset=-0.024999619;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46353,6 +46357,7 @@ class Mission
 							};
 							id=5803;
 							type="OPT_CSAT_Grenadier_T";
+							atlOffset=4.7683716e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46496,6 +46501,7 @@ class Mission
 							};
 							id=5805;
 							type="OPT_CSAT_Grenadier_T";
+							atlOffset=4.7683716e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46558,6 +46564,7 @@ class Mission
 							};
 							id=5806;
 							type="OPT_CSAT_Sanitaeter_T";
+							atlOffset=4.7683716e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46619,6 +46626,7 @@ class Mission
 							};
 							id=5807;
 							type="OPT_CSAT_Soldat_T";
+							atlOffset=4.7683716e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -48739,7 +48747,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={11709.585,4.5668631,3034.5254};
-						angles[]={-0,0.62311745,0};
+						angles[]={0,0.62311745,0};
 					};
 					side="East";
 					flags=4;
@@ -48752,7 +48760,7 @@ class Mission
 					};
 					id=5839;
 					type="OPT_CSAT_Besatzungsmitglied_T";
-					atlOffset=-0.12457609;
+					atlOffset=-0.12457561;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -48802,7 +48810,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={11710.826,4.5668631,3033.6294};
-						angles[]={-0,0.93806213,0};
+						angles[]={0,0.93806213,0};
 					};
 					side="East";
 					flags=4;
@@ -48816,7 +48824,7 @@ class Mission
 					};
 					id=5840;
 					type="OPT_CSAT_Besatzungsmitglied_T";
-					atlOffset=-0.12457609;
+					atlOffset=-0.12457561;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -48866,7 +48874,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={11711.906,4.5668631,3032.3083};
-						angles[]={-0,0.7703709,0};
+						angles[]={0,0.7703709,0};
 					};
 					side="East";
 					flags=4;
@@ -48879,7 +48887,7 @@ class Mission
 					};
 					id=5841;
 					type="OPT_CSAT_Besatzungsmitglied_T";
-					atlOffset=-0.12457609;
+					atlOffset=-0.12457561;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -48942,7 +48950,7 @@ class Mission
 					};
 					id=5842;
 					type="OPT_CSAT_Besatzungsmitglied_T";
-					atlOffset=-0.10405016;
+					atlOffset=-0.10404968;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -49004,7 +49012,7 @@ class Mission
 					};
 					id=5843;
 					type="OPT_CSAT_Pionier_T";
-					atlOffset=-0.066366673;
+					atlOffset=-0.066366196;
 					class CustomAttributes
 					{
 						class Attribute0

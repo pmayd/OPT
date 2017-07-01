@@ -26,7 +26,7 @@ diag_log "---- OPT Scoreboard (other means special operations like revive, flag 
 	_diff = _score - (_inf+_soft+_tank+_air);
 	_place = (_forEachIndex + 1);
 	
-	_side = switch (playerSide) do {
+	_side = switch (side _p) do {
 		case (west) : {"Nato"};
 		case (west) : {"Csat"};
 		default {"unknown"};
