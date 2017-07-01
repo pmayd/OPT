@@ -61,7 +61,7 @@ R3F_LOG_CFG_unlock_objects_timer = 30;
  * Define if movable objects with no gravity simulation can be set in height over the ground (no ground contact).
  * The no gravity objects corresponds to most of decoration and constructions items.
  */
-R3F_LOG_CFG_no_gravity_objects_can_be_set_in_height_over_ground = true;
+R3F_LOG_CFG_no_gravity_objects_can_be_set_in_height_over_ground = false;	//testweise mal ausgemacht
 
 /**
  * LANGUAGE
@@ -121,7 +121,7 @@ R3F_LOG_CFG_string_condition_allow_logistics_on_this_client = "true";
  * "alive officer && taskState task1 == ""Succeeded"""
  * To allow the creation factory to everyone, just set the condition to "true".
  */
-R3F_LOG_CFG_string_condition_allow_creation_factory_on_this_client = "true";
+R3F_LOG_CFG_string_condition_allow_creation_factory_on_this_client = "false";		//von true auf false - factory haben wir nicht
 
 /*
  ********************************************************************************************
@@ -202,51 +202,71 @@ R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
  // e.g. : ["MyTransporterClassName1", itsCapacity], ["MyTransporterClassName2", itsCapacity]
 R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 [
-    ["OPT_B_Quadbike_01_F",15],							// Quadbike		
-	["OPT_O_T_Quadbike_01_ghex_F",15],					// Quadbike	
-	["OPT_B_G_Offroad_01_F", 30],						// Pickup
-	["OPT_B_G_Offroad_01_armed_F", 30],					// Pickup HMG
-	["OPT_B_T_LSV_01_unarmed_F",30], 					// Prowler unarmed
-	["OPT_B_T_LSV_01_armed_F",30],                      // Prowler armed
-	["OPT_O_T_LSV_02_unarmed_F",30], 					// Quilin unarmed
-	["OPT_O_T_LSV_02_armed_F",30],						// Quilin armed
-	["OPT_B_MRAP_03_F", 30],							// Strider
-	["OPT_B_MRAP_03_hmg_F", 30],						// Strider HMG
-	["OPT_B_MRAP_03_gmg_F", 30],						// Strider GMG
-	["OPT_B_MRAP_01_F", 30],							// Hunter
-	["OPT_B_MRAP_01_hmg_F", 30],						// Hunter HMG
-	["OPT_B_MRAP_01_gmg_F", 30],						// Hunter GMG
+// NATO Vehicles
+    ["OPT_B_Quadbike_01_F", 15],							// Quadbike	- checken!
+	["OPT_B_G_Offroad_01_F", 30],						// Pickup - grad nich drin!
+	["OPT_B_G_Offroad_01_armed_F", 30],					// Pickup HMG - grad nich drin!
+	["OPT_B_T_LSV_01_unarmed_F", 30], 					// Prowler unarmed
+	["OPT_B_T_LSV_01_armed_F", 30],                      // Prowler armed
+	["OPT_B_MRAP_03_F", 30],								// Strider - grad nich drin!
+	["OPT_B_MRAP_03_hmg_F", 30],							// Strider HMG - grad nich drin!
+	["OPT_B_MRAP_03_gmg_F", 30],							// Strider GMG
+	["OPT_B_MRAP_01_F", 30],								// Hunter
+	["OPT_B_MRAP_01_hmg_F", 30],							// Hunter HMG
+	["OPT_B_MRAP_01_gmg_F", 30],							// Hunter GMG
 	["OPT_B_Truck_01_covered_F", 60], 					// HEMTT Inf-Transport
 	["OPT_B_Truck_01_transport_F", 100],					// HEMTT Logistik - hinzugefügt
-	["OPT_B_APC_Wheeled_01_cannon_F", 30],				// AMV-7 Marshall
-	["OPT_B_APC_Wheeled_01_cannon_light_F", 30],		// AMV-7 Marshall (Leicht)
-	["OPT_B_UGV_01_F", 30],								// UGV Stomper	
+// NATO Armored	
+	["OPT_B_APC_Wheeled_01_cannon_F", 60],				// AMV-7 Marshall
+	["OPT_B_APC_Wheeled_01_cannon_light_F", 60],			// AMV-7 Marshall (Leicht)
 	["OPT_B_MBT_01_cannon_F", 30],						// M2A4 Slammer
-	["OPT_B_MBT_01_TUSK_F", 30],						// M2A4 SlammerUp
-	["OPT_B_APC_Tracked_01_rcws_F", 30],				// IFV-6c Panther	
-	["OPT_B_APC_tracked_03_cannon_F", 30],				// FV-720 Mora	
-	["OPT_O_G_Offroad_01_F", 30],						// Pickup
-	["OPT_O_G_Offroad_01_armed_F", 30],					// Pickup HMG
-	["OPT_O_MRAP_02_F", 30],							// Ifrit
-	["OPT_O_MRAP_02_hmg_F", 30],						// Ifrit HMG
-	["OPT_O_MRAP_02_gmg_F", 30],						// Ifrit GMG
-	["OPT_O_Truck_03_covered_F", 60],					// Tempest Transport	
-	["OPT_O_T_Truck_03_transport_ghex_F",100],			// Tempest Logistik - hinzugefügt
-	["OPT_O_APC_Wheeled_03_cannon_F", 30],				// AFV-4 Gorgon
-	["OPT_O_APC_Wheeled_03_cannon_light_F", 30],		// AFV-4 Gorgon (Leicht)
-	["OPT_O_APC_Wheeled_02_rcws_F", 30],				// MSE-3 Marid
-	["OPT_O_UGV_01_F", 30],								// UGV Saif	
-	["OPT_O_APC_Tracked_02_cannon_F", 30],				// BTR-K Kamysh (Titan)
-	["OPT_O_APC_Tracked_02_cannon_light_F", 30],		// BTR-K Kamysh	
-	["OPT_B_Heli_Light_01_F",30],						// MH-9 Hummingbird
-	["OPT_B_Heli_Transport_01_F",30],					// UH-80 Ghosthawk
-	["OPT_B_Heli_Transport_02_F",30],					// CH-49 Mohawk (Transport+Lift)
-	["OPT_B_Heli_Transport_03_unarmed_F",30],			// CH-67 Huron unarmed (Transport+Lift)
-	["OPT_B_Heli_Transport_03_F",30],					// CH-67 Huron armed (Transport+Lift)
-	["OPT_O_Heli_Light_03_unarmed_F",30],				// WY-55 Hellcat,70000
-	["OPT_O_Heli_Light_03_unarmed_green_F",30],			// WY-55 Hellcat,70000
-	["OPT_O_Heli_Light_02_unarmed_F",30],				// PO-30 Orca,100000
-	["OPT_O_Heli_Light_02_unarmed_black_F",30]		// PO-30 Orca,100000
+	["OPT_B_MBT_01_TUSK_F", 30],							// M2A4 SlammerUp
+	["OPT_B_APC_Tracked_01_rcws_F", 60],					// IFV-6c Panther	von 30
+	["OPT_B_APC_tracked_03_cannon_F", 60],				// FV-720 Mora	 von 30
+// NATO Helicopters	
+	["OPT_B_Heli_Light_01_F", 30],						// MH-9 Hummingbird
+	["OPT_B_Heli_Transport_01_F", 60],					// UH-80 Ghosthawk   von 30
+	["OPT_B_Heli_Transport_02_F", 60],					// CH-49 Mohawk (Transport+Lift)    von 30
+	["OPT_B_Heli_Transport_03_unarmed_F", 60],			// CH-67 Huron unarmed (Transport+Lift)     von 30
+	["OPT_B_Heli_Transport_03_F", 60],					// CH-67 Huron armed (Transport+Lift)       von 30
+	["OPT_B_T_VTOL_01_infantry_F", 60],					// Blackfish (Inf-Transport)   - hinzugefügt
+// NATO ships
+	["OPT_B_Boat_Transport_01_F", 30],					// Assault Boat     - hinzugefügt
+	["OPT_B_Boat_Armed_01_minigun_F", 30],				// Speedboat Minigun    - hinzugefügt
+	["OPT_B_C_Boat_Transport_02_F", 30],					// Rhib unbewaffnet      - hinzugefügt
+// NATO supplies/drohnen	
+	["OPT_B_UGV_01_F", 60],								// UGV Stomper	von 30
+// CSAT Vehicles	
+	["OPT_O_T_Quadbike_01_ghex_F", 15],					// Quadbike	- checken!	
+	["OPT_O_T_LSV_02_unarmed_F", 30], 					// Quilin unarmed
+	["OPT_O_T_LSV_02_armed_F", 30],						// Quilin armed
+	["OPT_O_G_Offroad_01_F", 30],						// Pickup  - grad nich drin!
+	["OPT_O_G_Offroad_01_armed_F", 30],					// Pickup HMG  - grad nich drin!
+	["OPT_O_T_MRAP_02_ghex_F", 30],						// Ifrit - tropentarn hinzugefügt
+	["OPT_O_T_MRAP_02_hmg_ghex_F", 30],					// Ifrit HMG  - tropentarn hinzugefügt
+	["OPT_O_T_MRAP_02_gmg_ghex_F", 30],					// Ifrit GMG  - tropentarn hinzugefügt
+	["OPT_O_T_Truck_03_covered_ghex_F", 60],				// Tempest Transport	
+	["OPT_O_T_Truck_03_transport_ghex_F", 100],			// Tempest Logistik - hinzugefügt
+// CSAT Armored
+	["OPT_O_APC_Wheeled_03_cannon_F", 60],				// AFV-4 Gorgon
+	["OPT_O_APC_Wheeled_03_cannon_light_F", 60],			// AFV-4 Gorgon (Leicht)
+	["OPT_O_T_APC_Wheeled_02_rcws_ghex_F", 30],			// MSE-3 Marid  - tropentarn hinzugefügt
+	["OPT_O_T_APC_Tracked_02_cannon_ghex_F", 60],		// BTR-K Kamysh (Titan)
+	["OPT_O_T_APC_Tracked_02_cannon_ghex_light_F", 60],	// BTR-K Kamysh	
+	["OPT_O_T_MBT_02_cannon_ghex_F", 30],				// T-100  - hinzugefügt
+// CSAT Helicopter
+	["OPT_O_Heli_Light_03_unarmed_F", 30],				// WY-55 Hellcat,70000
+	["OPT_O_Heli_Light_03_unarmed_green_F", 30],			// WY-55 Hellcat,70000
+	["OPT_O_Heli_Light_02_unarmed_F", 60],				// PO-30 Orca,100000
+	["OPT_O_Heli_Light_02_unarmed_black_F", 60],			// PO-30 Orca,100000
+	["OPT_O_Heli_Transport_04_covered_black_F", 60], 	// Mi-290 Taru (Transport),110000
+	["OPT_O_T_VTOL_02_infantry_unarmed_F", 60],			// Y-32 Xi'an (Inf-Transport), 180000
+// CSAT Supplies	
+	["OPT_O_T_UGV_01_ghex_F", 60],						// UGV Saif	
+// CSAT Ships
+	["OPT_O_Boat_Transport_01_F", 30],						// Assault Boat,500
+	["OPT_O_Boat_Armed_01_hmg_F", 30],					// Speedboat HMG,14000
+	["OPT_O_C_Boat_Transport_02_F", 30]				// rhib unbewaffnet,7000	
 ];
 
 /**
@@ -255,68 +275,40 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
  */
  // e.g. : ["MyTransportableObjectClassName1", itsCost], ["MyTransportableObjectClassName2", itsCost]
 R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
-[														
-	/*["Land_BagFence_Round_F", 5],						// runde sandsackecke!
-	["Land_BagFence_Long_F", 10],						// lange sandsackbarriere
-	["Land_BagFence_Short_F", 5],						// kurze sandsackbarriere
-	["Land_HBarrier_5_F", 35],							// H-barrier 5 blocks
-	["Land_HBarrierBig_F", 40],							// H-barrier 4 blocks
-	["Land_HBarrier_3_F", 25],							// H-Barrier 3 blocks
-	["Land_Razorwire_F", 5],							// Stacheldraht
-	["Land_CncBarrier_F", 30],							// beton barriere
-	["Land_CncBarrierMedium_F", 30],					// beton barriere (mittel)
-	["Land_CncBarrierMedium4_F", 40],					// beton barriere (mittel - lang)
-	["Land_Mil_WiredFence_F", 5],						// maschendrahtzaun
-	["CamoNet_BLUFOR_big_Curator_F", 5],				// Camonet zum testen!	*/
-	["OPT_B_supplyCrate_F", 30],						// Transportkiste (leer)													
-	["OPT_Box_NATO_Ammo_F", 30],          				// Munitionskiste
-  ["OPT_Box_NATO_Grenades_F", 30],  					// Explosivkiste
-  ["OPT_Box_NATO_WpsSpecial_F", 30],					// Raketenkiste
-	["OPT_Box_NATO_WpsLaunch_F", 30],					// HAT-Kiste
-	["OPT_B_Slingload_01_Fuel_F", 100],     			// Fuelcontainer
-	["OPT_B_Slingload_01_Repair_F",	100],       		// Reparaturcontainer
-  ["OPT_B_Slingload_01_Ammo_F", 100],					// Munitionscontainer - von 110 runtergesetzt damit es in lkw passt
-  ["OPT_B_Slingload_01_Medevac_F", 100],				// Lazarettcontainer															
-	["OPT_O_supplyCrate_F", 30],						// Transportkiste (leer)
-	["OPT_Box_East_Ammo_F", 30],         				// Munitionskiste
-  ["OPT_Box_East_Grenades_F", 30],     				// Explosivkiste
-  ["OPT_Box_East_WpsSpecial_F", 30],   				// AT Raketenkiste
-  ["OPT_Box_NATO_WpsSpecial_AT2_F", 30],			// AT Raketenkiste
-	["OPT_Box_East_WpsLaunch_F", 30],					// HAT-Kiste
-  ["OPT_Land_Pod_Heli_Transport_04_fuel_F", 100],		// Fuelcontainer
-  ["OPT_Land_Pod_Heli_Transport_04_ammo_F", 100],		// Munitionscontainer - von 110 runtergesetzt damit es in lkw passt
-  ["OPT_Land_Pod_Heli_Transport_04_repair_F", 100],	// Reparaturcontainer
-	["OPT_Land_Pod_Heli_Transport_04_medevac_F", 100],	// Lazarettcontainer
-	["OPT_O_supplyCrate_F",	30],						// Transportkiste
-	["OPT_FlexibleTank_01_sand_F", 30],					// Treibstoff-Fass
-	["OPT_FlexibleTank_01_forest_F", 30],				// Treibstoff-Fass
-	["OPT_Box_NATO_WpsSpecial_Diver_F", 30],			// Taucherkiste
-	["OPT_Box_East_WpsSpecial_Diver_F",	30],			// Taucherkiste
-	["OPT_Box_NATO_WpsSpecial_AT_F", 30],				// PCML Raketenkiste
-	["OPT_Box_NATO_WpsSpecial_AA_F", 30],				// AA Raketenkiste
-	["OPT_Box_East_WpsSpecial_AA_F", 30],				// AA Raketenkiste
-	["OPT_B_Boat_Armed_01_minigun_F", 100],				// Speedboat Minigun
-	["OPT_O_Boat_Armed_01_hmg_F", 100],					// Speedboat HMG
-	["OPT_B_Boat_Transport_01_F", 50],					// Assault Boat
-	["OPT_O_Boat_Transport_01_F", 50],					// Assault Boat
-	["OPT_B_SDV_01_F", 80],								// SDV
-	["OPT_O_SDV_01_F", 80],								// SDV
-	["OPT_B_Mortar_01_F", 15],				// Mk6 Mortar
-	["OPT_O_Mortar_01_F",15],				// Mk6 Mortar
-	["OPT_B_HMG_01_F",15],					// Mk30 HMG .50
-	["OPT_O_HMG_01_F",15],					// Mk30 HMG .50	
-	["OPT_B_HMG_01_high_F",15],				// Mk30 HMG .50 (Raised)
-	["OPT_O_HMG_01_high_F",15],				// Mk30 HMG .50 (Raised)
-	["OPT_B_GMG_01_F",15],					// Mk32 GMG 20 mm
-	["OPT_O_GMG_01_F",15],	 				// Mk32 GMG 20 mm
-	["OPT_B_GMG_01_high_F",15],				// Mk32 GMG 20 mm (Raised)
-	["OPT_O_GMG_01_high_F",15],				// Mk32 GMG 20 mm (Raised)
-	["OPT_B_static_AA_F",15],				// Static Titan Launcher (AA)
-	["OPT_O_static_AA_F",15],				// Static Titan Launcher (AA)
-	["OPT_B_static_AT_F",15],				// Static Titan Launcher (AT)
-	["OPT_O_static_AT_F",15],				// Static Titan Launcher (AT)	
-	["OPT_Land_Pod_Heli_Transport_04_repair_radar_F", 100], // Radar Container CSAT
-	["OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", 100] // Radar Container NATO
+[	
+// NATO supplies													
+	["OPT_B_supplyCrate_F", 15],								// Transportkiste (leer)	+												
+	["OPT_Box_NATO_Ammo_F", 30],          					// Munitionskiste	+
+	["OPT_Box_NATO_Grenades_F", 30],  						// Explosivkiste	+
+	["OPT_Box_NATO_WpsSpecial_AT2_F", 30],					// Raketenkiste		RPG42 +
+	["OPT_Box_NATO_WpsSpecial_AA_F", 30],					// Raketenkiste		AA +
+	["OPT_Box_NATO_WpsSpecial_Diver_F", 30],				// Taucherkiste,5000	
+	["OPT_B_Slingload_01_Fuel_F", 100],     					// Fuelcontainer  +
+	["OPT_B_Slingload_01_Repair_F", 100],       				// Reparaturcontainer +
+	["OPT_B_Slingload_01_Ammo_F", 100],						// Munitionscontainer - von 110 runtergesetzt damit es in lkw passt
+	["OPT_B_Slingload_01_Medevac_F", 100],					// Lazarettcontainer	+														
+	["OPT_B_Slingload_01_Repair_radar_F", 100],				// Radarcontainer +														
+	["OPT_Box_NATO_WpsSpecial_Diver_F", 30],					// Taucherkiste
+// NATO ships
+	["OPT_B_Boat_Transport_01_F", 30],					// Assault Boat     - hinzugefügt
+	["OPT_B_C_Boat_Transport_02_F", 30],					// Rhib unbewaffnet      - hinzugefügt
+// CSAT supplies
+	["OPT_O_supplyCrate_F", 15],								// Transportkiste (leer)
+	["OPT_Box_East_Ammo_F", 30],         					// Munitionskiste
+	["OPT_Box_East_Grenades_F", 30],     					// Explosivkiste
+	["OPT_Box_East_WpsSpecial_F", 30],   					// AT Raketenkiste
+	["OPT_Box_East_WpsSpecial_AA_F", 30],					// AA Raketenkiste
+	["OPT_Box_East_WpsSpecial_Diver_F", 30],					// Taucherkiste
+	["OPT_Land_Pod_Heli_Transport_04_fuel_F", 100],			// Fuelcontainer
+	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", 100],	// Fuelcontainer (schwarz)
+   	["OPT_Land_Pod_Heli_Transport_04_ammo_F", 100],			// Munitionscontainer
+	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F", 100],	// Munitionscontainer (Schwarz)
+   	["OPT_Land_Pod_Heli_Transport_04_repair_F", 100],		// Reparaturcontainer
+	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", 100],	// Repcontainer schwarz
+	["OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", 100],	// Radar Container
+// CSAT Ships
+	["OPT_O_Boat_Transport_01_F", 30],						// Assault Boat,500
+	["OPT_O_C_Boat_Transport_02_F", 30]				// rhib unbewaffnet,7000	
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -327,65 +319,58 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
  // e.g. : "MyMovableObjectClassName1", "MyMovableObjectClassName2"
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [											
-	"OPT_Box_NATO_Ammo_F",		        // Munitionskiste
-    "OPT_Box_NATO_Grenades_F",		  	// Explosivkiste
-  	"OPT_Box_NATO_WpsSpecial_F",		// Raketenkiste
-	"OPT_Box_NATO_WpsSpecial_AT_F",		// PCML Raketenkiste
-	"OPT_Box_NATO_WpsSpecial_AA_F",		// AA Raketenkiste
-	"OPT_Box_NATO_WpsLaunch_F", 		// HAT-Kiste
-	"OPT_B_supplyCrate_F",				// Transportkiste (leer)
-	"OPT_Box_NATO_WpsSpecial_Diver_F",	// Taucherkiste
-	"OPT_Box_East_WpsSpecial_Diver_F",	// Taucherkiste
-	"OPT_FlexibleTank_01_forest_F",		// Treibstoff-Fass
-	"OPT_Box_East_Ammo_F", 				// Munitionskiste
-   	"OPT_Box_East_Grenades_F",    		// Explosivkiste
-   	"OPT_Box_East_WpsSpecial_F",    	// AT Raketenkiste
-	"OPT_Box_East_WpsSpecial_AA_F",		// AA Raketenkiste
-	"OPT_Box_East_WpsLaunch_F",			// HAT-Kiste	
-	"OPT_O_supplyCrate_F",				// Transportkiste (leer)
-	"OPT_FlexibleTank_01_sand_F",		// Treibstoff-Fass
-	"OPT_Land_Pod_Heli_Transport_04_fuel_F",		// Fuelcontainer
-   	"OPT_Land_Pod_Heli_Transport_04_ammo_F",		// Munitionscontainer
-   	"OPT_Land_Pod_Heli_Transport_04_repair_F",		// Reparaturcontainer
-	"OPT_Land_Pod_Heli_Transport_04_medevac_F",		// Lazarettcontainer
-	"OPT_B_Slingload_01_Repair_F",	       			// Reparaturcontainer
-	"OPT_B_Slingload_01_Fuel_F",     				// Fuelcontainer
-    "OPT_B_Slingload_01_Ammo_F",					// Munitionscontainer
-  	"OPT_B_Slingload_01_Medevac_F",					// Lazarettcontainer	
-	"OPT_B_Boat_Armed_01_minigun_F",				// Speedboat Minigun
-	"OPT_O_Boat_Armed_01_hmg_F",					// Speedboat HMG
-	"OPT_B_Boat_Transport_01_F",					// Assault Boat
-	"OPT_O_Boat_Transport_01_F",					// Assault Boat
-	"OPT_B_SDV_01_F",					// SDV
-	"OPT_O_SDV_01_F",					// SDV
-	"OPT_B_Mortar_01_F",				// Mk6 Mortar
-	"OPT_O_Mortar_01_F",				// Mk6 Mortar
-	"OPT_B_HMG_01_F",					// Mk30 HMG .50
-	"OPT_O_HMG_01_F",					// Mk30 HMG .50	
-	"OPT_B_HMG_01_high_F",				// Mk30 HMG .50 (Raised)
-	"OPT_O_HMG_01_high_F",				// Mk30 HMG .50 (Raised)
-	"OPT_B_GMG_01_F",					// Mk32 GMG 20 mm
-	"OPT_O_GMG_01_F",					// Mk32 GMG 20 mm
-	"OPT_B_GMG_01_high_F",				// Mk32 GMG 20 mm (Raised)
-	"OPT_O_GMG_01_high_F",				// Mk32 GMG 20 mm (Raised)
-	"OPT_B_static_AA_F",				// Static Titan Launcher (AA)
-	"OPT_O_static_AA_F",				// Static Titan Launcher (AA)
-	"OPT_B_static_AT_F",				// Static Titan Launcher (AT)
-	"OPT_O_static_AT_F",				// Static Titan Launcher (AT)	
-	"Land_BagFence_Round_F",			// runde sandsackecke!
-	"Land_BagFence_Long_F",				// lange sandsackbarriere
-	"Land_BagFence_Short_F",			// kurze sandsackbarriere
-	"Land_HBarrier_5_F",				// H-barrier 5 blocks
-	"Land_HBarrierBig_F",				// H-barrier 4 blocks
-	"Land_HBarrier_3_F",				// H-Barrier 3 blocks
-	"Land_Razorwire_F",					// Stacheldraht
-	"Land_CncBarrier_F",				// beton barriere
-	"Land_CncBarrierMedium_F",			// beton barriere (mittel)
-	"Land_CncBarrierMedium4_F",			// beton barriere (mittel - lang)
-	"Land_Mil_WiredFence_F",			// maschendrahtzaun
-	"CamoNet_BLUFOR_big_Curator_F",		// Camonet zum testen!
-	"OPT_B_CargoNet_01_ammo_F",	// Ausrüstungskiste
-	"OPT_Box_NATO_WpsSpecial_AT2_F", // RPG
-	"OPT_Land_Pod_Heli_Transport_04_repair_radar_F", // Radar Container CSAT
-	"OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F" // Radar Container NATO
+// NATO supplies	
+   	"OPT_B_supplyCrate_F",							// Transportkiste (leer),500
+	"OPT_Box_NATO_WpsSpecial_Diver_F",				// Taucherkiste,5000	
+	"OPT_Box_NATO_Ammo_F",            				// Munitionskiste,40000
+    "OPT_Box_NATO_Grenades_F",         				// Explosivkiste,75000
+  	"OPT_Box_NATO_WpsSpecial_AT2_F",				// AT Raketenkiste (RPG-42),30000
+	"OPT_Box_NATO_WpsSpecial_AA_F",					// AA Raketenkiste,40000	
+	"OPT_B_HMG_01_F",								// Stand-MG niedrig,10000
+	"OPT_B_HMG_01_high_F",							// Stand-MG hoch,10000
+	"OPT_B_GMG_01_F",								// Stand-GMG niedrig,15000
+	"OPT_B_GMG_01_high_F",							// Stand-GMG hoch,15000
+	"OPT_B_static_AA_F",							// Stand-AA,25000
+	"OPT_B_static_AT_F",							// Stand-AT,200000	
+	"OPT_B_Mortar_01_F",							// MK6 - Mörser,200000	
+	"OPT_B_Static_Designator_01_F",					// Remote Designator,10000
+	//"OPT_B_Slingload_01_Fuel_F",           			// Fuelcontainer,5000
+    //"OPT_B_Slingload_01_Ammo_F",            		// Munitionscontainer,50000
+    //"OPT_B_Slingload_01_Repair_F", 	       			// Reparaturcontainer,5000
+	//"OPT_B_Slingload_01_Repair_radar_F", 	       	// Radar Container
+   	//"OPT_B_Slingload_01_Medevac_F",          			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
+// NATO ships	
+	"OPT_B_Boat_Transport_01_F",						// Assault Boat,500
+	"OPT_B_C_Boat_Transport_02_F",					// Rhib unbewaffnet,2000
+	//"OPT_B_Boat_Armed_01_minigun_F",				// Speedboat Minigun,10000
+	//"OPT_B_SDV_01_F",									// Submarine,2000
+//CSAT supplies
+	"OPT_O_supplyCrate_F",							// Transportkiste,500
+	"OPT_Box_East_WpsSpecial_Diver_F",				// Taucherkiste,5000
+	"OPT_Box_East_WpsSpecial_AA_F",					// AA Raketenkiste,40000
+	"OPT_Box_East_WpsSpecial_F",            		// AT Raketenkiste (RPG-42),30000
+	"OPT_Box_East_Ammo_F",            				// Munitionskiste,40000	
+   	"OPT_Box_East_Grenades_F",            			// Explosivkiste,75000	
+	"OPT_Box_East_WpsLaunch_F",							// HAT-Kiste (Titan),400000	
+	"OPT_O_HMG_01_F",								// Stand-MG niedrig,10000	
+	"OPT_O_HMG_01_high_F",							// Stand-MG hoch,10000
+	"OPT_O_GMG_01_F",								// Stand-GMG niedrig,15000
+	"OPT_O_GMG_01_high_F",							// Stand-GMG hoch,15000	
+	"OPT_O_static_AA_F",							// Stand-AA,25000
+	"OPT_O_static_AT_F",							// Stand-AT,200000	
+	"OPT_O_Mortar_01_F",							// MK6 Mörser,200000
+	"OPT_O_Static_Designator_02_F",					// Remote Designator,10000
+	//"OPT_Land_Pod_Heli_Transport_04_fuel_F",			// Fuelcontainer,5000
+	//"OPT_Land_Pod_Heli_Transport_04_fuel_black_F",	// Fuelcontainer (schwarz),5000
+   	//"OPT_Land_Pod_Heli_Transport_04_ammo_F",		// Munitionscontainer,50000
+	//"OPT_Land_Pod_Heli_Transport_04_ammo_black_F",	// Munitionscontainer (Schwarz),50000
+   	//"OPT_Land_Pod_Heli_Transport_04_repair_F",			// Reparaturcontainer,5000
+	//"OPT_Land_Pod_Heli_Transport_04_repair_black_F",	// Reparaturcontainer (schwarz),5000
+	//"OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F",	// Radar Container
+	//"OPT_Land_Pod_Heli_Transport_04_medevac_F",			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
+//CSAT ships
+	"OPT_O_Boat_Transport_01_F",						// Assault Boat,500
+	//"OPT_O_Boat_Armed_01_hmg_F",					// Speedboat HMG,14000
+	"OPT_O_C_Boat_Transport_02_F"					// rhib unbewaffnet,7000	
+	//"OPT_O_SDV_01_F"									// Submarine,2000	
 ];

@@ -74,12 +74,12 @@ while {((Alive _Container) and _go)} do
 						//systemChat format ["Radaron:%1 B:%2",getMarkerSize _Radarring,_size];									
 						
 						{
-						if ((_x iskindof "AIR") and ((getPos _x select 2)> 5)) then
+						if ((_x iskindof "AIR") and ((getPos _x select 2)> 10)) then				// von 5 auf 10 geändert, kallek
 							{
 							//[_Radaranzeige,_x] call BIS_fnc_arrayPushStack;
 							_Radaranzeige=_Radaranzeige + [_x];
 							};	
-						//systemChat format ["X:%1 R:%2 B1:%3 B2:%4",_x,_Radaranzeige,(_x iskindof "AIR"),((getPos _x select 2)> 5)];	
+						//systemChat format ["X:%1 R:%2 B1:%3 B2:%4",_x,_Radaranzeige,(_x iskindof "AIR"),((getPos _x select 2)> 10)];	// von 5 auf 10 geändert, kallek
 						} foreach _units;
 						
 						if ((count _Radaranzeige) > 0) then
