@@ -172,9 +172,10 @@ zlt_prc_repairvehicle = {
 		_hastk = [] call zlt_fnc_hastk;
 		if (_hastk <= 0) exitWith {STR_NEED_TOOLKIT call zlt_fnc_notify; sleep 1.;};	
 		if (animationState player != "Acts_carFixingWheel") then {
-			player playMove "Acts_carFixingWheel"; // without transition
+			player switchMove "Acts_carFixingWheel"; // without transition
 		};
 	};
+	player switchMove ""; // Animation korrekt beenden
 	if (_repairFinished) then {
 		_hastk = [] call zlt_fnc_hastk;
 		if (_hastk == 0) exitWith {STR_NEED_TOOLKIT call zlt_fnc_notify; sleep 1;};	
