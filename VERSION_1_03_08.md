@@ -6,3 +6,4 @@
 - Budget geändert in setup.sqf
 - Ausrüstungskiste NATO Base verschoben (Lord)
 - Bugfix RPT Scoreboard, Seite der Spieler nicht korrekt
+- Beide Radarcontainer in R3F config wieder eingefügt

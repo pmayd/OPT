@@ -320,11 +320,11 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 [											
 // NATO supplies	
-   	"OPT_B_supplyCrate_F",							// Transportkiste (leer),500
+  "OPT_B_supplyCrate_F",							// Transportkiste (leer),500
 	"OPT_Box_NATO_WpsSpecial_Diver_F",				// Taucherkiste,5000	
 	"OPT_Box_NATO_Ammo_F",            				// Munitionskiste,40000
-    "OPT_Box_NATO_Grenades_F",         				// Explosivkiste,75000
-  	"OPT_Box_NATO_WpsSpecial_AT2_F",				// AT Raketenkiste (RPG-42),30000
+  "OPT_Box_NATO_Grenades_F",         				// Explosivkiste,75000
+ 	"OPT_Box_NATO_WpsSpecial_AT2_F",				// AT Raketenkiste (RPG-42),30000
 	"OPT_Box_NATO_WpsSpecial_AA_F",					// AA Raketenkiste,40000	
 	"OPT_B_HMG_01_F",								// Stand-MG niedrig,10000
 	"OPT_B_HMG_01_high_F",							// Stand-MG hoch,10000
@@ -335,10 +335,10 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"OPT_B_Mortar_01_F",							// MK6 - Mˆrser,200000	
 	"OPT_B_Static_Designator_01_F",					// Remote Designator,10000
 	//"OPT_B_Slingload_01_Fuel_F",           			// Fuelcontainer,5000
-    //"OPT_B_Slingload_01_Ammo_F",            		// Munitionscontainer,50000
-    //"OPT_B_Slingload_01_Repair_F", 	       			// Reparaturcontainer,5000
-	//"OPT_B_Slingload_01_Repair_radar_F", 	       	// Radar Container
-   	//"OPT_B_Slingload_01_Medevac_F",          			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weiﬂen Container ersetzt welcher zum Lazarett ausgebaut werden kann
+  //"OPT_B_Slingload_01_Ammo_F",            		// Munitionscontainer,50000
+  //"OPT_B_Slingload_01_Repair_F", 	       			// Reparaturcontainer,5000
+	"OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", 	       	// NATO Radar Container
+  //"OPT_B_Slingload_01_Medevac_F",          			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weiﬂen Container ersetzt welcher zum Lazarett ausgebaut werden kann
 // NATO ships	
 	"OPT_B_Boat_Transport_01_F",						// Assault Boat,500
 	"OPT_B_C_Boat_Transport_02_F",					// Rhib unbewaffnet,2000
@@ -350,7 +350,7 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"OPT_Box_East_WpsSpecial_AA_F",					// AA Raketenkiste,40000
 	"OPT_Box_East_WpsSpecial_F",            		// AT Raketenkiste (RPG-42),30000
 	"OPT_Box_East_Ammo_F",            				// Munitionskiste,40000	
-   	"OPT_Box_East_Grenades_F",            			// Explosivkiste,75000	
+   "OPT_Box_East_Grenades_F",            			// Explosivkiste,75000	
 	"OPT_Box_East_WpsLaunch_F",							// HAT-Kiste (Titan),400000	
 	"OPT_O_HMG_01_F",								// Stand-MG niedrig,10000	
 	"OPT_O_HMG_01_high_F",							// Stand-MG hoch,10000
@@ -362,11 +362,11 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"OPT_O_Static_Designator_02_F",					// Remote Designator,10000
 	//"OPT_Land_Pod_Heli_Transport_04_fuel_F",			// Fuelcontainer,5000
 	//"OPT_Land_Pod_Heli_Transport_04_fuel_black_F",	// Fuelcontainer (schwarz),5000
-   	//"OPT_Land_Pod_Heli_Transport_04_ammo_F",		// Munitionscontainer,50000
+  //"OPT_Land_Pod_Heli_Transport_04_ammo_F",		// Munitionscontainer,50000
 	//"OPT_Land_Pod_Heli_Transport_04_ammo_black_F",	// Munitionscontainer (Schwarz),50000
-   	//"OPT_Land_Pod_Heli_Transport_04_repair_F",			// Reparaturcontainer,5000
+  //"OPT_Land_Pod_Heli_Transport_04_repair_F",			// Reparaturcontainer,5000
 	//"OPT_Land_Pod_Heli_Transport_04_repair_black_F",	// Reparaturcontainer (schwarz),5000
-	//"OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F",	// Radar Container
+	"OPT_Land_Pod_Heli_Transport_04_repair_radar_F", // CSAT Radar Container
 	//"OPT_Land_Pod_Heli_Transport_04_medevac_F",			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weiﬂen Container ersetzt welcher zum Lazarett ausgebaut werden kann
 //CSAT ships
 	"OPT_O_Boat_Transport_01_F",						// Assault Boat,500

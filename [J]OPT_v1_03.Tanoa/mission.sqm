@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=139;
+		nextID=164;
 	};
 	class Camera
 	{
 		pos[]={2268.2725,57.848282,13330.342};
-		dir[]={-0.54469681,-0.53264767,0.64776748};
-		up[]={-0.3428081,0.84633529,0.40767613};
-		aside[]={0.7653743,-2.1629967e-007,0.64359289};
+		dir[]={-0.54469383,-0.53264481,0.64776409};
+		up[]={-0.34280416,0.84633899,0.40767118};
+		aside[]={0.76537198,2.5331974e-007,0.64358848};
 	};
 };
 binarizationWanted=0;
@@ -35384,7 +35384,6 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -35393,7 +35392,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.14878201;
+					atlOffset=1.1390946;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35623,7 +35622,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3484077;
+			atlOffset=2.3513131;
 		};
 		class Item17
 		{

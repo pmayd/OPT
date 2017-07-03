@@ -52,17 +52,17 @@ tcb_getFuel = {
 };
 
 zlt_fnc_partrepair = {
-	private "_veh";
-	_veh = [_this, 0] call BIS_fnc_param;
+	params ["_veh"];
+
 	if (isNil {_veh} ) exitWith {}; 
 	{
 		_dmg = (_veh getHitPointDamage _x);
 		if (not isNil {_dmg}) then {
 			if ( _dmg > 0.64 ) then {
 				if (_x in zlt_hardRepairParts) then {
-					_veh setHitPointDamage [_x,0.64];
+					_veh setHitPointDamage [_x, 0.3];
 				} else {
-					_veh setHitPointDamage [_x,0];
+					_veh setHitPointDamage [_x, 0];
 				};
 			};
 		};
@@ -71,8 +71,7 @@ zlt_fnc_partrepair = {
 };
 
 zlt_fnc_fullrepair = {
-	private "_veh";
-	_veh = [_this, 0] call BIS_fnc_param;
+	params ["_veh"];
 	_veh setDamage 0;
 	_veh call tcb_getFuel;
 };
@@ -101,11 +100,9 @@ zlt_fnc_vehicledamaged = {
 	_flag;
 };
 
-
-
 zlt_frpr_getPartsRepairTime = {
-	private ["_veh","_vehtype","_flag"];
-	_veh =  [_this, 0] call BIS_fnc_param;
+	params ["_veh"];
+	private ["_vehtype","_flag"];
 	if (isNil {_veh}) exitWith {1};
 	_rprTime = 0;
 	{
@@ -162,14 +159,14 @@ zlt_prc_repairvehicle = {
 	// player playActionNow "medicStartRightSide";
 	player playMove "Acts_carFixingWheel";
 	sleep 0.5;
-	_maxlength = _veh getVariable["zlt_longrepair",[_veh] call zlt_frpr_getPartsRepairTime];
+	_maxlength = _veh getVariable ["zlt_longrepair", [_veh] call zlt_frpr_getPartsRepairTime];
 	_vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 	_length = _maxlength;
 
 	while {alive player and (player distance _veh) < 7 and (vehicle player == player) and speed _veh < 3 and not _repairFinished and zlt_mutexAction} do {		
 	//	diag_log ("ANIM STATE = "+str(animationState player));	
 		(format[STR_REPAIR_MSG_STRING, _length, _vehname] ) call zlt_fnc_notify;
-		if (_length <= 0) then {_repairFinished = true;};
+		if (_length <= 0) exitWith {_repairFinished = true;};
 		_length = _length - 1;
 		sleep 1;
 		_hastk = [] call zlt_fnc_hastk;
@@ -180,19 +177,19 @@ zlt_prc_repairvehicle = {
 	};
 	if (_repairFinished) then {
 		_hastk = [] call zlt_fnc_hastk;
-		if (_hastk == 0) exitWith {STR_NEED_TOOLKIT call zlt_fnc_notify; sleep 1.;};	
+		if (_hastk == 0) exitWith {STR_NEED_TOOLKIT call zlt_fnc_notify; sleep 1;};	
 		STR_REPAIR_FINISHED call zlt_fnc_notify;
-		[_veh,"zlt_fnc_partrepair", _veh] call bis_fnc_MP;
+		[_veh] remoteExec ["zlt_fnc_partrepair", _veh, false]; // ruft bei allen teilweise Reparatur auf
 		//if (_hastk == 1) then {player removeItem "ToolKit";};
 		if (_hastk == 2) then { ["ToolKit",_veh] call zlt_fnc_removeitemfromcargo;};
-		_veh setVariable["zlt_longrepair",nil, true];
-		_veh setVariable["zlt_longrepair_times", (_veh getVariable ["zlt_longrepair_times",0]) + 1 , true ];
+		_veh setVariable ["zlt_longrepair", nil, true];
+		_veh setVariable ["zlt_longrepair_times", (_veh getVariable ["zlt_longrepair_times",0]) + 1 , true ];
 	} else {
 		STR_REPAIR_INTERRUPTED call zlt_fnc_notify;
 		_veh setVariable["zlt_longrepair",_length, true];
 	};
 	zlt_mutexAction = false;  
-	player playActionNow "medicstop";
+
 };
 
 
@@ -205,7 +202,6 @@ zlt_fnc_repair_cond = {
 	_ret = (alive player and {(player distance _veh) <= 7} and {(vehicle player == player)} and {speed _veh < 3} and {not zlt_mutexAction} and {_dmged} and {alive _veh});
 	_ret;
 };
-
 
 
 zlt_fnc_heavyRepair = {
@@ -229,20 +225,21 @@ zlt_fnc_heavyRepair = {
 	_maxlength = _veh getVariable["zlt_longrepairTruck",DEFAULT_FULLREPAIR_LENGTH];
 	_vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 	_length = _maxlength;
-	while { alive player and alive _truck and alive _veh and vehicle _caller != _caller and speed _veh <= 3 and not _repairFinished and zlt_mutexAction and _veh distance _truck <= 15 } do {			
+
+	while { alive player and alive _truck and alive _veh and vehicle _caller != _caller and speed _veh <= 3 and not _repairFinished and zlt_mutexAction and _veh distance _truck <= 15 } do {		
 		(format[STR_REPAIR_MSG_STRING, _length, _vehname] ) call zlt_fnc_notify;
-		if (_length <= 0) then {_repairFinished = true;};
+		if (_length <= 0) exitWith {_repairFinished = true;};
 		_length = _length - 1;
 		sleep 1;
 	};
 	
 	if (_repairFinished) then {
 		STR_REPAIR_FINISHED call zlt_fnc_notify;
-		[_veh,"zlt_fnc_fullrepair", _veh] call bis_fnc_MP;
-		_truck setVariable ["zlt_repair_cargo", ( (_truck getVariable ["zlt_repair_cargo", 0] )- (1 / DEFAULT_REPAIR_TRUCK_USES) ), true] ;
+		[_veh] remoteExec ["zlt_fnc_fullrepair", _veh, false]; // ruft bei allen teilweise Reparatur auf
+		_truck setVariable ["zlt_repair_cargo", ( (_truck getVariable ["zlt_repair_cargo", 0]) - (1 / DEFAULT_REPAIR_TRUCK_USES) ), true] ;
 		
 		_veh setVariable["zlt_longrepairTruck", nil, true];
-		_veh setVariable["zlt_fullrepair_times", (_veh getVariable ["zlt_fullrepair_times",0]) + 1 , true ];
+		_veh setVariable["zlt_fullrepair_times", (_veh getVariable ["zlt_fullrepair_times",0]) + 1, true];
 	} else {
 		STR_REPAIR_INTERRUPTED call zlt_fnc_notify;
 		_veh setVariable["zlt_longrepairTruck",_length, true];
