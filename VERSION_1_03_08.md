@@ -7,3 +7,4 @@
 - Ausrüstungskiste NATO Base verschoben (Lord)
 - Bugfix RPT Scoreboard, Seite der Spieler nicht korrekt
 - Beide Radarcontainer in R3F config wieder eingefügt
+- Korrekturen im Repair-Skript. Restschaden bei Feldreparatur auf 0.3 gesenkt, Animationen gefixt
