@@ -16,6 +16,13 @@ Name: [J]OPT_v1_03_06
 
 ## SITREP
 
+### 2017-07-06
+- Korrekturen im Repair-Skript. Restschaden bei Feldreparatur auf 0.3 gesenkt, Animationen gefixt
+- Änderungen von Kalle zur WarmUp #5
+- Bufix: Log für Flaggenziehen ging nur auf dem Server, gefixt
+- Anpassung der GUI Schrift an die Höhe der GUI Balken (HUD Overlay)
+- zwei neue description.ext, eine test.ext und eine war.ext für Test und War-Betrieb. Muss nur einmal in description.ext geändert werden.
+
 ### 2017-06-12
 - neues Fahnenverschiebeskript im Trainingsmodus, erlaubt das Verschieben der Flaggen mit ALT + Linksklick auf der Karte
 - neue Tagebucheinträge für den Trainingsmodus
