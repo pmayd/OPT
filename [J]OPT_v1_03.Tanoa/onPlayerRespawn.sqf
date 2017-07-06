@@ -76,4 +76,8 @@ if (OPT_TELEPORT == 1) then {
 };
 */
 
+enableRadio false;
+player disableConversation true;
+enableSentences false;
+
 diag_log format ["%1 --- TcB player_jip.sqf processed",diag_ticktime];
