@@ -42,7 +42,7 @@ if (playerSide == east) exitwith {_go=false;};
 
 sleep 1;
 		
-while {((Alive _Container) and _go)} do
+while {((alive _Container) and _go)} do
 	{
 	if (!(RADARContainerWEST getVariable ["RADARWESTaufgebaut",false])) then
 		{
@@ -125,8 +125,12 @@ while {((Alive _Container) and _go)} do
 {deleteMarker _x;} foreach _markerost;
 {deleteMarker _x;} foreach _markerwest;
 deleteMarker _Radarring;
-deleteVehicle Radarturmwest;
-deleteVehicle Radarnetzwest;
+if (!isNil "Radarturmwest") then {
+	deleteVehicle Radarturmwest;
+};
+if (!isNil "Radarnetzwest") then {
+	deleteVehicle Radarnetzwest;
+};
 	
 	 
 

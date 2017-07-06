@@ -5,11 +5,11 @@ _Container = _this select 0;
 
 
 if ((RADARContainerEAST getVariable ["RADAREASTaufgebaut",false])) then
-		{
-		_Container setVariable ["RADAREASTaufgebaut", false,true];
-		deleteVehicle Radarturmeast;
-		deleteVehicle Radarnetzeast;		
-		};
+{
+	_Container setVariable ["RADAREASTaufgebaut", false,true];
+	deleteVehicle Radarturmeast;
+	deleteVehicle Radarnetzeast;		
+};
 
 
 

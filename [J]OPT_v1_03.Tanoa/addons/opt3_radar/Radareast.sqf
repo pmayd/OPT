@@ -44,7 +44,7 @@ if (playerSide == west) exitwith {_go=false;};
 
 sleep 1;
 		
-while {((Alive _Container) and _go)} do
+while {((alive _Container) and _go)} do
 	{
 	if (!(RADARContainerEAST getVariable ["RADAREASTaufgebaut",false])) then
 		{
