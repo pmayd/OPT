@@ -13,3 +13,4 @@
 - Anpassung der GUI Schrift an die Höhe der GUI Balken (HUD Overlay)
 - zwei neue description.ext, eine test.ext und eine war.ext für Test und War-Betrieb. Muss nur einmal in description.ext geändert werden.
 - enableRadio false in onPlayerRespawn, soll RadioChat durch KI/Spieler verhindern
+- Bugfix: Radar Container wirft Fehler, wenn er zerstört wird bevor er einmal aufgebaut wurde.
