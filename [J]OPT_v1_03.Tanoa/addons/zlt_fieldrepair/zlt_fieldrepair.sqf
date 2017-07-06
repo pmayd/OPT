@@ -182,8 +182,9 @@ zlt_prc_repairvehicle = {
 			player switchMove "Acts_carFixingWheel"; // without transition
 		};
 	};
-	player switchMove ""; // Animation korrekt beenden
-
+	if (player getVariable ["FAR_isUnconscious", 0] == 0) then {
+		player switchMove ""; // Animation korrekt beenden
+	};
 
 	if (_repairFinished) then {
 		_hastk = [] call zlt_fnc_hastk;
