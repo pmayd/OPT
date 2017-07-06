@@ -34,7 +34,8 @@ opt_choppersNato = [
 	["OPT_B_UAV_02_light_F",300000],						// Greyhawk unbewaffnet,300000
 	["OPT_B_UAV_02_CAS_F",400000],							// Greyhawk LGB,400000	
 	["OPT_B_UAV_02_F",380000],								// Greyhawk Raketen,600000	
-	["B_T_UAV_03_F",650000],									// MQ12-Falcon - noch in arbeit erstma nur testweise mit preis eingebaut
+	["OPT_B_T_UAV_03_dynamicLoadout_F",650000],									// MQ12-Falcon - noch in arbeit erstma nur testweise mit preis eingebaut
+	["OPT_B_Plane_Fighter_AA_01_F",500000],					//  F/A-181 Black Wasp II (AA)
 	["OPT_B_T_VTOL_01_infantry_F",180000],					// Blackfish (Inf-Transport)
 	["OPT_B_T_VTOL_01_vehicle_F",180000],					// Blackfish (Fahrzeug-Transport)
 	["OPT_B_T_VTOL_01_armed_F",700000]						// Blackfish BEWAFFNET
@@ -120,14 +121,14 @@ opt_vehiclesCsat = [
 ];
 
 opt_choppersCsat = [
-	["OPT_O_Heli_Light_03_unarmed_F",50000],					// WY-55 Hellcat,70000
+	["OPT_O_Heli_Light_03_unarmed_F",60000],					// WY-55 Hellcat,70000
 	["OPT_O_Heli_Light_03_unarmed_green_F",0],			// WY-55 Hellcat,70000
-	["OPT_O_Heli_Light_03_F",140000],							// WY-55 Hellcat (DAR),170000	
+	["OPT_O_Heli_Light_03_F",180000],							// WY-55 Hellcat (DAR),170000	
 	["OPT_O_Heli_Light_03_green_F",0],					// WY-55 Hellcat (DAR),170000	
 	["OPT_O_Heli_Light_02_unarmed_F",0],					// PO-30 Orca,100000
-	["OPT_O_Heli_Light_02_unarmed_black_F",100000],			// PO-30 Orca,100000
+	["OPT_O_Heli_Light_02_unarmed_black_F",70000],			// PO-30 Orca,100000
 	["OPT_O_Heli_Light_02_v2_F",0],							// PO-30 Orca (DAR),200000
-	["OPT_O_Heli_Light_02_v2_black_F",170000],				// PO-30 Orca (DAR),200000
+	["OPT_O_Heli_Light_02_v2_black_F",190000],				// PO-30 Orca (DAR),200000
 	["OPT_O_Heli_Light_02_F",0],							// PO-30 Orca (DAGR),400000 - erstma raus wegen DAGR-problematik
 	["OPT_O_Heli_Light_02_black_F",0],					// PO-30 Orca (DAGR),400000 - erstma raus wegen DAGR-problematik
 	["OPT_O_Heli_Transport_04_F",0],						// Mi-290 Taru (Lift),85000
@@ -146,7 +147,9 @@ opt_choppersCsat = [
 	["OPT_O_UAV_02_light_F",300000],						// Ababil unbewaffnet,300000
 	["OPT_O_UAV_02_CAS_F",400000],							// Ababil GBU-12,400000
 	["OPT_O_UAV_02_F",380000],								// Ababil Scarpel,600000
-	["O_T_UAV_04_CAS_F",650000],									// KH-3A Fenghuan, 400000 - noch in arbeit erstma nur testweise mit preis eingebaut
+	["OPT_O_UAV_02_AA_F",400000],							// Ababil AA,600000
+	["OPT_O_T_UAV_04_CAS_F",650000],							// KH-3A Fenghuan, 400000 - noch in arbeit erstma nur testweise mit preis eingebaut
+	["OPT_O_Plane_Fighter_AA_02_F",500000],					// To-201 Shikra (AA)
 	["OPT_O_T_VTOL_02_infantry_F",780000],					// Y-32 Xi'an (Inf-Transport), 180000
 	["OPT_O_T_VTOL_02_vehicle_F",780000],					// Y-32 Xi'an (Fahrzeug-Transport), 200000
 	["OPT_O_T_VTOL_02_infantry_unarmed_F",180000],			// Y-32 Xi'an (Inf-Transport), 180000

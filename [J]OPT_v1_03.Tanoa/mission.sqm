@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=164;
+		nextID=214;
 	};
 	class Camera
 	{
-		pos[]={2268.2725,57.848282,13330.342};
-		dir[]={-0.54469383,-0.53264481,0.64776409};
-		up[]={-0.34280416,0.84633899,0.40767118};
-		aside[]={0.76537198,2.5331974e-007,0.64358848};
+		pos[]={11711.511,29.840471,3075.6086};
+		dir[]={-0.98438627,-0.14704244,0.096795};
+		up[]={-0.14633949,0.98912787,0.014389169};
+		aside[]={0.097858004,7.9024176e-008,0.99520206};
 	};
 };
 binarizationWanted=0;
@@ -513,7 +513,7 @@ class Mission
 		year=2017;
 		month=1;
 		day=29;
-		hour=18;
+		hour=6;
 		minute=0;
 		startFogBase=-8.3320313;
 		forecastFogBase=24.990479;
@@ -32598,7 +32598,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14290,9.9034119,11610};
+				position[]={2166,16.148819,4548};
 				angles[]={0,0.70842916,0};
 			};
 			side="Empty";
@@ -32611,14 +32611,14 @@ class Mission
 			};
 			id=5373;
 			type="Flag_CSAT_F";
-			atlOffset=4.7683716e-007;
+			atlOffset=-9.5367432e-007;
 		};
 		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10950,16.118759,13277};
+				position[]={2791,8.9768085,5727};
 				angles[]={0,0.32203069,0};
 			};
 			side="Empty";
@@ -32631,7 +32631,7 @@ class Mission
 			};
 			id=5374;
 			type="Flag_NATO_F";
-			atlOffset=9.5367432e-007;
+			atlOffset=4.7683716e-007;
 		};
 		class Item12
 		{

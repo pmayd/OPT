@@ -110,6 +110,7 @@ Sowie Actionmenüeintrag für Spieler
 					"OPT_B_T_VTOL_01_infantry_F",					// Blackfish (Inf-Transport)
 					"OPT_B_T_VTOL_01_vehicle_F",					// Blackfish (Fahrzeug-Transport)
 					"OPT_B_T_VTOL_01_armed_F",			// Blackfish BEWAFFNET
+					"OPT_B_Plane_Fighter_AA_01_F",			// F/A-181 Black Wasp II (AA)
 					"OPT_O_Heli_Light_03_unarmed_F",					// WY-55 Hellcat,70000
 					"OPT_O_Heli_Light_03_unarmed_green_F",	// WY-55 Hellcat,70000
 					"OPT_O_Heli_Light_03_F",							// WY-55 Hellcat (DAR),170000	
@@ -135,7 +136,8 @@ Sowie Actionmenüeintrag für Spieler
 					"OPT_O_T_VTOL_02_infantry_F",					// Y-32 Xi'an (Inf-Transport), 180000
 					"OPT_O_T_VTOL_02_vehicle_F",					// Y-32 Xi'an (Fahrzeug-Transport), 200000
 					"OPT_O_T_VTOL_02_infantry_unarmed_F",			// Y-32 Xi'an (Inf-Transport), 180000
-					"OPT_O_T_VTOL_02_vehicle_unarmed_F"			// Y-32 Xi'an (Fahrzeug-Transport), 180000
+					"OPT_O_T_VTOL_02_vehicle_unarmed_F",			// Y-32 Xi'an (Fahrzeug-Transport), 180000
+					"OPT_O_Plane_Fighter_AA_02_F"			// To-201 Shikra (AA), 180000
 	];
 #endif
 //-------------------------------------------------------------------------- Crewklassen --------------------------------------------------------------------------
@@ -240,8 +242,10 @@ opt_big_uavs = [
 	"OPT_O_UAV_02_F",
 	"OPT_O_UAV_02_CAS_F",
 	"OPT_O_UAV_02_light_F",
+	"OPT_B_UAV_02_AA_F",
+	"OPT_O_UAV_02_AA_F",
 	"B_UCSV_01",
 	"O_UCSV_01",
-	"O_T_UAV_04_CAS_F",
-	"B_T_UAV_03_F"
+	"OPT_O_T_UAV_04_CAS_F",
+	"OPT_B_T_UAV_03_dynamicLoadout_F"
 ];
