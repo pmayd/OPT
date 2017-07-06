@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=5851;
+		nextID=5859;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11711.511,29.840471,3075.6086};
-		dir[]={-0.98438627,-0.14704244,0.096795};
-		up[]={-0.14633949,0.98912787,0.014389169};
-		aside[]={0.097858004,7.9024176e-008,0.99520206};
+		pos[]={2205.134,26.234877,13393.579};
+		dir[]={-0.7500357,-0.36379576,-0.55238938};
+		up[]={-0.29293048,0.93147522,-0.215739};
+		aside[]={-0.59302217,1.2987584e-007,0.80520642};
 	};
 };
 binarizationWanted=0;
@@ -522,7 +522,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=62;
+		items=63;
 		class Item0
 		{
 			dataType="Marker";
@@ -30710,7 +30710,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.9517891;
+					atlOffset=0.25820208;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30744,7 +30744,7 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30752,7 +30752,7 @@ class Mission
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.189431;
+					atlOffset=0.063271761;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30786,7 +30786,7 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30794,7 +30794,7 @@ class Mission
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=4.8953876;
+					atlOffset=0.086225986;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -49232,6 +49232,35 @@ class Mission
 			id=5850;
 			type="Box_Syndicate_WpsLaunch_F";
 			atlOffset=9.5367432e-007;
+		};
+		class Item62
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2171.1587,13.451439,13383.94};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=5852;
+					type="B_Competitor_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=5851;
 		};
 	};
 	class Connections

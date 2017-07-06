@@ -200,7 +200,7 @@
 	
 	
 	//----------------------------------- BASE CAPTURE DISPLAY -------------------------------------
-	#define FONTSIZE 0.023 * safezoneH
+	#define FONTSIZE 0.020 * safezoneH
 	class DefaultMenu {
 		idd = 5000;
 		objects[] = {};

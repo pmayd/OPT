@@ -163,7 +163,14 @@ zlt_prc_repairvehicle = {
 	_vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 	_length = _maxlength;
 
-	while {alive player and (player distance _veh) < 7 and (vehicle player == player) and speed _veh < 3 and not _repairFinished and zlt_mutexAction} do {		
+	while {
+		alive player and (player distance _veh) < 7 and 
+		player getVariable ["FAR_isUnconscious", 0] == 0 and // behebt Fehler, dass bewusstlose Soldaten weiter reparieren
+		(vehicle player == player) and 
+		speed _veh < 3 and 
+		not _repairFinished and 
+		zlt_mutexAction
+	} do {		
 	//	diag_log ("ANIM STATE = "+str(animationState player));	
 		(format[STR_REPAIR_MSG_STRING, _length, _vehname] ) call zlt_fnc_notify;
 		if (_length <= 0) exitWith {_repairFinished = true;};
