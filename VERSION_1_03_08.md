@@ -12,3 +12,4 @@
 - Bufix: Log für Flaggenziehen ging nur auf dem Server, gefixt
 - Anpassung der GUI Schrift an die Höhe der GUI Balken (HUD Overlay)
 - zwei neue description.ext, eine test.ext und eine war.ext für Test und War-Betrieb. Muss nur einmal in description.ext geändert werden.
+- enableRadio false in onPlayerRespawn, soll RadioChat durch KI/Spieler verhindern
