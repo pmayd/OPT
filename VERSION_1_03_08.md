@@ -8,3 +8,7 @@
 - Bugfix RPT Scoreboard, Seite der Spieler nicht korrekt
 - Beide Radarcontainer in R3F config wieder eingefügt
 - Korrekturen im Repair-Skript. Restschaden bei Feldreparatur auf 0.3 gesenkt, Animationen gefixt
+- Änderungen von Kalle zur WarmUp #5
+- Bufix: Log für Flaggenziehen ging nur auf dem Server, gefixt
+- Anpassung der GUI Schrift an die Höhe der GUI Balken (HUD Overlay)
+- zwei neue description.ext, eine test.ext und eine war.ext für Test und War-Betrieb. Muss nur einmal in description.ext geändert werden.
