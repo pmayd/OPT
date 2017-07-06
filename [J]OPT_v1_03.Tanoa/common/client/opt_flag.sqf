@@ -38,6 +38,6 @@ if (_side == west) then {
 } else {
 	_message = format ["NATO Flagge gezogen von %1", name _caller];
 };
-["opt_eh_server_log_write", ["Fahne", _message]] call CBA_fnc_localEvent;
+["opt_eh_server_log_write", ["Fahne", _message]] call CBA_fnc_serverEvent;
 
 if (_caller == player) then {["addScore",[_caller, 5]] call tcb_fnc_NetCallEventCTS};
