@@ -200,7 +200,7 @@
 	
 	
 	//----------------------------------- BASE CAPTURE DISPLAY -------------------------------------
-	#define FONTSIZE 0.020 * safezoneH
+	#define FONTSIZE (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8) // dynamische Anpassung je nach UI Schriftgröße
 	class DefaultMenu {
 		idd = 5000;
 		objects[] = {};
