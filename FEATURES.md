@@ -25,9 +25,9 @@
 - [x] MARKERSYSTEM (à la blueforce tracker aber mit verschiedenen abstufungen - oberkommando sieht alle einheiten, SQLs sehen untergeordnete einheiten + squadmarker, einfache soldaten sehen nur squadmarker) -> Lords GPS System
 - [x] Neuer Parameter für Zeus -> Im Trainingsmodus steht Gruppenführern und der HL Zeus zur Verfügung. Dies kann in der Lobby getrennt eingestellt werden.
 - [x] Minensperrzone um die Flagge -> Radius ist in setup.sqf einstellbar. Alle Minen werden innerhalb der Zone gelöscht und dem Spieler wieder zurückgegeben.
+- [x] Radarcontainer -> Lords Radar System. Jede Fraktion verfügt über einen einmaligen Radar Container, der mehrfach aufgebaut werden sowie transportiert werden kann. Aufgebaut erlaubt er die Detektion von Luftkontakten in einem bestimmten Radius.
 
 ## geplante & gewünschte Features
-- [ ] Radarcontainer
 - [ ] Logistiksystem - bestenfalls auch die containerverladerei auf die dafür vorgesehenen lkw
 - [ ] revive mit drag und stabilisieren + 3d- und kartenmarker -> Prüfe Kartenmarker
 - [ ] TFAR Frequenzmodul macht Probleme
