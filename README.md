@@ -16,6 +16,18 @@ Name: [J]OPT_v1_03_06
 
 ## SITREP
 
+### 2017-07-12
+- Schriftgröße in UI berücksichtigt nun Schriftgrößeneinstellung
+
+### 2017-07-11
+Kalle
+- competitor aus natobase entfernt
+- AA-drohne auf natoseite in kaufliste eingetragen
+- lkw in csatbasis auf andere seite verschoben
+- einige slots bei csat neu sortiert
+- Flaggen für schlacht verschoben
+- Datalink testweise in spawnvehicle.sqf eingetragen (siehe Lords beitrag im Bugtracker)
+
 ### 2017-07-06
 - Korrekturen im Repair-Skript. Restschaden bei Feldreparatur auf 0.3 gesenkt, Animationen gefixt
 - Änderungen von Kalle zur WarmUp #5
