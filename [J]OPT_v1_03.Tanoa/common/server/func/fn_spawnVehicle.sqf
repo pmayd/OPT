@@ -31,6 +31,11 @@ _vec addEventHandler ["Killed", {
 	_this call tcb_fnc_handleDeadVehicle;
 }];
 
+//datalink-test-eintrag, kallek
+_vec setVehicleReportOwnPosition true;
+_vec setVehicleReportRemoteTargets true;
+_vec setVehicleReceiveRemoteTargets true;
+
 // fügt auf allen clients einen Add Action Eintrag für umgekippte Fahrzeuge hinzu
 // ersetzt player add action in onPlayerRespawn (viel performanter, da kein pulling)
 if (_vec isKindOf "AllVehicles") then {
@@ -44,12 +49,6 @@ if (_vec isKindOf "AllVehicles") then {
 // James: Nutze stattdessen UAV classname aus setup
 
 _uavs = [
-	"OPT_B_UAV_02_F",
-	"OPT_B_UAV_02_CAS_F",
-	"OPT_B_UAV_02_light_F",
-	"OPT_O_UAV_02_F",
-	"OPT_O_UAV_02_CAS_F",
-	"OPT_O_UAV_02_light_F",
 	"OPT_B_UGV_01_F",
 	"OPT_B_UGV_01_rcws_F",
 	"OPT_O_UGV_01_F",

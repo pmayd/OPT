@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=289;
+		nextID=314;
 	};
 	class Camera
 	{
-		pos[]={2205.134,26.234877,13393.579};
-		dir[]={-0.7500357,-0.36379576,-0.55238938};
-		up[]={-0.29293048,0.93147522,-0.215739};
-		aside[]={-0.59302217,1.2987584e-007,0.80520642};
+		pos[]={11730.529,20.94285,3125.9553};
+		dir[]={-0.94037348,-0.21943033,0.25998318};
+		up[]={-0.21152011,0.97561687,0.05847751};
+		aside[]={0.26647547,-1.6878039e-007,0.96386206};
 	};
 };
 binarizationWanted=0;
@@ -492,19 +492,19 @@ class Mission
 	{
 		briefingName="opt_base_mission_v106";
 		resistanceWest=0;
-		startWeather=0.21688923;
-		startFog=0.095967911;
+		timeOfChanges=3712.6436;
+		startWeather=0.69908476;
+		startFog=0.0043318518;
 		startWind=0.57914013;
 		startWindDir=210.55499;
-		startLightnings=0.025158385;
+		startRain=0.36445278;
+		startLightnings=0.54235882;
 		startWaves=0.1;
 		startGust=0.67077631;
-		forecastWeather=0.71179271;
-		forecastFog=0.079306483;
+		forecastWeather=0.0086410306;
+		forecastFog=0.0084970603;
 		forecastWind=0.025158385;
 		forecastWaves=0.1;
-		forecastRain=0.37715974;
-		forecastLightnings=0.92782116;
 		forecastGust=0.037654009;
 		rainForced=1;
 		lightningsForced=1;
@@ -513,16 +513,16 @@ class Mission
 		year=2017;
 		month=1;
 		day=29;
-		hour=6;
+		hour=10;
 		minute=0;
-		startFogBase=-8.3320313;
-		forecastFogBase=24.990479;
-		startFogDecay=0.1;
-		forecastFogDecay=0.033338834;
+		startFogBase=-983.00586;
+		forecastFogBase=-974.67487;
+		startFogDecay=0.0004331852;
+		forecastFogDecay=0.0004331852;
 	};
 	class Entities
 	{
-		items=63;
+		items=62;
 		class Item0
 		{
 			dataType="Marker";
@@ -32598,7 +32598,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2166,16.148819,4548};
+				position[]={10535,161.94347,10575};
 				angles[]={0,0.70842916,0};
 			};
 			side="Empty";
@@ -32611,14 +32611,13 @@ class Mission
 			};
 			id=5373;
 			type="Flag_CSAT_F";
-			atlOffset=-9.5367432e-007;
 		};
 		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2791,8.9768085,5727};
+				position[]={9281,94.661522,11176};
 				angles[]={0,0.32203069,0};
 			};
 			side="Empty";
@@ -32631,7 +32630,7 @@ class Mission
 			};
 			id=5374;
 			type="Flag_NATO_F";
-			atlOffset=4.7683716e-007;
+			atlOffset=7.6293945e-006;
 		};
 		class Item12
 		{
@@ -33926,7 +33925,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11632.663,8.0250378,3171.5693};
+						position[]={11794.161,7.3023744,3095.2368};
 						angles[]={6.2778587,3.7998025,6.272521};
 					};
 					side="Empty";
@@ -33938,32 +33937,30 @@ class Mission
 					};
 					id=5429;
 					type="OPT_O_Truck_03_medical_F";
-					atlOffset=-0.1527462;
 				};
 				class Item22
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11619.476,7.9682403,3181.0337};
+						position[]={11780.974,7.2455769,3104.7012};
 						angles[]={6.2751846,3.7788074,6.272521};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
 					};
 					id=5430;
 					type="OPT_O_Truck_03_ammo_F";
-					atlOffset=-0.19870377;
+					atlOffset=0.27466345;
 				};
 				class Item23
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11624.037,7.8833051,3177.5691};
+						position[]={11785.535,7.1606417,3101.2366};
 						angles[]={6.2751918,3.778805,6.2698536};
 					};
 					side="Empty";
@@ -33974,7 +33971,7 @@ class Mission
 					};
 					id=5431;
 					type="OPT_O_Truck_03_fuel_F";
-					atlOffset=-0.19352579;
+					atlOffset=0.16431427;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -34004,7 +34001,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11628.256,7.8142819,3174.4678};
+						position[]={11789.754,7.0916185,3098.1353};
 						angles[]={6.2778587,3.8008292,6.272521};
 					};
 					side="Empty";
@@ -34015,7 +34012,7 @@ class Mission
 					};
 					id=5432;
 					type="OPT_O_Truck_03_repair_F";
-					atlOffset=-0.17623711;
+					atlOffset=0.075732231;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35384,6 +35381,7 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -35392,7 +35390,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390946;
+					atlOffset=0.14878201;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35622,7 +35620,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3513131;
+			atlOffset=2.3484077;
 		};
 		class Item17
 		{
@@ -41896,12 +41894,11 @@ class Mission
 		class Item34
 		{
 			dataType="Marker";
-			position[]={11734.503,4.6700168,3132.2483};
+			position[]={11741.467,4.8699999,3140.2434};
 			name="csat_radar";
 			text=" Radar Container";
 			type="o_recon";
 			id=5689;
-			atlOffset=1.6689301e-005;
 		};
 		class Item35
 		{
@@ -44314,7 +44311,7 @@ class Mission
 					side="East";
 					class Entities
 					{
-						items=11;
+						items=13;
 						class Item0
 						{
 							dataType="Object";
@@ -44926,6 +44923,148 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item11
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11672.934,4.6914387,3044.5571};
+								angles[]={6.2431998,0.57505113,0};
+							};
+							side="East";
+							flags=4;
+							class Attributes
+							{
+								rank="SERGEANT";
+								init="call{(group this) setGroupIDGlobal [""Alpha""];}";
+								description="Alpha  - Sanitaeter";
+								isPlayable=1;
+							};
+							id=5848;
+							type="OPT_CSAT_Sanitaeter_T";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male03PER";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=0.94999999;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="EnableRevive";
+									expression="if (getMissionConfigValue ['ReviveMode',0] == 2) then {_this setVariable ['#rev_enabled', _value, true]};";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"BOOL"
+												};
+											};
+											value=1;
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item12
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11671.799,4.6914392,3045.407};
+								angles[]={0,0.56059974,0};
+							};
+							side="East";
+							flags=4;
+							class Attributes
+							{
+								init="call{(group this) setGroupIDGlobal [""Alpha""];}";
+								description="Alpha - Grenadier";
+								isPlayable=1;
+							};
+							id=5795;
+							type="OPT_CSAT_Grenadier_T";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male01PER";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1.01;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
 					class Attributes
 					{
@@ -44939,7 +45078,7 @@ class Mission
 					side="East";
 					class Entities
 					{
-						items=10;
+						items=12;
 						class Item0
 						{
 							dataType="Object";
@@ -45603,6 +45742,129 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item10
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11659.805,4.6914387,3057.9121};
+								angles[]={6.2431998,0.78599155,0};
+							};
+							side="East";
+							flags=4;
+							class Attributes
+							{
+								rank="SERGEANT";
+								init="call{(group this) setGroupIDGlobal [""Charlie""];}";
+								description="Charlie - Pionier";
+								isPlayable=1;
+							};
+							id=5793;
+							type="OPT_CSAT_Pionier_T";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male03PER";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item11
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11658.065,4.6914387,3056.1912};
+								angles[]={0,0.69980723,0};
+							};
+							side="East";
+							flags=4;
+							class Attributes
+							{
+								init="call{(group this) setGroupIDGlobal [""Charlie""];}";
+								description="Charlie - LMG";
+								isPlayable=1;
+							};
+							id=5799;
+							type="OPT_CSAT_LMG_Schuetze_T";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Male02PER";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
 					class Attributes
 					{
@@ -45616,13 +45878,13 @@ class Mission
 					side="East";
 					class Entities
 					{
-						items=10;
+						items=2;
 						class Item0
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11676.145,4.8414392,3064.782};
+								position[]={11690.318,4.7164388,3038.9438};
 								angles[]={0,0.69659579,0};
 							};
 							side="East";
@@ -45637,6 +45899,7 @@ class Mission
 							};
 							id=5792;
 							type="OPT_CSAT_Gruppenfuehrer_T";
+							atlOffset=0.024999619;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -45685,256 +45948,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11675.498,4.762167,3062.4431};
-								angles[]={6.2431998,0.78599155,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								rank="SERGEANT";
-								init="call{(group this) setGroupIDGlobal [""Golf""];}";
-								description="Golf - Pionier";
-								isPlayable=1;
-							};
-							id=5793;
-							type="OPT_CSAT_Pionier_T";
-							atlOffset=-0.024999142;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male03PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11674.146,4.8136015,3063.729};
-								angles[]={0,0.71425855,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								init="call{(group this) setGroupIDGlobal [""Golf""];}";
-								description="Golf - Grenadier";
-								isPlayable=1;
-							};
-							id=5794;
-							type="OPT_CSAT_Grenadier_T";
-							atlOffset=-0.024999142;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male02PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=0.98000002;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item3
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11673.03,4.8164392,3064.5339};
-								angles[]={0,0.56059974,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								init="call{(group this) setGroupIDGlobal [""Golf""];}";
-								description="Golf - Grenadier";
-								isPlayable=1;
-							};
-							id=5795;
-							type="OPT_CSAT_Grenadier_T";
-							atlOffset=-0.025000095;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male01PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=1.01;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11673.34,4.6907191,3060.657};
-								angles[]={6.2431998,0.69980723,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								init="call{(group this) setGroupIDGlobal [""Golf""];}";
-								description="Golf - LMG";
-								isPlayable=1;
-							};
-							id=5796;
-							type="OPT_CSAT_LMG_Schuetze_T";
-							atlOffset=-0.024999619;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male01PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11672.605,4.6664391,3058.1411};
+								position[]={11689.454,4.6914387,3039.4802};
 								angles[]={0,0.23408355,0};
 							};
 							side="East";
@@ -45949,7 +45963,6 @@ class Mission
 							};
 							id=5797;
 							type="OPT_CSAT_Gruppenfuehrer_T";
-							atlOffset=-0.024999619;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -45991,274 +46004,6 @@ class Mission
 									};
 								};
 								nAttributes=2;
-							};
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11672.273,4.7461638,3062.043};
-								angles[]={6.2431998,0.71425855,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								init="call{(group this) setGroupIDGlobal [""Golf""];}";
-								description="Golf - LMG";
-								isPlayable=1;
-							};
-							id=5798;
-							type="OPT_CSAT_LMG_Schuetze_T";
-							atlOffset=-0.024999619;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male02PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=0.95999998;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item7
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11671.193,4.7910886,3063.166};
-								angles[]={0,0.69980723,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								init="call{(group this) setGroupIDGlobal [""Golf""];}";
-								description="Golf - LMG";
-								isPlayable=1;
-							};
-							id=5799;
-							type="OPT_CSAT_LMG_Schuetze_T";
-							atlOffset=-0.024999142;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male02PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item8
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11669.568,4.6930141,3061.156};
-								angles[]={6.2431998,0.57505113,0.039985489};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								init="call{(group this) setGroupIDGlobal [""Reste""];}";
-								description="Reste - MG";
-								isPlayable=1;
-							};
-							id=5800;
-							type="OPT_CSAT_MG_Schuetze_T";
-							atlOffset=-0.025423527;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male03PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=1.03;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item9
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={11674.858,4.6664391,3059.6169};
-								angles[]={6.2431998,0.57505113,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								rank="SERGEANT";
-								init="call{(group this) setGroupIDGlobal [""Golf""];}";
-								description="Golf  - Sanitaeter";
-								isPlayable=1;
-							};
-							id=5848;
-							type="OPT_CSAT_Sanitaeter_T";
-							atlOffset=-0.024999619;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male03PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=0.94999999;
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="EnableRevive";
-									expression="if (getMissionConfigValue ['ReviveMode',0] == 2) then {_this setVariable ['#rev_enabled', _value, true]};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=1;
-										};
-									};
-								};
-								nAttributes=3;
 							};
 						};
 					};
@@ -46266,6 +46011,7 @@ class Mission
 					{
 					};
 					id=5791;
+					atlOffset=0.024999619;
 				};
 				class Item4
 				{
@@ -46273,7 +46019,7 @@ class Mission
 					side="East";
 					class Entities
 					{
-						items=15;
+						items=14;
 						class Item0
 						{
 							dataType="Object";
@@ -46405,7 +46151,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11680.452,4.6914392,3040.1653};
+								position[]={11680.452,4.6914387,3040.165};
 								angles[]={0,0.49497539,0};
 							};
 							side="East";
@@ -46419,7 +46165,6 @@ class Mission
 							};
 							id=5804;
 							type="OPT_CSAT_Sanitaeter_T";
-							atlOffset=4.7683716e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46549,7 +46294,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11684.276,4.6914392,3040.7214};
+								position[]={11683.507,4.6914387,3040.3101};
 								angles[]={0,0.50858891,0};
 							};
 							side="East";
@@ -46563,7 +46308,6 @@ class Mission
 							};
 							id=5806;
 							type="OPT_CSAT_Sanitaeter_T";
-							atlOffset=4.7683716e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -46674,69 +46418,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11681.868,4.6914392,3038.8894};
-								angles[]={0,0.49497539,0};
-							};
-							side="East";
-							flags=4;
-							class Attributes
-							{
-								rank="LIEUTENANT";
-								init="call{(group this) setGroupIDGlobal [""Delta""];}";
-								description="Delta - AA";
-								isPlayable=1;
-							};
-							id=5808;
-							type="OPT_CSAT_Luftabwehrspezialist_T";
-							atlOffset=4.7683716e-007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Male03PER";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"SCALAR"
-												};
-											};
-											value=0.97000003;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item7
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={11685.604,4.6914392,3035.6704};
 								angles[]={0,0.43532002,0};
 							};
@@ -46795,7 +46476,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item8
+						class Item7
 						{
 							dataType="Object";
 							class PositionInfo
@@ -46858,7 +46539,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item9
+						class Item8
 						{
 							dataType="Object";
 							class PositionInfo
@@ -46920,7 +46601,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item10
+						class Item9
 						{
 							dataType="Object";
 							class PositionInfo
@@ -46982,7 +46663,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item11
+						class Item10
 						{
 							dataType="Object";
 							class PositionInfo
@@ -47044,7 +46725,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item12
+						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
@@ -47106,7 +46787,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item13
+						class Item12
 						{
 							dataType="Object";
 							class PositionInfo
@@ -47169,7 +46850,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item14
+						class Item13
 						{
 							dataType="Object";
 							class PositionInfo
@@ -47381,7 +47062,7 @@ class Mission
 				};
 			};
 			id=5764;
-			atlOffset=0.018723488;
+			atlOffset=0.003098011;
 		};
 		class Item49
 		{
@@ -47951,14 +47632,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11675.363,4.8399553,3065.51};
+				position[]={11673.296,4.7905984,3062.5149};
 				angles[]={0,3.2798197,0};
 			};
 			name="zeus_csat_sf1";
 			presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
 			id=5826;
 			type="ModuleCurator_F";
-			atlOffset=-4.4822693e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -48046,7 +47726,7 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=8;
+				items=13;
 				class Item0
 				{
 					dataType="Object";
@@ -48568,6 +48248,312 @@ class Mission
 							};
 						};
 						nAttributes=3;
+					};
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11667.256,4.6914392,3045.2319};
+						angles[]={6.2431998,0.71425855,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						init="call{(group this) setGroupIDGlobal [""Bravo""];}";
+						description="Bravo - LMG";
+						isPlayable=1;
+					};
+					id=5798;
+					type="OPT_CSAT_LMG_Schuetze_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11668.714,4.6914392,3047.925};
+						angles[]={6.2431998,0.69980723,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						init="call{(group this) setGroupIDGlobal [""Bravo""];}";
+						description="Bravo - LMG";
+						isPlayable=1;
+					};
+					id=5796;
+					type="OPT_CSAT_LMG_Schuetze_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11664.545,4.6914387,3051.282};
+						angles[]={0,0.71425855,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						init="call{(group this) setGroupIDGlobal [""Bravo""];}";
+						description="Bravo - Grenadier";
+						isPlayable=1;
+					};
+					id=5794;
+					type="OPT_CSAT_Grenadier_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11668.57,4.6914387,3045.0029};
+						angles[]={6.2431998,0.57505113,0.039985489};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						init="call{(group this) setGroupIDGlobal [""Bravo""];}";
+						description="Bravo - MG";
+						isPlayable=1;
+					};
+					id=5800;
+					type="OPT_CSAT_MG_Schuetze_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11662.336,4.6914387,3050.3511};
+						angles[]={0,0.49497539,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						rank="LIEUTENANT";
+						init="call{(group this) setGroupIDGlobal [""Bravo""];}";
+						description="Bravo - AA";
+						isPlayable=1;
+					};
+					id=5808;
+					type="OPT_CSAT_Luftabwehrspezialist_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 			};
@@ -49232,35 +49218,6 @@ class Mission
 			id=5850;
 			type="Box_Syndicate_WpsLaunch_F";
 			atlOffset=9.5367432e-007;
-		};
-		class Item62
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2171.1587,13.451439,13383.94};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						isPlayer=1;
-					};
-					id=5852;
-					type="B_Competitor_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=5851;
 		};
 	};
 	class Connections

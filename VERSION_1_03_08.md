@@ -14,3 +14,11 @@
 - zwei neue description.ext, eine test.ext und eine war.ext für Test und War-Betrieb. Muss nur einmal in description.ext geändert werden.
 - enableRadio false in onPlayerRespawn, soll RadioChat durch KI/Spieler verhindern
 - Bugfix: Radar Container wirft Fehler, wenn er zerstört wird bevor er einmal aufgebaut wurde.
+
+Kalle
+- competitor aus natobase entfernt
+- AA-drohne auf natoseite in kaufliste eingetragen
+- lkw in csatbasis auf andere seite verschoben
+- einige slots bei csat neu sortiert
+- Flaggen für schlacht verschoben
+- Datalink testweise in spawnvehicle.sqf eingetragen (siehe Lords beitrag im Bugtracker)

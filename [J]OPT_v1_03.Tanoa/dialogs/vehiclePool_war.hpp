@@ -33,7 +33,8 @@ opt_choppersNato = [
 	["OPT_B_Plane_CAS_01_F",550000],						// A-164 Wipeout,540000
 	["OPT_B_UAV_02_light_F",300000],						// Greyhawk unbewaffnet,300000
 	["OPT_B_UAV_02_CAS_F",400000],							// Greyhawk LGB,400000	
-	["OPT_B_UAV_02_F",380000],								// Greyhawk Raketen,600000	
+	["OPT_B_UAV_02_F",380000],								// Greyhawk Raketen,600000
+	["OPT_B_UAV_02_AA_F",400000],								// Greyhawk AA-Raketen,400000	
 	["OPT_B_T_UAV_03_dynamicLoadout_F",650000],									// MQ12-Falcon - noch in arbeit erstma nur testweise mit preis eingebaut
 	["OPT_B_Plane_Fighter_AA_01_F",500000],					//  F/A-181 Black Wasp II (AA)
 	["OPT_B_T_VTOL_01_infantry_F",180000],					// Blackfish (Inf-Transport)
