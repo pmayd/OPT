@@ -5,9 +5,9 @@ Github der Operation Pandora Trigger
 [3.Jgkp]James
 
 ## Version
-Aktuelle Version ist 1.03_06
+Aktuelle Version ist 1.03_09
 
-Name: [J]OPT_v1_03_06
+Name: [J]OPT_v1_03_09
 
 ## Current Work
 
