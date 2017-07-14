@@ -200,29 +200,16 @@
 	
 	
 	//----------------------------------- BASE CAPTURE DISPLAY -------------------------------------
-	#define FONTSIZE (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8) // dynamische Anpassung je nach UI Schriftgröße
+	#define FONTSIZE (0.022 / (getResolution select 5))  // dynamische Anpassung je nach UI Schriftgröße
 	class DefaultMenu {
 		idd = 5000;
 		objects[] = {};
 
-		class BackgroundWindowLight:BackgroundWindow {
-			colorBackground[] = {0.4,0.4,0.4,1.0};	
-		};
-
-		class BackgroundBarLeft: IGUIBack {
-			idc = 2201;
+		class BackgroundBar: IGUIBack {
+			idc = 2200;
 			x = safezoneX;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.30 * safezoneW;
-			h = 0.025 * safezoneH;
-			colorbackground[] = CA_UI_background_2;
-		}
-
-		class BackgroundBarRight: IGUIBack {
-			idc = 2202;
-			x = safezoneX + safezoneW - 0.30 * safezoneW;
-			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.30 * safezoneW;
+			w = safezoneW;
 			h = 0.025 * safezoneH;
 			colorbackground[] = CA_UI_background_2;
 		}
@@ -230,66 +217,80 @@
 		// 1. Feld
 		class PlayersDisplay : GUILargeText {
 			idc = 5101;
-			x = safezoneX + 0.02 * safezoneW;
+			x = safezoneX + 0/6 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.09 * safezoneW;
+			w = 1/6 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			shadow = 1;
-			colorText[] = Color_WhiteLight;
-			text = "#Spieler";
+			colorText[] = Color_GrayLight;
+			text = "Spieler:";
 		};	
 
 		// 2. Feld
 		class FrameDisplay : GUILargeText {
-			idc = 5091;
-			x = safezoneX + 0.12 * safezoneW;
+			idc = 5102;
+			x = safezoneX + 1/6 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.09 * safezoneW;
+			w = 1/6 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			shadow = 1;
-			colorText[] = Color_WhiteLight;
-			text = "FPS";
+			colorText[] = Color_GrayLight;
+			text = "FPS:";
 		};	
 
 		// 3. Feld
 		class BudgetDisplay : GUILargeText {
-			idc = 5092;
-			x = safezoneX + 0.22 * safezoneW;
+			idc = 5103;
+			x = safezoneX + 2/6 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.09 * safezoneW;
+			w = 1/6 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			shadow = 1;
-			colorText[] = Color_WhiteLight;
-			text = "Budget";
+			colorText[] = Color_GrayLight;
+			text = "Budget:";
 		};
 
 		// 4. Feld
-		class HeadingDisplay : GUILargeText {
-			idc = 5102;
-			x = safezoneX + safezoneW - 0.28 * safezoneW;
+		class ScoreDisplay : GUILargeText {
+			idc = 5104;
+			x = safezoneX + 3/6 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.09 * safezoneW;
+			w = 1/6 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
+			colorText[] = Color_GrayLight;
 			shadow = 1;
-			text = "Heading";
+			text = "Punkte:";
 		};
 		
 		// 5. Feld
 		class TimerDisplay : GUILargeText {
-			idc = 5090;
-			x = safezoneX + safezoneW - 0.18 * safezoneW;
+			idc = 5105;
+			x = safezoneX + 4/6 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 0.09 * safezoneW;
+			w = 1/6 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
-			colorText[] = Color_WhiteLight;
+			colorText[] = Color_GrayLight;
 			shadow = 1;
-			text = "Spielzeit";
+			text = "Spielzeit:";
 		};		
+
+		// 6. Feld
+		class EmptyDisplay : GUILargeText {
+			idc = 5106;
+			x = safezoneX + 5/6 * safezoneW;
+			y = safezoneY + safezoneH - 0.025 * safezoneH;
+			w = 1/6 * safezoneW;
+			h = 0.025 * safezoneH;
+			sizeEx = FONTSIZE;
+			colorText[] = Color_GrayLight;
+			shadow = 1;
+			text = "";
+		};	
 		
 	};
 
@@ -314,7 +315,7 @@
 		//    bottom, the last goes on top
 		// add BackgroundBar to have a nicer background
 		controlsBackground[] = {
-			BackgroundBarLeft, BackgroundBarRight, HeadingDisplay,PlayersDisplay,TimerDisplay,FrameDisplay,BudgetDisplay
+			BackgroundBar, ScoreDisplay,PlayersDisplay,TimerDisplay,FrameDisplay,BudgetDisplay
 		};			
 	};
 };

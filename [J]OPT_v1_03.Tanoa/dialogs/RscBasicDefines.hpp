@@ -100,9 +100,9 @@
 #define Color_WhiteLight		{1, 1, 1, 0.9}
 #define Color_Black 				{0, 0, 0, 1}
 #define Color_Gray 					{1, 1, 1, 0.5}
-#define Color_GrayLight 		{0.6, 0.6, 0.6, 1}
+#define Color_GrayLight 		{0.7, 0.7, 0.7, 1}
 #define Color_GrayDark 			{0.2, 0.2, 0.2, 1}
-#define Color_DarkRed 			{0.5, 0.1, 0, 0.5}
+#define Color_DarkRed 			{0.6, 0.1, 0, 1}
 #define Color_Green 				{0.8, 0.9, 0.4, 1}
 #define Color_Orange 				{0.9, 0.45, 0.1, 1}
 #define Color_Red 					{0.9, 0.2, 0.2, 1}

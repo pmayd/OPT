@@ -24,9 +24,64 @@ _currentCutDisplay = uiNamespace getVariable "opt_HudDisplay";
 
 //--------------------- get settings on whether to display extra labels --------------
 	
-	
+//--------------------- update players ------------------------------------------
+_control = _currentCutDisplay displayCtrl 5101;
+#ifdef __HUD_NUMBER_PLAYERS__
+
+	_playersStr = format ["Spieler: (N) %1 vs %2 (C)", playersNumber west, playersNumber east];
+
+	// Anzeige updaten
+	// Update Text
+	_control ctrlSetText _playersStr;	
+
+#else
+
+	_control ctrlShow false;
+#endif
+
+//--------------------- update Frames ------------------------------------------
+_control = _currentCutDisplay displayCtrl 5102;
+#ifdef __HUD_FPS__
+
+	_frameStr = format ["FPS: %1", round (diag_fps)];
+
+	// Anzeige updaten
+	// Update Text
+	_control ctrlSetText _frameStr;
+
+#else
+
+	_control ctrlShow false;
+#endif
+
+//--------------------- update Budget ------------------------------------------
+_control = _currentCutDisplay displayCtrl 5103;
+#ifdef __HUD_BUDGET__
+
+	[_control] call opt_fnc_renderBudget;
+
+#else
+
+	_control ctrlShow false;
+#endif
+
+//----------------------- update score --------------------------------------------
+_control = _currentCutDisplay displayCtrl 5104;
+#ifdef __HUD_SCORE__
+
+	_scoreStr = format ["Punkte: (N) %1 : %2 (C)", WestPoints, EastPoints];
+
+	// Anzeige updaten
+	// Update Text
+	_control ctrlSetText _scoreStr;	
+
+#else
+
+	_control ctrlShow false;
+#endif
+
 //--------------------- update clock ---------------------------------------
-_control = _currentCutDisplay displayCtrl 5090;
+_control = _currentCutDisplay displayCtrl 5105;
 #ifdef __HUD_TIMER__
 
 	private "_timeStr";
@@ -42,7 +97,7 @@ _control = _currentCutDisplay displayCtrl 5090;
 		if (_playTime > 0) then {
 
 			_timeStr = format ["Rest-Spielzeit: %1", _timeLeft];
-			_control ctrlSetTextColor [1, 1, 1, 0.9];
+			_control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
 		} else {
 
 			_timeStr = "Time: 00:00";
@@ -56,11 +111,11 @@ _control = _currentCutDisplay displayCtrl 5090;
 		if (_truceTime > 0) then {
 
 			_timeStr = format ["Waffenruhe: %1", _timeLeft];
-			_control ctrlSetTextColor [1, 0, 0, 0.9];
+			_control ctrlSetTextColor [0.6, 0.1, 0, 1];
 		} else {
 
 			_timeStr = "Waffenruhe: 00:00";
-			_control ctrlSetTextColor [1, 1, 1, 0.9];
+			_control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
 		}
 	};
 
@@ -71,61 +126,6 @@ _control = _currentCutDisplay displayCtrl 5090;
 	if (_playTime < 300) then {
 		_control ctrlSetTextColor [0.9, 0.2, 0.2, 1];
 	};
-
-#else
-
-	_control ctrlShow false;
-#endif
-	
-//--------------------- update players ------------------------------------------
-_control = _currentCutDisplay displayCtrl 5101;
-#ifdef __HUD_NUMBER_PLAYERS__
-
-	_playersStr = format ["NATO %1 vs %2 CSAT (ges.: %3)", playersNumber west, playersNumber east, (playersNumber west) + (playersNumber east)];
-
-	// Anzeige updaten
-	// Update Text
-	_control ctrlSetText _playersStr;	
-
-#else
-
-	_control ctrlShow false;
-#endif
-//----------------------- update score --------------------------------------------
-_control = _currentCutDisplay displayCtrl 5102;
-#ifdef __HUD_SCORE__
-
-	_scoreStr = format ["Punkte: NATO %1:%2 CSAT", WestPoints, EastPoints];
-
-	// Anzeige updaten
-	// Update Text
-	_control ctrlSetText _scoreStr;	
-
-#else
-
-	_control ctrlShow false;
-#endif
-
-//--------------------- update Frames ------------------------------------------
-_control = _currentCutDisplay displayCtrl 5091;
-#ifdef __HUD_FPS__
-
-	_frameStr = format ["FPS: %1", round (diag_fps)];
-
-	// Anzeige updaten
-	// Update Text
-	_control ctrlSetText _frameStr;
-
-#else
-
-	_control ctrlShow false;
-#endif
-
-//--------------------- update Budget ------------------------------------------
-_control = _currentCutDisplay displayCtrl 5092;
-#ifdef __HUD_BUDGET__
-
-	[_control] call opt_fnc_renderBudget;
 
 #else
 
