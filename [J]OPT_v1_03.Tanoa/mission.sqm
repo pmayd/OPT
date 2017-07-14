@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=5859;
+		nextID=5861;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=414;
+		nextID=439;
 	};
 	class Camera
 	{
@@ -522,7 +522,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=62;
+		items=63;
 		class Item0
 		{
 			dataType="Marker";
@@ -30710,7 +30710,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.9517891;
+					atlOffset=0.25820208;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30744,7 +30744,7 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30752,7 +30752,7 @@ class Mission
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.189431;
+					atlOffset=0.063271761;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30786,7 +30786,7 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30794,7 +30794,7 @@ class Mission
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=4.8953876;
+					atlOffset=0.086225986;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -47063,7 +47063,7 @@ class Mission
 				};
 			};
 			id=5764;
-			atlOffset=0.0030984879;
+			atlOffset=60.779999;
 		};
 		class Item49
 		{
@@ -49221,6 +49221,37 @@ class Mission
 			id=5850;
 			type="Box_Syndicate_WpsLaunch_F";
 			atlOffset=9.5367432e-007;
+		};
+		class Item62
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7595.6304,7.3835211,14818.464};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=5860;
+					type="B_Soldier_F";
+					atlOffset=-4.7683716e-007;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=5859;
+			atlOffset=-4.7683716e-007;
 		};
 	};
 	class Connections
