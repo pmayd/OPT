@@ -4,3 +4,4 @@
 - Bugfix Animationen: Dauerschleife bei Rep-Animation entfernt, kommt aber immer noch direkt zu Beginn zu Fehlern wenn man jemanden erschießt
 - Zeus wird nun bei jedem Respawn neu zugewiesen
 - Spieler kann nicht mehr nach drücken auf Respawn getötet werden
+- Bugfix: Fahrzeuge ließen sich nicht verkaufen, obwohl sie erlaubt waren -> unterschiedliche Groß- und Kleinschreibung von Klassennamen, behoben
