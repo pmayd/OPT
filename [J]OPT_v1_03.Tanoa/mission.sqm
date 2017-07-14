@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=5861;
+		nextID=5872;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=439;
+		nextID=489;
 	};
 	class Camera
 	{
-		pos[]={11730.529,20.94285,3125.9553};
-		dir[]={-0.94035321,-0.21942557,0.25997725};
-		up[]={-0.21149208,0.97562927,0.058469608};
-		aside[]={0.26647115,1.0430813e-006,0.96384287};
+		pos[]={2226.0117,33.592873,13374.945};
+		dir[]={-0.36854985,-0.59085178,0.7176857};
+		up[]={-0.26990977,0.80678082,0.52560163};
+		aside[]={0.88956583,-5.3732947e-008,0.45681512};
 	};
 };
 binarizationWanted=0;
@@ -522,7 +522,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=63;
+		items=64;
 		class Item0
 		{
 			dataType="Marker";
@@ -40423,10 +40423,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7571.3398,8.6685362,14839.073};
+				position[]={7575.9458,6.5441895,14849.3};
 			};
 			id=5654;
 			type="TFAR_ModuleTaskForceRadioEnforceUsage";
+			atlOffset=-7.6924686;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -47063,7 +47064,7 @@ class Mission
 				};
 			};
 			id=5764;
-			atlOffset=60.779999;
+			atlOffset=0.0030984879;
 		};
 		class Item49
 		{
@@ -49224,34 +49225,83 @@ class Mission
 		};
 		class Item62
 		{
-			dataType="Group";
-			side="West";
-			class Entities
+			dataType="Object";
+			class PositionInfo
 			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7595.6304,7.3835211,14818.464};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						isPlayer=1;
-					};
-					id=5860;
-					type="B_Soldier_F";
-					atlOffset=-4.7683716e-007;
-				};
+				position[]={2211.2429,13.831529,13400.299};
+				angles[]={0,5.6186862,0};
 			};
+			side="Empty";
+			flags=4;
 			class Attributes
 			{
+				init="call{this addEventHandler [""ContainerClosed"", {params [""_container""]; clearWeaponCargoGlobal _container; clearMagazineCargoGlobal _container; clearItemCargoGlobal _container; clearBackpackCargoGlobal _container;  }];}";
 			};
-			id=5859;
-			atlOffset=-4.7683716e-007;
+			id=5869;
+			type="Box_NATO_Equip_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item63
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11695.92,5.0715289,3040.6169};
+				angles[]={0,0.65076345,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this addEventHandler [""ContainerClosed"", {params [""_container""]; clearWeaponCargoGlobal _container; clearMagazineCargoGlobal _container; clearItemCargoGlobal _container; clearBackpackCargoGlobal _container;  }];}";
+			};
+			id=5871;
+			type="Box_CSAT_Uniforms_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections

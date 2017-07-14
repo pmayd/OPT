@@ -178,9 +178,11 @@ zlt_prc_repairvehicle = {
 		sleep 1;
 		_hastk = [] call zlt_fnc_hastk;
 		if (_hastk <= 0) exitWith {STR_NEED_TOOLKIT call zlt_fnc_notify; sleep 1.;};	
+		/*
 		if (animationState player != "Acts_carFixingWheel" and animationState player != "unconscious") then {
 			player switchMove "Acts_carFixingWheel"; // without transition
 		};
+		*/
 	};
 	if (player getVariable ["FAR_isUnconscious", 0] == 0) then {
 		player switchMove ""; // Animation korrekt beenden

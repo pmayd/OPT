@@ -51,7 +51,7 @@ _unit setVelocity [0,0,0];
 _unit allowDamage false;
 //_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 //_unit playActionNow "Down"; // verursacht ragdoll problem -> Stehaufmännchen
-_unit playAction "Unconscious";
+_unit switchAction "Unconscious";
 
 // time for animation
 sleep 4;
