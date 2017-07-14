@@ -69,7 +69,7 @@ if (count opt_orderDialogObjects != 0) then {
 	// gehe alle gefundenen Objekte durch und lösche sie, falls nicht in pool, oder ergänze um Preis
 
 	{
-		_index = (_pool apply {_x select 0}) find (typeOf _x);
+		_index = (_pool apply {toLower (_x select 0)}) find (toLower (typeOf _x));
 
 		if (_index == -1) then {
 			_objs = _objs - [_x];
