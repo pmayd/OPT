@@ -80,4 +80,7 @@ enableRadio false;
 player disableConversation true;
 enableSentences false;
 
+// Zeus neu zuweisen im Trainingsmodus
+["opt_eh_server_renew_curator", [player]] call CBA_fnc_serverEvent;
+
 diag_log format ["%1 --- TcB player_jip.sqf processed",diag_ticktime];

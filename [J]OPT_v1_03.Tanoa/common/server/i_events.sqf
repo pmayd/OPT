@@ -113,3 +113,17 @@ wird in der initServer.sqf aufgerufen
 	["opt_eh_server_log_write", [_cat, _message]] call CBA_fnc_localEvent;
 
 }] call CBA_fnc_addEventHandler;
+
+// Zeus neu vergeben
+["opt_eh_server_renew_curator", {
+
+	params ["_operator"];
+
+	if (_operator in (allCurators apply {getAssignedCuratorUnit _x})) then {
+	_id = (allCurators apply {getAssignedCuratorUnit _x}) find _operator;
+	_module = allCurators select _id;
+	unassignCurator _module;
+	_operator assignCurator _module;	
+};
+	
+}] call CBA_fnc_addEventHandler;

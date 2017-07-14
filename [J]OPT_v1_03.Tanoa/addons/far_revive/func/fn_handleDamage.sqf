@@ -95,7 +95,7 @@ if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1) then{
 			diag_log format["FAR REVIVE: Schadensgrenzwert überschritten für: %1", name _unit];
 		};
 
-		if (isNil "opt_addons_var_unconciousHandle" && !isNull _unit && isPlayer _unit) then {
+		if (isNil "opt_addons_var_unconciousHandle" && !isNull _unit && isPlayer _unit && alive _unit) then {
 			opt_addons_var_unconciousHandle = [_unit, _instigator] spawn opt_addons_fnc_Unconcious;
 			// da Spieler nicht mehr sterben kann, muss Abschuss hier geloggt werden!
 			["opt_eh_server_log_kill", [_unit, _instigator]] call CBA_fnc_serverEvent;
