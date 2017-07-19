@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=514;
+		nextID=539;
 	};
 	class Camera
 	{
@@ -30708,7 +30708,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=0.25820208;
+					atlOffset=3.9517891;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30742,7 +30742,7 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30750,7 +30750,7 @@ class Mission
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=0.063271761;
+					atlOffset=3.189431;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30784,7 +30784,7 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30792,7 +30792,7 @@ class Mission
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=0.086225986;
+					atlOffset=4.8953876;
 					class CustomAttributes
 					{
 						class Attribute0

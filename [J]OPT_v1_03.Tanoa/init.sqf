@@ -34,7 +34,6 @@ __ccppfln(addons\far_revive\FAR_revive_init.sqf); 											//farooq
 
 // post-init area:
 [] spawn {
-	__ccppfln(addons\fastrope\zlt_fastrope.sqf); 													//fastropescript
 	__ccppfln(addons\zlt_fieldrepair\zlt_fieldrepair.sqf);								//repscript
 	execVM "addons\R3F_LOG\init.sqf";																			// r3f Logistics
 	execVM "addons\attach_exp\init.sqf";																	// etv charges
