@@ -16,6 +16,13 @@ Name: [J]OPT_v1_03_09
 
 ## SITREP
 
+### 2017-07-20
+- default der Waffenruhe für Schlachten auf 10 Minuten geändert
+- fastrope von Zealot entfernt zugunsten
+- neue Liste für Supply-Fahrzeuge in vehiclePool_war.hpp, die nicht mehr verkauft werden können. Betrifft den Ammo und Fuel Truck auf beiden Seiten
+- Minendetektor angepasst: Verbesserung von 18 auf 30m sowie Anpassung des seitlichen Winkels von 60° auf 100°
+- Änderung auf 40 Slots bei NATO nach Liste von Lord
+
 ### 2017-07-12
 - Schriftgröße in UI berücksichtigt nun Schriftgrößeneinstellung
 
