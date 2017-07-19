@@ -6,3 +6,5 @@
 - Spieler kann nicht mehr nach drücken auf Respawn getötet werden
 - Bugfix: Fahrzeuge ließen sich nicht verkaufen, obwohl sie erlaubt waren -> unterschiedliche Groß- und Kleinschreibung von Klassennamen, behoben
 - Mülltonne in Form einer leeren Kiste in beiden Basen. Inhalt wird gelöscht, sobald man das Inventar schließt
+- default der Waffenruhe für Schlachten auf 10 Minuten geändert
+- fastrope von Zealot entfernt zugunsten
