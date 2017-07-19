@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=5872;
+		nextID=5874;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=489;
+		nextID=514;
 	};
 	class Camera
 	{
-		pos[]={2226.0117,33.592873,13374.945};
-		dir[]={-0.36854985,-0.59085178,0.7176857};
-		up[]={-0.26990977,0.80678082,0.52560163};
-		aside[]={0.88956583,-5.3732947e-008,0.45681512};
+		pos[]={11718.251,29.690001,3045.1965};
+		dir[]={-0.77500975,-0.56215423,-0.28869829};
+		up[]={-0.52679211,0.82703149,-0.19623461};
+		aside[]={-0.34907663,1.0128133e-007,0.9370957};
 	};
 };
 binarizationWanted=0;
@@ -493,16 +493,14 @@ class Mission
 		briefingName="opt_base_mission_v106";
 		resistanceWest=0;
 		timeOfChanges=3712.6436;
-		startWeather=0.69908476;
-		startFog=0.0043318518;
+		startWeather=0;
 		startWind=0.57914013;
 		startWindDir=210.55499;
-		startRain=0.36445278;
-		startLightnings=0.54235882;
+		startRain=0.00016946725;
+		startLightnings=0.00016946725;
 		startWaves=0.1;
 		startGust=0.67077631;
-		forecastWeather=0.0086410306;
-		forecastFog=0.0084970603;
+		forecastWeather=0;
 		forecastWind=0.025158385;
 		forecastWaves=0.1;
 		forecastGust=0.037654009;
@@ -513,12 +511,12 @@ class Mission
 		year=2017;
 		month=1;
 		day=29;
-		hour=10;
+		hour=14;
 		minute=0;
-		startFogBase=-983.00586;
-		forecastFogBase=-974.67487;
-		startFogDecay=0.0004331852;
-		forecastFogDecay=0.0004331852;
+		startFogBase=-999.76666;
+		forecastFogBase=-992.23608;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 	class Entities
 	{
@@ -32598,7 +32596,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10535,161.94347,10575};
+				position[]={12382,147.29076,11245};
 				angles[]={0,0.70842916,0};
 			};
 			side="Empty";
@@ -32617,7 +32615,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9281,94.661522,11176};
+				position[]={11327,124.01344,12337};
 				angles[]={0,0.32203069,0};
 			};
 			side="Empty";
@@ -49196,38 +49194,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11695.022,4.8699841,3044.5571};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=5849;
-			type="Box_Syndicate_WpsLaunch_F";
-			atlOffset=-4.7683716e-007;
-		};
-		class Item61
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2199.2896,13.629986,13402.434};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=5850;
-			type="Box_Syndicate_WpsLaunch_F";
-			atlOffset=9.5367432e-007;
-		};
-		class Item62
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={2211.2429,13.831529,13400.299};
 				angles[]={0,5.6186862,0};
 			};
@@ -49263,7 +49229,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item63
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -49297,6 +49263,86 @@ class Mission
 								};
 							};
 							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item62
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2200.0476,13.629984,13402.255};
+				angles[]={0,0,6.2805324};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5872;
+			type="Box_Syndicate_WpsLaunch_F";
+			atlOffset=-9.5367432e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""launch_RPG7_F""],[3]],[[""RPG7_F""],[15]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item63
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11694.875,4.8699841,3044.5771};
+				angles[]={0,0,6.2805324};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=5873;
+			type="Box_Syndicate_WpsLaunch_F";
+			atlOffset=-4.7683716e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""launch_RPG7_F""],[3]],[[""RPG7_F""],[15]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
