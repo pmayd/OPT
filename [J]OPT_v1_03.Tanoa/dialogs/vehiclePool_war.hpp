@@ -12,13 +12,17 @@ opt_vehiclesNato = [
 	["OPT_B_MRAP_03_gmg_F",35000],							// Strider GMG,32500
 	["OPT_B_Truck_01_covered_F",8000], 						// HEMTT Transport,8000
 	["OPT_B_Truck_01_Repair_F",10000], 							// HEMTT Repair,10000 ersetzt durch Container
-	["OPT_B_Truck_01_ammo_F",50000], 						// HEMTT Ammo,50000 ersetzt durch Container
-	["OPT_B_Truck_01_fuel_F",10000], 							// HEMTT Fuel,10000 ersetzt durch Container
 	["OPT_B_Truck_01_medical_F",10000], 					// HEMTT Medical,10000 ersetzt durch Container
 	["B_Truck_01_mover_F",0], 								// HEMTT 2000 (für Radar Container, keine Sitze auf Ladefläche)
 	["OPT_B_Truck_01_transport_F",2000], 					// HEMTT 2000 (für Radar Container, keine Sitze auf Ladefläche)
 	["OPT_B_T_LSV_01_unarmed_F",3000], 						// Prowler unarmed, 2000
 	["OPT_B_T_LSV_01_armed_F",4500] 						// Prowler armed, 4000
+];
+
+// Fahrzeuge dieser Liste können nicht verkauft werden!
+opt_vehiclesSupplyNato = [
+	["OPT_B_Truck_01_ammo_F", 50000], 						// HEMTT Ammo,50000 ersetzt durch Container
+	["OPT_B_Truck_01_fuel_F", 10000] 							// HEMTT Fuel,10000 ersetzt durch Container
 ];
 	
 opt_choppersNato = [
@@ -113,12 +117,16 @@ opt_vehiclesCsat = [
 	["OPT_O_T_MRAP_02_gmg_ghex_F",31000],					// Ifrit GMG,31000
 	["OPT_O_T_Truck_03_covered_ghex_F",8000],				// Tempest Transport,8000
 	["OPT_O_T_Truck_03_repair_ghex_F",10000],					// Tempest Repair,10000 ersetzt durch container
-	["OPT_O_T_Truck_03_ammo_ghex_F",50000],					// Tempest Ammo,50000 ersetzt durch container
-	["OPT_O_T_Truck_03_fuel_ghex_F",10000],						// Tempest Fuel,10000 ersetzt durch container
 	["OPT_O_T_Truck_03_medical_ghex_F",10000],				// Tempest Medical,10000 ersetzt durch container
 	["OPT_O_T_Truck_03_transport_ghex_F",2000],				// Tempest (für Radar, keine Sitze auf Ladefläche)
 	["OPT_O_T_LSV_02_unarmed_F",3000], 						// Quilin unarmed
 	["OPT_O_T_LSV_02_armed_F",4500] 						// Quilin armed
+];
+
+// Fahrzeuge dieser Liste können nicht verkauft werden!
+opt_vehiclesSupplyCsat = [
+	["OPT_O_T_Truck_03_ammo_ghex_F",50000],					// Tempest Ammo,50000 ersetzt durch container
+	["OPT_O_T_Truck_03_fuel_ghex_F",10000]						// Tempest Fuel,10000 ersetzt durch container
 ];
 
 opt_choppersCsat = [

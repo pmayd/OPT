@@ -27,8 +27,8 @@ private _explosive = ([_mines, [], {_x distance _unit} ,"ASCEND" ,{!isNull _x}] 
 if (!isNil "_explosive") then {
 	private _distance = _explosive distance _unit;
 	
-	if (_distance < 18) then {
-		_inSector = [getPosATL _unit, getDir _unit, 60, getPosATL _explosive] call BIS_fnc_inAngleSector;	// within a angle of 60 degrees?
+	if (_distance < 25) then {
+		_inSector = [getPosATL _unit, getDir _unit, 100, getPosATL _explosive] call BIS_fnc_inAngleSector;	// within a angle of 60 degrees?
 
 		if (_inSector) then {
 			_pitch = 18 - _distance;

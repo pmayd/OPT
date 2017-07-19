@@ -8,3 +8,5 @@
 - Mülltonne in Form einer leeren Kiste in beiden Basen. Inhalt wird gelöscht, sobald man das Inventar schließt
 - default der Waffenruhe für Schlachten auf 10 Minuten geändert
 - fastrope von Zealot entfernt zugunsten
+- neue Liste für Supply-Fahrzeuge in vehiclePool_war.hpp, die nicht mehr verkauft werden können. Betrifft den Ammo und Fuel Truck auf beiden Seiten
+- Minendetektor angepasst: Verbesserung von 18 auf 30m sowie Anpassung des seitlichen Winkels von 60° auf 100°
