@@ -10,3 +10,4 @@
 - fastrope von Zealot entfernt zugunsten
 - neue Liste für Supply-Fahrzeuge in vehiclePool_war.hpp, die nicht mehr verkauft werden können. Betrifft den Ammo und Fuel Truck auf beiden Seiten
 - Minendetektor angepasst: Verbesserung von 18 auf 30m sowie Anpassung des seitlichen Winkels von 60° auf 100°
+- Änderung auf 40 Slots bei NATO nach Liste von Lord
