@@ -11,7 +11,7 @@
 * wird in descprition.ext verwendet
 */
 // hier den Missionsnamen festlegen
-#define __MISSION_NAME__ "OPT - Schlacht Nr xx"
+#define __MISSION_NAME__ "OPT - Prolog"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
 #define __VERSION__ Build on version 1.03
 // made by
