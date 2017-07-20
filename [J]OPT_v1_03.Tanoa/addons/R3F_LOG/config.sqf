@@ -203,7 +203,7 @@ R3F_LOG_CFG_can_be_lifted = R3F_LOG_CFG_can_be_lifted +
 R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 [
 // NATO Vehicles
-    ["OPT_B_Quadbike_01_F", 15],							// Quadbike	- checken!
+  ["OPT_B_Quadbike_01_F", 15],							// Quadbike	- checken!
 	["OPT_B_G_Offroad_01_F", 30],						// Pickup - grad nich drin!
 	["OPT_B_G_Offroad_01_armed_F", 30],					// Pickup HMG - grad nich drin!
 	["OPT_B_T_LSV_01_unarmed_F", 30], 					// Prowler unarmed
@@ -277,7 +277,7 @@ R3F_LOG_CFG_can_transport_cargo = R3F_LOG_CFG_can_transport_cargo +
 R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 [	
 // NATO supplies													
-	["OPT_B_supplyCrate_F", 15],								// Transportkiste (leer)	+												
+	["OPT_B_supplyCrate_F", 15],								// Transportkiste (leer)	+					
 	["OPT_Box_NATO_Ammo_F", 30],          					// Munitionskiste	+
 	["OPT_Box_NATO_Grenades_F", 30],  						// Explosivkiste	+
 	["OPT_Box_NATO_WpsSpecial_AT2_F", 30],					// Raketenkiste		RPG42 +
@@ -286,8 +286,8 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["OPT_B_Slingload_01_Fuel_F", 100],     					// Fuelcontainer  +
 	["OPT_B_Slingload_01_Repair_F", 100],       				// Reparaturcontainer +
 	["OPT_B_Slingload_01_Ammo_F", 100],						// Munitionscontainer - von 110 runtergesetzt damit es in lkw passt
-	["OPT_B_Slingload_01_Medevac_F", 100],					// Lazarettcontainer	+														
-	["OPT_B_Slingload_01_Repair_radar_F", 100],				// Radarcontainer +														
+	["OPT_B_Slingload_01_Medevac_F", 100],					// Lazarettcontainer	+					
+	["OPT_B_Slingload_01_Repair_radar_F", 100],				// Radarcontainer +		
 	["OPT_Box_NATO_WpsSpecial_Diver_F", 30],					// Taucherkiste
 // NATO ships
 	["OPT_B_Boat_Transport_01_F", 30],					// Assault Boat     - hinzugefügt
@@ -301,11 +301,12 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["OPT_Box_East_WpsSpecial_Diver_F", 30],					// Taucherkiste
 	["OPT_Land_Pod_Heli_Transport_04_fuel_F", 100],			// Fuelcontainer
 	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", 100],	// Fuelcontainer (schwarz)
-   	["OPT_Land_Pod_Heli_Transport_04_ammo_F", 100],			// Munitionscontainer
+  ["OPT_Land_Pod_Heli_Transport_04_ammo_F", 100],			// Munitionscontainer
 	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F", 100],	// Munitionscontainer (Schwarz)
-   	["OPT_Land_Pod_Heli_Transport_04_repair_F", 100],		// Reparaturcontainer
+  ["OPT_Land_Pod_Heli_Transport_04_repair_F", 100],		// Reparaturcontainer
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", 100],	// Repcontainer schwarz
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", 100],	// Radar Container
+	["OPT_Land_Pod_Heli_Transport_04_repair_radar_F", 100],
 // CSAT Ships
 	["OPT_O_Boat_Transport_01_F", 30],						// Assault Boat,500
 	["OPT_O_C_Boat_Transport_02_F", 30]				// rhib unbewaffnet,7000	
