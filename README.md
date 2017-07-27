@@ -5,9 +5,9 @@ Github der Operation Pandora Trigger
 [3.Jgkp]James
 
 ## Version
-Aktuelle Version ist 1.03_09
+Aktuelle Version ist 1.03_10
 
-Name: [J]OPT_v1_03_09
+Name: [J]OPT_v1_03_10
 
 ## Current Work
 
@@ -15,6 +15,9 @@ Name: [J]OPT_v1_03_09
 * Fehler beheben, gewünschte Verbesserungen durchführen
 
 ## SITREP
+
+### 2017-07-27
+- verbliebene Recon Soldaten durch Standard auf CSAT ersetzt
 
 ### 2017-07-20
 - default der Waffenruhe für Schlachten auf 10 Minuten geändert
