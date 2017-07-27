@@ -219,7 +219,7 @@
 			idc = 5101;
 			x = safezoneX + 0/6 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 1/6 * safezoneW;
+			w = 1/6 * 0.9 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			shadow = 1;
@@ -230,9 +230,9 @@
 		// 2. Feld
 		class FrameDisplay : GUILargeText {
 			idc = 5102;
-			x = safezoneX + 1/6 * safezoneW;
+			x = safezoneX + 1/6 * 0.9 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 1/6 * safezoneW;
+			w = 1/6 * 0.9 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			shadow = 1;
@@ -243,9 +243,9 @@
 		// 3. Feld
 		class BudgetDisplay : GUILargeText {
 			idc = 5103;
-			x = safezoneX + 2/6 * safezoneW;
+			x = safezoneX + 2/6 * 0.9 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 1/6 * safezoneW;
+			w = 1/6 * 0.9 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			shadow = 1;
@@ -256,9 +256,9 @@
 		// 4. Feld
 		class ScoreDisplay : GUILargeText {
 			idc = 5104;
-			x = safezoneX + 3/6 * safezoneW;
+			x = safezoneX + 0.1 * safezoneW +  3/6 * 0.9 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 1/6 * safezoneW;
+			w = 1/6 * 0.9 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			colorText[] = Color_GrayLight;
@@ -269,9 +269,9 @@
 		// 5. Feld
 		class TimerDisplay : GUILargeText {
 			idc = 5105;
-			x = safezoneX + 4/6 * safezoneW;
+			x = safezoneX + 0.1 * safezoneW +  4/6 * 0.9 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 1/6 * safezoneW;
+			w = 1/6 * 0.9 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			colorText[] = Color_GrayLight;
@@ -282,9 +282,9 @@
 		// 6. Feld
 		class EmptyDisplay : GUILargeText {
 			idc = 5106;
-			x = safezoneX + 5/6 * safezoneW;
+			x = safezoneX + 0.1 * safezoneW +  5/6 * 0.9 * safezoneW;
 			y = safezoneY + safezoneH - 0.025 * safezoneH;
-			w = 1/6 * safezoneW;
+			w = 1/6 * 0.9 * safezoneW;
 			h = 0.025 * safezoneH;
 			sizeEx = FONTSIZE;
 			colorText[] = Color_GrayLight;
