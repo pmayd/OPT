@@ -2,6 +2,11 @@
 private ["_Container"];
 
 _Container = _this select 0;
+
+// Container destroyed?
+if (!alive _Container) exitWith {
+    removeAllActions _Container;
+};
 		
 if (!(RADARContainerWEST getVariable ["RADARWESTaufgebaut",false])) then
 {

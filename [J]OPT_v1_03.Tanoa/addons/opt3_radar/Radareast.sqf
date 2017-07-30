@@ -126,7 +126,16 @@ while {((alive _Container) and _go)} do
 {deleteMarker _x;} foreach _markerost;
 {deleteMarker _x;} foreach _markerwest;
 deleteMarker _Radarring;
-deleteVehicle Radarturmeast;
-deleteVehicle Radarnetzeast;
+if (!isNil "Radarturmwest") then {
+	deleteVehicle Radarturmwest;
+};
+if (!isNil "Radarnetzwest") then {
+	deleteVehicle Radarnetzwest;
+};
+
+// Container destroyed?
+if (!alive _Container) then {
+    removeAllActions _Container;
+};
 	
 				

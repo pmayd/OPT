@@ -131,6 +131,11 @@ if (!isNil "Radarturmwest") then {
 if (!isNil "Radarnetzwest") then {
 	deleteVehicle Radarnetzwest;
 };
+
+// Container destroyed?
+if (!alive _Container) then {
+    removeAllActions _Container;
+};
 	
 	 
 
