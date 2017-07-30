@@ -3,6 +3,11 @@ private ["_Container","_markerwest","_markerost","_marker1","_marker2","_Radarri
 
 _Container = _this select 0;
 
+// Container destroyed?
+if (!alive _Container) exitWith {
+    removeAllActions _Container;
+};
+
 if (!(RADARContainerEAST getVariable ["RADAREASTaufgebaut",false])) then
 {
 	Radarturmeast = createVehicle ["Land_TTowerSmall_1_F", getpos _Container, [], 0, "NONE"];
