@@ -43,7 +43,11 @@ player addAction [
 			if ((typeOf _x) isEqualTo "Item_MineDetector") then {
 				_x setVariable ["OPT_needed_item", false, true];
 				deleteVehicle _x;
-				if (currentWeapon player isEqualTo primaryWeapon player) then {player switchMove "AmovPercMstpSrasWrflDnon_AmovPercMstpSrasWpstDnon_end"};
+				/*
+				if (currentWeapon player isEqualTo primaryWeapon player) then {
+					player switchMove "AmovPercMstpSrasWrflDnon_AmovPercMstpSrasWpstDnon_end"
+				};
+				*/
 				player selectWeapon (primaryWeapon player);
 			};
 			true
