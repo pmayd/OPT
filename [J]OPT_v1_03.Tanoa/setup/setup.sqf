@@ -11,7 +11,7 @@
 * wird in descprition.ext verwendet
 */
 // hier den Missionsnamen festlegen
-#define __MISSION_NAME__ "OPT - Prolog"
+#define __MISSION_NAME__ "OPT - Schlacht Nr. 1"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
 #define __VERSION__ Build on version 1.03
 // made by
@@ -200,10 +200,10 @@
 */
 
 // Startbudget NATO
-#define __BUDGET_NATO__ 3e6
+#define __BUDGET_NATO__ 2.96e6
 
 // Startbudget CSAT
-#define __BUDGET_CSAT__ 3e6
+#define __BUDGET_CSAT__ 2.96e6
 
 // Dispo-Kredit für beide Seiten, falls Budget < 0
 #define __BUDGET_DISPO__ 1e5
