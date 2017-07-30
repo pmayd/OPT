@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=130;
+	toggles=2;
 	class ItemIDProvider
 	{
 		nextID=5895;
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=739;
+		nextID=789;
 	};
 	class Camera
 	{
-		pos[]={11662.992,14.556791,3035.9487};
-		dir[]={0.55377251,-0.51499003,0.6543687};
-		up[]={0.33268839,0.85718626,0.39312202};
-		aside[]={0.76337159,4.8954098e-007,-0.64601976};
+		pos[]={2188.3169,20.827518,13383.769};
+		dir[]={-0.91498214,-0.38976482,-0.10440857};
+		up[]={-0.38725457,0.92091334,-0.044189785};
+		aside[]={-0.11337473,-5.8498699e-009,0.99355769};
 	};
 };
 binarizationWanted=0;
@@ -30708,7 +30708,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.9517891;
+					atlOffset=0.25820208;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30742,7 +30742,7 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30750,7 +30750,7 @@ class Mission
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.189431;
+					atlOffset=0.063271761;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30784,7 +30784,7 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30792,7 +30792,7 @@ class Mission
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=4.8953876;
+					atlOffset=0.086225986;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39879,7 +39879,7 @@ class Mission
 				};
 			};
 			id=5542;
-			atlOffset=64.715553;
+			atlOffset=0.8569231;
 		};
 		class Item18
 		{
@@ -40976,8 +40976,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2172.1931,14.644587,13382.272};
-				angles[]={0,5.6227927,0};
+				position[]={2172.1931,14.644597,13382.272};
+				angles[]={0,5.6227875,0};
 			};
 			side="Empty";
 			flags=4;
@@ -40989,7 +40989,6 @@ class Mission
 			};
 			id=5686;
 			type="OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F";
-			atlOffset=-1.0490417e-005;
 		};
 		class Item30
 		{
@@ -43672,7 +43671,6 @@ class Mission
 				};
 			};
 			id=5764;
-			atlOffset=60.779999;
 		};
 		class Item42
 		{
