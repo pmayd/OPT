@@ -45,7 +45,7 @@ sleep 1;
 // friere Spieler, falls freezeTime aktiv
 if (!opt_allow_movement) then {
 
-	// Server darf nicht pausiert werden
+	// init weiter durchladen
 	[] spawn {
 
 		// freeze Spieler zu Beginn
@@ -64,14 +64,18 @@ if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehic
 
 // starte alle addon Scripte
 [] execVM "addons\opt3_magRepack\MagRepack_init_sv.sqf";
-//__cppfln(opt_TFARfrequencies,common\client\opt_TFARfrequencies.sqf);
-//__cppfln(opt_tfarVehicleLr,common\client\opt_tfarVehicleLr.sqf);
+[] execVM "common\client\opt_TFARfrequencies.sqf";
 
 // call OPT specific items
 if (OPT_TFAR_INTERCEPTION == 1) then {
-	_log_briefing = player createDiaryRecord ["keys", ["gegnerischer Funk", "
-	Die Option um gegnerischen Funk (Vehicle Radios) abhören zu können ist aktiv! Die eingestellte gegnerische Frequenz kann beim entern eines gegnerischen Fahrzeuges jedoch nicht direkt abgelesen werden sondern muss selber gefunden werden.
-	"]];
+	_log_briefing = player createDiaryRecord 
+    [
+        "keys", 
+        [
+            "gegnerischer Funk", 
+            "Die Option um gegnerischen Funk (Vehicle Radios) abhören zu können ist aktiv! Die eingestellte gegnerische Frequenz kann beim entern eines gegnerischen Fahrzeuges jedoch nicht direkt abgelesen werden sondern muss selber gefunden werden."
+        ]
+    ];
 };
 
 // startet das End-Skript. Wartet, bis Ende eintrifft
@@ -184,6 +188,9 @@ if (OPT_TRAINING == 1) then {
 
 	};
 #endif
+
+// EH für TFAR Frequenzen in Fahrzeugen
+__ccppfln(common\client\opt_tfarVehicleLr.sqf);
 
 // EH fürs Einsteigen
 player addEventHandler ["GetInMan", {
