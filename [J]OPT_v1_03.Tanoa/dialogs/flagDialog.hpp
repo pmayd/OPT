@@ -126,12 +126,13 @@ class FlagDialog
         class RscButton_1600: RscButton
         {
             idc = 1600;
+            style = ST_CENTER + ST_VCENTER;
             text = "Übernehmen"; //--- ToDo: Localize;
             x = 16.5 * GUI_GRID_W + GUI_GRID_X;
             y = 11.5 * GUI_GRID_H + GUI_GRID_Y;
             w = 8 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
-            sizeEx = (0.028 / (getResolution select 5));
+            sizeEx = (0.025 / (getResolution select 5));
             action = "[] execVM ""dialogs\func\setFlag.sqf"";";
         };
     };
