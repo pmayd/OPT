@@ -10,55 +10,22 @@
 	onPlayerRespawn.sqf -> 	[] spawn teleport;
 */
 
-private ["_addActionTeleport", "_height"];
-
-
-// changed by psycho
-/*
-// AddAction Function
-_addActionTeleport = ["<t color='#ffff33'>Teleport</t>",
-		{
-			opt_teleported = false;
-			_height = getPosATL player select 2;
-
-			titleText ["Position zum Teleport auswählen", "PLAIN"];
-			openMap true;
-
-			if ((vehicle player isKindOf "Air") and (_height > 2)) then {
-				onMapSingleClick "vehicle player setPosATL [_pos select 0, _pos select 1, (_pos select 2) + 30]; opt_teleported = true;";
-			} else {
-				onMapSingleClick "vehicle player setPos _pos; opt_teleported = true;";
-			};
-			
-			waitUntil {(opt_teleported)};
-			onMapSingleClick "";
-			openMap false;
-			titleText ["", "plain down"];
-		},		// script
-		[],		// arguments
-		-10,	// priority
-		false,	// showWindow
-		true,	// hideOnUse
-		"",		// shortcut
-		""]; 	// condition
-
-// AddAction to unit
-player addAction _addActionTeleport;
-*/
-
-opt_teleport_reset = {
-	onMapSingleClick '';
-	openMap false;
-	titleText ['', "plain down"];
-};
-
-_height = getPosATL player select 2;
-
 titleText ["Position zum Teleport auswaehlen", "PLAIN"];
 openMap true;
 
-if ((vehicle player isKindOf "Air") and (_height > 2)) then {
-	onMapSingleClick "vehicle player setPosATL [_pos select 0, _pos select 1, (_pos select 2) + 30]; [] call opt_teleport_reset";
-} else {
-	onMapSingleClick "vehicle player setPos _pos; [] call opt_teleport_reset";
-};
+["OPT_PLAYER_TELEPORT", "onMapSingleClick", {
+    /*
+    units: Array - leader selected units, same as groupSelectedUnits (same as _units param)
+    pos: Array - world Position3D of the click in format [x,y,0] (same as _pos param)
+    alt: Boolean - true if Alt key was pressed (same as _alt param)
+    shift: Boolean - true if Shift key was pressed (same as _shift param)
+    */
+    _height = getPosATL player select 2;
+    if ((vehicle player isKindOf "Air") and (_height > 2)) then {
+        vehicle player setPosATL (_pos vectorAdd [0, 0, 30]);
+    } else {
+        vehicle player setPos _pos; 
+    };
+    ["OPT_PLAYER_TELEPORT", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
+    
+}] call BIS_fnc_addStackedEventHandler;
