@@ -60,13 +60,13 @@ if (!isNil "TCB_CURATOR") then {
 
 
 #ifdef __PLAYER_GRAPHIC_SETTINGS__
-	player addAction ["Settings" call XGreyText, "dialogs\mission_settings\create.sqf", [], 0, false];
+	player addAction ["Settings" call XGreyText, "dialogs\mission_settings\create.sqf", [], 0, false, true, '', "alive _target"];
 #endif
 // Enable Dynamic Groups
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
 if (OPT_TELEPORT == 1) then {
-	player addAction ["Teleport" call XGreyText, {[] call opt_fnc_teleport}, [], 0, false];
+	player addAction ["Teleport" call XGreyText, {[] call opt_fnc_teleport}, [], 0, false, true, '', "alive _target"];
 };
 
 /*
