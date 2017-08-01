@@ -9,7 +9,7 @@ if ((backpack _oldUnit find "TFAR_" == 0) or (backpack _oldUnit find "tf_" == 0)
 
 {
 	if ((_x find "TFAR_" == 0) or (_x find "tf_" == 0)) then {
-		hint format["gefunden: %1!", _x];
+		
 		_oldUnit unassignItem _x;
 		_oldUnit removeItem _x;
 	};
