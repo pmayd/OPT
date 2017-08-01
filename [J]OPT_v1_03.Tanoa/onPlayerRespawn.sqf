@@ -65,8 +65,12 @@ if (!isNil "TCB_CURATOR") then {
 // Enable Dynamic Groups
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
-if (OPT_TELEPORT == 1) then {
+if (OPT_TELEPORT == 1 && OPT_TRAINING == 1) then {
 	player addAction ["Teleport" call XGreyText, {[] call opt_fnc_teleport}, [], 0, false, true, '', "alive _target"];
+};
+
+if (OPT_TRAINING == 1) then {
+	player addAction ["Flagge versetzen" call XGreyText, {createDialog "FlagDialog"}, [], 0, false, true, '', "alive _target"];
 };
 
 /*

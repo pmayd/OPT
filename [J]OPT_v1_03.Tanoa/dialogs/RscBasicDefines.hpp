@@ -120,8 +120,8 @@
 #define Color_MainBack 						{1, 1, 1, 0.9}					// vergilbtes weiss
 #define CA_UI_element_background	{1, 1, 1, 0.7}					// dunkel weiss
 #define CA_UI_help_background 		{0.2, 0.1, 0.1, 0.7}			// rost rotbraun
-#define CA_UI_title_background		{0.24, 0.47, 0.07, 1.0}			// grün
-#define CA_UI_green								{0.84,1,0.55,1}					// gelb-grün gift
+#define CA_UI_title_background		{0.24, 0.47, 0.07, 1.0}			// grï¿½n
+#define CA_UI_green								{0.84,1,0.55,1}					// gelb-grï¿½n gift
 #define OA_header_dark						{0,0,0,0.5}						// oa schwarz transparent
 
 //Font Size
@@ -203,6 +203,8 @@ class BackgroundWindow : GuiText {
 	h = 0.85;
 };
 
+
+
 class RscFrame {
   type = CT_STATIC;
   idc = -1;
@@ -241,6 +243,78 @@ class RscText {
 	colorBackground[] = {0,0,0,0};
 	linespacing = 1;
 };
+
+// HIER
+class RscEdit
+{
+	deletable = 0;
+	fade = 0;
+	access = 0;
+	type = 2;
+	x = 0;
+	y = 0;
+	h = 0.04;
+	w = 0.2;
+	colorBackground[] = 
+	{
+		0,
+		0,
+		0,
+		0
+	};
+	colorText[] = 
+	{
+		0.95,
+		0.95,
+		0.95,
+		1
+	};
+	colorDisabled[] = 
+	{
+		1,
+		1,
+		1,
+		0.25
+	};
+	colorSelection[] = 
+	{
+		"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.13])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_G',0.54])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_B',0.21])",
+		1
+	};
+	autocomplete = "";
+	text = "";
+	size = 0.2;
+	style = "0x00 + 0x40";
+	font = "RobotoCondensed";
+	shadow = 2;
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	canModify = 1;
+	tooltipColorText[] = 
+	{
+		1,
+		1,
+		1,
+		1
+	};
+	tooltipColorBox[] = 
+	{
+		1,
+		1,
+		1,
+		1
+	};
+	tooltipColorShade[] = 
+	{
+		0,
+		0,
+		0,
+		0.65
+	};
+};
+
+ // DA
 
 class RscTextSmall: RscText {
 	h = 0.03;
