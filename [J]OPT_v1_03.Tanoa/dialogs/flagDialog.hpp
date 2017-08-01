@@ -132,7 +132,7 @@ class FlagDialog
             y = 11.5 * GUI_GRID_H + GUI_GRID_Y;
             w = 8 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
-            sizeEx = (0.025 / (getResolution select 5));
+            sizeEx = (0.023 / (getResolution select 5));
             action = "[] execVM ""dialogs\func\setFlag.sqf"";";
         };
     };
