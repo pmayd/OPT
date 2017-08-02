@@ -10,16 +10,19 @@
 if !(local player) exitWith {};
 
 // _enabled 		= player call TFAR_fnc_isTeamSpeakPluginEnabled;
-private _frequenciesSW 	= ["41","42","43","51","52","53","61","62","63"];
-private _frequenciesLR 	= ["30","40","50","60","70","80"];
+private _frequenciesSWCSAT 	= ["41","42","43","51","52","53","61","62","63"];
+private _frequenciesLRCSAT 	= ["30","40","50","60","70","80"];
+private _frequenciesSWNATO = ["71","72","73","74","75","76","77","78"];
+private _frequenciesLRNATO = ["31","32","33","34","35","36","37","38"];
+private _encryptionNATO = "_bluefor";
+private _encryptionCSAT = "_opfor";
 
 // frequencies can never be intercepted by inf
-private _encryption = switch (playerSide) do {
-	case west: {"_bluefor"};
-	case east: {"_opfor"};
-	case resistance: {"_independent"};
-	default {"_independent"};
-};
+(switch (playerSide) do {
+	case west: {["_bluefor", _frequenciesSWNATO, _frequenciesLRNATO]};
+	case east: {["_opfor", _frequenciesSWCSAT, _frequenciesLRCSAT]};
+	default {[]};
+}) params ["_encryption", "_frequenciesSW", "_frequenciesLR"];
 
 // look for prototype radios in player inventory and wait till replacement
 waitUntil {!isNil {(call TFAR_fnc_ActiveSwRadio) call TFAR_fnc_getSwFrequency;}};
