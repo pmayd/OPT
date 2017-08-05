@@ -1,9 +1,7 @@
 ////////////////////////////////////////////////
 // Revive Player
 ////////////////////////////////////////////////
-private ["_injuredperson","_healer","_timenow","_relpos","_dir","_offset","_time","_damage","_isMedic","_healed","_animChangeEVH","_skill_factor"];
-_injuredperson = _this select 0;
-_healer = _this select 1;
+params ["_injuredperson", "_healer"];
 
 if (_healer getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
 _injuredperson setVariable ["tcb_healer", _healer, true];
@@ -14,11 +12,11 @@ sleep 1;
 _healer playAction "medicStart";
 tcb_animDelay = time + 2;
 
+private "_animChangeEVH";
 if (isPlayer _healer) then {
 	_animChangeEVH = _healer addEventhandler ["AnimChanged", {
-		private ["_anim","_healer"];
-		_healer = _this select 0;
-		_anim = _this select 1;
+		params ["_healer", "_anim"];
+
 		if (primaryWeapon _healer != "") then {
 			if (time >= tcb_animDelay) then {tcb_healerStopped = true};
 		} else {
@@ -33,8 +31,8 @@ if (isPlayer _healer) then {
 	}];
 };
 
-_offset = [0,0,0]; _dir = 0;
-_relpos = _healer worldToModel position _injuredperson;
+private _offset = [0,0,0]; _dir = 0;
+private _relpos = _healer worldToModel position _injuredperson;
 if((_relpos select 0) < 0) then{_offset=[-0.2,0.7,0]; _dir=90} else{_offset=[0.2,0.7,0]; _dir=270};
 sleep 0.02;
 
@@ -45,10 +43,10 @@ if (isPlayer _healer) then {
 _injuredperson attachTo [_healer,_offset];
 _injuredperson setDir _dir;
 
-_time = time;
+private _time = time;
 
-_skill_factor = if (_healer call opt_addons_fnc_isMedic) then {40+(random 10)} else {70+(random 10)};
-_damage = (damage _injuredperson * _skill_factor);
+private _skill_factor = if (_healer call opt_addons_fnc_isMedic) then {40+(random 10)} else {70+(random 10)};
+private _damage = (damage _injuredperson * _skill_factor);
 if (_damage < 25) then {_damage = 25};
 sleep 1;
 if (_injuredperson getVariable ["FAR_isStabilized",0] == 1) then {
@@ -110,6 +108,17 @@ if (!tcb_healerStopped) then {
 		_injuredperson setVariable ["FAR_isDragged", 0, true];
 		["addScore", [player, 1]] call tcb_fnc_NetCallEventCTS;
 		//["tfar_removeMapMarker", _injuredperson] call tcb_fnc_NetCallEvent;
+
+        private _message = format [
+            "%1 (%2) wurde von %3 (%4) wiederbelebt.", 
+            name _injuredperson, 
+            side _injuredperson,
+            name _healer,
+            side _healer
+        ];
+
+        // übergib Kategorie und Nachricht an log-FUnktion
+	    ["opt_eh_server_log_write", ["Revive", _message]] call CBA_fnc_serverEvent;
 	};
 } else {
 	["Du hast den Vorgang abgebrochen.",0, 0.035 * safezoneH + safezoneY,5,0.3] spawn BIS_fnc_dynamicText;

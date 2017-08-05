@@ -9,3 +9,4 @@
 - Neues Feature: Im Trainingsmodus kann die Flagge nun per Dialog verschoben werden (Aktionsmenü)
 - Bugfix: Radarcontainer zeigt nur noch große Drohnen und nicht mehr die kleinen
 - Bugfix: Logger hat beim Fahneziehen Spielerseite falsch geloggt, nun korrekte Auswertung und Unterscheidung zwischen Erobern und Sichern
+- Neuer Log: Ab sofort werden auch Stabilisieren und Wiederbeleben geloggt (wer und wen)
