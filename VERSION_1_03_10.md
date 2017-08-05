@@ -10,3 +10,4 @@
 - Bugfix: Radarcontainer zeigt nur noch große Drohnen und nicht mehr die kleinen
 - Bugfix: Logger hat beim Fahneziehen Spielerseite falsch geloggt, nun korrekte Auswertung und Unterscheidung zwischen Erobern und Sichern
 - Neuer Log: Ab sofort werden auch Stabilisieren und Wiederbeleben geloggt (wer und wen)
+- Neuer Log: Ab sofort werden für alle Besatzungsmitglieder außer dem Piloten die Transportflüge geloggt, mit Entfernung (und Name Pilot)

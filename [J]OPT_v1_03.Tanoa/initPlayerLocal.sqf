@@ -95,10 +95,10 @@ if (player isKindOf "OPT_Maintainer" || getPlayerUID player == "7656119797767603
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call opt_fnc_maintainerDialog}];
 };
 
-/**
+/*-------------------------------
 Event Handler für Spieler
 Sind auch nach Respawn persistent
-*/
+---------------------------------*/
 
 // EH bei Aufnahme von Waffen
 // ruft client/func/fn_weaponCheck
@@ -194,11 +194,11 @@ __ccppfln(common\client\opt_tfarVehicleLr.sqf);
 
 // EH fürs Einsteigen
 player addEventHandler ["GetInMan", {
-		/*  
-	   	unit: Object - Unit the event handler is assigned to
-	    position: String - Can be either "driver", "gunner" or "cargo"
-	    vehicle: Object - Vehicle the unit entered
-	    turret: Array - turret path
+    /*  
+        unit: Object - Unit the event handler is assigned to
+        position: String - Can be either "driver", "gunner" or "cargo"
+        vehicle: Object - Vehicle the unit entered
+        turret: Array - turret path
     */
     params ["_unit", "_pos", "_vec", "_turret"];
 

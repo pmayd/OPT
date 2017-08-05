@@ -45,6 +45,60 @@ if (_vec isKindOf "AllVehicles") then {
 	] call CBA_fnc_globalEvent;
 };
 
+// Engine EH für Piloten -> Log transportierte Soldaten
+if (_vec isKindOf "Air") then {
+    _vec addEventHandler [
+        "GetIn",
+        {
+            /*
+            vehicle: Object - Vehicle the event handler is assigned to
+            position: String - Can be either "driver", "gunner" or "cargo"
+            unit: Object - Unit that entered the vehicle
+            (Since Arma 3 v1.36)
+            turret: Array - turret path
+            */
+            params ["_vec", "_pos", "_unit"];
+            
+            // speichere Pilot als Variable des Objekts Heli
+            if (_pos isEqualTo "driver") then {
+                _vec setVariable ["opt_var_vec_pilot", _unit, true];
+            };
+
+            // speichere aktuellen Ort an der Einheit
+            _unit setVariable ["opt_var_vec_loc", getPosASL _vec, false];
+        }
+    ];
+    _vec addEventHandler [
+        "GetOut",
+        {
+            /*
+            vehicle: Object - Vehicle the event handler is assigned to
+            position: String - Can be either "driver", "gunner" or "cargo"
+            unit: Object - Unit that left the vehicle
+            turret: Array - turret path (since Arma 3 v1.36)
+            */
+            params ["_vec", "_pos", "_unit"];
+
+            // logge transport von Spielern, falls Spieler nicht Pilot und Strecke geflogen
+            private _dis = (getPosASL _vec) distance2D (_unit getVariable "opt_var_vec_loc");
+            if ( _pos in ["cargo", "gunenr"] && (_dis > 500) ) then {
+                private _message = format[
+                    "%1 (%2) wurde von %3 (%4) eingeflogen (%5 m)", 
+                    name _unit, 
+                    side _unit, 
+                    name (_vec getVariable "opt_var_vec_pilot"), 
+                    side (_vec getVariable "opt_var_vec_pilot"),
+                    _dis
+                ];
+
+                ["opt_eh_server_log_write", ["Transport", _message]] call CBA_fnc_serverEvent;
+
+            };
+
+        }
+    ];
+};
+
 // Create Vehicle Crew
 // James: Nutze stattdessen UAV classname aus setup
 
@@ -65,8 +119,5 @@ if (_vecType in (_uavs + opt_big_uavs)) then {
 	createVehicleCrew (_vec);
 	_vec setSkill 0.8;
 };
-
-//_FARPS = ["OPT_Land_Pod_Heli_Transport_04_repair_F", "OPT_B_Slingload_01_Repair_F"];
-//if (_vecType in _FARPS) then {_vec addAction [("<t color=""#3FAF6C"">" + ("FARP Aufstellen") + "</t>"),'addons\opt3_farp\FARP_check.sqf', [2], 6, false, true]};
 
 _vec setDamage 0;
