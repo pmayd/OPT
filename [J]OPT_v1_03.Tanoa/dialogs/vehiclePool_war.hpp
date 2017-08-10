@@ -9,7 +9,7 @@ opt_vehiclesNato = [
 	["OPT_B_Truck_01_covered_F", 8000], 					// HEMTT Transport
 	["OPT_B_Truck_01_Repair_F", 10000], 					// HEMTT Repair, ersetzt durch Container
 	["OPT_B_Truck_01_medical_F", 10000], 					// HEMTT Medical, ersetzt durch Container
-	["OPT_B_Truck_01_transport_F", 2000], 					// HEMTT 2000 (f�r Radar Container, keine Sitze auf 
+	["OPT_B_Truck_01_transport_F", 2000], 					// HEMTT 2000 (fr Radar Container, keine Sitze auf 
 	["OPT_B_MRAP_01_F", 5000],								// Hunter
 	["OPT_B_MRAP_01_hmg_F", 25000],							// Hunter HMG
 	["OPT_B_MRAP_01_gmg_F", 30000],							// Hunter GMG
@@ -18,7 +18,7 @@ opt_vehiclesNato = [
 	["OPT_B_MRAP_03_gmg_F", 35000]							// Strider GMG, Ladefläche)
 ];
 
-// Fahrzeuge dieser Liste k�nnen nicht verkauft werden!
+// Fahrzeuge dieser Liste knnen nicht verkauft werden!
 opt_vehiclesSupplyNato = [
 	["OPT_B_Truck_01_ammo_F", 50000], 						// HEMTT Ammo, 50000 ersetzt durch Container
 	["OPT_B_Truck_01_fuel_F", 10000] 						// HEMTT Fuel, 10000 ersetzt durch Container
@@ -64,7 +64,7 @@ opt_suppliesNato = [
 	["OPT_Box_NATO_WpsSpecial_AT2_F", 30000],				// AT Raketenkiste (RPG-42)
 	["OPT_Box_NATO_WpsSpecial_AA_F", 40000],				// AA Raketenkiste
    	["OPT_B_supplyCrate_F", 500],							// Transportkiste (leer)
-	["OPT_B_CargoNet_01_ammo_F", 5000],						// Ausr�stungskiste
+	["OPT_B_CargoNet_01_ammo_F", 5000],						// Ausrstungskiste
 	["OPT_Box_NATO_WpsSpecial_Diver_F", 5000],				// Taucherkiste	
   	["OPT_Box_NATO_WpsSpecial_F", 0],						// PCML-M Raketenkiste
 	["OPT_Box_NATO_WpsSpecial_AT_F", 0],					// PCML Raketenkiste	
@@ -75,7 +75,7 @@ opt_suppliesNato = [
 	["OPT_B_GMG_01_F", 15000],								// Stand-GMG niedrig
 	["OPT_B_static_AA_F", 25000],							// Stand-AA
 	["OPT_B_static_AT_F", 200000],							// Stand-AT
-	["OPT_B_Mortar_01_F", 200000],							// MK6 - M�rser
+	["OPT_B_Mortar_01_F", 200000],							// MK6 - Mrser
 	["OPT_B_Static_Designator_01_F", 10000],				// Remote Designator
 	["OPT_B_UGV_01_F", 2000],								// UGV Stomper
 	["OPT_B_UAV_01_F", 30000],								// Darter AR-2
@@ -83,9 +83,9 @@ opt_suppliesNato = [
     ["OPT_B_Slingload_01_Ammo_F", 90000],            		// Munitionscontainer
 	["OPT_B_Slingload_01_Fuel_F", 8000],           			// Fuelcontainer
     ["OPT_B_Slingload_01_Repair_F", 8000], 	       			// Reparaturcontainer
-	["OPT_B_Slingload_01_Medevac_F", 0],          		// Lazarettcontainer, 5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den wei�en Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	["OPT_B_Slingload_01_Medevac_F", 0],          		// Lazarettcontainer, 5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
 	["OPT_B_Slingload_01_Repair_radar_F", 0], 	       		// Radar Container
-	["Land_Cargo20_white_F", 0],							// wei�er Container (Lazarett)
+	["Land_Cargo20_white_F", 0],							// weier Container (Lazarett)
 	["Land_BagFence_Round_F", 0],							// runde sandsackecke!
 	["Land_BagFence_Long_F", 0],							// lange sandsackbarriere
 	["Land_BagFence_Short_F", 0],							// kurze sandsackbarriere
@@ -114,7 +114,7 @@ opt_vehiclesCsat = [
 	["OPT_O_T_Truck_03_covered_ghex_F", 8000],				// Tempest Transport
 	["OPT_O_T_Truck_03_repair_ghex_F", 10000],				// Tempest Repair, ersetzt durch container
 	["OPT_O_T_Truck_03_medical_ghex_F", 10000],				// Tempest Medical, ersetzt durch container
-	["OPT_O_T_Truck_03_transport_ghex_F", 2000],			// Tempest (f�r Radar, keine Sitze auf Ladefl�che)
+	["OPT_O_T_Truck_03_transport_ghex_F", 2000],			// Tempest (fr Radar, keine Sitze auf Ladeflche)
 	["OPT_O_G_Offroad_01_F", 0],							// Pickup, ersetzt durch quilin
 	["OPT_O_G_Offroad_01_armed_F", 0],						// Pickup HMG, ersetzt durch quilin
 	["OPT_O_T_MRAP_02_ghex_F", 5500],						// Ifrit
@@ -122,7 +122,7 @@ opt_vehiclesCsat = [
 	["OPT_O_T_MRAP_02_gmg_ghex_F", 31000]					// Ifrit GMG
 ];
 
-// Fahrzeuge dieser Liste k�nnen nicht verkauft werden!
+// Fahrzeuge dieser Liste knnen nicht verkauft werden!
 opt_vehiclesSupplyCsat = [
 	["OPT_O_T_Truck_03_ammo_ghex_F", 50000],				// Tempest Ammo, ersetzt durch container
 	["OPT_O_T_Truck_03_fuel_ghex_F", 10000]					// Tempest Fuel, ersetzt durch container
@@ -171,7 +171,7 @@ opt_armoredCsat = [
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_light_F", 120000],	// BTR-K Kamysh
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_F", 275000],		// BTR-K Kamysh (Titan)
 	["OPT_O_T_MBT_02_cannon_ghex_F", 450000],				// T-100 Varsuk
-	["OPT_O_T_MBT_02_arty_ghex_F", 400000]					// 2S9 Sochor <-- Psycho, Preis runter solange es die zus�tzliche Munition nicht gibt	
+	["OPT_O_T_MBT_02_arty_ghex_F", 400000]					// 2S9 Sochor <-- Psycho, Preis runter solange es die zustzliche Munition nicht gibt	
 ];
 
 opt_suppliesCsat = [
@@ -180,7 +180,7 @@ opt_suppliesCsat = [
 	["OPT_Box_East_WpsSpecial_F", 30000],            		// AT Raketenkiste (RPG-42)
     ["OPT_Box_East_WpsSpecial_AA_F", 40000],				// AA Raketenkiste
 	["OPT_O_supplyCrate_F", 500],							// Transportkiste
-	["OPT_O_CargoNet_01_ammo_F", 5000],						// Ausr�stungskiste
+	["OPT_O_CargoNet_01_ammo_F", 5000],						// Ausrstungskiste
 	["OPT_Box_East_WpsSpecial_Diver_F", 5000],				// Taucherkiste
 	["OPT_Box_East_WpsLaunch_F", 0],						// HAT-Kiste (Titan)
     ["OPT_O_HMG_01_high_F", 10000],							// Stand-MG hoch
@@ -189,7 +189,7 @@ opt_suppliesCsat = [
 	["OPT_O_GMG_01_F", 15000],								// Stand-GMG niedrig
 	["OPT_O_static_AA_F", 25000],							// Stand-AA
 	["OPT_O_static_AT_F", 200000],							// Stand-AT
-	["OPT_O_Mortar_01_F", 200000],							// MK6 M�rser
+	["OPT_O_Mortar_01_F", 200000],							// MK6 Mrser
 	["OPT_O_Static_Designator_02_F", 10000],				// Remote Designator
 	["OPT_O_T_UGV_01_ghex_F", 2000],						// UGV Saif	
 	["OPT_O_UAV_01_F", 30000],								// Tayran AR-2
@@ -201,8 +201,8 @@ opt_suppliesCsat = [
    	["OPT_Land_Pod_Heli_Transport_04_repair_F", 0],			// Reparaturcontainer
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", 8000],// Reparaturcontainer (schwarz)
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", 0],	// Radar Container
-	["OPT_Land_Pod_Heli_Transport_04_medevac_F", 0],			// Lazarettcontainer, psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den wei�en Container ersetzt welcher zum Lazarett ausgebaut werden kann
-	["Land_Cargo20_white_F", 0],							// wei�er Container (Lazarett)
+	["OPT_Land_Pod_Heli_Transport_04_medevac_F", 0],			// Lazarettcontainer, psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	["Land_Cargo20_white_F", 0],							// weier Container (Lazarett)
 	["Land_BagFence_Round_F", 0],							// runde sandsackecke!
 	["Land_BagFence_Long_F", 0],							// lange sandsackbarriere
 	["Land_BagFence_Short_F", 0],							// kurze sandsackbarriere

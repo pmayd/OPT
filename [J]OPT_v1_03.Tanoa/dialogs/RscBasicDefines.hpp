@@ -120,8 +120,8 @@
 #define Color_MainBack 						{1, 1, 1, 0.9}					// vergilbtes weiss
 #define CA_UI_element_background	{1, 1, 1, 0.7}					// dunkel weiss
 #define CA_UI_help_background 		{0.2, 0.1, 0.1, 0.7}			// rost rotbraun
-#define CA_UI_title_background		{0.24, 0.47, 0.07, 1.0}			// gr�n
-#define CA_UI_green								{0.84,1,0.55,1}					// gelb-gr�n gift
+#define CA_UI_title_background		{0.24, 0.47, 0.07, 1.0}			// grn
+#define CA_UI_green								{0.84,1,0.55,1}					// gelb-grn gift
 #define OA_header_dark						{0,0,0,0.5}						// oa schwarz transparent
 
 //Font Size

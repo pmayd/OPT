@@ -13,8 +13,8 @@ opt_vehiclesNato = [
 	["OPT_B_Truck_01_ammo_F",50000], 						// HEMTT Ammo,50000 ersetzt durch Container
 	["OPT_B_Truck_01_fuel_F",0], 							// HEMTT Fuel,10000 ersetzt durch Container
 	["OPT_B_Truck_01_medical_F",10000], 					// HEMTT Medical,10000 ersetzt durch Container
-	["B_Truck_01_mover_F",0], 								// HEMTT 10000 (für Radar Container, keine Sitze auf Ladefläche)
-	["OPT_B_Truck_01_transport_F",2000], 					// HEMTT 10000 (für Radar Container, keine Sitze auf Ladefläche)
+	["B_Truck_01_mover_F",0], 								// HEMTT 10000 (fr Radar Container, keine Sitze auf Ladeflche)
+	["OPT_B_Truck_01_transport_F",2000], 					// HEMTT 10000 (fr Radar Container, keine Sitze auf Ladeflche)
 	["OPT_B_T_LSV_01_unarmed_F",2000], 						// Prowler unarmed, 2000
 	["OPT_B_T_LSV_01_armed_F",4000] 						// Prowler armed, 4000
 ];
@@ -49,12 +49,12 @@ opt_armoredNato = [
 	["OPT_B_MBT_01_TUSK_F",0],							// M2A4 SlammerUp,430000
 	["OPT_B_MBT_03_cannon_F",0],							// MBT-52 Kuma,500000 fliegt raus
 	["OPT_B_MBT_01_mlrs_F",0],							// M5 Sandstorm,600000	
-	["OPT_B_MBT_01_Arty_F",0]							// M4 Scorcher,650000 <-- Psycho, Preis runter solange es die zusätzliche Munition nicht gibt	
+	["OPT_B_MBT_01_Arty_F",0]							// M4 Scorcher,650000 <-- Psycho, Preis runter solange es die zustzliche Munition nicht gibt	
 ];
 
 opt_suppliesNato = [
    	["OPT_B_supplyCrate_F",500],							// Transportkiste (leer),500
-	["OPT_B_CargoNet_01_ammo_F",5000],						// Ausrüstungskiste,5000
+	["OPT_B_CargoNet_01_ammo_F",5000],						// Ausrstungskiste,5000
 	["OPT_Box_NATO_WpsSpecial_Diver_F",5000],				// Taucherkiste,5000	
 	["OPT_Box_NATO_Ammo_F",40000],            				// Munitionskiste,40000
     ["OPT_Box_NATO_Grenades_F",75000],         				// Explosivkiste,75000
@@ -69,7 +69,7 @@ opt_suppliesNato = [
 	["OPT_B_GMG_01_high_F",15000],							// Stand-GMG hoch,15000
 	["OPT_B_static_AA_F",25000],							// Stand-AA,25000
 	["OPT_B_static_AT_F",200000],							// Stand-AT,200000	
-	["OPT_B_Mortar_01_F",200000],							// MK6 - Mörser,200000	
+	["OPT_B_Mortar_01_F",200000],							// MK6 - Mrser,200000	
 	["OPT_B_Static_Designator_01_F",10000],					// Remote Designator,10000
 	["OPT_B_UGV_01_F",2000],								// UGV Stomper,2000
 	["OPT_B_UAV_01_F",30000],								// Darter AR-2,30000
@@ -78,8 +78,8 @@ opt_suppliesNato = [
     ["OPT_B_Slingload_01_Ammo_F",73000],            		// Munitionscontainer,50000
     ["OPT_B_Slingload_01_Repair_F",8000], 	       			// Reparaturcontainer,5000
 	["OPT_B_Slingload_01_Repair_radar_F",1000], 	       	// Radar Container
-   	["OPT_B_Slingload_01_Medevac_F",0],          			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
-	["Land_Cargo20_white_F",0],								// weißer Container (Lazarett)
+   	["OPT_B_Slingload_01_Medevac_F",0],          			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	["Land_Cargo20_white_F",0],								// weier Container (Lazarett)
 	["Land_BagFence_Round_F",0],							// runde sandsackecke!
 	["Land_BagFence_Long_F",0],								// lange sandsackbarriere
 	["Land_BagFence_Short_F",0],							// kurze sandsackbarriere
@@ -112,7 +112,7 @@ opt_vehiclesCsat = [
 	["OPT_O_T_Truck_03_ammo_ghex_F",50000],					// Tempest Ammo,50000 ersetzt durch container
 	["OPT_O_T_Truck_03_fuel_ghex_F",0],						// Tempest Fuel,10000 ersetzt durch container
 	["OPT_O_T_Truck_03_medical_ghex_F",10000],				// Tempest Medical,10000 ersetzt durch container
-	["OPT_O_T_Truck_03_transport_ghex_F",2000],				// Tempest (für Radar, keine Sitze auf Ladefläche)
+	["OPT_O_T_Truck_03_transport_ghex_F",2000],				// Tempest (fr Radar, keine Sitze auf Ladeflche)
 	["OPT_O_T_LSV_02_unarmed_F",2000], 						// Quilin unarmed
 	["OPT_O_T_LSV_02_armed_F",4000] 						// Quilin armed
 ];
@@ -159,12 +159,12 @@ opt_armoredCsat = [
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_F",0],		// BTR-K Kamysh (Titan),280000
 	["OPT_O_T_APC_Tracked_02_AA_ghex_F",0],			// ZSU-39 Tigris,275000
 	["OPT_O_T_MBT_02_cannon_ghex_F",0],				// T-100 Varsuk,450000	
-	["OPT_O_T_MBT_02_arty_ghex_F",0]					// 2S9 Sochor,650000 <-- Psycho, Preis runter solange es die zusätzliche Munition nicht gibt	
+	["OPT_O_T_MBT_02_arty_ghex_F",0]					// 2S9 Sochor,650000 <-- Psycho, Preis runter solange es die zustzliche Munition nicht gibt	
 ];
 
 opt_suppliesCsat = [
    	["OPT_O_supplyCrate_F",500],							// Transportkiste,500
-	["OPT_O_CargoNet_01_ammo_F",5000],						// Ausrüstungskiste,5000
+	["OPT_O_CargoNet_01_ammo_F",5000],						// Ausrstungskiste,5000
 	["OPT_Box_East_WpsSpecial_Diver_F",5000],				// Taucherkiste,5000
 	["OPT_Box_East_WpsSpecial_AA_F",40000],					// AA Raketenkiste,40000
 	["OPT_Box_East_WpsSpecial_F",30000],            		// AT Raketenkiste (RPG-42),30000
@@ -177,7 +177,7 @@ opt_suppliesCsat = [
 	["OPT_O_GMG_01_high_F",15000],							// Stand-GMG hoch,15000	
 	["OPT_O_static_AA_F",25000],							// Stand-AA,25000
 	["OPT_O_static_AT_F",200000],							// Stand-AT,200000	
-	["OPT_O_Mortar_01_F",200000],							// MK6 Mörser,200000
+	["OPT_O_Mortar_01_F",200000],							// MK6 Mrser,200000
 	["OPT_O_Static_Designator_02_F",10000],					// Remote Designator,10000
 	["OPT_O_T_UGV_01_ghex_F",2000],							// UGV Saif,2000 	
 	["OPT_O_UAV_01_F",30000],								// Tayran AR-2,30000
@@ -189,8 +189,8 @@ opt_suppliesCsat = [
    	["OPT_Land_Pod_Heli_Transport_04_repair_F",0],			// Reparaturcontainer,5000
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_F",8000],	// Reparaturcontainer (schwarz),5000
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F",1000],	// Radar Container
-	["OPT_Land_Pod_Heli_Transport_04_medevac_F",0],			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
-	["Land_Cargo20_white_F",0],								// weißer Container (Lazarett)
+	["OPT_Land_Pod_Heli_Transport_04_medevac_F",0],			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	["Land_Cargo20_white_F",0],								// weier Container (Lazarett)
 	["Land_BagFence_Round_F",0],							// runde sandsackecke!
 	["Land_BagFence_Long_F",0],								// lange sandsackbarriere
 	["Land_BagFence_Short_F",0],							// kurze sandsackbarriere
