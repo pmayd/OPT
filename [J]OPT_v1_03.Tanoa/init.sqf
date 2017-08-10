@@ -17,13 +17,6 @@ if (isNil "tcb_netinit") then {
 	tcb_netinit = true;
 };
 
-// ------------------- Check for TFAR
-/*
-if (isClass(configFile >> "cfgPatches" >> "task_force_radio")) then {
-  __ccppfln(addons\TFAR\TFAR_settings.sqf); 
-};
-*/
-
 #ifdef __STARTTIME__
 	if (OPT_DAYTIME != 99) then {
 		setDate [date select 0, date select 1, date select 2, OPT_DAYTIME, 0];

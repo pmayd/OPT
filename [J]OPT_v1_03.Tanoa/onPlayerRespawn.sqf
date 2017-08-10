@@ -28,26 +28,6 @@ else {
 };
 
 
-/*
-_curators = [];
-_curators = call BIS_fnc_listCuratorPlayers;
-if (!isNil "TCB_CURATOR") then {
-	if (!isNull TCB_CURATOR) then {
-		if (player in _curators && {str(player) == "TCB_CURATOR"}) then {
-			_logic = getAssignedCuratorLogic player;
-			_logic addCuratorPoints 1;
-			_logic setVariable ["tcb_zeus", [player, getplayerUID player], true];
-			0 spawn {
-				waitUntil {!isNil "intro_done"};
-				openCuratorInterface;
-			};
-		};
-	};
-};
-
-["addToCurator", player] call tcb_fnc_netCallEventCTS;
-*/
-
 #ifdef __NO_MAP__
 	if (player hasWeapon "ItemMap") then {player removeWeapon "ItemMap"};
 	if (player hasWeapon "ItemGPS") then {player removeWeapon "ItemGPS"};

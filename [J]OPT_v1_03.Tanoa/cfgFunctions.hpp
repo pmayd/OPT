@@ -112,6 +112,7 @@ class opt {
 		addf(sendVehicleOrder);
 		addf(spectating);
 		addf(teleport);
+        addf(tfarFrequencies);
 		addf(unFlip);
 		addf(weaponCheck);
 	};
