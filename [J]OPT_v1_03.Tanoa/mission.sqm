@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1114;
+		nextID=1139;
 	};
 	class Camera
 	{
@@ -486,7 +486,6 @@ class Mission
 		resistanceWest=0;
 		timeOfChanges=3712.6436;
 		startWeather=0;
-		startFog=0.041344035;
 		startWind=0.57914013;
 		startWindDir=210.55499;
 		startRain=0.00016946725;
@@ -494,7 +493,6 @@ class Mission
 		startWaves=0.1;
 		startGust=0.67077631;
 		forecastWeather=0;
-		forecastFog=0.086808652;
 		forecastWind=0.025158385;
 		forecastWaves=0.1;
 		forecastGust=0.037654009;
@@ -505,11 +503,12 @@ class Mission
 		year=2017;
 		month=8;
 		day=8;
-		hour=18;
+		hour=24;
+		minute=0;
 		startFogBase=-999.76666;
-		forecastFogBase=-992.23608;
-		startFogDecay=0.0086808652;
-		forecastFogDecay=0.003307766;
+		forecastFogBase=-1000;
+		startFogDecay=0;
+		forecastFogDecay=0;
 	};
 	class Entities
 	{
@@ -30660,7 +30659,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=0.25820208;
+					atlOffset=3.9517891;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30694,7 +30693,7 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30702,7 +30701,7 @@ class Mission
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=0.063271761;
+					atlOffset=3.189431;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30736,7 +30735,7 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=5;
+					flags=1;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30744,7 +30743,7 @@ class Mission
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=0.086225986;
+					atlOffset=4.8953876;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35182,6 +35181,7 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -35190,7 +35190,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390946;
+					atlOffset=0.14878201;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35420,7 +35420,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3513131;
+			atlOffset=2.3484077;
 		};
 		class Item17
 		{

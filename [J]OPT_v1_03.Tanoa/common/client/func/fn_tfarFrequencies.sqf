@@ -12,8 +12,8 @@ if !(local player) exitWith {};
 // _enabled 		= player call TFAR_fnc_isTeamSpeakPluginEnabled;
 private _frequenciesSWCSAT 	= ["41","42","43","51","52","53","61","62","63"];
 private _frequenciesLRCSAT 	= ["30","40","50","60","70","80"];
-private _frequenciesSWNATO = ["71","72","73","74","75","76","77","78"];
-private _frequenciesLRNATO = ["31","32","33","34","35","36","37","38"];
+private _frequenciesSWNATO = ["71.9","72.9","73.9","74.9","75.9","76.9","77.9","78.9"];
+private _frequenciesLRNATO = ["31.7","32.7","33.7","34.7","35.7","36.7","37.7","38.7"];
 private _encryptionNATO = "_bluefor";
 private _encryptionCSAT = "_opfor";
 
