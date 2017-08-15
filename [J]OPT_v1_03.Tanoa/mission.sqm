@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1139;
+		nextID=1164;
 	};
 	class Camera
 	{
@@ -502,8 +502,8 @@ class Mission
 		windForced=1;
 		year=2017;
 		month=8;
-		day=8;
-		hour=24;
+		day=15;
+		hour=12;
 		minute=0;
 		startFogBase=-999.76666;
 		forecastFogBase=-1000;
