@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1164;
+		nextID=1189;
 	};
 	class Camera
 	{
-		pos[]={11042.576,399.24759,11501.333};
-		dir[]={0.93022734,-0.35596445,-0.089342326};
-		up[]={0.35433483,0.93449897,-0.034031328};
-		aside[]={-0.095603585,-2.1185224e-007,-0.9954257};
+		pos[]={11734.598,11.462542,3069.9326};
+		dir[]={-0.46745691,-0.24767698,-0.8486129};
+		up[]={-0.11950211,0.96884054,-0.21694118};
+		aside[]={-0.87590218,-1.9924482e-007,0.48249057};
 	};
 };
 binarizationWanted=0;
@@ -492,7 +492,7 @@ class Mission
 		startLightnings=0.00016946725;
 		startWaves=0.1;
 		startGust=0.67077631;
-		forecastWeather=0;
+		forecastWeather=0.093358263;
 		forecastWind=0.025158385;
 		forecastWaves=0.1;
 		forecastGust=0.037654009;
@@ -503,8 +503,7 @@ class Mission
 		year=2017;
 		month=8;
 		day=15;
-		hour=12;
-		minute=0;
+		hour=6;
 		startFogBase=-999.76666;
 		forecastFogBase=-1000;
 		startFogDecay=0;
@@ -30659,7 +30658,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.9517891;
+					atlOffset=0.25820208;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30693,7 +30692,7 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30701,7 +30700,7 @@ class Mission
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.189431;
+					atlOffset=0.063271761;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30735,7 +30734,7 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						createAsSimpleObject=1;
@@ -30743,7 +30742,7 @@ class Mission
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=4.8953876;
+					atlOffset=0.086225986;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -32547,7 +32546,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7037,215.55681,9719};
+				position[]={11984,180.23212,9703};
 				angles[]={0,0.70842916,0};
 			};
 			side="Empty";
@@ -32560,13 +32559,14 @@ class Mission
 			};
 			id=5373;
 			type="Flag_CSAT_F";
+			atlOffset=-1.5258789e-005;
 		};
 		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10952,354.35681,11515};
+				position[]={7261,7.3701482,7929};
 				angles[]={0,0.32203069,0};
 			};
 			side="Empty";
@@ -35181,7 +35181,6 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -35190,7 +35189,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.14878201;
+					atlOffset=1.1390946;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35420,7 +35419,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3484077;
+			atlOffset=2.3513131;
 		};
 		class Item17
 		{
@@ -43660,7 +43659,7 @@ class Mission
 					class Attributes
 					{
 						init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-						description="Bravo - R-Panzerabwehr";
+						description="Bravo - Panzerabwehr";
 						isPlayable=1;
 						aiRadarUsage=-1124701906;
 					};
@@ -43723,7 +43722,7 @@ class Mission
 					{
 						init="call{(group this) setGroupIDGlobal [""Bravo""];}";
 						name="csat_bravo1";
-						description="Bravo - R-Truppführer";
+						description="Bravo - Truppführer";
 						isPlayable=1;
 						aiRadarUsage=1050474419;
 					};
