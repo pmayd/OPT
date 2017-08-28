@@ -57,7 +57,7 @@ player addEventHandler ["GetInMan", {
 			};
 		};
 	} else {
-        _vec call opt_fnc_TFARFrequencies;
+        [_vec] call opt_fnc_TFARFrequencies;
     };
 
 }];
