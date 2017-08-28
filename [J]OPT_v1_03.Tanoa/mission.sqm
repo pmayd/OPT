@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1214;
+		nextID=1239;
 	};
 	class Camera
 	{
-		pos[]={11689.091,29.690001,3037.7988};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={11700.154,15.391533,3063.7153};
+		dir[]={-0.63313103,-0.49453965,-0.59546942};
+		up[]={-0.36024427,0.86915445,-0.33881512};
+		aside[]={-0.68511254,-1.2799865e-007,0.7284444};
 	};
 };
 binarizationWanted=0;
@@ -484,15 +484,15 @@ class Mission
 	{
 		briefingName="Operation Pandora Trigger";
 		resistanceWest=0;
-		timeOfChanges=3712.6436;
-		startWeather=0;
+		timeOfChanges=4592.6982;
+		startWeather=0.13995266;
 		startWind=0.57914013;
 		startWindDir=210.55499;
 		startRain=0.00016946725;
 		startLightnings=0.00016946725;
 		startWaves=0.1;
 		startGust=0.67077631;
-		forecastWeather=0.093358263;
+		forecastWeather=0.62283969;
 		forecastWind=0.025158385;
 		forecastWaves=0.1;
 		forecastGust=0.037654009;
@@ -503,7 +503,8 @@ class Mission
 		year=2017;
 		month=8;
 		day=15;
-		hour=6;
+		hour=9;
+		minute=0;
 		startFogBase=-999.76666;
 		forecastFogBase=-1000;
 		startFogDecay=0;
@@ -32546,7 +32547,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11984,180.23212,9703};
+				position[]={10535,161.94347,10575};
 				angles[]={0,0.70842916,0};
 			};
 			side="Empty";
@@ -32559,14 +32560,13 @@ class Mission
 			};
 			id=5373;
 			type="Flag_CSAT_F";
-			atlOffset=-1.5258789e-005;
 		};
 		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7261,7.3701482,7929};
+				position[]={8842,23.190119,10176};
 				angles[]={0,0.32203069,0};
 			};
 			side="Empty";
@@ -32579,6 +32579,7 @@ class Mission
 			};
 			id=5374;
 			type="Flag_NATO_F";
+			atlOffset=-1.9073486e-006;
 		};
 		class Item12
 		{
@@ -37909,6 +37910,7 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -37917,7 +37919,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390946;
+					atlOffset=0.14878201;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -38147,7 +38149,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3513131;
+			atlOffset=2.3484077;
 		};
 		class Item17
 		{

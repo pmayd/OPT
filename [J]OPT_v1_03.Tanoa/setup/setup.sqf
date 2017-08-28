@@ -200,10 +200,10 @@
 */
 
 // Startbudget NATO
-#define __BUDGET_NATO__ 3631750
+#define __BUDGET_NATO__ 3663850
 
 // Startbudget CSAT
-#define __BUDGET_CSAT__ 3369750
+#define __BUDGET_CSAT__ 3401875
 
 // Dispo-Kredit für beide Seiten, falls Budget < 0
 #define __BUDGET_DISPO__ 1e5
