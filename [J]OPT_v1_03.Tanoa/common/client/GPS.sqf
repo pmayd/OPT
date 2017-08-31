@@ -32,7 +32,7 @@ if (local player) then
 	_markerw = [];
 	_markere = [];
 
-	if (playerside == west) then
+	if (playerSide == west) then
 	{
 		for "_i" from 1 to 80 do
 		{
@@ -47,7 +47,7 @@ if (local player) then
 		
 	};
 
-	if (playerside == east) then
+	if (playerSide == east) then
 	{
 		for "_i" from 1 to 80 do
 		{
@@ -79,12 +79,12 @@ if (local player) then
 		_gruppeinheiteneast=[];
 		
 		{
-			if (side (leader _x) == west) then
+			if (((leader _x) getVariable "opt_var_playerSide") == west) then
 			{	
 				_leadergroupwest pushBack leader _x;
 			};	
 
-			if (side (leader _x) == east) then
+			if (((leader _x) getVariable "opt_var_playerSide") == east) then
 			{
 				_leadergroupeast pushBack leader _x;
 			};					
@@ -93,14 +93,14 @@ if (local player) then
 		{
 			if (_x == player) then
 			{
-				[_gruppeinheitenwest,units group _x] call BIS_fnc_arrayPushStack;
+				[_gruppeinheitenwest, units group _x] call BIS_fnc_arrayPushStack;
 			};
 		} foreach _leadergroupwest;
 		
 		{
 			if (_x == player) then
 			{
-				[_gruppeinheiteneast,units group _x] call BIS_fnc_arrayPushStack;
+				[_gruppeinheiteneast, units group _x] call BIS_fnc_arrayPushStack;
 			};
 		} foreach _leadergroupeast;
 			
@@ -108,37 +108,37 @@ if (local player) then
 		{		
 			if (leader group player == leader player) then
 			{
-				[_westplayer,_leadergroupwest] call BIS_fnc_arrayPushStack;
-				[_eastplayer,_leadergroupeast] call BIS_fnc_arrayPushStack;
+				[_westplayer, _leadergroupwest] call BIS_fnc_arrayPushStack;
+				[_eastplayer, _leadergroupeast] call BIS_fnc_arrayPushStack;
 
-				[_westplayer,_gruppeinheitenwest] call BIS_fnc_arrayPushStack;
-				[_eastplayer,_gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
+				[_westplayer, _gruppeinheitenwest] call BIS_fnc_arrayPushStack;
+				[_eastplayer, _gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
 			}
 			else	
 			{						
-				[_westplayer,_leadergroupwest] call BIS_fnc_arrayPushStack;
-				[_eastplayer,_leadergroupeast] call BIS_fnc_arrayPushStack;
+				[_westplayer, _leadergroupwest] call BIS_fnc_arrayPushStack;
+				[_eastplayer, _leadergroupeast] call BIS_fnc_arrayPushStack;
 			};
 		};
 				
 		if (_Modus==1) then
 		{		
-			[_westplayer,_leadergroupwest] call BIS_fnc_arrayPushStack;
-			[_eastplayer,_leadergroupeast] call BIS_fnc_arrayPushStack;
+			[_westplayer, _leadergroupwest] call BIS_fnc_arrayPushStack;
+			[_eastplayer, _leadergroupeast] call BIS_fnc_arrayPushStack;
 					
-			[_westplayer,_gruppeinheitenwest] call BIS_fnc_arrayPushStack;
-			[_eastplayer,_gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
+			[_westplayer, _gruppeinheitenwest] call BIS_fnc_arrayPushStack;
+			[_eastplayer, _gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
 		};		
 				
 		if (_Modus==2) then
 		{
 			{
-				if (side _x == west) then
+				if ((_x getVariable "opt_var_playerSide") == west) then
 				{
 					_westplayer pushBack _x;
 				};
 			
-				if (side _x == east) then
+				if ((_x getVariable "opt_var_playerSide") == east) then
 				{
 					_eastplayer pushBack _x;
 				};
@@ -146,7 +146,7 @@ if (local player) then
 		};					
 		//systemChat format ["G:%1",_westplayer];
 									
-		if (playerside == west) then
+		if (playerSide == west) then
 		{
 			{_x setmarkerposlocal [0,0]} foreach _markerw;
 			_markerplayer setmarkerposlocal (getPosATLVisual (vehicle player));		
@@ -202,7 +202,7 @@ if (local player) then
 			};	
 		};
 
-		if (playerside == east) then
+		if (playerSide == east) then
 		{
 			{_x setmarkerposlocal [0,0]} foreach _markere;	
 			_markerplayer setmarkerposlocal (getPosATLVisual (vehicle player));	

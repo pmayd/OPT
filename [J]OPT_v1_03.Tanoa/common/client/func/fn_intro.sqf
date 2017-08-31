@@ -50,7 +50,7 @@ sleep 13;
 _playerNATO = [];
 _playerCSAT = [];
 {
-	if (side _x == west) then {
+	if ((_x getVariable "opt_var_playerSide") == west) then {
 		_playerNATO pushBack (name _x);
 	} else {
 		_playerCSAT pushBack (name _x);

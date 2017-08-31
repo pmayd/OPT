@@ -4,7 +4,7 @@
 if (!local player) exitWith {};
 params ["_flag","_caller","_id","_parr"];
 
-_side = side _caller;
+_side = _caller getVariable "opt_var_playerSide";
 
 _owner = _flag getVariable ["owner", nil];
 

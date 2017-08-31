@@ -3,6 +3,9 @@
 #include "setup\setup.sqf";
 diag_log format ["%1 --- TcB initPlayerLocal.sqf startet",diag_ticktime];
 
+// store playerSide for logs and other functions
+player setVariable ["opt_var_playerSide", playerSide, true];
+
 // legt alle wichtigen classnames wie Flaggen und Einheiten fest
 __ccppfln(setup\setup_classnames.sqf);
 // legt alle bestellbaren Fahrzeuge und Kisten fest

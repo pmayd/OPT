@@ -3,7 +3,7 @@ _unit = _this select 0;
 _mark = "";
 //if (_unit == player) exitWith {_mark};
 	
-if (FAR_PlayerSide == side _unit) then {
+if (FAR_PlayerSide == _unit getVariable "opt_var_playerSide") then {
 	_str = name _unit;
 	_marker = _unit getVariable ["far_unitMarker", ""];
 

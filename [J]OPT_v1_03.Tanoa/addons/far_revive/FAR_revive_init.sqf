@@ -74,7 +74,7 @@ if (isDedicated) exitWith {};
 	if (tcb_ais_show_3d_icons) then {
 		_icons = addMissionEventHandler ["Draw3D", {
 			{
-				if ((_x distance player) < 30 && {_x getVariable ["FAR_isUnconscious", 0] == 1} && {_x != player} && {side player == side _x}) then {
+				if ((_x distance player) < 30 && {_x getVariable ["FAR_isUnconscious", 0] == 1} && {_x != player} && {(player getVariable "opt_var_playerSide") == (_x getVariable "opt_var_playerSide")}) then {
 					drawIcon3D ["\a3\ui_f\data\map\MapControl\hospital_ca.paa", [0.6,0.15,0,0.8], _x, 0.5, 0.5, 0, format["%1 (%2m)", name _x, ceil (player distance _x)], 0, 0.02];
 				};
 			} forEach playableUnits;

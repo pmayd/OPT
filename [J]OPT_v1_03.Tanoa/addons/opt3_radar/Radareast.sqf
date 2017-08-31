@@ -88,13 +88,13 @@ while {((alive _Container) and _go)} do
 								_obj = _Radaranzeige select (_i - 1);
 								_marker = _markerost select (_i - 1);		
 								//systemChat format ["O:%1 OS:%2 B1:%3 B2:%4",_obj,side _obj,((side _obj) == east),(_obj iskindof "Helicopter")];
-								if ((side _obj == east) and (_obj iskindof "Helicopter") and !(_obj iskindof "OPT_O_UAV_01_F")) then
+								if (((_obj getVariable "opt_var_playerSide") == east) and (_obj iskindof "Helicopter") and !(_obj iskindof "OPT_O_UAV_01_F")) then
 									{
 									_marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
 									_marker setMarkerTypelocal "b_air";
 									//systemChat format ["O:%1 M:%2 P:%3",_obj,_marker,(getPosATLVisual (vehicle _obj))];						
 									};
-								if ((side _obj == east) and (_obj iskindof "Plane")) then
+								if (((_obj getVariable "opt_var_playerSide") == east) and (_obj iskindof "Plane")) then
 									{
 									_marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
 									_marker setMarkerTypelocal "b_plane";
@@ -103,12 +103,12 @@ while {((alive _Container) and _go)} do
 								_obj = _Radaranzeige select (_i - 1);
 								_marker = _markerwest select (_i - 1);		
 								//systemChat format ["O:%1",_obj];
-								if ((side _obj == west) and (_obj iskindof "Helicopter") and !(_obj iskindof "OPT_B_UAV_01_F")) then
+								if (((_obj getVariable "opt_var_playerSide") == west) and (_obj iskindof "Helicopter") and !(_obj iskindof "OPT_B_UAV_01_F")) then
 									{
 									_marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
 									_marker setMarkerTypelocal "b_air";
 									};
-								if ((side _obj == west) and (_obj iskindof "Plane")) then
+								if (((_obj getVariable "opt_var_playerSide") == west) and (_obj iskindof "Plane")) then
 									{
 									_marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
 									_marker setMarkerTypelocal "b_plane";

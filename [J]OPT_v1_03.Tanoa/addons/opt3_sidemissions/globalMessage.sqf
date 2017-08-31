@@ -24,7 +24,7 @@ if (local player) then {
 	switch (_sidemission) do {
 
 		case 3: {
-				switch (side _destroyer) do {
+				switch (_destroyer getVariable "opt_var_playerSide") do {
 						case west: {
 									if (player isKindOf "OPT_Maintainer") then { 
 										if (_success == 1) then { titleText ["NATO Sidemission 3 gewonnen!", "PLAIN", 20]; sleep 20; titleText ["","PLAIN"]; };

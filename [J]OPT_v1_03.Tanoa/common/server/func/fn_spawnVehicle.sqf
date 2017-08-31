@@ -85,9 +85,9 @@ if (_vec isKindOf "Air") then {
                 private _message = format[
                     "%1 (%2) wurde von %3 (%4) eingeflogen (%5 m)", 
                     name _unit, 
-                    side _unit, 
+                    _unit getVariable "opt_var_playerSide",  
                     name (_vec getVariable "opt_var_vec_pilot"), 
-                    side (_vec getVariable "opt_var_vec_pilot"),
+                    (_vec getVariable "opt_var_vec_pilot") getVariable "opt_var_playerSide",
                     _dis
                 ];
 

@@ -85,9 +85,9 @@ if (!tcb_healerStopped) then {
         private _message = format [
             "%1 (%2) wurde von %3 (%4) stabilisiert.", 
             name _injuredperson, 
-            side _injuredperson,
+            _injuredperson getVariable "opt_var_playerSide",
             name _healer,
-            side _healer
+            _healer getVariable "opt_var_playerSide"
         ];
 
         // übergib Kategorie und Nachricht an log-Funktion

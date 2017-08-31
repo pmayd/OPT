@@ -14,10 +14,10 @@ wird in der initServer.sqf aufgerufen
 	if (_victim isKindOf "Man") then {
 
 		if (_victim == _killer || isNull _killer) then {
-			_message = format["%1 (%2) von: Selbstverschulden.", name _victim, side _victim];
+			_message = format["%1 (%2) von: Selbstverschulden.", name _victim, _victim getVariable "opt_var_playerSide"];
 
 		} else {
-			_message = format["%1 (%2) von: %3 (%4).", name _victim, side _victim, name _killer, side _killer];
+			_message = format["%1 (%2) von: %3 (%4).", name _victim, _victim getVariable "opt_var_playerSide", name _killer, _killer getVariable "opt_var_playerSide"];
 
 		};
 
