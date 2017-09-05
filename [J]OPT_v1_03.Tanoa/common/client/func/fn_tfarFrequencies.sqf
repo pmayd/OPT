@@ -28,15 +28,19 @@ private _encryptionCSAT = "_opfor";
     default {[]};
 }) params ["_encryption", "_frequenciesSW", "_frequenciesLR"];
 
-if (!(_vec isEqualTo objNull) and (_vec call TFAR_fnc_hasVehicleRadio)) then {
+if !(_vec isEqualTo objNull) then {
+    if (_vec call TFAR_fnc_hasVehicleRadio) then {
+        private _radioLR = player call TFAR_fnc_VehicleLR;
+        private _settingsLR = _radioLR call TFAR_fnc_getLrSettings;
+        _settingsLR set [2, _frequenciesLR];
+        _settingsLR set [4, _encryption];
+        [_radioLR, _settingsLR] call TFAR_fnc_setLrSettings;
+        //player sideChat "LongRange Kanäle programmiert.";
 
-    private _radioLR = player call TFAR_fnc_VehicleLR;
-	private _settingsLR = _radioLR call TFAR_fnc_getLrSettings;
-	_settingsLR set [2, _frequenciesLR];
-	_settingsLR set [4, _encryption];
-	[_radioLR, _settingsLR] call TFAR_fnc_setLrSettings;
-	//player sideChat "LongRange Kanäle programmiert.";
+        systemChat "Frequenzen für Fahrzeug LR gesetzt!";
 
+    };
+    
 } else {
 
     // look for prototype radios in player inventory and wait till replacement
