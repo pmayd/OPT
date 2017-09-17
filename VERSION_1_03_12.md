@@ -1,6 +1,0 @@
-## Letzter Fix
-- TFAR: Fahrzeuge derselben Seite erhalten bei Einstieg die Preset-Kanäle der Seite
-- Slotliste: Änderungen auf Seiten der CSAT nach Vorgabe HL Schredder
-- Slotliste: In der Lobby werden nun die korrekten Gruppenbezeichnungen angezeigt
-- Bugfix: Alle Funkgeräte am Mann haben sich beim Einstieg ins Fahrzeug umgestellt. Behoben
-- Bugfix: player (ENEMY) im Server LOG nach Blue on Blue, behoben

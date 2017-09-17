@@ -38594,13 +38594,13 @@ class Mission
 				class Item5
 				{
 					dataType="Marker";
-					position[]={2254.9563,13.45,13426.563};
+					position[]={2254.9561,0,13426.563};
 					name="marker_nato_kettenfahrzeuge_1";
 					text="Ketten-Fahrzeuge";
 					type="n_armor";
 					colorName="ColorWEST";
-					angle=268.08224;
 					id=5548;
+					atlOffset=-13.45;
 				};
 				class Item6
 				{
@@ -38613,13 +38613,13 @@ class Mission
 				class Item7
 				{
 					dataType="Marker";
-					position[]={2234.4421,13.45,13435.009};
+					position[]={2234.4419,0,13435.01};
 					name="marker_nato_radfahrzeuge_1";
 					text="Rad-Fahrzeuge";
 					type="n_motor_inf";
 					colorName="ColorWEST";
-					angle=2.999177;
 					id=5550;
+					atlOffset=-13.45;
 				};
 				class Item8
 				{
@@ -38634,12 +38634,12 @@ class Mission
 				class Item9
 				{
 					dataType="Marker";
-					position[]={2232.6963,13.386719,13393.755};
+					position[]={2232.696,0,13393.755};
 					name="respawn_west";
 					type="respawn_unknown";
 					colorName="ColorWEST";
 					id=5552;
-					atlOffset=-0.063281059;
+					atlOffset=-13.45;
 				};
 				class Item10
 				{
@@ -38671,14 +38671,13 @@ class Mission
 				class Item12
 				{
 					dataType="Marker";
-					position[]={2214.8926,13.43457,13412.939};
+					position[]={2214.8931,0,13412.939};
 					name="Nachschubversorgung_Nato_2";
 					text="Nachschub";
 					type="o_support";
 					colorName="ColorWEST";
-					angle=333.72971;
 					id=5555;
-					atlOffset=-0.015429497;
+					atlOffset=-13.45;
 				};
 				class Item13
 				{
@@ -44629,19 +44628,19 @@ class Mission
 		class Item30
 		{
 			dataType="Marker";
-			position[]={2171.2332,13.45,13384.708};
+			position[]={2171.2329,0,13384.708};
 			name="nato_radar";
 			text=" Radar Container";
 			type="b_recon";
-			angle=269.98584;
 			id=5687;
+			atlOffset=-13.45;
 		};
 		class Item31
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11744.121,6.0644283,3141.9333};
+				position[]={11744.121,6.0645971,3141.9331};
 				angles[]={0,3.8016937,0};
 			};
 			side="Empty";
@@ -44654,16 +44653,16 @@ class Mission
 			};
 			id=5688;
 			type="OPT_Land_Pod_Heli_Transport_04_repair_radar_F";
-			atlOffset=-0.00016880035;
 		};
 		class Item32
 		{
 			dataType="Marker";
-			position[]={11741.467,4.8699999,3140.2434};
+			position[]={11741.467,0,3140.2429};
 			name="csat_radar";
 			text=" Radar Container";
 			type="o_recon";
 			id=5689;
+			atlOffset=-4.8699999;
 		};
 		class Item33
 		{
