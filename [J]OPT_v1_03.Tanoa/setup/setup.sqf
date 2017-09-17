@@ -11,7 +11,7 @@
 * wird in descprition.ext verwendet
 */
 // hier den Missionsnamen festlegen
-#define __MISSION_NAME__ "OPT - Schlacht Nr. 3"
+#define __MISSION_NAME__ "OPT - Schlacht Nr. 6"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
 #define __VERSION__ Build on version 1.03
 // made by
@@ -29,7 +29,7 @@
 #define __RESPAWN_TYPE__ 3
 
 // Anzahl max. möglicher Spieler eingeben
-#define __PLNUM__ 80
+#define __PLNUM__ 106
 
 // falls die Mission respawn haben soll, dann die folgende Zeile auskommentieren und respawn Zeit festlegen
 // wenn das Respawndelay größer als 10 Sekunden ist erscheint ein berühmtes Zitat während die Kamera den leblosen Körper zeigt
@@ -200,10 +200,10 @@
 */
 
 // Startbudget NATO
-#define __BUDGET_NATO__ 3663850
+#define __BUDGET_NATO__ 4485750
 
 // Startbudget CSAT
-#define __BUDGET_CSAT__ 3401875
+#define __BUDGET_CSAT__ 4665940
 
 // Dispo-Kredit für beide Seiten, falls Budget < 0
 #define __BUDGET_DISPO__ 1e5
