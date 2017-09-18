@@ -11,5 +11,5 @@ if (!(RADARContainerEAST getVariable ["RADAREASTaufgebaut", false])) then
 	Radarturmeast attachTo [_container, [-0.5, 0.5, 0.0]];
 	Radarnetzeast = createVehicle ["CamoNet_ghex_big_F", getpos _container, [], 0, "NONE"];
 	Radarnetzeast attachTo [_container, [0.0, 0.0, 0.0]];
-	_container setVariable ["RADAREASTaufgebaut", true,true];
+	_container setVariable ["RADAREASTaufgebaut", true, true];
 };
