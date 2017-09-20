@@ -9,21 +9,33 @@ if (!isNil "opt_csat_flags") exitWith{};
 // bernommen mit OPT_CSAT_FLAG beginnen und eine beliebige Nummer haben.
 
 {
+    if !(typeOf _x isEqualTo "Flag_CSAT_F") then {
+        private _pos = getPos _x;
+        deleteVehicle _x;
+        "Flag_CSAT_F" createVehicle _pos;
+    };
+    
     // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
     #ifdef __OPT_FLAG_MARKER__
-        _markerName = format["marker_%1_%2", _x, _forEachIndex];
-        _marker = createMarkerLocal [_markerName, getPos _x];
+        private _markerName = format["marker_%1_%2", _x, _forEachIndex];
+        private _marker = createMarkerLocal [_markerName, getPos _x];
         _marker setMarkerTypeLocal "flag_CSAT";
         _x setVariable ["opt_var_flag_marker", _marker];
     #endif
 
 } foreach opt_csat_flags;
 
-{
+{   
+    if !(typeOf _x isEqualTo "Flag_NATO_F") then {
+        private _pos = getPos _x;
+        deleteVehicle _x;
+        "Flag_NATO_F" createVehicle _pos;
+    };
+
     // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
     #ifdef __OPT_FLAG_MARKER__
-        _markerName = format["marker_%1_%2", _x, _forEachIndex];
-        _marker = createMarkerLocal [_markerName, getPos _x];
+        private _markerName = format["marker_%1_%2", _x, _forEachIndex];
+        private _marker = createMarkerLocal [_markerName, getPos _x];
         _marker setMarkerTypeLocal "flag_NATO";
         _x setVariable ["opt_var_flag_marker", _marker];
     #endif

@@ -13,6 +13,9 @@ if (isMultiplayer && !isServer) exitWith {};
 // Waffenruhe abgelaufen?
 if (!missionStarted) exitWith {diag_log format["OPT LOG: ERROR: opt_countdown.sqf started before missionStarted=true!"]};
 
+// start flag setup (setting owner)
+call opt_fnc_setupFlag;
+
 // calculate first time the dominator (it's needed if assynchrone number of flags are defined)
 [civilian, objNull] spawn opt_fnc_setFlagOwner;
 
