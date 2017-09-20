@@ -5,24 +5,36 @@ openMap [true, false];
 // create local marker for each flag pole
 private _flagMarker = [];
 {
- if (_x getVariable "opt_flag") then {
-    _markerName = format["marker_%1_%2", _x, _forEachIndex];
-	_marker = createMarkerLocal [_markerName, getPos _x];
-	_marker setMarkerTypeLocal "hd_objective";
-    _flagMarker pushBack _marker;
+    if (_x getVariable "opt_flag") then {
+        _markerName = format["marker_%1_%2", _x, _forEachIndex];
+        _marker = createMarkerLocal [_markerName, getPos _x];
+        _marker setMarkerTypeLocal "hd_objective";
+        _flagMarker pushBack _marker;
 
-    if (_x in opt_nato_flags or _x in opt_csat_flags) then {
-        _markerName = format["marker_active_flag"];
-	    _marker = createMarkerLocal [_markerName, getPos _x];
-	    _marker setMarkerTypeLocal "selector_selectedMission";
-        _marker setMarkerSizeLocal [2,2];
-    };
+        switch (playerSide) do {
+            case west: {
 
-    switch (playerSide) do {
-        case west: {_marker setMarkerColorLocal "ColorBLUFOR";};
-        case east: {_marker setMarkerColorLocal "ColorOPFOR";};
+                if (_x in opt_nato_flags) then {
+                    _markerName = format["marker_active_flag"];
+                    _marker = createMarkerLocal [_markerName, getPos _x];
+                    _marker setMarkerTypeLocal "selector_selectedMission";
+                    _marker setMarkerSizeLocal [2,2];
+                    _marker setMarkerColorLocal "ColorBLUFOR";
+                };
+        
+            };
+            case east: {
+
+                if (_x in opt_csat_flags) then {
+                    _markerName = format["marker_active_flag"];
+                    _marker = createMarkerLocal [_markerName, getPos _x];
+                    _marker setMarkerTypeLocal "selector_selectedMission";
+                    _marker setMarkerSizeLocal [2,2];
+                    _marker setMarkerColorLocal "ColorOPFOR";
+                };
+            };
+        };
     };
- };
 
 } forEach allMissionObjects "FlagPole_F";
 
@@ -42,8 +54,12 @@ private _flagMarker = [];
         _marker setMarkerSizeLocal [2,2];
 
         switch (playerSide) do {
-            case west: {_marker setMarkerColorLocal "ColorBLUFOR"; opt_nato_flags = [_flag]; publicVariable "opt_nato_flags";};
-            case east: {_marker setMarkerColorLocal "ColorOPFOR"; opt_csat_flags = [_flag]; publicVariable "opt_csat_flags";};
+            case west: {
+                _marker setMarkerColorLocal "ColorBLUFOR"; opt_nato_flags = [_flag]; publicVariable "opt_nato_flags";
+            };
+            case east: {
+                _marker setMarkerColorLocal "ColorOPFOR"; opt_csat_flags = [_flag]; publicVariable "opt_csat_flags";
+            };
         };
 
     };
