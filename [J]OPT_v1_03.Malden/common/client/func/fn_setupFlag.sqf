@@ -1,4 +1,3 @@
-if (!isNil "opt_csat_flags") exitWith{};
 // alle funktionierenden und fr die Wertung relevanten Flaggenmarker definieren
 // Name hier eintragen so wie die Flaggen benannt sind - Dominator ist derjenige der mehr Flaggen als die gegnerische Seite besitzt (das gilt immer - wenn hier also eine Seite mehr Flaggen definiert bekommen hat ist sie autom. Dominator)
 // wenn __OPT_Sector_Message__ in setup aktiviert werden automatisch die Marker um die Flaggen generiert. Achtung - Dummyflaggen bentigen weiterhin manuelle einen Marker
@@ -9,12 +8,6 @@ if (!isNil "opt_csat_flags") exitWith{};
 // bernommen mit OPT_CSAT_FLAG beginnen und eine beliebige Nummer haben.
 
 {
-    if !(typeOf _x isEqualTo "Flag_CSAT_F") then {
-        private _pos = getPos _x;
-        deleteVehicle _x;
-        "Flag_CSAT_F" createVehicle _pos;
-    };
-    
     // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
     #ifdef __OPT_FLAG_MARKER__
         private _markerName = format["marker_%1_%2", _x, _forEachIndex];
@@ -23,15 +16,17 @@ if (!isNil "opt_csat_flags") exitWith{};
         _x setVariable ["opt_var_flag_marker", _marker];
     #endif
 
+    _x setVariable ["owner", east, true];
+
+    if !(typeOf _x isEqualTo "Flag_CSAT_F") then {
+        private _pos = getPos _x;
+        opt_csat_flags set [_forEachIndex, "Flag_CSAT_F" createVehicle _pos];
+        deleteVehicle _x;
+    };
+
 } foreach opt_csat_flags;
 
 {   
-    if !(typeOf _x isEqualTo "Flag_NATO_F") then {
-        private _pos = getPos _x;
-        deleteVehicle _x;
-        "Flag_NATO_F" createVehicle _pos;
-    };
-
     // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
     #ifdef __OPT_FLAG_MARKER__
         private _markerName = format["marker_%1_%2", _x, _forEachIndex];
@@ -40,8 +35,15 @@ if (!isNil "opt_csat_flags") exitWith{};
         _x setVariable ["opt_var_flag_marker", _marker];
     #endif
 
-} foreach opt_nato_flags;
+    _x setVariable ["owner", west, true];
+    
+    if !(typeOf _x isEqualTo "Flag_NATO_F") then {
+        private _pos = getPos _x;
+        opt_nato_flags set [_forEachIndex, "Flag_NATO_F" createVehicle _pos];
+        deleteVehicle _x;
+    };
 
+} foreach opt_nato_flags;
 
 /*
 Fuer jede Flagge in einem Sektor: unverwundbar, Logistik-Script aus
@@ -61,20 +63,3 @@ Sowie Actionmeneintrag fuer Spieler
 	_x allowDamage false; 						                    // Flagge kann nicht beschdigt werden
 	_x setVariable ["R3F_LOG_disabled", true];                      // Flagge kann nicht verladen werden
 } foreach (opt_csat_flags + opt_nato_flags);
-
-// define standard sector owner
-{
-	if (!isNil {_x}) then {
-		if (_x != objNull) then {
-			_x setVariable ["owner", east, true];
-		};
-	};
-} forEach opt_csat_flags;
-
-{
-	if (!isNil {_x}) then {
-		if (_x != objNull) then {
-			_x setVariable ["owner", west, true];
-		};
-	};
-} forEach opt_nato_flags;
