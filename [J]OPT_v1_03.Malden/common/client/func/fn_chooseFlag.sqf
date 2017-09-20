@@ -55,10 +55,10 @@ private _flagMarker = [];
 
         switch (playerSide) do {
             case west: {
-                _marker setMarkerColorLocal "ColorBLUFOR"; opt_nato_flags = [_flag]; publicVariable "opt_nato_flags";
+                _marker setMarkerColorLocal "ColorBLUFOR"; opt_csat_flags = [_flag]; publicVariable "opt_csat_flags";
             };
             case east: {
-                _marker setMarkerColorLocal "ColorOPFOR"; opt_csat_flags = [_flag]; publicVariable "opt_csat_flags";
+                _marker setMarkerColorLocal "ColorOPFOR"; opt_nato_flags = [_flag]; publicVariable "opt_nato_flags";
             };
         };
 

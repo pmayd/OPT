@@ -58,7 +58,7 @@ class Params {
 		title 		= "Waffenstillstand";
 		values[] 	= {60, 180, 300, 480, 600, 900};
 		texts[] 	= {"1 min", "3 min", "5 min", "8 min", "10 min", "15 min"};
-		default 	= 180;
+		default 	= 60;
 	};
 	class OPT_TFAR_INTERCEPTION {
 		title 		= "TFAR gegnerischen Funk abhören";
