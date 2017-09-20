@@ -8,11 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=302;
+		nextID=303;
 	};
 	class LayerIndexProvider
 	{
-		nextID=52;
+		nextID=53;
 	};
 	class Camera
 	{
@@ -175,7 +175,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=26;
+		items=9;
 		class Item0
 		{
 			dataType="Layer";
@@ -12789,361 +12789,373 @@ class Mission
 		};
 		class Item8
 		{
-			dataType="Object";
-			class PositionInfo
+			dataType="Layer";
+			name="Sektoren";
+			state=1;
+			class Entities
 			{
-				position[]={5488,342.63284,6935};
-				angles[]={0,0.70842916,6.1558809};
+				items=18;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5488,342.63284,6935};
+						angles[]={0,0.70842916,6.1558809};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_1";
+					};
+					id=278;
+					type="FlagPole_F";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7544,191.44281,7834};
+						angles[]={6.1938243,0.70842916,0.051958453};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_10";
+					};
+					id=287;
+					type="FlagPole_F";
+					atlOffset=-0.0039978027;
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7242,171.57181,7930};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_11";
+					};
+					id=288;
+					type="FlagPole_F";
+					atlOffset=0.031005859;
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7083,169.69781,8019};
+						angles[]={6.2824173,0.70842916,0.00076794485};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_12";
+					};
+					id=289;
+					type="FlagPole_F";
+					atlOffset=0.031005859;
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6010,129.1268,8572};
+						angles[]={6.2807941,0.70842916,6.2775826};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_13";
+					};
+					id=290;
+					type="FlagPole_F";
+					atlOffset=0.02999115;
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5882,132.87781,8697};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_14";
+					};
+					id=291;
+					type="FlagPole_F";
+					atlOffset=0.031005859;
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6084,135.07782,8940};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_15";
+					};
+					id=292;
+					type="FlagPole_F";
+					atlOffset=0.031005859;
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4997,322.8732,9494};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_16";
+					};
+					id=293;
+					type="FlagPole_F";
+					atlOffset=0.0020446777;
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5085,354.17682,9070};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_17";
+					};
+					id=294;
+					type="FlagPole_F";
+					atlOffset=-0.04397583;
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5141,384.86313,9291};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_18";
+					};
+					id=295;
+					type="FlagPole_F";
+					atlOffset=0.052001953;
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5617,339.81879,7043};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_2";
+					};
+					id=279;
+					type="FlagPole_F";
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5538,339.88779,6982};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_3";
+					};
+					id=280;
+					type="FlagPole_F";
+					atlOffset=0.050994873;
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6572,161.18781,6059};
+						angles[]={0.10520844,0.70842916,6.2328324};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_4";
+					};
+					id=281;
+					type="FlagPole_F";
+					atlOffset=-0.039001465;
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7154,76.024803,6056};
+						angles[]={0.015987216,0.70842916,6.2471962};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_5";
+					};
+					id=282;
+					type="FlagPole_F";
+					atlOffset=-0.052001953;
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7420,35.525803,6250};
+						angles[]={0.016004669,0.70842916,0.012007865};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_6";
+					};
+					id=283;
+					type="FlagPole_F";
+					atlOffset=-0.041002274;
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4553,378.67459,8082};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_7";
+					};
+					id=284;
+					type="FlagPole_F";
+					atlOffset=-0.088989258;
+				};
+				class Item16
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3540,132.76959,8498};
+						angles[]={6.222465,0.70842916,6.2599897};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_8";
+					};
+					id=285;
+					type="FlagPole_F";
+					atlOffset=-0.030014038;
+				};
+				class Item17
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4669,392.66483,7381};
+						angles[]={0,0.70842916,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="call{this setVariable [""opt_flag"", true]}";
+						name="opt_flag_9";
+					};
+					id=286;
+					type="FlagPole_F";
+					atlOffset=-0.041992188;
+				};
 			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_1";
-			};
-			id=278;
-			type="FlagPole_F";
-		};
-		class Item9
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5617,339.81879,7043};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_2";
-			};
-			id=279;
-			type="FlagPole_F";
-		};
-		class Item10
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5538,339.88779,6982};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_3";
-			};
-			id=280;
-			type="FlagPole_F";
-			atlOffset=0.050994873;
-		};
-		class Item11
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6572,161.18781,6059};
-				angles[]={0.10520844,0.70842916,6.2328324};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_4";
-			};
-			id=281;
-			type="FlagPole_F";
-			atlOffset=-0.039001465;
-		};
-		class Item12
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7154,76.024803,6056};
-				angles[]={0.015987216,0.70842916,6.2471962};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_5";
-			};
-			id=282;
-			type="FlagPole_F";
-			atlOffset=-0.052001953;
-		};
-		class Item13
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7420,35.525803,6250};
-				angles[]={0.016004669,0.70842916,0.012007865};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_6";
-			};
-			id=283;
-			type="FlagPole_F";
-			atlOffset=-0.041002274;
-		};
-		class Item14
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4553,378.67459,8082};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_7";
-			};
-			id=284;
-			type="FlagPole_F";
-			atlOffset=-0.088989258;
-		};
-		class Item15
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3540,132.76959,8498};
-				angles[]={6.222465,0.70842916,6.2599897};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_8";
-			};
-			id=285;
-			type="FlagPole_F";
-			atlOffset=-0.030014038;
-		};
-		class Item16
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4669,392.66483,7381};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_9";
-			};
-			id=286;
-			type="FlagPole_F";
-			atlOffset=-0.041992188;
-		};
-		class Item17
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7544,191.44281,7834};
-				angles[]={6.1938243,0.70842916,0.051958453};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_10";
-			};
-			id=287;
-			type="FlagPole_F";
-			atlOffset=-0.0039978027;
-		};
-		class Item18
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7242,171.57181,7930};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_11";
-			};
-			id=288;
-			type="FlagPole_F";
-			atlOffset=0.031005859;
-		};
-		class Item19
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7083,169.69781,8019};
-				angles[]={6.2824173,0.70842916,0.00076794485};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_12";
-			};
-			id=289;
-			type="FlagPole_F";
-			atlOffset=0.031005859;
-		};
-		class Item20
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6010,129.1268,8572};
-				angles[]={6.2807941,0.70842916,6.2775826};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_13";
-			};
-			id=290;
-			type="FlagPole_F";
-			atlOffset=0.02999115;
-		};
-		class Item21
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5882,132.87781,8697};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_14";
-			};
-			id=291;
-			type="FlagPole_F";
-			atlOffset=0.031005859;
-		};
-		class Item22
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6084,135.07782,8940};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_15";
-			};
-			id=292;
-			type="FlagPole_F";
-			atlOffset=0.031005859;
-		};
-		class Item23
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4997,322.8732,9494};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_16";
-			};
-			id=293;
-			type="FlagPole_F";
-			atlOffset=0.0020446777;
-		};
-		class Item24
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5085,354.17682,9070};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_17";
-			};
-			id=294;
-			type="FlagPole_F";
-			atlOffset=-0.04397583;
-		};
-		class Item25
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5141,384.86313,9291};
-				angles[]={0,0.70842916,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				skill=0.60000002;
-				init="call{this setVariable [""opt_flag"", true]}";
-				name="opt_flag_18";
-			};
-			id=295;
-			type="FlagPole_F";
-			atlOffset=0.052001953;
+			id=302;
+			atlOffset=-93.163818;
 		};
 	};
 };
