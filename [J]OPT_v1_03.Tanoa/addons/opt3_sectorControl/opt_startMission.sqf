@@ -62,13 +62,10 @@ if (isServer) then {
 	private _timeElapsed = (serverTime - opt_startTime);
 	// Waffenruhe wird um mögl. Freezetime verlängert, z.B. Waffenruhe 10 Minuten + 1 Minute Freeze
 	truceTime = (OPT_TRUCETIME + OPT_FREEZE_TIME) - _timeElapsed;
-	_ticker = 0;
 
-	for "_t" from ceil(_timeout-_timeElapsed) to 0 step -1 do {
-		truceTime = truceTime - 1;	// verringert truceTime pro Iteration um 1 Sekunde
+	for "_t" from ceil(truceTime) to 0 step -1 do {
 		// if (local player) then {[] call opt_showCountdown};
 		uisleep 1;
-
 	};
 
 	// nach Ablauf der Waffenruhe (timeout), starte Mission und gib Variable an alle Clients weiter
