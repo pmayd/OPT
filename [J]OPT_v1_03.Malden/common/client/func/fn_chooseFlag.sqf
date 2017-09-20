@@ -14,7 +14,7 @@ private _flagMarker = [];
         switch (playerSide) do {
             case west: {
 
-                if (_x in opt_nato_flags) then {
+                if (_x in opt_csat_flags) then {
                     _markerName = format["marker_active_flag"];
                     _marker = createMarkerLocal [_markerName, getPos _x];
                     _marker setMarkerTypeLocal "selector_selectedMission";
@@ -25,7 +25,7 @@ private _flagMarker = [];
             };
             case east: {
 
-                if (_x in opt_csat_flags) then {
+                if (_x in opt_nato_flags) then {
                     _markerName = format["marker_active_flag"];
                     _marker = createMarkerLocal [_markerName, getPos _x];
                     _marker setMarkerTypeLocal "selector_selectedMission";
