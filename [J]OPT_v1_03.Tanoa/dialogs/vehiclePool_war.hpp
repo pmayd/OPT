@@ -69,21 +69,13 @@ opt_suppliesNato = [
   	["OPT_Box_NATO_WpsSpecial_F", 0],						// PCML-M Raketenkiste
 	["OPT_Box_NATO_WpsSpecial_AT_F", 0],					// PCML Raketenkiste	
 	["OPT_Box_NATO_WpsLaunch_F", 0],						// HAT-Kiste (Titan)
-	["OPT_B_HMG_01_high_F", 10000],							// Stand-MG hoch
-	["OPT_B_HMG_01_F", 10000],								// Stand-MG niedrig
-	["OPT_B_GMG_01_high_F", 15000],							// Stand-GMG hoch
-	["OPT_B_GMG_01_F", 15000],								// Stand-GMG niedrig
-	["OPT_B_static_AA_F", 25000],							// Stand-AA
-	["OPT_B_static_AT_F", 200000],							// Stand-AT
-	["OPT_B_Mortar_01_F", 200000],							// MK6 - Mrser
-	["OPT_B_Static_Designator_01_F", 10000],				// Remote Designator
 	["OPT_B_UGV_01_F", 2000],								// UGV Stomper
 	["OPT_B_UAV_01_F", 30000],								// Darter AR-2
 	["OPT_FlexibleTank_01_forest_F", 1000],					// Treibstoff-Fass
     ["OPT_B_Slingload_01_Ammo_F", 90000],            		// Munitionscontainer
 	["OPT_B_Slingload_01_Fuel_F", 8000],           			// Fuelcontainer
     ["OPT_B_Slingload_01_Repair_F", 8000], 	       			// Reparaturcontainer
-	["OPT_B_Slingload_01_Medevac_F", 0],          		// Lazarettcontainer, 5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	["OPT_B_Slingload_01_Medevac_F", 0],          		    // Lazarettcontainer, 5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
 	["OPT_B_Slingload_01_Repair_radar_F", 0], 	       		// Radar Container
 	["Land_Cargo20_white_F", 0],							// weier Container (Lazarett)
 	["Land_BagFence_Round_F", 0],							// runde sandsackecke!
@@ -98,6 +90,17 @@ opt_suppliesNato = [
 	["Land_CncBarrierMedium4_F", 0],						// beton barriere (mittel - lang)
 	["Land_Mil_WiredFence_F", 0],							// maschendrahtzaun
 	["CamoNet_BLUFOR_big_Curator_F", 0]						// Camonet zum testen!
+];
+
+opt_staticNato = [
+    ["OPT_B_HMG_01_high_F", 10000],							// Stand-MG hoch
+	["OPT_B_HMG_01_F", 10000],								// Stand-MG niedrig
+	["OPT_B_GMG_01_high_F", 15000],							// Stand-GMG hoch
+	["OPT_B_GMG_01_F", 15000],								// Stand-GMG niedrig
+	["OPT_B_static_AA_F", 25000],							// Stand-AA
+	["OPT_B_static_AT_F", 200000],							// Stand-AT
+	["OPT_B_Mortar_01_F", 200000],							// MK6 - Mrser
+	["OPT_B_Static_Designator_01_F", 10000] 				// Remote Designator
 ];
 
 opt_seaNato = [
@@ -183,14 +186,6 @@ opt_suppliesCsat = [
 	["OPT_O_CargoNet_01_ammo_F", 5000],						// Ausrstungskiste
 	["OPT_Box_East_WpsSpecial_Diver_F", 5000],				// Taucherkiste
 	["OPT_Box_East_WpsLaunch_F", 0],						// HAT-Kiste (Titan)
-    ["OPT_O_HMG_01_high_F", 10000],							// Stand-MG hoch
-	["OPT_O_HMG_01_F", 10000],								// Stand-MG niedrig
-	["OPT_O_GMG_01_high_F", 15000],							// Stand-GMG hoch
-	["OPT_O_GMG_01_F", 15000],								// Stand-GMG niedrig
-	["OPT_O_static_AA_F", 25000],							// Stand-AA
-	["OPT_O_static_AT_F", 200000],							// Stand-AT
-	["OPT_O_Mortar_01_F", 200000],							// MK6 Mrser
-	["OPT_O_Static_Designator_02_F", 10000],				// Remote Designator
 	["OPT_O_T_UGV_01_ghex_F", 2000],						// UGV Saif	
 	["OPT_O_UAV_01_F", 30000],								// Tayran AR-2
 	["OPT_FlexibleTank_01_sand_F", 1000],					// Treibstoff-Fass
@@ -215,6 +210,17 @@ opt_suppliesCsat = [
 	["Land_CncBarrierMedium4_F", 0],						// beton barriere (mittel - lang)
 	["Land_Mil_WiredFence_F", 0],							// maschendrahtzaun
 	["CamoNet_BLUFOR_big_Curator_F", 0]						// Camonet zum testen!
+];
+
+opt_staticCsat = [
+    ["OPT_O_HMG_01_high_F", 10000],							// Stand-MG hoch
+	["OPT_O_HMG_01_F", 10000],								// Stand-MG niedrig
+	["OPT_O_GMG_01_high_F", 15000],							// Stand-GMG hoch
+	["OPT_O_GMG_01_F", 15000],								// Stand-GMG niedrig
+	["OPT_O_static_AA_F", 25000],							// Stand-AA
+	["OPT_O_static_AT_F", 200000],							// Stand-AT
+	["OPT_O_Mortar_01_F", 200000],							// MK6 Mrser
+	["OPT_O_Static_Designator_02_F", 10000]			    	// Remote Designator
 ];
 
 opt_seaCsat = [

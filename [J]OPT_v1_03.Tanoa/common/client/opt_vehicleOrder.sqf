@@ -20,7 +20,7 @@ opt_orderDialogObjects = switch (opt_vehicleType) do {
   case "vehicles" : {if (_side == west) then {opt_vehiclesNato + opt_vehiclesSupplyNato} else {opt_vehiclesCsat + opt_vehiclesSupplyCsat}};
 	case "choppers" : {if (_side == west) then {opt_choppersNato} else {opt_choppersCsat}};
 	case "armored" : {if (_side == west) then {opt_armoredNato} else {opt_armoredCsat}};
-	case "supplies" : {if (_side == west) then {opt_suppliesNato} else {opt_suppliesCsat}};
+	case "supplies" : {if (_side == west) then {opt_suppliesNato + opt_staticNato} else {opt_suppliesCsat + opt_staticCsat}};
 	case "sea" : {if (_side == west) then {opt_seaNato} else {opt_seaCsat}};
 	case "sell" : {[]};
 };
@@ -65,7 +65,7 @@ if (count opt_orderDialogObjects != 0) then {
 	_objs = nearestObjects [_spawnpos, ["AllVehicles","Thing"], __ORDER_SELL_RADIUS__];
 	opt_vehicles_to_sell = [];
 
-	_pool = (opt_vehiclesNato + opt_choppersNato + opt_armoredNato + opt_vehiclesCsat + opt_choppersCsat + opt_armoredCsat);
+	_pool = (opt_vehiclesNato + opt_choppersNato + opt_armoredNato + opt_vehiclesCsat + opt_choppersCsat + opt_armoredCsat + opt_staticCsat + opt_staticNato);
 	// gehe alle gefundenen Objekte durch und lösche sie, falls nicht in pool, oder ergänze um Preis
 
 	{
