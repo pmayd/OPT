@@ -6,7 +6,7 @@ openMap [true, false];
 private _flagMarker = [];
 {
     // skip all flags that are not opt flags
-    if (_x getVariable ["opt_flag",false]) exitWith {};
+    if !(_x getVariable ["opt_flag", false]) exitWith {};
     
     // only show attack flags
     switch (playerSide) do {
