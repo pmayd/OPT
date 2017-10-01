@@ -9,7 +9,7 @@
 if (isServer) then {
     {
         // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
-        if (OPT_FLAG_MARKER) then {
+        if (OPT_FLAG_MARKER == 1) then {
             private _markerName = format["marker_%1_%2", _x, _forEachIndex];
             private _marker = createMarker [_markerName, getPos _x];
             _marker setMarkerType "flag_CSAT";
@@ -20,7 +20,7 @@ if (isServer) then {
 
     {   
         // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
-        if (OPT_FLAG_MARKER) then {
+        if (OPT_FLAG_MARKER == 1) then {
             private _markerName = format["marker_%1_%2", _x, _forEachIndex];
             private _marker = createMarker [_markerName, getPos _x];
             _marker setMarkerType "flag_NATO";
