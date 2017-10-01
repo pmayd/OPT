@@ -73,9 +73,6 @@
 * Markersystem
 */
 
-// wenn nicht auskommentiert, werden alle Sektor-Flaggen mit einem Marker versehen
-#define __OPT_FLAG_MARKER__
-
 // wenn nicht auskommentiert mit // dann werden für definierte Spieler Marker auf der Karte erzeugt
 // sollen alle Spieler einen Marker erhalten muß auch jeder einzeln unter dem Array opt_p_entities definiert werden --> siehe setup_classnames.sqf
 #define __SHOW_CUSTOM_PLAYERMARKER__

@@ -148,6 +148,12 @@ class Params {
 		texts[] 	= {"aus", "an"};
 		default 	= 1;
 	};
+    class OPT_FLAG_MARKER {
+		title 		= "Markiere Angriffsflaggen mit Mapmarker";
+		values[] 	= {0,1};
+		texts[] 	= {"aus", "an"};
+		default 	= 0;
+	};
 };
 
 #include "dialogs\rscBasicDefines.hpp"
