@@ -43,7 +43,7 @@ Sowie Actionmeneintrag fuer Spieler
         true, 													    // showWindow
         true,														// hideOnUse 
         "",															// shortcut
-        '((_target distance player) < 5) and vehicle player == player and MissionStarted and (OPT_PLAYTIME - (serverTime - opt_startTime)) > 0 and (playerSide != _target getVariable "owner")' // Flagge kann nur nach Missionsstart, in 5 m Radius, auerhalb eines Fahrzeugs und in Restspielzeit gezogen werden
+        '((_target distance player) < 5) and vehicle player == player and MissionStarted and (OPT_PLAYTIME - (serverTime - opt_startTime)) > 0 and (playerSide != (_target getVariable ["owner", sideUnknown]))' // Flagge kann nur nach Missionsstart, in 5 m Radius, ausserhalb eines Fahrzeugs und in Restspielzeit gezogen werden und nur von der anderen Seite
     ];
     _x allowDamage false; 						                    // Flagge kann nicht beschdigt werden
     _x setVariable ["R3F_LOG_disabled", true];                      // Flagge kann nicht verladen werden

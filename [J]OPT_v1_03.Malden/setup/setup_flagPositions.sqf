@@ -5,6 +5,11 @@ Demnach muss nach jeder Schlacht nur der owner angepasst werden.
 west -> Angriffsziel für CSAT
 east -> Angriffsziel für NATO
 */
+if (isNil "opt_setup_flags") then {
+    opt_setup_flags = false;
+};
+
+if (opt_setup_flags) exitWith {};
 
 if (isServer) then {
     opt_nato_flags_pos = [
@@ -59,3 +64,5 @@ if (isServer) then {
     } forEach opt_csat_flags_pos;
 
 };
+
+opt_setup_flags = true;
