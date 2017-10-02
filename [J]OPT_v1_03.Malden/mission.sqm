@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6909.4233,120.59624,3478.5188};
-		dir[]={-0.38083908,-0.36361641,0.85022134};
-		up[]={-0.14866388,0.93152827,0.3318924};
-		aside[]={0.91268289,-3.2048411e-007,0.40881696};
+		pos[]={6900.874,122.53721,3416.6284};
+		dir[]={-0.115888,-0.45863861,0.88114083};
+		up[]={-0.05981094,0.888596,0.45476791};
+		aside[]={0.99154723,3.5433914e-008,0.130408};
 	};
 };
 binarizationWanted=0;
@@ -272,7 +272,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={6885.5093,82.371445,3470.7634};
+										position[]={6885.5088,82.371445,3470.7629};
 										angles[]={0,3.0172379,0};
 									};
 									side="West";
@@ -3795,14 +3795,13 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={6883.8179,94.384033,3470.2339};
+						position[]={6884.8979,82.370003,3467.459};
 						angles[]={6.2807941,5.0127254,0.0039968039};
 					};
 					name="zeus_nato_opz1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
 					id=133;
 					type="ModuleCurator_F";
-					atlOffset=12.01403;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3886,7 +3885,7 @@ class Mission
 				};
 			};
 			id=0;
-			atlOffset=5.9650269;
+			atlOffset=0.1385498;
 		};
 		class Item1
 		{
@@ -5979,7 +5978,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={7488.5503,28.861439,10566.923};
+										position[]={7488.5498,28.861439,10566.923};
 										angles[]={0,3.0905941,0};
 									};
 									side="East";
@@ -7679,12 +7678,13 @@ class Mission
 						class Item4
 						{
 							dataType="Marker";
-							position[]={7487.2827,28.83959,10545.663};
+							position[]={7487.2832,0,10545.663};
 							name="marker_csat_fahrzeuge";
 							text="Fahrzeuge";
 							type="n_motor_inf";
 							colorName="ColorEAST";
 							id=249;
+							atlOffset=-28.83959;
 						};
 						class Item5
 						{
@@ -7993,7 +7993,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={7485.4199,28.857328,10561.241};
-						angles[]={0,1.7585747,0};
+						angles[]={0,1.7585764,0};
 					};
 					name="zeus_csat_charlie1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
@@ -10072,8 +10072,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={6888.9106,82.371445,3470.6924};
-						angles[]={0,3.1908047,0};
+						position[]={6888.9111,82.371445,3470.6921};
+						angles[]={0,3.1908112,0};
 					};
 					side="West";
 					flags=6;
