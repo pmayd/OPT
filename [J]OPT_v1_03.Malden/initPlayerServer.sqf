@@ -8,3 +8,6 @@ if (!_didJIP) then {
 		[] remoteExec ["opt_fnc_intro", _player, false];
 	};
 };
+
+// rufe Zeusskript auf
+[_player] execVM "addons\opt3_zeus\addEditableObjects.sqf";

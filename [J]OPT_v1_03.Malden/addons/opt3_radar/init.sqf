@@ -1,4 +1,6 @@
 #include "..\..\setup\setup.sqf"
+// für Malden deaktiviert
+if (true) exitWith{};
 
 __cppfln(opt_fnc_radar_east,addons\opt3_radar\Radareast.sqf);
 __cppfln(opt_fnc_radar_west,addons\opt3_radar\Radarwest.sqf);
