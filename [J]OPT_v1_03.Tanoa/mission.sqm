@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=6057;
+		nextID=6105;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1524;
+		nextID=1614;
 	};
 	class Camera
 	{
-		pos[]={2140.2644,38.450001,13261.929};
-		dir[]={0.55486286,-0.373622,0.74332738};
-		up[]={0.22349426,0.92758065,0.29940611};
-		aside[]={0.80136061,1.7025741e-008,-0.5981822};
+		pos[]={2207.8284,38.450001,13384.771};
+		dir[]={-0.44015002,-0.63877177,0.63106471};
+		up[]={-0.36542264,0.76939577,0.52392471};
+		aside[]={0.82020706,2.681918e-008,0.57207072};
 	};
 };
 binarizationWanted=0;
@@ -485,13 +485,13 @@ class Mission
 		briefingName="Operation Pandora Trigger";
 		resistanceWest=0;
 		timeOfChanges=4592.6982;
-		startWeather=0.072178856;
+		startWeather=0.14842422;
 		startWind=0.017112894;
 		startWindDir=210.55499;
 		startLightnings=0.00016946725;
 		startWaves=0.0086410306;
 		startGust=0.021348676;
-		forecastWeather=0.072178856;
+		forecastWeather=0;
 		forecastWind=0.025158385;
 		forecastWaves=0.0044052489;
 		forecastGust=0.037654009;
@@ -503,7 +503,6 @@ class Mission
 		month=8;
 		day=15;
 		hour=16;
-		minute=2;
 		startFogBase=-999.76666;
 		forecastFogBase=-1000;
 		startFogDecay=0;
@@ -511,7 +510,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			dataType="Marker";
@@ -31893,7 +31892,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9967,50.362839,6710};
+				position[]={9450,45.800842,7574};
 				angles[]={0,0.70842916,0};
 			};
 			side="Empty";
@@ -31906,7 +31905,6 @@ class Mission
 			};
 			id=5373;
 			type="Flag_CSAT_F";
-			atlOffset=-3.8146973e-006;
 		};
 		class Item5
 		{
@@ -32730,7 +32728,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={11606.18,4.9389319,3121.989};
-					angle=5.3419118;
+					angle=5.3419113;
 					class Attributes
 					{
 						name="trg_csat_repair";
@@ -32774,7 +32772,7 @@ class Mission
 					name="Einheiten";
 					class Entities
 					{
-						items=8;
+						items=9;
 						class Item0
 						{
 							dataType="Group";
@@ -32942,7 +32940,7 @@ class Mission
 							side="East";
 							class Entities
 							{
-								items=11;
+								items=8;
 								class Item0
 								{
 									dataType="Object";
@@ -33011,7 +33009,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11661.975,4.6914387,3059.5649};
+										position[]={11667.317,4.6914387,3058.468};
 										angles[]={0,0.71425855,0};
 									};
 									side="East";
@@ -33019,129 +33017,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Schuetze";
-										isPlayable=1;
-									};
-									id=5771;
-									type="OPT_CSAT_Soldat_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="speaker";
-											expression="_this setspeaker _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="Male02PER";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1.03;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item2
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={11663.181,4.6914387,3058.6443};
-										angles[]={0,0.57505113,0};
-									};
-									side="East";
-									flags=4;
-									class Attributes
-									{
-										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Schuetze";
-										isPlayable=1;
-									};
-									id=5772;
-									type="OPT_CSAT_Soldat_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="speaker";
-											expression="_this setspeaker _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="Male03PER";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1.03;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item3
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={11667.317,4.6914387,3058.4683};
-										angles[]={0,0.71425855,0};
-									};
-									side="East";
-									flags=4;
-									class Attributes
-									{
-										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Pionier";
+										description="Pionier@Alpha";
 										isPlayable=1;
 									};
 									id=5773;
@@ -33189,73 +33065,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item4
+								class Item2
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11663.85,4.6914387,3061.3291};
-										angles[]={0,0.57505113,0};
-									};
-									side="East";
-									flags=4;
-									class Attributes
-									{
-										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="LMG";
-										isPlayable=1;
-									};
-									id=5775;
-									type="OPT_CSAT_LMG_Schuetze_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="speaker";
-											expression="_this setspeaker _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="Male03PER";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1.01;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item5
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={11664.865,4.6914387,3060.5884};
+										position[]={11664.865,4.6914387,3060.5881};
 										angles[]={6.2431998,0.57505113,0};
 									};
 									side="East";
@@ -33264,7 +33079,7 @@ class Mission
 									{
 										rank="SERGEANT";
 										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Sanitaeter";
+										description="Sanitaeter@Alpha";
 										isPlayable=1;
 									};
 									id=5848;
@@ -33331,12 +33146,12 @@ class Mission
 										nAttributes=3;
 									};
 								};
-								class Item6
+								class Item3
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11664.394,4.6914387,3057.5989};
+										position[]={11664.394,4.6914387,3057.5991};
 										angles[]={0,0.57505113,0};
 									};
 									side="East";
@@ -33344,7 +33159,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Schuetze";
+										description="Schuetze@Alpha";
 										isPlayable=1;
 									};
 									id=5908;
@@ -33392,12 +33207,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item7
+								class Item4
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11666.273,4.6914387,3059.1829};
+										position[]={11666.273,4.6914387,3059.1831};
 										angles[]={0,0.71425855,0};
 									};
 									side="East";
@@ -33405,7 +33220,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Grenadier";
+										description="Grenadier@Alpha";
 										isPlayable=1;
 									};
 									id=5920;
@@ -33453,7 +33268,7 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item8
+								class Item5
 								{
 									dataType="Object";
 									class PositionInfo
@@ -33466,7 +33281,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Panzerabwehr";
+										description="Panzerabwehr@Alpha";
 										isPlayable=1;
 										aiRadarUsage=-1124701906;
 									};
@@ -33515,12 +33330,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item9
+								class Item6
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11662.08,4.6914387,3055.886};
+										position[]={11662.352,4.6914387,3058.3547};
 										angles[]={0,0.71425855,0};
 									};
 									side="East";
@@ -33528,7 +33343,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Schuetze";
+										description="Schuetze@Alpha";
 										isPlayable=1;
 									};
 									id=5922;
@@ -33576,12 +33391,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item10
+								class Item7
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11660.685,4.6914387,3056.864};
+										position[]={11664.442,4.6914387,3059.1069};
 										angles[]={0,0.71425855,0};
 									};
 									side="East";
@@ -33589,7 +33404,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Alpha""];}";
-										description="Schuetze";
+										description="Schuetze@Alpha";
 										isPlayable=1;
 									};
 									id=5924;
@@ -33678,8 +33493,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11678.385,4.6914387,3050.0176};
-										angles[]={0,0.74298042,0};
+										position[]={11683.502,4.6914387,3046.0015};
+										angles[]={0,0.74298668,0};
 									};
 									side="East";
 									flags=6;
@@ -33741,8 +33556,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11676.698,4.6914387,3049.1816};
-										angles[]={0,0.61897409,0};
+										position[]={11681.815,4.6914387,3045.1655};
+										angles[]={0,0.618981,0};
 									};
 									side="East";
 									flags=4;
@@ -33750,7 +33565,7 @@ class Mission
 									{
 										rank="SERGEANT";
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="Sanitaeter";
+										description="Sanitaeter@Charlie";
 										isPlayable=1;
 									};
 									id=5782;
@@ -33822,15 +33637,15 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11673.991,4.6914387,3048.3469};
-										angles[]={0,0.75098085,0};
+										position[]={11679.108,4.6914387,3044.3306};
+										angles[]={0,0.75098026,0};
 									};
 									side="East";
 									flags=4;
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="Grenadier";
+										description="Grenadier@Charlie";
 										isPlayable=1;
 									};
 									id=5785;
@@ -33883,8 +33698,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11677.074,4.6914387,3044.3235};
-										angles[]={0,0.69128919,0};
+										position[]={11682.191,4.6914387,3040.3064};
+										angles[]={0,0.69129002,0};
 									};
 									side="East";
 									flags=4;
@@ -33892,7 +33707,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="AA";
+										description="AA@Charlie";
 										isPlayable=1;
 									};
 									id=5789;
@@ -33945,15 +33760,15 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11677.614,4.6914387,3047.532};
-										angles[]={0,0.75818157,0};
+										position[]={11682.731,4.6914387,3043.5154};
+										angles[]={0,0.75818849,0};
 									};
 									side="East";
 									flags=4;
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="LMG";
+										description="LMG@Charlie";
 										isPlayable=1;
 									};
 									id=5799;
@@ -34006,8 +33821,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11675.934,4.6914387,3049.9143};
-										angles[]={0,0.61897409,0};
+										position[]={11681.051,4.6914387,3045.8975};
+										angles[]={0,0.618981,0};
 									};
 									side="East";
 									flags=4;
@@ -34015,7 +33830,7 @@ class Mission
 									{
 										rank="SERGEANT";
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="Sanitaeter";
+										description="Sanitaeter@Charlie";
 										isPlayable=1;
 									};
 									id=5941;
@@ -34087,15 +33902,15 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11678.71,4.6914387,3046.9316};
-										angles[]={0,0.75818157,0};
+										position[]={11683.827,4.6914387,3042.9155};
+										angles[]={0,0.75818849,0};
 									};
 									side="East";
 									flags=4;
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="LMG";
+										description="LMG@Charlie";
 										isPlayable=1;
 									};
 									id=5943;
@@ -34148,7 +33963,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11675.951,4.6914387,3045.3235};
+										position[]={11681.068,4.6914387,3041.3064};
 										angles[]={0,0.74455744,0};
 									};
 									side="East";
@@ -34157,7 +33972,7 @@ class Mission
 									{
 										rank="SERGEANT";
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="AT";
+										description="AT@Charlie";
 										isPlayable=1;
 									};
 									id=5944;
@@ -34210,7 +34025,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11674.753,4.6914387,3046.0891};
+										position[]={11679.87,4.6914387,3042.0725};
 										angles[]={0,0.75818849,0};
 									};
 									side="East";
@@ -34218,7 +34033,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="Schuetze";
+										description="Schuetze@Charlie";
 										isPlayable=1;
 									};
 									id=5947;
@@ -34271,7 +34086,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11673.511,4.6914387,3046.6843};
+										position[]={11678.628,4.6914387,3042.6675};
 										angles[]={0,0.75818849,0};
 									};
 									side="East";
@@ -34279,7 +34094,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="Schuetze";
+										description="Schuetze@Charlie";
 										isPlayable=1;
 									};
 									id=5949;
@@ -34332,7 +34147,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11674.453,4.6914387,3042.1411};
+										position[]={11679.57,4.6914387,3038.1245};
 										angles[]={0,0.75818849,0};
 									};
 									side="East";
@@ -34340,7 +34155,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="Recon-GF";
+										description="Recon-GF@Charlie";
 										isPlayable=1;
 									};
 									id=5952;
@@ -34393,7 +34208,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11673.272,4.6914387,3043.0591};
+										position[]={11678.39,4.6914387,3039.0425};
 										angles[]={0,0.75818849,0};
 									};
 									side="East";
@@ -34401,7 +34216,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="Recon-Pio";
+										description="Recon-Pio@Charlie";
 										isPlayable=1;
 									};
 									id=5955;
@@ -34454,7 +34269,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11672.089,4.6914387,3043.9771};
+										position[]={11677.206,4.6914387,3039.9604};
 										angles[]={0,0.75818849,0};
 									};
 									side="East";
@@ -34462,7 +34277,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Charlie""];}";
-										description="Recon-Marksman";
+										description="Recon-Marksman@Charlie";
 										isPlayable=1;
 									};
 									id=5958;
@@ -34623,7 +34438,7 @@ class Mission
 									{
 										rank="LIEUTENANT";
 										init="call{(group this) setGroupIDGlobal [""PL1""];}";
-										description="Drohnen Operator PL1";
+										description="Drohnen Operator PL1@Oberkommando";
 										isPlayable=1;
 									};
 									id=5819;
@@ -34785,7 +34600,7 @@ class Mission
 									{
 										rank="CAPTAIN";
 										init="call{(group this) setGroupIDGlobal [""Adler""];}";
-										description="Pilot";
+										description="Pilot@Adler";
 										isPlayable=1;
 									};
 									id=5470;
@@ -34839,7 +34654,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11694.285,4.7932968,3169.6177};
+										position[]={11694.285,4.7932963,3169.6182};
 										angles[]={6.2591867,3.8290081,0};
 									};
 									side="East";
@@ -34848,12 +34663,11 @@ class Mission
 									{
 										rank="CAPTAIN";
 										init="call{(group this) setGroupIDGlobal [""Adler""];}";
-										description="Pilot";
+										description="Pilot@Adler";
 										isPlayable=1;
 									};
 									id=5968;
 									type="OPT_CSAT_Pilot_T";
-									atlOffset=6.6757202e-006;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -34933,13 +34747,13 @@ class Mission
 							side="East";
 							class Entities
 							{
-								items=10;
+								items=11;
 								class Item0
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11670.533,4.6914387,3054.6057};
+										position[]={11670.533,4.6914387,3054.606};
 										angles[]={0,0.72665036,0};
 									};
 									side="East";
@@ -34948,7 +34762,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="Sanitaeter";
+										description="Sanitaeter@Bravo";
 										isPlayable=1;
 									};
 									id=5835;
@@ -35028,7 +34842,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="LMG";
+										description="LMG@Bravo";
 										isPlayable=1;
 									};
 									id=5796;
@@ -35081,7 +34895,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11667.886,4.6914387,3053.1504};
+										position[]={11667.886,4.6914387,3053.1501};
 										angles[]={0,0.71425855,0};
 									};
 									side="East";
@@ -35089,7 +34903,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="Grenadier";
+										description="Grenadier@Bravo";
 										isPlayable=1;
 									};
 									id=5794;
@@ -35206,7 +35020,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11669.598,4.6914387,3055.6206};
+										position[]={11669.598,4.6914387,3055.6211};
 										angles[]={0,0.72665036,0};
 									};
 									side="East";
@@ -35215,7 +35029,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="Sanitaeter";
+										description="Sanitaeter@Bravo";
 										isPlayable=1;
 									};
 									id=5926;
@@ -35296,7 +35110,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="MG";
+										description="MG@Bravo";
 										isPlayable=1;
 									};
 									id=5929;
@@ -35377,7 +35191,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="Pionier";
+										description="Pionier@Bravo";
 										isPlayable=1;
 									};
 									id=5932;
@@ -35449,7 +35263,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11670.49,4.6914387,3050.4065};
+										position[]={11670.49,4.6914387,3050.406};
 										angles[]={0,0.72665036,0};
 									};
 									side="East";
@@ -35458,7 +35272,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="Pionier";
+										description="Pionier@Bravo";
 										isPlayable=1;
 									};
 									id=5934;
@@ -35539,7 +35353,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="Schuetze";
+										description="Schuetze@Bravo";
 										isPlayable=1;
 									};
 									id=5937;
@@ -35611,7 +35425,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11667.043,4.6914387,3049.4985};
+										position[]={11667.043,4.6914387,3049.498};
 										angles[]={0,0.72665036,0};
 									};
 									side="East";
@@ -35620,7 +35434,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
-										description="Schuetze";
+										description="Schuetze@Bravo";
 										isPlayable=1;
 									};
 									id=5939;
@@ -35687,62 +35501,24 @@ class Mission
 										nAttributes=3;
 									};
 								};
-							};
-							class Attributes
-							{
-							};
-							id=5827;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="groupID";
-									expression="[_this, _value] call CBA_fnc_setCallsign";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="Bravo";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item6
-						{
-							dataType="Group";
-							side="East";
-							class Entities
-							{
-								items=2;
-								class Item0
+								class Item10
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11677.463,4.6914387,3054.175};
-										angles[]={0,0.46081927,0};
+										position[]={11666.52,4.6914387,3050.55};
+										angles[]={0,0.71425855,0};
 									};
 									side="East";
-									flags=6;
+									flags=4;
 									class Attributes
 									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIDGlobal [""Echo""];}";
-										name="csat_echo1";
-										description="Scharfschuetze@Echo";
+										init="call{(group this) setGroupIDGlobal [""Bravo""];}";
+										description="AT@Bravo";
 										isPlayable=1;
 									};
-									id=5845;
-									type="OPT_CSAT_Scharfschuetze_T";
+									id=6100;
+									type="OPT_CSAT_PA_Schuetze_T";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -35779,69 +35555,7 @@ class Mission
 															"SCALAR"
 														};
 													};
-													value=0.99000001;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item1
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={11676.32,4.6914387,3055.386};
-										angles[]={0,0.64278728,0};
-									};
-									side="East";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIDGlobal [""Echo""];}";
-										description="Aufklaerer";
-										isPlayable=1;
-									};
-									id=5846;
-									type="OPT_CSAT_Beobachter_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="speaker";
-											expression="_this setspeaker _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="Male01PER";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1.04;
+													value=0.98000002;
 												};
 											};
 										};
@@ -35852,7 +35566,7 @@ class Mission
 							class Attributes
 							{
 							};
-							id=5844;
+							id=5827;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -35870,14 +35584,14 @@ class Mission
 													"STRING"
 												};
 											};
-											value="Echo";
+											value="Bravo";
 										};
 									};
 								};
 								nAttributes=1;
 							};
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Group";
 							side="East";
@@ -35952,14 +35666,14 @@ class Mission
 									class PositionInfo
 									{
 										position[]={11716.902,4.6914387,3027.4661};
-										angles[]={0,0.65288341,0};
+										angles[]={0,0.65287536,0};
 									};
 									side="East";
 									flags=5;
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
-										description="Besatzungsmitglied";
+										description="Besatzungsmitglied@Foxtrott";
 										isPlayable=1;
 									};
 									id=5892;
@@ -36012,7 +35726,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11715.47,4.6914387,3024.8667};
+										position[]={11715.47,4.6914387,3024.8669};
 										angles[]={0,0.67390651,0};
 									};
 									side="East";
@@ -36020,7 +35734,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
-										description="Panzerabwehr";
+										description="Panzerabwehr@Foxtrott";
 										isPlayable=1;
 										aiRadarUsage=-1124701906;
 									};
@@ -36074,7 +35788,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11717.34,4.6914387,3023.2944};
+										position[]={11717.34,4.6914387,3023.2939};
 										angles[]={0,0.69129002,0};
 									};
 									side="East";
@@ -36083,7 +35797,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
-										description="AA";
+										description="AA@Foxtrott";
 										isPlayable=1;
 									};
 									id=5914;
@@ -36136,7 +35850,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11718.079,4.6914387,3022.5005};
+										position[]={11718.079,4.6914387,3022.5};
 										angles[]={0,0.74038613,0};
 									};
 									side="East";
@@ -36144,7 +35858,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
-										description="Schuetze";
+										description="Schuetze@Foxtrott";
 										isPlayable=1;
 									};
 									id=5916;
@@ -36197,15 +35911,15 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11717.693,4.6914387,3026.6443};
-										angles[]={0,0.65288341,0};
+										position[]={11717.693,4.6914387,3026.644};
+										angles[]={0,0.65287536,0};
 									};
 									side="East";
 									flags=5;
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
-										description="Besatzungsmitglied";
+										description="Besatzungsmitglied@Foxtrott";
 										isPlayable=1;
 									};
 									id=5960;
@@ -36258,7 +35972,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11716.497,4.6914387,3024.1013};
+										position[]={11716.497,4.6914387,3024.1011};
 										angles[]={0,0.69129002,0};
 									};
 									side="East";
@@ -36267,7 +35981,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
-										description="AA";
+										description="AA@Foxtrott";
 										isPlayable=1;
 									};
 									id=5962;
@@ -36320,7 +36034,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11720.379,4.6914387,3024.0745};
+										position[]={11720.379,4.6914387,3024.074};
 										angles[]={0,0.72061151,0};
 									};
 									side="East";
@@ -36330,7 +36044,7 @@ class Mission
 										rank="CAPTAIN";
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
 										name="csat_delta1";
-										description="GF";
+										description="GF@Foxtrott";
 										isPlayable=1;
 									};
 									id=5802;
@@ -36383,7 +36097,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11719.293,4.6914387,3022.3413};
+										position[]={11719.293,4.6914387,3022.3411};
 										angles[]={0,0.74038613,0};
 									};
 									side="East";
@@ -36391,7 +36105,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
-										description="MG";
+										description="MG@Foxtrott";
 										isPlayable=1;
 									};
 									id=5963;
@@ -36444,7 +36158,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11719.247,4.6914387,3024.9956};
+										position[]={11719.247,4.6914387,3024.9961};
 										angles[]={0,0.74038613,0};
 									};
 									side="East";
@@ -36452,7 +36166,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIDGlobal [""Foxtrott""];}";
-										description="Pio";
+										description="Pio@Foxtrott";
 										isPlayable=1;
 									};
 									id=5966;
@@ -36529,9 +36243,94 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item7
+						{
+							dataType="Group";
+							side="East";
+							class Attributes
+							{
+							};
+							id=6098;
+							atlOffset=60.779999;
+						};
+						class Item8
+						{
+							dataType="Group";
+							side="East";
+							class Entities
+							{
+								items=1;
+								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={11683.57,4.6914387,3055.397};
+										angles[]={0,3.8093381,0};
+									};
+									side="East";
+									flags=6;
+									class Attributes
+									{
+										rank="COLONEL";
+										init="call{(group this) setGroupIDGlobal [""OPZ""];}";
+										description="OPZ@Oberkommando";
+										isPlayable=1;
+									};
+									id=6102;
+									type="OPT_CSAT_Offizier_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="Male01PER";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.05;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+							};
+							class Attributes
+							{
+							};
+							id=6101;
+						};
 					};
 					id=5764;
-					atlOffset=0.0085568428;
+					atlOffset=65.960732;
 				};
 				class Item4
 				{
@@ -36724,7 +36523,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={11677.993,4.6900001,3051.4529};
+						position[]={11683.11,4.6900001,3047.4363};
 						angles[]={0,3.2966933,0};
 					};
 					name="zeus_csat_Charlie1";
@@ -36817,10 +36616,10 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={11675.777,4.6900001,3056.5581};
+						position[]={11677.076,4.6900001,3049.2363};
 						angles[]={0,3.2798226,0};
 					};
-					name="zeus_csat_echo";
+					name="zeus_csat_Speznas";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
 					id=5882;
 					type="ModuleCurator_F";
@@ -36841,7 +36640,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="csat_echo1";
+									value="csat_Speznas1";
 								};
 							};
 						};
@@ -39018,7 +38817,7 @@ class Mission
 				};
 			};
 			id=5407;
-			atlOffset=2008349.8;
+			atlOffset=2008419.8;
 		};
 		class Item10
 		{
@@ -39037,6 +38836,7 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -39045,7 +38845,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390946;
+					atlOffset=0.14878201;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39275,7 +39075,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3513131;
+			atlOffset=2.3484077;
 		};
 		class Item11
 		{
@@ -39350,20 +39150,20 @@ class Mission
 					name="Einheiten";
 					class Entities
 					{
-						items=10;
+						items=11;
 						class Item0
 						{
 							dataType="Group";
 							side="West";
 							class Entities
 							{
-								items=2;
+								items=1;
 								class Item0
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2185.6489,13.451439,13403.46};
+										position[]={2187.6851,13.46141,13403.977};
 										angles[]={0,2.5712364,0};
 									};
 									side="West";
@@ -39421,68 +39221,6 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item1
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2186.5071,13.451439,13404.729};
-										angles[]={0,2.571254,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="LIEUTENANT";
-										init="(group this) setGroupIdGlobal [""OPZ""];";
-										description="Operator@Oberkommando";
-										isPlayable=1;
-									};
-									id=5572;
-									type="OPT_NATO_Operator_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
 							};
 							class Attributes
 							{
@@ -39495,76 +39233,13 @@ class Mission
 							side="West";
 							class Entities
 							{
-								items=9;
+								items=10;
 								class Item0
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2214.0759,13.451439,13425.319};
-										angles[]={0,2.4820678,0};
-									};
-									side="West";
-									flags=6;
-									class Attributes
-									{
-										rank="CAPTAIN";
-										init="(group this) setGroupIdGlobal [""Alpha""];";
-										name="alpha1";
-										description="Gruppenfuehrer@Alpha ";
-										isPlayable=1;
-									};
-									id=5574;
-									type="OPT_NATO_Gruppenfuehrer_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.98000002;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item1
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2212.02,13.451439,13425.254};
+										position[]={2211.8188,13.495446,13424.143};
 										angles[]={0,2.4820678,0};
 									};
 									side="West";
@@ -39573,7 +39248,7 @@ class Mission
 									{
 										rank="SERGEANT";
 										init="(group this) setGroupIdGlobal [""Alpha""];";
-										description="Sanitaeter";
+										description="Sanitaeter@Alpha";
 										isPlayable=1;
 									};
 									id=5575;
@@ -39621,12 +39296,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item2
+								class Item1
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2215.6421,13.451439,13426.41};
+										position[]={2214.718,13.495446,13426.689};
 										angles[]={0,2.4820678,0};
 									};
 									side="West";
@@ -39634,7 +39309,7 @@ class Mission
 									class Attributes
 									{
 										init="(group this) setGroupIdGlobal [""Alpha""];";
-										description="Schuetze";
+										description="Schuetze@Alpha";
 										isPlayable=1;
 									};
 									id=5576;
@@ -39682,12 +39357,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item3
+								class Item2
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2212.6741,13.451439,13427.104};
+										position[]={2212.3386,13.495446,13425.263};
 										angles[]={0,2.4820678,0};
 									};
 									side="West";
@@ -39696,7 +39371,7 @@ class Mission
 									{
 										rank="SERGEANT";
 										init="(group this) setGroupIdGlobal [""Alpha""];";
-										description="Sanitaeter";
+										description="Sanitaeter@Alpha";
 										isPlayable=1;
 									};
 									id=5577;
@@ -39744,12 +39419,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item4
+								class Item3
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2217.5139,13.451439,13427.431};
+										position[]={2215.8521,13.495439,13427.508};
 										angles[]={0,2.4820678,0};
 									};
 									side="West";
@@ -39757,11 +39432,12 @@ class Mission
 									class Attributes
 									{
 										init="(group this) setGroupIdGlobal [""Alpha""];";
-										description="Schuetze";
+										description="Schuetze@Alpha";
 										isPlayable=1;
 									};
 									id=5579;
 									type="OPT_NATO_Soldat_T";
+									atlOffset=0.043999672;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -39805,12 +39481,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item5
+								class Item4
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2210.0769,13.451439,13428.131};
+										position[]={2210.8542,13.495446,13427.261};
 										angles[]={0,2.4820678,0};
 									};
 									side="West";
@@ -39819,7 +39495,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="(group this) setGroupIdGlobal [""Alpha""];";
-										description="AT";
+										description="AT@Alpha";
 										isPlayable=1;
 									};
 									id=5580;
@@ -39867,12 +39543,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item6
+								class Item5
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2215.8311,13.451439,13432.746};
+										position[]={2213.469,13.495439,13426.102};
 										angles[]={0,2.4820678,0};
 									};
 									side="West";
@@ -39880,11 +39556,12 @@ class Mission
 									class Attributes
 									{
 										init="(group this) setGroupIdGlobal [""Alpha""];";
-										description="LMG";
+										description="LMG@Alpha";
 										isPlayable=1;
 									};
 									id=5581;
 									type="OPT_NATO_LMG_Schuetze_T";
+									atlOffset=0.043999672;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -39928,12 +39605,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item7
+								class Item6
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2212.749,13.451439,13430.429};
+										position[]={2212.021,13.495439,13428.493};
 										angles[]={0,2.4353626,0};
 									};
 									side="West";
@@ -39942,10 +39619,199 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIdGlobal [""Alpha""];}";
-										description="Pionier";
+										description="Pionier@Alpha";
 										isPlayable=1;
 									};
 									id=5585;
+									type="OPT_NATO_Pionier_T";
+									atlOffset=0.043999672;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.03;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item7
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2209.5583,13.495446,13425.929};
+										angles[]={0,2.5246887,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="CAPTAIN";
+										init="call{(group this) setGroupIdGlobal [""Alpha""];}";
+										description="Aufklaerer@Alpha";
+										isPlayable=1;
+									};
+									id=5586;
+									type="OPT_NATO_Beobachter_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="speaker";
+											expression="_this setspeaker _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="Male11ENG";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0.95999998;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item8
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2214.6851,13.495439,13423.7};
+										angles[]={0,2.4820678,0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										rank="CAPTAIN";
+										init="(group this) setGroupIdGlobal [""Alpha""];";
+										name="alpha1";
+										description="Recon-Gruppenfuehrer@Alpha ";
+										isPlayable=1;
+									};
+									id=6057;
+									type="OPT_NATO_Aufklaerung_Truppfuehrer_T";
+									atlOffset=0.043999672;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0.98000002;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item9
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2213.1985,13.451439,13429.716};
+										angles[]={0,2.4353626,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="CORPORAL";
+										init="call{(group this) setGroupIdGlobal [""Alpha""];}";
+										description="Pionier@Alpha";
+										isPlayable=1;
+									};
+									id=6059;
 									type="OPT_NATO_Pionier_T";
 									class CustomAttributes
 									{
@@ -39990,73 +39856,12 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item8
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2211.6089,13.773438,13429.271};
-										angles[]={0,2.5246887,0};
-									};
-									side="West";
-									class Attributes
-									{
-										rank="CAPTAIN";
-										init="(group this) setGroupIdGlobal [""Fantom""];";
-										description="Aufklaerer";
-										isPlayable=1;
-									};
-									id=5586;
-									type="OPT_NATO_Beobachter_T";
-									atlOffset=0.27799225;
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="speaker";
-											expression="_this setspeaker _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="Male11ENG";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.95999998;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
 							};
 							class Attributes
 							{
 							};
 							id=5573;
+							atlOffset=0.043999672;
 						};
 						class Item2
 						{
@@ -40064,13 +39869,13 @@ class Mission
 							side="West";
 							class Entities
 							{
-								items=9;
+								items=13;
 								class Item0
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2226.437,13.451439,13433.216};
+										position[]={2226.073,13.495439,13432.413};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40085,6 +39890,7 @@ class Mission
 									};
 									id=5588;
 									type="OPT_NATO_Gruppenfuehrer_T";
+									atlOffset=0.043999672;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -40133,7 +39939,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2224.0081,13.451439,13437.493};
+										position[]={2223.3169,13.495439,13438.735};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40141,11 +39947,12 @@ class Mission
 									class Attributes
 									{
 										init="(group this) setGroupIdGlobal [""Bravo""];";
-										description="Schuetze";
+										description="Schuetze@Bravo ";
 										isPlayable=1;
 									};
 									id=5589;
 									type="OPT_NATO_Soldat_T";
+									atlOffset=0.043999672;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -40194,7 +40001,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2225.354,13.451439,13438.727};
+										position[]={2225.0698,13.495446,13437.923};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40202,7 +40009,7 @@ class Mission
 									class Attributes
 									{
 										init="(group this) setGroupIdGlobal [""Bravo""];";
-										description="Schuetze";
+										description="Schuetze@Bravo ";
 										isPlayable=1;
 									};
 									id=5590;
@@ -40255,7 +40062,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2225.502,13.451439,13435.646};
+										position[]={2221.2461,13.495446,13435.392};
 										angles[]={0,2.3645198,0};
 									};
 									side="West";
@@ -40263,7 +40070,7 @@ class Mission
 									class Attributes
 									{
 										init="(group this) setGroupIdGlobal [""Bravo""];";
-										description="Sprengmeister";
+										description="Sprengmeister@Bravo ";
 										isPlayable=1;
 									};
 									id=5591;
@@ -40316,7 +40123,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2222.3831,13.451439,13439.343};
+										position[]={2222.0142,13.495446,13438.392};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40324,7 +40131,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIdGlobal [""Bravo""];}";
-										description="Grenadier";
+										description="Grenadier@Bravo ";
 										isPlayable=1;
 									};
 									id=5592;
@@ -40377,7 +40184,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2222.6631,13.451439,13433.216};
+										position[]={2223.9624,13.495446,13432.409};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40386,7 +40193,7 @@ class Mission
 									{
 										rank="SERGEANT";
 										init="(group this) setGroupIdGlobal [""Bravo""];";
-										description="Sanitaeter";
+										description="Sanitaeter@Bravo ";
 										isPlayable=1;
 									};
 									id=5593;
@@ -40439,7 +40246,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2223.7649,13.451439,13440.595};
+										position[]={2222.3167,13.495446,13436.229};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40447,7 +40254,7 @@ class Mission
 									class Attributes
 									{
 										init="(group this) setGroupIdGlobal [""Bravo""];";
-										description="LMG";
+										description="LMG@Bravo ";
 										isPlayable=1;
 									};
 									id=5595;
@@ -40500,7 +40307,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2221.113,13.451439,13435.177};
+										position[]={2225.6279,13.495439,13435.134};
 										angles[]={0,2.4370904,0};
 									};
 									side="West";
@@ -40508,11 +40315,12 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIdGlobal [""Bravo""];}";
-										description="Grenadier";
+										description="Grenadier@Bravo ";
 										isPlayable=1;
 									};
 									id=5597;
 									type="OPT_NATO_Grenadier_T";
+									atlOffset=0.043999672;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -40561,7 +40369,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2222.605,13.451439,13436.439};
+										position[]={2226.7451,13.495439,13435.61};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40569,10 +40377,258 @@ class Mission
 									class Attributes
 									{
 										init="(group this) setGroupIdGlobal [""Bravo""];";
-										description="Schuetze";
+										description="Schuetze@Bravo ";
 										isPlayable=1;
 									};
 									id=5881;
+									type="OPT_NATO_Soldat_T";
+									atlOffset=0.043999672;
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.05;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item9
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2222.8652,13.495446,13433.661};
+										angles[]={0,2.435607,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="SERGEANT";
+										init="(group this) setGroupIdGlobal [""Bravo""];";
+										description="Sanitaeter@Bravo ";
+										isPlayable=1;
+									};
+									id=6061;
+									type="OPT_NATO_Sanitaeter_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0.94999999;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item10
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2223.4482,13.495446,13434.431};
+										angles[]={0,2.435607,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="SERGEANT";
+										init="(group this) setGroupIdGlobal [""Bravo""];";
+										description="MG@Bravo ";
+										isPlayable=1;
+									};
+									id=6064;
+									type="OPT_NATO_MG_Schuetze_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0.94999999;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item11
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2224.365,13.451439,13435.105};
+										angles[]={0,2.435607,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="SERGEANT";
+										init="(group this) setGroupIdGlobal [""Bravo""];";
+										description="Recon-Scharfschuetze@Bravo ";
+										isPlayable=1;
+									};
+									id=6067;
+									type="OPT_NATO_Aufklaerung_Scharfschutze_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0.94999999;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item12
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2225.3494,13.451439,13440.013};
+										angles[]={0,2.435607,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										init="(group this) setGroupIdGlobal [""Bravo""];";
+										description="Schuetze@Bravo ";
+										isPlayable=1;
+									};
+									id=6069;
 									type="OPT_NATO_Soldat_T";
 									class CustomAttributes
 									{
@@ -40622,6 +40678,7 @@ class Mission
 							{
 							};
 							id=5587;
+							atlOffset=0.043999672;
 						};
 						class Item3
 						{
@@ -40629,7 +40686,7 @@ class Mission
 							side="West";
 							class Entities
 							{
-								items=5;
+								items=7;
 								class Item0
 								{
 									dataType="Object";
@@ -40708,7 +40765,7 @@ class Mission
 									{
 										rank="LIEUTENANT";
 										init="call{(group this) setGroupIdGlobal [""SF""];}";
-										description="Pionier";
+										description="Pionier@SF";
 										isPlayable=1;
 									};
 									id=5602;
@@ -40769,7 +40826,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIdGlobal [""SF""];}";
-										description="LMG";
+										description="LMG@SF";
 										isPlayable=1;
 									};
 									id=5605;
@@ -40830,7 +40887,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIdGlobal [""SF""];}";
-										description="Schuetze";
+										description="Schuetze@SF";
 										isPlayable=1;
 									};
 									id=5877;
@@ -40884,7 +40941,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2212.561,13.495439,13443.375};
+										position[]={2211.8811,13.495439,13439.619};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40892,7 +40949,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIdGlobal [""SF""];}";
-										description="Schuetze";
+										description="Schuetze@SF";
 										isPlayable=1;
 									};
 									id=5875;
@@ -40941,6 +40998,128 @@ class Mission
 										nAttributes=2;
 									};
 								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2209.396,13.451439,13442.145};
+										angles[]={0,2.5037794,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										init="call{(group this) setGroupIdGlobal [""SF""];}";
+										description="MG@SF";
+										isPlayable=1;
+									};
+									id=6088;
+									type="OPT_NATO_MG_Schuetze_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0.95999998;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item6
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2211.9451,13.451439,13443.152};
+										angles[]={0,2.5037794,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										init="call{(group this) setGroupIdGlobal [""SF""];}";
+										description="AA@SF";
+										isPlayable=1;
+									};
+									id=6091;
+									type="OPT_NATO_Luftabwehrspezialist_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0.95999998;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
 							};
 							class Attributes
 							{
@@ -40954,7 +41133,7 @@ class Mission
 							side="West";
 							class Entities
 							{
-								items=5;
+								items=6;
 								class Item0
 								{
 									dataType="Object";
@@ -40968,7 +41147,7 @@ class Mission
 									class Attributes
 									{
 										rank="CAPTAIN";
-										init="call{(group this) setGroupIdGlobal [""Foxtrot""];}";
+										init="call{(group this) setGroupIdGlobal [""Foxtrott""];}";
 										name="fox1";
 										description="Gruppenfuehrer@Foxtrott";
 										isPlayable=1;
@@ -41023,15 +41202,15 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2213.1389,13.451439,13455.083};
+										position[]={2210.4822,13.495446,13453.099};
 										angles[]={0,2.4980199,0};
 									};
 									side="West";
 									flags=4;
 									class Attributes
 									{
-										init="call{(group this) setGroupIdGlobal [""Foxtrot""];}";
-										description="LMG";
+										init="call{(group this) setGroupIdGlobal [""Foxtrott""];}";
+										description="LMG@Foxtrott";
 										isPlayable=1;
 									};
 									id=5612;
@@ -41084,7 +41263,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2207.709,13.451439,13451.39};
+										position[]={2209.9102,13.495446,13451.626};
 										angles[]={0,2.4980721,0};
 									};
 									side="West";
@@ -41092,8 +41271,8 @@ class Mission
 									class Attributes
 									{
 										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""Foxtrot""];}";
-										description="Sanitaeter";
+										init="call{(group this) setGroupIdGlobal [""Foxtrott""];}";
+										description="Sanitaeter@Foxtrott";
 										isPlayable=1;
 									};
 									id=5613;
@@ -41146,7 +41325,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2210.0171,13.451439,13456.304};
+										position[]={2211.8635,13.495446,13453.939};
 										angles[]={0,2.498055,0};
 									};
 									side="West";
@@ -41154,8 +41333,8 @@ class Mission
 									class Attributes
 									{
 										rank="CORPORAL";
-										init="call{(group this) setGroupIdGlobal [""Foxtrot""];}";
-										description="AT";
+										init="call{(group this) setGroupIdGlobal [""Foxtrott""];}";
+										description="AT@Foxtrott";
 										isPlayable=1;
 									};
 									id=5614;
@@ -41208,7 +41387,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2207.6831,13.451439,13458.069};
+										position[]={2209.814,13.495446,13455.573};
 										angles[]={0,2.498055,0};
 									};
 									side="West";
@@ -41216,12 +41395,74 @@ class Mission
 									class Attributes
 									{
 										rank="CORPORAL";
-										init="call{(group this) setGroupIdGlobal [""Foxtrot""];}";
-										description="Pionier";
+										init="call{(group this) setGroupIdGlobal [""Foxtrott""];}";
+										description="Grenadier@Foxtrott";
 										isPlayable=1;
 									};
-									id=5615;
-									type="OPT_NATO_Pionier_T";
+									id=6070;
+									type="OPT_NATO_Grenadier_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.03;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2207.167,13.451439,13455.028};
+										angles[]={0,2.498055,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="CORPORAL";
+										init="call{(group this) setGroupIdGlobal [""Foxtrott""];}";
+										description="Recon-Sprengmeister@Foxtrott";
+										isPlayable=1;
+									};
+									id=6073;
+									type="OPT_NATO_Aufklaerung_Sprengmeister_T";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -41283,7 +41524,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2177.8252,13.46141,13400.563};
+										position[]={2177.822,13.461439,13399.941};
 										angles[]={0,2.4517686,0};
 									};
 									side="West";
@@ -41297,6 +41538,7 @@ class Mission
 									};
 									id=5619;
 									type="OPT_NATO_Pilot_T";
+									atlOffset=2.9563904e-005;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -41408,7 +41650,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2176.6479,13.46141,13399.848};
+										position[]={2176.8501,13.461439,13399.271};
 										angles[]={0,2.4517686,0};
 									};
 									side="West";
@@ -41422,6 +41664,7 @@ class Mission
 									};
 									id=5974;
 									type="OPT_NATO_Pilot_T";
+									atlOffset=2.9563904e-005;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -41477,7 +41720,7 @@ class Mission
 							side="West";
 							class Entities
 							{
-								items=2;
+								items=1;
 								class Item0
 								{
 									dataType="Object";
@@ -41541,68 +41784,6 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item1
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2190.5569,13.451439,13407.187};
-										angles[]={0,2.5246887,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="LIEUTENANT";
-										init="(group this) setGroupIdGlobal [""Fantom""];";
-										description="Operator@Oberkommando";
-										isPlayable=1;
-									};
-									id=5625;
-									type="OPT_NATO_Operator_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=1.01;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
 							};
 							class Attributes
 							{
@@ -41615,13 +41796,13 @@ class Mission
 							side="West";
 							class Entities
 							{
-								items=5;
+								items=8;
 								class Item0
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2245.844,13.451439,13437.02};
+										position[]={2244.5081,13.451439,13437.031};
 										angles[]={0,2.4537933,0};
 									};
 									side="West";
@@ -41684,7 +41865,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2241.3291,13.451439,13436.466};
+										position[]={2242.5388,13.451439,13436.98};
 										angles[]={0,2.4726429,0};
 									};
 									side="West";
@@ -41692,7 +41873,7 @@ class Mission
 									class Attributes
 									{
 										init="call{(group this) setGroupIdGlobal [""PzGren""];}";
-										description="AA";
+										description="AA@PzGren ";
 										isPlayable=1;
 									};
 									id=5711;
@@ -41745,7 +41926,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2241.386,13.451439,13440.168};
+										position[]={2243.0874,13.451439,13439.548};
 										angles[]={0,2.4537933,0};
 									};
 									side="West";
@@ -41754,7 +41935,7 @@ class Mission
 									{
 										rank="LIEUTENANT";
 										init="call{(group this) setGroupIdGlobal [""PzGren""];}";
-										description="Crew";
+										description="Crew@PzGren ";
 										isPlayable=1;
 									};
 									id=5717;
@@ -41807,7 +41988,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2239.532,13.451439,13438.939};
+										position[]={2241.6062,13.451439,13438.928};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -41816,7 +41997,7 @@ class Mission
 									{
 										rank="CORPORAL";
 										init="call{(group this) setGroupIdGlobal [""PzGren""];}";
-										description="AA";
+										description="AA@PzGren ";
 										isPlayable=1;
 									};
 									id=5718;
@@ -41869,7 +42050,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2242.6489,13.451439,13441.04};
+										position[]={2244.3699,13.451439,13439.581};
 										angles[]={0,2.4537933,0};
 									};
 									side="West";
@@ -41878,11 +42059,197 @@ class Mission
 									{
 										rank="LIEUTENANT";
 										init="call{(group this) setGroupIdGlobal [""PzGren""];}";
-										description="Crew";
+										description="Crew@PzGren ";
 										isPlayable=1;
 									};
 									id=5972;
 									type="OPT_NATO_Besatzungsmitglied_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item5
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2239.7271,13.451439,13438.75};
+										angles[]={0,2.4537933,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="LIEUTENANT";
+										init="call{(group this) setGroupIdGlobal [""PzGren""];}";
+										description="Schuetze@PzGren ";
+										isPlayable=1;
+									};
+									id=6076;
+									type="OPT_NATO_Soldat_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item6
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2240.9121,13.451439,13441.023};
+										angles[]={0,2.4537933,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="LIEUTENANT";
+										init="call{(group this) setGroupIdGlobal [""PzGren""];}";
+										description="Operator@PzGren ";
+										isPlayable=1;
+									};
+									id=6079;
+									type="OPT_NATO_Operator_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.02;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item7
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2241.9509,13.451439,13442.47};
+										angles[]={0,2.4537933,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										rank="LIEUTENANT";
+										init="call{(group this) setGroupIdGlobal [""PzGren""];}";
+										description="AT@PzGren ";
+										isPlayable=1;
+									};
+									id=6094;
+									type="OPT_NATO_PA_Schuetze_T";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -41938,8 +42305,130 @@ class Mission
 							side="West";
 							class Entities
 							{
-								items=2;
+								items=4;
 								class Item0
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2219.825,13.451439,13444.122};
+										angles[]={0,2.435607,0};
+									};
+									side="West";
+									flags=6;
+									class Attributes
+									{
+										init="call{(group this) setGroupIdGlobal [""Ghost""];}";
+										description="Gruppenfuehrer@Ghost";
+										isPlayable=1;
+									};
+									id=6082;
+									type="OPT_NATO_Gruppenfuehrer_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.05;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item1
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={2218.21,13.451439,13446.497};
+										angles[]={0,2.435607,0};
+									};
+									side="West";
+									flags=4;
+									class Attributes
+									{
+										init="call{(group this) setGroupIdGlobal [""Ghost""];}";
+										description="Operator@Ghost";
+										isPlayable=1;
+									};
+									id=6085;
+									type="OPT_NATO_Operator_T";
+									class CustomAttributes
+									{
+										class Attribute0
+										{
+											property="face";
+											expression="_this setface _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="";
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="pitch";
+											expression="_this setpitch _value;";
+											class Value
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1.05;
+												};
+											};
+										};
+										nAttributes=2;
+									};
+								};
+								class Item2
 								{
 									dataType="Object";
 									class PositionInfo
@@ -41948,13 +42437,13 @@ class Mission
 										angles[]={0,2.4141219,0};
 									};
 									side="West";
-									flags=6;
+									flags=4;
 									class Attributes
 									{
 										rank="LIEUTENANT";
-										init="call{(group this) setGroupIdGlobal [""Fantom""];}";
+										init="call{(group this) setGroupIdGlobal [""Ghost""];}";
 										name="fantom1";
-										description="Scharfschuetze@Fantom";
+										description="Scharfschuetze@Ghost";
 										isPlayable=1;
 									};
 									id=5728;
@@ -42002,7 +42491,7 @@ class Mission
 										nAttributes=2;
 									};
 								};
-								class Item1
+								class Item3
 								{
 									dataType="Object";
 									class PositionInfo
@@ -42014,8 +42503,8 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="call{(group this) setGroupIdGlobal [""Fantom""];}";
-										description="Schuetze";
+										init="call{(group this) setGroupIdGlobal [""Ghost""];}";
+										description="Schuetze@Ghost";
 										isPlayable=1;
 									};
 									id=5879;
@@ -42068,34 +42557,45 @@ class Mission
 							class Attributes
 							{
 							};
-							id=5726;
+							id=6080;
 						};
 						class Item9
 						{
 							dataType="Group";
 							side="West";
+							class Attributes
+							{
+							};
+							id=6092;
+							atlOffset=60.779999;
+						};
+						class Item10
+						{
+							dataType="Group";
+							side="West";
 							class Entities
 							{
-								items=11;
+								items=1;
 								class Item0
 								{
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2226.8928,13.451439,13422.821};
-										angles[]={0,2.435607,0};
+										position[]={2186.137,13.461439,13401.521};
+										angles[]={0,2.5712364,0};
 									};
 									side="West";
 									flags=6;
 									class Attributes
 									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="Recon-GF";
+										rank="COLONEL";
+										init="call{(group this) setGroupIdGlobal [""OPZ""];}";
+										description="OPZ@Oberkommando";
 										isPlayable=1;
 									};
-									id=5979;
-									type="OPT_NATO_Aufklaerung_Truppfuehrer_T";
+									id=6104;
+									type="OPT_NATO_Offizier_T";
+									atlOffset=2.9563904e-005;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -42132,628 +42632,7 @@ class Mission
 															"SCALAR"
 														};
 													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item1
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2223.5251,13.495446,13425.466};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="Sanitaeter";
-										isPlayable=1;
-									};
-									id=5981;
-									type="OPT_NATO_Sanitaeter_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item2
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2224.2383,13.495446,13426.2};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										skill=0.84059656;
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="AT";
-										isPlayable=1;
-									};
-									id=5984;
-									type="OPT_NATO_PA_Schuetze_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item3
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2225.0239,13.495446,13426.774};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="AA";
-										isPlayable=1;
-									};
-									id=5987;
-									type="OPT_NATO_Luftabwehrspezialist_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item4
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2222.7356,13.495446,13424.723};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="MG";
-										isPlayable=1;
-									};
-									id=5990;
-									type="OPT_NATO_MG_Schuetze_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item5
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2221.8445,13.495446,13424.064};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="MG";
-										isPlayable=1;
-									};
-									id=5992;
-									type="OPT_NATO_MG_Schuetze_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item6
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2225.7627,13.451439,13427.436};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="Grenadier";
-										isPlayable=1;
-									};
-									id=5995;
-									type="OPT_NATO_Grenadier_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item7
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2226.4995,13.451439,13424.54};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="Schuetze";
-										isPlayable=1;
-									};
-									id=6000;
-									type="OPT_NATO_Soldat_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item8
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2225.4055,13.451439,13423.65};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="Schuetze";
-										isPlayable=1;
-									};
-									id=5998;
-									type="OPT_NATO_Soldat_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item9
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2224.1497,13.451439,13422.773};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="Recon-Pio";
-										isPlayable=1;
-									};
-									id=6003;
-									type="OPT_NATO_Aufklaerung_Sprengmeister_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item10
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={2227.4014,13.451439,13425.635};
-										angles[]={0,2.435607,0};
-									};
-									side="West";
-									flags=4;
-									class Attributes
-									{
-										rank="SERGEANT";
-										init="call{(group this) setGroupIdGlobal [""NEU""];}";
-										description="Recon-Marksman";
-										isPlayable=1;
-									};
-									id=6006;
-									type="OPT_NATO_Aufklaerung_Scharfschutze_T";
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="face";
-											expression="_this setface _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"STRING"
-														};
-													};
-													value="";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="pitch";
-											expression="_this setpitch _value;";
-											class Value
-											{
-												class data
-												{
-													class type
-													{
-														type[]=
-														{
-															"SCALAR"
-														};
-													};
-													value=0.94999999;
+													value=1.01;
 												};
 											};
 										};
@@ -42764,11 +42643,12 @@ class Mission
 							class Attributes
 							{
 							};
-							id=5977;
+							id=6103;
+							atlOffset=2.9563904e-005;
 						};
 					};
 					id=6052;
-					atlOffset=0.00034427643;
+					atlOffset=72.442398;
 				};
 				class Item4
 				{
@@ -44505,7 +44385,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2211.374,13.45,13432.044};
+						position[]={2213.6465,13.494007,13422.859};
 					};
 					name="zeus_nato_alpha1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
@@ -44689,7 +44569,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2220.4961,13.45,13440.152};
+						position[]={2225.825,13.494007,13431.545};
 					};
 					name="zeus_nato_bravo1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
@@ -44781,7 +44661,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2209.425,13.45,13443.558};
+						position[]={2214.5728,13.494007,13440.3};
 					};
 					name="zeus_nato_delta1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
@@ -44873,7 +44753,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2240.7649,13.45,13442.807};
+						position[]={2245.4524,13.45,13437.511};
 					};
 					name="zeus_nato_echo1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
@@ -44965,7 +44845,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2217.813,13.45,13446.196};
+						position[]={2221.0071,13.494007,13444.292};
 					};
 					name="zeus_nato_fantom1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
@@ -45057,14 +44937,13 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2205.925,13.493999,13459.369};
+						position[]={2212.1802,13.494007,13450.154};
 						angles[]={0,0.21146409,0};
 					};
 					name="zeus_nato_fox1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
 					id=5662;
 					type="ModuleCurator_F";
-					atlOffset=0.043998718;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -45151,7 +45030,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2183.4351,13.45,13406.856};
+						position[]={2189.1411,13.45997,13402.782};
 					};
 					name="zeus_nato_opz1";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
@@ -45243,7 +45122,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={2187.772,13.45,13408.507};
+						position[]={2191.2817,13.45997,13405.032};
 					};
 					name="zeus_nato_opz2";
 					presenceCondition="OPT_ZEUS == 1 && OPT_TRAINING == 1";
@@ -45332,7 +45211,7 @@ class Mission
 				};
 			};
 			id=5542;
-			atlOffset=0.0059118271;
+			atlOffset=76.589966;
 		};
 		class Item12
 		{
@@ -45745,6 +45624,327 @@ class Mission
 			};
 			id=5729;
 			atlOffset=2.1455147;
+		};
+		class Item18
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11676.455,4.6914387,3049.8127};
+						angles[]={0,0.57505113,0};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						init="call{(group this) setGroupIDGlobal [""Speznas""];}";
+						name="csat_Speznas1";
+						description="GrpF-Schuetze@Speznas";
+						isPlayable=1;
+					};
+					id=5772;
+					type="OPT_CSAT_Soldat_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11674.364,4.6914387,3047.5916};
+						angles[]={0,0.71425855,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						init="call{(group this) setGroupIDGlobal [""Speznas""];}";
+						description="Schuetze@Speznas";
+						isPlayable=1;
+					};
+					id=5771;
+					type="OPT_CSAT_Soldat_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11673.715,4.6914387,3048.2351};
+						angles[]={0,0.57505113,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						init="call{(group this) setGroupIDGlobal [""Speznas""];}";
+						description="LMG@Speznas";
+						isPlayable=1;
+					};
+					id=5775;
+					type="OPT_CSAT_LMG_Schuetze_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11675.104,4.6914387,3046.8486};
+						angles[]={0,0.64278728,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						init="call{(group this) setGroupIDGlobal [""Speznas""];}";
+						description="Aufklaerer@Speznas";
+						isPlayable=1;
+					};
+					id=5846;
+					type="OPT_CSAT_Beobachter_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male01PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11675.951,4.6914387,3046.0823};
+						angles[]={0,0.46081927,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						rank="SERGEANT";
+						init="call{(group this) setGroupIDGlobal [""Speznas""];}";
+						description="Scharfschuetze@Speznas";
+						isPlayable=1;
+					};
+					id=5845;
+					type="OPT_CSAT_Scharfschuetze_T";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=6097;
 		};
 	};
 };

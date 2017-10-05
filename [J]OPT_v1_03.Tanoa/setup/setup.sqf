@@ -11,7 +11,7 @@
 * wird in descprition.ext verwendet
 */
 // hier den Missionsnamen festlegen
-#define __MISSION_NAME__ "OPT - Schlacht Nr. 6"
+#define __MISSION_NAME__ "OPT - Schlacht Nr. 7"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
 #define __VERSION__ Build on version 1.03
 // made by
@@ -200,10 +200,10 @@
 */
 
 // Startbudget NATO
-#define __BUDGET_NATO__ 4485750
+#define __BUDGET_NATO__ 4847250
 
 // Startbudget CSAT
-#define __BUDGET_CSAT__ 4665940
+#define __BUDGET_CSAT__ 4413720
 
 // Dispo-Kredit für beide Seiten, falls Budget < 0
 #define __BUDGET_DISPO__ 1e5

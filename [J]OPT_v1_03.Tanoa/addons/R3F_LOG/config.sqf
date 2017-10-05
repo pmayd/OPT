@@ -289,6 +289,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["OPT_B_Slingload_01_Medevac_F", 100],					// Lazarettcontainer	+					
 	["OPT_B_Slingload_01_Repair_radar_F", 100],				// Radarcontainer +		
 	["OPT_Box_NATO_WpsSpecial_Diver_F", 30],					// Taucherkiste
+	["OPT_FlexibleTank_01_forest_F", 15],					//Spritfass
 // NATO ships
 	["OPT_B_Boat_Transport_01_F", 30],					// Assault Boat     - hinzugefügt
 	["OPT_B_C_Boat_Transport_02_F", 30],					// Rhib unbewaffnet      - hinzugefügt
@@ -299,6 +300,7 @@ R3F_LOG_CFG_can_be_transported_cargo = R3F_LOG_CFG_can_be_transported_cargo +
 	["OPT_Box_East_WpsSpecial_F", 30],   					// AT Raketenkiste
 	["OPT_Box_East_WpsSpecial_AA_F", 30],					// AA Raketenkiste
 	["OPT_Box_East_WpsSpecial_Diver_F", 30],					// Taucherkiste
+	["OPT_FlexibleTank_01_sand_F", 15],					// Treibstoff-Fass
 	["OPT_Land_Pod_Heli_Transport_04_fuel_F", 100],			// Fuelcontainer
 	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", 100],	// Fuelcontainer (schwarz)
   ["OPT_Land_Pod_Heli_Transport_04_ammo_F", 100],			// Munitionscontainer
@@ -333,13 +335,14 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"OPT_B_GMG_01_high_F",							// Stand-GMG hoch,15000
 	"OPT_B_static_AA_F",							// Stand-AA,25000
 	"OPT_B_static_AT_F",							// Stand-AT,200000	
-	"OPT_B_Mortar_01_F",							// MK6 - Mörser,200000	
+	"OPT_B_Mortar_01_F",							// MK6 - Mörser,200000
+	"OPT_FlexibleTank_01_forest_F",					//Spritfass
 	"OPT_B_Static_Designator_01_F",					// Remote Designator,10000
-	//"OPT_B_Slingload_01_Fuel_F",           			// Fuelcontainer,5000
-  //"OPT_B_Slingload_01_Ammo_F",            		// Munitionscontainer,50000
-  //"OPT_B_Slingload_01_Repair_F", 	       			// Reparaturcontainer,5000
+	"OPT_B_Slingload_01_Fuel_F",           			// Fuelcontainer,5000
+	"OPT_B_Slingload_01_Ammo_F",            		// Munitionscontainer,50000
+	"OPT_B_Slingload_01_Repair_F", 	       			// Reparaturcontainer,5000
 	"OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", 	       	// NATO Radar Container
-  //"OPT_B_Slingload_01_Medevac_F",          			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	"OPT_B_Slingload_01_Medevac_F",          			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
 // NATO ships	
 	"OPT_B_Boat_Transport_01_F",						// Assault Boat,500
 	"OPT_B_C_Boat_Transport_02_F",					// Rhib unbewaffnet,2000
@@ -360,15 +363,16 @@ R3F_LOG_CFG_can_be_moved_by_player = R3F_LOG_CFG_can_be_moved_by_player +
 	"OPT_O_static_AA_F",							// Stand-AA,25000
 	"OPT_O_static_AT_F",							// Stand-AT,200000	
 	"OPT_O_Mortar_01_F",							// MK6 Mörser,200000
+	"OPT_FlexibleTank_01_sand_F",					// Treibstoff-Fass
 	"OPT_O_Static_Designator_02_F",					// Remote Designator,10000
-	//"OPT_Land_Pod_Heli_Transport_04_fuel_F",			// Fuelcontainer,5000
-	//"OPT_Land_Pod_Heli_Transport_04_fuel_black_F",	// Fuelcontainer (schwarz),5000
-  //"OPT_Land_Pod_Heli_Transport_04_ammo_F",		// Munitionscontainer,50000
-	//"OPT_Land_Pod_Heli_Transport_04_ammo_black_F",	// Munitionscontainer (Schwarz),50000
-  //"OPT_Land_Pod_Heli_Transport_04_repair_F",			// Reparaturcontainer,5000
-	//"OPT_Land_Pod_Heli_Transport_04_repair_black_F",	// Reparaturcontainer (schwarz),5000
+	"OPT_Land_Pod_Heli_Transport_04_fuel_F",			// Fuelcontainer,5000
+	"OPT_Land_Pod_Heli_Transport_04_fuel_black_F",	// Fuelcontainer (schwarz),5000
+	"OPT_Land_Pod_Heli_Transport_04_ammo_F",		// Munitionscontainer,50000
+	"OPT_Land_Pod_Heli_Transport_04_ammo_black_F",	// Munitionscontainer (Schwarz),50000
+	"OPT_Land_Pod_Heli_Transport_04_repair_F",			// Reparaturcontainer,5000
+	"OPT_Land_Pod_Heli_Transport_04_repair_black_F",	// Reparaturcontainer (schwarz),5000
 	"OPT_Land_Pod_Heli_Transport_04_repair_radar_F", // CSAT Radar Container
-	//"OPT_Land_Pod_Heli_Transport_04_medevac_F",			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	"OPT_Land_Pod_Heli_Transport_04_medevac_F",			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
 //CSAT ships
 	"OPT_O_Boat_Transport_01_F",						// Assault Boat,500
 	//"OPT_O_Boat_Armed_01_hmg_F",					// Speedboat HMG,14000

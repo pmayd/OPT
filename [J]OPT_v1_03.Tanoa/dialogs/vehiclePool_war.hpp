@@ -104,7 +104,7 @@ opt_staticNato = [
 ];
 
 opt_seaNato = [
-	["OPT_B_Boat_Armed_01_minigun_F", 14000],				// Speedboat Minigun
+	["OPT_B_Boat_Armed_01_minigun_F", 10000],				// Speedboat Minigun
 	["OPT_B_Boat_Transport_01_F", 500],						// Assault Boat
 	["OPT_B_SDV_01_F", 2000],								// Submarine
 	["OPT_B_C_Boat_Transport_02_F", 7000]					// Rhib unbewaffnet
