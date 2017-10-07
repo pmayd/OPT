@@ -1,0 +1,204 @@
+
+author = __MADE_BY__;
+onLoadName = __MISSION_NAME__;
+onLoadMission = __VERSION__;
+loadScreen = "opt_a3_core\bilder\opt4_logo.paa";
+
+overviewTextLocked = __MISSION_NAME__;
+overviewPicture = "opt_a3_core\bilder\opt4_logo.paa";
+overviewText = __MISSION_DESCRIPTION__;
+
+onLoadIntro = "Prepare yourself...";
+onLoadIntroTime = 0;
+onLoadMissionTime = 0;
+
+
+respawnButton = 0;
+respawnDialog = 0;
+respawn = 3; //auf 3 zurückgesetzt
+respawnOnStart = 0; //Dont respawn on start. Run respawn script on start.
+#ifdef __RESPAWN_DELAY__
+respawndelay = __RESPAWN_DELAY__;
+#endif
+
+debriefing=1;
+disabledAI=1;
+joinUnassigned = 1;
+enableDebugConsole = 1;
+#ifdef __DEBUG__
+allowFunctionsLog = 1;
+#endif
+
+class Header {
+	gameType = __GAMETYPE__;
+	minPlayers = 1;
+	maxPlayers = __PLNUM__;
+	playerCountMultipleOf = 1;
+};
+
+#ifdef __DISABLE_CHAT_CHANNELS__
+disableChannels[] = __DISABLE_CHAT_CHANNELS__;
+#endif
+
+
+class Params {
+	class OPT_PLAYTIME {	
+		title 		= "Spielzeit";
+		values[] 	= {180, 600, 900, 1800, 3600, 7200, 9000, 10800};
+		texts[] 	= {"3 min", "10 min", "15 min", "30 min", "60 min", "120 min", "150 min", "180 min"};
+		default 	= 9000;
+	};
+	class OPT_TRUCETIME {	
+		title 		= "Waffenstillstand";
+		values[] 	= {30, 180, 300, 480, 600, 900};
+		texts[] 	= {"1/2 min", "3 min", "5 min", "8 min", "10 min", "15 min"};
+		default 	= 600;
+	};
+	class OPT_TFAR_INTERCEPTION {
+		title 		= "TFAR gegnerischen Funk abhören";
+		values[] 	= {0,1};
+		texts[] 	= {"aus","an"};
+		default 	= 0;
+	};
+#ifdef __ONLY_PILOTS_CAN_FLY__
+	class OPT_ONLY_PILOTS {
+		title = "Nur Piloten können fliegen";
+		values[] = {0,1};
+		default = 1;
+		texts[] = {"aus","an"};
+	};
+#endif
+#ifdef __ONLY_CREW_CAN_DRIVE__
+	class OPT_ONLY_CREW {
+		title = "Nur Besatzungsmitglieder können schwere Kampffahrzeuge fahren";
+		values[] = {0,1};
+		default = 1;
+		texts[] = {"aus","an"};
+	};
+#endif
+#ifdef __ONLY_PIO_CAN_BUILD_FARPS__
+	class OPT_FARP_ONLY_PIO {
+		title = "Nur Pioniere können FARP aufbauen";
+		values[] = {0,1};
+		default = 0;
+		texts[] = {"aus","an"};
+	};
+#endif
+#ifdef __MINE_FREE_FLAG__
+	class OPT_MINE_FREE_FLAG {
+		title = "Minensperrzone um Flagge";
+		values[] = {0,1};
+		default = 1;
+		texts[] = {"aus","an"};
+	};
+#endif
+	class OPT_TRAINING {
+		title 		= "Schlacht oder Training";
+		values[] 	= {0,1};
+		texts[] 	= {"Schlacht","Training"};
+		default 	= 0;
+	};
+	class OPT_TELEPORT {
+		title 		= "Jeder kann Teleporten";
+		values[] 	= {0,1};
+		texts[] 	= {"aus","an"};
+		default 	= 0;
+	};
+	class OPT_TEAMBALANCE {
+		title 		= "Überhangregel";
+		values[] 	= {0,3,4,5,6,7,8,9,10,11,12,13,14,15};
+		texts[] 	= {"aus","+3","+4","+5","+6","+7","+8","+9","+10","+11","+12","+13","+14","+15"};
+		default 	= 5;
+	};
+	class OPT_RADAR {
+		title 		= "Radar Container verfügbar";
+		values[] 	= {0,1};
+		texts[] 	= {"aus","an"};
+		default 	= 1;
+	};
+	#ifdef __SHOW_ALL_UNITS__
+	class OPT_SHOW_ALL_UNITS {
+		title 		= "Für HL alle Einheiten auf Karte markieren";
+		values[] 	= {0,1};
+		texts[] 	= {"aus","an"};
+		default 	= 1;
+	};
+	#endif
+	class OPT_FREEZE_TIME {
+		title 		= "Zeit, in der zu Beginn alle Einheiten eingeforen sind";
+		values[] 	= {0,60,120,180,240,300};
+		texts[] 	= {"aus","1 min", "2 min", "3 min", "4 min", "5 min"};
+		default 	= 60;
+	};
+	class OPT_SHOW_INTRO {
+		title 		= "Intro";
+		values[] 	= {0,1};
+		texts[] 	= {"aus","an"};
+		default 	= 1;
+	};
+	class OPT_ZEUS {
+		title 		= "Zeus für Gruppenführer im Trainingsmodus";
+		values[] 	= {0,1};
+		texts[] 	= {"aus", "an"};
+		default 	= 1;
+	};
+};
+
+/*
+#include "dialogs\rscBasicDefines.hpp"
+#include "dialogs\rscTitles.hpp"
+#include "dialogs\mission_settings\mission_settings.hpp"
+#include "dialogs\orderDialog.hpp"
+#include "dialogs\mt_dialog.hpp"
+#include "dialogs\far_blackscreen.hpp"
+#include "addons\R3F_LOG\desc_include.h"
+#include "addons\opt3_magRepack\MagRepack_config.hpp"
+#include "dialogs\BarDlg.hpp"
+#include "dialogs\flagDialog.hpp"
+*/
+
+class CfgDebriefing { 
+	class End1 {
+		subtitle = "NATO hat die Schlacht gewonnen!";
+		description = "Die NATO Truppen eroberten weitere Gebiete in diesem Krieg.";
+		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
+		picture = "flag_NATO";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class End2 {
+		subtitle = "CSAT hat die Schlacht gewonnen!";
+		description = "Die CSAT Truppen eroberten weitere Gebiete in diesem Krieg.";
+		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
+		picture = "flag_CSAT";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+	class End3 {
+		title = "Untentschieden";
+		subtitle = "Wer ist schuld? Das kann nicht sein!";
+		description = "Beide Fraktionen sind gleich stark. Das sinnlose Blutvergießen wird für heute beendet und die Fraktionen ziehen sich zurück.";
+		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
+		picture = "KIA";
+		//pictureColor[] = {};
+	};
+	class Loser {
+		subtitle = "Player Init Error";
+		description = "Bad profile or error during initialization - try to restart";
+		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
+		picture = "KIA";
+		//pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class balanceBLUFOR {
+		subtitle = "Überhangregel";
+		description = "Zu viele Nato Spieler - Überhangregel greift";
+		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
+		picture = "flag_NATO";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class balanceOPFOR {
+		subtitle = "Ueberhangregel";
+		description = "Zu viele CSAT Spieler - Überhangregel greift.";
+		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
+		picture = "flag_CSAT";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+};

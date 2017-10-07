@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=6105;
+		nextID=6108;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1644;
+		nextID=1674;
 	};
 	class Camera
 	{
-		pos[]={2207.8284,38.450001,13384.771};
-		dir[]={-0.44015002,-0.63877177,0.63106471};
-		up[]={-0.36542264,0.76939577,0.52392471};
-		aside[]={0.82020706,2.681918e-008,0.57207072};
+		pos[]={2191.1943,19.647823,13391.799};
+		dir[]={-0.5055443,-0.63097411,0.58847618};
+		up[]={-0.41116542,0.77580303,0.47861519};
+		aside[]={0.75853503,1.2130477e-007,0.65163636};
 	};
 };
 binarizationWanted=0;
@@ -46,13 +46,13 @@ addons[]=
 	"A3_Rocks_F_Water",
 	"A3_Signs_F",
 	"A3_Structures_F_System",
-	"A3_Structures_F_Mil_Helipads",
 	"A3_Modules_F",
 	"opt_a3_core",
 	"opt_a3_characters",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Civ_Camping",
 	"opt_a3_weapons",
+	"A3_Structures_F_Mil_Helipads",
 	"A3_Structures_F_Civ_InfoBoards",
 	"A3_Structures_F_Items_Electronics",
 	"A3_Structures_F_Heli_Items_Electronics",
@@ -64,13 +64,15 @@ addons[]=
 	"A3_Supplies_F_Exp_Ammoboxes",
 	"ace_dragging",
 	"ace_map",
-	"tfar_core"
+	"tfar_core",
+	"ace_common",
+	"ace_ui"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=25;
+		items=27;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -236,6 +238,20 @@ class AddonsMetaData
 			className="tfar_core";
 			name="TFAR - Core";
 			author="Task Force Arrowhead Radio Team";
+		};
+		class Item25
+		{
+			className="ace_common";
+			name="ACE3 - Common";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item26
+		{
+			className="ace_ui";
+			name="ACE3 - UI";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
 		};
 	};
 };
@@ -526,7 +542,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			dataType="Marker";
@@ -7905,7 +7921,7 @@ class Mission
 									};
 									id=4280;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=33.926819;
+									atlOffset=30.897638;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8211,7 +8227,7 @@ class Mission
 									};
 									id=5136;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.612356;
+									atlOffset=29.542013;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8659,7 +8675,7 @@ class Mission
 									};
 									id=5143;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=36.918907;
+									atlOffset=33.902153;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9069,7 +9085,7 @@ class Mission
 									};
 									id=5153;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=30.438807;
+									atlOffset=27.899456;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9640,7 +9656,7 @@ class Mission
 									};
 									id=5166;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.29504;
+									atlOffset=27.951036;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9681,7 +9697,7 @@ class Mission
 									};
 									id=5167;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=24.732525;
+									atlOffset=24.679155;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10211,7 +10227,7 @@ class Mission
 									};
 									id=5179;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.090622;
+									atlOffset=28.473272;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10252,7 +10268,7 @@ class Mission
 									};
 									id=5180;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=25.728947;
+									atlOffset=24.073643;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -28627,7 +28643,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4707.4766,-3.2556818,11655.04};
+								position[]={689.22638,-3.2557771,14166.842};
 								angles[]={6.2824092,4.6382337,6.271544};
 							};
 							side="Empty";
@@ -28637,7 +28653,7 @@ class Mission
 							};
 							id=5105;
 							type="Land_Breakwater_02_F";
-							atlOffset=16.673084;
+							atlOffset=49.187355;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -28925,7 +28941,7 @@ class Mission
 				};
 			};
 			id=4983;
-			atlOffset=27.610014;
+			atlOffset=-0.025413513;
 		};
 		class Item2
 		{
@@ -31891,23 +31907,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7570.1958,6.5135837,14826.517};
-				angles[]={6.1742768,0,0.055937801};
-			};
-			side="Empty";
-			class Attributes
-			{
-				skill=0.60000002;
-				name="x_jiph";
-			};
-			id=5370;
-			type="Land_HelipadEmpty_F";
-		};
-		class Item4
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={9450,45.800842,7574};
 				angles[]={0,0.70842916,0};
 			};
@@ -31922,7 +31921,7 @@ class Mission
 			id=5373;
 			type="Flag_CSAT_F";
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Object";
 			class PositionInfo
@@ -31942,32 +31941,33 @@ class Mission
 			type="Flag_NATO_F";
 			atlOffset=-7.6293945e-006;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7570.2886,10.424957,14843.438};
+				position[]={7567.2949,9.265625,14836.445};
 				angles[]={5.7767663,0,0.12993059};
 			};
 			name="Server";
 			description="Maintainer";
 			id=5375;
 			type="Logic";
-			atlOffset=-0.00050735474;
+			atlOffset=1.7346292;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7577.1304,9.1013203,14838.823};
-				angles[]={5.8889623,0,0.079829417};
+				position[]={7601.1504,9.5744629,14848.611};
+				angles[]={5.8889675,0,0.079831354};
 			};
 			id=5376;
 			type="OPT_A3_Core_require";
+			atlOffset=-7.8092384;
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Layer";
 			name="CSAT Brücke";
@@ -32714,7 +32714,7 @@ class Mission
 			id=5377;
 			atlOffset=26.561739;
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Layer";
 			name="CSAT Base";
@@ -38825,7 +38825,7 @@ class Mission
 			id=5407;
 			atlOffset=2008349.8;
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Layer";
 			name="CSAT Marine Base";
@@ -38842,7 +38842,6 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -38851,7 +38850,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.14878201;
+					atlOffset=1.1390946;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39081,9 +39080,9 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3484077;
+			atlOffset=2.3513131;
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Layer";
 			name="NATO Base";
@@ -45209,16 +45208,15 @@ class Mission
 			id=5542;
 			atlOffset=0.017259598;
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={7575.9458,6.5446572,14849.3};
+				position[]={7577.2148,14.386995,14849.315};
 			};
 			id=5654;
 			type="TFAR_ModuleTaskForceRadioEnforceUsage";
-			atlOffset=-7.6920009;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -45376,7 +45374,7 @@ class Mission
 				nAttributes=8;
 			};
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Marker";
 			position[]={2171.2329,0,13384.708};
@@ -45386,7 +45384,7 @@ class Mission
 			id=5687;
 			atlOffset=-13.45;
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Marker";
 			position[]={11741.467,4.8699999,3140.2434};
@@ -45395,7 +45393,7 @@ class Mission
 			type="o_recon";
 			id=5689;
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Marker";
 			position[]={2215.7251,0,13337.186};
@@ -45406,7 +45404,7 @@ class Mission
 			id=5707;
 			atlOffset=-13.45;
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Marker";
 			position[]={2291.7729,0,13397.084};
@@ -45417,7 +45415,7 @@ class Mission
 			id=5708;
 			atlOffset=-13.45;
 		};
-		class Item17
+		class Item16
 		{
 			dataType="Layer";
 			name="NATO Marine Base";
@@ -45621,7 +45619,7 @@ class Mission
 			id=5729;
 			atlOffset=2.1455147;
 		};
-		class Item18
+		class Item17
 		{
 			dataType="Group";
 			side="East";
@@ -45941,6 +45939,757 @@ class Mission
 			{
 			};
 			id=6097;
+		};
+		class Item18
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7589.3477,17.38208,14849.289};
+			};
+			id=6106;
+			type="ACE_ModuleCheckPBOs";
+			atlOffset=1.4243851;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ACE_ModuleCheckPBOs_CheckAll";
+					expression="_this setVariable ['CheckAll',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ACE_ModuleCheckPBOs_Whitelist";
+					expression="_this setVariable ['Whitelist',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[]";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ACE_ModuleCheckPBOs_Action";
+					expression="_this setVariable ['Action',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item19
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7613.3574,18.922653,14849.048};
+			};
+			id=6107;
+			type="ace_ui_Module";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_ui_Module_throwableCount";
+					expression="_this setVariable ['throwableCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_ui_Module_staminaBar";
+					expression="_this setVariable ['staminaBar',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_ui_Module_gunnerZeroing";
+					expression="_this setVariable ['gunnerZeroing',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ace_ui_Module_ammoType";
+					expression="_this setVariable ['ammoType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ace_ui_Module_throwableName";
+					expression="_this setVariable ['throwableName',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ace_ui_Module_vehicleAltitude";
+					expression="_this setVariable ['vehicleAltitude',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ace_ui_Module_gunnerMagCount";
+					expression="_this setVariable ['gunnerMagCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ace_ui_Module_gunnerWeaponName";
+					expression="_this setVariable ['gunnerWeaponName',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ace_ui_Module_groupBar";
+					expression="_this setVariable ['groupBar',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ace_ui_Module_stance";
+					expression="_this setVariable ['stance',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ace_ui_Module_vehicleInfoBackground";
+					expression="_this setVariable ['vehicleInfoBackground',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ace_ui_Module_soldierVehicleWeaponInfo";
+					expression="_this setVariable ['soldierVehicleWeaponInfo',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ace_ui_Module_gunnerFiringMode";
+					expression="_this setVariable ['gunnerFiringMode',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ace_ui_Module_gunnerWeaponNameBackground";
+					expression="_this setVariable ['gunnerWeaponNameBackground',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ace_ui_Module_zeroing";
+					expression="_this setVariable ['zeroing',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute15
+				{
+					property="ace_ui_Module_vehicleSpeed";
+					expression="_this setVariable ['vehicleSpeed',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute16
+				{
+					property="ace_ui_Module_vehicleRadar";
+					expression="_this setVariable ['vehicleRadar',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute17
+				{
+					property="ace_ui_Module_vehicleName";
+					expression="_this setVariable ['vehicleName',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute18
+				{
+					property="ace_ui_Module_allowSelectiveUI";
+					expression="_this setVariable ['allowSelectiveUI',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute19
+				{
+					property="ace_ui_Module_weaponLowerInfoBackground";
+					expression="_this setVariable ['weaponLowerInfoBackground',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute20
+				{
+					property="ace_ui_Module_vehicleFuelBar";
+					expression="_this setVariable ['vehicleFuelBar',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute21
+				{
+					property="ace_ui_Module_gunnerLaunchableName";
+					expression="_this setVariable ['gunnerLaunchableName',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute22
+				{
+					property="ace_ui_Module_gunnerAmmoType";
+					expression="_this setVariable ['gunnerAmmoType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute23
+				{
+					property="ace_ui_Module_gunnerWeaponLowerInfoBackground";
+					expression="_this setVariable ['gunnerWeaponLowerInfoBackground',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute24
+				{
+					property="ace_ui_Module_magCount";
+					expression="_this setVariable ['magCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute25
+				{
+					property="ace_ui_Module_gunnerAmmoCount";
+					expression="_this setVariable ['gunnerAmmoCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute26
+				{
+					property="ace_ui_Module_vehicleCompass";
+					expression="_this setVariable ['vehicleCompass',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute27
+				{
+					property="ace_ui_Module_vehicleDamage";
+					expression="_this setVariable ['vehicleDamage',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute28
+				{
+					property="ace_ui_Module_ammoCount";
+					expression="_this setVariable ['ammoCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute29
+				{
+					property="ace_ui_Module_weaponName";
+					expression="_this setVariable ['weaponName',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute30
+				{
+					property="ace_ui_Module_gunnerLaunchableCount";
+					expression="_this setVariable ['gunnerLaunchableCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute31
+				{
+					property="ace_ui_Module_firingMode";
+					expression="_this setVariable ['firingMode',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute32
+				{
+					property="ace_ui_Module_weaponNameBackground";
+					expression="_this setVariable ['weaponNameBackground',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute33
+				{
+					property="ace_ui_Module_vehicleNameBackground";
+					expression="_this setVariable ['vehicleNameBackground',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute34
+				{
+					property="ace_ui_Module_commandMenu";
+					expression="_this setVariable ['commandMenu',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=35;
+			};
 		};
 	};
 };
