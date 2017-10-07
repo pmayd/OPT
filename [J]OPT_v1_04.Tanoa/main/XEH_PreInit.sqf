@@ -7,9 +7,9 @@ ADDON = false;
 ADDON = true;
 
 /* execute setup_classnames und setup_publicVariables */
-call compile preprocessFileLineNumbers "setup\setup_classnames.sqf";
+[] call FUNC(setup_classnames);
 
 if (isServer) then {
-    call compile preprocessFileLineNumbers "setup\setup_flagPositions.sqf";
-    call compile preprocessFileLineNumbers "setup\setup_publicVariables.sqf";
+    [] call FUNC(setup_flagPositions);
+    [] call FUNC(setup_publicVariables);
 };

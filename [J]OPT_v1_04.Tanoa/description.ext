@@ -3,9 +3,9 @@
 
 MISSION_VERSION;
 
-//#include "CfgEventhandlers.hpp"
+#include "CfgEventhandlers.hpp"
 
-//#include "gui\rsc_gui.hpp"
+#include "gui\rsc_gui.hpp"
 
 //#incllude "war.ext"
-//#include "train.ext"
+#include "train.ext"

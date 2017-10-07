@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 
 diag_log format ["############################# %1 #############################", missionName];
 
