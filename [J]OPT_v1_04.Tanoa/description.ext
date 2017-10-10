@@ -5,7 +5,14 @@ MISSION_VERSION;
 
 #include "CfgEventhandlers.hpp"
 
-#include "gui\rsc_gui.hpp"
+#include "gui\config.hpp"
+#include "hud\config.hpp"
+
+
+class RscTitles {
+    #include "gui\rsc.hpp"
+    #include "hud\rsc.hpp"
+};
 
 //#incllude "war.ext"
 #include "train.ext"

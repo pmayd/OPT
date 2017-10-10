@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=6108;
+		nextID=6110;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1704;
+		nextID=1854;
 	};
 	class Camera
 	{
-		pos[]={2191.1943,19.647823,13391.799};
-		dir[]={-0.5055443,-0.63097411,0.58847618};
-		up[]={-0.41116542,0.77580303,0.47861519};
-		aside[]={0.75853503,1.2130477e-007,0.65163636};
+		pos[]={11721.431,50.121372,3030.4063};
+		dir[]={-0.5490945,-0.70826793,0.44367981};
+		up[]={-0.55090302,0.70594376,0.44513962};
+		aside[]={0.6284911,8.3446503e-007,0.77781677};
 	};
 };
 binarizationWanted=0;
@@ -32801,20 +32801,22 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11690.3,4.6914387,3049.127};
+										position[]={11689.576,4.6914387,3050.4299};
 										angles[]={0,3.8871801,0};
 									};
 									side="East";
-									flags=4;
+									flags=6;
 									class Attributes
 									{
-										rank="LIEUTENANT";
+										skill=0.62364286;
+										rank="MAJOR";
 										init="call{(group this) setGroupIDGlobal [""PL2""];}";
-										description="Drohnen Operator@Oberkommando";
+										name="csat_pl2";
+										description="PL2@Oberkommando";
 										isPlayable=1;
 									};
-									id=5766;
-									type="OPT_CSAT_Operator_T";
+									id=5767;
+									type="OPT_CSAT_Offizier_T";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -32863,21 +32865,20 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11689.576,4.6914387,3050.4299};
+										position[]={11690.515,4.6914387,3048.7031};
 										angles[]={0,3.8871801,0};
 									};
 									side="East";
-									flags=6;
+									flags=4;
 									class Attributes
 									{
-										rank="COLONEL";
+										rank="LIEUTENANT";
 										init="call{(group this) setGroupIDGlobal [""PL2""];}";
-										name="csat_pl2";
-										description="PL2@Oberkommando";
+										description="Drohnen Operator@Oberkommando";
 										isPlayable=1;
 									};
-									id=5767;
-									type="OPT_CSAT_Offizier_T";
+									id=6109;
+									type="OPT_CSAT_Operator_T";
 									class CustomAttributes
 									{
 										class Attribute0
@@ -32943,7 +32944,7 @@ class Mission
 													"STRING"
 												};
 											};
-											value="PL2";
+											value="CSAT PL2";
 										};
 									};
 								};
@@ -33490,7 +33491,7 @@ class Mission
 													"STRING"
 												};
 											};
-											value="Alpha";
+											value="CSAT Alpha";
 										};
 									};
 								};
@@ -34363,7 +34364,7 @@ class Mission
 													"STRING"
 												};
 											};
-											value="Charlie";
+											value="CSAT Charlie";
 										};
 									};
 								};
@@ -34524,7 +34525,7 @@ class Mission
 													"STRING"
 												};
 											};
-											value="PL1";
+											value="CSAT PL1";
 										};
 									};
 								};
@@ -34750,7 +34751,7 @@ class Mission
 													"STRING"
 												};
 											};
-											value="Adler";
+											value="CSAT Adler";
 										};
 									};
 								};
@@ -35600,7 +35601,7 @@ class Mission
 													"STRING"
 												};
 											};
-											value="Bravo";
+											value="CSAT Bravo";
 										};
 									};
 								};
@@ -36252,7 +36253,7 @@ class Mission
 													"STRING"
 												};
 											};
-											value="Foxtrott";
+											value="CSAT Foxtrott";
 										};
 									};
 								};
@@ -36333,6 +36334,29 @@ class Mission
 							{
 							};
 							id=6101;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="CSAT OPZ";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 					};
 					id=5764;
@@ -39168,7 +39192,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2187.6851,13.46141,13403.977};
+										position[]={2187.6851,13.461439,13403.977};
 										angles[]={0,2.5712364,0};
 									};
 									side="West";
@@ -39183,6 +39207,7 @@ class Mission
 									};
 									id=5571;
 									type="OPT_NATO_Offizier_T";
+									atlOffset=2.9563904e-005;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -39231,6 +39256,30 @@ class Mission
 							{
 							};
 							id=5570;
+							atlOffset=2.9563904e-005;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="HL-1";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item1
 						{
@@ -39867,6 +39916,29 @@ class Mission
 							};
 							id=5573;
 							atlOffset=0.043999672;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Alpha";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item2
 						{
@@ -40684,6 +40756,29 @@ class Mission
 							};
 							id=5587;
 							atlOffset=0.043999672;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Bravo";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item3
 						{
@@ -40884,7 +40979,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={2210.7849,13.495439,13438.873};
+										position[]={11578.053,1.7837763,3024.585};
 										angles[]={0,2.435607,0};
 									};
 									side="West";
@@ -40897,7 +40992,7 @@ class Mission
 									};
 									id=5877;
 									type="OPT_NATO_Soldat_T";
-									atlOffset=0.043999672;
+									atlOffset=-1.5927114;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -41131,6 +41226,29 @@ class Mission
 							};
 							id=5599;
 							atlOffset=0.043999672;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="SF";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item4
 						{
@@ -41516,6 +41634,29 @@ class Mission
 							{
 							};
 							id=5606;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Foxtrott";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item5
 						{
@@ -41718,6 +41859,29 @@ class Mission
 							{
 							};
 							id=5618;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Aviation";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item6
 						{
@@ -41794,6 +41958,29 @@ class Mission
 							{
 							};
 							id=5623;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="HL-2";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item7
 						{
@@ -42303,6 +42490,29 @@ class Mission
 							{
 							};
 							id=5709;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="PzGren";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item8
 						{
@@ -42563,6 +42773,29 @@ class Mission
 							{
 							};
 							id=6080;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="Ghost";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 						class Item9
 						{
@@ -42640,6 +42873,29 @@ class Mission
 							};
 							id=6103;
 							atlOffset=2.9563904e-005;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="groupID";
+									expression="[_this, _value] call CBA_fnc_setCallsign";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="OPZ";
+										};
+									};
+								};
+								nAttributes=1;
+							};
 						};
 					};
 					id=6052;

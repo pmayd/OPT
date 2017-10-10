@@ -39,6 +39,33 @@ _log_briefing = player createDiaryRecord ["keys", ["Fahrzeug Nutzung", "
 	D.h. nur die spezifische Spielerklasse kann bestimmte Fahrzeuge bewegen. Beispielsweise nur Piloten können fliegen und nur Besatzungsmitglieder können schwere Fahrzeuge fahren oder deren geschütze verwenden.
 "]];
 
+// call OPT specific items
+if (OPT_TFAR_INTERCEPTION == 1) then {
+	_log_briefing = player createDiaryRecord 
+    [
+        "keys", 
+        [
+            "gegnerischer Funk", 
+            "Die Option um gegnerischen Funk (Vehicle Radios) abhören zu können ist aktiv! Die eingestellte gegnerische Frequenz kann beim Entern eines gegnerischen Fahrzeuges jedoch nicht direkt abgelesen werden sondern muss selber gefunden werden."
+        ]
+    ];
+};
+
+if (OPT_TRAINING == 1) then {
+	player createDiarySubject ["Training", "Training"];
+	player createDiaryRecord ["Training", ["Flaggen verschieben", "
+	Im Trainingsmodus kann jeder Spieler die CSAT und NATO Flagge verschieben. Dazu einfach auf der Karte ALT + Linksklick auf die Flaggenmarkierung. Unten links erscheint ein Text, wenn die Aktion erfolgreich war. Wurde die Flagge ausgewählt, so kann mit erneutem ALT + Linksklick die neue Position gewählt werden.
+	"]];
+
+	player createDiaryRecord ["Training", ["Zeus", "
+	Im Trainingsmodus hat jeder Gruppenführer Zugriff auf Zeus und kann so das Training für seine Gruppe gestalten.
+	"]];
+
+	player createDiaryRecord ["Training", ["Teleport", "
+	Im Trainingsmodus kann jeder Spieler den Teleport benutzen. Dieser findet sich im Mausradmenü unter Teleport. Einfach auf der Karte den gewünschten Zielort auswählen. Innerhalb von Fahrzeugen wird auch das Fahrzeug teleportiert.
+	"]];
+};
+
 /////////////////////////////////////////////////Missionsziele/////////////////////////////////////////////////
 /*
 [

@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-diag_log format ["############################# %1 #############################", missionName];
+diag_log format["############################# %1 #############################", missionName];
 
 XGreyText = {"<t color='#f0bfbfbf'>" + _this + "</t>"};
 XRedText = {"<t color='#f0ff0000'>" + _this + "</t>"};
@@ -10,9 +10,6 @@ XTuerkiesText = {"<t color='#00D3BF'>" + _this + "</t>"};
 
 opt_allow_movement = false; // globale Variable, muss jeder haben zu beginn
 missionStarted = false;
-
-// Global Variables
-SM3_started	= false;
 
 // Startparameter auslesen und als globale Variablen verfügbar machen
 // By James: moderner Ansatz ohne 20 Zeilen Code

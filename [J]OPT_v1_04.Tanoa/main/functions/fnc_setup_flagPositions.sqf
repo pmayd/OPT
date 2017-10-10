@@ -61,3 +61,4 @@ opt_csat_flags_pos = [
     _flag setVariable ["owner", _owner, true];
     _flag setVariable ["opt_flag", true, true];
 } forEach opt_csat_flags_pos;
+

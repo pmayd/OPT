@@ -28,6 +28,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(ranking) {
         init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_preInit.sqf');
     };
+    class GVARMAIN(hud) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_preInit.sqf');
+    };
 
 };
 
@@ -38,4 +41,8 @@ class Extended_PostInit_EventHandlers {
     class GVARMAIN(mission) {
         init = QUOTE(call compile preProcessFileLineNumbers 'mission\XEH_PostInit.sqf');
     };
+    class GVARMAIN(hud) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_PostInit.sqf');
+    };
+
 };
