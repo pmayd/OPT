@@ -69,7 +69,7 @@ _control = _currentCutDisplay displayCtrl 5102;
 _control = _currentCutDisplay displayCtrl 5103;
 #ifdef __HUD_BUDGET__
 
-	[_control] call FUNC(updateBudget);
+	[_control] call FUNC(renderBudget);
 
 #else
 
