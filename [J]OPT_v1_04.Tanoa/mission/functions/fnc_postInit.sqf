@@ -52,9 +52,6 @@ if (!opt_allow_movement) then {
 
 };
 
-// lade alle EH
-[] call FUNC(initPlayerEH);
-
 // new command since 1.52 - to disable the player raycasts in PvP cause not needed functionality but a lot of cpu calcuation
 disableRemoteSensors true;
 setTerrainGrid 3.125;

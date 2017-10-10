@@ -1,6 +1,5 @@
 
 class RSC(BaseStructuredText) {
-//    idc = -1;
     type = 13;
     style = "0x00";
     colorBackground[] = COLOR_BACKGROUND;

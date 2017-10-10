@@ -3,7 +3,7 @@
 * wartet die Waffenruhe ab und startet die Mission
 *
 * Arguments:
-* 0: <NUMBER> Waffenruhe
+* None
 *
 * Return Value:
 * None
@@ -13,9 +13,6 @@
 *
 */
 #include "script_component.hpp"
-
-// changed by psycho
-params ["_timeout"];							// Zeit der Waffenruhe in Sekunden!
 
 if (missionStarted) exitWith {};
 

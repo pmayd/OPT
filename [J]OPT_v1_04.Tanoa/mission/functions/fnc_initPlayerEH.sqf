@@ -22,11 +22,11 @@ Sind auch nach Respawn persistent
 
 // OPT Maintainer
 if (player isKindOf "OPT_Maintainer" || getPlayerUID player in ["76561197977676036", "76561198095507681", "76561197998124797", "76561197970731085"]) then {
-	(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call opt_fnc_maintainerDialog}];
+	(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call opt_fnc_maintainerDialog}]; // TODO:
 };
 
 // EH für Waffencheck
-player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}];
+player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}]; // TODO:
 
 /* EH für das Versetzen der Flaggen im Trainingsmodus */
 if (OPT_TRAINING == 1) then {
@@ -110,7 +110,7 @@ player addEventHandler["Take", {
     params ["_unit", "_container", "_item"];
 
     if ((_item find "TFAR_" == 0) or (_item find "tf_" == 0)) then {
-        [] call opt_fnc_tfarFrequencies;
+        [] call opt_fnc_tfarFrequencies; // TODO:
     };
 
 }];
@@ -131,7 +131,7 @@ player addEventHandler ["GetInMan", {
 					if (_vec isKindOf "Air" && _pos in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
 							_unit action ["GetOut", _vec];
-							["Es ist nur Piloten erlaubt zu fliegen!"] call OPT_Core_fnc_dynamicText;
+							["Es ist nur Piloten erlaubt zu fliegen!"] call OPT_Core_fnc_dynamicText; // TODO:
 						};
 					};
 				};
@@ -145,7 +145,7 @@ player addEventHandler ["GetInMan", {
 					if (_pos in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
 							_unit action ["GetOut", _vec];
-							["Dieser Platz ist Besatzungsmitgliedern vorbehalten!"] call OPT_Core_fnc_dynamicText;
+							["Dieser Platz ist Besatzungsmitgliedern vorbehalten!"] call OPT_Core_fnc_dynamicText; // TODO: 
 						};
 					};
 				};
@@ -169,7 +169,7 @@ player addEventHandler ["SeatSwitchedMan", {
                 if (_vec isKindOf "Air" && (assignedVehicleRole  _unit1 select 0) in __BLOCKED_VEHICLE_POSITIONS__) then {
                     if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
                         _unit1 action ["GetOut", _vec];
-                        ["Es ist nur Piloten erlaubt zu fliegen!"] call OPT_Core_fnc_dynamicText;
+                        ["Es ist nur Piloten erlaubt zu fliegen!"] call OPT_Core_fnc_dynamicText; // TODO:
                     };
                 };
             };
@@ -183,7 +183,7 @@ player addEventHandler ["SeatSwitchedMan", {
                 if ( (assignedVehicleRole _unit1 select 0) in __BLOCKED_VEHICLE_POSITIONS__) then {
                     if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
                         _unit1 action ["GetOut", _vec];
-                        ["Dieser Platz ist Besatzungsmitgliedern vorbehalten!"] call OPT_Core_fnc_dynamicText;
+                        ["Dieser Platz ist Besatzungsmitgliedern vorbehalten!"] call OPT_Core_fnc_dynamicText; // TODO:
                     };
                 };
             };

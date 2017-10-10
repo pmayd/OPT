@@ -9,16 +9,17 @@
 * None
 *
 * Example:
-* [] call fnc_postInit.sqf;
+* [] call fnc_initPlayerEH.sqf;
 *
 */
 #include "script_component.hpp"
 
-//LOG_1("HUD postInit.sqf aufgerufen - Var opt_startTime: %1",opt_startTime);
+//LOG_1("HUD initPlayerEH.sqf aufgerufen - Var opt_startTime: %1", opt_startTime);
 
 // Wenn HUD in main\setup\setup.hpp ein, füge EH für HUD hinzu
 // HUD wird dann jedes Frame neu gezeichnet
 // belastet nur Client FPS, wenn überhaupt
+
 #ifdef __HUD_ON__
     ("opt_HUD" call BIS_fnc_rscLayer) cutRsc ["opt_HudDisplay", "PLAIN"];
 
@@ -28,9 +29,8 @@
         /**
         Runs the EH code each frame in unscheduled environment. Client side EH only (presence of UI). Will stop executing when UI loses focus (if user Alt+Tabs for example). Usually used with drawIcon3D, drawLine3D. 
         */
-        if (!isNil "opt_startTime") then {
-            [] call FUNC(updateHUD);
-        };
+        [] call FUNC(updateHUD);
+
     }];
 
     // only when opening or closing map
