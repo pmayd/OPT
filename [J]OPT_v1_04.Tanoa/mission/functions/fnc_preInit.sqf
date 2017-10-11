@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-diag_log format["############################# %1 #############################", missionName];
+LOG_1("############################# %1 #############################",missionName);
 
 XGreyText = {"<t color='#f0bfbfbf'>" + _this + "</t>"};
 XRedText = {"<t color='#f0ff0000'>" + _this + "</t>"};
@@ -22,4 +22,4 @@ _paramNames = ("true" configClasses (getMissionConfig "Params")) apply {configNa
 	missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue, true];
 } forEach _paramNames;
 
-diag_log format ["%1 --- preInit.sqf is processed",diag_ticktime];
+LOG_1("%1 --- preInit.sqf is processed",diag_ticktime);

@@ -1,5 +1,5 @@
-#define COMPONENT mission
-#define COMPONENT_BEAUTIFIED Mission
+#define COMPONENT log
+#define COMPONENT_BEAUTIFIED Log
 #include "..\main\script_mission.hpp"
 
 // #define DEBUG_MODE_MINIMAL
@@ -7,7 +7,7 @@
 // #define DISABLE_COMPILE_CACHE
 // #define ENABLE_PERFORMANCE_COUNTERS
 
-#ifdef DEBUG_ENABLED_Mission
+#ifdef DEBUG_ENABLED_blankcomponent
     #define DEBUG_MODE_FULL
 #endif
 

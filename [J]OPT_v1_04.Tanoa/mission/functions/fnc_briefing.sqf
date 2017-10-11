@@ -1,6 +1,5 @@
 #include "script_component.hpp"
 
-if (isDedicated) exitWith {};
 /*
 _subject = player createDiarySubject ["made", "Credits"];
 _log_briefing = player createDiaryRecord ["made", ["Mapbuilding", "
@@ -65,15 +64,3 @@ if (OPT_TRAINING == 1) then {
 	Im Trainingsmodus kann jeder Spieler den Teleport benutzen. Dieser findet sich im Mausradmenü unter Teleport. Einfach auf der Karte den gewünschten Zielort auswählen. Innerhalb von Fahrzeugen wird auch das Fahrzeug teleportiert.
 	"]];
 };
-
-/////////////////////////////////////////////////Missionsziele/////////////////////////////////////////////////
-/*
-[
-	true,																			//	0: BOOL or OBJECT or GROUP or SIDE or ARRAY - Task owner(s)
-	"tcb_task_example",															//	1: STRING or ARRAY - Task name or array in the format [task name, parent task name]
-	["Wait in <marker name=""Gov"">Gov. Parking</marker> for orders.", "Wait here", "Wait"],		//	2: ARRAY - Task description in the format ["description", "title", "marker"]
-	"Gov",																		//	3: OBJECT or ARRAY or STRING - Task destina
-	true,																			//	4: BOOL or NUMBER or STRING - Task state (or true to set as current)
-	0																			//	5: NUMBER - Task priority (when automatically selecting a new current task, higher priority is selected first)
-] spawn BIS_fnc_taskCreate;
-*/

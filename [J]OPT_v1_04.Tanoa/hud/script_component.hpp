@@ -1,4 +1,4 @@
-#define COMPONENT HUD
+#define COMPONENT hud
 #define COMPONENT_BEAUTIFIED HUD
 #include "..\main\script_mission.hpp"
 

@@ -26,10 +26,10 @@ if (isServer) then {
 	publicVariable "opt_startTime"; // gibt allen Clients die Startzeit des Servers bekannt
 
 	_log_msg = format["Startbudget: NATO %1 - CSAT %2", opt_west_budget, opt_east_budget];
-	["opt_eh_server_log_write", ["Budget", _log_msg]] call CBA_fnc_localEvent;
+	[QEGVAR(log,write), ["Budget", _log_msg]] call CBA_fnc_localEvent;
 
 	_log_msg = format["Begin Waffenruhe: %1 min", (OPT_TRUCETIME + OPT_FREEZE_TIME) / 60];
-	["opt_eh_server_log_write", ["Mission", _log_msg]] call CBA_fnc_serverEvent;
+	[QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_serverEvent;
 
 	// By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen
 	// bestimme Zeit, die bis hierher vergangen ist. Es kann nicht angenommen werden
@@ -51,7 +51,7 @@ if (isServer) then {
 
 	_timeElapsed = serverTime - opt_startTime;
 	_log_msg = format["Beginn Rest-Spielzeit: %1 min", (OPT_PLAYTIME - _timeElapsed) / 60];
-	["opt_eh_server_log_write", ["Mission", _log_msg]] call CBA_fnc_localEvent;
+	[QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_localEvent;
 
 	// Beginnt mit dem Counter für die Spielzeit
 	// startet erst, wenn MissionStarted = true gesetzt wird

@@ -1,7 +1,7 @@
 // init script for players
 #include "script_component.hpp"
 
-diag_log format ["%1 --- opt_mission_fnc_postInit started", diag_ticktime];
+LOG_1("%1 --- opt_mission_fnc_postInit started",diag_ticktime);
 
 // store playerSide for logs and other functions
 player setVariable ["opt_var_playerSide", playerSide, true];
@@ -64,4 +64,4 @@ oldSubs = showSubtitles false;
 enableSaving [false, false];
 enableTeamswitch false;
 
-diag_log format ["%1 --- opt_mission_fnc_postInit processed", diag_ticktime];
+LOG_1("%1 --- opt_mission_fnc_postInit processed",diag_ticktime);

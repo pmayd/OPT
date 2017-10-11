@@ -1,13 +1,14 @@
-﻿#define COLOR_BUTTON_BACKGROUND {0,0,0,0.7}
+﻿
+#define COLOR_BUTTON_BACKGROUND {0,0,0,0.7}
 #define COLOR_BUTTON_ACTIVE {0.2,0.8,0.2,0.7}
 #define COLOR_LISTBOX_BACKGROUND {0,0,0,0.85}
 
 
-class opt_vehicleorder_dialog
+class GVAR(dlg_order)
 {
 	idd = 20000;
 	movingenable = false;
-	onLoad = "uiNamespace setVariable ['opt_orderDialog' , _this select 0];";
+	onLoad = __EVAL(format["uiNamespace setVariable ['%1', _this select 0]", QGVAR(orderDialog)]);
 	
 	class controlsBackground
 	{
