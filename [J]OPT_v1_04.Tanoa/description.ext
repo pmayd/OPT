@@ -5,7 +5,6 @@ MISSION_VERSION;
 
 #include "CfgEventhandlers.hpp"
 
-#include "gui\config.hpp"
 #include "hud\config.hpp"
 
 

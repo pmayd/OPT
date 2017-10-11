@@ -2,12 +2,18 @@
 
 openMap [true, false];
 
+ // instructions for player
+_txt = "Alle möglichen Angriffsflaggen sind mit einem schwarzen Kreis markiert.";
+["opt_gui_message", ["Instruktionen", _txt, "blue"]] call CBA_fnc_localEvent;
+_txt = "Die gewählte Flagge wird je nach Seite blau oder rot hervorgehoben.<br/>Es kann beliebig oft neu gewählt werden.<br/>";
+["opt_gui_message", ["Instruktionen", _txt, "blue"]] call CBA_fnc_localEvent;
+
 // create local marker for each flag pole
 private _flagMarker = [];
 {
     // skip all flags that are not opt flags
     if !(_x getVariable ["opt_flag", false]) exitWith {};
-    
+
     // only show attack flags
     switch (playerSide) do {
         case west: {

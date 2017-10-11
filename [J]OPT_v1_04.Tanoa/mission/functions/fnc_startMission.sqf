@@ -63,6 +63,5 @@ if (isServer) then {
 if (local player) then {
 	waitUntil {missionStarted;};
 	// Benachrichtigung über Missionsstart
-    // TODO: neues Messagesystem
-	["<t size='0.8' shadow='1' color='#ffffff'>Mission gestartet!</t>", (safeZoneX - 0.2), (safeZoneY + 0.3), 3, 1, 0, 2] spawn BIS_fnc_dynamicText;
+    ["opt_gui_message", ["Mission", "Mission gestartet", "green"]] call CBA_fnc_globalEvent;
 };

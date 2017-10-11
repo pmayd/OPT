@@ -26,5 +26,9 @@ if (typeOf player in opt_officer) then {
         true, 
         "", 
         "!missionStarted"
-        ];
+    ];
+
+    // inform player
+    _txt = "Bitte eine Flagge über das Mausradmenü wählen. Dies muss während der Waffenruhe geschehen!";
+    ["opt_gui_message", ["Wahl der Angriffsflagge", _txt, "yellow"]] call CBA_fnc_localEvent;
 };

@@ -90,9 +90,8 @@ if (OPT_TRAINING == 1) then {
                 // gib Spieler Mine zurück
                 player addMagazine (_this select 5);
                 // Warnhinweis
-                // TODO: neues Nachrichtensystem
                 _txt = "Mine in der Minensperrzone gelegt!<br/>Mine wurde zurück ins Inventar gelegt.";
-                [format ["<t size='0.8' shadow='1' color='#ff0000'>%1</t>", _txt], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
+                ["opt_gui_message", ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;
     	    };  
 
 		}];
@@ -131,7 +130,8 @@ player addEventHandler ["GetInMan", {
 					if (_vec isKindOf "Air" && _pos in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
 							_unit action ["GetOut", _vec];
-							["Es ist nur Piloten erlaubt zu fliegen!"] call OPT_Core_fnc_dynamicText; // TODO:
+                            _txt = "Es ist nur Piloten erlaubt zu fliegen!";
+                            ["opt_gui_message", ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
 						};
 					};
 				};
@@ -145,7 +145,8 @@ player addEventHandler ["GetInMan", {
 					if (_pos in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
 							_unit action ["GetOut", _vec];
-							["Dieser Platz ist Besatzungsmitgliedern vorbehalten!"] call OPT_Core_fnc_dynamicText; // TODO: 
+                             _txt = "Dieser Platz ist Besatzungsmitgliedern vorbehalten!";
+                            ["opt_gui_message", ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
 						};
 					};
 				};
@@ -169,7 +170,8 @@ player addEventHandler ["SeatSwitchedMan", {
                 if (_vec isKindOf "Air" && (assignedVehicleRole  _unit1 select 0) in __BLOCKED_VEHICLE_POSITIONS__) then {
                     if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
                         _unit1 action ["GetOut", _vec];
-                        ["Es ist nur Piloten erlaubt zu fliegen!"] call OPT_Core_fnc_dynamicText; // TODO:
+                        _txt = "Es ist nur Piloten erlaubt zu fliegen!";
+                        ["opt_gui_message", ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
                     };
                 };
             };
@@ -183,7 +185,8 @@ player addEventHandler ["SeatSwitchedMan", {
                 if ( (assignedVehicleRole _unit1 select 0) in __BLOCKED_VEHICLE_POSITIONS__) then {
                     if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
                         _unit1 action ["GetOut", _vec];
-                        ["Dieser Platz ist Besatzungsmitgliedern vorbehalten!"] call OPT_Core_fnc_dynamicText; // TODO:
+                        _txt = "Dieser Platz ist Besatzungsmitgliedern vorbehalten!";
+                        ["opt_gui_message", ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
                     };
                 };
             };

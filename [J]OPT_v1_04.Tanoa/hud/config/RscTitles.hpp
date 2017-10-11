@@ -10,7 +10,7 @@ class ais_ProgressBar {
     objects[] = {};
     duration = 1e+011;
     name = "ais_ProgressBar";
-    onload = "_this call opt_addons_fnc_progressBarInit;";
+    onload = "_this call opt_addons_fnc_progressBarInit;"; // TODO:
 
     class controlsBackground {
         class mpsf_progressbar_background {

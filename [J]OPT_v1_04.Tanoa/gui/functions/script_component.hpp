@@ -1,2 +1,2 @@
 #include "..\script_component.hpp"
-#include "..\config.hpp"
+#include "..\script_gui.hpp"
