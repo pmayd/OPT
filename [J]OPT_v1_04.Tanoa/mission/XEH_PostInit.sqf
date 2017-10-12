@@ -2,7 +2,7 @@
 
 [] call FUNC(briefing); // fügt Briefing und Tagebuch hinzu
 
-[QGVAR(initEH), "onPreloadFinished",  {
+GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     /*  	
         Executes assigned code after the mission preload screen. Stackable version of onPreloadFinished. 
     */
@@ -14,4 +14,4 @@
 
     [] spawn FUNC(startMission); // Waffenruhe und Missionsstart, für Server und Client
 
-}, []] call BIS_fnc_addStackedEventHandler; 
+}];
