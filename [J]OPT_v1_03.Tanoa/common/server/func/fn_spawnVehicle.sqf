@@ -112,7 +112,8 @@ _uavs = [
 	"OPT_B_UAV_01_F",
 	"OPT_O_UAV_01_F",
 	"OPT_B_Static_Designator_01_F",
-	"OPT_O_Static_Designator_02_F"
+	"OPT_O_Static_Designator_02_F",
+    "OPT_O_T_UGV_01_ghex_F"
 ];
 
 if (_vecType in (_uavs + opt_big_uavs)) then {

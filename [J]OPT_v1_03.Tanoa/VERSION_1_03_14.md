@@ -9,3 +9,6 @@ Kalles Änderungen:
 7. r3f - spritfass verladbar, tragbar gemacht
 8. preisupdate speedboat nato auf 10000
 9. 3. offizier auf nato und csat gestellt
+
+James Änderungen:
+- Bugfix: UGV Saif Drohnenfahrzeug war nicht per UAV Terminal steuerbar. behoben.
