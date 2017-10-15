@@ -17,7 +17,7 @@
 params ["_budget_field"];
 
 private _side = playerSide;
-private _side_Budget = if (_side == west) then {opt_west_budget} else {opt_east_budget};
+private _side_Budget = if (_side == west) then {GVARMAIN(nato_budget)} else {GVARMAIN(csat_budget)};
 
 private _txt = if (_side_Budget > 1e6-1) then {
 	format ["Budget: %1 Mio. €", str(_side_Budget / 1e6)];	// psycho: budget muss numerisch reduziert werden um Darstellung aufrecht zu erhalten

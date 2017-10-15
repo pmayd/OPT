@@ -14,10 +14,10 @@
 disableSerialization;
 
 // arguments
-private _display = uiNamespace getVariable ["opt_orderDialog", displayNull];
+private _display = uiNamespace getVariable [QGVAR(orderDialog), displayNull];
 private _budget = _display displayCtrl 20102;
 
 // begin of script
 if (_display isEqualTo displayNull) exitWith {};
 
-[_budget] call FUNC(renderBudget);
+[_budget] call EFUNC(common,renderBudget);

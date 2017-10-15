@@ -4,9 +4,9 @@ openMap [true, false];
 
  // instructions for player
 _txt = "Alle möglichen Angriffsflaggen sind mit einem schwarzen Kreis markiert.";
-["opt_gui_message", ["Instruktionen", _txt, "blue"]] call CBA_fnc_localEvent;
+[QEGVAR(gui,message), ["Instruktionen", _txt, "blue"]] call CBA_fnc_localEvent;
 _txt = "Die gewählte Flagge wird je nach Seite blau oder rot hervorgehoben.<br/>Es kann beliebig oft neu gewählt werden.<br/>";
-["opt_gui_message", ["Instruktionen", _txt, "blue"]] call CBA_fnc_localEvent;
+[QEGVAR(gui,message), ["Instruktionen", _txt, "blue"]] call CBA_fnc_localEvent;
 
 // create local marker for each flag pole
 private _flagMarker = [];
@@ -24,7 +24,7 @@ private _flagMarker = [];
                 _flagMarker pushBack _marker;
             };
 
-            if (_x in opt_csat_flags) then {
+            if (_x in GVARMAIN(opt_csat_flags)) then {
                 _markerName = format["marker_active_flag"];
                 _marker = createMarkerLocal [_markerName, getPos _x];
                 _marker setMarkerTypeLocal "selector_selectedMission";
@@ -42,7 +42,7 @@ private _flagMarker = [];
                 _flagMarker pushBack _marker;
             };
 
-            if (_x in opt_nato_flags) then {
+            if (_x in GVARMAIN(nato_flags)) then {
                 _markerName = format["marker_active_flag"];
                 _marker = createMarkerLocal [_markerName, getPos _x];
                 _marker setMarkerTypeLocal "selector_selectedMission";
@@ -72,10 +72,10 @@ private _flagMarker = [];
 
         switch (playerSide) do {
             case west: {
-                _marker setMarkerColorLocal "ColorBLUFOR"; opt_csat_flags = [_flag]; publicVariable "opt_csat_flags";
+                _marker setMarkerColorLocal "ColorBLUFOR"; GVARMAIN(csat_flags) = [_flag]; publicVariable QGVARMAIN(csat_flags);
             };
             case east: {
-                _marker setMarkerColorLocal "ColorOPFOR"; opt_nato_flags = [_flag]; publicVariable "opt_nato_flags";
+                _marker setMarkerColorLocal "ColorOPFOR"; GVARMAIN(nato_flags) = [_flag]; publicVariable QGVARMAIN(nato_flags);
             };
         };
 

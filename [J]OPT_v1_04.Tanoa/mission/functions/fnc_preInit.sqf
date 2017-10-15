@@ -8,9 +8,6 @@ XOrangeText = {"<t color='#F3B601'>" + _this + "</t>"};
 XBlueText = {"<t color='#655EDE'>" + _this + "</t>"};
 XTuerkiesText = {"<t color='#00D3BF'>" + _this + "</t>"};
 
-opt_allow_movement = false; // globale Variable, muss jeder haben zu beginn
-missionStarted = false;
-
 // Startparameter auslesen und als globale Variablen verfügbar machen
 // By James: moderner Ansatz ohne 20 Zeilen Code
 // Das Spiel liest bereits alle Parameter aus und speichert sie in "BIS_fnc_storeParamsValues_data"

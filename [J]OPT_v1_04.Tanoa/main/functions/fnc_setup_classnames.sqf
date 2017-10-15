@@ -8,21 +8,20 @@
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* HL UND PL */
-opt_officer = [
+GVARMAIN(officer) = [
     "OPT_NATO_Offizier_T",
     "OPT_CSAT_Offizier_T"
 ];
 
 /* PILOTS */
 // hier sind alle Classnames aufgelistet, welche als Piloten definiert werden um fliegen zu drfen
-opt_pilots = [
+GVARMAIN(pilots) = [
     "OPT_NATO_Pilot_T",
     "OPT_CSAT_Pilot_T"
 ];
 
 #ifdef __ONLY_PILOTS_CAN_FLY__
-
-	opt_pilots_vecs = [
+	GVARMAIN(pilots_vecs) = [
         "OPT_B_Heli_Light_01_F",				    // MH-9 Hummingbird,70000
         "OPT_B_Heli_Light_01_armed_F",			    // AH-9 Pawnee,150000
         "OPT_B_Heli_Light_01_armed_2_F",		    // AH-9 Pawnee DAGR,350000 - erstma raus wegen DAGR-problematik
@@ -68,13 +67,13 @@ opt_pilots = [
 
 /* FAHRZEUGE UND CREW */
 	// hier sind alle Classnames aufgelistet, welche als Crew definiert werden um gepanzerte Fahrzeuge fahren zu drfen (und Schtzenposition)
-opt_crew = [
+GVARMAIN(crew) = [
         "OPT_NATO_Besatzungsmitglied_T",
         "OPT_CSAT_Besatzungsmitglied_T"
     ];
 
 #ifdef __ONLY_CREW_CAN_DRIVE__
-	opt_crew_vecs = [
+	GVARMAIN(crew_vecs) = [
         "OPT_B_APC_Wheeled_01_cannon_F",				// AMV-7 Marshall,120000
         "OPT_B_APC_Tracked_01_rcws_F",					// IFV-6c Panther,45000
         "OPT_B_APC_tracked_03_cannon_F",				// FV-720 Mora,100000
@@ -95,7 +94,7 @@ opt_crew = [
 
 /* AT-Schützen UND LAUNCHER */
 
-opt_rocketmen = [
+GVARMAIN(rocketmen) = [
 	"OPT_NATO_Luftabwehrspezialist",
 	"OPT_CSAT_Luftabwehrspezialist",
 	"OPT_NATO_PA_Schuetze",
@@ -110,7 +109,7 @@ opt_rocketmen = [
 	"OPT_CSAT_Aufklaerung_Spaeher_AT_T"
 ];
 
-opt_launchers = [
+GVARMAIN(launchers) = [
     "OPT_launch_B_RPG32_F",
     "OPT_launch_RPG32_F",
     "OPT_launch_NLAW_F",
@@ -123,20 +122,20 @@ opt_launchers = [
 
 /* OPERATOR */
 
-opt_operator = [
+GVARMAIN(operator) = [
 	"OPT_NATO_Operator_T",
 	"OPT_CSAT_Operator_T"
 ];
 
 /* MEDIC */
 
-opt_medic = [
+GVARMAIN(medic) = [
 	"OPT_NATO_Sanitaeter_T",
 	"OPT_CSAT_Sanitaeter_T"
 ];
 
 /* SNIPER */
-opt_snipers = [
+GVARMAIN(snipers) = [
 	"OPT_NATO_Scharfschuetze_T",
 	"OPT_NATO_Scharfschuetze_2",
 	"OPT_CSAT_Scharfschuetze_T",
@@ -151,7 +150,7 @@ opt_snipers = [
 
 /* MG */
 
-opt_soldatMG = [
+GVARMAIN(soldatMG) = [
 	"OPT_CSAT_MG_Schuetze_T",
 	"OPT_NATO_MG_Schuetze_T",
 	"OPT_CSAT_SMG_Schuetze_T",
@@ -160,7 +159,7 @@ opt_soldatMG = [
 
 /* GRENADIER */
 
-opt_grenadiers = [
+GVARMAIN(grenadiers) = [
 	"OPT_CSAT_Grenadier_T",
 	"OPT_NATO_Grenadier_T",
 	"OPT_CSAT_Aufklaerung_JTAC",
@@ -170,7 +169,7 @@ opt_grenadiers = [
 
 /* PIONIER */
 
-opt_pioniers = [
+GVARMAIN(pioniers) = [
 	"OPT_NATO_Pionier_T",
 	"OPT_CSAT_Pionier_T",
 	"OPT_CSAT_Aufklaerung_Sprengmeister_T",
@@ -178,7 +177,7 @@ opt_pioniers = [
 ];
 
 #ifdef __ONLY_PIO_CAN_BUILD_FARPS__
-    opt_engineers = [
+    GVARMAIN(engineers) = [
         "OPT_NATO_Pionier_T",
         "OPT_CSAT_Pionier_T"
     ];

@@ -120,87 +120,6 @@ class dom_Empty {
     class controls {};
 };
 
-class only_qualified {
-    idd=-1;
-    movingEnable=0;
-    duration=12;
-    fadein=2;
-    name="only_qualified";
-    controls[] = {Titel};
-    class Titel : RscStdText {
-        text = "Dieses Fahrzeug darf nur von Fachpersonal bestellt werden!";
-        colorText[] = Color_GrayDark;
-        sizeEx = TextSize_medium;
-        x = -0.5;
-        y = -0.75;
-        w = 1;
-        h = 1;
-    };
-};
-
-class RscDeadQuote {
-    onload = "uinamespace setvariable ['tcb_title',_this select 0];";
-    idd = 1792;
-    movingEnable = false;
-    moving = false;
-    duration=10e10;
-    enableSimulation = true;
-    controlsBackground[] = {};
-    objects[] = {};
-    controls[] = {QuoteStructuredText, HeaderDeath};
-
-    class HeaderDeath {
-        idc = -1;
-        type = CT_STRUCTURED_TEXT;
-        style = ST_LEFT;
-        colorBackground[] = {1, 1, 1, 0};
-        colorText[] = {1, 0.0, 0.0, 1};
-        x = safezoneX + 0.3 * safezoneW;
-        y = safezoneY + 0.045 * safezoneW;
-        w = 1;
-        h = 0.6;
-        size = 0.08;
-        text = "Du bist gestorben.";
-        class Attributes {
-            font = DEFAULTFONT;
-            color = "#CC0000";	// red
-            align = "center";
-            valign = "middle";
-            shadow = false;
-            shadowColor = "#ff0000";
-            size = "1.6";
-        };
-    };
-
-    class QuoteStructuredText {
-        idc = 1793;
-        type = CT_STRUCTURED_TEXT;
-        style = ST_LEFT;
-        colorBackground[] = { 1, 1, 1, 0 };
-        colorText[] = {1,1,1,1};
-        //x = 0.1;
-        //y = 1.4;
-        //x = "SafeZoneX + SafeZoneW - 1.9";
-        //y = "SafeZoneY + SafeZoneH - 0.19";
-        x = safezoneX + 0.3 * safezoneW;
-        y = safezoneY + 0.67 * safezoneW;
-        w = 1;
-        h = 0.6;
-        size = 0.02;
-        text = "";
-        class Attributes {
-            font = DEFAULTFONT;
-            color = "#000000";
-            align = "center";
-            valign = "middle";
-            shadow = false;
-            shadowColor = "#ff0000";
-            size = "1.6";
-        };
-    };
-};
-
-
 
 //----------------------------------- BASE CAPTURE DISPLAY -------------------------------------
 class DefaultMenu {
@@ -300,11 +219,11 @@ class DefaultMenu {
 //                                        HUD DISPLAY
 //--------------------------------------------------------------------------------------------------
     
-class opt_HudDisplay: DefaultMenu {
+class GVAR(rsc_hud): DefaultMenu {
     duration = 15000;
     name = "HudDisplay";
     idd = 4999;			
-    onLoad = "uiNamespace setVariable ['opt_HudDisplay' , _this select 0];";	
+    onLoad = __EVAL(format["uiNamespace setVariable ['%1' , _this select 0]", QGVAR(display)]);	
     movingEnable = false;
     moving = false;
     enableSimulation = true;

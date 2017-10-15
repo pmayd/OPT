@@ -35,7 +35,7 @@ class GVAR(dlg_order)
 			w = 0.234875 * safezoneW;
 			h = 0.507 * safezoneH;
 			colorBackground[] = COLOR_LISTBOX_BACKGROUND;
-			onLBDblClick = "[] call opt_fnc_sendVehicleOrder";
+			onLBDblClick =  __EVAL(format["[] call %1", QFUNC(sendVehicleOrder)]);
 		};
 		class order_box_preisliste: RscListBox_OPT
 		{
@@ -46,7 +46,6 @@ class GVAR(dlg_order)
 			w = 0.08575 * safezoneW;
 			h = 0.507 * safezoneH;
 			colorBackground[] = COLOR_LISTBOX_BACKGROUND;
-			onLBDblClick = "[] call opt_fnc_sendVehicleOrder";
 		};
 		class order_budget: RscText_Header
 		{
@@ -71,7 +70,7 @@ class GVAR(dlg_order)
 			colorBackgroundActive[] = COLOR_BUTTON_ACTIVE;
 			colorActive[] = COLOR_BUTTON_ACTIVE;
 			tooltip = "Ausgewähltes Fahrzeug bestellen";
-			action = "[] call opt_fnc_sendVehicleOrder";
+			action = __EVAL(format["[] call %1", QFUNC(sendVehicleOrder)]);
 		};
 		class order_button_schliessen: RscButton_OPT
 		{
@@ -102,7 +101,7 @@ class GVAR(dlg_order)
 			colorBackgroundActive[] = {1,0,0,0.7};
 			colorActive[] = {1,0,0,0.7};
 			tooltip = "Verkaufe Fahrzeug auf dem Bestell-Pad";
-			action = "[] call opt_fnc_sellVehicle;";
+			action = __EVAL(format["[] call %1", QFUNC(sellVehicle)]); // TODO:
 		};
 		#endif
 	};

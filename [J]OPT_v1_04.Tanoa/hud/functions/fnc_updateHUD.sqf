@@ -30,7 +30,7 @@
 
 
 disableSerialization;
-private _currentCutDisplay = uiNamespace getVariable "opt_HudDisplay";
+private _currentCutDisplay = uiNamespace getVariable QGVAR(display);
 
 
 //--------------------- get settings on whether to display extra labels --------------
@@ -69,7 +69,7 @@ _control = _currentCutDisplay displayCtrl 5102;
 _control = _currentCutDisplay displayCtrl 5103;
 #ifdef __HUD_BUDGET__
 
-	[_control] call FUNC(renderBudget);
+	[_control] call EFUNC(common,renderBudget);
 
 #else
 
@@ -80,7 +80,7 @@ _control = _currentCutDisplay displayCtrl 5103;
 _control = _currentCutDisplay displayCtrl 5104;
 #ifdef __HUD_SCORE__
 
-	private _scoreStr = format ["Punkte: (N) %1 : %2 (C)", WestPoints, EastPoints];
+	private _scoreStr = format ["Punkte: (N) %1 : %2 (C)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
 
 	// Anzeige updaten
 	// Update Text
@@ -96,11 +96,11 @@ _control = _currentCutDisplay displayCtrl 5105;
 #ifdef __HUD_TIMER__
 
 	private "_timeStr";
-	private _timeElapsed = (serverTime - opt_startTime);
+	private _timeElapsed = (serverTime - EGVAR(mission,startTime));
 	private _playTime = OPT_PLAYTIME - _timeElapsed;
 	private _truceTime = (OPT_TRUCETIME + OPT_FREEZE_TIME) - _timeElapsed;
 
-	if (MissionStarted) then {
+	if (GVARMAIN(missionStarted)) then {
 
 		// Mission gestartet - Zeige verbleibende Spielzeit
 		_timeLeft = [_playTime] call CBA_fnc_formatElapsedTime;

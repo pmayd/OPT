@@ -1,2 +1,2 @@
 
-PREP(preInit);
+PREP(initCBAEvents);

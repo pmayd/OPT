@@ -48,7 +48,7 @@ if (OPT_TRAINING == 1) then {
 		_flag = objNull;
 		{
 			if (_x getVariable ["opt_var_flag_moveFlag", false]) exitWith {_flag = _x};
-		} foreach opt_csat_flags + opt_nato_flags;
+		} foreach GVARMAIN(csat_flags) + GVARMAIN(nato_flags);
 
 		if (_flag isEqualTo objNull) then {
 
@@ -84,14 +84,14 @@ if (OPT_TRAINING == 1) then {
                 6 projectile: Object - Object of the projectile that was shot out
                 7 vehicle: Object - Vehicle, if weapon is vehicle weapon, otherwise objNull
     	    */
-            if (_this select 1 == "Put" && ({(_x distance player) <= __MINE_FREE_FLAG_RADIUS__} count (opt_csat_flags + opt_nato_flags) > 0)) then {
+            if (_this select 1 == "Put" && ({(_x distance player) <= __MINE_FREE_FLAG_RADIUS__} count (GVARMAIN(csat_flags) + GVARMAIN(nato_flags)) > 0)) then {
                 // lösche Mine
                 deleteVehicle (_this select 6);
                 // gib Spieler Mine zurück
                 player addMagazine (_this select 5);
                 // Warnhinweis
                 _txt = "Mine in der Minensperrzone gelegt!<br/>Mine wurde zurück ins Inventar gelegt.";
-                ["opt_gui_message", ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;
+                [QEGVAR(gui,message), ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;
     	    };  
 
 		}];
@@ -126,12 +126,12 @@ player addEventHandler ["GetInMan", {
 
     #ifdef __ONLY_PILOTS_CAN_FLY__
 			if (OPT_ONLY_PILOTS == 1) then {
-				if (!(typeOf _unit in opt_pilots) && {!(typeOf _unit in ["O_Helipilot_F","B_Helipilot_F"])}) then {
+				if (!(typeOf _unit in GVARMAIN(pilots)) && {!(typeOf _unit in ["O_Helipilot_F","B_Helipilot_F"])}) then {
 					if (_vec isKindOf "Air" && _pos in __BLOCKED_VEHICLE_POSITIONS__) then {
 						if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
 							_unit action ["GetOut", _vec];
                             _txt = "Es ist nur Piloten erlaubt zu fliegen!";
-                            ["opt_gui_message", ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
+                            [QEGVAR(gui,message), ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
 						};
 					};
 				};
@@ -141,12 +141,12 @@ player addEventHandler ["GetInMan", {
 
 		#ifdef __ONLY_CREW_CAN_DRIVE__
 			if (OPT_ONLY_CREW == 1) then {
-				if (!(typeOf _unit in opt_crew) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
+				if (!(typeOf _unit in GVARMAIN(crew)) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
 					if (_pos in __BLOCKED_VEHICLE_POSITIONS__) then {
-						if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
+						if (typeOf _vec in GVARMAIN(crew_vecs) || _vec isKindOf "Tank") then {
 							_unit action ["GetOut", _vec];
                              _txt = "Dieser Platz ist Besatzungsmitgliedern vorbehalten!";
-                            ["opt_gui_message", ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
+                            [QEGVAR(gui,message), ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
 						};
 					};
 				};
@@ -166,12 +166,12 @@ player addEventHandler ["SeatSwitchedMan", {
 
     #ifdef __ONLY_PILOTS_CAN_FLY__
         if (OPT_ONLY_PILOTS == 1) then {
-            if (!(typeOf _unit1 in opt_pilots) && {!(typeOf _unit1 in ["O_Helipilot_F","B_Helipilot_F"])}) then {
+            if (!(typeOf _unit1 in GVARMAIN(pilots)) && {!(typeOf _unit1 in ["O_Helipilot_F","B_Helipilot_F"])}) then {
                 if (_vec isKindOf "Air" && (assignedVehicleRole  _unit1 select 0) in __BLOCKED_VEHICLE_POSITIONS__) then {
                     if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
                         _unit1 action ["GetOut", _vec];
                         _txt = "Es ist nur Piloten erlaubt zu fliegen!";
-                        ["opt_gui_message", ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
+                        [QEGVAR(gui,message), ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
                     };
                 };
             };
@@ -181,12 +181,12 @@ player addEventHandler ["SeatSwitchedMan", {
 
 	#ifdef __ONLY_CREW_CAN_DRIVE__
         if (OPT_ONLY_CREW == 1) then {
-            if (!(typeOf _unit1 in opt_crew) && {!(typeOf _unit1 in ["O_crew_F","B_crew_F"])}) then {
+            if (!(typeOf _unit1 in GVARMAIN(crew)) && {!(typeOf _unit1 in ["O_crew_F","B_crew_F"])}) then {
                 if ( (assignedVehicleRole _unit1 select 0) in __BLOCKED_VEHICLE_POSITIONS__) then {
-                    if (typeOf _vec in opt_crew_vecs || _vec isKindOf "Tank") then {
+                    if (typeOf _vec in GVARMAIN(crew_vecs) || _vec isKindOf "Tank") then {
                         _unit1 action ["GetOut", _vec];
                         _txt = "Dieser Platz ist Besatzungsmitgliedern vorbehalten!";
-                        ["opt_gui_message", ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
+                        [QEGVAR(gui,message), ["Slotsperre", _txt, "red"]] call CBA_fnc_localEvent;
                     };
                 };
             };

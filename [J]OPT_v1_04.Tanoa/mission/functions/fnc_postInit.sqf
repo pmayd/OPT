@@ -4,7 +4,7 @@
 LOG_1("%1 --- opt_mission_fnc_postInit started",diag_ticktime);
 
 // store playerSide for logs and other functions
-player setVariable ["opt_var_playerSide", playerSide, true];
+player setVariable [QGVAR(playerSide), playerSide, true];
 
 // checking for failed player init
 if (isMultiplayer && !isServer) then {	// only on dedicated environment
@@ -35,7 +35,7 @@ if (isMultiplayer && !isServer) then {
 player action ["WeaponOnBack", player];
 
 // friere Spieler, falls freezeTime aktiv
-if (!opt_allow_movement) then {
+if (!GVARMAIN(allow_movement)) then {
 
 	// init weiter durchladen
 	[] spawn {
@@ -44,7 +44,7 @@ if (!opt_allow_movement) then {
 		player enableSimulation false;
 
 		// warte OPT_FREEZE_TIME
-		waitUntil {sleep 1; opt_allow_movement};
+		waitUntil {sleep 1; GVARMAIN(allow_movement)};
 
 		// gib Spieler frei
 		player enableSimulation true;

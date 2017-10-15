@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2064;
+		nextID=2184;
 	};
 	class Camera
 	{
-		pos[]={4697.5586,6.4255659e+023,11634.479};
-		dir[]={0,0,1};
-		up[]={0,1,0};
-		aside[]={1,0,0};
+		pos[]={11652.074,8.2467833,3079.3838};
+		dir[]={-0.84316158,-0.34441856,0.41287252};
+		up[]={-0.30932778,0.93881816,0.15146953};
+		aside[]={0.43978003,8.8999514e-008,0.89811289};
 	};
 };
 binarizationWanted=0;
@@ -37852,7 +37852,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this addAction['Verkaufen' call XRedText,'common\client\opt_vehicleOrder.sqf','sell'];}";
+								init="call{this addAction['Verkaufen' call XRedText,{['sell'] call opt_warehouse_fnc_vehicleOrder;},[]];}";
 								disableSimulation=1;
 							};
 							id=5409;
@@ -37913,7 +37913,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Fahrzeuge' call XRedText,'common\client\opt_vehicleOrder.sqf','vehicles', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+								init="this addAction['Fahrzeuge' call XRedText,{['vehicles'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
 								disableSimulation=1;
 							};
 							id=5422;
@@ -37974,7 +37974,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Panzer' call XRedText,'common\client\opt_vehicleOrder.sqf','armored', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+								init="this addAction['Panzer' call XRedText,{['armored'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
 								disableSimulation=1;
 							};
 							id=5423;
@@ -38016,7 +38016,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Nachschub' call XRedText,'common\client\opt_vehicleOrder.sqf','supplies', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+								init="this addAction['Nachschub' call XRedText,{['supplies'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
 								disableSimulation=1;
 							};
 							id=5424;
@@ -38077,7 +38077,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this addAction['Luftwaffe' call XRedText,'common\client\opt_vehicleOrder.sqf','choppers', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; }";
+								init="call{this addAction['Luftwaffe' call XRedText,{['choppers'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; }";
 								disableSimulation=1;
 							};
 							id=5504;
@@ -38138,7 +38138,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Nachschub' call XRedText,'common\client\opt_vehicleOrder.sqf','supplies', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+								init="this addAction['Nachschub' call XRedText,{['supplies'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
 								disableSimulation=1;
 							};
 							id=5507;
@@ -39183,7 +39183,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this addAction['Marine-Ausrüstung' call XRedText,'common\client\opt_vehicleOrder.sqf','sea', 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+						init="this addAction['Marine-Ausrüstung' call XRedText,{['sea'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
 						disableSimulation=1;
 					};
 					id=5534;
@@ -43779,7 +43779,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this addAction['Verkaufen' call XBlueText,'common\client\opt_vehicleOrder.sqf','sell'];}";
+								init="call{this addAction['Verkaufen' call XBlueText,{['sell'] call opt_warehouse_fnc_vehicleOrder;},[]];}";
 								disableSimulation=1;
 							};
 							id=5544;
@@ -43841,7 +43841,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Ketten-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','armored'];";
+								init="this addAction['Ketten-Fahrzeuge' call XBlueText,{['armored'] call opt_warehouse_fnc_vehicleOrder;},[]];";
 								disableSimulation=1;
 							};
 							id=5562;
@@ -43903,7 +43903,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Rad-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','vehicles'];";
+								init="this addAction['Rad-Fahrzeuge' call XBlueText,{['vehicles'] call opt_warehouse_fnc_vehicleOrder;},[]];";
 								disableSimulation=1;
 							};
 							id=5563;
@@ -43965,7 +43965,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Nachschub' call XBlueText,'common\client\opt_vehicleOrder.sqf','supplies']; ";
+								init="this addAction['Nachschub' call XBlueText,{['supplies'] call opt_warehouse_fnc_vehicleOrder;},[]]; ";
 								disableSimulation=1;
 							};
 							id=5564;
@@ -44027,7 +44027,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Luft-Fahrzeuge' call XBlueText,'common\client\opt_vehicleOrder.sqf','choppers'];";
+								init="this addAction['Luft-Fahrzeuge' call XBlueText,{['choppers'] call opt_warehouse_fnc_vehicleOrder;},[]];";
 								disableSimulation=1;
 							};
 							id=5628;
@@ -44089,7 +44089,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Nachschub' call XBlueText,'common\client\opt_vehicleOrder.sqf','supplies']; ";
+								init="this addAction['Nachschub' call XBlueText,{['supplies'] call opt_warehouse_fnc_vehicleOrder;},[]]; ";
 							};
 							id=5629;
 							type="Land_InfoStand_V1_F";
@@ -45997,7 +45997,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this addAction['Marine-Ausrüstung' call XBlueText,'common\client\opt_vehicleOrder.sqf','sea']; ";
+						init="this addAction['Marine-Ausrüstung' call XBlueText,{['sea'] call opt_warehouse_fnc_vehicleOrder;},[]]; ";
 						disableSimulation=1;
 					};
 					id=5730;

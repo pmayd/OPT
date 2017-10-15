@@ -21,7 +21,7 @@
 // belastet nur Client FPS, wenn überhaupt
 
 #ifdef __HUD_ON__
-    ("opt_HUD" call BIS_fnc_rscLayer) cutRsc ["opt_HudDisplay", "PLAIN"];
+    ("opt_HUD" call BIS_fnc_rscLayer) cutRsc [QGVAR(rsc_hud), "PLAIN"];
 
     // Aktualisierung des HUD
     // each frame

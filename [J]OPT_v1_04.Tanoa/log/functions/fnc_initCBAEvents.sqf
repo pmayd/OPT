@@ -73,13 +73,14 @@ wird in der initServer.sqf aufgerufen
 [QGVAR(write), {
 	params ["_category","_message"];
 
-	private _timestemp = [serverTime - opt_startTime] call CBA_fnc_formatElapsedTime;
+	private _timestemp = [serverTime - EGVAR(mission,startTime)] call CBA_fnc_formatElapsedTime;
 
 	diag_log format["OPT LOG BEGIN: %1 - %2 || %3 :OPT LOG END", _timestemp, _category, _message];
 	
 }] call CBA_fnc_addEventHandler;
 
 // update budget
+// TODO: gehört nicht hierher
 [QGVAR(updateBudget), {
 	params ["_side", "_unitCost", "_sign"];
 
@@ -90,17 +91,17 @@ wird in der initServer.sqf aufgerufen
 	switch (_sign) do {
 		case "-": {
 				if (_side == WEST) then {
-					_budget_neu = opt_west_budget - _unitCost;
+					_budget_neu = GVARMAIN(nato_budget) - _unitCost;
 				} else {
-					_budget_neu = opt_east_budget - _unitCost;
+					_budget_neu = GVARMAIN(csat_budget) - _unitCost;
 				};
 
 		};
 		case "+":  {
 				if (_side == WEST) then {
-					_budget_neu = opt_west_budget + _unitCost;
+					_budget_neu = GVARMAIN(nato_budget) + _unitCost;
 				} else {					
-					_budget_neu = opt_east_budget + _unitCost;
+					_budget_neu = GVARMAIN(csat_budget) + _unitCost;
 				};
                 
 		};
@@ -108,14 +109,14 @@ wird in der initServer.sqf aufgerufen
 
 	// server log sowie Aktualisierung via publicVarialbe
 	if (_side == west) then {
-		_message = format["NATO alt: %1 - neu: %2 - Differenz: %3%4", opt_west_budget, _budget_neu, _sign, _unitCost];
-		opt_west_budget = _budget_neu;
-		publicVariable "opt_west_budget";
+		_message = format["NATO alt: %1 - neu: %2 - Differenz: %3%4", GVARMAIN(nato_budget), _budget_neu, _sign, _unitCost];
+		GVARMAIN(nato_budget) = _budget_neu;
+		publicVariable QGVARMAIN(nato_budget);
 
 	} else {
-		_message = format["CSAT alt: %1 - neu: %2 - Differenz: %3%4", opt_east_budget, _budget_neu, _sign, _unitCost];
-		opt_east_budget = _budget_neu;
-		publicVariable "opt_east_budget";
+		_message = format["CSAT alt: %1 - neu: %2 - Differenz: %3%4", GVARMAIN(csat_budget), _budget_neu, _sign, _unitCost];
+		GVARMAIN(csat_budget) = _budget_neu;
+		publicVariable QGVARMAIN(csat_budget);
 
 	};
 	

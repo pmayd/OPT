@@ -16,7 +16,7 @@
 */
 #include "script_component.hpp"
 // Mausradmenüeinträge für HL und PL
-if (typeOf player in opt_officer) then {
+if (typeOf player in GVARMAIN(officer)) then {
     player addAction [
         "<t size=""1.5"" color=""#ffffff"">Angrifsflagge wählen</t>", 
         {[] spawn FUNC(chooseFlag);}, 
@@ -25,10 +25,10 @@ if (typeOf player in opt_officer) then {
         true, 
         true, 
         "", 
-        "!missionStarted"
+        format["%1", !GVARMAIN(missionStarted)]
     ];
 
     // inform player
     _txt = "Bitte eine Flagge über das Mausradmenü wählen. Dies muss während der Waffenruhe geschehen!";
-    ["opt_gui_message", ["Wahl der Angriffsflagge", _txt, "yellow"]] call CBA_fnc_localEvent;
+    [QEGVAR(gui,message), ["Wahl der Angriffsflagge", _txt, "yellow"]] call CBA_fnc_localEvent;
 };

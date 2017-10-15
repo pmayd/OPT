@@ -7,11 +7,11 @@ east -> Angriffsziel für NATO
 */
 #include "script_component.hpp"
 
-if (isNil "opt_setup_flags") then {
-    opt_setup_flags = false;
+if (isNil QGVARMAIN(setup_flags)) then {
+    QGVARMAIN(setup_flags) = false;
 };
 
-opt_nato_flags_pos = [
+GVARMAIN(nato_flags_pos) = [
     [5488, 6935, west], // sektor 1 - arudy kirche
     [5617, 7043, west], // sektor 1 - arudy transformatoren
     [5538, 6982, west], // sektor 1 - arudy center
@@ -24,7 +24,7 @@ opt_nato_flags_pos = [
 
 ];
 
-opt_csat_flags_pos = [
+GVARMAIN(csat_flags_pos) = [
     [7544, 7834, east], // sektor 4 - La Trinite Farm
     [7242, 7930, east], // sektor 4 - La Trinite Center
     [7083, 8019, east], // sektor 4 - La Trinite Kirche
@@ -48,7 +48,7 @@ opt_csat_flags_pos = [
     // notwendige Variablen fuer OPT
     _flag setVariable ["owner", _owner, true];        
     _flag setVariable ["opt_flag", true, true];
-} forEach opt_nato_flags_pos;
+} forEach GVARMAIN(nato_flags_pos);
 
 {
     _x params ["_x", "_y", "_owner"];
@@ -60,5 +60,5 @@ opt_csat_flags_pos = [
     // notwendige Variablen fuer OPT
     _flag setVariable ["owner", _owner, true];
     _flag setVariable ["opt_flag", true, true];
-} forEach opt_csat_flags_pos;
+} forEach GVARMAIN(csat_flags_pos);
 
