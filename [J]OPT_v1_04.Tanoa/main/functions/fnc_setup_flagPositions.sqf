@@ -7,10 +7,6 @@ east -> Angriffsziel für NATO
 */
 #include "script_component.hpp"
 
-if (isNil QGVARMAIN(setup_flags)) then {
-    QGVARMAIN(setup_flags) = false;
-};
-
 GVARMAIN(nato_flags_pos) = [
     [5488, 6935, west], // sektor 1 - arudy kirche
     [5617, 7043, west], // sektor 1 - arudy transformatoren

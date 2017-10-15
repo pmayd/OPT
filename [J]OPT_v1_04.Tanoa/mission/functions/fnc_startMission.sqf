@@ -63,5 +63,5 @@ if (isServer) then {
 if (local player) then {
 	waitUntil {GVARMAIN(missionStarted);};
 	// Benachrichtigung über Missionsstart
-    [QEGVAR(gui,message), ["Mission", "Mission gestartet", "green"]] call CBA_fnc_globalEvent;
+    [QEGVAR(gui,message), ["Mission", "Mission gestartet", "green"]] call CBA_fnc_localEvent;
 };

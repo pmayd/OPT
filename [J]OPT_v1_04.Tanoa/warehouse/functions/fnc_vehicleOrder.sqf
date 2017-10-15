@@ -109,7 +109,7 @@ if (count GVAR(orderDialogObjects) != 0) then {
 	// gehe alle gefundenen Objekte durch und lösche sie, falls nicht in pool, oder ergänze um Verkaufspreis
 	{
 		
-        _index = (GVAR(all) find _x);
+        _index = ((GVAR(all) apply {_x select 0}) find (typeOf _x));
 
 		if (_index == -1) then {
 			_objs = _objs - [_x]; 

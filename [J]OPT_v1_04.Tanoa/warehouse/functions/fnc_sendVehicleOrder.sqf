@@ -24,7 +24,7 @@ private _selectedVehicle = lbCurSel _list;
 
 if (_selectedVehicle < 0) exitWith {	
     private _txt = "Bitte ein Fahrzeug auswählen";
-    [QEGVAR(gui,message), [_txt, "red"]] call CBA_fnc_localEvent;
+    [QEGVAR(gui,message), [_txt, "yellow"]] call CBA_fnc_localEvent;
 };
 
 private _unitRecord = GVAR(orderDialogObjects) select _selectedVehicle;
@@ -57,7 +57,7 @@ if (count _empty_pos == 0) exitWith {
 [QGVAR(spawnVehicle), [_unitType, _spawnPos]] call CBA_fnc_serverEvent;
 
 private _txt = format["%1 geliefert.",_displayName];
-[QEGVAR(gui,message), ["Bestellung erfolgreich", _txt, "green"]] call CBA_fnc_localEvent;
+[QEGVAR(gui,message), ["Bestellung", _txt, "green"]] call CBA_fnc_localEvent;
 
 // Budget in Dialog updaten
 [] call FUNC(updateBudget);
