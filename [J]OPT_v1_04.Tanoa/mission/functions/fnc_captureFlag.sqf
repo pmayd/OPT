@@ -28,7 +28,7 @@ _owner = _flag getVariable ["owner", nil];
 _message = "";
 switch (_side) do {
     case west: {
-        if (_flag in GVARMAIN(nato_flags)) then {
+        if (_owner isEqualTo west) then {
             _message = format ["NATO Flagge gesichert von %1", name _caller];
         } else {
             _message = format ["CSAT Flagge erobert von %1", name _caller];
@@ -36,7 +36,7 @@ switch (_side) do {
     };
 
     case east: {
-        if (_flag in opt_nato_flags) then {
+        if (_owner isEqualTo east) then {
             _message = format ["NATO Flagge erobert von %1", name _caller];
         } else {
             _message = format ["CSAT Flagge gesichert von %1", name _caller];

@@ -41,7 +41,7 @@ GVARMAIN(missionStarted) = false;
 publicVariable QGVARMAIN(missionStarted);
 GVARMAIN(allow_movement) = false;
 publicVariable QGVARMAIN(allow_movement);
-GVARMAIN(dominator) = "none";
+GVARMAIN(dominator) = sideUnknown;
 publicVariable QGVARMAIN(dominator);
 
 GVARMAIN(nato_flags) = [];

@@ -73,6 +73,6 @@ Sowie Actionmeneintrag fuer Spieler
                 format['((_target distance player) < 5) and vehicle player == player and %1 and (OPT_PLAYTIME - (serverTime - %2)) > 0 and (playerSide != (_target getVariable ["owner", sideUnknown]))', QGVARMAIN(missionStarted), QGVAR(startTime)] // Flagge kann nur nach Missionsstart, in 5 m Radius, ausserhalb eines Fahrzeugs und in Restspielzeit gezogen werden und nur von der anderen Seite
             ]
         ]
-    ] call CBA_fnc_globalEvent;
+    ] call CBA_fnc_globalEventJIP; // jip is important, otherwise, clients which join later wont have the menu!
     _x allowDamage false; 						                    // Flagge kann nicht beschdigt werden
 } foreach (GVARMAIN(csat_flags) + GVARMAIN(nato_flags));

@@ -18,8 +18,8 @@
 params ["_side","_flag"];
 
 switch (_side) do {
-	case (west) : { //wenn spieler der zieht westen ist
-		_flag setFlagTexture "\A3\Data_F\Flags\Flag_nato_CO.paa";
+	case (west) : { //wenn spieler der zieht NATO ist
+		[_flag, "\A3\Data_F\Flags\Flag_nato_CO.paa"] remoteExec ["setFlagTexture", _flag]; // has to be called on server
 		_flag setVariable ["owner", _side, true];
 		#ifdef __OPT_Sector_Message__
 			//_marker = _flag getVariable "opt_flagMarker";
@@ -30,7 +30,7 @@ switch (_side) do {
 		#endif
 	};
 	case (east) : {
-		_flag setFlagTexture "\A3\Data_F\Flags\Flag_csat_CO.paa";
+		[_flag, "\A3\Data_F\Flags\Flag_csat_CO.paa"] remoteExec ["setFlagTexture", _flag]; // has to be called on server
 		_flag setVariable ["owner", _side, true];
 		#ifdef __OPT_Sector_Message__
 			//_marker = _flag getVariable "opt_flagMarker";
@@ -43,14 +43,15 @@ switch (_side) do {
 	default {};
 };
 
-_side_calculated = resistance;
 _side_calculated = [] call FUNC(calcDominator);
+GVARMAIN(dominator) = _side_calculated;
+publicVariable QGVARMAIN(dominator);
 
 systemChat format ["calculated Side: %1", _side_calculated];
 
 switch (_side_calculated) do {
 	case (east) : {
-		GVARMAIN(dominator) = east;
+
         _log_msg = format["Dominator ist CSAT"];
         [QEGVAR(log,write), ["Fahne", _log_msg]] call CBA_fnc_serverEvent;
 
@@ -60,7 +61,7 @@ switch (_side_calculated) do {
 		#endif
 	};
 	case (west) : {
-		GVARMAIN(dominator) = west;
+
         _log_msg = format["Dominator ist NATO"];
         [QEGVAR(log,write), ["Fahne", _log_msg]] call CBA_fnc_serverEvent;
 
@@ -71,7 +72,5 @@ switch (_side_calculated) do {
 	};
 	default {GVARMAIN(dominator) = sideUnknown};
 };
-
-publicVariable QGVARMAIN(dominator);
 
 true

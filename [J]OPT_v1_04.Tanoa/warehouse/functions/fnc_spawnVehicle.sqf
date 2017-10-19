@@ -54,7 +54,7 @@ if (_vec isKindOf "AllVehicles") then {
 		    _vec, 
 		    ["Fahrzeug aufrichten" call XTuerkiesText, {[] call EFUNC(common,unFlip);}, [], 0, false, true, "", format["[_target, player] call %1", QEFUNC(common,flipCheck)]]
         ]
-	] call CBA_fnc_globalEvent;
+	] call CBA_fnc_globalEventJIP;
 };
 
 // Engine EH für Piloten -> Log transportierte Soldaten
