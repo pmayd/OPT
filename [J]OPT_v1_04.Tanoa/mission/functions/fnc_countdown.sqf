@@ -19,9 +19,6 @@ if (isMultiplayer && !isServer) exitWith {};
 // Waffenruhe abgelaufen?
 if !GVARMAIN(missionStarted) exitWith {diag_log format["OPT LOG: ERROR: opt_countdown.sqf started before missionStarted=true!"]};
 
-// start flag setup (setting owner)
-[] call FUNC(setupFlag);
-
 // calculate first time the dominator (it's needed if assynchrone number of flags are defined)
 [sideUnknown, objNull] call FUNC(setFlagOwner);
 

@@ -53,6 +53,9 @@ if (isServer) then {
 	_log_msg = format["Beginn Rest-Spielzeit: %1 min", (OPT_PLAYTIME - _timeElapsed) / 60];
 	[QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_localEvent;
 
+    // start flag setup (setting owner)
+    [] call FUNC(setupFlag);
+
 	// Beginnt mit dem Counter für die Spielzeit
 	// startet erst, wenn GVAR(missionStarted) = true gesetzt wird
 	[] spawn FUNC(countdown);
@@ -61,6 +64,10 @@ if (isServer) then {
 // CLIENT ONLY
 if (local player) then {
 	waitUntil {GVARMAIN(missionStarted);};
+
+    // start flag setup (setting owner)
+    [] call FUNC(setupFlag);
+
 	// Benachrichtigung über Missionsstart
     [QEGVAR(gui,message), ["Mission", "Mission gestartet", "green"]] call CBA_fnc_localEvent;
 };
