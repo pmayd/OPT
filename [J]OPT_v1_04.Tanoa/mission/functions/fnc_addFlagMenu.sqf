@@ -15,6 +15,9 @@
 *
 */
 #include "script_component.hpp"
+
+if GVARMAIN(missionStarted) exitWith{};
+
 // Mausradmenüeinträge für HL und PL
 if (typeOf player in GVARMAIN(officer)) then {
     player addAction [
