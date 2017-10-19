@@ -17,6 +17,17 @@
 /* BY JAMES */
 // Variablen opt_csat_flags und opt_nato_flags werden durch die HL & PL von NATO und CSAT in der Warmup-Phase am Kartenboard ausgewaehlt
 // siehe mission\functions\fnc_chooseFlag für Details
+
+// fallback if no flag was chosen -> random war!
+if (count GVARMAIN(nato_flags) == 0) then { 
+    GVARMAIN(nato_flags) = selectRandom (allMissionObjects "FlagPole_F" select {_x getVariable "owner" == west});
+};
+
+if (count GVARMAIN(csat_flags) == 0) then { 
+    GVARMAIN(csat_flags) = selectRandom (allMissionObjects "FlagPole_F" select {_x getVariable "owner" == east});
+};
+
+
 if (isServer) then {
     {
         // erzeuge fuer jede gefundene Flagge einen Marker auf der Karte
