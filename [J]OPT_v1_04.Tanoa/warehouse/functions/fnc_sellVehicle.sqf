@@ -35,7 +35,7 @@ private _selectedVehicle = (GVAR(vehiclesToSell) select _index) select 0;
 private _selectionText = _listbox_vehicle lbText _index;
 private _unitCost = parseNumber (_listbox_price lbText _index);
 
-[QEGVAR(log,updateBudget), [playerSide, _unitCost, "+"]] call CBA_fnc_serverEvent;
+[QEGVAR(common,updateBudget), [player getVariable QGVARMAIN(playerSide), _unitCost, "+"]] call CBA_fnc_serverEvent;
 deleteVehicle _selectedVehicle;
 
 private _txt = format["%1 für %2 € verkauft.", _selectionText, _unitCost];

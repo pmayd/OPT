@@ -25,7 +25,7 @@ if (typeOf player in GVARMAIN(officer)) then {
         true, 
         true, 
         "", 
-        format["%1", !GVARMAIN(missionStarted)]
+        format["!%1", QGVARMAIN(missionStarted)]
     ];
 
     // inform player

@@ -4,7 +4,7 @@
 LOG_1("%1 --- opt_mission_fnc_postInit started",diag_ticktime);
 
 // store playerSide for logs and other functions
-player setVariable [QGVAR(playerSide), playerSide, true];
+player setVariable [QGVARMAIN(playerSide), playerSide, true];
 
 // checking for failed player init
 if (isMultiplayer && !isServer) then {	// only on dedicated environment

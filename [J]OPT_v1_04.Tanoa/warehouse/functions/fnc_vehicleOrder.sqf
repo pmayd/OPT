@@ -18,7 +18,7 @@
 #define IDC_CTRL_VEHICLE_LIST 20100
 #define IDC_CTRL_PRICE_LIST 20101
 
-private _side = playerSide;
+private _side = player getVariable QGVARMAIN(playerSide);
 
 params [
     ["_type", "", ["s"], 1]

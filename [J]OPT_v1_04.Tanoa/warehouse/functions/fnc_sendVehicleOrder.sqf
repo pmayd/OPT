@@ -34,7 +34,7 @@ if (_selectionText == "") exitWith {};
 private _unitType = _unitRecord select 0;
 private _unitCost = _unitRecord select 1;
 
-private _side_Budget = if (playerSide == west) then {GVARMAIN(nato_budget)} else {GVARMAIN(csat_budget)};
+private _side_Budget = if (player getVariable QGVARMAIN(playerSide) == west) then {GVARMAIN(nato_budget)} else {GVARMAIN(csat_budget)};
 
 private _displayName = getText (configFile >> "CfgVehicles" >> _unitType >> "displayName");
 
@@ -53,7 +53,7 @@ if (count _empty_pos == 0) exitWith {
 	[QEGVAR(gui,message), ["Platz unzureichend", _txt, "red"]] call CBA_fnc_localEvent;
 };
 
-[QEGVAR(log,updateBudget), [playerSide, _unitCost, "-"]] call CBA_fnc_serverEvent;
+[QEGVAR(common,updateBudget), [player getVariable QGVARMAIN(playerSide), _unitCost, "-"]] call CBA_fnc_serverEvent;
 [QGVAR(spawnVehicle), [_unitType, _spawnPos]] call CBA_fnc_serverEvent;
 
 private _txt = format["%1 geliefert.",_displayName];
