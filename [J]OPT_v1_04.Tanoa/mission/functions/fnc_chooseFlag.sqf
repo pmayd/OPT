@@ -24,7 +24,7 @@ private _flagMarker = [];
                 _flagMarker pushBack _marker;
             };
 
-            if (_x in GVARMAIN(opt_csat_flags)) then {
+            if (_x in GVARMAIN(csat_flags)) then {
                 _markerName = format["marker_active_flag"];
                 _marker = createMarkerLocal [_markerName, getPos _x];
                 _marker setMarkerTypeLocal "selector_selectedMission";

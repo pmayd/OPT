@@ -55,8 +55,7 @@ if (isServer) then {
 
 	// Beginnt mit dem Counter für die Spielzeit
 	// startet erst, wenn GVAR(missionStarted) = true gesetzt wird
-    // TODO: einbinden in neue Version
-	execVM "common\server\opt_countdown.sqf";
+	[] spawn FUNC(countdown);
 };
 
 // CLIENT ONLY
