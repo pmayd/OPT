@@ -19,9 +19,6 @@ if (isMultiplayer && !isServer) exitWith {};
 // Waffenruhe abgelaufen?
 if !GVARMAIN(missionStarted) exitWith {diag_log format["OPT LOG: ERROR: opt_countdown.sqf started before missionStarted=true!"]};
 
-// calculate first time the dominator (it's needed if assynchrone number of flags are defined)
-[sideUnknown, objNull] call FUNC(setFlagOwner);
-
 // Logge und übertrage Punktestand alle 60 Sekunden, solange Spiel noch läuft
 while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 &&  GVARMAIN(nato_win) == 0 && GVARMAIN(draw) == 0 && (OPT_PLAYTIME - _timeElapsed) > 0)} do {
 

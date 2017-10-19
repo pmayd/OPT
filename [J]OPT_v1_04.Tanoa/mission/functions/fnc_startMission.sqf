@@ -56,6 +56,9 @@ if (isServer) then {
     // start flag setup (setting owner)
     [] call FUNC(setupFlag);
 
+    // calculate first time the dominator (it's needed if assynchrone number of flags are defined)
+    [sideUnknown, objNull] call FUNC(setFlagOwner);
+
 	// Beginnt mit dem Counter für die Spielzeit
 	// startet erst, wenn GVAR(missionStarted) = true gesetzt wird
 	[] spawn FUNC(countdown);
@@ -64,9 +67,6 @@ if (isServer) then {
 // CLIENT ONLY
 if (local player) then {
 	waitUntil {GVARMAIN(missionStarted);};
-
-    // start flag setup (setting owner)
-    [] call FUNC(setupFlag);
 
 	// Benachrichtigung über Missionsstart
     [QEGVAR(gui,message), ["Mission", "Mission gestartet", "green"]] call CBA_fnc_localEvent;

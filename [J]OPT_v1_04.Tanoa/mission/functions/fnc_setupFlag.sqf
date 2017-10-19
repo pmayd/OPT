@@ -59,15 +59,20 @@ Fuer jede Flagge in einem Sektor: unverwundbar, Logistik-Script aus
 Sowie Actionmeneintrag fuer Spieler
 */
 {
-    _x addAction [
-        'Flagge ziehen' call XRedText, 	// Anzeigetext
-        {[_this select 0, _this select 1] call FUNC(captureFlag);}, 	// Skript
-        [], 														// Parameter fr Skript
-        1, 															// priority
-        true, 													    // showWindow
-        true,														// hideOnUse 
-        "",															// shortcut
-        format['((_target distance player) < 5) and vehicle player == player and %1 and (OPT_PLAYTIME - (serverTime - %2)) > 0 and (playerSide != (_target getVariable ["owner", sideUnknown]))', QGVARMAIN(missionStarted), QGVAR(startTime)] // Flagge kann nur nach Missionsstart, in 5 m Radius, ausserhalb eines Fahrzeugs und in Restspielzeit gezogen werden und nur von der anderen Seite
-    ];
+    [QEGVAR(common,addAction), 
+        [
+            _x, 
+            [
+                'Flagge ziehen' call XRedText, 	// Anzeigetext
+                {[_this select 0, _this select 1] call FUNC(captureFlag);}, 	// Skript
+                [], 														// Parameter fr Skript
+                1, 															// priority
+                true, 													    // showWindow
+                true,														// hideOnUse 
+                "",															// shortcut
+                format['((_target distance player) < 5) and vehicle player == player and %1 and (OPT_PLAYTIME - (serverTime - %2)) > 0 and (playerSide != (_target getVariable ["owner", sideUnknown]))', QGVARMAIN(missionStarted), QGVAR(startTime)] // Flagge kann nur nach Missionsstart, in 5 m Radius, ausserhalb eines Fahrzeugs und in Restspielzeit gezogen werden und nur von der anderen Seite
+            ]
+        ]
+    ] call CBA_fnc_globalEvent;
     _x allowDamage false; 						                    // Flagge kann nicht beschdigt werden
 } foreach (GVARMAIN(csat_flags) + GVARMAIN(nato_flags));
