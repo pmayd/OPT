@@ -19,7 +19,7 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(gui) {
         init = QUOTE(call compile preProcessFileLineNumbers 'gui\XEH_preInit.sqf');
     };
-     class GVARMAIN(hud) {
+    class GVARMAIN(hud) {
         init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_preInit.sqf');
     };
     class GVARMAIN(log) {
@@ -34,33 +34,48 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(ranking) {
         init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_preInit.sqf');
     };
-    class GVARMAIN(warehouse) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_preInit.sqf');
-    };
     class GVARMAIN(sectorcontrol) {
         init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_preInit.sqf');
     };
     class GVARMAIN(tfar) {
         init = QUOTE(call compile preProcessFileLineNumbers 'tfar\XEH_preInit.sqf');
     };
+    class GVARMAIN(warehouse) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_preInit.sqf');
+    };
 
 };
 
 class Extended_PostInit_EventHandlers {
+    class GVARMAIN(common) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'common\XEH_PostInit.sqf');
+    };
     class GVARMAIN(database) {
         serverInit = QUOTE(call compile preprocessFileLineNumbers 'database\XEH_postInit.sqf');
+    };
+    class GVARMAIN(gui) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'gui\XEH_preInit.sqf');
     };
     class GVARMAIN(hud) {
         init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_PostInit.sqf');
     };
+    class GVARMAIN(log) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'log\XEH_preInit.sqf');
+    };
     class GVARMAIN(mission) {
         init = QUOTE(call compile preProcessFileLineNumbers 'mission\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(ranking) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_preInit.sqf');
     };
     class GVARMAIN(sectorcontrol) {
         init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_PostInit.sqf');
     };
     class GVARMAIN(tfar) {
         init = QUOTE(call compile preProcessFileLineNumbers 'tfar\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(warehouse) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_PostInit.sqf');
     };
 
 };

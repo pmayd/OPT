@@ -81,3 +81,23 @@ player addEventHandler ["GetInMan", {
     };
 
 }];
+
+// EH entfernt alle Funkgeräte einer Leiche aus dem Inventar/Weste/Rucksack
+player addEventHandler ["Killed", {
+    params ["_unit", "_killer", "_instigator", "_effects"];
+
+    // Funkgeräte löschen
+    _inventory = (assignedItems _unit) + (items _unit);
+    if ((backpack _unit find "TFAR_" == 0) or (backpack _unit find "tf_" == 0)) then {
+        removeBackpack _unit;
+    };
+
+    {
+        if ((_x find "TFAR_" == 0) or (_x find "tf_" == 0)) then {
+            
+            _unit unassignItem _x;
+            _unit removeItem _x;
+        };
+    } foreach _inventory;
+
+}];

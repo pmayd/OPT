@@ -11,6 +11,11 @@ GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
         [] call FUNC(initPlayerEH); // lädt alle EH 
     };
 
+    if (isServer) then {
+        //Function that adds dynamic groups to the mission as seen in End Game
+        ["Initialize"] call BIS_fnc_dynamicGroups;
+    };
+
     [] spawn FUNC(startMission); // Waffenruhe und Missionsstart, für Server und Client
 
 }];

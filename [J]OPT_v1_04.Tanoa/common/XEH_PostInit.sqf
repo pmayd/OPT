@@ -4,12 +4,3 @@
     this line is commented, otherwise it would disturb the linter.
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
-
-if (isServer) then {
-
-    {
-        _x addMPEventHandler ["killed", {
-            (_this select [0,2]) call FUNC(handleDeadVehicle);
-        }];
-    } forEach vehicles;
-};
