@@ -6,9 +6,8 @@
 */
 
 if (isServer) then {
-
     {
-        _x addMPEventHandler ["killed", {
+        _x addEventHandler ["killed", {
             (_this select [0,2]) call FUNC(handleDeadVehicle);
         }];
     } forEach vehicles;

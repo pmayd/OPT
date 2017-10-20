@@ -38,7 +38,7 @@ if (surfaceIsWater _spawnPos) then {
 };
 
 _vec addEventHandler ["Killed", {
-	_this call EFUNC(warehouse,handleDeadVehicle);
+	_this call FUNC(handleDeadVehicle);
 }];
 
 //datalink-test-eintrag, kallek
