@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2334;
+		nextID=2364;
 	};
 	class Camera
 	{
@@ -36665,7 +36665,7 @@ class Mission
 						};
 					};
 					id=5764;
-					atlOffset=60.779999;
+					atlOffset=0.0042786598;
 				};
 				class Item4
 				{
@@ -43213,7 +43213,7 @@ class Mission
 						};
 					};
 					id=6052;
-					atlOffset=60.779999;
+					atlOffset=0.0056219101;
 				};
 				class Item4
 				{
@@ -45808,7 +45808,7 @@ class Mission
 				};
 			};
 			id=5542;
-			atlOffset=0.0024957657;
+			atlOffset=0.00578022;
 		};
 		class Item8
 		{
