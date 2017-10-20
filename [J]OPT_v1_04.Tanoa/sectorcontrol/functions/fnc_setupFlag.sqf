@@ -30,29 +30,28 @@ if (count GVARMAIN(csat_flags) == 0) then {
 };
 
 
-if (isServer) then {
-    {
-        // erzeuge fuer jede gefundene Flagge einen Marker auf der Karte
-        if (OPT_FLAG_MARKER == 1) then {
-            private _markerName = format["marker_%1_%2", _x, _forEachIndex];
-            private _marker = createMarker [_markerName, getPos _x];
-            _marker setMarkerType "flag_CSAT";
-            _x setVariable ["opt_var_flag_marker", _marker, true];
-        };
 
-    } foreach GVARMAIN(csat_flags);
+{
+    // erzeuge fuer jede gefundene Flagge einen Marker auf der Karte
+    if (OPT_FLAG_MARKER == 1) then {
+        private _markerName = format["marker_%1_%2", _x, _forEachIndex];
+        private _marker = createMarker [_markerName, getPos _x];
+        _marker setMarkerType "flag_CSAT";
+        _x setVariable ["opt_var_flag_marker", _marker, true];
+    };
 
-    {   
-        // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
-        if (OPT_FLAG_MARKER == 1) then {
-            private _markerName = format["marker_%1_%2", _x, _forEachIndex];
-            private _marker = createMarker [_markerName, getPos _x];
-            _marker setMarkerType "flag_NATO";
-            _x setVariable ["opt_var_flag_marker", _marker, true];
-        };
+} foreach GVARMAIN(csat_flags);
 
-    } foreach GVARMAIN(nato_flags);
-};
+{   
+    // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
+    if (OPT_FLAG_MARKER == 1) then {
+        private _markerName = format["marker_%1_%2", _x, _forEachIndex];
+        private _marker = createMarker [_markerName, getPos _x];
+        _marker setMarkerType "flag_NATO";
+        _x setVariable ["opt_var_flag_marker", _marker, true];
+    };
+
+} foreach GVARMAIN(nato_flags);
 
 /*
 Fuer jede Flagge in einem Sektor: unverwundbar, Logistik-Script aus
@@ -70,7 +69,7 @@ Sowie Actionmeneintrag fuer Spieler
                 true, 													    // showWindow
                 true,														// hideOnUse 
                 "",															// shortcut
-                format['((_target distance player) < 5) and vehicle player == player and %1 and (OPT_PLAYTIME - (serverTime - %2)) > 0 and (playerSide != (_target getVariable ["owner", sideUnknown]))', QGVARMAIN(missionStarted), QGVAR(startTime)] // Flagge kann nur nach Missionsstart, in 5 m Radius, ausserhalb eines Fahrzeugs und in Restspielzeit gezogen werden und nur von der anderen Seite
+                format['((_target distance player) < 5) and vehicle player == player and %1 and (OPT_PLAYTIME - (serverTime - %2)) > 0 and (playerSide != (_target getVariable ["owner", sideUnknown]))', QGVARMAIN(missionStarted), QEGVAR(mission,startTime)] // Flagge kann nur nach Missionsstart, in 5 m Radius, ausserhalb eines Fahrzeugs und in Restspielzeit gezogen werden und nur von der anderen Seite
             ]
         ]
     ] call CBA_fnc_globalEventJIP; // jip is important, otherwise, clients which join later wont have the menu!

@@ -53,12 +53,6 @@ if (isServer) then {
 	_log_msg = format["Beginn Rest-Spielzeit: %1 min", (OPT_PLAYTIME - _timeElapsed) / 60];
 	[QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_localEvent;
 
-    // start flag setup (setting owner)
-    [] call FUNC(setupFlag);
-
-    // calculate first time the dominator (it's needed if assynchrone number of flags are defined)
-    [sideUnknown, objNull] call FUNC(setFlagOwner);
-
 	// Beginnt mit dem Counter für die Spielzeit
 	// startet erst, wenn GVAR(missionStarted) = true gesetzt wird
 	[] spawn FUNC(countdown);

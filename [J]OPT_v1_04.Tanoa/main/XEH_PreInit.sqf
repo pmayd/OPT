@@ -10,6 +10,5 @@ ADDON = true;
 [] call FUNC(setup_classnames);
 
 if (isServer) then {
-    [] call FUNC(setup_flagPositions);
     [] call FUNC(setup_publicVariables);
 };

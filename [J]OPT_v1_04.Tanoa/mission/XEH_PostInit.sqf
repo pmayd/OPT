@@ -8,7 +8,6 @@ GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     */
     if (local player) then {
         [] call FUNC(postInit); // führt alle wichtigen Skripte aus
-        [] call FUNC(addFlagMenu); // fügt HL und PL Menü für Flaggenwahl hinzu
         [] call FUNC(initPlayerEH); // lädt alle EH 
     };
 

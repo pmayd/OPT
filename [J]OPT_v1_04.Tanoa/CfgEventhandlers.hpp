@@ -37,6 +37,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(warehouse) {
         init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_preInit.sqf');
     };
+    class GVARMAIN(sectorcontrol) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_preInit.sqf');
+    };
 
 };
 
@@ -49,6 +52,9 @@ class Extended_PostInit_EventHandlers {
     };
     class GVARMAIN(mission) {
         init = QUOTE(call compile preProcessFileLineNumbers 'mission\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(sectorcontrol) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_PostInit.sqf');
     };
 
 };
