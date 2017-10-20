@@ -28,21 +28,6 @@ if (player isKindOf "OPT_Maintainer" || getPlayerUID player in ["765611979776760
 // EH für Waffencheck
 player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}]; // TODO:
 
-// EH für Aufnahme von Funkgeräten 
-player addEventHandler["Take", {
-    /*
-         unit: Object - Unit to which the event handler is assigned
-        container: Object - The container from which the item was taken (vehicle, box, etc.)
-        item: String - The class name of the taken item
-    */
-    params ["_unit", "_container", "_item"];
-
-    if ((_item find "TFAR_" == 0) or (_item find "tf_" == 0)) then {
-        [] call opt_fnc_tfarFrequencies; // TODO:
-    };
-
-}];
-
 // EH für Positionssperre in Fahrzeugen beim Einsteigen
 player addEventHandler ["GetInMan", {
     /*  

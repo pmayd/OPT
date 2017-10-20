@@ -6,6 +6,9 @@ LOG_1("%1 --- opt_mission_fnc_postInit started",diag_ticktime);
 // store playerSide for logs and other functions
 player setVariable [QGVARMAIN(playerSide), playerSide, true];
 
+// startet das End-Skript. Wartet, bis Ende eintrifft
+//[] execVM "common\client\opt_endMission.sqf"; // TODO:
+
 // checking for failed player init
 if (isMultiplayer && !isServer) then {	// only on dedicated environment
 	true spawn {
