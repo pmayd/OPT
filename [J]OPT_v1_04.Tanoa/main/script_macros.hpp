@@ -1,5 +1,6 @@
 
 
+#include "\a3\editor_f\Data\Scripts\dikCodes.h"
 
 #ifndef EXCLUDE_CBA_MACROS
     #include "\x\cba\addons\main\script_macros_mission.hpp"

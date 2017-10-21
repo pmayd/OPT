@@ -71,7 +71,7 @@ wird in der initServer.sqf aufgerufen
 
 // schreibt eine log Nachricht in die SERVER-RPT
 [QGVAR(write), {
-	params ["_category","_message"];
+	params ["_category", "_message"];
 
 	private _timestemp = [serverTime - EGVAR(mission,startTime)] call CBA_fnc_formatElapsedTime;
 

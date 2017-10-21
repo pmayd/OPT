@@ -11,37 +11,37 @@ class Extended_PreStart_EventHandlers {
 
 class Extended_PreInit_EventHandlers {
     class GVARMAIN(common) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'common\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'common\XEH_PreInit.sqf');
     };
     class GVARMAIN(database) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'database\XEH_preInit.sqf'); //TODO: serverInit?
+        init = QUOTE(call compile preProcessFileLineNumbers 'database\XEH_PreInit.sqf'); //TODO: serverInit?
     };
     class GVARMAIN(gui) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'gui\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'gui\XEH_PreInit.sqf');
     };
     class GVARMAIN(hud) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_PreInit.sqf');
     };
     class GVARMAIN(log) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'log\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'log\XEH_PreInit.sqf');
     };
     class GVARMAIN(main) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'main\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'main\XEH_PreInit.sqf');
     };
     class GVARMAIN(mission) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'mission\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'mission\XEH_PreInit.sqf');
     };
     class GVARMAIN(ranking) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_PreInit.sqf');
     };
     class GVARMAIN(sectorcontrol) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_PreInit.sqf');
     };
     class GVARMAIN(tfar) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'tfar\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'tfar\XEH_PreInit.sqf');
     };
     class GVARMAIN(warehouse) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_PreInit.sqf');
     };
 
 };
@@ -51,22 +51,19 @@ class Extended_PostInit_EventHandlers {
         init = QUOTE(call compile preProcessFileLineNumbers 'common\XEH_PostInit.sqf');
     };
     class GVARMAIN(database) {
-        serverInit = QUOTE(call compile preprocessFileLineNumbers 'database\XEH_postInit.sqf');
-    };
-    class GVARMAIN(gui) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'gui\XEH_preInit.sqf');
+        serverInit = QUOTE(call compile preprocessFileLineNumbers 'database\XEH_PostInit.sqf');
     };
     class GVARMAIN(hud) {
         init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_PostInit.sqf');
     };
     class GVARMAIN(log) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'log\XEH_preInit.sqf');
+        serverinit = QUOTE(call compile preProcessFileLineNumbers 'log\XEH_PostInit.sqf');
     };
     class GVARMAIN(mission) {
         init = QUOTE(call compile preProcessFileLineNumbers 'mission\XEH_PostInit.sqf');
     };
     class GVARMAIN(ranking) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_preInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_PostInit.sqf');
     };
     class GVARMAIN(sectorcontrol) {
         init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_PostInit.sqf');

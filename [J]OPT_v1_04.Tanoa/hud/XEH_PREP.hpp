@@ -1,4 +1,5 @@
 
-PREP(initPlayerEH);
+PREP(toggleHUD);
 PREP(updateHUD);
+PREP(preInit);
 

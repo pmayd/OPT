@@ -14,10 +14,8 @@
 */
 #include "script_component.hpp"
 
-if (isMultiplayer && !isServer) exitWith {};
-
 // Waffenruhe abgelaufen?
-if !GVARMAIN(missionStarted) exitWith {diag_log format["OPT LOG: ERROR: opt_countdown.sqf started before missionStarted=true!"]};
+if !GVARMAIN(missionStarted) exitWith {LOG_1("OPT LOG: ERROR: opt_countdown.sqf started before missionStarted=true!");};
 
 // Logge und übertrage Punktestand alle 60 Sekunden, solange Spiel noch läuft
 while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 &&  GVARMAIN(nato_win) == 0 && GVARMAIN(draw) == 0 && (OPT_PLAYTIME - _timeElapsed) > 0)} do {

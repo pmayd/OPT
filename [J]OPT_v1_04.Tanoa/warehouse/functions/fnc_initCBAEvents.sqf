@@ -14,10 +14,13 @@
 */
 #include "script_component.hpp"
 
-[QGVAR(spawnVehicle), {
+if (isServer) then {        
+    [QGVAR(spawnVehicle), {
 
-    params ["_unitType", "_spawnPos"];
+        params ["_unitType", "_spawnPos"];
 
-    [_unitType, _spawnPos] call FUNC(spawnVehicle);
+        [_unitType, _spawnPos] call FUNC(spawnVehicle);
 
-}] call CBA_fnc_addEventHandler;
+    }] call CBA_fnc_addEventHandler;
+
+};
