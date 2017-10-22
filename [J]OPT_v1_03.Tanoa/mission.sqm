@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11675.951,29.690001,3021.032};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={11702.813,7.9997807,3054.2966};
+		dir[]={-0.60708678,-0.093969136,-0.78906792};
+		up[]={-0.057302266,0.99557567,-0.074479625};
+		aside[]={-0.79257423,3.4255208e-008,0.60978472};
 	};
 };
 binarizationWanted=0;
@@ -62,15 +62,13 @@ addons[]=
 	"opt_a3_vehicles",
 	"A3_Structures_F_Bootcamp_Civ_SportsGrounds",
 	"A3_Supplies_F_Exp_Ammoboxes",
-	"ace_dragging",
-	"ace_map",
 	"tfar_core"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=25;
+		items=23;
 		class Item0
 		{
 			className="A3_Structures_F_Exp";
@@ -218,20 +216,6 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item22
-		{
-			className="ace_dragging";
-			name="ACE3 - Dragging";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item23
-		{
-			className="ace_map";
-			name="ACE3 - Map";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item24
 		{
 			className="tfar_core";
 			name="TFAR - Core";
@@ -501,7 +485,7 @@ class Mission
 		briefingName="Operation Pandora Trigger";
 		resistanceWest=0;
 		timeOfChanges=4592.6982;
-		startWeather=0.14842422;
+		startWeather=0;
 		startWind=0.017112894;
 		startWindDir=210.55499;
 		startLightnings=0.00016946725;
@@ -517,9 +501,10 @@ class Mission
 		windForced=1;
 		year=2017;
 		month=8;
-		day=15;
-		hour=16;
-		startFogBase=-999.76666;
+		day=18;
+		hour=4;
+		minute=0;
+		startFogBase=-999.86664;
 		forecastFogBase=-1000;
 		startFogDecay=0;
 		forecastFogDecay=0;
@@ -7891,7 +7876,7 @@ class Mission
 									};
 									id=4280;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=33.926819;
+									atlOffset=30.897638;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8197,7 +8182,7 @@ class Mission
 									};
 									id=5136;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.612356;
+									atlOffset=29.542013;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8645,7 +8630,7 @@ class Mission
 									};
 									id=5143;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=36.918907;
+									atlOffset=33.902153;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9055,7 +9040,7 @@ class Mission
 									};
 									id=5153;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=30.438807;
+									atlOffset=27.899456;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9626,7 +9611,7 @@ class Mission
 									};
 									id=5166;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.29504;
+									atlOffset=27.951036;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9667,7 +9652,7 @@ class Mission
 									};
 									id=5167;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=24.732525;
+									atlOffset=24.679155;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10197,7 +10182,7 @@ class Mission
 									};
 									id=5179;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.090622;
+									atlOffset=28.473272;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10238,7 +10223,7 @@ class Mission
 									};
 									id=5180;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=25.728947;
+									atlOffset=24.073643;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -30051,14 +30036,14 @@ class Mission
 						angles[]={0,4.0639057,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4522;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=5.435832;
+					atlOffset=0.22420263;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30140,7 +30125,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.9517891;
+					atlOffset=0.25820208;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30174,14 +30159,14 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.189431;
+					atlOffset=0.063271761;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30215,14 +30200,14 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=4.8953876;
+					atlOffset=0.086225986;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30256,14 +30241,14 @@ class Mission
 						angles[]={0,0.90690982,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4529;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=5.4496775;
+					atlOffset=0.10612249;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30297,14 +30282,14 @@ class Mission
 						angles[]={0,0.91099441,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4530;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=6.3986673;
+					atlOffset=0.10386753;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30584,14 +30569,14 @@ class Mission
 						angles[]={0,4.0577326,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4520;
 					type="Land_CrashBarrier_01_end_L_F";
-					atlOffset=7.0355263;
+					atlOffset=0.22318292;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30871,14 +30856,14 @@ class Mission
 						angles[]={0.00057252444,0.93034989,0.019338606};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4531;
 					type="Land_CrashBarrier_01_end_R_F";
-					atlOffset=6.9137721;
+					atlOffset=0.12136054;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -31908,7 +31893,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={9450,45.800842,7574};
+				position[]={10535,161.94347,10575};
 				angles[]={0,0.70842916,0};
 			};
 			side="Empty";
@@ -31927,7 +31912,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11057,119.58415,9847};
+				position[]={12382,147.29076,11245};
 				angles[]={0,0.32203069,0};
 			};
 			side="Empty";
@@ -31940,7 +31925,6 @@ class Mission
 			};
 			id=5374;
 			type="Flag_NATO_F";
-			atlOffset=-7.6293945e-006;
 		};
 		class Item5
 		{
@@ -39218,7 +39202,6 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -39227,7 +39210,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.14878201;
+					atlOffset=1.1390946;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39457,7 +39440,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3484077;
+			atlOffset=2.3513131;
 		};
 		class Item10
 		{
