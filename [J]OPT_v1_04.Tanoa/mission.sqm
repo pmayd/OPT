@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2394;
+		nextID=2454;
 	};
 	class Camera
 	{
@@ -255,13 +255,24 @@ class AddonsMetaData
 		};
 	};
 };
+class DynamicSimulation
+{
+	enable=0;
+};
 randomSeed=12661371;
 class ScenarioData
 {
 	author="James";
+	respawnDialog=0;
 	disabledAI=1;
+	respawn=3;
+	respawnDelay=10;
+	class Header
+	{
+		gameType="SC";
+	};
 	wreckManagerMode=1;
-	wreckLimit=1;
+	wreckLimit=10;
 	wreckRemovalMinTime=300;
 	wreckRemovalMaxTime=600;
 	corpseManagerMode=1;
@@ -287,6 +298,24 @@ class CustomAttributes
 						type[]=
 						{
 							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Counter";
+							};
 						};
 					};
 				};
@@ -39180,6 +39209,7 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -39188,7 +39218,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390946;
+					atlOffset=0.14878201;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39418,7 +39448,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3513131;
+			atlOffset=2.3484077;
 		};
 		class Item7
 		{
