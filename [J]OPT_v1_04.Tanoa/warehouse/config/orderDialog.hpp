@@ -2,6 +2,7 @@
 #define COLOR_BUTTON_BACKGROUND {0,0,0,0.7}
 #define COLOR_BUTTON_ACTIVE {0.2,0.8,0.2,0.7}
 #define COLOR_LISTBOX_BACKGROUND {0,0,0,0.85}
+#define FONTSIZE (0.022 / (getResolution select 5))  // dynamische Anpassung je nach UI Schriftgröße
 
 
 class GVAR(dlg_order)
@@ -22,6 +23,15 @@ class GVAR(dlg_order)
 			h = 0.584 * safezoneH;
 			colorBackground[] = {0,0,0,0.5};
 		};
+        class player_flag: RscPicture
+		{
+			idc = 20002;
+			x = 0.381406 * safezoneW + safezoneX;
+			y = 0.26 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.055 * safezoneH;
+			colorBackground[] = {0,0,0,0.5};
+		};
 	};
 
 	class controls
@@ -31,21 +41,23 @@ class GVAR(dlg_order)
 			idc = 20100;
 			text = "Fahrzeugliste";
 			x = 0.381406 * safezoneW + safezoneX;
-			y = 0.38 * safezoneH + safezoneY;
-			w = 0.234875 * safezoneW;
-			h = 0.407 * safezoneH;
+			y = 0.32 * safezoneH + safezoneY;
+			w = 0.23 * safezoneW;
+			h = 0.467 * safezoneH;
 			colorBackground[] = COLOR_LISTBOX_BACKGROUND;
-			onLBDblClick =  __EVAL(format["[] call %1", QFUNC(sendVehicleOrder)]);
+			onLBSelChanged =  __EVAL(format["[] call %1", QFUNC(showVehicleInfo)]);
+            sizeEx = FONTSIZE;
 		};
-		class order_box_fahrzeuginfo: RscEdit
+		class order_box_fahrzeuginfo: RscStructuredText
 		{
 			idc = 20101;
 			text = "Fahrzeuginfo";
-			x = 0.621406 * safezoneW + safezoneX;
-			y = 0.38 * safezoneH + safezoneY;
-			w = 0.08575 * safezoneW;
-			h = 0.407 * safezoneH;
+			x = 0.611 * safezoneW + safezoneX;
+			y = 0.32 * safezoneH + safezoneY;
+			w = 0.092 * safezoneW;
+			h = 0.467 * safezoneH;
 			colorBackground[] = COLOR_LISTBOX_BACKGROUND;
+            sizeEx = FONTSIZE * 0.8;
 		};
 		class order_budget: RscText_Header
 		{
@@ -56,6 +68,7 @@ class GVAR(dlg_order)
 			y = 0.798 * safezoneH + safezoneY;
 			w = 0.2515625 * safezoneW;
 			h = 0.033 * safezoneH;
+            sizeEx = FONTSIZE;
 		};
 		class order_button_bestellen: RscButton_OPT
 		{
@@ -71,6 +84,7 @@ class GVAR(dlg_order)
 			colorActive[] = COLOR_BUTTON_ACTIVE;
 			tooltip = "Ausgewähltes Fahrzeug bestellen";
 			action = __EVAL(format["[] call %1", QFUNC(sendVehicleOrder)]);
+            sizeEx = FONTSIZE;
 		};
 		class order_button_schliessen: RscButton_OPT
 		{
@@ -86,6 +100,7 @@ class GVAR(dlg_order)
 			colorActive[] = {1,0,0,0.7};
 			tooltip = "Dialog schliessen";
 			action = "closeDialog 0";
+            sizeEx = FONTSIZE;
 		};
 		#ifdef __ORDER_CAN_SELL__
 		class order_button_verkaufen: RscButton_OPT
@@ -102,6 +117,7 @@ class GVAR(dlg_order)
 			colorActive[] = {1,0,0,0.7};
 			tooltip = "Verkaufe Fahrzeug auf dem Bestell-Pad";
 			action = __EVAL(format["[] call %1", QFUNC(sellVehicle)]); // TODO:
+            sizeEx = FONTSIZE;
 		};
 		#endif
 	};

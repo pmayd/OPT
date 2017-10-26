@@ -113,6 +113,7 @@
 #define Color_MainCapt			{0.543, 0.5742, 0.4102, 1.0}
 #define Color_Bleedout 			{0.66, 0, 0, 0.8}
 #define Color_Black_Alpha		{0, 0, 0, 0.85}
+#define Color_Scrollbar         {0, 0.65, 0.96, 0.65}
 
 //Colors background
 #define CA_UI_background_2 				{0.6, 0.6, 0.6, 0.4}			// hellgrau transparent
@@ -395,6 +396,7 @@ class RscActiveText {
 
 class RscStructuredText {
 	idc = -1;
+    deletable = 0;
 	type = CT_STRUCTURED_TEXT;
 	style = ST_LEFT;
 	colorBackground[] = {1,1,1,1};
@@ -403,7 +405,8 @@ class RscStructuredText {
 	h = 0.035; //h = 0.1;	
 	text = "";
 	//size = TextSize_IGUI_normal;
-	size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+    size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	colorText[] = Color_Black;
 	class Attributes {
 		font = DEFAULTFONT;
@@ -412,7 +415,6 @@ class RscStructuredText {
 		valign = "middle";
 		shadow = true;
 		shadowColor = "#000000";
-		size = "2.25";
 	};
 };
 
@@ -480,15 +482,15 @@ class RscListBox_OPT {
 	colorSelectBackground[] = {0.95, 0.95, 0.95, 1};
 	//colorSelectBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 	colorSelectBackground2[] = {1, 1, 1, 0.5};
-	colorScrollbar[] = {1, 0, 0, 0};
+	colorScrollbar[] = Color_Scrollbar;
 	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
 	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 	wholeHeight = 0.45;
-	rowHeight = 0.04;
+	rowHeight = 0.07;
 	color[] = {0.7, 0.7, 0.7, 1};
 	colorActive[] = {0,0,0,1};
 	colorDisabled[] = {0,0,0,0.3};
-    colorPicture[] = {1,1,1,1};
+    colorPicture[] = {1,1,1,0.9};
     colorPictureSelected[] = {1,1,1,1};
     colorPictudeDisabled[] = {1,1,1,0.25};
     tooltipColorText[] = {1,1,1,1};
@@ -505,11 +507,11 @@ class RscListBox_OPT {
 	period = 1.2;
 	
     class ListScrollBar {
-        color[] = {1,1,1,1};
+        color[] = Color_Scrollbar;
         autoScrollEnabled = 1;
 	};
 	class ScrollBar {
-		color[] = {1, 1, 1, 1};
+		color[] = Color_Scrollbar;
 		colorActive[] = {1, 1, 1, 1};
 		colorDisabled[] = {1, 1, 1, 0.3};
 		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
@@ -526,7 +528,7 @@ class UIComboBox : RscListBox {
 	sizeEx = 0.025;
 	wholeHeight = 0.3;
 	class ComboScrollBar : ScrollBar {
-	  color[] = {1,1,1,0.6};
+	  color[] = Color_Scrollbar;
 	  colorActive[] = {1,1,1,1};
 	  colorDisabled[] = {1,1,1,0.3};
 	  thumb = "#(argb,8,8,3)color(1,1,1,1)";

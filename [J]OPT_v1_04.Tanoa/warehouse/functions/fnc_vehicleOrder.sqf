@@ -15,6 +15,7 @@
 #include "script_component.hpp"
 
 #define IDD_DLG_ORDER 20000
+#define IDC_PLAYER_FLAG 20002
 #define IDC_CTRL_VEHICLE_LIST 20100
 #define IDC_CTRL_PRICE_LIST 20101
 
@@ -72,6 +73,7 @@ private _pool = switch (GVAR(vehicleType)) do {
 
 // show onlly objects with a price greater than 0 €
 GVAR(orderDialogObjects) = _pool select {_x select 1 > 0};
+GVAR(orderDialogObjects) sort true;
 
 // player sideChat format ["%1", GVAR(orderDialogObjects)];
 createDialog "opt_warehouse_dlg_order";
@@ -79,21 +81,38 @@ disableSerialization;
 
 private _display = findDisplay IDD_DLG_ORDER;
 private _listbox_vehicles = _display displayCtrl IDC_CTRL_VEHICLE_LIST;
-private _editbox_info = _display displayCtrl IDC_CTRL_PRICE_LIST;
 private _budget = _display displayCtrl 20102;
 private _order = _display displayCtrl 20002;
 private _close = _display displayCtrl 20003;
 private _sell = _display displayCtrl 20004;
+private _rscPicture = _display displayCtrl IDC_PLAYER_FLAG;
 
 [_budget] call EFUNC(common,renderBudget);
 
-{
-	_displayName = getText (configFile >> "CfgVehicles" >> (_x select 0) >> "displayName");
+// fill vehicle listbox with pictures and vehicle names
+{   
+	_class = _x select 0;
+    _displayName = getText (configFile >> "CfgVehicles" >> _class >> "displayName");
 	_listbox_vehicles lbAdd format ["%1", _displayName];
-    _picture = (getText(configFile >> "cfgVehicles" >> _x >> "picture"));
+    _listbox_vehicles lbSetData [_forEachIndex, _class];
+    _picture = "";
+    if (getText(configFile >> "cfgVehicles" >> _class >> "picture") find ".paa" != -1) then {
+        _picture = getText (configFile >> "cfgVehicles" >> _class >> "picture");
+    } else {
+        _picture = getText (configFile >> "cfgVehicles" >> _class >> "editorPreview");
+    };
     _listbox_vehicles lbSetPicture [_forEachIndex, _picture];
-	_editbox_info ctrlSetStructuredText ([_x] call FUNC(getVehicleInfo));
 } forEach GVAR(orderDialogObjects);
+
+// set flag paa 
+switch (player getVariable QGVARMAIN(playerSide)) do {
+    case west: {
+        _rscPicture ctrlSetText "\A3\Data_F\Flags\Flag_NATO_CO.paa";
+    };
+    case east: {
+        _rscPicture ctrlSetText "\A3\Data_F\Flags\Flag_CSAT_CO.paa";
+    };   
+};
 
 // deaktiviere Verkaufenbutton für alle Dialoge außer "sell"
 if (count GVAR(orderDialogObjects) != 0) then {
