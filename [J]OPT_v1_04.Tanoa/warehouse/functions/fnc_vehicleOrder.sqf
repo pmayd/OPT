@@ -72,7 +72,7 @@ private _pool = switch (GVAR(vehicleType)) do {
 
 // show onlly objects with a price greater than 0 €
 _pool = _pool select {_x select 1 > 0};
-GVAR(orderDialogObjects) = [_pool, 1] call CBA_fnc_sortNestedArray;
+GVAR(orderDialogObjects) = [_pool, 1] call CBA_fnc_sortNestedArray; // billigste zuerst
 
 // player sideChat format ["%1", GVAR(orderDialogObjects)];
 createDialog "opt_warehouse_dlg_order";
@@ -139,7 +139,7 @@ if (count GVAR(orderDialogObjects) != 0) then {
 	} foreach _objs;
 
     // show onlly objects with a price greater than 0 €
-    GVAR(vehiclesToSell) = [_pool, 1] call CBA_fnc_sortNestedArray;
+    GVAR(vehiclesToSell) = [_pool, 1, false] call CBA_fnc_sortNestedArray; // teuerste zuerst
 	{
 		_class = typeOf (_x select 0);
         _displayName = getText (configFile >> "CfgVehicles" >> _class >> "displayName");
