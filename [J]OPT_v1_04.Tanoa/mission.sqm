@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2454;
+		nextID=2484;
 	};
 	class Camera
 	{
-		pos[]={11652.074,8.2467833,3079.3838};
-		dir[]={-0.84316158,-0.34441856,0.41287252};
-		up[]={-0.30932778,0.93881816,0.15146953};
-		aside[]={0.43978003,8.8999514e-008,0.89811289};
+		pos[]={11689.837,9.5408669,3067.9343};
+		dir[]={-0.69145644,-0.55643678,-0.46073246};
+		up[]={-0.46305877,0.83088875,-0.30854604};
+		aside[]={-0.55450344,1.2409873e-007,0.8321864};
 	};
 };
 binarizationWanted=0;
@@ -7944,7 +7944,7 @@ class Mission
 									};
 									id=4280;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=33.926819;
+									atlOffset=30.897638;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8250,7 +8250,7 @@ class Mission
 									};
 									id=5136;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.612356;
+									atlOffset=29.542013;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8698,7 +8698,7 @@ class Mission
 									};
 									id=5143;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=36.918907;
+									atlOffset=33.902153;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9108,7 +9108,7 @@ class Mission
 									};
 									id=5153;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=30.438807;
+									atlOffset=27.899456;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9679,7 +9679,7 @@ class Mission
 									};
 									id=5166;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.29504;
+									atlOffset=27.951036;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9720,7 +9720,7 @@ class Mission
 									};
 									id=5167;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=24.732525;
+									atlOffset=24.679155;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10250,7 +10250,7 @@ class Mission
 									};
 									id=5179;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.090622;
+									atlOffset=28.473272;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10291,7 +10291,7 @@ class Mission
 									};
 									id=5180;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=25.728947;
+									atlOffset=24.073643;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -30104,14 +30104,14 @@ class Mission
 						angles[]={0,4.0639057,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4522;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=5.435832;
+					atlOffset=0.22420263;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30193,7 +30193,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.9517891;
+					atlOffset=0.25820208;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30227,14 +30227,14 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.189431;
+					atlOffset=0.063271761;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30268,14 +30268,14 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=4.8953876;
+					atlOffset=0.086225986;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30309,14 +30309,14 @@ class Mission
 						angles[]={0,0.90690982,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4529;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=5.4496775;
+					atlOffset=0.10612249;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30350,14 +30350,14 @@ class Mission
 						angles[]={0,0.91099441,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4530;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=6.3986673;
+					atlOffset=0.10386753;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30637,14 +30637,14 @@ class Mission
 						angles[]={0,4.0577326,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4520;
 					type="Land_CrashBarrier_01_end_L_F";
-					atlOffset=7.0355263;
+					atlOffset=0.22318292;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30924,14 +30924,14 @@ class Mission
 						angles[]={0.00057252444,0.93034989,0.019338606};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4531;
 					type="Land_CrashBarrier_01_end_R_F";
-					atlOffset=6.9137721;
+					atlOffset=0.12136054;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -37889,7 +37889,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this addAction['Verkaufen' call XRedText,{['sell'] call opt_warehouse_fnc_vehicleOrder;},[]];}";
+								init="call{this setVariable [""opt_warehouse_data"", [""Verkaufen"", ""sell"", east]]}";
 								disableSimulation=1;
 							};
 							id=5409;
@@ -37950,7 +37950,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Fahrzeuge' call XRedText,{['vehicles'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+								init="call{this setVariable [""opt_warehouse_data"", [""Fahrzeuge"", ""vehicles"", east]]}";
 								disableSimulation=1;
 							};
 							id=5422;
@@ -38011,7 +38011,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Panzer' call XRedText,{['armored'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+								init="call{this setVariable [""opt_warehouse_data"", [""Panzer"", ""armored"", east]]}";
 								disableSimulation=1;
 							};
 							id=5423;
@@ -38053,7 +38053,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Nachschub' call XRedText,{['supplies'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+								init="call{this setVariable [""opt_warehouse_data"", [""Nachschub"", ""supplies"", east]]}";
 								disableSimulation=1;
 							};
 							id=5424;
@@ -38114,7 +38114,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this addAction['Luftwaffe' call XRedText,{['choppers'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player']; }";
+								init="call{this setVariable [""opt_warehouse_data"", [""Luftwaffe"", ""choppers"", east]]}";
 								disableSimulation=1;
 							};
 							id=5504;
@@ -38175,7 +38175,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Nachschub' call XRedText,{['supplies'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+								init="call{this setVariable [""opt_warehouse_data"", [""Nachschub"", ""supplies"", east]]}";
 								disableSimulation=1;
 							};
 							id=5507;
@@ -39217,7 +39217,6 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -39226,7 +39225,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.14878201;
+					atlOffset=1.1390946;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39456,7 +39455,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3484077;
+			atlOffset=2.3513131;
 		};
 		class Item7
 		{
@@ -43809,20 +43808,20 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2076.9807,14.000725,13309.068};
-								angles[]={0.077179953,2.4741912,0};
+								position[]={2076.981,14.000411,13309.068};
+								angles[]={0.077178456,2.4741962,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this addAction['Verkaufen' call XBlueText,{['sell'] call opt_warehouse_fnc_vehicleOrder;},[]];}";
+								init="call{this setVariable [""opt_warehouse_data"", [""Verkaufen"", ""sell"", west]]}";
 								disableSimulation=1;
 							};
 							id=5544;
 							type="Land_InfoStand_V1_F";
-							atlOffset=-0.0016860962;
+							atlOffset=-0.001999855;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -43871,20 +43870,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2258.8496,14.025403,13428.763};
-								angles[]={0,0.76978517,0};
+								position[]={2258.8501,14.025364,13428.763};
+								angles[]={0,0.76977748,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Ketten-Fahrzeuge' call XBlueText,{['armored'] call opt_warehouse_fnc_vehicleOrder;},[]];";
+								init="call{this setVariable [""opt_warehouse_data"", [""Ketten-Fahrzeuge"", ""armored"", west]]}";
 								disableSimulation=1;
 							};
 							id=5562;
 							type="Land_InfoStand_V1_F";
-							atlOffset=3.9100647e-005;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -43933,20 +43931,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2231.7556,14.024966,13432.316};
-								angles[]={0,2.4796598,0};
+								position[]={2231.7561,14.025364,13432.316};
+								angles[]={0,2.4796591,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Rad-Fahrzeuge' call XBlueText,{['vehicles'] call opt_warehouse_fnc_vehicleOrder;},[]];";
+								init="call{this setVariable [""opt_warehouse_data"", [""Rad-Fahrzeuge"", ""vehicles"", west]]}";
 								disableSimulation=1;
 							};
 							id=5563;
 							type="Land_InfoStand_V1_F";
-							atlOffset=-0.00039768219;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -43995,20 +43992,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2217.1401,14.025019,13418.837};
-								angles[]={0,4.0882587,0};
+								position[]={2217.1399,14.025364,13418.837};
+								angles[]={0,4.0882592,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Nachschub' call XBlueText,{['supplies'] call opt_warehouse_fnc_vehicleOrder;},[]]; ";
+								init="call{this setVariable [""opt_warehouse_data"", [""Nachschub"", ""choppers"", west]]}";
 								disableSimulation=1;
 							};
 							id=5564;
 							type="Land_InfoStand_V1_F";
-							atlOffset=-0.0003452301;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -44057,20 +44053,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2187.7361,14.025865,13394.706};
-								angles[]={0,2.2780905,0};
+								position[]={2187.7361,14.025364,13394.706};
+								angles[]={0,2.278091,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Luft-Fahrzeuge' call XBlueText,{['choppers'] call opt_warehouse_fnc_vehicleOrder;},[]];";
+								init="call{this setVariable [""opt_warehouse_data"", [""Luftwaffe"", ""choppers"", west]]}";
 								disableSimulation=1;
 							};
 							id=5628;
 							type="Land_InfoStand_V1_F";
-							atlOffset=0.00050067902;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -44119,7 +44114,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2127.4846,14.02586,13351.974};
+								position[]={2127.4851,14.025364,13351.974};
 								angles[]={0,2.318059,0};
 							};
 							side="Empty";
@@ -44127,11 +44122,10 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this addAction['Nachschub' call XBlueText,{['supplies'] call opt_warehouse_fnc_vehicleOrder;},[]]; ";
+								init="call{this setVariable [""opt_warehouse_data"", [""Nachschub"", ""supplies"", west]]}";
 							};
 							id=5629;
 							type="Land_InfoStand_V1_F";
-							atlOffset=0.00049591064;
 							class CustomAttributes
 							{
 								class Attribute0

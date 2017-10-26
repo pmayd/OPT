@@ -12,3 +12,17 @@ if (isServer) then {
         }];
     } forEach vehicles;
 };
+
+GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
+    /*  	
+        Executes assigned code after the mission preload screen. Stackable version of onPreloadFinished. 
+    */
+    if (local player) then {
+       
+    };
+
+    if (isServer) then {
+       [] call FUNC(createMenu);
+    };
+
+}];

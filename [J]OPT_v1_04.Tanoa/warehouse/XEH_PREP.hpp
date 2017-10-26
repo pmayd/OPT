@@ -1,4 +1,6 @@
 
+PREP(createMenu);
+PREP(getVehicleInfo);
 PREP(handleDeadVehicle);
 PREP(initCBAEvents);
 PREP(sellVehicle);

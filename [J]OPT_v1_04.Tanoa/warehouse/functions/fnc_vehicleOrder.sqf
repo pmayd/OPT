@@ -78,8 +78,8 @@ createDialog "opt_warehouse_dlg_order";
 disableSerialization;
 
 private _display = findDisplay IDD_DLG_ORDER;
-private _listbox_vehicle = _display displayCtrl IDC_CTRL_VEHICLE_LIST;
-private _listbox_price = _display displayCtrl IDC_CTRL_PRICE_LIST;
+private _listbox_vehicles = _display displayCtrl IDC_CTRL_VEHICLE_LIST;
+private _editbox_info = _display displayCtrl IDC_CTRL_PRICE_LIST;
 private _budget = _display displayCtrl 20102;
 private _order = _display displayCtrl 20002;
 private _close = _display displayCtrl 20003;
@@ -89,8 +89,10 @@ private _sell = _display displayCtrl 20004;
 
 {
 	_displayName = getText (configFile >> "CfgVehicles" >> (_x select 0) >> "displayName");
-	_listbox_vehicle lbAdd format ["%1", _displayName];
-	_listbox_price lbAdd format ["%1 €", (_x select 1)];
+	_listbox_vehicles lbAdd format ["%1", _displayName];
+    _picture = (getText(configFile >> "cfgVehicles" >> _x >> "picture"));
+    _listbox_vehicles lbSetPicture [_forEachIndex, _picture];
+	_editbox_info ctrlSetStructuredText ([_x] call FUNC(getVehicleInfo));
 } forEach GVAR(orderDialogObjects);
 
 // deaktiviere Verkaufenbutton für alle Dialoge außer "sell"
@@ -121,7 +123,7 @@ if (count GVAR(orderDialogObjects) != 0) then {
 
 	{
 		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf (_x select 0)) >> "displayName");
-		_listbox_vehicle lbAdd format ["%1", _displayName]; // Name
+		_listbox_vehicles lbAdd format ["%1", _displayName]; // Name
 		// Verkaufspreis berechnen -> __ORDER_SELL_RETURN_VALUE__ % vom Vollpreis
 		_listbox_price lbAdd format ["%1 €", (_x select 1) * __ORDER_SELL_RETURN_VALUE__]; // Preis
 	} foreach GVAR(vehiclesToSell);

@@ -31,20 +31,20 @@ class GVAR(dlg_order)
 			idc = 20100;
 			text = "Fahrzeugliste";
 			x = 0.381406 * safezoneW + safezoneX;
-			y = 0.28 * safezoneH + safezoneY;
+			y = 0.38 * safezoneH + safezoneY;
 			w = 0.234875 * safezoneW;
-			h = 0.507 * safezoneH;
+			h = 0.407 * safezoneH;
 			colorBackground[] = COLOR_LISTBOX_BACKGROUND;
 			onLBDblClick =  __EVAL(format["[] call %1", QFUNC(sendVehicleOrder)]);
 		};
-		class order_box_preisliste: RscListBox_OPT
+		class order_box_fahrzeuginfo: RscEdit
 		{
 			idc = 20101;
-			text = "Preis";
+			text = "Fahrzeuginfo";
 			x = 0.621406 * safezoneW + safezoneX;
-			y = 0.28 * safezoneH + safezoneY;
+			y = 0.38 * safezoneH + safezoneY;
 			w = 0.08575 * safezoneW;
-			h = 0.507 * safezoneH;
+			h = 0.407 * safezoneH;
 			colorBackground[] = COLOR_LISTBOX_BACKGROUND;
 		};
 		class order_budget: RscText_Header
