@@ -42,7 +42,7 @@ class GVAR(dlg_order)
 			text = "Fahrzeugliste";
 			x = 0.381406 * safezoneW + safezoneX;
 			y = 0.32 * safezoneH + safezoneY;
-			w = 0.23 * safezoneW;
+			w = 0.22 * safezoneW;
 			h = 0.467 * safezoneH;
 			colorBackground[] = COLOR_LISTBOX_BACKGROUND;
 			onLBSelChanged =  __EVAL(format["[] call %1", QFUNC(showVehicleInfo)]);
@@ -52,9 +52,9 @@ class GVAR(dlg_order)
 		{
 			idc = 20101;
 			text = "Fahrzeuginfo";
-			x = 0.611 * safezoneW + safezoneX;
+			x = 0.60 * safezoneW + safezoneX;
 			y = 0.32 * safezoneH + safezoneY;
-			w = 0.092 * safezoneW;
+			w = 0.1 * safezoneW;
 			h = 0.467 * safezoneH;
 			colorBackground[] = COLOR_LISTBOX_BACKGROUND;
             sizeEx = FONTSIZE * 0.8;

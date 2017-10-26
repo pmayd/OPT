@@ -67,13 +67,12 @@ private _pool = switch (GVAR(vehicleType)) do {
         };
         
     };
-	case "sell" : {[]};
     default {[]};
 };
 
 // show onlly objects with a price greater than 0 €
-GVAR(orderDialogObjects) = _pool select {_x select 1 > 0};
-GVAR(orderDialogObjects) sort true;
+_pool = _pool select {_x select 1 > 0};
+GVAR(orderDialogObjects) = [_pool, 1] call CBA_fnc_sortNestedArray;
 
 // player sideChat format ["%1", GVAR(orderDialogObjects)];
 createDialog "opt_warehouse_dlg_order";
@@ -125,7 +124,6 @@ if (count GVAR(orderDialogObjects) != 0) then {
 	// alle Objekte im Radius von __ORDER_SELL_RADIUS__ Metern um das Pad -> im Idealfall nur das zu verkaufende Fahrzeug
 	_spawnpos = nearestObject [player, "Land_HelipadCircle_F"];
 	_objs = nearestObjects [_spawnpos, ["AllVehicles", "Thing"], __ORDER_SELL_RADIUS__];
-	GVAR(vehiclesToSell) = [];
 
 	// gehe alle gefundenen Objekte durch und lösche sie, falls nicht in pool, oder ergänze um Verkaufspreis
 	{
@@ -135,16 +133,26 @@ if (count GVAR(orderDialogObjects) != 0) then {
 		if (_index == -1) then {
 			_objs = _objs - [_x]; 
 		} else {
-			GVAR(vehiclesToSell) pushBack [_x, (GVAR(all) select _index) select 2]; // füge Fahrzeug und Verkaufspreis hinzu
+			_pool pushBack [_x, (GVAR(all) select _index) select 2]; // füge Fahrzeug und Verkaufspreis hinzu
 		};
 
 	} foreach _objs;
 
+    // show onlly objects with a price greater than 0 €
+    GVAR(vehiclesToSell) = [_pool, 1] call CBA_fnc_sortNestedArray;
 	{
-		_displayName = getText (configFile >> "CfgVehicles" >> (typeOf (_x select 0)) >> "displayName");
+		_class = typeOf (_x select 0);
+        _displayName = getText (configFile >> "CfgVehicles" >> _class >> "displayName");
 		_listbox_vehicles lbAdd format ["%1", _displayName]; // Name
+        _listbox_vehicles lbSetData [_forEachIndex, _class];
 		// Verkaufspreis berechnen -> __ORDER_SELL_RETURN_VALUE__ % vom Vollpreis
-		_listbox_price lbAdd format ["%1 €", (_x select 1) * __ORDER_SELL_RETURN_VALUE__]; // Preis
+        _picture = "";
+        if (getText(configFile >> "cfgVehicles" >> _class >> "picture") find ".paa" != -1) then {
+            _picture = getText (configFile >> "cfgVehicles" >> _class >> "picture");
+        } else {
+            _picture = getText (configFile >> "cfgVehicles" >> _class >> "editorPreview");
+        };
+        _listbox_vehicles lbSetPicture [_forEachIndex, _picture];
 	} foreach GVAR(vehiclesToSell);
 
 };
