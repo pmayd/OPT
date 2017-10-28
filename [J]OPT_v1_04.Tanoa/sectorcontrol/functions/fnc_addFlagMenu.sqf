@@ -32,6 +32,6 @@ if (typeOf player in GVARMAIN(officer)) then {
     ];
 
     // inform player
-    _txt = "Bitte eine Flagge über das Mausradmenü wählen. Dies muss während der Waffenruhe geschehen!";
+    _txt = "Bitte eine Flagge über das Mausradmenü wählen.<br/>Dies muss während der Waffenruhe geschehen!";
     [QEGVAR(gui,message), ["Wahl der Angriffsflagge", _txt, "yellow"]] call CBA_fnc_localEvent;
 };

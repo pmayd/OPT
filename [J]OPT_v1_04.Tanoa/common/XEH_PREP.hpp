@@ -1,7 +1,8 @@
 
 PREP(clearDebugMarker);
 PREP(createDebugMarker);
+PREP(flipCheck);
 PREP(initCBAEvents);
 PREP(renderBudget);
-PREP(flipCheck);
 PREP(unFlip);
+PREP(weaponCheck);

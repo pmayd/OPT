@@ -26,7 +26,7 @@ if (player isKindOf "OPT_Maintainer" || getPlayerUID player in ["765611979776760
 };
 
 // EH für Waffencheck
-player addEventHandler ["Take", {_this call opt_fnc_weaponCheck}]; // TODO:
+player addEventHandler ["Take", {_this call EFUNC(common,weaponCheck)}];
 
 // EH für Positionssperre in Fahrzeugen beim Einsteigen
 player addEventHandler ["GetInMan", {
