@@ -24,6 +24,13 @@ params ["_vec", "_killer", "_instigator"];
 
 // delete all wrecks within the base safezone
 if ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (getmarkerPos "respawn_east") < 200)) then {
-    sleep 5;
-    deleteVehicle _vec;
+    [_vec] spawn {
+        params ["_vec"];
+        sleep 5;
+        deleteVehicle _vec;
+
+        _name = getText(configFile >> "CfgVehicles" >> typeOf _vec >> "displayName");
+        _txt = format["Es gab einen Unfall. Das Wrack von %1 wurde entsorgt.", _name];
+        [QEGVAR(gui,message), ["Unfall in der Basis", _txt, "red"]] call CBA_fnc_globalEvent;
+    };
 };
