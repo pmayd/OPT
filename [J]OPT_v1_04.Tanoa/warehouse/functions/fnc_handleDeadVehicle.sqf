@@ -21,3 +21,9 @@ params ["_vec", "_killer", "_instigator"];
 
 // log destroyed vehicle and killer
 [QEGVAR(log,kill), [_vec, _instigator]] call CBA_fnc_serverEvent;	
+
+// delete all wrecks within the base safezone
+if ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (getmarkerPos "respawn_east") < 200)) then {
+    sleep 5;
+    deleteVehicle _vec;
+};
