@@ -18,7 +18,7 @@
 // HUD wird dann jedes Frame neu gezeichnet
 // belastet nur Client FPS, wenn überhaupt
 
-private _noHUD = (uiNamespace getVariable QGVAR(display)) isEqualTo displayNull;
+private _noHUD = (uiNamespace getVariable [QGVAR(display), displayNull]) isEqualTo displayNull;
 
 if (_noHUD) then {
     // create rsc layer and add mission EH for updating HUD
