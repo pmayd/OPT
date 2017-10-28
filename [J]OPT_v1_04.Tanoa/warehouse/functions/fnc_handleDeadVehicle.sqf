@@ -29,8 +29,9 @@ if ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (g
         sleep 5;
         deleteVehicle _vec;
 
+        // message only for those within a 200m radius
         _name = getText(configFile >> "CfgVehicles" >> typeOf _vec >> "displayName");
         _txt = format["Es gab einen Unfall. Das Wrack von %1 wurde entsorgt.", _name];
-        [QEGVAR(gui,message), ["Unfall in der Basis", _txt, "red"]] call CBA_fnc_globalEvent;
+        [QEGVAR(gui,message), ["Unfall in der Basis", _txt, "red"], playableUnits select {_x distance _vec < 200}] call CBA_fnc_targetEvent;
     };
 };
