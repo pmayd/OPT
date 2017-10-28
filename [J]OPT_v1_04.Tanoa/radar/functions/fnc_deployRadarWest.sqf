@@ -19,7 +19,7 @@ if (!alive GVAR(containerWest)) exitWith {
     removeAllActions GVAR(containerWest);
 };
 		
-if (!(RADARContainerWEST getVariable ["RADARWESTaufgebaut", false])) then
+if (!(GVAR(containerWest) getVariable ["RADARWESTaufgebaut", false])) then
 {
 	Radarturmwest = createVehicle ["Land_TTowerSmall_1_F", getpos GVAR(containerWest), [], 0, "NONE"];
 	Radarturmwest attachTo [GVAR(containerWest), [-0.5, 0.5, 0.0]];
