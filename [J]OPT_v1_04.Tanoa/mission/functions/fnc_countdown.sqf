@@ -58,3 +58,5 @@ _message = format ["Endbudget: (NATO %1 | CSAT %2)",  GVARMAIN(nato_budget), GVA
 [QEGVAR(log,write), ["Budget", _message]] call CBA_fnc_localEvent;
 _message = format ["Endpunktestand: (NATO %1 | CSAT %2)",  GVARMAIN(nato_points), GVARMAIN(csat_points)];
 [QEGVAR(log,write), ["Punkte", _message]] call CBA_fnc_localEvent;
+
+[QGVAR(endMission), []] spawn CBA_fnc_remoteEvent; // call end script on all clients

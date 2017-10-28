@@ -18,4 +18,6 @@ GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
         [] spawn FUNC(startMission); // Waffenruhe und Missionsstart, für Server und Client
     };
 
+    [] call FUNC(initCBAEvents);
+
 }];

@@ -17,8 +17,8 @@
 #include "script_component.hpp"
 
 params ["_unit", "_container","_item"];
-_typeOfPlayer = typeOf _unit;
-_bad_item_used = false;
+private _typeOfPlayer = typeOf _unit;
+private _bad_item_used = false;
 
 // check launcher
 if !(_typeOfPlayer in GVARMAIN(rocketmen)) then {
@@ -46,8 +46,8 @@ if !(_typeOfPlayer in GVARMAIN(medic)) then {
 };
 
 // check primary weapon
-_pw = primaryWeapon _unit;
-_spw = _unit getVariable ["opt_pw_storage", ""];
+private _pw = primaryWeapon _unit;
+private _spw = _unit getVariable ["opt_pw_storage", ""];
 
 if (_pw != "") then {
 	if (_pw != _spw) then {
