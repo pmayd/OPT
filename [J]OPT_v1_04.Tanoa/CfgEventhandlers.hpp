@@ -31,6 +31,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(mission) {
         init = QUOTE(call compile preProcessFileLineNumbers 'mission\XEH_PreInit.sqf');
     };
+    class GVARMAIN(radar) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'radar\XEH_PreInit.sqf');
+    };
     class GVARMAIN(ranking) {
         init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_PreInit.sqf');
     };
@@ -61,6 +64,9 @@ class Extended_PostInit_EventHandlers {
     };
     class GVARMAIN(mission) {
         init = QUOTE(call compile preProcessFileLineNumbers 'mission\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(radar) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'radar\XEH_PostInit.sqf');
     };
     class GVARMAIN(ranking) {
         init = QUOTE(call compile preProcessFileLineNumbers 'ranking\XEH_PostInit.sqf');

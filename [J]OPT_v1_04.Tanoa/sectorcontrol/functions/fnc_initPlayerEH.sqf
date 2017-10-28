@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 /* EH für das Versetzen der Flaggen im Trainingsmodus */
-if (OPT_TRAINING == 1) then {
+if (OPT_PARAM_TRAINING == 1) then {
 
 	// use stackedEH, cannot override default behavior
 	[QGVAR(move_flag), "onMapSingleClick", {
@@ -58,7 +58,7 @@ if (OPT_TRAINING == 1) then {
 
 // EH für Minensperre
 #ifdef __MINE_FREE_FLAG__
-	if (OPT_MINE_FREE_FLAG == 1) then {
+	if (OPT_PARAM_MINE_FREE_FLAG == 1) then {
 
 		player addEventHandler ["FiredMan", {
 			/* 

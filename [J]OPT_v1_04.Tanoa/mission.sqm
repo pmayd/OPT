@@ -36702,7 +36702,7 @@ class Mission
 						};
 					};
 					id=5764;
-					atlOffset=0.0042786598;
+					atlOffset=60.779999;
 				};
 				class Item4
 				{
@@ -38964,24 +38964,22 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11744.121,6.0644283,3141.9333};
+								position[]={11744.121,6.0645971,3141.9331};
 								angles[]={0,3.8016937,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
-								init="call{this addAction[(""<t color=""""#df8601"""">"" + (""Radar aufbauen"") + ""</t>""),""addons\opt3_radar\Radaraufbaueast.sqf"",'', 1, true, true, """", ""(!(RADARContainerEAST getVariable [""""RADAREASTaufgebaut"""",false]))""]; this addAction[(""<t color=""""#df8601"""">"" + (""Radar abbauen"") + ""</t>""),""addons\opt3_radar\Radarabbaueast.sqf"",'', 1, true, true, """", ""(RADARContainerEAST getVariable [""""RADAREASTaufgebaut"""",false])""]; " \n " " \n "}";
-								name="RADARContainerEAST";
+								name="OPT_radar_containerEast";
 								presenceCondition="OPT_RADAR == 1";
 							};
 							id=5688;
 							type="OPT_Land_Pod_Heli_Transport_04_repair_radar_F";
-							atlOffset=-0.00016880035;
 						};
 					};
 					id=6055;
-					atlOffset=-0.083961487;
+					atlOffset=-0.083877087;
 				};
 				class Item13
 				{
@@ -43250,7 +43248,7 @@ class Mission
 						};
 					};
 					id=6052;
-					atlOffset=0.0056219101;
+					atlOffset=60.779999;
 				};
 				class Item4
 				{
@@ -44793,8 +44791,8 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="call{this addAction[(""<t color=""""#df8601"""">"" + (""Radar aufbauen"") + ""</t>""),""addons\opt3_radar\Radaraufbauwest.sqf"",'', 1, true, true, """", ""(!(RADARContainerWEST getVariable [""""RADARWESTaufgebaut"""",false]))""]; this addAction[(""<t color=""""#df8601"""">"" + (""Radar abbauen"") + ""</t>""),""addons\opt3_radar\Radarabbauwest.sqf"",'', 1, true, true, """", ""(RADARContainerWEST getVariable [""""RADARWESTaufgebaut"""",false])""]; }";
-								name="RADARContainerWEST";
+								init="call{ }";
+								name="OPT_radar_containerWest";
 								presenceCondition="OPT_RADAR == 1";
 							};
 							id=5686;
@@ -45840,7 +45838,7 @@ class Mission
 				};
 			};
 			id=5542;
-			atlOffset=0.00578022;
+			atlOffset=0.0024957657;
 		};
 		class Item8
 		{

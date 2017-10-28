@@ -97,8 +97,8 @@ _control = _currentCutDisplay displayCtrl 5105;
 
 	private "_timeStr";
 	private _timeElapsed = (serverTime - EGVAR(mission,startTime));
-	private _playTime = OPT_PLAYTIME - _timeElapsed;
-	private _truceTime = (OPT_TRUCETIME + OPT_FREEZE_TIME) - _timeElapsed;
+	private _playTime = OPT_PARAM_PLAYTIME - _timeElapsed;
+	private _truceTime = (OPT_PARAM_TRUCETIME + OPT_PARAM_FREEZE_TIME) - _timeElapsed;
 
 	if (GVARMAIN(missionStarted)) then {
 

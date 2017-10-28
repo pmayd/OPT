@@ -48,7 +48,7 @@ player addEventHandler ["GetInMan", {
 			switch (player getVariable QGVARMAIN(playerSide)) do  {
                 case west: {
                     if (toLower(_encryption) == "_opfor") then {
-                        If (OPT_TFAR_INTERCEPTION == 0) then {
+                        If (OPT_PARAM_TFAR_INTERCEPTION == 0) then {
                             [_VehicleLR, "_bluefor"] call TFAR_fnc_setLrRadioCode;
                             systemChat "Die Funk-Verschlüsselung wurde geändert.";
                         } else {
@@ -62,7 +62,7 @@ player addEventHandler ["GetInMan", {
                 };
                 case east:  {
                     if (toLower(_encryption) == "_bluefor") then {
-                        If (OPT_TFAR_INTERCEPTION == 0) then {
+                        If (OPT_PARAM_TFAR_INTERCEPTION == 0) then {
                             [_VehicleLR, "_opfor"] call TFAR_fnc_setLrRadioCode;
                             systemChat "Die Funk-Verschlüsselung wurde geändert.";
                         } else {

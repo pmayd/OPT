@@ -18,7 +18,7 @@
     [] spawn {
         private _timeElapsed = (serverTime - GVAR(startTime));
 
-        if ((OPT_PLAYTIME - _timeElapsed) <= 0) then {
+        if ((OPT_PARAM_PLAYTIME - _timeElapsed) <= 0) then {
             diag_log format ["########## Schlacht automatisch beendet. Endpunktestand: NATO %1 | CSAT %2 ##########", GVARMAIN(nato_points), GVARMAIN(csat_points)];
         } else {
             diag_log format ["########## Schlacht von MT beendet. Endpunktestand: NATO %1 | CSAT %2 ##########", GVARMAIN(nato_points), GVARMAIN(csat_points)];

@@ -4,9 +4,9 @@
 #include "script_component.hpp"
 
 [] spawn {
-	// warte OPT_FREEZE_TIME
+	// warte OPT_PARAM_FREEZE_TIME
 	waitUntil {!isNil QEGVAR(mission,startTime)};
-	waitUntil {sleep 1; serverTime - EGVAR(mission,startTime) > OPT_FREEZE_TIME};
+	waitUntil {sleep 1; serverTime - EGVAR(mission,startTime) > OPT_PARAM_FREEZE_TIME};
 	GVARMAIN(allow_movement) = true;
 	publicVariable QGVARMAIN(allow_movement);
 };
@@ -17,7 +17,7 @@ GVARMAIN(csat_budget) = __BUDGET_CSAT__;
 GVARMAIN(dispo) = __BUDGET_DISPO__; // kann für zusätzliche Einkäufe belastet werden
 GVARMAIN(respawn_cost) = __RESPAWN_COST__;
 
-if (OPT_TRAINING == 1) then {
+if (OPT_PARAM_TRAINING == 1) then {
 	GVARMAIN(nato_budget) = 1e10;
 	GVARMAIN(csat_budget) = 1e10;
 };

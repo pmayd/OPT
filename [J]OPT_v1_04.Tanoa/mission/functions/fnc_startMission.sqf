@@ -24,7 +24,7 @@ publicVariable QGVAR(startTime); // gibt allen Clients die Startzeit des Servers
 _log_msg = format["Startbudget: NATO %1 - CSAT %2", GVARMAIN(nato_budget), GVARMAIN(csat_budget)];
 [QEGVAR(log,write), ["Budget", _log_msg]] call CBA_fnc_localEvent;
 
-_log_msg = format["Begin Waffenruhe: %1 min", (OPT_TRUCETIME + OPT_FREEZE_TIME) / 60];
+_log_msg = format["Begin Waffenruhe: %1 min", (OPT_PARAM_TRUCETIME + OPT_PARAM_FREEZE_TIME) / 60];
 [QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_localEvent;
 
 // By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen
@@ -33,7 +33,7 @@ _log_msg = format["Begin Waffenruhe: %1 min", (OPT_TRUCETIME + OPT_FREEZE_TIME) 
 // ebenfalls die korrekte Zeit berechnet werden. Wie immer serverTime - GVAR(startTime).
 private _timeElapsed = (serverTime - GVAR(startTime));
 // Waffenruhe wird um mögl. Freezetime verlängert, z.B. Waffenruhe 10 Minuten + 1 Minute Freeze
-truceTime = (OPT_TRUCETIME + OPT_FREEZE_TIME) - _timeElapsed;
+truceTime = (OPT_PARAM_TRUCETIME + OPT_PARAM_FREEZE_TIME) - _timeElapsed;
 
 for "_t" from ceil(truceTime) to 0 step -1 do {
     uisleep 1;
@@ -48,7 +48,7 @@ publicVariable QGVARMAIN(missionStarted);
 [QEGVAR(gui,message), ["Mission", "Mission gestartet", "green"]] call CBA_fnc_remoteEvent;
 
 _timeElapsed = serverTime - GVAR(startTime);
-_log_msg = format["Beginn Rest-Spielzeit: %1 min", (OPT_PLAYTIME - _timeElapsed) / 60];
+_log_msg = format["Beginn Rest-Spielzeit: %1 min", (OPT_PARAM_PLAYTIME - _timeElapsed) / 60];
 [QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_localEvent;
 
 // Beginnt mit dem Counter für die Spielzeit

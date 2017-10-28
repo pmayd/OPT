@@ -68,7 +68,7 @@
 */
 
 // wenn nicht auskommentiert, werden alle Sektor-Flaggen mit einem Marker versehen
-#define __OPT_FLAG_MARKER__
+#define __OPT_PARAM_FLAG_MARKER__
 
 // wenn nicht auskommentiert mit // dann werden für definierte Spieler Marker auf der Karte erzeugt
 #define __SHOW_CUSTOM_PLAYERMARKER__

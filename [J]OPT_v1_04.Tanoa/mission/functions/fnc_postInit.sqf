@@ -23,9 +23,9 @@ if (isMultiplayer && !isServer) then {	// only on dedicated environment
 // TEAM BALANCE - end mission for player if side is full
 // nicht in onPlayerRespawn, da nur zu Missionsbeginn prüfen
 if (isMultiplayer && !isServer) then {
-	if (OPT_TEAMBALANCE > 0) then {
+	if (OPT_PARAM_TEAMBALANCE > 0) then {
 		_en_pa = if (playerSide == blufor) then {playersNumber opfor} else {playersNumber blufor};
-		if ((playersNumber playerSide) > (_en_pa + OPT_TEAMBALANCE)) then {
+		if ((playersNumber playerSide) > (_en_pa + OPT_PARAM_TEAMBALANCE)) then {
 			endMission (switch (playerSide) do {
 				case (blufor) : {"balanceBLUFOR"};
 				case (opfor) : {"balanceOPFOR"};
@@ -46,7 +46,7 @@ if (!GVARMAIN(allow_movement)) then {
 		// freeze Spieler zu Beginn
 		player enableSimulation false;
 
-		// warte OPT_FREEZE_TIME
+		// warte OPT_PARAM_FREEZE_TIME
 		waitUntil {sleep 1; GVARMAIN(allow_movement)};
 
 		// gib Spieler frei
