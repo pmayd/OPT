@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=6111;
+		nextID=6118;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2604;
+		nextID=2605;
 	};
 	class Camera
 	{
@@ -67,13 +67,15 @@ addons[]=
 	"tfar_core",
 	"ace_common",
 	"ace_ui",
-	"ace_respawn"
+	"ace_respawn",
+	"ace_medical",
+	"ace_medical_menu"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=28;
+		items=30;
 		class Item0
 		{
 			className="A3_Structures_F_Exp";
@@ -258,6 +260,20 @@ class AddonsMetaData
 		{
 			className="ace_respawn";
 			name="ACE3 - Respawn";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item28
+		{
+			className="ace_medical";
+			name="ACE3 - Medical";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item29
+		{
+			className="ace_medical_menu";
+			name="ACE3 - Medical Menu";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
@@ -579,7 +595,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=13;
+		items=14;
 		class Item0
 		{
 			dataType="Layer";
@@ -47013,6 +47029,714 @@ class Mission
 				};
 				nAttributes=2;
 			};
+		};
+		class Item13
+		{
+			dataType="Layer";
+			name="ACE Medic";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7645.3369,20.719149,14860.069};
+					};
+					id=6111;
+					type="ACE_moduleAdvancedMedicalSettings";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ACE_moduleAdvancedMedicalSettings_enableVehicleCrashes";
+							expression="_this setVariable ['enableVehicleCrashes',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ACE_moduleAdvancedMedicalSettings_consumeItem_SurgicalKit";
+							expression="_this setVariable ['consumeItem_SurgicalKit',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ACE_moduleAdvancedMedicalSettings_enableAdvancedWounds";
+							expression="_this setVariable ['enableAdvancedWounds',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ACE_moduleAdvancedMedicalSettings_consumeItem_PAK";
+							expression="_this setVariable ['consumeItem_PAK',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="ACE_moduleAdvancedMedicalSettings_useCondition_PAK";
+							expression="_this setVariable ['useCondition_PAK',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="ACE_moduleAdvancedMedicalSettings_medicSetting_PAK";
+							expression="_this setVariable ['medicSetting_PAK',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="ACE_moduleAdvancedMedicalSettings_medicSetting_SurgicalKit";
+							expression="_this setVariable ['medicSetting_SurgicalKit',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute7
+						{
+							property="ACE_moduleAdvancedMedicalSettings_healHitPointAfterAdvBandage";
+							expression="_this setVariable ['healHitPointAfterAdvBandage',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute8
+						{
+							property="ACE_moduleAdvancedMedicalSettings_useLocation_SurgicalKit";
+							expression="_this setVariable ['useLocation_SurgicalKit',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=4;
+								};
+							};
+						};
+						class Attribute9
+						{
+							property="ACE_moduleAdvancedMedicalSettings_useCondition_SurgicalKit";
+							expression="_this setVariable ['useCondition_SurgicalKit',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute10
+						{
+							property="ACE_moduleAdvancedMedicalSettings_useLocation_PAK";
+							expression="_this setVariable ['useLocation_PAK',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute11
+						{
+							property="ACE_moduleAdvancedMedicalSettings_enableFor";
+							expression="_this setVariable ['enableFor',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute12
+						{
+							property="ACE_moduleAdvancedMedicalSettings_painIsOnlySuppressed";
+							expression="_this setVariable ['painIsOnlySuppressed',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=13;
+					};
+				};
+				class Item1
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7652.1079,21.044981,14860.136};
+					};
+					id=6112;
+					type="ACE_moduleBasicMedicalSettings";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ACE_moduleBasicMedicalSettings_medicSetting_basicEpi";
+							expression="_this setVariable ['medicSetting_basicEpi',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ACE_moduleBasicMedicalSettings_useLocation_basicEpi";
+							expression="_this setVariable ['useLocation_basicEpi',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=4;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7659.9209,21.174471,14860.005};
+					};
+					id=6113;
+					type="ACE_moduleMedicalMenuSettings";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ACE_moduleMedicalMenuSettings_allow";
+							expression="_this setVariable ['allow',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7667.6689,21.377426,14860.07};
+					};
+					id=6114;
+					type="ACE_moduleMedicalSettings";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ACE_moduleMedicalSettings_litterCleanUpDelay";
+							expression="_this setVariable ['litterCleanUpDelay',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=600;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ACE_moduleMedicalSettings_enableScreams";
+							expression="_this setVariable ['enableScreams',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ACE_moduleMedicalSettings_preventInstaDeath";
+							expression="_this setVariable ['preventInstaDeath',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ACE_moduleMedicalSettings_bleedingCoefficient";
+							expression="_this setVariable ['bleedingCoefficient',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="ACE_moduleMedicalSettings_increaseTrainingInLocations";
+							expression="_this setVariable ['increaseTrainingInLocations',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute5
+						{
+							property="ACE_moduleMedicalSettings_enableUnconsciousnessAI";
+							expression="_this setVariable ['enableUnconsciousnessAI',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute6
+						{
+							property="ACE_moduleMedicalSettings_remoteControlledAI";
+							expression="_this setVariable ['remoteControlledAI',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute7
+						{
+							property="ACE_moduleMedicalSettings_painCoefficient";
+							expression="_this setVariable ['painCoefficient',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute8
+						{
+							property="ACE_moduleMedicalSettings_AIDamageThreshold";
+							expression="_this setVariable ['AIDamageThreshold',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute9
+						{
+							property="ACE_moduleMedicalSettings_playerDamageThreshold";
+							expression="_this setVariable ['playerDamageThreshold',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute10
+						{
+							property="ACE_moduleMedicalSettings_level";
+							expression="_this setVariable ['level',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=2;
+								};
+							};
+						};
+						class Attribute11
+						{
+							property="ACE_moduleMedicalSettings_allowLitterCreation";
+							expression="_this setVariable ['allowLitterCreation',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute12
+						{
+							property="ACE_moduleMedicalSettings_keepLocalSettingsSynced";
+							expression="_this setVariable ['keepLocalSettingsSynced',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute13
+						{
+							property="ACE_moduleMedicalSettings_medicSetting";
+							expression="_this setVariable ['medicSetting',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=14;
+					};
+				};
+				class Item4
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={7645.3369,20.719149,14853.431};
+					};
+					id=6115;
+					type="ACE_moduleReviveSettings";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ACE_moduleReviveSettings_amountOfReviveLives";
+							expression="_this setVariable ['amountOfReviveLives',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=-1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ACE_moduleReviveSettings_enableRevive";
+							expression="_this setVariable ['enableRevive',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ACE_moduleReviveSettings_maxReviveTime";
+							expression="_this setVariable ['maxReviveTime',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=600;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			id=6117;
+			atlOffset=-0.12664223;
 		};
 	};
 };
