@@ -66,4 +66,4 @@
         _x enableSimulation false;
     }
 
-} foreach allMissionObjects "Thing";
+} foreach entities "Thing";

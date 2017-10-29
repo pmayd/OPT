@@ -20,12 +20,12 @@
 
 // fallback if no flag was chosen -> random war!
 if (count GVARMAIN(nato_flags) == 0) then { 
-    GVARMAIN(nato_flags) = [selectRandom (allMissionObjects "FlagPole_F" select {_x getVariable "owner" == west})];
+    GVARMAIN(nato_flags) = [selectRandom (entities "FlagPole_F" select {_x getVariable "owner" == west})];
     publicVariable QGVARMAIN(nato_flags);
 };
 
 if (count GVARMAIN(csat_flags) == 0) then { 
-    GVARMAIN(csat_flags) = [selectRandom (allMissionObjects "FlagPole_F" select {_x getVariable "owner" == east})];
+    GVARMAIN(csat_flags) = [selectRandom (entities "FlagPole_F" select {_x getVariable "owner" == east})];
     publicVariable QGVARMAIN(csat_flags);
 };
 

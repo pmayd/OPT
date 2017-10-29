@@ -43,6 +43,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(tfar) {
         init = QUOTE(call compile preProcessFileLineNumbers 'tfar\XEH_PreInit.sqf');
     };
+    class GVARMAIN(uav) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'uav\XEH_PreInit.sqf');
+    };
     class GVARMAIN(warehouse) {
         init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_PreInit.sqf');
     };
@@ -76,6 +79,9 @@ class Extended_PostInit_EventHandlers {
     };
     class GVARMAIN(tfar) {
         init = QUOTE(call compile preProcessFileLineNumbers 'tfar\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(uav) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'uav\XEH_PostInit.sqf');
     };
     class GVARMAIN(warehouse) {
         init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_PostInit.sqf');

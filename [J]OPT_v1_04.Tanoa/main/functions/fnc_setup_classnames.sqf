@@ -186,7 +186,7 @@ GVARMAIN(pioniers) = [
 
 /* UAV */
 
-opt_big_uavs = [
+GVARMAIN(big_uavs) = [
 	"OPT_B_UAV_02_F",
 	"OPT_B_UAV_02_CAS_F",
 	"OPT_B_UAV_02_light_F",
