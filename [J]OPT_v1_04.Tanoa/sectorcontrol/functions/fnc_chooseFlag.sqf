@@ -53,7 +53,7 @@ private _flagMarker = [];
         };
     };
     
-} forEach entities "FlagPole_F";
+} forEach allMissionObjects "FlagPole_F";
 
 // add EH for mouse action
 /* _this ([<units>,<pos>,<alt>,<shift>]) and in special variables _units, _pos, _alt, _shift */

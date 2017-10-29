@@ -28,12 +28,12 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
 	_x addAction [
 		"Verbinden mit UAV-Station" call XOrangeText,
         {
-            _terminal = _this select 0;
+            private _terminal = _this select 0;
             [
-                18,
-                [],
+                1,
+                _terminal,
                 {
-                    _terminal = _this select 0;
+                    params ["_terminal"];
                     
                     [QEGVAR(gui,message),["UAV-Station","In UAV-Station eingeloggt.<br/>Verbindung geht verloren, wenn mehr als 4m entfernt.","green"]] call CBA_fnc_localEvent;
                     player setVariable [QGVAR(loggedInStation), _terminal];
@@ -62,14 +62,14 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
 	_x addAction [
 		"Trennen mit UAV-Station" call XOrangeText,
         {
-            _terminal = _this select 0;
+            private _terminal = _this select 0;
             [
                 3,
                 [],
                 {
-                    _terminal = _this select 0;
                     
                     [QEGVAR(gui,message),["UAV-Station","Von UAV-Station ausgeloggt.","green"]] call CBA_fnc_localEvent;
+                    player connectTerminalToUAV objNull;
                     player setVariable [QGVAR(loggedInStation), objNull];
                     
                     if ((typeOf player) isEqualTo "OPT_NATO_Pilot_T") then {
@@ -124,6 +124,7 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
     if (player getVariable [QGVAR(loggedInStation), objNull] isEqualTo objNull) exitWith{};
 
     private _station = player getVariable QGVAR(loggedInStation);
+    MY_VAR = _station;
 
     if (player distance2D _station > 4) then {
         player setVariable [QGVAR(loggedInStation), objNull];
