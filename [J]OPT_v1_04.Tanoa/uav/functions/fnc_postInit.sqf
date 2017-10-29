@@ -124,7 +124,6 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
     if (player getVariable [QGVAR(loggedInStation), objNull] isEqualTo objNull) exitWith{};
 
     private _station = player getVariable QGVAR(loggedInStation);
-    MY_VAR = _station;
 
     if (player distance2D _station > 4) then {
         player setVariable [QGVAR(loggedInStation), objNull];
