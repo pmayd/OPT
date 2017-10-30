@@ -100,8 +100,8 @@ class GVAR(dlg_order)
             w = 38 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
             colorBackground[] = COLOR_CONTROL_BG;
-            onMouseButtonDblClick = "(_this select 0) ctrlSetText ' '; ";
-            onKeyDown = __EVAL(format["[] call %1", QFUNC(filterVehicleList)]);
+            onMouseButtonDblClick = "(_this select 0) ctrlSetText '';[] call opt_warehouse_fnc_filterVehicleList;";
+            onKeyUp = __EVAL(format["[] call %1", QFUNC(filterVehicleList)]);
             tooltip="Doppelklick löscht Zeile. Sucht nach Fahrzeugen mit dem Suchtext im Namen.";
             sizeEx = FONTSIZE;
         };
