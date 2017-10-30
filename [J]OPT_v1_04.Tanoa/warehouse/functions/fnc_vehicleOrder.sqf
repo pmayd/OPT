@@ -70,7 +70,7 @@ private _pool = switch (GVAR(vehicleType)) do {
     default {[]};
 };
 
-// show onlly objects with a price greater than 0 €
+// show only objects with a price greater than 0 €
 _pool = _pool select {_x select 1 > 0};
 GVAR(orderDialogObjects) = [_pool, 1] call CBA_fnc_sortNestedArray; // billigste zuerst
 
@@ -88,23 +88,20 @@ private _rscPicture = _display displayCtrl IDC_PLAYER_FLAG;
 
 [_budget] call EFUNC(common,renderBudget);
 
-// fill vehicle listbox with pictures and vehicle names
-{   
-	_class = _x select 0;
-    _displayName = getText (configFile >> "CfgVehicles" >> _class >> "displayName");
-	_listbox_vehicles lbAdd format ["%1", _displayName];
-    _listbox_vehicles lbSetData [_forEachIndex, _class];
-    _picture = "";
-    if (getText(configFile >> "cfgVehicles" >> _class >> "picture") find ".paa" != -1) then {
-        _picture = getText (configFile >> "cfgVehicles" >> _class >> "picture");
+private _txtToAdd = GVAR(orderDialogObjects) apply {getText (configFile >> "CfgVehicles" >> (_x select 0) >> "displayName")};
+private _picToAdd = GVAR(orderDialogObjects) apply {
+    if (getText(configFile >> "cfgVehicles" >> (_x select 0) >> "picture") find ".paa" != -1) then {
+        getText (configFile >> "cfgVehicles" >> (_x select 0) >> "picture");
     } else {
-        _picture = getText (configFile >> "cfgVehicles" >> _class >> "editorPreview");
+        getText (configFile >> "cfgVehicles" >> (_x select 0) >> "editorPreview");
     };
-    _listbox_vehicles lbSetPicture [_forEachIndex, _picture];
-} forEach GVAR(orderDialogObjects);
+};
+private _dataToAdd = GVAR(orderDialogObjects) apply {_x select 0};
+
+[IDD_DLG_ORDER, IDC_CTRL_VEHICLE_LIST, _txtToAdd, _picToAdd, _dataToAdd] call EFUNC(common,fillLB);
 
 // set flag paa 
-switch (player getVariable QGVARMAIN(playerSide)) do {
+switch (_side) do {
     case west: {
         _rscPicture ctrlSetText "\A3\Data_F\Flags\Flag_NATO_CO.paa";
     };

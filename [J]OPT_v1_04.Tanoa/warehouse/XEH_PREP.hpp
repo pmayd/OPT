@@ -1,5 +1,6 @@
 
 PREP(createMenu);
+PREP(filterVehicleList);
 PREP(getVehicleInfo);
 PREP(handleDeadVehicle);
 PREP(initCBAEvents);
