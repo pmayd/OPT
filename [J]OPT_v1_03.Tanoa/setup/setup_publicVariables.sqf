@@ -44,6 +44,9 @@ publicVariable "MissionStarted";
 opt_dominator = "none";
 publicVariable "opt_dominator";
 
+opt_listOfPlayers = [];
+publicVariable "opt_listOfPlayers";
+
 // define standard sector owner
 {
 	if (!isNil {_x}) then {

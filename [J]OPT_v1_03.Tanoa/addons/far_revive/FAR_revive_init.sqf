@@ -75,7 +75,11 @@ if (isDedicated) exitWith {};
 		_icons = addMissionEventHandler ["Draw3D", {
 			{
 				if ((_x distance player) < 30 && {_x getVariable ["FAR_isUnconscious", 0] == 1} && {_x != player} && {(player getVariable "opt_var_playerSide") == (_x getVariable "opt_var_playerSide")}) then {
-					drawIcon3D ["\a3\ui_f\data\map\MapControl\hospital_ca.paa", [0.6,0.15,0,0.8], _x, 0.5, 0.5, 0, format["%1 (%2m)", name _x, ceil (player distance _x)], 0, 0.02];
+                    _uid = getPlayerUID _x;
+                    _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+                    _name = (opt_ListOfPlayers select _id) select 1;
+					drawIcon3D ["\a3\ui_f\data\map\MapControl\hospital_ca.paa", [0.6,0.15,0,0.8], _x, 0.5, 0.5, 0, format["%1 (%2m)", _name, ceil (player distance _x)], 0, 0.02];
+
 				};
 			} forEach playableUnits;
 		}];

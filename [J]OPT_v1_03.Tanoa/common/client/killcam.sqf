@@ -45,7 +45,10 @@ if ((_killer == _victim) or (!alive _killer) or (isNull _killer)) then {
 
 } else {
 	if (isPlayer _killer) then {
-		titleText [format ["You were killed from %1", name _killer],"PLAIN DOWN",0.5];
+        _uid = getPlayerUID _killer;
+        _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+        _name = (opt_ListOfPlayers select _id) select 1;
+		titleText [format ["You were killed from %1", _name],"PLAIN DOWN",0.5];
 	};
 	sleep 1;
 	_deadcam camCommand "inertia on";

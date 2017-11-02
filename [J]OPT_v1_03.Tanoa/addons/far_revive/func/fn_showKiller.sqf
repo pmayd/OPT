@@ -11,9 +11,14 @@ if (_unit != _killer) then {
 			if (isNull _obj) then {
 				_obj = effectiveCommander _vec;
 			};
-			_name = name _obj;
+            _uid = getPlayerUID _obj;
+            _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+            _name = (opt_ListOfPlayers select _id) select 1;
+
 		} else {
-		_name = name _killer;
+            _uid = getPlayerUID _killer;
+            _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+            _name = (opt_ListOfPlayers select _id) select 1;
 		};
 	};
 };

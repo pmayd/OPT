@@ -82,11 +82,18 @@ if (_vec isKindOf "Air") then {
             // logge transport von Spielern, falls Spieler nicht Pilot und Strecke geflogen
             private _dis = (getPosASL _vec) distance2D (_unit getVariable "opt_var_vec_loc");
             if ( _pos in ["cargo", "gunenr"] && (_dis > 500) ) then {
+                _uid = getPlayerUID _unit;
+                _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+                _nameUnit = (opt_ListOfPlayers select _id) select 1;
+
+                _uid = getPlayerUID (_vec getVariable "opt_var_vec_pilot");
+                _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+                _namePilot = (opt_ListOfPlayers select _id) select 1;
                 private _message = format[
                     "%1 (%2) wurde von %3 (%4) eingeflogen (%5 m)", 
-                    name _unit, 
+                    _nameUnit, 
                     _unit getVariable "opt_var_playerSide",  
-                    name (_vec getVariable "opt_var_vec_pilot"), 
+                    _namePilot, 
                     (_vec getVariable "opt_var_vec_pilot") getVariable "opt_var_playerSide",
                     _dis
                 ];

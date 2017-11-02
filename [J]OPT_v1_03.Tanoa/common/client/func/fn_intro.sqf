@@ -50,10 +50,14 @@ sleep 13;
 _playerNATO = [];
 _playerCSAT = [];
 {
-	if ((_x getVariable "opt_var_playerSide") == west) then {
-		_playerNATO pushBack (name _x);
+	_uid = getPlayerUID _x;
+    _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+    _name = (opt_ListOfPlayers select _id) select 1;
+    
+    if ((_x getVariable "opt_var_playerSide") == west) then {
+		_playerNATO pushBack (_name);
 	} else {
-		_playerCSAT pushBack (name _x);
+		_playerCSAT pushBack (_name);
 	};
 } foreach (playableUnits -  (entities "HeadlessClient_F"));
 

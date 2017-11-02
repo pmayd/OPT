@@ -82,11 +82,19 @@ if (!tcb_healerStopped) then {
 		_injuredperson setVariable ["FAR_isStabilized", 1, true];
 		_injuredperson setVariable ["FAR_isDragged", 0, true];
 
+        _uid = getPlayerUID _injuredperson;
+        _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+        _name1 = (opt_ListOfPlayers select _id) select 1;
+
+        _uid = getPlayerUID _healer;
+        _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+        _name2 = (opt_ListOfPlayers select _id) select 1;
+
         private _message = format [
             "%1 (%2) wurde von %3 (%4) stabilisiert.", 
-            name _injuredperson, 
+            _name1, 
             _injuredperson getVariable "opt_var_playerSide",
-            name _healer,
+            _name2,
             _healer getVariable "opt_var_playerSide"
         ];
 

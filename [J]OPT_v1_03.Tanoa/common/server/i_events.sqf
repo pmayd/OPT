@@ -13,16 +13,24 @@ wird in der initServer.sqf aufgerufen
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
 
+        _uid = getPlayerUID _victim;
+        _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+        _nameVictim = (opt_ListOfPlayers select _id) select 1;
+
+        _uid = getPlayerUID _killer;
+        _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+        _nameKiller = (opt_ListOfPlayers select _id) select 1;
+
 		if (_victim == _killer || isNull _killer) then {
-			_message = format["%1 (%2) von: Selbstverschulden.", name _victim, _victim getVariable "opt_var_playerSide"];
+			_message = format["%1 (%2) von: Selbstverschulden.", _nameVictim, _victim getVariable "opt_var_playerSide"];
 
 		} else {
-			_message = format["%1 (%2) von: %3 (%4).", name _victim, _victim getVariable "opt_var_playerSide", name _killer, _killer getVariable "opt_var_playerSide"];
+			_message = format["%1 (%2) von: %3 (%4).", _nameVictim, _victim getVariable "opt_var_playerSide", _nameKiller, _killer getVariable "opt_var_playerSide"];
 
 		};
 
 	} else {
-
+        private _vec = _victim;
 		private _faction = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'faction'));
 		private _name = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'displayName'));
 		_message = format["Fahrzeug: %1 (%2) - ", _name, _faction];
@@ -38,8 +46,10 @@ wird in der initServer.sqf aufgerufen
 				_message = format["%1 von: Selbstverschulden", _message];
 
 			} else {
-
-				_message = format["%1 von: %2 (%3).", _message, name _killer, _faction];
+                _uid = getPlayerUID _killer;
+                _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+                _nameKiller = (opt_ListOfPlayers select _id) select 1;
+				_message = format["%1 von: %2 (%3).", _message, _nameKiller, _faction];
 
 			};
 
@@ -126,4 +136,16 @@ wird in der initServer.sqf aufgerufen
         _operator assignCurator _module;	
     };
     
+}] call CBA_fnc_addEventHandler;
+
+// store player in player list on server
+["opt_eh_server_updatePlayerList", {
+
+    params ["_uid", "_name", "_side"];
+
+    if (_uid in (opt_listOfPlayers apply {_x select 0})) exitWith{};
+
+    opt_listOfPlayers pushBack [_uid, _name, _side];
+    publicVariable "opt_listOfPlayers";
+
 }] call CBA_fnc_addEventHandler;

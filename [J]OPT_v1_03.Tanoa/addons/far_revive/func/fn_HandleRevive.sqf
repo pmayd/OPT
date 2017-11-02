@@ -109,11 +109,19 @@ if (!tcb_healerStopped) then {
 		["addScore", [player, 1]] call tcb_fnc_NetCallEventCTS;
 		//["tfar_removeMapMarker", _injuredperson] call tcb_fnc_NetCallEvent;
 
+        _uid = getPlayerUID _injuredperson;
+        _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+        _name1 = (opt_ListOfPlayers select _id) select 1;
+
+        _uid = getPlayerUID _healer;
+        _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+        _name2 = (opt_ListOfPlayers select _id) select 1;
+
         private _message = format [
             "%1 (%2) wurde von %3 (%4) wiederbelebt.", 
-            name _injuredperson, 
+            _name1, 
             _injuredperson getVariable "opt_var_playerSide",
-            name _healer,
+            _name2,
             _healer getVariable "opt_var_playerSide"
         ];
 

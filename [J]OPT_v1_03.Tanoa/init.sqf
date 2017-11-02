@@ -47,6 +47,12 @@ __ccppfln(addons\far_revive\FAR_revive_init.sqf); 											//farooq
 	enableTeamswitch false;
 };
 
+// add player to listofplayers on server
+if (local player) then {
+    // add player to listofplayers on server
+    ["opt_eh_server_updatePlayerList", [getPlayerUID player, profileName, playerSide]] call CBA_fnc_serverEvent;
+};
+
 diag_log format ["%1 --- TcB init.sqf is processed", diag_ticktime];
 
 #include "init_custom.sqf"

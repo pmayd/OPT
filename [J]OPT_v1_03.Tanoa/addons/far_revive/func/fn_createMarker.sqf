@@ -4,7 +4,10 @@ _mark = "";
 //if (_unit == player) exitWith {_mark};
 	
 if (FAR_PlayerSide == _unit getVariable "opt_var_playerSide") then {
-	_str = name _unit;
+    _uid = getPlayerUID _unit;
+    _id = (opt_ListOfPlayers apply {_x select 0}) find _uid;
+    _name = (opt_ListOfPlayers select _id) select 1;
+	_str = _name;
 	_marker = _unit getVariable ["far_unitMarker", ""];
 
 	// erzeuge neuen Marker oder...
