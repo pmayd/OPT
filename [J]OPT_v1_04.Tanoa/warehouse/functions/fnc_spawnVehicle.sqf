@@ -17,19 +17,10 @@
 params ["_vecType", "_spawnPos"];
 
 // get spawnPos right
+private _ori = getDir _spawnPos;
 _spawnPos = if (typeName _spawnPos == "OBJECT") then {getPosATL _spawnPos} else {_spawnPos};
 
 private _vec = createVehicle [_vecType, _spawnPos, [], 0, "NONE"];
-_vec setDir (getDir _spawnPos);
-
-//added by psycho - check for free space to place the vehicle
-private _sizeOfVec = sizeOf _vecType;
-private _isFlat = [];
-if (surfaceIsWater _spawnPos) then {
-	_isFlat = (position _vec) isFlatEmpty [_sizeOfVec / 2, 50, 0.7, _sizeOfVec, 2, false, _vec];
-} else {
-	_isFlat = (position _vec) isFlatEmpty [_sizeOfVec / 2, 80, 0.7, _sizeOfVec, 0, false, _vec];
-};
 
 if (typeName _spawnPos == "OBJECT") then {_vec setDir (getDir _spawnPos)};
 if (surfaceIsWater _spawnPos) then {
@@ -121,3 +112,4 @@ if (_vecType in (_uavs + GVARMAIN(big_uavs))) then {
 };
 
 _vec setDamage 0;
+_vec setDir _ori;

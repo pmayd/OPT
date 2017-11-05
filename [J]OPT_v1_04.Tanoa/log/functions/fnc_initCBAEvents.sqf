@@ -76,7 +76,7 @@ wird in der initServer.sqf aufgerufen
 // loggt Abschüsse
 [QGVAR(kill), {
 	params [
-        "_vec", 
+        "_victim", 
         ["_killer", objNull, [objNull], 1]
     ];
 	private _cat = "Abschuss";
@@ -88,10 +88,12 @@ wird in der initServer.sqf aufgerufen
         _uid = getPlayerUID _victim;
         _nameVictim = [_uid] call FUNC(getPlayerName);
 
-        _uid = getPlayerUID _killer;
-        _nameKiller = [_uid] call FUNC(getPlayerName);
+        if !(_killer isEqualTo objNull) then {
+             _uid = getPlayerUID _killer;
+            _nameKiller = [_uid] call FUNC(getPlayerName);
+        };
 
-		if (_victim == _killer || isNull _killer) then {
+		if (_victim == _killer || _killer isEqualTo objNull) then {
 			_message = format[
                 "%1 (%2) von: Selbstverschulden.",
                 _nameVictim, _victim getVariable QGVARMAIN(playerSide)
