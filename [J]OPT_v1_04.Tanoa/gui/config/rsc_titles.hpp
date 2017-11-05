@@ -56,7 +56,7 @@ class APP(message_1) {
             shadow = 0;
             colorBackground[] = {0, 0, 0, 0};
             colorText[] = {0.8156862, 0.8156862, 0.8156862, 1};
-            size = GUI_MSG_TEXTSIZE*0.6;
+            size = GUI_MSG_TEXTSIZE*0.65;
             class Attributes : Attributes {
                 shadow = 0;
                 font = FONT_THIN;
