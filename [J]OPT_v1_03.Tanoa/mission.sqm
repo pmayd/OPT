@@ -36687,7 +36687,7 @@ class Mission
 						};
 					};
 					id=5764;
-					atlOffset=0.0042786598;
+					atlOffset=60.779999;
 				};
 				class Item4
 				{
@@ -39202,7 +39202,6 @@ class Mission
 						angles[]={0,3.7575507,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -39211,7 +39210,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.14878201;
+					atlOffset=1.1390946;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39441,7 +39440,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3484077;
+			atlOffset=2.3513131;
 		};
 		class Item10
 		{
@@ -43004,7 +43003,7 @@ class Mission
 						};
 					};
 					id=6052;
-					atlOffset=0.0056219101;
+					atlOffset=60.779999;
 				};
 				class Item4
 				{
@@ -45599,7 +45598,7 @@ class Mission
 				};
 			};
 			id=5542;
-			atlOffset=0.00578022;
+			atlOffset=0.0024957657;
 		};
 		class Item11
 		{
