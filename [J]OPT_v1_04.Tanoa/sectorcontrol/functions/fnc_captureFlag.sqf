@@ -20,30 +20,7 @@ params ["_flag", "_caller"];
 
 _side = _caller getVariable QGVARMAIN(playerSide);
 
-_owner = _flag getVariable ["owner", nil];
-
 [_side, _flag] call FUNC(setFlagOwner);
 
-// log player
-_message = "";
-switch (_side) do {
-    case west: {
-        if (_owner isEqualTo west) then {
-            _message = format ["NATO Flagge gesichert von %1", name _caller];
-        } else {
-            _message = format ["CSAT Flagge erobert von %1", name _caller];
-        };
-    };
-
-    case east: {
-        if (_owner isEqualTo east) then {
-            _message = format ["NATO Flagge erobert von %1", name _caller];
-        } else {
-            _message = format ["CSAT Flagge gesichert von %1", name _caller];
-        };
-    };
-
-    default {};
-};
-
-[QEGVAR(log,write), ["Fahne", _message]] call CBA_fnc_serverEvent;
+// log pllayer
+[QEGVAR(log,flagCaptured), [_flag, _caller]] call CBA_fnc_serverEvent;

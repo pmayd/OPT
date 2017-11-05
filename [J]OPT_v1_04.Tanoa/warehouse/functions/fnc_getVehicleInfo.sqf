@@ -49,11 +49,11 @@ private _price = 0;
 private _priceTxt = "";
 switch (GVAR(vehicleType)) do {
     case "sell": {
-        _price = (GVAR(all) select {_x select 0 isEqualTo _class}) select 0 select 2;
+        _price = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 2;
         _priceTxt = "Gutschrift";
     };
     default {
-        _price = (GVAR(all) select {_x select 0 isEqualTo _class}) select 0 select 1;
+        _price = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 1;
         _priceTxt = "Kaufpreis";
     };
 };

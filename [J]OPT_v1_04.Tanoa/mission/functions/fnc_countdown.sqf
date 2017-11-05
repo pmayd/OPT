@@ -52,11 +52,6 @@ while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 &
 	uiSleep 60;
 };
 
-[QEGVAR(log,write), ["Mission", "Missionzeit abgelaufen"]] call CBA_fnc_localEvent;
-
-_message = format ["Endbudget: (NATO %1 | CSAT %2)",  GVARMAIN(nato_budget), GVARMAIN(csat_budget)];
-[QEGVAR(log,write), ["Budget", _message]] call CBA_fnc_localEvent;
-_message = format ["Endpunktestand: (NATO %1 | CSAT %2)",  GVARMAIN(nato_points), GVARMAIN(csat_points)];
-[QEGVAR(log,write), ["Punkte", _message]] call CBA_fnc_localEvent;
+[QEGVAR(log,endState), []] call CBA_fnc_localEvent;
 
 [QGVAR(endMission), []] call CBA_fnc_remoteEvent; // call end script on all clients

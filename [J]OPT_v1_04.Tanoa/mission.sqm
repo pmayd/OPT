@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=6118;
+		nextID=6121;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2760;
+		nextID=2791;
 	};
 	class Camera
 	{
@@ -69,13 +69,14 @@ addons[]=
 	"ace_ui",
 	"ace_respawn",
 	"ace_medical",
-	"ace_medical_menu"
+	"ace_medical_menu",
+	"ace_advanced_ballistics"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=31;
 		class Item0
 		{
 			className="A3_Structures_F_Exp";
@@ -274,6 +275,13 @@ class AddonsMetaData
 		{
 			className="ace_medical_menu";
 			name="ACE3 - Medical Menu";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item30
+		{
+			className="ace_advanced_ballistics";
+			name="ACE3 - Advanced Ballistics";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
@@ -595,7 +603,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=14;
+		items=15;
 		class Item0
 		{
 			dataType="Layer";
@@ -47737,6 +47745,211 @@ class Mission
 			};
 			id=6117;
 			atlOffset=-0.12664223;
+		};
+		class Item14
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7613.2798,20.602301,14859.01};
+			};
+			id=6118;
+			type="ace_advanced_ballistics_ModuleSettings";
+			atlOffset=1.0389996;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_advanced_ballistics_ModuleSettings_simulationRadius";
+					expression="_this setVariable ['simulationRadius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3000;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_advanced_ballistics_ModuleSettings_barrelLengthInfluenceEnabled";
+					expression="_this setVariable ['barrelLengthInfluenceEnabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_advanced_ballistics_ModuleSettings_bulletTraceEnabled";
+					expression="_this setVariable ['bulletTraceEnabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ace_advanced_ballistics_ModuleSettings_simulationInterval";
+					expression="_this setVariable ['simulationInterval',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.050000001;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ace_advanced_ballistics_ModuleSettings_disabledInFullAutoMode";
+					expression="_this setVariable ['disabledInFullAutoMode',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ace_advanced_ballistics_ModuleSettings_simulateForEveryone";
+					expression="_this setVariable ['simulateForEveryone',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="ace_advanced_ballistics_ModuleSettings_simulateForSnipers";
+					expression="_this setVariable ['simulateForSnipers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ace_advanced_ballistics_ModuleSettings_simulateForGroupMembers";
+					expression="_this setVariable ['simulateForGroupMembers',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ace_advanced_ballistics_ModuleSettings_ammoTemperatureEnabled";
+					expression="_this setVariable ['ammoTemperatureEnabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ace_advanced_ballistics_ModuleSettings_enabled";
+					expression="_this setVariable ['enabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=10;
+			};
 		};
 	};
 };

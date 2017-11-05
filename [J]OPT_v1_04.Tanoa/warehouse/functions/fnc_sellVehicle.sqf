@@ -23,7 +23,6 @@ disableSerialization;
 
 private _display = findDisplay IDD_DLG_ORDER;
 private _listbox_vehicle = _display displayCtrl IDC_CTRL_VEHICLE_LIST;
-private _listbox_price = _display displayCtrl IDC_CTRL_PRICE_LIST;
 private _index = lbCurSel _listbox_vehicle;
 
 if (_index < 0) exitWith {	
@@ -33,7 +32,7 @@ if (_index < 0) exitWith {
 
 private _selectedVehicle = (GVAR(vehiclesToSell) select _index) select 0;
 private _selectionText = _listbox_vehicle lbText _index;
-private _unitCost = parseNumber (_listbox_price lbText _index);
+private _unitCost = (GVAR(vehiclesToSell) select _index) select 1;
 
 [QEGVAR(common,updateBudget), [player getVariable QGVARMAIN(playerSide), _unitCost, "+"]] call CBA_fnc_serverEvent;
 deleteVehicle _selectedVehicle;

@@ -91,21 +91,8 @@ if (_vec isKindOf "Air") then {
             */
             params ["_vec", "_pos", "_unit"];
 
-            // logge transport von Spielern, falls Spieler nicht Pilot und Strecke geflogen
-            private _dis = (getPosASL _vec) distance2D (_unit getVariable QGVAR(transport_start_loc));
-            if ( _pos in ["cargo", "gunner"] && (_dis > 500) ) then {
-                private _message = format[
-                    "%1 (%2) wurde von %3 (%4) eingeflogen (%5 m)", 
-                    name _unit, 
-                    _unit getVariable QEGVAR(mission,playerSide),  
-                    name (_vec getVariable QGVAR(transport_pilot)), 
-                    (_vec getVariable QGVAR(transport_pilot)) getVariable QEGVAR(mission,playerSide),
-                    _dis
-                ];
-
-                [QEGVAR(log,write), ["Transport", _message]] call CBA_fnc_serverEvent;
-
-            };
+            // logge transport von Spielern, falls Spieler nicht Pilot und Strecke > 500m
+            [QEGVAR(log,transportDistance), [_vec, _pos, _unit]] call CBA_fnc_serverEvent;
 
         }
     ];

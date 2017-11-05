@@ -21,11 +21,7 @@ GVAR(startTime) = serverTime;			// nicht time! time ist 0, da time Zeit von Miss
 // immer synchronisiert und beinhaltet Zeit seit Serverstart
 publicVariable QGVAR(startTime); // gibt allen Clients die Startzeit des Servers bekannt
 
-_log_msg = format["Startbudget: NATO %1 - CSAT %2", GVARMAIN(nato_budget), GVARMAIN(csat_budget)];
-[QEGVAR(log,write), ["Budget", _log_msg]] call CBA_fnc_localEvent;
-
-_log_msg = format["Begin Waffenruhe: %1 min", (OPT_PARAM_TRUCETIME + OPT_PARAM_FREEZE_TIME) / 60];
-[QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_localEvent;
+[QEGVAR(log,startState), []] call CBA_fnc_localEvent;
 
 // By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen
 // bestimme Zeit, die bis hierher vergangen ist. Es kann nicht angenommen werden
