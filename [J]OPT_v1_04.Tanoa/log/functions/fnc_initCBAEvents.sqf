@@ -89,12 +89,9 @@ wird in der initServer.sqf aufgerufen
 
         private _uid = getPlayerUID _victim;
         private _nameVictim = [_uid] call FUNC(getPlayerName);
-        private _nameKiller = "";
 
         if !(_killer isEqualTo objNull) then {
-            _uid = getPlayerUID _killer;
-            _nameKiller = [_uid] call FUNC(getPlayerName);
-
+            
 		    if (_victim == _killer) then {
 			    _message = format[
                     "%1 (%2) von: Selbstverschulden.",
@@ -102,6 +99,9 @@ wird in der initServer.sqf aufgerufen
                 ];
 
             } else {
+                _uid = getPlayerUID _killer;
+                _nameKiller = [_uid] call FUNC(getPlayerName);
+
                 _message = format[
                     "%1 (%2) von: %3 (%4).",
                     _nameVictim, _victim getVariable QGVARMAIN(playerSide), _nameKiller, _killer getVariable QGVARMAIN(playerSide)
