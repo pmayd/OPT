@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1734;
+		nextID=1764;
 	};
 	class Camera
 	{
@@ -31924,6 +31924,7 @@ class Mission
 			};
 			id=5374;
 			type="Flag_NATO_F";
+			atlOffset=-7.6293945e-006;
 		};
 		class Item5
 		{

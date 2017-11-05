@@ -50,7 +50,7 @@ while {_timeElapsed = (serverTime - opt_startTime); (WinEast == 0 &&  WinWest ==
 };
 
 ["opt_eh_server_log_write", ["Mission", "Missionzeit abgelaufen"]] call CBA_fnc_localEvent;
-
+["opt_eh_server_printPlayerList",[]] call CBA_fnc_localEvent;
 _message = format ["Endbudget: (NATO %1 | CSAT %2)",  opt_west_budget, opt_east_budget];
 ["opt_eh_server_log_write", ["Budget", _message]] call CBA_fnc_localEvent;
 _message = format ["Endpunktestand: (NATO %1 | CSAT %2)",  WestPoints, EastPoints];

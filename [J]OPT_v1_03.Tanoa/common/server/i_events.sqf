@@ -149,3 +149,14 @@ wird in der initServer.sqf aufgerufen
     publicVariable "opt_listOfPlayers";
 
 }] call CBA_fnc_addEventHandler;
+
+["opt_eh_server_printPlayerList", {
+
+    private _cat = "Fraktionsübersicht";
+    {
+        _message = format["%1 (%2)", _x select 1, _x select 2];
+        ["opt_eh_server_log_write", [_cat, _message]] call CBA_fnc_localEvent;
+
+    } forEach opt_ListOfPlayers;
+
+}] call CBA_fnc_addEventHandler;
