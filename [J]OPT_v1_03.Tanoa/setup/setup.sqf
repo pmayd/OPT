@@ -11,11 +11,11 @@
 * wird in descprition.ext verwendet
 */
 // hier den Missionsnamen festlegen
-#define __MISSION_NAME__ "OPT - Schlacht Nr. 8"
+#define __MISSION_NAME__ "OPT - Schlacht Nr. 9"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
 #define __VERSION__ Build on version 1.03
 // made by
-#define __MADE_BY__ "Psychobastard, X-one und James"
+#define __MADE_BY__ "Psychobastard, James und Lord"
 // short description
 #define __MISSION_DESCRIPTION__ "This is a Operation Pandora Trigger Mission"
 
@@ -200,10 +200,10 @@
 */
 
 // Startbudget NATO
-#define __BUDGET_NATO__ 5016125
+#define __BUDGET_NATO__ 5264940
 
 // Startbudget CSAT
-#define __BUDGET_CSAT__ 3637860
+#define __BUDGET_CSAT__ 4242555
 
 // Dispo-Kredit für beide Seiten, falls Budget < 0
 #define __BUDGET_DISPO__ 1e5
