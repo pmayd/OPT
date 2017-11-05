@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-[QEGVAR(gui,message), ["Teleport", "Position zum Teleport auswählen", "blue"]] call CBA_fnc_localEvent;
+[QEGVAR(gui,message), ["Teleport", "Position zum Teleport mit Linksklick auswählen.", "blue"]] call CBA_fnc_localEvent;
 openMap true;
 
 [QGVAR(onMapSingleClick), "onMapSingleClick", {
@@ -31,5 +31,7 @@ openMap true;
         vehicle player setPos _pos; 
     };
     [QGVAR(onMapSingleClick), "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
+
+    openMap false;
     
 }] call BIS_fnc_addStackedEventHandler;
