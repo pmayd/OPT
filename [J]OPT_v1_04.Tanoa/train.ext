@@ -13,7 +13,7 @@ onLoadIntroTime = 0;
 onLoadMissionTime = 0;
 
 
-respawnButton = 0;
+respawnButton = 1;
 respawnDialog = 0;
 respawn = 3; //auf 3 zurückgesetzt
 respawnOnStart = 0; //Dont respawn on start. Run respawn script on start.

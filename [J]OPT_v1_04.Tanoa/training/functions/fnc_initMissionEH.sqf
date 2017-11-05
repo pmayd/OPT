@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-if (OPT_TELEPORT == 1 && OPT_TRAINING == 1) then {
+if (OPT_PARAM_TELEPORT == 1 && OPT_PARAM_TRAINING == 1) then {
     addMissionEventHandler ["EntityRespawned", {
         params ["_newEntity", "_oldEntity"];
 
