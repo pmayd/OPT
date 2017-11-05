@@ -82,30 +82,37 @@ wird in der initServer.sqf aufgerufen
 	private _cat = "Abschuss";
 	private _message = "";
 
+    systemChat str(_this);
+
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
 
-        _uid = getPlayerUID _victim;
-        _nameVictim = [_uid] call FUNC(getPlayerName);
+        private _uid = getPlayerUID _victim;
+        private _nameVictim = [_uid] call FUNC(getPlayerName);
+        private _nameKiller = "";
 
         if !(_killer isEqualTo objNull) then {
-             _uid = getPlayerUID _killer;
+            _uid = getPlayerUID _killer;
             _nameKiller = [_uid] call FUNC(getPlayerName);
-        };
 
-		if (_victim == _killer || _killer isEqualTo objNull) then {
-			_message = format[
-                "%1 (%2) von: Selbstverschulden.",
-                _nameVictim, _victim getVariable QGVARMAIN(playerSide)
-            ];
+		    if (_victim == _killer) then {
+			    _message = format[
+                    "%1 (%2) von: Selbstverschulden.",
+                    _nameVictim, _victim getVariable QGVARMAIN(playerSide)
+                ];
+
+            } else {
+                _message = format[
+                    "%1 (%2) von: %3 (%4).",
+                    _nameVictim, _victim getVariable QGVARMAIN(playerSide), _nameKiller, _killer getVariable QGVARMAIN(playerSide)
+                ];
+
+            };
 
 		} else {
-			_message = format[
-                "%1 (%2) von: %3 (%4).",
-                _nameVictim, _victim getVariable QGVARMAIN(playerSide), _nameKiller, _killer getVariable QGVARMAIN(playerSide)
-            ];
-
-		};
+            _message = format["%1 von: unbekannt", _message];
+            
+        };
 
 	} else {
 
@@ -113,15 +120,12 @@ wird in der initServer.sqf aufgerufen
         
 		private _faction = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'faction'));
 		private _name = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'displayName'));
-		_message = format["Fahrzeug: %1 (%2) - ", _name, _faction];
+		_message = format["Fahrzeug: %1 (%2)", _name, _faction];
 
 		// Täter nicht bekannt?
-		if (_killer isEqualTo objNull) then {
-			_message = format["%1 von: unbekannt", _message];
+		if !(_killer isEqualTo objNull) then {
 
-		} else {
-
-			// Selbstverschulden?
+            // Selbstverschulden?
 			if (_vec == _killer) then {
 				_message = format["%1 von: Selbstverschulden", _message];
 
@@ -133,6 +137,9 @@ wird in der initServer.sqf aufgerufen
 				_message = format["%1 von: %2 (%3).", _message, _nameKiller, _faction];
 
 			};
+
+		} else {
+			_message = format["%1 von: unbekannt", _message];
 
 		};
 

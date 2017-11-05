@@ -11,4 +11,5 @@
 if (local player) then {
     // add player to listofplayers on server
     [QGVAR(updatePlayerList), [getPlayerUID player, profileName, playerSide]] call CBA_fnc_serverEvent;
+
 };

@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=6121;
+		nextID=6122;
 	};
 	class MarkerIDProvider
 	{
@@ -603,7 +603,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=16;
 		class Item0
 		{
 			dataType="Layer";
@@ -47052,6 +47052,7 @@ class Mission
 					{
 						position[]={7645.3369,20.719149,14860.069};
 					};
+					presenceCondition="false";
 					id=6111;
 					type="ACE_moduleAdvancedMedicalSettings";
 					class CustomAttributes
@@ -47311,10 +47312,12 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={7652.1079,21.044981,14860.136};
+						position[]={7652.1079,21.044983,14860.136};
 					};
+					presenceCondition="false";
 					id=6112;
 					type="ACE_moduleBasicMedicalSettings";
+					atlOffset=1.9073486e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -47365,6 +47368,7 @@ class Mission
 					{
 						position[]={7659.9209,21.174471,14860.005};
 					};
+					presenceCondition="false";
 					id=6113;
 					type="ACE_moduleMedicalMenuSettings";
 					class CustomAttributes
@@ -47398,6 +47402,7 @@ class Mission
 					{
 						position[]={7667.6689,21.377426,14860.07};
 					};
+					presenceCondition="false";
 					id=6114;
 					type="ACE_moduleMedicalSettings";
 					class CustomAttributes
@@ -47678,6 +47683,7 @@ class Mission
 					{
 						position[]={7645.3369,20.719149,14853.431};
 					};
+					presenceCondition="false";
 					id=6115;
 					type="ACE_moduleReviveSettings";
 					class CustomAttributes
@@ -47950,6 +47956,17 @@ class Mission
 				};
 				nAttributes=10;
 			};
+		};
+		class Item15
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={7655.0718,21.132999,14856.4};
+			};
+			description="Ace Module vorrübergehend alle auf false, damit inaktiv! Grund: EH lässt siich sonst nicht testen, da ACE EH ""Killed"" blockiert durch Bewusstlosigkeit";
+			id=6121;
+			atlOffset=0.00016784668;
 		};
 	};
 };
