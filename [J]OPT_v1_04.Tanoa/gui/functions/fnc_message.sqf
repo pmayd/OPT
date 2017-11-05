@@ -18,7 +18,7 @@
 
 #include "script_component.hpp"
 
-#define MOVINGTIME (5 * _move)
+#define MOVINGTIME (3 * _move)
 
 If !(hasInterface) exitWith {};
 
