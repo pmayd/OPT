@@ -12,3 +12,5 @@ Kalles Änderungen:
 
 James Änderungen:
 - Bugfix: UGV Saif Drohnenfahrzeug war nicht per UAV Terminal steuerbar. behoben.
+- Log: Fraktionsübersicht am Ende eingefügt
+- Bugfix: Spielernamen im Log von name player auf gecachte Liste umgestellt
