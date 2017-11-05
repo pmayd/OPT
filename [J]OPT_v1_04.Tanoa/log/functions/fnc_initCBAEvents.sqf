@@ -75,19 +75,21 @@ wird in der initServer.sqf aufgerufen
 /* K */
 // loggt Abschüsse
 [QGVAR(kill), {
-	params ["_victim", "_killer"];
-
+	params [
+        "_vec", 
+        ["_killer", objNull, [objNull], 1]
+    ];
 	private _cat = "Abschuss";
 	private _message = "";
 
-    _uid = getPlayerUID _victim;
-    _nameVictim = [_uid] call FUNC(getPlayerName);
-
-    _uid = getPlayerUID _killer;
-    _nameKiller = [_uid] call FUNC(getPlayerName);
-
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
+
+        _uid = getPlayerUID _victim;
+        _nameVictim = [_uid] call FUNC(getPlayerName);
+
+        _uid = getPlayerUID _killer;
+        _nameKiller = [_uid] call FUNC(getPlayerName);
 
 		if (_victim == _killer || isNull _killer) then {
 			_message = format[
@@ -112,7 +114,7 @@ wird in der initServer.sqf aufgerufen
 		_message = format["Fahrzeug: %1 (%2) - ", _name, _faction];
 
 		// Täter nicht bekannt?
-		if (isNull _killer) then {
+		if (_killer isEqualTo objNull) then {
 			_message = format["%1 von: unbekannt", _message];
 
 		} else {
@@ -122,6 +124,10 @@ wird in der initServer.sqf aufgerufen
 				_message = format["%1 von: Selbstverschulden", _message];
 
 			} else {
+
+                _uid = getPlayerUID _killer;
+                _nameKiller = [_uid] call FUNC(getPlayerName);
+
 				_message = format["%1 von: %2 (%3).", _message, _nameKiller, _faction];
 
 			};

@@ -16,7 +16,6 @@
 
 #define IDD_DLG_ORDER 20000
 #define IDC_CTRL_VEHICLE_LIST 20100
-#define IDC_CTRL_PRICE_LIST 20101
 
 // begin of script
 disableSerialization;
@@ -27,7 +26,7 @@ private _index = lbCurSel _listbox_vehicle;
 
 if (_index < 0) exitWith {	
     private _txt = "Bitte ein Fahrzeug auswählen";
-    [QEGVAR(gui,message), [_txt, "yellow"]] call CBA_fnc_localEvent;
+    [QEGVAR(gui,message), ["Fehler", _txt, "yellow"]] call CBA_fnc_localEvent;
 };
 
 private _selectedVehicle = (GVAR(vehiclesToSell) select _index) select 0;
@@ -45,5 +44,4 @@ private _txt = format["%1 für %2 € verkauft.", _selectionText, _unitCost];
 
 // lösche Option aus Verkaufsmenü!
 _listbox_vehicle lbDelete _index;
-_listbox_price lbDelete _index;
 

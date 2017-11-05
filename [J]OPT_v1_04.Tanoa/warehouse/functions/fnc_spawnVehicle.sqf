@@ -20,6 +20,7 @@ params ["_vecType", "_spawnPos"];
 _spawnPos = if (typeName _spawnPos == "OBJECT") then {getPosATL _spawnPos} else {_spawnPos};
 
 private _vec = createVehicle [_vecType, _spawnPos, [], 0, "NONE"];
+_vec setDir (getDir _spawnPos);
 
 //added by psycho - check for free space to place the vehicle
 private _sizeOfVec = sizeOf _vecType;
