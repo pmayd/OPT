@@ -37,7 +37,7 @@ if (count GVARMAIN(csat_flags) == 0) then {
         private _markerName = format["marker_%1_%2", _x, _forEachIndex];
         private _marker = createMarker [_markerName, getPos _x];
         _marker setMarkerType "flag_CSAT";
-        _x setVariable ["opt_var_flag_marker", _marker, true];
+        _x setVariable [QGVAR(flagMarker), _marker, true];
     };
 
 } foreach GVARMAIN(csat_flags);
@@ -48,7 +48,7 @@ if (count GVARMAIN(csat_flags) == 0) then {
         private _markerName = format["marker_%1_%2", _x, _forEachIndex];
         private _marker = createMarker [_markerName, getPos _x];
         _marker setMarkerType "flag_NATO";
-        _x setVariable ["opt_var_flag_marker", _marker, true];
+        _x setVariable [QGVAR(flagMarker), _marker, true];
     };
 
 } foreach GVARMAIN(nato_flags);

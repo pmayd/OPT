@@ -33,7 +33,7 @@ if (OPT_PARAM_TRAINING == 1) then {
 		// is there a flag that should be moved?
 		_flag = objNull;
 		{
-			if (_x getVariable ["opt_var_flag_moveFlag", false]) exitWith {_flag = _x};
+			if (_x getVariable [QGVAR(isFlagMovable), false]) exitWith {_flag = _x};
 		} foreach GVARMAIN(csat_flags) + GVARMAIN(nato_flags);
 
 		if (_flag isEqualTo objNull) then {
@@ -43,12 +43,12 @@ if (OPT_PARAM_TRAINING == 1) then {
 			if (count _obj == 0) exitWith {};
 
 			_obj = _obj select 0;
-			_obj setVariable ["opt_var_flag_moveFlag", true];
+			_obj setVariable [QGVAR(isFlagMovable), true];
 			systemChat "Flagge kann verschoben werden. Platzieren mit erneutem ALT + Linksklick";
 		} else {
 			_flag setpos _pos;
-			_flag setVariable ["opt_var_flag_moveFlag", false];
-			_marker = _flag getVariable "opt_var_flag_marker";
+			_flag setVariable [QGVAR(isFlagMovable), false];
+			_marker = _flag getVariable QGVAR(flagMarker);
 			_marker setMarkerPos _pos; // global new marker
 		};
 		
