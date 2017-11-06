@@ -8,7 +8,7 @@ class GVAR(dlg_flag)
 
     idd = 21000;
 	movingenable = true;
-	onLoad = QUOTE(uiNamespace setVariable ['GVAR(flagDialog)', _this select 0]; [] call FUNC(initFlagDialog););
+	onLoad = QUOTE([_this select 0] call FUNC(initFlagDialog));
 
     class controlsBackground
 	{ 

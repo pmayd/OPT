@@ -18,11 +18,10 @@
 #define CSAT_X_IDC 1402
 #define CSAT_Y_IDC 1403
 
-systemChat "initFlagDialog.sqf aufgerufen";
+params [["_dialog", displayNull, [displayNull], 1]];
 
 disableSerialization;
 
-private _dialog = uiNamespace getVariable [QGVAR(flagDialog) , displayNull];
 if (_dialog isEqualTo displayNull) exitWith {};
 
 private _edit_nato_x = _dialog displayCtrl NATO_X_IDC;
