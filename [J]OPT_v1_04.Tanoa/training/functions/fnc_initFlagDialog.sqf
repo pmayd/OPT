@@ -23,6 +23,7 @@ params [["_dialog", displayNull, [displayNull], 1]];
 disableSerialization;
 
 if (_dialog isEqualTo displayNull) exitWith {};
+uiNamespace setVariable [QGVAR(flagDialog), _dialog];
 
 private _edit_nato_x = _dialog displayCtrl NATO_X_IDC;
 private _edit_nato_y = _dialog displayCtrl NATO_Y_IDC;
