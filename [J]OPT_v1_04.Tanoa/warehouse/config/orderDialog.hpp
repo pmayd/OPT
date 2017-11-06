@@ -138,7 +138,7 @@ class GVAR(dlg_order)
             w = 7.5 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
             tooltip = "Ausgewähltes Fahrzeug bestellen";
-			action = __EVAL(format["[] call %1", QFUNC(sendVehicleOrder)]);
+			action = QUOTE([] call FUNC(sendVehicleOrder););
             sizeEx = FONTSIZE;
         };
         #ifdef __ORDER_CAN_SELL__

@@ -9,9 +9,3 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 [] call FUNC(setupVehiclePool);
-if (isServer) then {
-    [] call FUNC(initServerCBAEvents);
-};
-if (local player) then {
-    [] call FUNC(initPlayerCBAEvents);
-};

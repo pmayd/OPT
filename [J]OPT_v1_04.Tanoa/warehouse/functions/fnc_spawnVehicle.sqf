@@ -29,10 +29,6 @@ if (surfaceIsWater _spawnPos) then {
 	_vec setPosATL (getPos _vec vectorAdd [0,0,0.1]);
 };
 
-_vec addEventHandler ["Killed", {
-	_this call FUNC(handleDeadVehicle);
-}];
-
 //datalink-test-eintrag, kallek
 _vec setVehicleReportOwnPosition true;
 _vec setVehicleReportRemoteTargets true;

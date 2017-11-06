@@ -42,3 +42,7 @@ This event happens every time a soldier enters a vehicle.
     [_unitType, _spawnPos] call FUNC(spawnVehicle);
 
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(handleDeadVehicle), {
+     (_this select [0,2]) call FUNC(handleDeadVehicle);
+}] call CBA_fnc_addEventHandler;

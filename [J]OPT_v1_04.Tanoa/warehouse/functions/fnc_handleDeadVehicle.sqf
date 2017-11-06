@@ -12,22 +12,20 @@
 * None
 *
 * Example:
-* [car, killer] call fnc_handleDeadVehicle.sqf;
+* [car, killer, instigator] call fnc_handleDeadVehicle.sqf;
 *
 */
 #include "script_component.hpp"
 
 params [
     "_vec", 
-    ["_killer", objNull, [objNull], 1]
+    ["_killer", objNull, [objNull], 1],
+    ["_instigator", objNull, [objNull], 1]
 ];
 
 // log destroyed vehicle and killer
-if (clientOwner == 0) then {
-    [QEGVAR(log,kill), [_vec, _killer]] call CBA_fnc_localEvent;
-} else {
-    [QEGVAR(log,kill), [_vec, _killer]] call CBA_fnc_serverEvent;
-};
+[QEGVAR(log,kill), [_vec, _killer]] call CBA_fnc_localEvent;
+
 
 // delete all wrecks within the base safezone
 if ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (getmarkerPos "respawn_east") < 200)) then {
