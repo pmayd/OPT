@@ -38,58 +38,6 @@ _vec setVehicleReportOwnPosition true;
 _vec setVehicleReportRemoteTargets true;
 _vec setVehicleReceiveRemoteTargets true;
 
-// fügt auf allen clients einen Add Action Eintrag für umgekippte Fahrzeuge hinzu
-// ersetzt player add action in onPlayerRespawn (viel performanter, da kein pulling)
-if (_vec isKindOf "AllVehicles") then {
-	[QEGVAR(common,addAction), 
-        [
-		    _vec, 
-		    ["Fahrzeug aufrichten" call XTuerkiesText, {[] call EFUNC(common,unFlip);}, [], 0, false, true, "", format["[_target, player] call %1", QEFUNC(common,flipCheck)]]
-        ]
-	] call CBA_fnc_globalEventJIP;
-};
-
-// Engine EH für Piloten -> Log transportierte Soldaten
-if (_vec isKindOf "Air") then {
-    _vec addEventHandler [
-        "GetIn",
-        {
-            /*
-            vehicle: Object - Vehicle the event handler is assigned to
-            position: String - Can be either "driver", "gunner" or "cargo"
-            unit: Object - Unit that entered the vehicle
-            (Since Arma 3 v1.36)
-            turret: Array - turret path
-            */
-            params ["_vec", "_pos", "_unit"];
-            
-            // speichere Pilot als Variable des Objekts Heli
-            if (_pos isEqualTo "driver") then {
-                _vec setVariable [QGVAR(transport_pilot), _unit, true];
-            };
-
-            // speichere aktuellen Ort an der Einheit
-            _unit setVariable [QGVAR(transport_start_loc), getPosASL _vec, false];
-        }
-    ];
-    _vec addEventHandler [
-        "GetOut",
-        {
-            /*
-            vehicle: Object - Vehicle the event handler is assigned to
-            position: String - Can be either "driver", "gunner" or "cargo"
-            unit: Object - Unit that left the vehicle
-            turret: Array - turret path (since Arma 3 v1.36)
-            */
-            params ["_vec", "_pos", "_unit"];
-
-            // logge transport von Spielern, falls Spieler nicht Pilot und Strecke > 500m
-            [QEGVAR(log,transportDistance), [_vec, _pos, _unit]] call CBA_fnc_serverEvent;
-
-        }
-    ];
-};
-
 // Create Vehicle Crew
 // James: Nutze stattdessen UAV classname aus setup
 _uavs = [

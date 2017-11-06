@@ -38,7 +38,7 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ]] call CBA_fnc_globalEvent;
+                ]] call CBA_fnc_globalEventJIP;
 
             };
             case east: {                
@@ -56,7 +56,7 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ]] call CBA_fnc_globalEvent;
+                ]] call CBA_fnc_globalEventJIP;
 
             };
             default {};

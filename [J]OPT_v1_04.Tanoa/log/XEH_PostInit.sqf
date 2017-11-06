@@ -5,7 +5,9 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
-[] call FUNC(initCBAEvents);
+if (isServer) then {
+    [] call FUNC(initCBAEvents);
+};
 
 // add player to listofplayers on server
 if (local player) then {

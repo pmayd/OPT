@@ -12,7 +12,7 @@
 * None
 *
 * Example:
-* [car, player1, player2] call fnc_handleDeadVehicle.sqf;
+* [car, killer] call fnc_handleDeadVehicle.sqf;
 *
 */
 #include "script_component.hpp"
@@ -23,7 +23,11 @@ params [
 ];
 
 // log destroyed vehicle and killer
-[QEGVAR(log,kill), [_vec, _killer]] call CBA_fnc_serverEvent;	
+if (clientOwner == 0) then {
+    [QEGVAR(log,kill), [_vec, _killer]] call CBA_fnc_localEvent;
+} else {
+    [QEGVAR(log,kill), [_vec, _killer]] call CBA_fnc_serverEvent;
+};
 
 // delete all wrecks within the base safezone
 if ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (getmarkerPos "respawn_east") < 200)) then {
