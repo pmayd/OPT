@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=2;
+	toggles=130;
 	class ItemIDProvider
 	{
 		nextID=6126;
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3194;
+		nextID=3225;
 	};
 	class Camera
 	{
-		pos[]={11781.601,22.277416,3030.8555};
-		dir[]={-0.70810705,-0.32276967,0.62801874};
-		up[]={-0.24147975,0.94647723,0.21416755};
-		aside[]={0.6635325,6.4901542e-009,0.74814951};
+		pos[]={11606.136,29.942469,3097.082};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -7968,7 +7968,7 @@ class Mission
 									};
 									id=4280;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=33.926819;
+									atlOffset=30.897638;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8274,7 +8274,7 @@ class Mission
 									};
 									id=5136;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.612356;
+									atlOffset=29.542013;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8722,7 +8722,7 @@ class Mission
 									};
 									id=5143;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=36.918907;
+									atlOffset=33.902153;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9132,7 +9132,7 @@ class Mission
 									};
 									id=5153;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=30.438807;
+									atlOffset=27.899456;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9703,7 +9703,7 @@ class Mission
 									};
 									id=5166;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.29504;
+									atlOffset=27.951036;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9744,7 +9744,7 @@ class Mission
 									};
 									id=5167;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=24.732525;
+									atlOffset=24.679155;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10274,7 +10274,7 @@ class Mission
 									};
 									id=5179;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.090622;
+									atlOffset=28.473272;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10315,7 +10315,7 @@ class Mission
 									};
 									id=5180;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=25.728947;
+									atlOffset=24.073643;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -30128,14 +30128,14 @@ class Mission
 						angles[]={0,4.0639057,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4522;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=5.435832;
+					atlOffset=0.22420263;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30217,7 +30217,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.9517891;
+					atlOffset=0.25820208;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30251,14 +30251,14 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.189431;
+					atlOffset=0.063271761;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30292,14 +30292,14 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=4.8953876;
+					atlOffset=0.086225986;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30333,14 +30333,14 @@ class Mission
 						angles[]={0,0.90690982,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4529;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=5.4496775;
+					atlOffset=0.10612249;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30374,14 +30374,14 @@ class Mission
 						angles[]={0,0.91099441,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4530;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=6.3986673;
+					atlOffset=0.10386753;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30661,14 +30661,14 @@ class Mission
 						angles[]={0,4.0577326,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4520;
 					type="Land_CrashBarrier_01_end_L_F";
-					atlOffset=7.0355263;
+					atlOffset=0.22318292;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30948,14 +30948,14 @@ class Mission
 						angles[]={0.00057252444,0.93034989,0.019338606};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4531;
 					type="Land_CrashBarrier_01_end_R_F";
-					atlOffset=6.9137721;
+					atlOffset=0.12136054;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -32766,14 +32766,14 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={11606.18,4.9389319,3121.989};
-					angle=5.3419113;
+					angle=5.3419118;
 					class Attributes
 					{
 						name="trg_csat_repair";
 						text="Auslöser für Rep-Script";
 						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player && speed (vehicle player) < 0.1}";
-						onActivation="nul = [true] spawn opt_fnc_repairSystem;";
-						onDeactivation="nul = [false] spawn opt_fnc_repairSystem;";
+						onActivation="nul = [true] spawn opt_mission_fnc_repairSystem;";
+						onDeactivation="nul = [false] spawn opt_mission_fnc_repairSystem;";
 						sizeA=12;
 						sizeB=12;
 						sizeC=12;
@@ -37888,17 +37888,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11606.136,4.9423618,3122.0818};
-								angles[]={6.2325621,2.2127109,0.026662467};
+								position[]={11606.136,4.9424682,3122.082};
+								angles[]={6.232553,2.2127109,0.026668631};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								name="csat_repairpad";
 							};
 							id=5520;
 							type="Land_HelipadSquare_F";
-							atlOffset=-9.4413757e-005;
+							atlOffset=4.7683716e-007;
 						};
 						class Item16
 						{
@@ -39515,8 +39516,8 @@ class Mission
 						name="trg_nato_repair";
 						text="Auslöser für Rep-Script";
 						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player && speed (vehicle player) < 0.1}";
-						onActivation="nul = [true] spawn opt_fnc_repairSystem;";
-						onDeactivation="nul = [false] spawn opt_fnc_repairSystem; ";
+						onActivation="nul = [true] spawn opt_mission_fnc_repairSystem;";
+						onDeactivation="nul = [false] spawn opt_mission_fnc_repairSystem; ";
 						sizeA=12;
 						sizeB=12;
 						sizeC=12;
@@ -43640,13 +43641,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={2168.7844,13.45,13297.167};
-								angles[]={0,4.0529666,0};
+								position[]={2168.7839,13.45,13297.167};
+								angles[]={0,4.0529685,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
+								name="nato_repairpad";
 							};
 							id=5626;
 							type="Land_HelipadSquare_F";

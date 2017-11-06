@@ -30,7 +30,7 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
         {
             private _terminal = _this select 0;
             [
-                1,
+                10,
                 _terminal,
                 {
                     params ["_terminal"];

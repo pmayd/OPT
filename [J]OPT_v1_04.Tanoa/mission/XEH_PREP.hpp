@@ -6,4 +6,5 @@ PREP(initCBAEvents);
 PREP(initPlayerEH);
 PREP(postInit);
 PREP(preInit);
+PREP(repairSystem);
 PREP(startMission);
