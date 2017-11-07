@@ -1,3 +1,4 @@
+#define EXCLUDE_CBA_MACROS
 #include "script_component.hpp"
 
 GVAR(EH_PreloadFinished) = addMissionEventHandler ["preloadFinished", {
