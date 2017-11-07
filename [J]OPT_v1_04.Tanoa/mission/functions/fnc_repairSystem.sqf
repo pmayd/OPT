@@ -36,17 +36,12 @@ if (_state) then {
 		_vec engineOn false;
 		_vec setFuel 0;
 
-        [
-            10,
-            [_vec],
-            {
-                (_this select 0 ) params ["_vec"];
+        for "_i" from 0 to 100 do {
+            hintSilent format["Fahrzeug wird betankt...\n%1 von 100\%2.", _i, '%'];
+            uiSleep 0.1;
+        };
 
-                _vec setFuel 1;
-            },
-            {},
-            "Fahrzeug wird betankt..."
-        ] call ace_common_fnc_progressBar;
+        _vec setFuel 1;
 
 	}, [], 100];
 
@@ -60,18 +55,14 @@ if (_state) then {
 
         _vec setFuel 0;
         
-        [
-            10,
-            [_vec, _fuel],
-            {
-                (_this select 0 ) params ["_vec", "_fuel"];
+        for "_i" from 0 to 100 do {
+            hintSilent format["Fahrzeug wird repariert...\n%1 von 100\%2.", _i, '%'];
+            uiSleep 0.1;
+        };
 
-                _vec setFuel _fuel;
-                _vec setDamage 0;
-            },
-            {},
-            "Fahrzeug wird repariert..."
-        ] call ace_common_fnc_progressBar;
+        _vec setFuel _fuel;
+        _vec setDamage 0;
+
 
 	}, [], 100];
 
