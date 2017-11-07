@@ -8,6 +8,8 @@
 // #define DISABLE_COMPILE_CACHE
 // #define ENABLE_PERFORMANCE_COUNTERS
 
+#define EXCLUDE_CBA_MACROS
+
 #ifdef DEBUG_ENABLED_Main
     #define DEBUG_MODE_FULL
 #endif

@@ -13,6 +13,7 @@
 *
 */
 #include "script_component.hpp"
+#include "\A3\editor_f\Data\Scripts\dikCodes.h"
 
 if (hasInterface) then {
 
