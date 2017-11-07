@@ -1,4 +1,3 @@
-#define EXCLUDE_CBA_MACROS
 #include "script_component.hpp"
 
 #define SERVER_EH(var1) [QGVAR(var1), { \

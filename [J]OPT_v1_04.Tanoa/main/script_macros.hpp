@@ -1,39 +1,7 @@
 
-#ifndef EXCLUDE_CBA_MACROS
-   #include "\x\cba\addons\main\script_macros_mission.hpp"
-   // copy the things you need:
-   /* https://github.com/CBATeam/CBA_A3/blob/master/addons/main/script_macros_common.hpp */
-#else
-    #define DOUBLES(var1,var2) ##var1##_##var2
-    #define TRIPLES(var1,var2,var3) ##var1##_##var2##_##var3
-    #define QUOTE(var1) #var1
-    #define ADDON DOUBLES(PREFIX,COMPONENT)
-    #define MAIN_ADDON DOUBLES(PREFIX,main)
-    #define CSTRING(var1) QUOTE(TRIPLES($STR,ADDON,var1))
-    #define ECSTRING(var1,var2) QUOTE(TRIPLES($STR,DOUBLES(PREFIX,var1),var2))
-    #define FUNC(var1) TRIPLES(ADDON,fnc,var1)
-    #define QFUNC(var1) QUOTE(FUNC(var1))
-    #define FUNCMAIN(var1) TRIPLES(PREFIX,fnc,var1)
-    #define EFUNC(var1,var2) TRIPLES(DOUBLES(PREFIX,var1),fnc,var2)
-    #define QEFUNC(var1,var2) QUOTE(EFUNC(var1,var2))
-    #define GVAR(var1) DOUBLES(ADDON,var1)
-    #define GVARMAIN(var1) DOUBLES(PREFIX,var1)
-    #define QGVARMAIN(var1) QUOTE(DOUBLES(PREFIX,var1))
-    #define QGVAR(var1) QUOTE(GVAR(var1))
-    #define EGVAR(var1,var2) TRIPLES(PREFIX,var1,var2)
-    #define QEGVAR(var1,var2) QUOTE(EGVAR(var1,var2))
-
-    #define ARR_1(ARG1) ARG1
-    #define ARR_2(ARG1,ARG2) ARG1, ARG2
-    #define ARR_3(ARG1,ARG2,ARG3) ARG1, ARG2, ARG3
-    #define ARR_4(ARG1,ARG2,ARG3,ARG4) ARG1, ARG2, ARG3, ARG4
-    #define ARR_5(ARG1,ARG2,ARG3,ARG4,ARG5) ARG1, ARG2, ARG3, ARG4, ARG5
-    #define ARR_6(ARG1,ARG2,ARG3,ARG4,ARG5,ARG6) ARG1, ARG2, ARG3, ARG4, ARG5, ARG6
-    #define ARR_7(ARG1,ARG2,ARG3,ARG4,ARG5,ARG6,ARG7) ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7
-    #define ARR_8(ARG1,ARG2,ARG3,ARG4,ARG5,ARG6,ARG7,ARG8) ARG1, ARG2, ARG3, ARG4, ARG5, ARG6, ARG7, ARG8
-
-    #undef EXCLUDE_CBA_MACROS
-#endif
+// copy the things you need:
+/* https://github.com/CBATeam/CBA_A3/blob/master/addons/main/script_macros_common.hpp */
+#include "cba_macros_common.hpp"
 
 #include "script_debug.hpp"
 
