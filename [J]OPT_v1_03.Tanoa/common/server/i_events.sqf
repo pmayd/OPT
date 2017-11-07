@@ -154,7 +154,7 @@ wird in der initServer.sqf aufgerufen
 
     private _cat = "Fraktionsübersicht";
     {
-        _message = format["%1 (%2)", _x select 1, _x select 2];
+        _message = format["%1 (%2), PUID %3", _x select 1, _x select 2, _x select 0];
         ["opt_eh_server_log_write", [_cat, _message]] call CBA_fnc_localEvent;
 
     } forEach opt_ListOfPlayers;
