@@ -15,5 +15,5 @@ class RscTitles {
     #include "hud\rsc.hpp"
 };
 
-//#incllude "war.ext"
+//#include "war.ext"
 #include "train.ext"

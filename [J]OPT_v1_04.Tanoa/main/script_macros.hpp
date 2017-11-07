@@ -1,6 +1,6 @@
 
 #ifndef EXCLUDE_CBA_MACROS
-   // #include "\x\cba\addons\main\script_macros_mission.hpp"
+   #include "\x\cba\addons\main\script_macros_mission.hpp"
    // copy the things you need:
    /* https://github.com/CBATeam/CBA_A3/blob/master/addons/main/script_macros_common.hpp */
 #else

@@ -1,4 +1,6 @@
+#define EXCLUDE_CBA_MACROS
 #include "script_component.hpp"
+
 #define SERVER_EH(var1) [QGVAR(var1), { \
     params ['_args', '_target']; \
     GVAR(var1) = _args call FUNC(var1); \
