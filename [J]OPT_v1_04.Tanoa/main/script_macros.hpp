@@ -25,6 +25,7 @@ Author:
     #undef PREPMAIN
 #endif
 
+#define PATHTO_SYS(var1,var2,var3) ##var1\##var2\##var3.sqf
 #define PREP(var1) TRIPLES(ADDON,fnc,var1) = compile preProcessFileLineNumbers 'PATHTO_SYS(COMPONENT,functions,DOUBLES(fnc,var1))'
 #define PREPMAIN(var1) TRIPLES(PREFIX,fnc,var1) = compile preProcessFileLineNumbers 'PATHTO_SYS(COMPONENT,functions,DOUBLES(fnc,var1))'
 
