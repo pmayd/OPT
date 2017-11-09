@@ -7,7 +7,6 @@ XOrangeText = {"<t color='#F3B601'>" + _this + "</t>"};
 XBlueText = {"<t color='#655EDE'>" + _this + "</t>"};
 XTuerkiesText = {"<t color='#00D3BF'>" + _this + "</t>"};
 
-opt_allowedSides = [blufor, opfor, resistance];
 opt_allow_movement = false; // globale Variable, muss jeder haben zu beginn
 missionStarted = false;
 ///////////////////////////////////////////////////////////////////////////////////

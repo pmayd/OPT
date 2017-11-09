@@ -21,9 +21,6 @@ if (isMultiplayer && !isServer) then {	// only on dedicated environment
 		_puid = getPlayerUID player;
 		if (isNil "_puid") exitWith {diag_log "UID is Nil - init stoped"; endMission "LOSER";};
 		if (_puid == "") exitWith {diag_log "UID is empty - init stoped"; endMission "LOSER";};
-		if (!isNil "opt_allowedSides") then {
-			if !(playerSide in opt_allowedSides) exitWith {diag_log format ["wrong side: %1", playerSide]; endMission "LOSER";};
-		};
 	};
 };
 
