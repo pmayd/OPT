@@ -56,7 +56,9 @@ _playerCSAT = [];
     
     if ((_x getVariable "opt_var_playerSide") == west) then {
 		_playerNATO pushBack (_name);
-	} else {
+	};
+    
+    if ((_x getVariable "opt_var_playerSide") == east) then {
 		_playerCSAT pushBack (_name);
 	};
 } foreach (playableUnits -  (entities "HeadlessClient_F"));
