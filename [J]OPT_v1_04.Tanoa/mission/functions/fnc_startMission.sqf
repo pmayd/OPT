@@ -14,6 +14,8 @@
 */
 #include "script_component.hpp"
 
+waitUntil { time > 1};
+
 if (GVARMAIN(missionStarted)) exitWith {};
 
 // SERVER ONLY
