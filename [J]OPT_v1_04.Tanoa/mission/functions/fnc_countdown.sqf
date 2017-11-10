@@ -18,7 +18,7 @@
 if !GVARMAIN(missionStarted) exitWith {LOG_1("OPT LOG: ERROR: opt_countdown.sqf started before missionStarted=true!");};
 
 // Logge und übertrage Punktestand alle 60 Sekunden, solange Spiel noch läuft
-while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 && GVARMAIN(nato_win) == 0 && GVARMAIN(draw) == 0 && (OPT_PARAM_PLAYTIME - _timeElapsed) > 59} do {
+while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 && GVARMAIN(nato_win) == 0 && GVARMAIN(draw) == 0 && (OPT_PARAM_PLAYTIME - _timeElapsed) > 59)} do {
 
 	// Falls es einen Dominator gibt -> Erhöhe Punkte +1
 	if !(GVARMAIN(dominator) isEqualTo sideUnknown) then {
