@@ -1,3 +1,3 @@
 
 PREP(getPlayerName);
-PREP(initCBAEvents);
+PREP(initServerCBAEvents);

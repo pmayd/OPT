@@ -1,6 +1,6 @@
 /**
 * Author: James
-* call all necessary script files after mission has setStarterRTD
+* call all necessary script files after mission has started
 *
 * Arguments:
 * None

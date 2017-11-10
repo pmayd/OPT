@@ -5,13 +5,13 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
+// executed after briefing right to mission start
 GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     /*  	
         Executes assigned code after the mission preload screen. Stackable version of onPreloadFinished. 
     */
+    
+    [] call FUNC(postInit); // initialisiert UAV Drohnenstation
 
-    if (local player) then {
-        [] call FUNC(postInit); // initialisiert UAV Drohnenstation
-    };
 
 }];

@@ -11,5 +11,5 @@ ADDON = true;
 GVAR(playerList) = [];
 
 if (isServer) then {
-    [] call FUNC(initCBAEvents);
+    [] call FUNC(initServerCBAEvents);
 };
