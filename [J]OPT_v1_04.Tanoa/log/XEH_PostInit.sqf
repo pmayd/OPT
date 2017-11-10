@@ -5,6 +5,4 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
-if (isServer) then {
-    [] call FUNC(initCBAEvents);
-};
+
