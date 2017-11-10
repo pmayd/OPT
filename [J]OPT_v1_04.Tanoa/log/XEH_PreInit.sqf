@@ -9,3 +9,7 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 GVAR(playerList) = [];
+
+if (isServer) then {
+    [] call FUNC(initCBAEvents);
+};

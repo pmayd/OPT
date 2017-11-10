@@ -68,3 +68,7 @@
         camDestroy _camera;
     };
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(startIntro), {
+    [] spawn FUNC(intro);
+}] call CBA_fnc_addEventHandler;
