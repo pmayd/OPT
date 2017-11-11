@@ -7,12 +7,6 @@
 
 GVAR(EH_PreloadFinished) = addMissionEventHandler ["preloadFinished", {
     // öffnet das HUD initial für alle Spieler
-    
-    if (isNil QGVAR(cancelActionId)) then {
-        [player] call FUNC(addActions);
-        
-    };
-
     [] call FUNC(initPlayerEH);
 
 }];
