@@ -26,10 +26,10 @@
 				[], 
 				-1, 
 				false,
-				 true, 
-				 '',
-				 QUOTE([_target] call FUNC(needRepair))
-			];
+				true, 
+				'',
+				QUOTE([_target] call FUNC(needRepair))
+			]
         ]
     ] call CBA_fnc_globalEventJIP;
 
@@ -44,8 +44,8 @@
 				false, 
 				true, 
 				'',
-				QUOTE(_truck= vehicle _this; _truck getVariable [QGVAR(repair_cargo), -1] != -1 and {alive _target} and {_truck distance _target <= 15} and {(_target isKindOf "LandVehicle" or _target isKindOf "Ship" or _target isKindOf "Air")} and {not GVAR(mutexAction)} and {speed _target <= 3} and {(damage _target != 0)})
-			];
+				format["_truck= vehicle _this; _truck getVariable ['%1', -1] != -1 and {alive _target} and {_truck distance _target <= 15} and {(_target isKindOf 'LandVehicle' or _target isKindOf 'Ship' or _target isKindOf 'Air')} and {not %2} and {speed _target <= 3} and {(damage _target != 0)};", QGVAR(repair_cargo), GVAR(mutexAction)]
+			]
         ]
     ] call CBA_fnc_globalEventJIP;
 

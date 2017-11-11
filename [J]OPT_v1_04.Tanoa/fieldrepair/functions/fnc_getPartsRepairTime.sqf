@@ -25,15 +25,14 @@ private _rprTime = 0;
 	if (not isNil {_cdmg} ) then {
 		diag_log str ["REPAIR ", _x, _cdmg];
 		if (_cdmg > 0.64) exitWith {
-			_rprTime = _rprTime + ( 
-				if (_x in GVAR(hardRepairParts)) then {
-					DEFAULT_FIELDREPAIR_EACH_HARDPART_TIME
+			if (_x in GVAR(hardRepairParts)) then {
+				_rprTime = _rprTime + DEFAULT_FIELDREPAIR_EACH_HARDPART_TIME;
 
-				} else {
-					DEFAULT_FIELDREPAIR_EACH_PART_TIME
+			} else {
+				_rprTime = _rprTime + DEFAULT_FIELDREPAIR_EACH_PART_TIME;
 
-				};
-			);
+			};
+
 		};
 
 	};

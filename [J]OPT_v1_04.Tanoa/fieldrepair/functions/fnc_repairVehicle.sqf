@@ -78,7 +78,7 @@ private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "dis
 	{
 		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
 	},
-	format[STR_REPAIR_MSG_STRING, _length, _vehname];,
+	format[STR_REPAIR_MSG_STRING, _length, _vehname],
 	{
 		(_this select 0) params ["_veh"];
 		alive player and (player distance _veh) < 7 and 

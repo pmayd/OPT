@@ -66,7 +66,7 @@ private _length = _maxlength;
 	{
 		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
 	},
-	format[STR_REPAIR_MSG_STRING, _length, _vehname];,
+	format[STR_REPAIR_MSG_STRING, _length, _vehname],
 	{
 		(_this select 0) params ["_veh", "_truck"];
 		alive player and 
