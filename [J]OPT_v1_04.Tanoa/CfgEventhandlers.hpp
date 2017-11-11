@@ -16,6 +16,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(database) {
         init = QUOTE(call compile preProcessFileLineNumbers 'database\XEH_PreInit.sqf'); //TODO: serverInit?
     };
+    class GVARMAIN(fieldrepair) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'fieldrepair\XEH_PreInit.sqf');
+    };
     class GVARMAIN(gui) {
         init = QUOTE(call compile preProcessFileLineNumbers 'gui\XEH_PreInit.sqf');
     };
@@ -61,6 +64,9 @@ class Extended_PostInit_EventHandlers {
     };
     class GVARMAIN(database) {
         serverInit = QUOTE(call compile preprocessFileLineNumbers 'database\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(fieldrepair) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'fieldrepair\XEH_PostInit.sqf');
     };
     class GVARMAIN(hud) {
         init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_PostInit.sqf');

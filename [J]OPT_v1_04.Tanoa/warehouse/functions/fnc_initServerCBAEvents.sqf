@@ -9,7 +9,7 @@
 * None
 *
 * Example:
-* [] call fnc_initCBAEvents.sqf;
+* [] call fnc_initServerCBAEvents.sqf;
 *
 */
 #include "script_component.hpp"

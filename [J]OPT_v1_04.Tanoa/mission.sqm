@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3318;
+		nextID=3349;
 	};
 	class Camera
 	{
-		pos[]={11606.136,29.942469,3097.082};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={3116.0295,77.512352,10894.542};
+		dir[]={0.24258077,-0.50742286,0.82685375};
+		up[]={0.14284667,0.86169696,0.4869028};
+		aside[]={0.95956045,-9.4587449e-008,-0.28151461};
 	};
 };
 binarizationWanted=0;
@@ -7960,7 +7960,7 @@ class Mission
 									};
 									id=4280;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=33.926819;
+									atlOffset=30.897638;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8266,7 +8266,7 @@ class Mission
 									};
 									id=5136;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.612356;
+									atlOffset=29.542013;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -8714,7 +8714,7 @@ class Mission
 									};
 									id=5143;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=36.918907;
+									atlOffset=33.902153;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9124,7 +9124,7 @@ class Mission
 									};
 									id=5153;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=30.438807;
+									atlOffset=27.899456;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9695,7 +9695,7 @@ class Mission
 									};
 									id=5166;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.29504;
+									atlOffset=27.951036;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -9736,7 +9736,7 @@ class Mission
 									};
 									id=5167;
 									type="Land_ConcreteWall_02_m_pole_F";
-									atlOffset=24.732525;
+									atlOffset=24.679155;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10266,7 +10266,7 @@ class Mission
 									};
 									id=5179;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=31.090622;
+									atlOffset=28.473272;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -10307,7 +10307,7 @@ class Mission
 									};
 									id=5180;
 									type="Land_CrashBarrier_01_8m_F";
-									atlOffset=25.728947;
+									atlOffset=24.073643;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -30120,14 +30120,14 @@ class Mission
 						angles[]={0,4.0639057,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4522;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=5.435832;
+					atlOffset=0.22420263;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30209,7 +30209,7 @@ class Mission
 					};
 					id=4524;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.9517891;
+					atlOffset=0.25820208;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30243,14 +30243,14 @@ class Mission
 						angles[]={0,0.91987926,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4527;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=3.189431;
+					atlOffset=0.063271761;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30284,14 +30284,14 @@ class Mission
 						angles[]={0,0.92796165,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4528;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=4.8953876;
+					atlOffset=0.086225986;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30325,14 +30325,14 @@ class Mission
 						angles[]={0,0.90690982,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4529;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=5.4496775;
+					atlOffset=0.10612249;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30366,14 +30366,14 @@ class Mission
 						angles[]={0,0.91099441,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4530;
 					type="Land_CrashBarrier_01_8m_F";
-					atlOffset=6.3986673;
+					atlOffset=0.10386753;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30653,14 +30653,14 @@ class Mission
 						angles[]={0,4.0577326,0};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4520;
 					type="Land_CrashBarrier_01_end_L_F";
-					atlOffset=7.0355263;
+					atlOffset=0.22318292;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -30940,14 +30940,14 @@ class Mission
 						angles[]={0.00057252444,0.93034989,0.019338606};
 					};
 					side="Empty";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						disableSimulation=1;
 					};
 					id=4531;
 					type="Land_CrashBarrier_01_end_R_F";
-					atlOffset=6.9137721;
+					atlOffset=0.12136054;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39219,7 +39219,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="CSAT Marine Base";
-			state=1;
 			class Entities
 			{
 				items=8;
@@ -39228,19 +39227,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11266.878,2.5394197,5377.6289};
-						angles[]={0,3.7575507,0};
+						position[]={11266.878,2.5393252,5377.6289};
+						angles[]={0,3.7575543,0};
 					};
 					side="Empty";
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this addAction['Marine-Ausrüstung' call XRedText,{['sea'] call opt_warehouse_fnc_vehicleOrder;},[], 1, true, true, """", '((_target distance player) < 3) and vehicle player == player'];";
+						init="call{this setVariable [""opt_warehouse_data"", [""Marine-Ausrüstung"", ""sea"", east]]}";
 						disableSimulation=1;
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390946;
+					atlOffset=1.1390002;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39470,7 +39469,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3513131;
+			atlOffset=2.3513124;
 		};
 		class Item7
 		{
@@ -46028,7 +46027,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="NATO Marine Base";
-			state=1;
 			class Entities
 			{
 				items=6;
@@ -46037,20 +46035,20 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3153.9875,1.8722695,11013.616};
-						angles[]={0,2.7601104,6.282495};
+						position[]={3153.9875,1.8722153,11013.616};
+						angles[]={0,2.7601161,6.2824869};
 					};
 					side="Empty";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this addAction['Marine-Ausrüstung' call XBlueText,{['sea'] call opt_warehouse_fnc_vehicleOrder;},[]]; ";
+						init="call{this setVariable [""opt_warehouse_data"", [""Marine-Ausrüstung"", ""sea"", west]]}";
 						disableSimulation=1;
 					};
 					id=5730;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.027614117;
+					atlOffset=0.027559876;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -46226,7 +46224,7 @@ class Mission
 				};
 			};
 			id=5729;
-			atlOffset=2.1455147;
+			atlOffset=2.1455131;
 		};
 		class Item10
 		{
