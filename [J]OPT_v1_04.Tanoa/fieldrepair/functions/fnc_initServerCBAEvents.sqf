@@ -43,7 +43,7 @@
 				false, 
 				true, 
 				'',
-				format["_truck= vehicle _this; _truck getVariable ['%1', -1] != -1 and {alive _target} and {_truck distance _target <= 15} and {(_target isKindOf 'LandVehicle' or _target isKindOf 'Ship' or _target isKindOf 'Air')} and {not %2} and {speed _target <= 3} and {(damage _target != 0)};", QGVAR(repair_cargo), GVAR(mutexAction)]
+				format["_truck= vehicle _this; [_target] call %1 and _truck getVariable ['%2', -1] != -1 and {alive _target} and {speed _truck < 3}", QFUNC(vehicleDamaged), QGVAR(repair_cargo)]
 			]
         ]
     ] call CBA_fnc_globalEventJIP;

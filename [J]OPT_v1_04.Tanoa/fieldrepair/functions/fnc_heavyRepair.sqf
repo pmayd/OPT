@@ -48,7 +48,7 @@ private _length = _maxlength;
 */
 [
 	_maxlength,
-	[_veh, truck],
+	[_veh, _truck],
 	{
 		(_this select 0) params ["_veh", "_truck"];
 
