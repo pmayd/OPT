@@ -54,7 +54,7 @@ if (_state) then {
             ["isnotinside"]
         ] call ace_common_fnc_progressBar;
 
-	}, [], 100];
+	}, [], 100, false, true, '', "not isNull objectParent player"];
 
 	private _action2 = _vec addAction ["<t size=""1.2"">Fahrzeug reparieren</t>", {
 		
@@ -85,7 +85,7 @@ if (_state) then {
             ["isnotinside"]
         ] call ace_common_fnc_progressBar;
 
-	}, [], 100];
+	}, [], 100, false, true, '', "not isNull objectParent player"];
 
 	_vec setVariable [QGVAR(repairSystem_actions), [_action1, _action2]];
 
