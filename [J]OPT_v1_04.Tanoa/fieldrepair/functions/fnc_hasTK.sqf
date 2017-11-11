@@ -18,12 +18,14 @@ params [["_veh", objNull]];
 
 if (_veh isEqualTo objNull) exitWith {false};
 
-private _ret = 0;
+private _ret = false;
 
-if ("ToolKit" in (items player)) then {_ret = _ret + 1};
-if ("ToolKit" in (itemCargo _veh)) then {_ret = _ret + 1};
-if ( (_veh getVariable [QGVAR(longRepairTimes), 0] ) < DEFAULT_FREE_REPAIRS) then {
-	_ret = _ret + DEFAULT_FREE_REPAIRS - (_veh getVariable [QGVAR(longRepairTimes), 0])
+if (
+	("ToolKit" in (items player)) or 
+	("ToolKit" in (itemCargo _veh)) or 
+	((_veh getVariable [QGVAR(longRepairTimes), 0]) < DEFAULT_FREE_REPAIRS)
+	) then {
+		_ret = true
 };
 
 _ret

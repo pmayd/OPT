@@ -28,9 +28,9 @@ if (not alive player or (player distance _veh) > 7 or (vehicle player != player)
 	[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_CONDITIONS, "red"]] call CBA_fnc_localEvent;
 };
 
-// if player has no tool kit
+// if player has no tool kit or vehicle was repaired more often than free repair
 private _hasTK = [_veh] call FUNC(hasTK);
-if ( _hasTK == 0 ) exitWith {
+if !(_hasTK) exitWith {
 	[QEGVAR(gui,message), ["Feldreparatur", STR_NEED_TOOLKIT, "red"]] call CBA_fnc_localEvent;
 };
 
@@ -67,9 +67,8 @@ private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "dis
 
 		[_veh] remoteExec [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
 
-		private _hasTK = [_vec] call FUNC(hasTK);
 		//if (_hastk == 1) then {player removeItem "ToolKit";};
-		if (_hasTK == 2) then { 
+		if (itemCargo _veh find "ToolKit" != -1) then { 
 			["ToolKit", _veh] call FUNC(removeItemFromCargo);
 		};
 		_veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
@@ -84,8 +83,7 @@ private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "dis
 		alive player and (player distance _veh) < 7 and 
 		player getVariable ["FAR_isUnconscious", 0] == 0 and // behebt Fehler, dass bewusstlose Soldaten weiter reparieren // TODO:
 		(vehicle player == player) and 
-		speed _veh < 3 and 
-		[_veh] call FUNC(hasTK) > 0
+		speed _veh < 3
 	}
 ] call ace_common_fnc_progressBar;
 

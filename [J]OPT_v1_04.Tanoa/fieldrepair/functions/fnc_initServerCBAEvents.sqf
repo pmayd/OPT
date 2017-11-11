@@ -48,4 +48,9 @@
         ]
     ] call CBA_fnc_globalEventJIP;
 
+	if (getRepairCargo _vec > 0) then {
+		_vec setRepairCargo 0;
+		_vec setVariable [QGVAR(repair_cargo), 1, true]; 
+	};
+
 }] call CBA_fnc_addClassEventHandler;
