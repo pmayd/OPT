@@ -51,7 +51,7 @@ if (_state) then {
             {
                 not (isNull objectParent player)
             },
-            ["notinside"]
+            ["isnotinside"]
         ] call ace_common_fnc_progressBar;
 
 	}, [], 100];
@@ -78,11 +78,11 @@ if (_state) then {
             {
                 [QEGVAR(gui,message), ["Reparatursystem", "Vorgang abgebrochen", "red"]] call CBA_fnc_localEvent;
             },
-            "Fahrzeug wird repariert..."
+            "Fahrzeug wird repariert...",
             {
                 not (isNull objectParent player)
             },
-            ["notinside"]
+            ["isnotinside"]
         ] call ace_common_fnc_progressBar;
 
 	}, [], 100];

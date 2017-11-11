@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3411;
+		nextID=3442;
 	};
 	class Camera
 	{
@@ -32758,7 +32758,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={11606.18,4.9389319,3121.989};
-					angle=5.3419118;
+					angle=5.3419113;
 					class Attributes
 					{
 						name="trg_csat_repair";
@@ -39231,6 +39231,7 @@ class Mission
 						angles[]={0,3.7575543,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -39239,7 +39240,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=1.1390002;
+					atlOffset=0.1486876;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39469,7 +39470,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3513124;
+			atlOffset=2.3484073;
 		};
 		class Item7
 		{
