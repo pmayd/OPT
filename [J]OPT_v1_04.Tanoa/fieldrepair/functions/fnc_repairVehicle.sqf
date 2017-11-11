@@ -16,7 +16,7 @@
 
 params [["_veh", objNull]];
 
-if (_veh isEqualTo objNull) exitWith {_ret};
+if (_veh isEqualTo objNull) exitWith {false};
 
 // if another action is ongoing
 if (GVAR(mutexAction)) exitWith {
@@ -78,7 +78,7 @@ private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "dis
 	{
 		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
 	},
-	format[STR_REPAIR_MSG_STRING, _length, _vehname],
+	format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],
 	{
 		(_this select 0) params ["_veh"];
 		alive player and (player distance _veh) < 7 and 
@@ -90,3 +90,5 @@ private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "dis
 ] call ace_common_fnc_progressBar;
 
 GVAR(mutexAction) = false; 
+
+true

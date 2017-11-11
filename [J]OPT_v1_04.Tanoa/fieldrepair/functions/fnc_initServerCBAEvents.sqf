@@ -21,8 +21,7 @@
             _vec, 
             [
 				"<t color='#ff0000'>"+STR_FIELD_REPAIR+"</t>", 
-				{[] call FUNC(repairVehicle)}
-				, 
+				{[_this select 0] call FUNC(repairVehicle)},
 				[], 
 				-1, 
 				false,
