@@ -32758,13 +32758,13 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={11606.18,4.9389319,3121.989};
-					angle=5.3419113;
+					angle=5.3419118;
 					class Attributes
 					{
 						name="trg_csat_repair";
 						text="Auslöser für Rep-Script";
-						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player && speed (vehicle player) < 0.1}";
-						onActivation="nul = [true] spawn opt_mission_fnc_repairSystem;";
+						condition="call{player in thislist && !isNull (objectParent player) && driver (vehicle player) == player && speed (vehicle player) < 0.1}";
+						onActivation="call{nul = [true] spawn opt_mission_fnc_repairSystem;}";
 						onDeactivation="nul = [false] spawn opt_mission_fnc_repairSystem;";
 						sizeA=12;
 						sizeB=12;
