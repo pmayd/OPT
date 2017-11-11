@@ -82,7 +82,7 @@ private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "dis
 		(_this select 0) params ["_veh"];
 		alive player and (player distance _veh) < 7 and 
 		player getVariable ["FAR_isUnconscious", 0] == 0 and // behebt Fehler, dass bewusstlose Soldaten weiter reparieren // TODO:
-		(vehicle player == player) and 
+		isNull objectParent player and 
 		speed _veh < 3
 	}
 ] call ace_common_fnc_progressBar;

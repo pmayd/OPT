@@ -65,18 +65,21 @@ private _length = _maxlength;
 	},
 	{
 		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
+        ERROR_1("Abbruch: %1", _this);
 	},
 	format[STR_REPAIR_MSG_STRING, _length, _vehname],
 	{
-		(_this select 0) params ["_veh", "_truck"];
+        (_this select 0) params ["_veh", "_truck"];
 		alive player and 
 		player getVariable ["FAR_isUnconscious", 0] == 0 and // behebt Fehler, dass bewusstlose Soldaten weiter reparieren // TODO:
 		alive _truck and 
 		alive _veh and 
-		vehicle player != player and 
+		(not isNull (objectParent player)) and
 		speed _veh <= 3 and 
+        speed _truck <= 3 and
 		_veh distance _truck <= 15 
-	}
+	},
+    ["isnotinside"]
 ] call ace_common_fnc_progressBar;
 
 GVAR(mutexAction) = false;  	

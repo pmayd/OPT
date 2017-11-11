@@ -36,12 +36,23 @@ if (_state) then {
 		_vec engineOn false;
 		_vec setFuel 0;
 
-        for "_i" from 0 to 100 do {
-            hintSilent format["Fahrzeug wird betankt...\n%1 von 100\%2.", _i, '%'];
-            uiSleep 0.1;
-        };
-
-        _vec setFuel 1;
+        [
+            10,
+            [_vec],
+            {
+                (_this select 0) params ["_vec"];
+                _vec setFuel 1;
+                [QEGVAR(gui,message), ["Reparatursystem", "Fahrzeug fertig betankt", "green"]] call CBA_fnc_localEvent;                
+            },
+            {
+                [QEGVAR(gui,message), ["Reparatursystem", "Vorgang abgebrochen", "red"]] call CBA_fnc_localEvent;
+            },
+            "Fahrzeug wird betankt...",
+            {
+                not (isNull objectParent player)
+            },
+            ["notinside"]
+        ] call ace_common_fnc_progressBar;
 
 	}, [], 100];
 
@@ -55,14 +66,24 @@ if (_state) then {
 
         _vec setFuel 0;
         
-        for "_i" from 0 to 100 do {
-            hintSilent format["Fahrzeug wird repariert...\n%1 von 100\%2.", _i, '%'];
-            uiSleep 0.1;
-        };
-
-        _vec setFuel _fuel;
-        _vec setDamage 0;
-
+        [
+            [_vec] call EFUNC(fieldrepair,getPartsRepairTime),
+            [_vec, _fuel],
+            {
+                (_this select 0) params ["_vec", "_fuel"];
+                _vec setFuel _fuel;
+                _vec setDamage 0;
+                [QEGVAR(gui,message), ["Reparatursystem", "Fahrzeug vollständig repariert", "green"]] call CBA_fnc_localEvent;                
+            },
+            {
+                [QEGVAR(gui,message), ["Reparatursystem", "Vorgang abgebrochen", "red"]] call CBA_fnc_localEvent;
+            },
+            "Fahrzeug wird repariert..."
+            {
+                not (isNull objectParent player)
+            },
+            ["notinside"]
+        ] call ace_common_fnc_progressBar;
 
 	}, [], 100];
 
