@@ -8,6 +8,8 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+[] call FUNC(preInit);
+
 if (isServer) then {
 	[] call FUNC(initServerCBAEvents);
 };
