@@ -1,10 +1,18 @@
-#include "..\..\setup\setup.sqf"
-ScriptName "client\marker.sqf";
-
-#define MARKERREFRESH 1
-#define MARKERSYMBOL "mil_triangle"
-#define MARKERSIZE [0.8, 0.8]
-#define MARKERALPHA 0.6
+/**
+* Author: Lord & James
+* custom GPS script for OPT purposes
+*
+* Arguments:
+* None
+*
+* Return Value:
+* None
+*
+* Example:
+* [parameter] call GPS.sqf;
+*
+*/
+#include "script_component.hpp"
 
 if (local player) then
 {
@@ -108,26 +116,26 @@ if (local player) then
 		{		
 			if (leader group player == leader player) then
 			{
-				[_westplayer, _leadergroupwest] call BIS_fnc_arrayPushStack;
-				[_eastplayer, _leadergroupeast] call BIS_fnc_arrayPushStack;
+				_westplayer append _leadergroupwest;
+				_eastplayer append _leadergroupeast;
 
-				[_westplayer, _gruppeinheitenwest] call BIS_fnc_arrayPushStack;
-				[_eastplayer, _gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
+				_westplayer append _gruppeinheitenwest;
+				_eastplayer append _gruppeinheiteneast;			
 			}
 			else	
 			{						
-				[_westplayer, _leadergroupwest] call BIS_fnc_arrayPushStack;
-				[_eastplayer, _leadergroupeast] call BIS_fnc_arrayPushStack;
+				_westplayer append _leadergroupwest;
+				_eastplayer append _leadergroupeast;
 			};
 		};
 				
 		if (_Modus==1) then
 		{		
-			[_westplayer, _leadergroupwest] call BIS_fnc_arrayPushStack;
-			[_eastplayer, _leadergroupeast] call BIS_fnc_arrayPushStack;
+			_westplayer append _leadergroupwest;
+			_eastplayer append _leadergroupeast;
 					
-			[_westplayer, _gruppeinheitenwest] call BIS_fnc_arrayPushStack;
-			[_eastplayer, _gruppeinheiteneast] call BIS_fnc_arrayPushStack;			
+			_westplayer append _gruppeinheitenwest;
+			_eastplayer append _gruppeinheiteneast;
 		};		
 				
 		if (_Modus==2) then

@@ -11,7 +11,7 @@
 // hier den Missionsnamen festlegen
 #define __MISSION_NAME__ "OPT - Schlacht Nr. xx"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
-#define __VERSION__ Build on version 1.04
+#define __VERSION__ Complete new build 1.04
 // made by
 #define __MADE_BY__ "James"
 // short description
@@ -69,9 +69,6 @@
 
 // wenn nicht auskommentiert, werden alle Sektor-Flaggen mit einem Marker versehen
 #define __OPT_PARAM_FLAG_MARKER__
-
-// wenn nicht auskommentiert mit // dann werden für definierte Spieler Marker auf der Karte erzeugt
-#define __SHOW_CUSTOM_PLAYERMARKER__
 
 // wenn nicht auskommentiert, kann in den Parametern eingestellt werden, ob HL alle Einheiten auf der Kate sieht oder nur Gruppenführer.
 #define __SHOW_ALL_UNITS__

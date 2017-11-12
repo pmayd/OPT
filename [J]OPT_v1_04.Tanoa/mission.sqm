@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=130;
+	toggles=2;
 	class ItemIDProvider
 	{
 		nextID=6126;
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3442;
+		nextID=3504;
 	};
 	class Camera
 	{
@@ -32758,7 +32758,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={11606.18,4.9389319,3121.989};
-					angle=5.3419118;
+					angle=5.3419113;
 					class Attributes
 					{
 						name="trg_csat_repair";
