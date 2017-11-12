@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-#define PLAYER_SIDE(var1) [var] call EFUNC(common,getPlayerSide)
+#define PLAYER_SIDE(var1) [var1] call EFUNC(common,getPlayerSide)
 
 private _westplayer = [];
 private _eastplayer = [];
@@ -82,7 +82,7 @@ if (PLAYER_SIDE(player) == west) then {
 
     // create or update player marker
     private _marker = [] call FUNC(createPlayerMarker);
-    _marker setmarkerposlocal (getPosATLVisual (vehicle player));		
+    _marker setMarkerPosLocal (getPosATLVisual (vehicle player));		
 
     {
         private _obj = _x;
@@ -93,8 +93,8 @@ if (PLAYER_SIDE(player) == west) then {
             private _name = [_obj] call EFUNC(log,getPlayerName);
 
             // create or update unit marker
-            _marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
-            _marker setmarkerdirlocal (getDirVisual (vehicle _obj));
+            _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
+            _marker setMarkerDirLocal (getDirVisual (vehicle _obj));
 
             // Fahrzeuginfo
             if (vehicle _obj != _obj) then {
@@ -106,26 +106,26 @@ if (PLAYER_SIDE(player) == west) then {
 
                     // UAV Operator ja/nein
                     if (!isNull _operator) then {
-                        _marker setmarkertextlocal format ["%1 (%2)", _vec_name, name _operator];
+                        _marker setMarkerTextLocal format ["%1 (%2)", _vec_name, name _operator];
                     } else {
-                        _marker setmarkertextlocal format ["%1 (---)", _vec_name];
+                        _marker setMarkerTextLocal format ["%1 (---)", _vec_name];
                     };
                 } else {
-                    _marker setmarkerTextLocal format["%1 (%2)", _vec_name, _name];
+                    _marker setMarkerTextLocal format["%1 (%2)", _vec_name, _name];
                 };
                 
             } else {
                 if (isPlayer _obj) then {
-                    _marker setmarkertextlocal format ["%1", _name];
+                    _marker setMarkerTextLocal format ["%1", _name];
                 } else {
-                    _marker setmarkertextlocal "";
-                    _marker setMarkerPosLocal [0,0];
+                    _marker setMarkerTextLocal "";
+                    deleteMarkerLocal _marker;
                 };
             };
         } else  {
             deleteMarkerLocal _marker;
         };	
-    } forEach (_westplayer - [player]);
+    } forEach _westplayer;
 
 };
 
@@ -133,7 +133,7 @@ if (PLAYER_SIDE(player) == east) then {
 
      // create or update player marker
     private _marker = [] call FUNC(createPlayerMarker);
-    _marker setmarkerposlocal (getPosATLVisual (vehicle player));		
+    _marker setMarkerPosLocal (getPosATLVisual (vehicle player));		
 
     {
         private _obj = _x;
@@ -156,27 +156,27 @@ if (PLAYER_SIDE(player) == east) then {
 
                     // UAV Operator ja/nein
                     if (!isNull _operator) then {
-                        _marker setmarkertextlocal format ["%1 (%2)", _vec_name, name _operator];
+                        _marker setMarkerTextLocal format ["%1 (%2)", _vec_name, name _operator];
                     } else {
-                        _marker setmarkertextlocal format ["%1 (---)", _vec_name];
+                        _marker setMarkerTextLocal format ["%1 (---)", _vec_name];
                     };
                 } else {
-                    _marker setmarkerTextLocal format["%1 (%2)", _vec_name, _name];
+                    _marker setMarkerTextLocal format["%1 (%2)", _vec_name, _name];
                 };
 
             } else {
                 if (isPlayer _obj) then {
-                    _marker setmarkertextlocal format ["%1", _name];
+                    _marker setMarkerTextLocal format ["%1", _name];
                 } else {
-                    _marker setmarkertextlocal "";
-                    _marker setMarkerPosLocal [0,0];
+                    _marker setMarkerTextLocal "";
+                    deleteMarkerLocal _marker;
                 };
             };
 
         } else {
-            _marker setmarkerposlocal [0,0];
+            deleteMarkerLocal _marker;
         };	
 
-    } forEach (_eastplayer - [player]);
+    } forEach _eastplayer;
 
 };

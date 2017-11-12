@@ -83,8 +83,7 @@ if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopt
     // log player
     private _message = "";
 
-    private _uid = getPlayerUID _unit;
-    _name = [_uid] call FUNC(getPlayerName);
+    private _name = [_unit] call FUNC(getPlayerName);
 
     switch (_side) do {
         case west: {
@@ -124,8 +123,7 @@ if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopt
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
 
-        private _uid = getPlayerUID _victim;
-        private _nameVictim = [_uid] call FUNC(getPlayerName);
+        private _nameVictim = [_victim] call FUNC(getPlayerName);
 
         if !(_killer isEqualTo objNull) then {
             
@@ -136,8 +134,7 @@ if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopt
                 ];
 
             } else {
-                _uid = getPlayerUID _killer;
-                _nameKiller = [_uid] call FUNC(getPlayerName);
+                _nameKiller = [_killer] call FUNC(getPlayerName);
 
                 _message = format[
                     "%1 (%2) von: %3 (%4).",
@@ -168,8 +165,7 @@ if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopt
 
 			} else {
 
-                _uid = getPlayerUID _killer;
-                _nameKiller = [_uid] call FUNC(getPlayerName);
+                _nameKiller = [_killer] call FUNC(getPlayerName);
 
 				_message = format["%1 von: %2 (%3).", _message, _nameKiller, _faction];
 
@@ -221,11 +217,9 @@ if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopt
     private _dis = (getPosASL _vec) distance2D (_unit getVariable QGVAR(transport_start_loc));
     if ( _pos in ["cargo", "gunner"] && (_dis > 500) ) then {
 
-        _uid = getPlayerUID _unit;
-        _nameUnit = [_uid] call FUNC(getPlayerName);
+        _nameUnit = [_unit] call FUNC(getPlayerName);
 
-        _uid = getPlayerUID (_vec getVariable "opt_var_vec_pilot");
-        _namePilot = [_uid] call FUNC(getPlayerName);
+        _namePilot = [(_vec getVariable ["opt_var_vec_pilot", objNull])] call FUNC(getPlayerName);
 
         private _message = format[
             "%1 (%2) wurde von %3 (%4) eingeflogen (%5 m)", 

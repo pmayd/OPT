@@ -63,8 +63,7 @@ sleep 13;
 private _playerNATO = [];
 private _playerCSAT = [];
 {
-	_uid = getPlayerUID _x;
-    _name = [_uid] call EFUNC(log,getPlayerName);
+    _name = [_x] call EFUNC(log,getPlayerName);
     
     if ((_x getVariable QGVARMAIN(playerSide)) == west) then {
 		_playerNATO pushBack (_name);

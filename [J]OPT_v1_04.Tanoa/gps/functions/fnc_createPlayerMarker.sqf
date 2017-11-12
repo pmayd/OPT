@@ -14,17 +14,17 @@
 */
 #include "script_component.hpp"
 
-private _marker = player getVariable[QGVAR(unitMarker), ""];
+private _marker = player getVariable[QGVAR(playerMarker), ""];
 
 if (_marker isEqualTo "") then {
     private _name = [player] call EFUNC(log,getPlayerName);
-    _marker = createMarkerLocal [format["%1_%2", QGVAR(unitMarker), _name], [0,0]];
+    _marker = createMarkerLocal [format["%1_%2", QGVAR(playerMarker), _name], [0,0]];
     _marker setMarkerTypeLocal "mil_circle";
     _marker setMarkerColorLocal "ColorBrown";
     _marker setMarkerSizeLocal MARKERSIZE;
     _marker setMarkerAlphaLocal MARKERALPHA;
 
-    player setVariable [QGVAR(unitMarker), _marker];
+    player setVariable [QGVAR(playerMarker), _marker];
 };
 
 _marker

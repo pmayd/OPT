@@ -75,7 +75,7 @@ class Extended_PostInit_EventHandlers {
         init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_PostInit.sqf');
     };
     class GVARMAIN(gps) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'gps\XEH_PreInit.sqf');
+        init = QUOTE(call compile preProcessFileLineNumbers 'gps\XEH_PostInit.sqf');
     };
     class GVARMAIN(log) {
         serverinit = QUOTE(call compile preProcessFileLineNumbers 'log\XEH_PostInit.sqf');
