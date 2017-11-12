@@ -26,7 +26,7 @@ GVAR(mode) = 0;
 
 //Modus
 //_all=Schalter;
-if ((player isKindOf "OPT_NATO_Gruppenfuehrer_T") or (player isKindOf "OPT_CSAT_Gruppenfuehrer_T")) then {
+if (leader player == player) then {
     GVAR(mode)=1;
 };
 if (((player isKindOf "OPT_NATO_Offizier_T") or (player isKindOf "OPT_CSAT_Offizier_T")) and GVAR(showAll)) then {
