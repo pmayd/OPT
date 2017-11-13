@@ -19,10 +19,10 @@ private _marker = player getVariable[QGVAR(playerMarker), ""];
 if (_marker isEqualTo "") then {
     private _name = profileName;
     _marker = createMarkerLocal [format["%1_%2", QGVAR(playerMarker), _name], [0,0]];
-    _marker setMarkerTypeLocal "mil_circle";
-    _marker setMarkerColorLocal "ColorBrown";
-    _marker setMarkerSizeLocal MARKERSIZE;
-    _marker setMarkerAlphaLocal MARKERALPHA;
+    _marker setMarkerTypeLocal MARKER_PLAYER_SYMBOL;
+    _marker setMarkerColorLocal MARKER_PLAYER_COLOR;
+    _marker setMarkerSizeLocal MARKER_SIZE;
+    _marker setMarkerAlphaLocal MARKER_ALPHA;
 
     player setVariable [QGVAR(playerMarker), _marker];
 };

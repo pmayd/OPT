@@ -12,6 +12,7 @@
 //#endif
 
 #include "..\main\script_macros.hpp"
+#include "setup.hpp"
 
 #define RSC(VAR) TRIPLES(PREFIX,DLG,VAR)
 #define APP(VAR) RSC(DOUBLES(COMPONENT,VAR))

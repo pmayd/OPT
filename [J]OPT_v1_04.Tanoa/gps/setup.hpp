@@ -1,4 +1,8 @@
-#define MARKERREFRESH 1
-#define MARKERSYMBOL "mil_triangle"
-#define MARKERSIZE [0.8, 0.8]
-#define MARKERALPHA 0.6
+#define MARKER_REFRESH 1
+#define MARKER_SYMBOL "mil_triangle"
+#define MARKER_SIZE [0.8, 0.8]
+#define MARKER_ALPHA 0.6
+
+// player marker settings
+#define MARKER_PLAYER_SYMBOL "mil_circle"
+#define MARKER_PLAYER_COLOR "ColorBrown"

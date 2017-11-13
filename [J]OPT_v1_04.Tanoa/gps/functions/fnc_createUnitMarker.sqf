@@ -6,7 +6,7 @@
 * 0: <Object> unit
 *
 * Return Value:
-* 0: <MARKER> marker name
+* 0: <MARKER_> marker name
 *
 * Example:
 * [unit] call fnc_createPlayerMarker.sqf;
@@ -27,16 +27,16 @@ if (_marker isEqualTo "") then {
 
     if (_side == west) then {
         _marker = createMarkerLocal [format["%1_%2", QGVAR(unitMarker), _name], [0,0]];
-        _marker setMarkerTypeLocal MARKERSYMBOL;
+        _marker setMarkerTypeLocal MARKER_SYMBOL;
         _marker setMarkerColorLocal "ColorBLUFOR";
-        _marker setMarkerSizeLocal MARKERSIZE;
-        _marker setMarkerAlphaLocal MARKERALPHA;
+        _marker setMarkerSizeLocal MARKER_SIZE;
+        _marker setMarkerAlphaLocal MARKER_ALPHA;
     } else {
         _marker = createMarkerLocal [format["%1_%2", QGVAR(unitMarker), _name], [0,0]];
-        _marker setMarkerTypeLocal MARKERSYMBOL;
+        _marker setMarkerTypeLocal MARKER_SYMBOL;
         _marker setMarkerColorLocal "ColorOPFOR";
-        _marker setMarkerSizeLocal MARKERSIZE;
-        _marker setMarkerAlphaLocal MARKERALPHA;
+        _marker setMarkerSizeLocal MARKER_SIZE;
+        _marker setMarkerAlphaLocal MARKER_ALPHA;
     };
     
     _unit setVariable [QGVAR(unitMarker), _marker];

@@ -215,7 +215,7 @@ if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopt
     params ["_vec", "_pos", "_unit"];
 
     private _dis = (getPosASL _vec) distance2D (_unit getVariable QGVAR(transport_start_loc));
-    if ( _pos in ["cargo", "gunner"] && (_dis > 500) ) then {
+    if ( _pos in ["cargo", "gunner"] && (_dis > DISTANCE_FROM_BASE) ) then {
 
         _nameUnit = [_unit] call FUNC(getPlayerName);
 
@@ -255,6 +255,6 @@ if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopt
 
 	private _timestemp = [serverTime - EGVAR(mission,startTime)] call CBA_fnc_formatElapsedTime;
 
-	diag_log format["OPT LOG BEGIN: %1 - %2 || %3 :OPT LOG END", _timestemp, _category, _message];
+	diag_log LOG_MESSAGE(_category,_timestemp,_message);
 	
 }] call CBA_fnc_addEventHandler;
