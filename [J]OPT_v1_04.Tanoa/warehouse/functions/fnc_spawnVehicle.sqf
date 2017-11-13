@@ -4,6 +4,7 @@
 *
 * Arguments:
 * 0: <type> description
+* 1: <OBJECT> object for spawn position
 *
 * Return Value:
 * None
@@ -14,19 +15,18 @@
 */
 #include "script_component.hpp"
 
-params ["_vecType", "_spawnPos"];
+params ["_vecType", "_spawnObj"];
 
 // get spawnPos right
-private _ori = getDir _spawnPos;
-_spawnPos = if (typeName _spawnPos == "OBJECT") then {getPosATL _spawnPos} else {_spawnPos};
+private _spawnPos = if (typeName _spawnObj == "OBJECT") then {getPosATL _spawnObj} else {_spawnObj};
 
-private _vec = createVehicle [_vecType, _spawnPos, [], 0, "NONE"];
+private _vec = createVehicle [_vecType, _spawnPos, [], 0, ""];
 
-if (typeName _spawnPos == "OBJECT") then {_vec setDir (getDir _spawnPos)};
+if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};
 if (surfaceIsWater _spawnPos) then {
-	_vec setPosASL ((getPos _vec) set [2, 0]);
+	_vec setPosASL ((getPosASL _vec) set [2, 0]);
 } else {
-	_vec setPosATL (getPos _vec vectorAdd [0,0,0.1]);
+	_vec setPosATL (getPosATL _vec vectorAdd [0,0,0.1]);
 };
 
 //datalink-test-eintrag, kallek
@@ -56,4 +56,3 @@ if (_vecType in (_uavs + GVARMAIN(big_uavs))) then {
 };
 
 _vec setDamage 0;
-_vec setDir _ori;

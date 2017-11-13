@@ -45,8 +45,8 @@ if (_unitCost > (_side_Budget + GVARMAIN(dispo))) exitWith {
     [QEGVAR(gui,message), ["Budget unzureichend", _txt, "red"]] call CBA_fnc_localEvent;
 };
 
-private _spawnPos = nearestObject [player, "Land_HelipadCircle_F"];
-private _empty_pos = (position _spawnPos) findEmptyPosition [0.2, __ORDER_SPAWN_RADIUS__, _unitType];
+private _spawnObj = nearestObject [player, "Land_HelipadCircle_F"];
+private _empty_pos = (position _spawnObj) findEmptyPosition [0.2, __ORDER_SPAWN_RADIUS__, _unitType];
 
 if (count _empty_pos == 0) exitWith {
     private _txt = format["Kein freier Platz im Umkreis von %1m. Bereich räumen.", __ORDER_SPAWN_RADIUS__];
@@ -54,7 +54,7 @@ if (count _empty_pos == 0) exitWith {
 };
 
 [QEGVAR(common,updateBudget), [player getVariable QGVARMAIN(playerSide), _unitCost, "-"]] call CBA_fnc_serverEvent;
-[QGVAR(spawnVehicle), [_unitType, _spawnPos]] call CBA_fnc_serverEvent;
+[QGVAR(spawnVehicle), [_unitType, _spawnObj]] call CBA_fnc_serverEvent;
 
 private _txt = format["%1 geliefert.",_displayName];
 [QEGVAR(gui,message), ["Bestellung", _txt, "green"]] call CBA_fnc_localEvent;

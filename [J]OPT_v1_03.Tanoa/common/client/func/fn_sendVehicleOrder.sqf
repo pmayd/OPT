@@ -56,15 +56,15 @@ if (_unitCost > (_side_Budget + opt_dispo)) exitWith {
 	[format ["<t size='0.8' shadow='1' color='#ff0000'>%1</t>",txt], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
 };
 
-_spawnpos = nearestObject [player, "Land_HelipadCircle_F"];
-_empty_pos = (position _spawnpos) findEmptyPosition [0, __ORDER_SPAWN_RADIUS__, _unitType];
+_spawnObj = nearestObject [player, "Land_HelipadCircle_F"];
+_empty_pos = (position _spawnObj) findEmptyPosition [0, __ORDER_SPAWN_RADIUS__, _unitType];
 
 if (count _empty_pos == 0) exitWith {
 	[format ["<t size='0.8' shadow='1' color='#ff0000'>Kein freier Platz im Umkreis von %1m. Bereich räumen.</t>", __ORDER_SPAWN_RADIUS__], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
 };
 
 ["opt_eh_server_update_budget", [playerSide, _unitCost, "-"]] call CBA_fnc_serverEvent;
-["vehicleOrder", [_unitType, _unitCost, _spawnpos, str(playerSide)]] call tcb_fnc_NetCallEventCTS;
+["vehicleOrder", [_unitType, _unitCost, _spawnObj, str(playerSide)]] call tcb_fnc_NetCallEventCTS;
 
 [format ["<t size='0.8' shadow='1' color='#ffffff'>%1 geliefert</t>",_displayName], (safeZoneX - 0.0), (safeZoneY + 0.25), 3, 1, 0, 3] spawn BIS_fnc_dynamicText;
 

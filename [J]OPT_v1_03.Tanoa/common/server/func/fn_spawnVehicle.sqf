@@ -1,16 +1,16 @@
 if (!isServer) exitWith {};
 #include "..\..\..\setup\setup.sqf"
 
-params ["_vecType", "_spawnID", "_isFlat"];
+params ["_vecType", "_spawnObj", "_isFlat"];
 
 // create Vehicle
-_spawnpos = if (typeName _spawnID == "OBJECT") then {getPosATL _spawnID} else {_spawnID};
+_spawnPos = if (typeName _spawnObj == "OBJECT") then {getPosATL _spawnObj} else {_spawnObj};
 
-_vec = createVehicle [_vecType, _spawnpos, [], 0, "NONE"];
+_vec = createVehicle [_vecType, _spawnPos, [], 0, ""];
 
 //added by psycho - check for free space to place the vehicle
 _sizeOfVec = sizeOf _vecType;
-if (surfaceIsWater _spawnpos) then {
+if (surfaceIsWater _spawnPos) then {
 	_isFlat = (position _vec) isFlatEmpty [_sizeOfVec / 2, 50, 0.7, _sizeOfVec, 2, false, _vec];
 } else {
 	_isFlat = (position _vec) isFlatEmpty [_sizeOfVec / 2, 80, 0.7, _sizeOfVec, 0, false, _vec];
@@ -20,11 +20,11 @@ if (count _isFlat > 1) then {
 	_posv1 set [2, 0];
 };
 
-if (typeName _spawnID == "OBJECT") then {_vec setDir (getDir _spawnID)};
-if (surfaceIsWater _spawnpos) then {
-	_vec setPosASL [getPos _vec select 0, getPos _vec select 1, 0];
+if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};
+if (surfaceIsWater _spawnPos) then {
+	_vec setPosASL (getPosASL _vec set [2, 0]); // height is always 0 in water
 } else {
-	_vec setPosATL [getPos _vec select 0, getPos _vec select 1, ((getPos _vec select 2) + .1)];
+	_vec setPosATL (getPosATL _vec vectorAdd [0,0,0.1]); // slighty increase height
 };
 
 _vec addEventHandler ["Killed", {
