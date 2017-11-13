@@ -38,7 +38,6 @@ GVAR(eh_map) = addMissionEventHandler ["Map", {
     params ["_mapIsOpened", "_mapIsForced"];
 
     if (_mapIsOpened) then {
-        systemChat "GPS aktiv";
         GVAR(GPSOn) = true;
         // no sheduled environment -> create one
         /* Triggered when map is opened or closed either by user action or script command openMap. */
@@ -47,7 +46,6 @@ GVAR(eh_map) = addMissionEventHandler ["Map", {
         };
     } else {
         GVAR(GPSOn) = false;
-        systemChat "GPS inaktiv";
     };
 }];
 
@@ -56,7 +54,6 @@ GVAR(eh_map) = addMissionEventHandler ["Map", {
     params ["_vec", "_pos", "_unit", "_turret"];
 
     if (_pos == "gunner") then {
-        systemChat "GPS aktiv";
         GVAR(GPSOn) = true;
         // no sheduled environment -> create one
         /* Triggered when map is opened or closed either by user action or script command openMap. */
@@ -71,7 +68,6 @@ GVAR(eh_map) = addMissionEventHandler ["Map", {
     params ["_vec", "_pos", "_unit", "_turret"];
 
     if (_pos == "gunner") then {
-        systemChat "GPS inaktiv";
         GVAR(GPSOn) = false;
     };
 
