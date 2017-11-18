@@ -3,7 +3,6 @@ PREP(fullRepair);
 PREP(getPartsRepairTime);
 PREP(hasTK);
 PREP(heavyRepair);
-PREP(initPlayerEH);
 PREP(initServerCBAEvents);
 PREP(needRepair);
 PREP(partRepair);

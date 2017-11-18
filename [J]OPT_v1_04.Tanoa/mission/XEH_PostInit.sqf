@@ -17,6 +17,4 @@ GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     */
     [] call FUNC(postInit); // führt alle wichtigen Skripte aus
     [] call FUNC(initPlayerEH); // lädt alle EH  
-    [QEGVAR(log,updatePlayerList), [getPlayerUID player, profileName, playerSide]] call CBA_fnc_serverEvent;    
-
 }];

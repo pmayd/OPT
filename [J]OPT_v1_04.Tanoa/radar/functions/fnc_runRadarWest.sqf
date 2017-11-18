@@ -20,6 +20,7 @@ private _size = 3500;
 private _markerwest = [];
 private _markerost = [];
 
+
 for "_i" from 1 to 10 do {
 	private _marker1 = createMarkerLocal [format["W%1AIR%2", _i, west],[0,0]];
 	_markerwest pushBack _marker1;
@@ -77,12 +78,17 @@ sleep 1;
             {_x setMarkerTypelocal "mil_dot";} foreach _markerwest;
 
             _units = list _RadarZONE;
-            
+			
+			private _objekte = nearestTerrainObjects [getpos GVAR(containerWest), ["Tree","BUILDING"], 100];
+			private _SignalDaempfung = round((count _objekte)/350);
+	           
             {
-                if ((_x iskindof "AIR") and ((getPos _x select 2)> 10)) then { // von 5 auf 10 geändert, kallek
+				
+                if ((_x iskindof "AIR") and ((275 - ((getPos _x select 2)*(5 - _SignalDaempfung)))< (speed _x))) then { 
                     _Radaranzeige pushBack _x;
                 };	
-            //systemChat format ["X:%1 R:%2 B1:%3 B2:%4",_x,_Radaranzeige,(_x iskindof "AIR"),((getPos _x select 2)> 10)];	  // von 5 auf 10 geändert, kallek
+           	
+            //systemChat format ["X:%1 R:%2 B1:%3 B2:%4",_x,_Radaranzeige,(_x iskindof "AIR"),((275 - ((getPos _x select 2)*(5 - _SignalDaempfung)))< (speed _x))];	
             } foreach _units;
             
             if (count _Radaranzeige > 0) then	{
