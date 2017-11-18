@@ -44,7 +44,7 @@ GVAR(containerWest) addAction[
     true, 
     true, 
     "", 
-    format["(!(%1 getVariable [""RADARWESTaufgebaut"",false]))", GVAR(containerWest)]
+    format["(!(%1 getVariable [""RADARWESTaufgebaut"",f alse]))", GVAR(containerWest)]
 ]; 
 
 GVAR(containerWest) addAction[
@@ -55,7 +55,7 @@ GVAR(containerWest) addAction[
     true, 
     true, 
     "", 
-    format["(%1 getVariable [""RADARWESTaufgebaut"",false])", GVAR(containerWest)]
+    format["(%1 getVariable [""RADARWESTaufgebaut"", false])", GVAR(containerWest)]
 ];
 
 [] spawn FUNC(runRadarEast);
