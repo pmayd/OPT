@@ -9,7 +9,7 @@
 * None
 *
 * Example:
-* [] call fnc_playerAction.sqf;
+* [] call fnc_playerActions.sqf;
 *
 */
 #include "script_component.hpp"
@@ -24,7 +24,7 @@ if (alive player && player isKindOf "CAManBase") then {
 		true, 
 		true, 
 		"", 
-		format["[_target, _this] call %1", QFUNC(checkRevive)]
+		format["[cursorObject, _this] call %1", QFUNC(checkRevive)]
 	];
 	player addAction [
 		"<t color=""#C90000"">" + FAR_REVIVE_ACTION_STABILIZE + "</t>", 
@@ -34,7 +34,7 @@ if (alive player && player isKindOf "CAManBase") then {
 		true,
 		true, 
 		"", 
-		format["[_target, _this] call %1", QFUNC(checkStabilize)]
+		format["[cursorObject, _this] call %1", QFUNC(checkStabilize)]
 	];
 	/*
 	player addAction [
@@ -56,7 +56,7 @@ if (alive player && player isKindOf "CAManBase") then {
 		false, 
 		true, 
 		"", 
-		format["[_target, _this] call %1", QFUNC(checkDragging)]
+		format["[cursorObject, _this] call %1", QFUNC(checkDragging)]
 	];
 };
 
