@@ -13,10 +13,10 @@ FAR_BleedOut = 600;
 FAR_EnableDeathMessages = true;
 
 // Enable 3D icons
-tcb_ais_show_3d_icons = true;
+FAR_show3DIcons = true;
 
 // Enable markers
-tcb_downedMarkers = true;
+FAR_downedMarkers = true;
 
 // Enable hint to show distance of next medic
 FAR_checkNearbyMedics = false;
@@ -46,7 +46,7 @@ if (isDedicated) exitWith {};
 // Player Initialization
 [] spawn {
 	waitUntil {!isNull player};	
-	[] spawn opt_addons_fnc_playerInit;
+	[] spawn FUNC(playerInit);
 	player addEventHandler ["Respawn", {[] spawn opt_addons_fnc_playerInit}];
 	
 	waitUntil {!isNull (findDisplay 46)};
@@ -70,8 +70,7 @@ if (isDedicated) exitWith {};
 
 // 3D Marker
 [] spawn {
-	waitUntil {tcb_draw3D_reset_done};
-	if (tcb_ais_show_3d_icons) then {
+	if (FAR_show3DIcons) then {
 		_icons = addMissionEventHandler ["Draw3D", {
 			{
 				if ((_x distance player) < 30 && {_x getVariable ["FAR_isUnconscious", 0] == 1} && {_x != player} && {(player getVariable "opt_var_playerSide") == (_x getVariable "opt_var_playerSide")}) then {

@@ -1,2 +1,4 @@
 
 
+PREP(reviveInit);
+PREP(playerInit);

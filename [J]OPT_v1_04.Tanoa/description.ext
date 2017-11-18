@@ -15,16 +15,6 @@ class RscTitles {
     #include "hud\rsc.hpp"
 };
 
-
-//--------------------------------------------------------------
-//------------------------AIS INJURY----------------------------
-//--------------------------------------------------------------
-class CfgFunctions {
-	#include "addons\AIS\cfgFunctions.hpp"
-};
-#include "addons\AIS\Effects\BarDlg.hpp"
-//--------------------------------------------------------------
-
 //#include "war.ext"
 #include "train.ext"
 
