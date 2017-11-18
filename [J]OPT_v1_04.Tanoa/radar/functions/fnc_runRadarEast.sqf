@@ -83,7 +83,7 @@ sleep 1;
             _units = list _RadarZONE;
 			
 			private _objekte = nearestTerrainObjects [getpos GVAR(containerEast), ["Tree","BUILDING"], 100];
-			private _SignalDaempfung = round((count _objekte)/350);
+			private _SignalDaempfung = RADAR_DAMPING(_objekte);
 
             {
 				

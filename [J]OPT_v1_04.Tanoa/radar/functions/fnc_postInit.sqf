@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 GVAR(containerEast) addAction[
-    ("<t color=""#df8601"">" + ("Radar aufbauen") + "</t>"),
+    ("<t color=""#df8601"">" + STR_RADAR_DEPLOY + "</t>"),
     {[] call FUNC(deployRadarEast); },
     '', 
     1, 
@@ -26,7 +26,7 @@ GVAR(containerEast) addAction[
 ]; 
 
 GVAR(containerEast) addAction[
-    ("<t color=""#df8601"">" + ("Radar abbauen") + "</t>"),
+    ("<t color=""#df8601"">" + STR_RADAR_UNDEPLOY + "</t>"),
     {[] call FUNC(undeployRadarEast); },
     '', 
     1,
@@ -37,7 +37,7 @@ GVAR(containerEast) addAction[
 ]; 
 
 GVAR(containerWest) addAction[
-    ("<t color=""#df8601"">" + ("Radar aufbauen") + "</t>"),
+    ("<t color=""#df8601"">" + STR_RADAR_DEPLOY + "</t>"),
     {[] call FUNC(deployRadarWest); },
     '',
     1, 
@@ -48,7 +48,7 @@ GVAR(containerWest) addAction[
 ]; 
 
 GVAR(containerWest) addAction[
-    ("<t color=""#df8601"">" + ("Radar abbauen") + "</t>"),
+    ("<t color=""#df8601"">" + STR_RADAR_UNDEPLOY + "</t>"),
     {[] call FUNC(undeployRadarWest); },
     '', 
     1, 
