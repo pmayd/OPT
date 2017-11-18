@@ -1,32 +1,43 @@
-// Cache player's sid
+/**
+* Author: James
+* initialize variables and addAction menu entries for a player after respawn
+*
+* Arguments:
+* None
+*
+* Return Value:
+* None
+*
+* Example:
+* [] call fnc_playerInit.sqf;
+*
+*/
+#include "script_component.hpp"
+
 if (isNull player) then {
 	diag_log "OPT Debug: Null player in revive Init found";
 };
 waitUntil {!isNull player};
 
-FAR_PlayerSide = playerSide;
+FAR_PlayerSide = [player] call EFUNC(common,getPlayerSide);
 
 // Clear event handler before adding it
 player removeAllEventHandlers "HandleDamage";
-player addEventHandler ["HandleDamage", opt_addons_fnc_HandleDamage];
+player addEventHandler ["HandleDamage", FUNC(handleDamage)];
 
 player setVariable ["FAR_isUnconscious", 0, true];
 player setVariable ["FAR_isStabilized", 0, true];
 player setVariable ["FAR_isDragged", 0, true];
-player setVariable ["tcb_healer", objNull, true];
+player setVariable ["FAR_healer", objNull, true];
 player setCaptive false;
 FAR_isDragging = false;
-tcb_ais_medequip_array = [];
+FAR_medequipArray = [];
 
 closeDialog 5566;
 closeDialog 5651;
 
-[true] call opt_addons_fnc_toggleTFAR;
+[true] call FUNC(toggleTFAR);
 
-if (!opt_far_f_r) then {
-	["tfar_removeMapMarker", player] call tcb_fnc_NetCallEvent;
-} else {
-	opt_far_f_r = false;
-};
+[QGVAR(removeMarker), [player]] call CBA_fnc_globalEvent; // remove Marker on all clients
 
-[] spawn opt_addons_fnc_PlayerActions;
+[] spawn FUNC(playerActions);

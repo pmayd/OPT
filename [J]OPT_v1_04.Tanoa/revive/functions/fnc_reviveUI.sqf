@@ -1,29 +1,42 @@
-private ["_dialog","_labelwidth","_labelpos","_tick"];
+/**
+* Author: James
+* kill camera + overlay ui
+*
+* Arguments:
+* None
+*
+* Return Value:
+* None
+*
+* Example:
+* [] call fnc_reviveUI.sqf;
+*
+*/
+#include "script_component.hpp"
 
-_labelwidth = -1;
-_labelpos = [];
-_tick = 0;
+private _labelwidth = -1;
+private _labelpos = [];
+private _tick = 0;
 
 #define BAR_CONTROL ((findDisplay 5566) displayCtrl 6699)
 #define BAR_CONTROL_POS (ctrlPosition ((findDisplay 5566) displayCtrl 6699))
 
-_dialog = createDialog "GREUH_respawn";
+private _dialog = createDialog "GREUH_respawn";
 waitUntil {dialog};
 
-
 while {dialog && alive player} do {
-	if (!isNil "public_bleedout_message" && !isNil "public_bleedout_timer") then {
+	if (!isNil "FAR_bleedoutMessage" && !isNil "FAR_bleedoutTimer") then {
 		if (_labelwidth == -1) then {
 			_labelwidth = BAR_CONTROL_POS select 2;
 		};
 		
-		_labelpos = [BAR_CONTROL_POS select 0, BAR_CONTROL_POS select 1, _labelwidth * (public_bleedout_timer / FAR_BleedOut), BAR_CONTROL_POS select 3];
+		_labelpos = [BAR_CONTROL_POS select 0, BAR_CONTROL_POS select 1, _labelwidth * (FAR_bleedoutTimer / FAR_BleedOut), BAR_CONTROL_POS select 3];
 		BAR_CONTROL ctrlSetPosition _labelpos;
-		ctrlSetText [5567, public_bleedout_message];
+		ctrlSetText [5567, FAR_bleedoutMessage];
 
-		if (public_bleedout_timer <= 30) then {
+		if (FAR_bleedoutTimer <= 30) then {
 			((findDisplay 5566) displayCtrl 5567) ctrlSetTextColor [1, 0, 0, 1];
-			if (public_bleedout_timer % 2 == 0) then {
+			if (FAR_bleedoutTimer % 2 == 0) then {
 				((findDisplay 5566) displayCtrl 6698) ctrlSetTextColor [1, 0, 0, 1];
 			} else {
 				((findDisplay 5566) displayCtrl 6698) ctrlSetTextColor [1, 1, 1, 1];

@@ -1,31 +1,45 @@
-////////////////////////////////////////////////
-// Make Player Unconscious
-////////////////////////////////////////////////
-params ["_unit","_killer"];
+/**
+* Author: James
+* make unit unconscious
+*
+* Arguments:
+* 0: <OBJECT> unit that was hit
+* 1: <OBJECT> instigator/killer of unit
+*
+* Return Value:
+* None
+*
+* Example:
+* [player, killer] call fnc_unconscious.sqf;
+*
+*/
+#include "script_component.hpp"
+
+params ["_unit", "_killer"];
 
 if (_unit getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
 
 if (isPlayer _unit) then {
 	disableUserInput true;
 };
-//_unit setVariable ["GREUH_isUnconscious", 1, true];
-[] spawn opt_addons_fnc_reviveCamera;
+
+[] spawn FUNC(reviveCamera);
 
 // mute TFAR
-[false] call opt_addons_fnc_toggleTFAR;
+[false] call FUNC(toggleTFAR);
 	
 // create marker
-if (tcb_downedMarkers) then {
-	["tfar_mapMarker", _unit] call tcb_fnc_NetCallEvent;
+if (FAR_downMarker) then {
+	[QGVAR(createMarker), [_unit]] call CBA_fnc_globalEvent;
 };
 
 // Death message
 if (FAR_EnableDeathMessages) then {
-	_name = _this call opt_addons_fnc_showKiller;
+	_name = [_unit, _killer] call FUNC(showKiller);
 	if (_name != "") then {
 		[_name] spawn {
-			if (opt_far_dm_running) exitWith {};
-			opt_far_dm_running = true;
+			if (FAR_deathMassageIsShown) exitWith {};
+			FAR_deathMassageIsShown = true;
 			sleep 3.5;
 			_txt = format ["%1",(_this select 0)];
 			_print = [
@@ -34,7 +48,7 @@ if (FAR_EnableDeathMessages) then {
 				[_txt, "align = 'right' size = '1.2' font='PuristaBold'","#f07f7f00"]	// yellow
 			];
 			[_print, safezoneX, 0.95] spawn BIS_fnc_typeText2;
-			opt_far_dm_running = false;
+			FAR_deathMassageIsShown = false;
 		};
 	};
 };
@@ -67,9 +81,11 @@ disableUserInput true;
 disableUserInput false;
 
 while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1} && {_unit getVariable "FAR_isStabilized" == 0} && {(FAR_BleedOut <= 0 || time < _bleedOut)}} do {
-	if (FAR_checkNearbyMedics) then {hintSilent format["Ausgeblutet in %1 Sekunden\n\n%2", round (_bleedOut - time), call opt_addons_fnc_CheckFriendlies]};
-	public_bleedout_message = format ["Ausgeblutet in %1 Sekunden", round (_bleedOut - time)];
-	public_bleedout_timer = round (_bleedOut - time);
+	if (FAR_checkNearbyMedics) then {
+		hintSilent format["Ausgeblutet in %1 Sekunden\n\n%2", round (_bleedOut - time), [] call FUNC(checkForNearbyMedics)];
+	};
+	FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (_bleedOut - time)];
+	FAR_bleedoutTimer = round (_bleedOut - time);
 	sleep 0.5;
 };
 
@@ -78,13 +94,14 @@ if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
 	//[true] call opt_addons_fnc_toggleTFAR; // Funk im stabilisierten Zustand möglich!
 			
 	while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1}} do {
-		if (FAR_checkNearbyMedics) then {hintSilent format ["Du wurdest stabilisiert\n\n%1", call opt_addons_fnc_CheckFriendlies]};
-		public_bleedout_message = "Stabilisiert";
-		public_bleedout_timer = FAR_BleedOut;
+		if (FAR_checkNearbyMedics) then {
+			hintSilent format ["Du wurdest stabilisiert\n\n%1", call FUNC(checkForNearbyMedics)]
+		};
+		FAR_bleedoutMessage = "Stabilisiert";
+		FAR_bleedoutTimer = FAR_BleedOut;
 		sleep 0.5;
 	};
 };
-
 
 // Player bled out
 if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
@@ -95,14 +112,15 @@ if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabili
 } else {
 	// Player got revived
 	_unit setVariable ["FAR_isStabilized", 0, true];
-	["tfar_removeMapMarker", _unit] call tcb_fnc_NetCallEvent;
+	// remove down marker
+	[QGVAR(removeMarker), [_unit]] call CBA_fnc_globalEvent;
 	sleep 3;
 	
 	// Clear the "medic nearby" hint
 	hintSilent "";
 
 	// Unmute TFAR
-	[true] call opt_addons_fnc_toggleTFAR;
+	[true] call FUNC(toggleTFAR);
 	
 	_unit enableSimulation true;
 	_unit allowDamage true;
@@ -123,6 +141,6 @@ if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabili
 	};
 };
 
-opt_addons_var_unconciousHandle = nil;
+FAR_unconsciousHandler = nil;
 
 true

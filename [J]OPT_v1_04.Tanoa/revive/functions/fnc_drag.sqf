@@ -1,20 +1,41 @@
-////////////////////////////////////////////////
-// Drag Injured Player
-////////////////////////////////////////////////
-private ["_target", "_id"];
+/**
+* Author: James
+* drag action
+*
+* Arguments:
+* 0: <OBJECT> target the player wants to drag
+*
+* Return Value:
+* None
+*
+* Example:
+* [cursorObject] call fnc_handleAction.sqf;
+*
+*/
+#include "script_component.hpp"
+
+params ["_target"];
 FAR_isDragging = true;
-_target = _this select 0;
 
 _target attachTo [player, [0, 1.1, 0.092]];
 _target setVariable ["FAR_isDragged", 1, true];
 player playMoveNow "AcinPknlMstpSrasWrflDnon";
 
 // Rotation fix
-["far_rotate", _target] call tcb_fnc_NetCallEvent;
-	
+[QGVAR(rotate), [_target, 180]] call CBA_fnc_globalEvent;
+
 // Add release action and save its id so it can be removed
-_id = player addAction ["<t color=""#C90000"">" + "Ablegen" + "</t>", "addons\FAR_revive\FAR_handleAction.sqf", ["action_release"], 10, true, true, "", "true"];
-hint "Drücke 'C', falls du dich nicht bewegen kannst.";
+_id = player addAction [
+	"<t color=""#C90000"">" + FAR_REVIVE_ACTION_DROP + "</t>",
+	{["action_release"] call FUNC(handleAction);},
+	[], 
+	10, 
+	true, 
+	true, 
+	"", 
+	"true"
+];
+hintSilent "Drücke 'C', falls du dich nicht bewegen kannst.";
 
 // Wait until release action is used
 waitUntil {
@@ -22,8 +43,8 @@ waitUntil {
 };
 
 // setze Marker neu
-if (tcb_downedMarkers) then {
-	["tfar_mapMarker", _target] call tcb_fnc_NetCallEvent;
+if (FAR_downMarker) then {
+	[QGVAR(createMarker), [_target]] call CBA_fnc_globalEvent;
 };
 
 // Handle release action

@@ -63,7 +63,7 @@ private _length = _maxlength;
 	},
 	{
 		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
-        ERROR_1("Abbruch: %1", _this);
+
 	},
 	format[STR_REPAIR_MSG_STRING, _length, _vehname],
 	{
