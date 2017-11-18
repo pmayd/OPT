@@ -95,6 +95,7 @@ if (_patient getVariable ["FAR_isStabilized", 0] == 1) then {
 	* 5: Code to check each frame (Optional) <CODE>
 	* 6: Exceptions for checking EFUNC(common,canInteractWith) (Optional)<ARRAY>
 */
+hint str(_damage);
 [
 	_damage,
 	[_healer, _patient],
