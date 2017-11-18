@@ -21,7 +21,7 @@ private _mark = "";
 if (FAR_PlayerSide == [_unit] call EFUNC(common,getPlayerSide)) then {
     private _name = [_unit] call EFUNC(log,getPlayerName);
 
-	private _marker = _unit getVariable ["far_unitMarker", ""];
+	private _marker = _unit getVariable ["FAR_unitMarker", ""];
 
 	// erzeuge neuen Marker oder...
 	if (_marker == "") then {

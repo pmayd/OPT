@@ -18,28 +18,28 @@ if (alive player && player isKindOf "CAManBase") then {
 	// addAction args: title, filename, (arguments, priority, showWindow, hideOnUse, shortcut, condition, positionInModel, radius, radiusView, showIn3D, available, textDefault, textToolTip)
 	player addAction [
 		"<t color=""#C90000"">" + FAR_REVIVE_ACTION_REVIVE + "</t>", 
-		{params ["_target", "_caller"]; [_target, _caller, "action_revive"] call FUNC(handleAction);},
+		{_caller = _this select 1; [cursorTarget, _caller, "action_revive"] call FUNC(handleAction);},
 		[],
 		10, 
 		true, 
 		true, 
 		"", 
-		format["[cursorObject, _this] call %1", QFUNC(checkRevive)]
+		format["[cursorTarget, _this] call %1", QFUNC(checkRevive)]
 	];
 	player addAction [
 		"<t color=""#C90000"">" + FAR_REVIVE_ACTION_STABILIZE + "</t>", 
-		{params ["_target", "_caller"]; [_target, _caller, "action_stabilize"] call FUNC(handleAction);},
+		{_caller = _this select 1; [cursorTarget, _caller, "action_stabilize"] call FUNC(handleAction);},
 		[], 
 		10, 
 		true,
 		true, 
 		"", 
-		format["[cursorObject, _this] call %1", QFUNC(checkStabilize)]
+		format["[cursorTarget, _this] call %1", QFUNC(checkStabilize)]
 	];
 	/*
 	player addAction [
 		"<t color=""#C90000"">" + FAR_REVIVE_ACTION_SUICIDE + "</t>", 
-		{params ["_target", "_caller"]; [_target, _caller, "action_suicide"] call FUNC(handleAction);},
+		{_caller = _this select 1; [cursorTarget, _caller, "action_suicide"] call FUNC(handleAction);},
 		[],
 		9, 
 		false, 
@@ -50,13 +50,13 @@ if (alive player && player isKindOf "CAManBase") then {
 	*/
 	player addAction [
 		"<t color=""#C90000"">" + FAR_REVIVE_ACTION_DRAG + "</t>", 
-		{params ["_target", "_caller"]; [_target, _caller, "action_drag"] call FUNC(handleAction);}, 
+		{_caller = _this select 1; [cursorTarget, _caller, "action_drag"] call FUNC(handleAction);}, 
 		[],
 		9, 
 		false, 
 		true, 
 		"", 
-		format["[cursorObject, _this] call %1", QFUNC(checkDragging)]
+		format["[cursorTarget, _this] call %1", QFUNC(checkDragging)]
 	];
 };
 

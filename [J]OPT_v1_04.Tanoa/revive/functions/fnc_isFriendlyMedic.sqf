@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-params ["_unit"]:
+params ["_unit"];
 
 private _return = false;
 

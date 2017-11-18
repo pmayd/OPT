@@ -23,12 +23,12 @@ params [
 private _qualifiedName = format["%1_%2", QUOTE(ADDON), _varName];
 
 if (_varName isEqualTo "") exitWith {
-    WARNING(format ["Variable name had wrong type or was empty."]);
+    WARNING(QUOTE(Variable name had wrong type or was empty.));
     false;
 };
 
 if (!(toLower _qualifiedName in allVariables profileNamespace)) exitWith {
-    WARNING(format ["Variable name not in server profileNamespace"]);
+    WARNING(QUOTE(Variable name not in server profileNamespace));
     false;
 };
 

@@ -67,7 +67,11 @@ _patient setDir _dir;
 
 private _time = time;
 
-private _skill_factor = if (_healer call opt_addons_fnc_isMedic) then {10+(random 5)} else {20+(random 10)};
+private _skill_factor = if ([_healer] call FUNC(isMedic)) then {
+    10+(random 5)
+} else {
+    20+(random 10)
+};
 private _damage = (damage _patient * _skill_factor);
 if (_damage < 13) then {_damage = 13};
 sleep 1;
@@ -131,11 +135,11 @@ sleep 1;
 		// Heiler nicht bewusstlos und 
 		// Animation nicht abgebrochen
 		// -> aktualisiere Fortschrittsbalken
-		{alive _healer} and
-		{alive _patient} and
-		{(_healer distance _patient) < 2} and
-		{_healer getVariable "FAR_isUnconscious" == 0} and
-		{!FAR_healerStopped}
+		alive _healer and
+		alive _patient and
+		(_healer distance _patient) < 2 and
+		_healer getVariable "FAR_isUnconscious" == 0 and
+		!FAR_healerStopped
 
 	}
 ] call ace_common_fnc_progressBar;

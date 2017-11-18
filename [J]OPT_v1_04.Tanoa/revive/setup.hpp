@@ -35,4 +35,4 @@
 #define FAR_REVIVE_MARKER_COLOR "ColorRed"
 #define FAR_REVIVE_MARKER_ALPHA 0.7
 
-#define FAR_REVIVE_ACTION_STABILIZE_BAR_TEXT "Stabilisieren word %1 s in Anspruch nehmen..."
+#define FAR_REVIVE_ACTION_STABILIZE_BAR_TEXT "Stabilisieren wird %1 s in Anspruch nehmen..."

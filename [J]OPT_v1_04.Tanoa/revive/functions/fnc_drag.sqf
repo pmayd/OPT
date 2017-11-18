@@ -27,7 +27,7 @@ player playMoveNow "AcinPknlMstpSrasWrflDnon";
 // Add release action and save its id so it can be removed
 _id = player addAction [
 	"<t color=""#C90000"">" + FAR_REVIVE_ACTION_DROP + "</t>",
-	{["action_release"] call FUNC(handleAction);},
+	{_caller = _this select 1; [cursorTarget, _caller, "action_release"] call FUNC(handleAction);},
 	[], 
 	10, 
 	true, 

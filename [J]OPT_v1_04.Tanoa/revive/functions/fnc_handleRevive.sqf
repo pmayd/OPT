@@ -156,7 +156,7 @@ if (_patient getVariable ["FAR_isStabilized", 0] == 1) then {
 		};
 
 	},
-	format[STR_REPAIR_MSG_STRING, _damage],
+	format[FAR_REVIVE_ACTION_REVIVE_BAR_TEXT, _damage],
 	{
         (_this select 0) params ["_healer", "_patient"];
 
@@ -166,11 +166,11 @@ if (_patient getVariable ["FAR_isStabilized", 0] == 1) then {
 		// Heiler nicht bewusstlos und 
 		// Animation nicht abgebrochen
 		// -> aktualisiere Fortschrittsbalken
-		{alive _healer} and
-		{alive _patient} and
-		{(_healer distance _patient) < 2} and
-		{_healer getVariable "FAR_isUnconscious" == 0} and
-		{!FAR_healerStopped}
+		alive _healer and
+		alive _patient and
+		(_healer distance _patient) < 2 and
+		_healer getVariable "FAR_isUnconscious" == 0 and
+		!FAR_healerStopped
 
 	}
 ] call ace_common_fnc_progressBar;
@@ -183,6 +183,6 @@ detach _patient;
 
 _healer playAction "medicStop";
 
-[] call FUNC(clearCarbage);
+[] call FUNC(clearGarbage);
 
 true
