@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 [QGVAR(setFlagOwner), {
-	params [_side, _flag];
+	params ["_side", "_flag"];
 	[_side, _flag] call FUNC(setFlagOwner);
 
 }] call CBA_fnc_addEventHandler;
