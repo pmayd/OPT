@@ -65,11 +65,11 @@ private _playerCSAT = [];
 {
     _name = [_x] call EFUNC(log,getPlayerName);
     
-    if ((_x getVariable QGVARMAIN(playerSide)) == west) then {
+    if (([_x] call EFUNC(common,getPlayerSide)) == west) then {
 		_playerNATO pushBack (_name);
 	};
     
-    if ((_x getVariable QGVARMAIN(playerSide)) == east) then {
+    if (([_x] call EFUNC(common,getPlayerSide)) == east) then {
 		_playerCSAT pushBack (_name);
 	};
 } foreach (playableUnits -  (entities "HeadlessClient_F"));

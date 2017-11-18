@@ -34,45 +34,10 @@ if (((player isKindOf "OPT_NATO_Offizier_T") or (player isKindOf "OPT_CSAT_Offiz
 };
 
 // update marker as long as map is open (works for uav stations as well)
-GVAR(eh_map) = addMissionEventHandler ["Map", {
-    params ["_mapIsOpened", "_mapIsForced"];
+GVAR(eh_onEachFrame) = addMissionEventHandler ["EachFrame", {
+    [] call FUNC(updateMarker);
 
-    if (_mapIsOpened) then {
-        GVAR(GPSOn) = true;
-        // no sheduled environment -> create one
-        /* Triggered when map is opened or closed either by user action or script command openMap. */
-        [] spawn {
-            waitUntil{ [] call FUNC(updateMarker); not GVAR(GPSOn)};
-        };
-    } else {
-        GVAR(GPSOn) = false;
-    };
 }];
-
-// update marker if one gets as gunner in arty
-["MBT_02_arty_base_F", "getIn", {
-    params ["_vec", "_pos", "_unit", "_turret"];
-
-    if (_pos == "gunner") then {
-        GVAR(GPSOn) = true;
-        // no sheduled environment -> create one
-        /* Triggered when map is opened or closed either by user action or script command openMap. */
-        [] spawn {
-            waitUntil{ [] call FUNC(updateMarker); not GVAR(GPSOn)};
-        };
-    };
-
-}] call CBA_fnc_addClassEventHandler;
-
-["MBT_02_arty_base_F", "getOut", {
-    params ["_vec", "_pos", "_unit", "_turret"];
-
-    if (_pos == "gunner") then {
-        GVAR(GPSOn) = false;
-    };
-
-}] call CBA_fnc_addClassEventHandler;
-
 
 // delete old marker if unit disconnects
 if (isServer) then {

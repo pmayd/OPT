@@ -7,3 +7,7 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
+
+if (local player) then {
+    [] call FUNC(initPlayerCBAEvents);
+};

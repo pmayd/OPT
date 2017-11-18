@@ -1,6 +1,6 @@
 /**
 * Author: James
-* initialize server side CBA Event Handler
+* initialize CBA class EH
 *
 * Arguments:
 * None
@@ -9,7 +9,7 @@
 * None
 *
 * Example:
-* [] call fnc_initPlayerCBAEvents.sqf;
+* [] call fnc_initCBAClassEvents.sqf;
 *
 */
 #include "script_component.hpp"
@@ -30,7 +30,7 @@
 				QUOTE([_target] call FUNC(needRepair))
 			]
         ]
-    ] call CBA_fnc_globalEventJIP;
+    ] call CBA_fnc_localEvent;
 
 	[QEGVAR(common,addAction), 
         [
@@ -46,11 +46,11 @@
 				format["_truck = vehicle _this; [_target] call %1 and _truck getVariable ['%2', -1] != -1 and {alive _target} and {speed _truck < 3}", QFUNC(vehicleDamaged), QGVAR(repair_cargo)]
 			]
         ]
-    ] call CBA_fnc_globalEventJIP;
+    ] call CBA_fnc_localEvent;
 
 	if (getRepairCargo _vec > 0) then {
 		_vec setRepairCargo 0;
-		_vec setVariable [QGVAR(repair_cargo), 1, true]; 
+		_vec setVariable [QGVAR(repair_cargo), 1]; 
 	};
 
 }] call CBA_fnc_addClassEventHandler;

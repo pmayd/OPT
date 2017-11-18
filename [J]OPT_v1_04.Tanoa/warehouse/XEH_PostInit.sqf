@@ -6,10 +6,8 @@
 */
 if (isServer) then {
     [] call FUNC(createMenu);
-    [] call FUNC(initServerCBAEvents);
 };
 
-if (local player) then {
-    [] call FUNC(initPlayerCBAEvents);
-};
+[] call FUNC(initCBAClassEvents);
+
 

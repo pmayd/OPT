@@ -14,9 +14,3 @@
 */
 #include "script_component.hpp"
 
-// add killed EH to all kind of vehicles, either on map or later spawned via crteateVehicle arrayIntersect
-// -> log kill and delete if near base
-["AllVehicles", "killed", {
-    [QGVAR(handleDeadVehicle), (_this select [0,2])] call CBA_fnc_serverEvent;
-
-}] call CBA_fnc_addClassEventHandler;

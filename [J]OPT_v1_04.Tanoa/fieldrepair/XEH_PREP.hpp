@@ -3,7 +3,7 @@ PREP(fullRepair);
 PREP(getPartsRepairTime);
 PREP(hasTK);
 PREP(heavyRepair);
-PREP(initServerCBAEvents);
+PREP(initCBAClassEvents);
 PREP(needRepair);
 PREP(partRepair);
 PREP(preInit);
