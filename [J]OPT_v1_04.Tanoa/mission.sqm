@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3628;
+		nextID=3690;
 	};
 	class Camera
 	{
@@ -39231,7 +39231,6 @@ class Mission
 						angles[]={0,3.7575543,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -39240,7 +39239,7 @@ class Mission
 					};
 					id=5534;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.1486876;
+					atlOffset=1.1390002;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -39470,7 +39469,7 @@ class Mission
 				};
 			};
 			id=5533;
-			atlOffset=2.3484073;
+			atlOffset=2.3513124;
 		};
 		class Item7
 		{
