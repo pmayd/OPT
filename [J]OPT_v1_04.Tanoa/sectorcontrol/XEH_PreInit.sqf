@@ -10,4 +10,5 @@ ADDON = true;
 
 if (isServer) then {
     [] call FUNC(setup_flagPositions);
+    [] call FUNC(initServerCBAEvents);
 };

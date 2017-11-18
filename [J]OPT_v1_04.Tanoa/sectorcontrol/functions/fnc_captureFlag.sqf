@@ -20,7 +20,7 @@ params ["_flag", "_caller"];
 
 _side = _caller getVariable QGVARMAIN(playerSide);
 
-[_side, _flag] call FUNC(setFlagOwner);
+[QGVAR(setFlagOwner), [_side, _flag]] call CBA_fnc_serverEvent;
 
-// log pllayer
+// log player
 [QEGVAR(log,flagCaptured), [_flag, _caller]] call CBA_fnc_serverEvent;
