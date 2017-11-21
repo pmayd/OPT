@@ -77,7 +77,7 @@ if (OPT_PARAM_TRAINING == 1) then {
                 // gib Spieler Mine zurück
                 player addMagazine (_this select 5);
                 // Warnhinweis
-                _txt = "Mine in der Minensperrzone gelegt!<br/>Mine wurde zurück ins Inventar gelegt.";
+                _txt = SECTORCONTROL_MINE_FREE_FLAG_MESSAGE;
                 [QEGVAR(gui,message), ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;
     	    };  
 

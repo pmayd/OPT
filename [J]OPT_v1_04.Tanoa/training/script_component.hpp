@@ -12,3 +12,4 @@
 #endif
 
 #include "..\main\script_macros.hpp"
+#include "setup.hpp"

@@ -62,14 +62,14 @@ Sowie Actionmeneintrag fuer Spieler
         [
             _x, 
             [
-                'Flagge ziehen' call XRedText, 	// Anzeigetext
+                SECTORCONTROL_ACTION_FLAG call XRedText, 	// Anzeigetext
                 {[_this select 0, _this select 1] call FUNC(captureFlag);}, 	// Skript
                 [], 														// Parameter fr Skript
                 1, 															// priority
                 true, 													    // showWindow
                 true,														// hideOnUse 
                 "",															// shortcut
-                format['((_target distance player) < 5) and vehicle player == player and %1 and (OPT_PARAM_PLAYTIME - (serverTime - %2)) > 0 and (playerSide != (_target getVariable ["owner", sideUnknown]))', QGVARMAIN(missionStarted), QEGVAR(mission,startTime)] // Flagge kann nur nach Missionsstart, in 5 m Radius, ausserhalb eines Fahrzeugs und in Restspielzeit gezogen werden und nur von der anderen Seite
+                SECTORCONTROL_FLAG_CONDITION
             ]
         ]
     ] call CBA_fnc_globalEventJIP; // jip is important, otherwise, clients which join later wont have the menu!

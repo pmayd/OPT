@@ -13,6 +13,7 @@
 *
 */
 #include "script_component.hpp"
+
 #define NATO_X_IDC 1400
 #define NATO_Y_IDC 1401
 #define CSAT_X_IDC 1402
