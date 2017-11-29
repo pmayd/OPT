@@ -34,7 +34,7 @@ if (_selectionText == "") exitWith {};
 private _unitType = _unitRecord select 0;
 private _unitCost = _unitRecord select 1;
 
-private _side_Budget = if (PLAYER_SIDE) == west) then {GVARMAIN(nato_budget)} else {GVARMAIN(csat_budget)};
+private _side_Budget = if (PLAYER_SIDE == west) then {GVARMAIN(nato_budget)} else {GVARMAIN(csat_budget)};
 
 private _displayName = getText (configFile >> "CfgVehicles" >> _unitType >> "displayName");
 

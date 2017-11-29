@@ -27,10 +27,10 @@ if (_unit != _killer) then {
 			if (isNull _obj) then {
 				_obj = effectiveCommander _vec;
 			};
-			_name = PLAYER_NAME(_obj);
+			_name = UNIT_NAME(_obj);
 
 		} else {
-			_name = PLAYER_NAME(_killer);
+			_name = UNIT_NAME(_killer);
 
 		};
 	};

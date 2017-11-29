@@ -95,15 +95,15 @@ sleep 1;
 		_patient setVariable ["FAR_isStabilized", 1, true];
 		_patient setVariable ["FAR_isDragged", 0, true];
 
-        private _name1 = PLAYER_NAME(_patient);
-		private _name2 = PLAYER_NAME(_healer]);
+        private _name1 = UNIT_NAME(_patient);
+		private _name2 = UNIT_NAME(_healer]);
 
         private _message = format [
             "%1 (%2) wurde von %3 (%4) stabilisiert.", 
             _name1, 
-            PLAYER_SIDE(_patient),
+            UNIT_SIDE(_patient),
             _name2,
-            PLAYER_SIDE(_healer)
+            UNIT_SIDE(_healer)
         ];
 
 		// übergib Kategorie und Nachricht an log-FUnktion

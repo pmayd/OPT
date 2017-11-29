@@ -66,9 +66,9 @@ player addEventHandler ["Respawn", {
                     (_x distance player) < 30 and
                     _x getVariable ["FAR_isUnconscious", 0] == 1 and
                     _x != player and
-                    PLAYER_SIDE(_x) == PLAYER_SIDE
+                    UNIT_SIDE(_x) == PLAYER_SIDE
                 ) then {
-                    private _name = PLAYER_NAME(_x);
+                    private _name = UNIT_NAME(_x);
 					drawIcon3D ["\a3\ui_f\data\map\MapControl\hospital_ca.paa", [0.6,0.15,0,0.8], _x, 0.5, 0.5, 0, format["%1 (%2m)", _name, ceil (player distance _x)], 0, 0.02];
 
 				};

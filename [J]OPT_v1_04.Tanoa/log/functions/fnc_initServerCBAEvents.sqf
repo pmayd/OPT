@@ -39,14 +39,14 @@ registriert alle Events via CBA Event Handling
 
     params ["_flag", "_unit"];
 
-    private _side = PLAYER_SIDE(_unit);
+    private _side = UNIT_SIDE(_unit);
 
     private _owner = _flag getVariable ["owner", nil];
 
     // log player
     private _message = "";
 
-    private _name = PLAYER_NAME(_unit);
+    private _name = UNIT_NAME(_unit);
 
     switch (_side) do {
         case west: {
@@ -86,22 +86,22 @@ registriert alle Events via CBA Event Handling
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
 
-        private _nameVictim = PLAYER_NAME(_victim);
+        private _nameVictim = UNIT_NAME(_victim);
 
         if !(_killer isEqualTo objNull) then {
             
 		    if (_victim == _killer) then {
 			    _message = format[
                     "%1 (%2) von: Selbstverschulden.",
-                    _nameVictim, PLAYER_SIDE(_victim)
+                    _nameVictim, UNIT_SIDE(_victim)
                 ];
 
             } else {
-                _nameKiller = PLAYER_NAME(_killer);
+                _nameKiller = UNIT_NAME(_killer);
 
                 _message = format[
                     "%1 (%2) von: %3 (%4).",
-                    _nameVictim, PLAYER_SIDE(_victim), _nameKiller, PLAYER_SIDE(_killer)
+                    _nameVictim, UNIT_SIDE(_victim), _nameKiller, UNIT_SIDE(_killer)
                 ];
 
             };
@@ -128,7 +128,7 @@ registriert alle Events via CBA Event Handling
 
 			} else {
 
-                _nameKiller = PLAYER_NAME(_killer);
+                _nameKiller = UNIT_NAME(_killer);
 
 				_message = format["%1 von: %2 (%3).", _message, _nameKiller, _faction];
 
@@ -180,16 +180,16 @@ registriert alle Events via CBA Event Handling
     private _dis = (getPosASL _vec) distance2D (_unit getVariable QGVAR(transport_start_loc));
     if ( _pos in ["cargo", "gunner"] && (_dis > DISTANCE_FROM_BASE) ) then {
 
-        _nameUnit = PLAYER_NAME(_unit);
+        _nameUnit = UNIT_NAME(_unit);
 
-        _namePilot = PLAYER_NAME(_vec getVariable ["opt_var_vec_pilot", objNull]);
+        _namePilot = UNIT_NAME(_vec getVariable ["opt_var_vec_pilot", objNull]);
 
         private _message = format[
             "%1 (%2) wurde von %3 (%4) eingeflogen (%5 m)", 
             _nameUnit, 
-            PLAYER_SIDE(_unit),  
+            UNIT_SIDE(_unit),  
             _namePilot, 
-            PLAYER_SIDE(_vec getVariable "opt_var_vec_pilot"),
+            UNIT_SIDE(_vec getVariable "opt_var_vec_pilot"),
             _dis
         ];
 

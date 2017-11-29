@@ -22,7 +22,7 @@ _isMedic = _unit call FUNC(isMedic);
 
 if (
 	alive _unit and
-	PLAYER_SIDE(_unit) == PLAYER_SIDE and
+	UNIT_SIDE(_unit) == PLAYER_SIDE and
 	_unit getVariable "FAR_isUnconscious" == 0 and
 	_isMedic || FAR_ReviveMode > 0
 ) then {

@@ -18,12 +18,12 @@ params [
     ["_unit", objNull, [objNull], 1]
 ];
 private _marker = _unit getVariable[QGVAR(unitMarker), ""];
-private _side = PLAYER_SIDE(_unit);
+private _side = UNIT_SIDE(_unit);
 
 if (_unit isEqualTo objNull) exitWith {""};
 
 if (_marker isEqualTo "") then {
-    private _name = PLAYER_NAME(_unit);
+    private _name = UNIT_NAME(_unit);
 
     if (_side == west) then {
         _marker = createMarkerLocal [format["%1_%2", QGVAR(unitMarker), _name], [0,0]];

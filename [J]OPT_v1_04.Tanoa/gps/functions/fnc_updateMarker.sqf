@@ -24,7 +24,7 @@ private _gruppeinheiteneast=[];
 // add all leaders from all groups		
 {
     private _leader = leader _x;
-    private _side = PLAYER_SIDE(_leader);
+    private _side = UNIT_SIDE(_leader);
 
     if (_side == west) then {	
         _leadergroupwest pushBack _leader;
@@ -64,7 +64,7 @@ if (GVAR(mode) == 1) then {
 // mode 2: mode 1 + all other units   
 if (GVAR(mode) == 2) then {
     {
-        private _side = PLAYER_SIDE(_x);
+        private _side = UNIT_SIDE(_x);
         if (_side == west) then {
             _westplayer pushBack _x;
         };
@@ -88,7 +88,7 @@ if (PLAYER_SIDE == west) then {
 
         //systemChat format ["O:%1",_obj];
         if (alive _obj) then {
-            private _name = PLAYER_NAME(_obj);
+            private _name = UNIT_NAME(_obj);
 
             // create or update unit marker
             _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
@@ -138,7 +138,7 @@ if (PLAYER_SIDE == east) then {
         _marker = [_x] call FUNC(createUnitMarker);
 
         if (alive _obj) then {
-            private _name = PLAYER_NAME(_obj);
+            private _name = UNIT_NAME(_obj);
             
             _marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
             _marker setmarkerdirlocal (getDirVisual (vehicle _obj));

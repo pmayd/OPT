@@ -21,7 +21,7 @@ private _ret = sideUnknown;
 
 if (_unit isEqualTo objNull) exitWith{_ret};
 
-_ret = PLAYER_SIDE(_unit);
+_ret = UNIT_SIDE(_unit);
 
 _ret
 

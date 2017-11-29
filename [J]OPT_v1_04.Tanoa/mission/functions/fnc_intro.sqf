@@ -63,13 +63,13 @@ sleep 13;
 private _playerNATO = [];
 private _playerCSAT = [];
 {
-    _name = PLAYER_NAME(_x);
+    _name = UNIT_NAME(_x);
     
-    if (PLAYER_SIDE(_x) == west) then {
+    if (UNIT_SIDE(_x) == west) then {
 		_playerNATO pushBack (_name);
 	};
     
-    if (PLAYER_SIDE(_x) == east) then {
+    if (UNIT_SIDE(_x) == east) then {
 		_playerCSAT pushBack (_name);
 	};
 } foreach (playableUnits -  (entities "HeadlessClient_F"));

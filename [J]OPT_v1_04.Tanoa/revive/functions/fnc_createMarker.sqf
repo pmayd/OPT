@@ -18,8 +18,8 @@ params ["_unit"];
 
 private _marker = _unit getVariable ["FAR_unitMarker", ""];
 	
-if (PLAYER_SIDE == PLAYER_SIDE(_unit)) then {
-    private _name = PLAYER_NAME(_unit);
+if (PLAYER_SIDE == UNIT_SIDE(_unit)) then {
+    private _name = UNIT_NAME(_unit);
 
 	// erzeuge neuen Marker oder...
 	if (_marker == "") then {
