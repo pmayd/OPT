@@ -22,7 +22,7 @@ GVAR(containerEast) addAction[
     true, 
     true, 
     "", 
-    QUOTE(!(GVAR(containerEast) getVariable [QUOTE(RADAREASTaufgebaut), false]))
+    format["!(%1 getVariable ['%2', false])", GVAR(containerEast), QUOTE(RADAREASTaufgebaut)]
 ]; 
 
 GVAR(containerEast) addAction[
@@ -33,7 +33,7 @@ GVAR(containerEast) addAction[
     true,
     true, 
     "", 
-    QUOTE(GVAR(containerEast) getVariable [QUOTE(RADAREASTaufgebaut), false])
+    format["(%1 getVariable ['%2', false])", GVAR(containerEast), QUOTE(RADAREASTaufgebaut)]
 ]; 
 
 GVAR(containerWest) addAction[
@@ -44,7 +44,7 @@ GVAR(containerWest) addAction[
     true, 
     true, 
     "", 
-    QUOTE(!(GVAR(containerWest) getVariable [QUOTE(RADARWESTaufgebaut), false]))
+    format["!(%1 getVariable ['%2', false])", GVAR(containerWest), QUOTE(RADARWESTaufgebaut)]
 ]; 
 
 GVAR(containerWest) addAction[
@@ -55,7 +55,7 @@ GVAR(containerWest) addAction[
     true, 
     true, 
     "", 
-    QUOTE(GVAR(containerWest) getVariable [QUOTE(RADARWESTaufgebaut), false])
+    format["(%1 getVariable ['%2', false])", GVAR(containerWest), QUOTE(RADARWESTaufgebaut)]
 ];
 
 [] spawn FUNC(runRadarEast);
