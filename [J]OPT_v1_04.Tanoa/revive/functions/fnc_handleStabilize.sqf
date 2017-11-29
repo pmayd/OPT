@@ -96,7 +96,7 @@ sleep 1;
 		_patient setVariable ["FAR_isDragged", 0, true];
 
         private _name1 = UNIT_NAME(_patient);
-		private _name2 = UNIT_NAME(_healer]);
+		private _name2 = UNIT_NAME(_healer);
 
         private _message = format [
             "%1 (%2) wurde von %3 (%4) stabilisiert.", 

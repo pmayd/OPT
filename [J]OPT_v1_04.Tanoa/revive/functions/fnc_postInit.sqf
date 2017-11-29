@@ -35,7 +35,7 @@ if (isDedicated) exitWith {};
 [] spawn FUNC(playerInit);
 player addEventHandler ["Respawn", {
     [] spawn FUNC(playerInit);
- }];
+}];
 
 [] spawn {
 	waitUntil {!isNull (findDisplay 46)};
