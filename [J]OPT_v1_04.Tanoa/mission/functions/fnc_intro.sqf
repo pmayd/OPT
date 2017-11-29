@@ -63,13 +63,13 @@ sleep 13;
 private _playerNATO = [];
 private _playerCSAT = [];
 {
-    _name = [_x] call EFUNC(log,getPlayerName);
+    _name = PLAYER_NAME(_x);
     
-    if (([_x] call EFUNC(common,getPlayerSide)) == west) then {
+    if (PLAYER_SIDE(_x) == west) then {
 		_playerNATO pushBack (_name);
 	};
     
-    if (([_x] call EFUNC(common,getPlayerSide)) == east) then {
+    if (PLAYER_SIDE(_x) == east) then {
 		_playerCSAT pushBack (_name);
 	};
 } foreach (playableUnits -  (entities "HeadlessClient_F"));

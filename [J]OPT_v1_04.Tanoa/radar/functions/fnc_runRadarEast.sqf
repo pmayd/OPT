@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-if (playerSide == west) exitwith { false };
+if (playerSide == west) exitWith { false };
 
 private _container = GVAR(containerEast);
 private _size = 3500;
@@ -71,7 +71,7 @@ sleep 1;
     } else {			
         _Radaranzeige = [];
                     
-        if (playerSide isEqualTo opfor) then {
+        if (PLAYER_SIDE isEqualTo opfor) then {
             _Radarring setmarkerposlocal getpos _container;
             _Radarring setMarkerSizeLocal [_size, _size];
             _RadarZONE setpos getpos _container;

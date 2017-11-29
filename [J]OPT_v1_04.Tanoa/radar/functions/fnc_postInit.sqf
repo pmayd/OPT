@@ -9,7 +9,7 @@
 * None
 *
 * Example:
-* [] call fnc_init.sqf;
+* [] call fnc_postInit.sqf;
 *
 */
 #include "script_component.hpp"
@@ -22,7 +22,7 @@ GVAR(containerEast) addAction[
     true, 
     true, 
     "", 
-    format["(!(%1 getVariable [""RADAREASTaufgebaut"", false]))", GVAR(containerEast)]
+    QUOTE(!(GVAR(containerEast) getVariable [QUOTE(RADAREASTaufgebaut), false]))
 ]; 
 
 GVAR(containerEast) addAction[
@@ -33,7 +33,7 @@ GVAR(containerEast) addAction[
     true,
     true, 
     "", 
-    format["(%1 getVariable [""RADAREASTaufgebaut"", false])", GVAR(containerEast)]
+    QUOTE(GVAR(containerEast) getVariable [QUOTE(RADAREASTaufgebaut), false])
 ]; 
 
 GVAR(containerWest) addAction[
@@ -44,7 +44,7 @@ GVAR(containerWest) addAction[
     true, 
     true, 
     "", 
-    format["(!(%1 getVariable [""RADARWESTaufgebaut"",f alse]))", GVAR(containerWest)]
+    QUOTE(!(GVAR(containerWest) getVariable [QUOTE(RADARWESTaufgebaut), false]))
 ]; 
 
 GVAR(containerWest) addAction[
@@ -55,7 +55,7 @@ GVAR(containerWest) addAction[
     true, 
     true, 
     "", 
-    format["(%1 getVariable [""RADARWESTaufgebaut"", false])", GVAR(containerWest)]
+    QUOTE(GVAR(containerWest) getVariable [QUOTE(RADARWESTaufgebaut), false])
 ];
 
 [] spawn FUNC(runRadarEast);

@@ -27,7 +27,7 @@ private _encryptionNATO = "_bluefor";
 private _encryptionCSAT = "_opfor";
 
 // frequencies can never be intercepted by inf
-(switch (player getVariable QGVARMAIN(playerSide)) do {
+(switch (PLAYER_SIDE) do {
     case west: {["_bluefor", _frequenciesSWNATO, _frequenciesLRNATO]};
     case east: {["_opfor", _frequenciesSWCSAT, _frequenciesLRCSAT]};
     default {[]};

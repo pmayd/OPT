@@ -17,9 +17,6 @@
 if (isNull player) then {
 	diag_log "OPT Debug: Null player in revive Init found";
 };
-waitUntil {!isNull player};
-
-FAR_PlayerSide = [player] call EFUNC(common,getPlayerSide);
 
 // Clear event handler before adding it
 player removeAllEventHandlers "HandleDamage";

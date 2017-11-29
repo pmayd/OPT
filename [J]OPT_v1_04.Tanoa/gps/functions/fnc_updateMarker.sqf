@@ -14,8 +14,6 @@
 */
 #include "script_component.hpp"
 
-#define PLAYER_SIDE(var1) [var1] call EFUNC(common,getPlayerSide)
-
 private _westplayer = [];
 private _eastplayer = [];
 private _leadergroupwest=[];
@@ -78,7 +76,7 @@ if (GVAR(mode) == 2) then {
 };					
 //systemChat format ["G:%1",_westplayer];
                             
-if (PLAYER_SIDE(player) == west) then {
+if (PLAYER_SIDE == west) then {
 
     // create or update player marker
     private _marker = [] call FUNC(createPlayerMarker);
@@ -90,7 +88,7 @@ if (PLAYER_SIDE(player) == west) then {
 
         //systemChat format ["O:%1",_obj];
         if (alive _obj) then {
-            private _name = [_obj] call EFUNC(log,getPlayerName);
+            private _name = PLAYER_NAME(_obj);
 
             // create or update unit marker
             _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
@@ -129,7 +127,7 @@ if (PLAYER_SIDE(player) == west) then {
 
 };
 
-if (PLAYER_SIDE(player) == east) then {
+if (PLAYER_SIDE == east) then {
 
      // create or update player marker
     private _marker = [] call FUNC(createPlayerMarker);
@@ -140,8 +138,8 @@ if (PLAYER_SIDE(player) == east) then {
         _marker = [_x] call FUNC(createUnitMarker);
 
         if (alive _obj) then {
-            private _name = [_obj] call EFUNC(log,getPlayerName);
-
+            private _name = PLAYER_NAME(_obj);
+            
             _marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
             _marker setmarkerdirlocal (getDirVisual (vehicle _obj));
 

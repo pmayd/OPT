@@ -18,7 +18,7 @@
 if (!local player) exitWith {};
 params ["_flag", "_caller"];
 
-_side = _caller getVariable QGVARMAIN(playerSide);
+_side = PLAYER_SIDE(_caller);
 
 [QGVAR(setFlagOwner), [_side, _flag]] call CBA_fnc_serverEvent;
 

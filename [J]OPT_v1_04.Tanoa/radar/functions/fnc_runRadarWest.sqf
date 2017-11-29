@@ -68,7 +68,7 @@ sleep 1;
     } else {			
         _Radaranzeige = [];
                     
-        if (playerSide isEqualTo blufor) then {
+        if (PLAYER_SIDE isEqualTo blufor) then {
             _Radarring setmarkerposlocal getpos _container;
             _Radarring setMarkerSizeLocal [_size, _size];
             _RadarZONE setpos getpos _container;

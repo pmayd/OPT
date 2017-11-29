@@ -16,7 +16,7 @@
 
 params ["_budget_field"];
 
-private _side = player getVariable [QGVARMAIN(playerSide), sideUnknown];
+private _side = PLAYER_SIDE;
 private _side_Budget = if (_side == west) then {GVARMAIN(nato_budget)} else {GVARMAIN(csat_budget)};
 
 private _txt = if (_side_Budget > 1e6-1) then {

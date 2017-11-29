@@ -49,6 +49,9 @@ HASH_REM(hash,key) 	Will remove that hash key.
 #define HASH_EACHPAIR(var1, var2) [var1, var2] call CBA_fnc_hashEachPair
 
 
-
-
+/* CUSTOM MACROS */
+#define PLAYER_SIDE [player] call EFUNC(common,getPlayerSide)
+#define PLAYER_SIDE(var1) [var1] call EFUNC(common,getPlayerSide)
+#define PLAYER_NAME [player] call EFUNC(log,getPlayerName)
+#define PLAYER_NAME(var1) [var1] call EFUNC(log,getPlayerName)
 

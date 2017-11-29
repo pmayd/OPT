@@ -49,7 +49,7 @@ if (count _medics > 0) then {
 	} forEach _medics;
 
 	if (!isNull _unit) then {
-		private _unitName	= [_unit] call EFUNC(log,getPlayerName);	
+		private _unitName	= PLAYER_NAME(_unit);	
 		_hintMsg = format["Sanitäter in der Nähe:\n%1 ist %2m entfernt.", _unitName, floor _dist];
 	};
 } else {

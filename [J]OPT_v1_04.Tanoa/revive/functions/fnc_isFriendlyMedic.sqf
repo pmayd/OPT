@@ -20,8 +20,13 @@ private _return = false;
 
 _isMedic = _unit call FUNC(isMedic);
 
-if (alive _unit && {([_unit] call EFUNC(common,getPlayerSide)) == FAR_PlayerSide} && {_unit getVariable "FAR_isUnconscious" == 0} && {_isMedic || FAR_ReviveMode > 0}) then {
-	_return = if (FAR_ReviveMode > 2 && {!_isMedic}) then {
+if (
+	alive _unit and
+	PLAYER_SIDE(_unit) == PLAYER_SIDE and
+	_unit getVariable "FAR_isUnconscious" == 0 and
+	_isMedic || FAR_ReviveMode > 0
+) then {
+	_return = if (FAR_ReviveMode > 2 and !_isMedic) then {
 		false
 	} else {
 		true

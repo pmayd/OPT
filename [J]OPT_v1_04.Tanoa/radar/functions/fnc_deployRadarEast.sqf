@@ -30,6 +30,6 @@ if (!(GVAR(containerEast) getVariable ["RADAREASTaufgebaut", false])) then
 	private _SignalDaempfung = RADAR_DAMPING(_objekte) * 100;
 
 	private _message = format["%1: %2", STR_RADAR_HINT_TEXT, _SignalDaempfung]; 
-    [QEGVAR(gui,message),[STR_RADAR_HINT_HEADER, _message, "blue"]] call CBA_fnc_localEvent;
+    [QEGVAR(gui,message), [STR_RADAR_HINT_HEADER, _message, "blue"]] call CBA_fnc_localEvent;
 
 };

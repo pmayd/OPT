@@ -32,7 +32,7 @@
 
 	switch (_sign) do {
 		case "-": {
-				if (_side == WEST) then {
+				if (_side == west) then {
 					_budget_neu = GVARMAIN(nato_budget) - _unitCost;
 				} else {
 					_budget_neu = GVARMAIN(csat_budget) - _unitCost;
@@ -40,7 +40,7 @@
 
 		};
 		case "+":  {
-				if (_side == WEST) then {
+				if (_side == east) then {
 					_budget_neu = GVARMAIN(nato_budget) + _unitCost;
 				} else {					
 					_budget_neu = GVARMAIN(csat_budget) + _unitCost;

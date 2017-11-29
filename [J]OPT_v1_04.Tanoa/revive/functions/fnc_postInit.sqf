@@ -32,13 +32,12 @@ FAR_deathMassageIsShown = false;
 if (isDedicated) exitWith {};
 
 // Player Initialization
+[] spawn FUNC(playerInit);
+player addEventHandler ["Respawn", {
+    [] spawn FUNC(playerInit);
+ }];
+
 [] spawn {
-	waitUntil {!isNull player};	
-	[] spawn FUNC(playerInit); 
-	player addEventHandler ["Respawn", {
-        [] spawn FUNC(playerInit);
-    }];
-	
 	waitUntil {!isNull (findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call FUNC(keyUnbind)}];
 };
@@ -46,7 +45,7 @@ if (isDedicated) exitWith {};
 // Drag & Carry animation fix
 [] spawn {
 	while {true} do {
-		if (animationState player == "acinpknlmstpsraswrfldnon_acinpercmrunsraswrfldnon" || {animationState player == "helper_switchtocarryrfl"} || {animationState player == "AcinPknlMstpSrasWrflDnon"}) then {
+		if (animationState player in ["acinpknlmstpsraswrfldnon_acinpercmrunsraswrfldnon", "helper_switchtocarryrfl", "AcinPknlMstpSrasWrflDnon"]) then {
 			if (FAR_isDragging) then {
 				player switchMove "AcinPknlMstpSrasWrflDnon";
 			} else {
@@ -63,8 +62,13 @@ if (isDedicated) exitWith {};
 	if (FAR_show3DIcons) then {
 		_icons = addMissionEventHandler ["Draw3D", {
 			{
-				if ((_x distance player) < 30 && {_x getVariable ["FAR_isUnconscious", 0] == 1} && {_x != player} && {([player] call EFUNC(common,getPlayerSide)) == ([_x] call EFUNC(common,getPlayerSide))}) then {
-                    private _name = [_x] call EFUNC(log,getPlayerName);
+				if (
+                    (_x distance player) < 30 and
+                    _x getVariable ["FAR_isUnconscious", 0] == 1 and
+                    _x != player and
+                    PLAYER_SIDE(_x) == PLAYER_SIDE
+                ) then {
+                    private _name = PLAYER_NAME(_x);
 					drawIcon3D ["\a3\ui_f\data\map\MapControl\hospital_ca.paa", [0.6,0.15,0,0.8], _x, 0.5, 0.5, 0, format["%1 (%2m)", _name, ceil (player distance _x)], 0, 0.02];
 
 				};
@@ -82,7 +86,7 @@ if (!FAR_Debugging || isMultiplayer) exitWith {};
 {
 	if (!isPlayer _x) then 
 	{
-		_x addEventHandler ["HandleDamage", opt_addons_fnc_HandleDamage];
+		_x addEventHandler ["HandleDamage", FUNC(handleDamage)];
 		_x setVariable ["FAR_isUnconscious", 0, true];
 		_x setVariable ["FAR_isStabilized", 0, true];
 		_x setVariable ["FAR_isDragged", 0, true];

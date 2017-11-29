@@ -15,7 +15,7 @@ private _flagMarker = [];
     if !(_x getVariable ["opt_flag", false]) exitWith {};
 
     // only show attack flags
-    switch (player getVariable QGVARMAIN(playerSide)) do {
+    switch (PLAYER_SIDE) do {
         case west: {
             if (_x getVariable ["owner", sideUnknown] == east) then {
                 _markerName = format["marker_attackNATO_%1", _forEachIndex];
@@ -70,7 +70,7 @@ private _flagMarker = [];
 	    _marker setMarkerTypeLocal "selector_selectedMission";
         _marker setMarkerSizeLocal [2,2];
 
-        switch (player getVariable QGVARMAIN(playerSide)) do {
+        switch (PLAYER_SIDE) do {
             case west: {
                 _marker setMarkerColorLocal "ColorBLUFOR"; GVARMAIN(csat_flags) = [_flag]; publicVariable QGVARMAIN(csat_flags);
             };

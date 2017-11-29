@@ -19,7 +19,7 @@
 // only pilots and operators have access to drone terminal
 if !(typeOf player in (GVARMAIN(pilots) + GVARMAIN(operator))) exitWith {};
 
-LOG_1("OPT_UAV_fnc_postInit startet für %1",name player);
+LOG_1("OPT_UAV_fnc_postInit startet für %1", PLAYER_NAME);
 
 _pcs = entities OPT_UAV_TERMINAL_OBJECT;
 

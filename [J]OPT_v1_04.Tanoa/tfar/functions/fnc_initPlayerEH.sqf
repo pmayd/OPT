@@ -38,14 +38,14 @@ player addEventHandler ["GetInMan", {
     */
     params ["_unit", "_pos", "_vec", "_turret"];
 
-    if ((_vec call TFAR_fnc_getVehicleSide) != player getVariable QGVARMAIN(playerSide)) then {
+    if ((_vec call TFAR_fnc_getVehicleSide) != PLAYER_SIDE) then {
         // check if there is a radio in the vehicle
 		_LRinside = _vec call TFAR_fnc_hasVehicleRadio;
 		if (_LRinside) then {
 			_VehicleLR = player call TFAR_fnc_VehicleLR;
 			_encryption = _VehicleLR call TFAR_fnc_getLrRadioCode;
 			
-			switch (player getVariable QGVARMAIN(playerSide)) do  {
+			switch (PLAYER_SIDE) do  {
                 case west: {
                     if (toLower(_encryption) == "_opfor") then {
                         If (OPT_PARAM_TFAR_INTERCEPTION == 0) then {
