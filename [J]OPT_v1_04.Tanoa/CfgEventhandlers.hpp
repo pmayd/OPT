@@ -74,11 +74,11 @@ class Extended_PostInit_EventHandlers {
     class GVARMAIN(fieldrepair) {
         init = QUOTE(call compile preProcessFileLineNumbers 'fieldrepair\XEH_PostInit.sqf');
     };
-    class GVARMAIN(hud) {
-        init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_PostInit.sqf');
-    };
     class GVARMAIN(gps) {
         init = QUOTE(call compile preProcessFileLineNumbers 'gps\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(hud) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'hud\XEH_PostInit.sqf');
     };
     class GVARMAIN(log) {
         init = QUOTE(call compile preProcessFileLineNumbers 'log\XEH_PostInit.sqf');

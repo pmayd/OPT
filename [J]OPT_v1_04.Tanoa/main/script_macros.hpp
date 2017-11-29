@@ -50,6 +50,7 @@ HASH_REM(hash,key) 	Will remove that hash key.
 
 
 /* CUSTOM MACROS */
+//#define PLAYER_SIDE(var1) [var1] call EFUNC(common,getPlayerSide)
 #define PLAYER_SIDE [player] call EFUNC(common,getPlayerSide)
 #define UNIT_SIDE(var1) [var1] call EFUNC(common,getPlayerSide)
 #define PLAYER_NAME [player] call EFUNC(log,getPlayerName)

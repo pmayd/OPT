@@ -21,7 +21,7 @@ private _ret = sideUnknown;
 
 if (_unit isEqualTo objNull) exitWith{_ret};
 
-_ret = UNIT_SIDE(_unit);
+_ret = _unit getVariable [QGVARMAIN(playerSide), _ret];
 
 _ret
 
