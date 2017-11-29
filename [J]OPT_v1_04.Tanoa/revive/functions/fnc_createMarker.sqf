@@ -25,7 +25,7 @@ if (PLAYER_SIDE == UNIT_SIDE(_unit)) then {
 	if (_marker == "") then {
 
 		_marker = format ["FAR_marker_%1", _name];
-		_marker = createMarkerLocal [_markerer, position _unit];
+		_marker = createMarkerLocal [_marker, position _unit];
 		_marker setMarkerTextLocal format ["%1 down", _name];
 		_marker setMarkerShapeLocal "ICON";
 		_marker setMarkerTypeLocal FAR_REVIVE_MARKER_TYPE;
