@@ -20,7 +20,7 @@ params ["_vecType", "_spawnObj"];
 // get spawnPos right
 private _spawnPos = if (typeName _spawnObj == "OBJECT") then {getPosATL _spawnObj} else {_spawnObj};
 
-private _vec = createVehicle [_vecType, _spawnPos, [], 0, ""];
+private _vec = createVehicle [_vecType, _spawnPos, [], 0, "NONE"];
 
 if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};
 if (surfaceIsWater _spawnPos) then {
