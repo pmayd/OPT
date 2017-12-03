@@ -124,7 +124,7 @@ if (PLAYER_SIDE == west) then {
             deleteMarkerLocal (_unit getVariable QGVAR(unitMarker));
             _unit setVariable [QGVAR(unitMarker), nil];
         };	
-    } forEach (_westplayer - [player]);
+    } forEach _westplayer;
 
 };
 
@@ -177,6 +177,6 @@ if (PLAYER_SIDE == east) then {
             _unit setVariable [QGVAR(unitMarker), nil];
         };	
 
-    } forEach (_eastplayer - [player]);
+    } forEach _eastplayer;
 
 };
