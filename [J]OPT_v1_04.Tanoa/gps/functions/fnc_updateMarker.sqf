@@ -83,24 +83,24 @@ if (PLAYER_SIDE == west) then {
     _marker setMarkerPosLocal (getPosATLVisual (vehicle player));		
 
     {
-        private _obj = _x;
-        private _marker = [_x] call FUNC(createUnitMarker);	
+        private _unit = _x;
 
-        //systemChat format ["O:%1",_obj];
-        if (alive _obj) then {
-            private _name = UNIT_NAME(_obj);
+        //systemChat format ["O:%1",_unit];
+        if (alive _unit) then {
+            private _marker = [_unit] call FUNC(createUnitMarker);
+            private _name = UNIT_NAME(_unit);
 
             // create or update unit marker
-            _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
-            _marker setMarkerDirLocal (getDirVisual (vehicle _obj));
+            _marker setMarkerPosLocal (getPosATLVisual (vehicle _unit));
+            _marker setMarkerDirLocal (getDirVisual (vehicle _unit));
 
             // Fahrzeuginfo
-            if (vehicle _obj != _obj) then {
-                private _vec_name = getText (configFile >> "cfgVehicles" >> typeOf (vehicle _obj) >> "displayName");
+            if (vehicle _unit != _unit) then {
+                private _vec_name = getText (configFile >> "cfgVehicles" >> typeOf (vehicle _unit) >> "displayName");
 
                 // Spezialfall Drohne
-                if ((vehicle _obj) in allUnitsUAV) then {
-                    private _operator = (UAVControl vehicle _obj) select 0;
+                if ((vehicle _unit) in allUnitsUAV) then {
+                    private _operator = (UAVControl vehicle _unit) select 0;
 
                     // UAV Operator ja/nein
                     if (!isNull _operator) then {
@@ -113,7 +113,7 @@ if (PLAYER_SIDE == west) then {
                 };
                 
             } else {
-                if (isPlayer _obj) then {
+                if (isPlayer _unit) then {
                     _marker setMarkerTextLocal format ["%1", _name];
                 } else {
                     _marker setMarkerTextLocal "";
@@ -121,9 +121,10 @@ if (PLAYER_SIDE == west) then {
                 };
             };
         } else  {
-            deleteMarkerLocal _marker;
+            deleteMarkerLocal (_unit getVariable QGVAR(unitMarker));
+            _unit setVariable [QGVAR(unitMarker), nil];
         };	
-    } forEach _westplayer;
+    } forEach (_westplayer - [player]);
 
 };
 
@@ -134,23 +135,23 @@ if (PLAYER_SIDE == east) then {
     _marker setMarkerPosLocal (getPosATLVisual (vehicle player));		
 
     {
-        private _obj = _x;
-        _marker = [_x] call FUNC(createUnitMarker);
-
-        if (alive _obj) then {
-            private _name = UNIT_NAME(_obj);
+        private _unit = _x;
+        
+        if (alive _unit) then {
+            _marker = [_unit] call FUNC(createUnitMarker);
+            private _name = UNIT_NAME(_unit);
             
-            _marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
-            _marker setmarkerdirlocal (getDirVisual (vehicle _obj));
+            _marker setmarkerposlocal (getPosATLVisual (vehicle _unit));
+            _marker setmarkerdirlocal (getDirVisual (vehicle _unit));
 
             // Fahrzeuginfo
-            if (vehicle _obj != _obj) then {
+            if (vehicle _unit != _unit) then {
 
-                private _vec_name = getText (configFile >> "cfgVehicles" >> typeOf (vehicle _obj) >> "displayName");
+                private _vec_name = getText (configFile >> "cfgVehicles" >> typeOf (vehicle _unit) >> "displayName");
 
                 // Spezialfall Drohne
-                if ((vehicle _obj) in allUnitsUAV) then {
-                    private _operator = (UAVControl vehicle _obj) select 0;
+                if ((vehicle _unit) in allUnitsUAV) then {
+                    private _operator = (UAVControl vehicle _unit) select 0;
 
                     // UAV Operator ja/nein
                     if (!isNull _operator) then {
@@ -163,7 +164,7 @@ if (PLAYER_SIDE == east) then {
                 };
 
             } else {
-                if (isPlayer _obj) then {
+                if (isPlayer _unit) then {
                     _marker setMarkerTextLocal format ["%1", _name];
                 } else {
                     _marker setMarkerTextLocal "";
@@ -172,9 +173,10 @@ if (PLAYER_SIDE == east) then {
             };
 
         } else {
-            deleteMarkerLocal _marker;
+            deleteMarkerLocal (_unit getVariable QGVAR(unitMarker));
+            _unit setVariable [QGVAR(unitMarker), nil];
         };	
 
-    } forEach _eastplayer;
+    } forEach (_eastplayer - [player]);
 
 };

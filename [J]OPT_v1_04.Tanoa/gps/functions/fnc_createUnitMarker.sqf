@@ -17,22 +17,23 @@
 params [
     ["_unit", objNull, [objNull], 1]
 ];
-private _marker = _unit getVariable[QGVAR(unitMarker), ""];
-private _side = UNIT_SIDE(_unit);
 
 if (_unit isEqualTo objNull) exitWith {""};
+
+private _marker = _unit getVariable [QGVAR(unitMarker), ""];
+private _side = UNIT_SIDE(_unit);
 
 if (_marker isEqualTo "") then {
     private _name = UNIT_NAME(_unit);
 
     if (_side == west) then {
-        _marker = createMarkerLocal [format["%1_%2", QGVAR(unitMarker), _name], [0,0]];
+        _marker = createMarkerLocal [format["%1_%2_%3", QGVAR(unitMarker), _name, time], [0,0]];
         _marker setMarkerTypeLocal MARKER_SYMBOL;
         _marker setMarkerColorLocal "ColorBLUFOR";
         _marker setMarkerSizeLocal MARKER_SIZE;
         _marker setMarkerAlphaLocal MARKER_ALPHA;
     } else {
-        _marker = createMarkerLocal [format["%1_%2", QGVAR(unitMarker), _name], [0,0]];
+        _marker = createMarkerLocal [format["%1_%2_%3", QGVAR(unitMarker), _name, time], [0,0]];
         _marker setMarkerTypeLocal MARKER_SYMBOL;
         _marker setMarkerColorLocal "ColorOPFOR";
         _marker setMarkerSizeLocal MARKER_SIZE;

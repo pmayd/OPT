@@ -1,4 +1,5 @@
 #define SECTORCONTROL_MINE_FREE_FLAG_MESSAGE "Mine in der Minensperrzone gelegt!<br/>Mine wurde zurück ins Inventar gelegt."
+#define SECTORCONTROL_ACTION_SELECT_FLAG 'Angriffsflagge wählen'
 #define SECTORCONTROL_ACTION_FLAG 'Flagge ziehen'
 #define SECTORCONTROL_FLAG_DISTANCE_TO_PLAYER 5
 

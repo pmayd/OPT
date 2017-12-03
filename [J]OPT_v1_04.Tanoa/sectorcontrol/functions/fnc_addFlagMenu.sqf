@@ -21,7 +21,7 @@ if GVARMAIN(missionStarted) exitWith{};
 // Mausradmenüeinträge für HL und PL
 if (typeOf player in GVARMAIN(officer)) then {
     player addAction [
-        "<t size=""1.5"" color=""#ffffff"">Angrifsflagge wählen</t>", 
+        "<t size=""1.5"" color=""#ffffff"">SECTORCONTROL_ACTION_SELECT_FLAG</t>", 
         {[] spawn FUNC(chooseFlag);}, 
         [], 
         6, 
