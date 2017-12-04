@@ -15,9 +15,9 @@
 #include "script_component.hpp"
 
 /****** LOAD IN VEHICLE  ******/
-[cursorTarget, 3] call ace_cargo_fnc_setSize // -1 -> not loadable, 
- [vehicle player, 20] call ace_cargo_fnc_setSpace   // -> -1, no cargo possible
-
+/*
+* [cursorTarget, 3] call ace_cargo_fnc_setSize // -1 -> not loadable, 
+* [vehicle player, 20] call ace_cargo_fnc_setSpace   // -> -1, no cargo possible
  Arguments:
  * 0: Any object <OBJECT>
  * 1: true to enable dragging, false to disable <BOOL>
@@ -41,11 +41,13 @@
  *
  * Example:
  * [object, true, [0,1,1], 0] call ace_dragging_fnc_setCarryable;
+ */
 
 /* FORMAT
 * (classname, cargo space): Wenn cargo space = -1, dann cargo deaktiviert
 */
-GVAR(canTransportCargo) = [
+GVAR(canTransportCargo) = 
+[
 // NATO Vehicles
     ["OPT_B_Quadbike_01_F", 15],						// Quadbike	- checken!
 	["OPT_B_G_Offroad_01_F", 30],						// Pickup - grad nich drin!
@@ -118,7 +120,7 @@ GVAR(canTransportCargo) = [
  * The second element of the nested arrays is the cost capacity (in relation with the capacity of the vehicles).
  * (classname, cargo size): Wenn cargo size = -1, dann Verladen deaktiviert
 */
-GVAR(canBeTransported) = []
+GVAR(canBeTransported) =
 [	
 // NATO supplies													
 	["OPT_B_supplyCrate_F", 15],							// Transportkiste (leer)	+					
@@ -163,7 +165,7 @@ GVAR(canBeTransported) = []
  * List of class names of objects which can be carried and moved by a player.
  */
  // e.g. : "MyMovableObjectClassName1", "MyMovableObjectClassName2"
-GVAR(canBeMoved) = 
+GVAR(canBeDragged) = 
 [											
     // NATO supplies	
     "OPT_B_supplyCrate_F",							// Transportkiste (leer),500
@@ -187,10 +189,10 @@ GVAR(canBeMoved) =
 	"OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", 	       	// NATO Radar Container
 	"OPT_B_Slingload_01_Medevac_F",          			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den wei�en Container ersetzt welcher zum Lazarett ausgebaut werden kann
 // NATO ships	
-	"OPT_B_Boat_Transport_01_F",						// Assault Boat,500
+	"OPT_B_Boat_Transport_01_F",					// Assault Boat,500
 	"OPT_B_C_Boat_Transport_02_F",					// Rhib unbewaffnet,2000
 	//"OPT_B_Boat_Armed_01_minigun_F",				// Speedboat Minigun,10000
-	//"OPT_B_SDV_01_F",									// Submarine,2000
+	//"OPT_B_SDV_01_F",								// Submarine,2000
 //CSAT supplies
 	"OPT_O_supplyCrate_F",							// Transportkiste,500
 	"OPT_Box_East_WpsSpecial_Diver_F",				// Taucherkiste,5000
@@ -205,7 +207,7 @@ GVAR(canBeMoved) =
 	"OPT_O_GMG_01_high_F",							// Stand-GMG hoch,15000	
 	"OPT_O_static_AA_F",							// Stand-AA,25000
 	"OPT_O_static_AT_F",							// Stand-AT,200000	
-	"OPT_O_Mortar_01_F",							// MK6 M�rser,200000
+	"OPT_O_Mortar_01_F",							// MK6 Mörser,200000
 	"OPT_FlexibleTank_01_sand_F",					// Treibstoff-Fass
 	"OPT_O_Static_Designator_02_F",					// Remote Designator,10000
 	"OPT_Land_Pod_Heli_Transport_04_fuel_F",			// Fuelcontainer,5000
@@ -215,10 +217,46 @@ GVAR(canBeMoved) =
 	"OPT_Land_Pod_Heli_Transport_04_repair_F",			// Reparaturcontainer,5000
 	"OPT_Land_Pod_Heli_Transport_04_repair_black_F",	// Reparaturcontainer (schwarz),5000
 	"OPT_Land_Pod_Heli_Transport_04_repair_radar_F", // CSAT Radar Container
-	"OPT_Land_Pod_Heli_Transport_04_medevac_F",			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den wei�en Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	"OPT_Land_Pod_Heli_Transport_04_medevac_F",			// Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weißen Container ersetzt welcher zum Lazarett ausgebaut werden kann
 //CSAT ships
 	"OPT_O_Boat_Transport_01_F",						// Assault Boat,500
 	//"OPT_O_Boat_Armed_01_hmg_F",					// Speedboat HMG,14000
 	"OPT_O_C_Boat_Transport_02_F"					// rhib unbewaffnet,7000	
 	//"OPT_O_SDV_01_F"									// Submarine,2000	
+];
+
+GVAR(canBeCarried) = 
+[
+ // NATO supplies	
+    "OPT_B_supplyCrate_F",							// Transportkiste (leer),500
+	"OPT_Box_NATO_WpsSpecial_Diver_F",				// Taucherkiste,5000	
+	"OPT_Box_NATO_Ammo_F",            				// Munitionskiste,40000
+    "OPT_Box_NATO_Grenades_F",         				// Explosivkiste,75000
+ 	"OPT_Box_NATO_WpsSpecial_AT2_F",				// AT Raketenkiste (RPG-42),30000
+	"OPT_Box_NATO_WpsSpecial_AA_F",					// AA Raketenkiste,40000	
+	"OPT_B_HMG_01_F",								// Stand-MG niedrig,10000
+	"OPT_B_HMG_01_high_F",							// Stand-MG hoch,10000
+	"OPT_B_GMG_01_F",								// Stand-GMG niedrig,15000
+	"OPT_B_GMG_01_high_F",							// Stand-GMG hoch,15000
+	"OPT_B_static_AA_F",							// Stand-AA,25000
+	"OPT_B_static_AT_F",							// Stand-AT,200000	
+	"OPT_B_Mortar_01_F",							// MK6 - M�rser,200000
+	"OPT_FlexibleTank_01_forest_F",					//Spritfass
+	"OPT_B_Static_Designator_01_F",					// Remote Designator,10000
+//CSAT supplies
+	"OPT_O_supplyCrate_F",							// Transportkiste,500
+	"OPT_Box_East_WpsSpecial_Diver_F",				// Taucherkiste,5000
+	"OPT_Box_East_WpsSpecial_AA_F",					// AA Raketenkiste,40000
+	"OPT_Box_East_WpsSpecial_F",            		// AT Raketenkiste (RPG-42),30000
+	"OPT_Box_East_Ammo_F",            				// Munitionskiste,40000	
+    "OPT_Box_East_Grenades_F",            			// Explosivkiste,75000	
+	"OPT_Box_East_WpsLaunch_F",							// HAT-Kiste (Titan),400000	
+	"OPT_O_HMG_01_F",								// Stand-MG niedrig,10000	
+	"OPT_O_HMG_01_high_F",							// Stand-MG hoch,10000
+	"OPT_O_GMG_01_F",								// Stand-GMG niedrig,15000
+	"OPT_O_GMG_01_high_F",							// Stand-GMG hoch,15000	
+	"OPT_O_static_AA_F",							// Stand-AA,25000
+	"OPT_O_static_AT_F",							// Stand-AT,200000	
+	"OPT_O_Mortar_01_F",							// MK6 Mörser,200000
+	"OPT_FlexibleTank_01_sand_F"					// Treibstoff-Fass
 ];

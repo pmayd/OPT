@@ -10,5 +10,6 @@ ADDON = true;
 [] call FUNC(setup_classnames);
 
 if (isServer) then {
+    [] call FUNC(preInit);
     [] call FUNC(setup_publicVariables);
 };

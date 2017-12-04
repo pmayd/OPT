@@ -6,3 +6,6 @@
 // player marker settings
 #define MARKER_PLAYER_SYMBOL "mil_circle"
 #define MARKER_PLAYER_COLOR "ColorBrown"
+
+// wenn nicht auskommentiert, kann in den Parametern eingestellt werden, ob HL alle Einheiten auf der Kate sieht oder nur Gruppenführer.
+#define __SHOW_ALL_UNITS__
