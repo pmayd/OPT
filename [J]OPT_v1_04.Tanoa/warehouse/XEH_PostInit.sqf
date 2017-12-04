@@ -8,6 +8,4 @@ if (isServer) then {
     [] call FUNC(createMenu);
 };
 
-[] call FUNC(initCBAClassEvents);
-
 

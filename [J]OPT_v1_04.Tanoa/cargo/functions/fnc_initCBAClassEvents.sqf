@@ -20,7 +20,7 @@
 
     private _type = typeOf _vec;
 
-    // find class
+    // set cargo space
     private _index = (GVAR(canTransportCargo) apply {toLower (_x select 0)}) find toLower _type;
 	if (_index != -1) then {
         (GVAR(canTransportCargo) select _index) params ["_class", "_space"];
@@ -39,29 +39,45 @@
 
     private _type = typeOf _item;
 
-    // find class
-    private _index = (GVAR(canBeTransported) apply {toLower (_x select 0)}) find toLower _type;
+    // set cargo space
+    private _index = (GVAR(canTransportCargo) apply {toLower (_x select 0)}) find toLower _type;
 	if (_index != -1) then {
-        (GVAR(canBeTransported) select _index) params ["_class", "_size"];
-        [_vec, _size] call ace_cargo_fnc_setSize;
+        (GVAR(canTransportCargo) select _index) params ["_class", "_space"];
+        [_item, _space] call ace_cargo_fnc_setSpace;
 
     } else {
-        [_vec, -1] call ace_cargo_fnc_setSize;
+        [_item, -1] call ace_cargo_fnc_setSpace;
 
     };
 
-    private _index = (GVAR(canBeDragged) apply {toLower _x}) find toLower _type;
+    // set cargo size
+    private _index = (GVAR(canBeTransported) apply {toLower (_x select 0)}) find toLower _type;
 	if (_index != -1) then {
-        [_item, true] call ace_dragging_fnc_setDraggable;
+        (GVAR(canBeTransported) select _index) params ["_class", "_size"];
+        [_item, _size] call ace_cargo_fnc_setSize;
+
+    } else {
+        [_item, -1] call ace_cargo_fnc_setSize;
+
+    };
+
+    // set drag and carry flags
+    private _index = (GVAR(canBeDragged) apply {toLower (_x select 0)}) find toLower _type;
+	if (_index != -1) then {
+        (GVAR(canBeDragged) select _index) params ["_class", ["_offset", [0, 1, 0.1]], ["_dir", 0]];
+
+        [_item, true, _offset, _dir] call ace_dragging_fnc_setDraggable;
 
     } else {
         [_item, false] call ace_dragging_fnc_setDraggable;
 
     };
 
-    private _index = (GVAR(canBeCarried) apply {toLower _x}) find toLower _type;
+    private _index = (GVAR(canBeCarried) apply {toLower (_x select 0)}) find toLower _type;
 	if (_index != -1) then {
-        [_item, true] call ace_dragging_fnc_setCarryable;
+        (GVAR(canBeCarried) select _index) params ["_class", ["_offset", [0, 1, 0.1]], ["_dir", 0]];
+        
+        [_item, true, _offset, _dir] call ace_dragging_fnc_setCarryable;
 
     } else {
         [_item, false] call ace_dragging_fnc_setCarryable;
@@ -69,8 +85,3 @@
     };
 
 }] call CBA_fnc_addClassEventHandler;
-
-{
-    params ["_class", "_space"];
-
-} forEach GVAR(canTransportCargo);

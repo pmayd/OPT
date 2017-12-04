@@ -9,3 +9,6 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 [] call FUNC(setupCargoSpaceAndSize);
+
+// has to be called in PreInit so that all mission objects are affected!
+[] call FUNC(initCBAClassEvents);

@@ -6,8 +6,5 @@
 */
 
 if (local player) then {
-    [] call FUNC(postInit);
+    [] call FUNC(initPlayer);
 };
-
-[] call FUNC(initCBAClassEvents);
-

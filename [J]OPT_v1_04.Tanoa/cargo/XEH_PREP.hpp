@@ -1,3 +1,3 @@
 PREP(initCBAClassEvents);
-PREP(postInit);
+PREP(initPlayer);
 PREP(setupCargoSpaceAndSize);
