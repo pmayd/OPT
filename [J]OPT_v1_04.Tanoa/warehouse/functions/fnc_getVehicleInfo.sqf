@@ -62,7 +62,7 @@ if (_index != -1) then {
    
 };
 
-_Dragged_Carried = _Dragged_Carried select [0, count _newweapons - 2];
+_Dragged_Carried = _Dragged_Carried select [0, count _Dragged_Carried - 2];
 
 
 /* ONLY FOR VEHICLES AND AIR */
