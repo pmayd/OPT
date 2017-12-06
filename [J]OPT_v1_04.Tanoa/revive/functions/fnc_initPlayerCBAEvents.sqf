@@ -29,7 +29,7 @@
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(rotate), {
-	params [_unit, _angle];
+	params ["_unit", "_angle"];
 	
 	_unit setDir _angle;
 
