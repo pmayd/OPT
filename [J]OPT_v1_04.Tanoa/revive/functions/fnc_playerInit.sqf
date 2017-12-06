@@ -37,4 +37,5 @@ closeDialog 5651;
 
 [QGVAR(removeMarker), [player]] call CBA_fnc_globalEvent; // remove Marker on all clients
 
-[] spawn FUNC(playerActions);
+// add ACE interaction menus to all other clients
+[QGVAR(createACEActions), [player]] call CBA_fnc_remoteEvent;

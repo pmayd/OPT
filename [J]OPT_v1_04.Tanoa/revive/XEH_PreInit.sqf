@@ -10,4 +10,5 @@ ADDON = true;
 
 if (local player) then {
     [] call FUNC(initPlayerCBAEvents);
+
 };

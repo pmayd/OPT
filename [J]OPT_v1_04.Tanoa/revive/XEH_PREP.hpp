@@ -17,7 +17,6 @@ PREP(isFriendlyMedic);
 PREP(isMedic);
 PREP(keyUnbind);
 PREP(medicEquipment);
-PREP(playerActions);
 PREP(playerInit);
 PREP(postInit);
 PREP(release);
