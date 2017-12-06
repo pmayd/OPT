@@ -38,29 +38,31 @@ private _cargo_space = 0;
 private _cargo_size = 0;
 private _Dragged_Carried = "";
 
-private _index = EGVAR(cargo,canTransportCargo) apply {_x select 0} find _class;
+private _index = (EGVAR(cargo,canTransportCargo) apply {_x select 0}) find _class;
 if (_index != -1) then {
     _cargo_space = (EGVAR(cargo,canTransportCargo) select _index) select 1;
      
 };
 
-private _index = EGVAR(cargo,canBeTransported) apply {_x select 0} find _class;
+private _index = (EGVAR(cargo,canBeTransported) apply {_x select 0}) find _class;
 if (_index != -1) then {
     _cargo_size = (EGVAR(cargo,canBeTransported) select _index) select 1;
      
 };
 
-private _index = EGVAR(cargo,canBeDragged) apply {_x select 0} find _class;
+private _index = (EGVAR(cargo,canBeDragged) apply {_x select 0}) find _class;
 if (_index != -1) then {
-	_Dragged_Carried = _Dragged_Carried + "Ziehbar" + ", ";};
+	_Dragged_Carried = _Dragged_Carried + "Ziehbar" + ", ";
      
 };
 
-private _index = EGVAR(cargo,canBeCarried) apply {_x select 0} find _class;
+private _index = (EGVAR(cargo,canBeCarried) apply {_x select 0}) find _class;
 if (_index != -1) then {
-   _Dragged_Carried = _Dragged_Carried + "Tragbar" + ", ";};
+   _Dragged_Carried = _Dragged_Carried + "Tragbar" + ", ";
    
 };
+
+_Dragged_Carried = _Dragged_Carried select [0, count _newweapons - 2];
 
 
 /* ONLY FOR VEHICLES AND AIR */
@@ -130,7 +132,7 @@ if (_class isKindOf "AllVehicles" and !(_class isKindOf "StaticWeapon")) then {
 <t align='left'>Sitzplätze:</t> <t align='right' color='#00ff00'>%4</t><br/>
 <t align='left'>Max. Geschwindigkeit:</t> <t align='right' color='#00ff00'>%5</t><br/>
 <t align='left'>Treibstoffmenge:</t> <t align='right' color='#00ff00'>%6 Min</t><br/>
-<t align='left'>Panzerung:</t> <t align='right' color='#00ff00'>%7</t><br/></t>
+<t align='left'>Panzerung:</t> <t align='right' color='#00ff00'>%7</t><br/>
 <t align='left'>Laderaum:</t> <t align='right' color='#00ff00'>%8 l</t><br/></t>",
 _priceTxt, _price, _newweapons, _crewCount, _maxSpeed, _fuelCapacity, _armor, _cargo_space
     ];
@@ -184,7 +186,7 @@ if (_class isKindOf "StaticWeapon") then {
 <t align='left'>Waffen:</t><br/>
 <t align='left' color='#00ff00'>%3</t><br/>
 <t align='left'>Sitzplätze:</t> <t align='right' color='#00ff00'>%4</t><br/>
-<t align='left'>Volumen:</t> <t align='right' color='#00ff00'>%5 l</t><br/></t>
+<t align='left'>Volumen:</t> <t align='right' color='#00ff00'>%5 l</t><br/>
 <t align='left'>Bewegbarkeit:</t> <t align='right' color='#00ff00'>%6</t><br/></t>",
 _priceTxt, _price, _newweapons, _crewCount, _cargo_size, _Dragged_Carried
     ];
@@ -236,11 +238,11 @@ if (_class isKindOf "ThingX") then {
 
     _return = format [
 "<t size='0.9'><t align='left'>%1:</t> <t align='right' color='#00ff00'>%2</t><br/>
+<t align='left'>Volumen:</t> <t align='right' color='#00ff00'>%6 l</t><br/>
+<t align='left'>Bewegbarkeit:</t> <t align='right' color='#00ff00'>%7</t><br/>
 <t align='left'>Waffen:</t> <t align='right' color='#00ff00'>%3</t><br/>
 <t align='left'>Magazine:</t> <t align='right' color='#00ff00'>%4</t><br/>
-<t align='left'>Items:</t> <t align='right' color='#00ff00'>%5</t><br/>
-<t align='left'>Volumen:</t> <t align='right' color='#00ff00'>%6 l</t><br/></t>
-<t align='left'>Bewegbarkeit:</t> <t align='right' color='#00ff00'>%7</t><br/></t>",
+<t align='left'>Items:</t> <t align='right' color='#00ff00'>%5</t><br/></t>",
 _priceTxt, _price,  _weapons, _magazines, _items, _cargo_size, _Dragged_Carried
     ];
 
