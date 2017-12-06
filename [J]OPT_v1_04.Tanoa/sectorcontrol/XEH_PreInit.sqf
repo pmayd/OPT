@@ -9,6 +9,7 @@ PREP_RECOMPILE_END;
 ADDON = true;
 
 if (isServer) then {
-    [] call FUNC(setup_flagPositions);
     [] call FUNC(initServerCBAEvents);
+    [] call FUNC(setup_flagPositions);
+
 };

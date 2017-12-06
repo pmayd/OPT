@@ -7,6 +7,7 @@
 
 if (isServer) then {
     [] call FUNC(postInit);
+
 };
 
 // executed after briefing right to mission start

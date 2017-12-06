@@ -12,4 +12,5 @@ GVAR(playerList) = [];
 
 if (isServer) then {
     [] call FUNC(initServerCBAEvents);
+
 };

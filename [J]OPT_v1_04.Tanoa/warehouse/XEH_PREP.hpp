@@ -4,7 +4,6 @@ PREP(filterVehicleList);
 PREP(getVehicleInfo);
 PREP(handleDeadVehicle);
 PREP(initCBAClassEvents);
-PREP(initPlayerCBAEvents);
 PREP(initServerCBAEvents);
 PREP(sellVehicle);
 PREP(sendVehicleOrder);

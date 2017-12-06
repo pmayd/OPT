@@ -6,6 +6,7 @@
 */
 if (isServer) then {
     [] call FUNC(createMenu);
+
 };
 
 

@@ -26,7 +26,7 @@ LOG("removeMarker initialized");
 
 [QGVAR(createMarker), {
 	params ["_unit"];
-    
+
 	[_unit] call FUNC(createMarker);
 
 }] call CBA_fnc_addEventHandler;
