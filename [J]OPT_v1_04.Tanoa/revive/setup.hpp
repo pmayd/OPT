@@ -26,6 +26,7 @@
 #define FAR_REVIVE_ACTION_SUICIDE "Aufgeben"
 #define FAR_REVIVE_ACTION_DRAG "Ziehen"
 #define FAR_REVIVE_ACTION_DROP "Ablegen"
+#define FAR_REVIVE_ACTION_REVIVE_MENU_TEXT 
 
 #define FAR_REVIVE_ACTION_REVIVE_BAR_TEXT "Erstversorgung wird %1 s in Anspruch nehmen..."
 #define FAR_REVIVE_ACTION_REVIVE_PATIENT_DIED "Für diesen Kameraden kommt jede Hilfe zu spät."

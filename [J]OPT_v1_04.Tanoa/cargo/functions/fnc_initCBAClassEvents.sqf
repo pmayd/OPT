@@ -33,6 +33,16 @@
 
 }] call CBA_fnc_addClassEventHandler;
 
+["CAManBase", "init", {
+    params ["_unit"];
+    
+    /* Deactivate ACE Carry functionality for players 
+    * because it interferes with FAR Revive */
+    [_unit, false] call ace_dragging_fnc_setCarryable;
+    [_unit, false] call ace_dragging_fnc_setDraggable;
+
+}] call CBA_fnc_addClassEventHandler;
+
 // setzt ACE cargo settings für jede Kiste
 ["Thing", "init", {
 	params ["_item"];
