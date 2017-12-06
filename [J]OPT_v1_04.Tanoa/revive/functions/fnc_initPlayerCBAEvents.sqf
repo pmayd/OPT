@@ -19,14 +19,14 @@
 	params ["_unit"];
 	[_unit] call FUNC(removeMarker);
 
-}] call CBA_fnc_addEventHanler;
+}] call CBA_fnc_addEventHandler;
 
 [QGVAR(createMarker), {
 
 	params ["_unit"];
 	[_unit] call FUNC(createMarker);
 
-}] call CBA_fnc_addEventHanler;
+}] call CBA_fnc_addEventHandler;
 
 [QGVAR(rotate), {
 	params [_unit, _angle];
