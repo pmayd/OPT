@@ -11,6 +11,7 @@ PREP(handleAction);
 PREP(handleDamage);
 PREP(handleRevive);
 PREP(handleStabilize);
+PREP(initCBAClassEvents);
 PREP(initPlayerCBAEvents);
 PREP(isFriendlyMedic);
 PREP(isMedic);
