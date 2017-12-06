@@ -33,8 +33,35 @@ switch (GVAR(vehicleType)) do {
 };
 
 //ACE Laderaum Berechnung 
-private _cargo_space = getNumber (configFile >> "CfgVehicles" >> _class >> "ACE_cargo_space") max 0;
-private _cargo_size = getNumber (configFile >> "CfgVehicles" >> _class >> "ACE_cargo_size") max 0;
+
+private _cargo_space = 0;
+private _cargo_size = 0;
+private _Dragged_Carried = "";
+
+private _index = EGVAR(cargo,canTransportCargo) apply {_x select 0} find _class;
+if (_index != -1) then {
+    _cargo_space = (EGVAR(cargo,canTransportCargo) select _index) select 1;
+     
+};
+
+private _index = EGVAR(cargo,canBeTransported) apply {_x select 0} find _class;
+if (_index != -1) then {
+    _cargo_size = (EGVAR(cargo,canBeTransported) select _index) select 1;
+     
+};
+
+private _index = EGVAR(cargo,canBeDragged) apply {_x select 0} find _class;
+if (_index != -1) then {
+	_Dragged_Carried = _Dragged_Carried + "Ziehbar" + ", ";};
+     
+};
+
+private _index = EGVAR(cargo,canBeCarried) apply {_x select 0} find _class;
+if (_index != -1) then {
+   _Dragged_Carried = _Dragged_Carried + "Tragbar" + ", ";};
+   
+};
+
 
 /* ONLY FOR VEHICLES AND AIR */
 if (_class isKindOf "AllVehicles" and !(_class isKindOf "StaticWeapon")) then {
@@ -64,7 +91,8 @@ if (_class isKindOf "AllVehicles" and !(_class isKindOf "StaticWeapon")) then {
     } forEach _weapArray;
 
     // Aufbereitung Waffenanzeige
-    _weapons deleteAt (_weapons find "Horn");
+    _weapons deleteAt (_weapons find "Hupe");
+	_weapons deleteAt (_weapons find "Horn");
     private _newweapons = "";
     {
         _newweapons =_newweapons + _x + ", ";
@@ -81,8 +109,8 @@ if (_class isKindOf "AllVehicles" and !(_class isKindOf "StaticWeapon")) then {
     private _redRpm = 1;
     _redRpm = getNumber(configFile >> "cfgVehicles" >> _class >> "redRpm");
     private _fuelCapacity = 0;
-    if (_class isKindOf "Helicopter") then {_fuelCapacity = 15;};
-    if (_class isKindOf "Plane") then {_fuelCapacity = 30;};
+    if (_class isKindOf "Helicopter") then {_fuelCapacity = 20;};
+    if (_class isKindOf "Plane") then {_fuelCapacity = 32;};
     if (_class isKindOf "car") then {
         _fuelCapacity = round ((getNumber(configFile >> "cfgVehicles" >> _class >> "fuelCapacity")) /(_redRpm * 0.000056896));
     };
@@ -156,8 +184,9 @@ if (_class isKindOf "StaticWeapon") then {
 <t align='left'>Waffen:</t><br/>
 <t align='left' color='#00ff00'>%3</t><br/>
 <t align='left'>Sitzplätze:</t> <t align='right' color='#00ff00'>%4</t><br/>
-<t align='left'>Volumen:</t> <t align='right' color='#00ff00'>%5 l</t><br/></t>",
-_priceTxt, _price, _newweapons, _crewCount, _cargo_size
+<t align='left'>Volumen:</t> <t align='right' color='#00ff00'>%5 l</t><br/></t>
+<t align='left'>Bewegbarkeit:</t> <t align='right' color='#00ff00'>%6</t><br/></t>",
+_priceTxt, _price, _newweapons, _crewCount, _cargo_size, _Dragged_Carried
     ];
 
 };
@@ -165,67 +194,54 @@ _priceTxt, _price, _newweapons, _crewCount, _cargo_size
 /* ONLY FOR AMMO BOXES */
 
 if (_class isKindOf "ThingX") then {
-    private _transportItems = (configFile >> "CfgVehilces" >> _class >> "TransportItems");
-    private _items = "";
 
-    if (isClass _transportItems) then {
-        {   
-            private _class = getText (_x >> "name");
-            private _displayName = getText (configFile >> "CfgWeapons" >> _class >> "displayName");
-
-            private _count = getNumber (_x >> "count");
-
-            _items = format["%1%2 (%3), ", _items, _displayName, _count];
-
-        } forEach _transportItems;
-
-        _items = _items select [0, count _items -2];
-
-    };
-
-    private _transportMagazines = (configFile >> "CfgVehilces" >> _class >> "TransportMagazines");
-    private _magazines = "";
-
-    if (isClass _transportMagazines) then {
-        {   
-            private _class = getText (_x >> "magazine");
-            private _displayName = getText (configFile >> "CfgMagazines" >> _class >> "displayName");
-
-            private _count = getNumber (_x >> "count");
-
-            _items = format["%1%2 (%3), ", _magazines, _displayName, _count];
-
-        } forEach _transportMagazines;
-
-        _magazines = _magazines select [0, count _items -2];
-
-    };
-
-    private _transportWeapons = (configFile >> "CfgVehilces" >> _class >> "TransportWeapons");
-    private _weapons = "";
-
-    if (isClass _transportWeapons) then {
-        {   
-            private _class = getText (_x >> "weapon");
-            private _displayName = getText (configFile >> "CfgWeapons" >> _class >> "displayName");
-
-            private _count = getNumber (_x >> "count");
-
-            _items = format["%1%2 (%3), ", _weapons, _displayName, _count];
-
-        } forEach _transportWeapons;
-
-        _weapons = _weapons select [0, count _items -2];
-
-    };
+	private _config = (configfile >> "CfgVehicles" >> _class >> "TransportItems"); 
+	private _transportItems = [];
+	private _items = "";
+	
+	for "_i" from 0 to ((count _config)-1) do {  
+    private _class = _config select _i; 
+    _transportItems = (getText (_class >> "name")); 
+	private _count =  (getNumber (_class >> "count"));
+	private _displayName = getText (configFile >> "CfgWeapons" >> _transportItems >> "displayName");
+	_items =_items + format["%1 (%2), ", _displayName, _count];
+	};
+			
+	private _config = (configfile >> "CfgVehicles" >> _class >> "TransportMagazines"); 
+	private _transportMagazines = [];
+	private _magazines = "";
+	
+	for "_i" from 0 to ((count _config)-1) do {  
+    private _class = _config select _i; 
+    _transportMagazines = (getText (_class >> "magazine")); 
+	private _count =  (getNumber (_class >> "count"));
+	private _displayName = getText (configFile >> "CfgMagazines" >> _transportMagazines >> "displayName");
+	_magazines =_magazines + format["%1 (%2), ", _displayName, _count];	
+	};
+	
+		
+	private _config = (configfile >> "CfgVehicles" >> _class >> "TransportWeapons"); 
+	private _transportWeapons = [];
+	private _weapons = "";
+	
+	for "_i" from 0 to ((count _config)-1) do {  
+    private _class = _config select _i; 
+    _transportWeapons = (getText (_class >> "weapon")); 
+	private _count =  (getNumber (_class >> "count"));
+	private _displayName = getText (configFile >> "CfgWeapons" >> _transportWeapons >> "displayName");
+	_weapons =_weapons + format["%1 (%2), ", _displayName, _count];	
+	};
+	
+	//systemChat format ["IB:%1 MB:%2 WB:%3",_transportItems,_transportMagazines,_transportWeapons];
 
     _return = format [
 "<t size='0.9'><t align='left'>%1:</t> <t align='right' color='#00ff00'>%2</t><br/>
 <t align='left'>Waffen:</t> <t align='right' color='#00ff00'>%3</t><br/>
 <t align='left'>Magazine:</t> <t align='right' color='#00ff00'>%4</t><br/>
 <t align='left'>Items:</t> <t align='right' color='#00ff00'>%5</t><br/>
-<t align='left'>Volumen:</t> <t align='right' color='#00ff00'>%6 l</t><br/></t>",
-_priceTxt, _price,  _weapons, _magazines, _items, _cargo_size
+<t align='left'>Volumen:</t> <t align='right' color='#00ff00'>%6 l</t><br/></t>
+<t align='left'>Bewegbarkeit:</t> <t align='right' color='#00ff00'>%7</t><br/></t>",
+_priceTxt, _price,  _weapons, _magazines, _items, _cargo_size, _Dragged_Carried
     ];
 
 };
