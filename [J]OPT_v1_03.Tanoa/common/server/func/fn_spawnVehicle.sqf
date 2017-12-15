@@ -6,7 +6,7 @@ params ["_vecType", "_spawnObj", "_isFlat"];
 // create Vehicle
 _spawnPos = if (typeName _spawnObj == "OBJECT") then {getPosATL _spawnObj} else {_spawnObj};
 
-_vec = createVehicle [_vecType, _spawnPos, [], 0, ""];
+_vec = createVehicle [_vecType, _spawnPos, [], 0, "NONE"];
 
 //added by psycho - check for free space to place the vehicle
 _sizeOfVec = sizeOf _vecType;

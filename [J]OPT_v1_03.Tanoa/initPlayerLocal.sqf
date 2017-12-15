@@ -190,7 +190,7 @@ if (OPT_TRAINING == 1) then {
 #endif
 
 // EH für TFAR Frequenzen in Fahrzeugen
-__ccppfln(common\client\opt_tfarVehicleLr.sqf);
+//__ccppfln(common\client\opt_tfarVehicleLr.sqf);
 
 // EH für Aufnahme von Funkgeräten 
 /*
