@@ -64,7 +64,7 @@ if (isNil "x_global_chat_logic") then {x_global_chat_logic = "Logic" createVehic
 
 // starte alle addon Scripte
 [] execVM "addons\opt3_magRepack\MagRepack_init_sv.sqf";
-[] call opt_fnc_tfarFrequencies;
+//[] call opt_fnc_tfarFrequencies;
 
 // call OPT specific items
 if (OPT_TFAR_INTERCEPTION == 1) then {
@@ -193,12 +193,13 @@ if (OPT_TRAINING == 1) then {
 __ccppfln(common\client\opt_tfarVehicleLr.sqf);
 
 // EH für Aufnahme von Funkgeräten 
+/*
 player addEventHandler["Take", {
-    /*
-         unit: Object - Unit to which the event handler is assigned
+    *
+        unit: Object - Unit to which the event handler is assigned
         container: Object - The container from which the item was taken (vehicle, box, etc.)
         item: String - The class name of the taken item
-    */
+    *
     params ["_unit", "_container", "_item"];
 
     if ((_item find "TFAR_" == 0) or (_item find "tf_" == 0)) then {
@@ -206,6 +207,7 @@ player addEventHandler["Take", {
     };
 
 }];
+*/
 
 // EH fürs Einsteigen
 player addEventHandler ["GetInMan", {

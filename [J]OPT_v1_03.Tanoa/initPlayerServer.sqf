@@ -8,3 +8,9 @@ if (!_didJIP) then {
 		[] remoteExec ["opt_fnc_intro", _player, false];
 	};
 };
+
+// add player to listofplayers on server
+["opt_eh_server_updatePlayerList", [getPlayerUID _player, name _player, side _player]] call CBA_fnc_localEvent;
+
+// rufe Zeusskript auf
+[_player] execVM "addons\opt3_zeus\addEditableObjects.sqf";
