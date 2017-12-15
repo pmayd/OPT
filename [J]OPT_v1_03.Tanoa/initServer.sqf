@@ -78,7 +78,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	
 	// EH für alle im Editor gesetzten Fahrzeuge: loggt Zerstörung
 	{
-		_x addMPEventHandler ["killed", {
+		_x addMPEventHandler ["mpkilled", {
 			(_this select [0,2]) call tcb_fnc_handleDeadVehicle;
 		}];
 	} forEach vehicles;
