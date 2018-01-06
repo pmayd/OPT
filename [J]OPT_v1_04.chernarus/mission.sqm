@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=284;
+		nextID=320;
 	};
 	class Camera
 	{
-		pos[]={12167.671,188.55777,12621.041};
-		dir[]={0.88455182,-0.39962977,-0.24054955};
-		up[]={0.38562486,0.91667664,-0.10486863};
-		aside[]={-0.26241478,1.4901161e-007,-0.96495515};
+		pos[]={4766.5103,23.311943,2506.4548};
+		dir[]={-0.30069384,-0.36101392,0.88276267};
+		up[]={-0.11640545,0.93255764,0.34173772};
+		aside[]={0.94659752,-1.1069642e-007,0.32243937};
 	};
 };
 binarizationWanted=0;
@@ -4275,7 +4275,7 @@ class Mission
 						};
 					};
 					id=56;
-					atlOffset=51.599998;
+					atlOffset=-0.0030670166;
 				};
 				class Item4
 				{
@@ -5101,7 +5101,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this addAction [""Teleport zu Marine Basis"", ""addons\base_teleport\teleport_csat_basis_2.sqf"", false, 5, false, true, """"];}";
+								init="call{this addAction [""Teleport zu Marine Basis"", ""addons\base_teleport\teleport_csat_basis_2.sqf"", false, 5, false, true, """"];  this addAction [""Beam-System benutzen"", {createDialog ""DialogBeam"";}, false, 5, false, true, """"]; }";
 							};
 							id=132;
 							type="Flag_CSAT_F";
@@ -10425,7 +10425,7 @@ class Mission
 						};
 					};
 					id=204;
-					atlOffset=51.599998;
+					atlOffset=-0.048042297;
 				};
 				class Item4
 				{
@@ -10478,19 +10478,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4705.4575,12.905306,2577.8623};
-								angles[]={0.013327583,5.9356027,0};
+								position[]={4705.458,12.905308,2577.8621};
+								angles[]={0.013334315,5.9356027,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this addAction [""Teleport zu  Marine Basis"", ""addons\base_teleport\teleport_nato_basis_2.sqf"", false, 5, false, true, """"]; this allowDamage false;}";
+								init="call{this addAction [""Teleport zu  Marine Basis"", ""addons\base_teleport\teleport_nato_basis_2.sqf"", false, 5, false, true, """"]; this allowDamage false; this addAction [""Beam-System benutzen"", {createDialog ""DialogBeam"";}, false, 5, false, true, """"]; }";
 							};
 							id=271;
 							type="Flag_NATO_F";
-							atlOffset=9.5367432e-007;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -12906,7 +12905,7 @@ class Mission
 				};
 			};
 			id=200;
-			atlOffset=0.2610302;
+			atlOffset=0.26321507;
 		};
 		class Item13
 		{
@@ -16681,7 +16680,7 @@ class Mission
 				};
 			};
 			id=1947;
-			atlOffset=41.533344;
+			atlOffset=0.070159912;
 		};
 	};
 	class Connections

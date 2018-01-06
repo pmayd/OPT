@@ -1,7 +1,7 @@
 class DialogBeam
 {
     idd = 444001;
-    onload = QUOTE([] spawn FUNC(beamDialog));
+    onload = QUOTE([] spawn FUNC(onLoadDialog););
     movingEnable = true;
     controlsBackground[] = {BACKGROUND3};
 
@@ -67,7 +67,7 @@ class DialogBeam
      	w = 0.1;
      	h = 0.05;
 		text = "OK";
-		action = QUOTE(GVAR(ready_to_go) = 1);
+		action = QUOTE([lbCurSel 10002] spawn FUNC(beam););
     	default = true;
   };
  class buttonwp : RSCButton

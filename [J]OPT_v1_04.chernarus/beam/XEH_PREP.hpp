@@ -1,3 +1,4 @@
 
 PREP(setup_beamOrte);
-PREP(beamDialog);
+PREP(onLoadDialog);
+PREP(beam);
