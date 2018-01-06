@@ -523,7 +523,7 @@ class Mission
 						name="trg_csat_repair";
 						text="Auslöser für Rep-Script";
 						condition="call{player in thislist or (vehicle player) in thislist}";
-						onActivation="call{nul = [true] spawn opt_mission_fnc_repairSystem; hint ""ausgelöst""}";
+						onActivation="call{nul = [true] spawn opt_mission_fnc_repairSystem;}";
 						onDeactivation="nul = [false] spawn opt_mission_fnc_repairSystem;";
 						sizeA=12;
 						sizeB=12;
