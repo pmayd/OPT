@@ -9,3 +9,4 @@
 - Transport von Spielern wird nur noch geloggt, wenn kein Unfall (weder Pilot noch Spieler bewusstlos)
 - Reparatursystem umgestellt auf Außen
 - Unfälle in der Basis erfassen keine Spieler
+- Nachrichten über Sicherheitszone und Todeszone sind jetzt im neuen Messagesystem

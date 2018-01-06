@@ -39,7 +39,7 @@ deleteVehicle _selectedVehicle;
 private _txt = format["%1 für %2 € verkauft.", _selectionText, _unitCost];
 [QEGVAR(gui,message), ["Verkauf", _txt, "green"]] call CBA_fnc_localEvent;
 
-// neu öffnen
+// Budget in Dialog updaten
 [] call FUNC(updateBudget);
 
 // lösche Option aus Verkaufsmenü!

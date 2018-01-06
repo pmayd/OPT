@@ -497,12 +497,12 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={12044.146,160.134,12601.92};
-					angle=4.9199414;
+					angle=4.9199433;
 					class Attributes
 					{
 						text="NATO Todeszone";
-						condition="vehicle player in thisList";
-						onActivation="{player setDamage 1} foreach thisList; systemChat ""Ein NATO Spieler wurde auf Grund des Betretens der feindlichen Basis automatisch getötet!""";
+						condition="call{vehicle player in thisList}";
+						onActivation="call{{player setDamage 1} foreach thisList; [""opt_gui_message"", [""Sperrzone"", ""Ein NATO Spieler wurde auf Grund des Betretens der feindlichen Basis automatisch getötet!"", ""yellow""]] call CBA_fnc_globalEvent}";
 						sizeA=2500;
 						sizeB=2500;
 						interuptable=1;
@@ -540,12 +540,12 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={12044.048,160.125,12602.07};
-					angle=4.9199414;
+					angle=4.9199429;
 					class Attributes
 					{
 						text="befriedeter Bereich";
 						condition="call{vehicle player in thisList}";
-						onActivation="call{systemChat ""Sie betreten die feindliche Sicherheitszone. Kampfhandlungen sind hier strikt untersagt, drehen Sie sofort ab!""}";
+						onActivation="call{[""opt_gui_message"", [""Sicherheitszone"", ""Sie betreten die feindliche Sicherheitszone.<br/> Kampfhandlungen sind hier strikt untersagt, drehen Sie sofort ab!"", ""red""]] call CBA_fnc_localEvent}";
 						sizeA=4000;
 						sizeB=4000;
 						interuptable=1;
@@ -6827,13 +6827,13 @@ class Mission
 				class Item0
 				{
 					dataType="Trigger";
-					position[]={4818.8555,9.0121393,2489.4863};
+					position[]={4818.855,9.0120001,2489.4861};
 					angle=4.3004389;
 					class Attributes
 					{
 						text="CSAT Todeszone";
 						condition="call{vehicle player in thisList}";
-						onActivation="call{{player setDamage 1} foreach thisList; systemChat ""Ein CSAT Spieler wurde auf Grund des Betretens der feindlichen Basis automatisch getötet!""}";
+						onActivation="call{{player setDamage 1} foreach thisList;  [""opt_gui_message"", [""Sperrzone"", ""Ein CSAT Spieler wurde auf Grund des Betretens der feindlichen Basis automatisch getötet!"", ""yellow""]] call CBA_fnc_globalEvent}";
 						sizeA=2500;
 						sizeB=2500;
 						interuptable=1;
@@ -6842,7 +6842,7 @@ class Mission
 					};
 					id=201;
 					type="EmptyDetector";
-					atlOffset=0.01213932;
+					atlOffset=0.012000084;
 				};
 				class Item1
 				{
@@ -6876,7 +6876,7 @@ class Mission
 					{
 						text="befriedeter Bereich";
 						condition="call{vehicle player in thisList}";
-						onActivation="call{systemChat ""Sie betreten die feindliche Sicherheitszone. Kampfhandlungen sind hier strikt untersagt.""}";
+						onActivation="call{[""opt_gui_message"", [""Sicherheitszone"", ""Sie betreten die feindliche Sicherheitszone.<br/> Kampfhandlungen sind hier strikt untersagt, drehen Sie sofort ab!"", ""red""]] call CBA_fnc_localEvent}";
 						sizeA=4000;
 						sizeB=4000;
 						interuptable=1;
