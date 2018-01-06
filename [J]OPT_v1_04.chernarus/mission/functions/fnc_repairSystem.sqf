@@ -22,8 +22,15 @@ private _state = param [0, false, [true]]; // Bereich aktiv oder inaktiv
 // Aktioneinträge zuweisen
 if (_state) then {
 
+    // detect nearest vehicle
+    private _vecs = nearestObjects [position player, ["LandVehicle", "Air"], 25];
+
+    if (count _vecs == 0) exitWith {
+        [QEGVAR(gui,message), ["Reparatursystem", "Kein Fahrzeug im Umkreis von 25m.", "red"]] call CBA_fnc_localEvent;
+    };
+    private _vec = _vecs select 0;
+
 	// binde Fahrzeug an Spieler
-	private _vec = objectParent player;
 	player setVariable [QGVAR(repairSystem_vec), _vec];
 
 	// Aktionseinträge müssen dem Fahrzeug gegeben werden, da im Fahrzeug nicht mehr nutzbar
@@ -33,7 +40,6 @@ if (_state) then {
 		params ["_vec"];
 
 		// als erstes Fahrzeug anhalten
-		_vec engineOn false;
 		_vec setFuel 0;
 
         [
@@ -48,26 +54,23 @@ if (_state) then {
                 [QEGVAR(gui,message), ["Reparatursystem", "Vorgang abgebrochen", "red"]] call CBA_fnc_localEvent;
             },
             "Fahrzeug wird betankt...",
-            {
-                not (isNull objectParent player)
-            },
+            {true},
             ["isnotinside"]
         ] call ace_common_fnc_progressBar;
 
-	}, [], 100, false, true, '', "not isNull objectParent player"];
+	}, [], 100, false, true, '', "not (isEngineOn _target)"];
 
 	private _action2 = _vec addAction ["<t size=""1.2"">Fahrzeug reparieren</t>", {
 		
 		params ["_vec"];
 
 		// als erstes Fahrzeug anhalten
-		_vec engineOn false;
         private _fuel = fuel _vec;
 
         _vec setFuel 0;
         
         [
-            [_vec] call EFUNC(fieldrepair,getPartsRepairTime),
+            [_vec] call EFUNC(fieldrepair,getPartsRepairTime) min 10,
             [_vec, _fuel],
             {
                 (_this select 0) params ["_vec", "_fuel"];
@@ -79,13 +82,11 @@ if (_state) then {
                 [QEGVAR(gui,message), ["Reparatursystem", "Vorgang abgebrochen", "red"]] call CBA_fnc_localEvent;
             },
             "Fahrzeug wird repariert...",
-            {
-                not (isNull objectParent player)
-            },
+            {true},
             ["isnotinside"]
         ] call ace_common_fnc_progressBar;
 
-	}, [], 100, false, true, '', "not isNull objectParent player"];
+	}, [], 100, false, true, '', "not (isEngineOn _target)"];
 
 	_vec setVariable [QGVAR(repairSystem_actions), [_action1, _action2]];
 

@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=224;
+		nextID=272;
 	};
 	class Camera
 	{
-		pos[]={6283.9946,351.06903,13900.783};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={12167.671,188.55777,12621.041};
+		dir[]={0.88455182,-0.39962977,-0.24054955};
+		up[]={0.38562486,0.91667664,-0.10486863};
+		aside[]={-0.26241478,1.4901161e-007,-0.96495515};
 	};
 };
 binarizationWanted=0;
@@ -516,14 +516,14 @@ class Mission
 				class Item1
 				{
 					dataType="Trigger";
-					position[]={12208.782,159.32886,12622.097};
-					angle=5.1109567;
+					position[]={12208.782,159.32899,12622.097};
+					angle=5.1109524;
 					class Attributes
 					{
 						name="trg_csat_repair";
 						text="Auslöser für Rep-Script";
-						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player && speed (vehicle player) < 0.1}";
-						onActivation="call{nul = [true] spawn opt_mission_fnc_repairSystem;}";
+						condition="call{player in thislist or (vehicle player) in thislist}";
+						onActivation="call{nul = [true] spawn opt_mission_fnc_repairSystem; hint ""ausgelöst""}";
 						onDeactivation="nul = [false] spawn opt_mission_fnc_repairSystem;";
 						sizeA=12;
 						sizeB=12;
@@ -534,7 +534,7 @@ class Mission
 					};
 					id=54;
 					type="EmptyDetectorArea10x10";
-					atlOffset=0.32885742;
+					atlOffset=0.32899475;
 				};
 				class Item2
 				{
@@ -6469,12 +6469,11 @@ class Mission
 						class Item4
 						{
 							dataType="Marker";
-							position[]={12027.859,158.8,12657.31};
+							position[]={12027.86,158.8,12657.31};
 							name="marker_csat_fahrzeuge";
 							text="Fahrzeuge";
 							type="n_motor_inf";
 							colorName="ColorEAST";
-							angle=299.9866;
 							id=177;
 						};
 						class Item5
@@ -6485,7 +6484,6 @@ class Mission
 							text="Luftwaffe";
 							type="n_air";
 							colorName="ColorEAST";
-							angle=270.9808;
 							id=179;
 						};
 						class Item6
@@ -6557,22 +6555,22 @@ class Mission
 						class Item12
 						{
 							dataType="Marker";
-							position[]={12095.347,158.97636,12683.766};
+							position[]={12095.347,158.976,12683.766};
 							name="trapo_1";
 							text="Trapo CSAT Fahne";
 							type="o_air";
-							angle=343.41461;
 							id=187;
+							atlOffset=-0.00036621094;
 						};
 						class Item13
 						{
 							dataType="Marker";
-							position[]={12121.785,158.98553,12673.914};
+							position[]={12121.785,158.98599,12673.914};
 							name="trapo_2";
 							text="Trapo NATO Fahne";
 							type="o_air";
-							angle=343.41461;
 							id=188;
+							atlOffset=0.00045776367;
 						};
 						class Item14
 						{
@@ -6849,13 +6847,13 @@ class Mission
 				class Item1
 				{
 					dataType="Trigger";
-					position[]={4882.2896,10.983118,2468.2437};
-					angle=0.51246774;
+					position[]={4882.29,10.983126,2468.2439};
+					angle=0.51246345;
 					class Attributes
 					{
 						name="trg_nato_repair";
 						text="Auslöser für Rep-Script";
-						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player && speed (vehicle player) < 0.1}";
+						condition="call{vehicle player in thislist or player in thislist}";
 						onActivation="nul = [true] spawn opt_mission_fnc_repairSystem;";
 						onDeactivation="nul = [false] spawn opt_mission_fnc_repairSystem; ";
 						sizeA=12;
@@ -6867,7 +6865,7 @@ class Mission
 					};
 					id=202;
 					type="EmptyDetectorArea10x10";
-					atlOffset=1.9760017;
+					atlOffset=1.9759998;
 				};
 				class Item2
 				{
@@ -16314,7 +16312,7 @@ class Mission
 					};
 					id=1946;
 					type="Box_East_Wps_F";
-					atlOffset=0.30648804;
+					atlOffset=0.30651855;
 					class CustomAttributes
 					{
 						class Attribute0

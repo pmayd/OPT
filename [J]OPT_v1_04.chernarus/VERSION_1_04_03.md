@@ -1,0 +1,9 @@
+## Letzter Fix
+- basen, einheiten und module von tanoa geportet und angeordnet
+- ace module erneut konfiguriert und überprüft (muss aber nochma mit den cba settings abgeglichen werden, gab schon wieder veraltete module)
+- kartenumbauten von kallek und oppa eingefügt (als eigene layer etc)
+- setflagposition.sqf aktualisiert mit den flaggenposis der kampagnenkarte
+- kaufliste geupdated (allerdings nur sachen zunächst rausgenommen per 0 setzen)
+- todo (neu): teleportscript marinebasis
+- Transport von Spielern wird nur noch geloggt, wenn kein Unfall (weder Pilot noch Spieler bewusstlos)
+- Reparatursystem umgestellt auf Außen

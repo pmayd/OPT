@@ -28,7 +28,7 @@ params [
 
 
 // delete all wrecks within the base safezone
-if ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (getmarkerPos "respawn_east") < 200)) then {
+if (!(_vec isKindOf "CAManBase") and ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (getmarkerPos "respawn_east") < 200))) then {
     [_vec] spawn {
         params ["_vec"];
         sleep 5;

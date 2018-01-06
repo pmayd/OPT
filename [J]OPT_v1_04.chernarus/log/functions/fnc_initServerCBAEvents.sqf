@@ -178,6 +178,10 @@ registriert alle Events via CBA Event Handling
     params ["_vec", "_pos", "_unit"];
 
     private _dis = (getPosASL _vec) distance2D (_unit getVariable QGVAR(transport_start_loc));
+
+    // end script if either player or pilot is unconscious
+    if (_unit getVariable ["FAR_isUnconscious", 0] == 1 or (_vec getVariable ["opt_var_vec_pilot", objNull]) getVariable ["FAR_isUnconscious", 0] == 1 ) exitWith {};
+
     if ( _pos in ["cargo", "gunner"] && (_dis > DISTANCE_FROM_BASE) ) then {
 
         _nameUnit = UNIT_NAME(_unit);
