@@ -4,8 +4,7 @@
 #define SECTORCONTROL_FLAG_DISTANCE_TO_PLAYER 5
 
 // Flagge kann nur nach Missionsstart, in 5 m Radius, ausserhalb eines Fahrzeugs und in Restspielzeit gezogen werden und nur von der anderen Seite
-#define SECTORCONTROL_FLAG_CONDITION FORMAT_2(QUOTE(((_target distance player) < SECTORCONTROL_FLAG_DISTANCE_TO_PLAYER) and vehicle player == player and %1 and (OPT_PARAM_PLAYTIME - (serverTime - %2)) > 0 and (PLAYER_SIDE != UNIT_SIDE(_target))),QGVARMAIN(missionStarted),QEGVAR(mission,startTime))
-
+#define SECTORCONTROL_FLAG_CONDITION FORMAT_4("(_target distance player) < %1 and vehicle player == player and %2 and (OPT_PARAM_PLAYTIME - (serverTime - %3)) > 0 and (%4 != _target getVariable 'owner')",SECTORCONTROL_FLAG_DISTANCE_TO_PLAYER,QGVARMAIN(missionStarted),QEGVAR(mission,startTime),QUOTE(PLAYER_SIDE))
 
 /**
 * SECTOR CONTROL

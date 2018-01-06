@@ -55,34 +55,30 @@ if (OPT_PARAM_TRAINING == 1) then {
 	}] call BIS_fnc_addStackedEventHandler;
 };
 
-
 // EH für Minensperre
 #ifdef __MINE_FREE_FLAG__
 	if (OPT_PARAM_MINE_FREE_FLAG == 1) then {
 
-		player addEventHandler ["FiredMan", {
-			/* 
-			    0 unit: Object - Unit the event handler is assigned to (the instigator)
-		        1 weapon: String - Fired weapon
-                2 muzzle: String - Muzzle that was used
-                3 mode: String - Current mode of the fired weapon
-                4 ammo: String - Ammo used
-                5 magazine: String - magazine name which was used
-                6 projectile: Object - Object of the projectile that was shot out
-                7 vehicle: Object - Vehicle, if weapon is vehicle weapon, otherwise objNull
-    	    */
-            if (_this select 1 == "Put" && ({(_x distance player) <= __MINE_FREE_FLAG_RADIUS__} count (GVARMAIN(csat_flags) + GVARMAIN(nato_flags)) > 0)) then {
-                // lösche Mine
-                deleteVehicle (_this select 6);
-                // gib Spieler Mine zurück
-                player addMagazine (_this select 5);
-                // Warnhinweis
-                _txt = SECTORCONTROL_MINE_FREE_FLAG_MESSAGE;
-                [QEGVAR(gui,message), ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;
-    	    };  
+        GVAR(eh_ace_interactMenuClosed) = ["ace_interactMenuClosed", {
+            _this spawn {
+                _this params ["_menuType"];
 
-		}];
+                sleep 0.1;
 
+                if (
+                    _menuType == 1 and // Eigenmenü
+                    {(_x distance player) <= __MINE_FREE_FLAG_RADIUS__} count (GVARMAIN(csat_flags) + GVARMAIN(nato_flags)) > 0 and 
+                    ace_explosives_pfeh_running // explosive placing in progress
+                ) then {
+                    ace_explosives_placeAction = PLACE_CANCEL; // end explosive setup process
+                    
+                    // Warnhinweis
+                    private _txt = SECTORCONTROL_MINE_FREE_FLAG_MESSAGE;
+                    [QEGVAR(gui,message), ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;
+
+                };
+            };
+
+        }] call CBA_fnc_addEventHandler;
 	};
 #endif
-

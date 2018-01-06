@@ -8,11 +8,11 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=1948;
+		nextID=1950;
 	};
 	class LayerIndexProvider
 	{
-		nextID=272;
+		nextID=284;
 	};
 	class Camera
 	{
@@ -497,7 +497,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={12044.146,160.134,12601.92};
-					angle=4.9199433;
+					angle=4.9199414;
 					class Attributes
 					{
 						text="NATO Todeszone";
@@ -540,7 +540,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={12044.048,160.125,12602.07};
-					angle=4.9199429;
+					angle=4.9199414;
 					class Attributes
 					{
 						text="befriedeter Bereich";

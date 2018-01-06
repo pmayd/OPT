@@ -10,3 +10,5 @@
 - Reparatursystem umgestellt auf Außen
 - Unfälle in der Basis erfassen keine Spieler
 - Nachrichten über Sicherheitszone und Todeszone sind jetzt im neuen Messagesystem
+- neuer EH für ACE Minen -> ersetzt den FiredMan EH für Minen
+- Bugfix: Fehler bei der Überprüfung der conditions für Flaggeziehen, jetzt wieder korrekt
