@@ -176,6 +176,8 @@ hint str(_damage);
 	}
 ] call ace_common_fnc_progressBar;
 
+_patient setVariable ["FAR_healer", objNull, true]; 
+
 if (isPlayer _healer) then {
 	_healer removeEventHandler ["AnimChanged", _animChangeEVH]
 };

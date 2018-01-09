@@ -13,3 +13,4 @@
 - neuer EH für ACE Minen -> ersetzt den FiredMan EH für Minen
 - Bugfix: Fehler bei der Überprüfung der conditions für Flaggeziehen, jetzt wieder korrekt
 - erste Version des Beamsystems
+- Bugfix: Stabilisieren nun auch nach Abbruch weiter möglich
