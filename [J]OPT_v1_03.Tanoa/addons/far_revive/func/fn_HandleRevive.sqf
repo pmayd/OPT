@@ -49,7 +49,7 @@ private _skill_factor = if (_healer call opt_addons_fnc_isMedic) then {40+(rando
 private _damage = (damage _injuredperson * _skill_factor);
 if (_damage < 25) then {_damage = 25};
 sleep 1;
-if (_injuredperson getVariable ["FAR_isStabilized",0] == 1) then {
+if (_injuredperson getVariable ["FAR_isStabilized", 0] == 1) then {
 	_injuredperson setVariable ["FAR_isStabilized", 1, true];
 };
 
