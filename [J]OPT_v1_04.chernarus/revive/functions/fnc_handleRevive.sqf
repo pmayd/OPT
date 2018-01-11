@@ -126,8 +126,6 @@ if (_patient getVariable ["FAR_isStabilized", 0] == 1) then {
 		_patient setVariable ["FAR_isUnconscious", 0, true];
 		_patient setVariable ["FAR_isDragged", 0, true];
 
-        _patient switchAction "";
-
 		private _name1 = UNIT_NAME(_patient);
 		private _name2 = UNIT_NAME(_healer);
 
