@@ -65,11 +65,11 @@ _unit setVelocity [0,0,0];
 _unit allowDamage false;
 //_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 //_unit playActionNow "Down"; // verursacht ragdoll problem -> Stehaufmännchen
-_unit switchAction "Unconscious";
+_unit setUnconscious true;
 
 // time for animation
 sleep 4;
-_unit switchMove "AinjPpneMstpSnonWrflDnon";
+//_unit switchMove "AinjPpneMstpSnonWrflDnon";
 _unit enableSimulation false;
 _unit setVariable ["FAR_isUnconscious", 1, true];
 
@@ -128,9 +128,7 @@ if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabili
 	_unit setFatigue 0.9;
 	//_unit playMove "amovppnemstpsraswrfldnon";
 	//_unit playMove "";
-	_unit playActionNow "agonyStop";
-    sleep 1;
-    _unit switchMove "amovppnemstpsraswrfldnon";
+	_unit setUnconscious false;
 
 	if (dialog) then {
 		[] spawn {

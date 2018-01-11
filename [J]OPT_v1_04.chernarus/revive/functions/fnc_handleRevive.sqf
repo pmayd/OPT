@@ -25,26 +25,14 @@ FAR_healerStopped = false;
 _healer selectWeapon primaryWeapon _healer;
 sleep 1;
 _healer playAction "medicStart";
-FAR_animDelay = time + 2;
 
-private "_animChangeEVH";
-if (isPlayer _healer) then {
-	_animChangeEVH = _healer addEventhandler ["AnimChanged", {
-		params ["_healer", "_anim"];
+private _animChangeEVH = _healer addEventhandler ["AnimChanged", {
+    params ["_healer", "_anim"];
 
-		if (primaryWeapon _healer != "") then {
-			if (time >= FAR_animDelay) then {FAR_healerStopped = true};
-		} else {
-			if (_anim in ["amovpknlmstpsnonwnondnon","amovpknlmstpsraswlnrdnon"]) then {
-				_healer playAction "medicStart";
-			} else {
-				if (!(_anim in ["ainvpknlmstpsnonwnondnon_medic0s","ainvpknlmstpsnonwnondnon_medic"])) then {
-					if (time >= FAR_animDelay) then {FAR_healerStopped = true};
-				};
-			};
-		};	
-	}];
-};
+    if (!(_anim in ["ainvpknlmstpsnonwnondnon_medic0s","ainvpknlmstpsnonwnondnon_medic", "ainvpknlmstpsnonwrfldnon_medic0s", "ainvpknlmstpsnonwrfldnon_ainvpknlmstpsnonwrfldnon_medic"])) then {
+        _healer playActionNow "medicStart";
+    };
+}];
 
 private _offset = [0,0,0]; 
 private _dir = 0;
@@ -61,14 +49,10 @@ if((_relpos select 0) < 0) then{
 };
 sleep 0.02;
 
-if (isPlayer _healer) then {
-	[_healer, _patient] call FUNC(medicEquipment);
-};
+[_healer, _patient] call FUNC(medicEquipment);
 
 _patient attachTo [_healer,_offset];
 _patient setDir _dir;
-
-private _time = time;
 
 private _skill_factor = if ([_healer] call FUNC(isMedic)) then {
 	40+(random 10);
@@ -79,11 +63,6 @@ private _skill_factor = if ([_healer] call FUNC(isMedic)) then {
 private _damage = (damage _patient * _skill_factor);
 if (_damage < 25) then {_damage = 25};
 sleep 1;
-
-if (_patient getVariable ["FAR_isStabilized", 0] == 1) then {
-	_patient setVariable ["FAR_isStabilized", 1, true];
-};
-
 
 /*		
 	* Arguments:
@@ -151,10 +130,10 @@ if (_patient getVariable ["FAR_isStabilized", 0] == 1) then {
 			_patient setVariable ["FAR_healer", objNull, true]
 		};
 
-		if (FAR_healerStopped) then {
-			[QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_REVIVE_CANCLED, "red"]] call CBA_fnc_localEvent;
+        if (_healer getVariable "FAR_isUnconscious" == 0) exitWith {
+            [QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_REVIVE_CANCLED, "red"]] call CBA_fnc_localEvent;
+        };
 
-		};
 
 	},
 	format[FAR_REVIVE_ACTION_REVIVE_BAR_TEXT, _damage],
@@ -178,9 +157,8 @@ if (_patient getVariable ["FAR_isStabilized", 0] == 1) then {
 
 _patient setVariable ["FAR_healer", objNull, true]; 
 
-if (isPlayer _healer) then {
-	_healer removeEventHandler ["AnimChanged", _animChangeEVH]
-};
+_healer removeEventHandler ["AnimChanged", _animChangeEVH];
+
 detach _healer;
 detach _patient;	
 
