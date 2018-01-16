@@ -86,6 +86,10 @@ private _close = _display displayCtrl 20003;
 private _sell = _display displayCtrl 20004;
 private _rscPicture = _display displayCtrl IDC_PLAYER_FLAG;
 
+if !(GVAR(allowSale)) then {
+    _sell ctrlEnable false;
+};
+
 [_budget] call EFUNC(common,renderBudget);
 
 private _txtToAdd = GVAR(orderDialogObjects) apply {getText (configFile >> "CfgVehicles" >> (_x select 0) >> "displayName")};
@@ -118,9 +122,9 @@ if (count GVAR(orderDialogObjects) != 0) then {
 	_order ctrlEnable false;
 
 	// im Falle des Verkaufsbuttons -> Liste aller gefundenen Fahrzeuge
-	// alle Objekte im Radius von __ORDER_SELL_RADIUS__ Metern um das Pad -> im Idealfall nur das zu verkaufende Fahrzeug
+	// alle Objekte im Radius von GVAR(saleRadius) Metern um das Pad -> im Idealfall nur das zu verkaufende Fahrzeug
 	_spawnpos = nearestObject [player, "Land_HelipadCircle_F"];
-	_objs = nearestObjects [_spawnpos, ["AllVehicles", "Thing"], __ORDER_SELL_RADIUS__];
+	_objs = nearestObjects [_spawnpos, ["AllVehicles", "Thing"], GVAR(saleRadius)];
 
 	// gehe alle gefundenen Objekte durch und lösche sie, falls nicht in pool, oder ergänze um Verkaufspreis
 	{
@@ -142,7 +146,7 @@ if (count GVAR(orderDialogObjects) != 0) then {
         _displayName = getText (configFile >> "CfgVehicles" >> _class >> "displayName");
 		_listbox_vehicles lbAdd format ["%1", _displayName]; // Name
         _listbox_vehicles lbSetData [_forEachIndex, _class];
-		// Verkaufspreis berechnen -> __ORDER_SELL_RETURN_VALUE__ % vom Vollpreis
+		// Verkaufspreis berechnen -> GVAR(saleReturnValue) % vom Vollpreis
         _picture = "";
         if (getText(configFile >> "cfgVehicles" >> _class >> "picture") find ".paa" != -1) then {
             _picture = getText (configFile >> "cfgVehicles" >> _class >> "picture");

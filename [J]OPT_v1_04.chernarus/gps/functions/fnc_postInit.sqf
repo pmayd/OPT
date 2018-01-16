@@ -15,14 +15,12 @@
 #include "script_component.hpp"
 
 GVAR(mode) = 0;
+if (OPT_PARAM_SHOW_ALL_UNITS) then {
+    GVAR(showAll) = true;
+} else {
+    GVAR(showAll) = false;
+};
 
-#ifdef __SHOW_ALL_UNITS__
-    if (OPT_PARAM_SHOW_ALL_UNITS == 1) then {
-        GVAR(showAll) = true;
-    } else {
-        GVAR(showAll) = false;
-    };
-#endif
 
 //Modus
 //_all=Schalter;

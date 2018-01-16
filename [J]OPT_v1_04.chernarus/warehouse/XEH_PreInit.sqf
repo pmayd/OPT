@@ -8,6 +8,9 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+// CBA settings
+[] call FUNC(initCBASettings);
+
 [] call FUNC(setupVehiclePool);
 [] call FUNC(initCBAClassEvents);
 

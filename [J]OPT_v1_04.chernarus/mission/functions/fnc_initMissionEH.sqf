@@ -25,7 +25,7 @@ GVAR(EH_PlayerConnected) = addMissionEventHandler ["PlayerConnected", {
     params ["_id", "_uid", "_name", "_jip", "_owner"];
     //LOG_2("PlayerConnected - jip: %1 - owner: %2",_jip,_owner);
     
-    if (OPT_PARAM_SHOW_INTRO == 1 and OPT_PARAM_TRAINING == 0 and !(_jip)) then {
+    if (OPT_PARAM_SHOW_INTRO and OPT_PARAM_TRAINING == 0 and !(_jip)) then {
         [QGVAR(startIntro), [], playableUnits select {owner _x == _owner}] call CBA_fnc_targetEvent;    
     };
 

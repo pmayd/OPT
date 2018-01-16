@@ -4781,7 +4781,7 @@ class Mission
 						angles[]={0,2.7756212,0};
 					};
 					name="zeus_csat_adler1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=121;
 					type="ModuleCurator_F";
 					atlOffset=0.75845337;
@@ -4875,7 +4875,7 @@ class Mission
 						angles[]={0,2.8908248,0};
 					};
 					name="zeus_csat_alpha1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=122;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -4968,7 +4968,7 @@ class Mission
 						angles[]={0,2.8388071,0};
 					};
 					name="zeus_csat_Charlie1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=123;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -5061,7 +5061,7 @@ class Mission
 						angles[]={0,2.8219364,0};
 					};
 					name="zeus_csat_Speznas";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=124;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -5154,7 +5154,7 @@ class Mission
 						angles[]={0,2.8741779,0};
 					};
 					name="zeus_csat_fox1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=125;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -5247,7 +5247,7 @@ class Mission
 						angles[]={0,6.058929,0};
 					};
 					name="zeus_csat_opz1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=126;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -5340,7 +5340,7 @@ class Mission
 						angles[]={0,5.8252993,0};
 					};
 					name="zeus_csat_opz2";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=127;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -5433,7 +5433,7 @@ class Mission
 						angles[]={0,2.7188575,0};
 					};
 					name="zeus_csat_recon1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=128;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -12354,7 +12354,7 @@ class Mission
 						angles[]={0,1.2263434,0};
 					};
 					name="zeus_nato_alpha1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=329;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -12447,7 +12447,7 @@ class Mission
 						angles[]={0,1.0338005,0};
 					};
 					name="zeus_nato_aviation1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=330;
 					type="ModuleCurator_F";
 					atlOffset=0.052041054;
@@ -12541,7 +12541,7 @@ class Mission
 						angles[]={0,0.97296447,0};
 					};
 					name="zeus_nato_bravo1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=331;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -12634,7 +12634,7 @@ class Mission
 						angles[]={0,1.2085441,0};
 					};
 					name="zeus_nato_delta1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=332;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -12727,7 +12727,7 @@ class Mission
 						angles[]={0,1.2633317,0};
 					};
 					name="zeus_nato_echo1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=333;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -12820,7 +12820,7 @@ class Mission
 						angles[]={0,1.2085441,0};
 					};
 					name="zeus_nato_fantom1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=334;
 					type="ModuleCurator_F";
 					atlOffset=0.0069522858;
@@ -12914,7 +12914,7 @@ class Mission
 						angles[]={0,1.4200082,0};
 					};
 					name="zeus_nato_fox1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=335;
 					type="ModuleCurator_F";
 					atlOffset=0.07845211;
@@ -13008,7 +13008,7 @@ class Mission
 						angles[]={0.039979152,1.0856409,6.2432065};
 					};
 					name="zeus_nato_opz1";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=336;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -13101,7 +13101,7 @@ class Mission
 						angles[]={0.039977662,1.0856409,0};
 					};
 					name="zeus_nato_opz2";
-					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
+					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
 					id=337;
 					type="ModuleCurator_F";
 					class CustomAttributes

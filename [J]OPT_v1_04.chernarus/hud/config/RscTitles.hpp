@@ -83,7 +83,7 @@ class Mission_Title3 {
     controls[] = {Titelt1};
     class Titelt1 : RscStdText {
         font=DEFAULTFONT;
-        text = "Auf ein gutes, ehrliches und faires Gefecht!";
+        text = "Erst Köpfe reiben und dann zusammen ein kühles Blondes!";
         colorText[] = Color_White;
         sizeEx = TextSize_medium;
         x = 0.0;
@@ -107,7 +107,7 @@ class mission_Label {
             y = "SafeZoneY + SafeZoneH - 0.19";
             w = 0.20; h = 0.20;
             colorText[] = {1,1,1,0.6};
-            text="opt_a3_core\bilder\opt4_logo.paa";
+            text="\bilder\opt_logo_reco_hd.png";
             sizeEx = 256;
         };
     };

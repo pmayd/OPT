@@ -14,21 +14,6 @@
 */
 #include "script_component.hpp"
 
-// EH für Aufnahme von Funkgeräten 
-player addEventHandler["Take", {
-    /*
-         unit: Object - Unit to which the event handler is assigned
-        container: Object - The container from which the item was taken (vehicle, box, etc.)
-        item: String - The class name of the taken item
-    */
-    params ["_unit", "_container", "_item"];
-
-    if ((_item find "TFAR_" == 0) or (_item find "tf_" == 0)) then {
-        [] call FUNC(setTFARFrequencies);
-    };
-
-}];
-
 player addEventHandler ["GetInMan", {
     /*
     unit: Object - Unit the event handler is assigned to
@@ -48,7 +33,7 @@ player addEventHandler ["GetInMan", {
 			switch (PLAYER_SIDE) do  {
                 case west: {
                     if (toLower(_encryption) == "_opfor") then {
-                        If (OPT_PARAM_TFAR_INTERCEPTION == 0) then {
+                        If (OPT_PARAM_TFAR_INTERCEPTION) then {
                             [_VehicleLR, "_bluefor"] call TFAR_fnc_setLrRadioCode;
                             systemChat "Die Funk-Verschlüsselung wurde geändert.";
                         } else {
@@ -62,7 +47,7 @@ player addEventHandler ["GetInMan", {
                 };
                 case east:  {
                     if (toLower(_encryption) == "_bluefor") then {
-                        If (OPT_PARAM_TFAR_INTERCEPTION == 0) then {
+                        If (OPT_PARAM_TFAR_INTERCEPTION) then {
                             [_VehicleLR, "_opfor"] call TFAR_fnc_setLrRadioCode;
                             systemChat "Die Funk-Verschlüsselung wurde geändert.";
                         } else {
@@ -79,25 +64,5 @@ player addEventHandler ["GetInMan", {
 	} else {
         [_vec] call FUNC(setTFARFrequencies);
     };
-
-}];
-
-// EH entfernt alle Funkgeräte einer Leiche aus dem Inventar/Weste/Rucksack
-player addEventHandler ["Killed", {
-    params ["_unit", "_killer", "_instigator", "_effects"];
-
-    // Funkgeräte löschen
-    _inventory = (assignedItems _unit) + (items _unit);
-    if ((backpack _unit find "TFAR_" == 0) or (backpack _unit find "tf_" == 0)) then {
-        removeBackpack _unit;
-    };
-
-    {
-        if ((_x find "TFAR_" == 0) or (_x find "tf_" == 0)) then {
-            
-            _unit unassignItem _x;
-            _unit removeItem _x;
-        };
-    } foreach _inventory;
 
 }];

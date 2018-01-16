@@ -4,3 +4,4 @@ PREP(createUnitMarker);
 PREP(initMissionEH);
 PREP(postInit);
 PREP(updateMarker);
+PREP(initCBASettings);

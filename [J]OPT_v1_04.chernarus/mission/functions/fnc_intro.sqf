@@ -37,7 +37,7 @@ waitUntil{ppEffectCommitted "dynamicBlur"};
 sleep 2;
 [parseText format [ "<t align='right' size='1.2'><t font='PuristaBold' size='1.6'>""%1""</t><br/>%2</t>", __MISSION_NAME__, "von: " + __MADE_BY__], true, nil, 7, 0.7, 0.1] spawn BIS_fnc_textTiles;
 
-schrift0 = ["<t size='1.2'>" + "Auf ein gutes, ehrliches und faires Gefecht...!"+"</t>",0,0.8,3,4,0,3010] spawn bis_fnc_dynamicText;
+schrift0 = ["<t size='1.2'>" + "Erst schön Köpfe reiben und danach ein kaltes Bier zusammen!"+"</t>",0,0.8,3,4,0,3010] spawn bis_fnc_dynamicText;
 
 sleep 8;
 
@@ -74,7 +74,7 @@ private _playerCSAT = [];
 	};
 } foreach (playableUnits -  (entities "HeadlessClient_F"));
 
-_txt = format["<t size='1' align='center'> <img image='opt_a3_core\bilder\opt4_logo.paa' size='5'/>  <br/> 
+_txt = format["<t size='1' align='center'> <br/> 
 Zu dieser Schlacht haben sich zusammengefunden: <br/> 
 <t size='1.5' color='#0000ff'>NATO %1</t> vs <t size='1.5' color='#ff0000'>CSAT %2</t></t><br/><t size='0.7'>", playersNumber west, playersNumber east];
 

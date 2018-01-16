@@ -15,4 +15,4 @@
 #include "script_component.hpp"
 
 // richtet default Frequenzen für TFAR ein
-[] spawn FUNC(setTFARFrequencies);
+//[] spawn FUNC(setTFARFrequencies);

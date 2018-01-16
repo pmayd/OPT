@@ -102,7 +102,6 @@ class GVAR(dlg_order)
 			action = "closeDialog 0";
             sizeEx = FONTSIZE;
 		};
-		#ifdef __ORDER_CAN_SELL__
 		class order_button_verkaufen: RscButton_OPT
 		{
 			idc = 20004;
@@ -119,6 +118,5 @@ class GVAR(dlg_order)
 			action = __EVAL(format["[] call %1", QFUNC(sellVehicle)]);
             sizeEx = FONTSIZE;
 		};
-		#endif
 	};
 };

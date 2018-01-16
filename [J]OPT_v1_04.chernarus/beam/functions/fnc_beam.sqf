@@ -44,7 +44,14 @@ if ((vehicle player != player) and (_lvl < 2)) exitWith {
 };	
 
 // beam vehicle and player
-vehicle player setpos [_beam_pos select 0, _beam_pos select 2, 0]; // mission sqm format of x,z,y...
+// mission sqm format of x,z,y...
+
+private _X=_beam_pos Select 0; 
+private _y=_beam_pos Select 2;	
+private	_TempLogic = "Land_HelipadEmpty_F" createvehicle [(_x)-10*sin(random 360),(_y)-10*cos(random 360)]; 
+sleep 1;
+vehicle player SetPos getPos _TempLogic;
+deleteVehicle _TempLogic;
 
 (QGVAR(rsc_layer) call BIS_fnc_rscLayer) cutText ["", "BLACK IN", 3]; // return to game
 

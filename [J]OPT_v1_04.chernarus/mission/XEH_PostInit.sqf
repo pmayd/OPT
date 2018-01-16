@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 
+[] call FUNC(initCBAEvents);
 [] call FUNC(briefing); // fügt Briefing und Tagebuch hinzu
 
 if (isServer) then {

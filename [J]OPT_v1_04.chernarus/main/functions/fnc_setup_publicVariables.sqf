@@ -11,22 +11,6 @@
 	publicVariable QGVARMAIN(allow_movement);
 };
 
-// Budget wird im Trainingsmodus überschrieben und auf unendlich gesetzt!
-GVARMAIN(nato_budget) = __BUDGET_NATO__;
-GVARMAIN(csat_budget) = __BUDGET_CSAT__;
-GVARMAIN(dispo) = __BUDGET_DISPO__; // kann für zusätzliche Einkäufe belastet werden
-GVARMAIN(respawn_cost) = __RESPAWN_COST__;
-
-if (OPT_PARAM_TRAINING == 1) then {
-	GVARMAIN(nato_budget) = 1e10;
-	GVARMAIN(csat_budget) = 1e10;
-};
-
-publicVariable QGVARMAIN(nato_budget);
-publicVariable QGVARMAIN(csat_budget);
-publicVariable QGVARMAIN(dispo);
-publicVariable QGVARMAIN(respawn_cost);
-
 GVARMAIN(csat_points) = 0;
 publicVariable QGVARMAIN(csat_points);
 GVARMAIN(nato_points) = 0;

@@ -141,7 +141,6 @@ class GVAR(dlg_order)
 			action = QUOTE([] call FUNC(sendVehicleOrder););
             sizeEx = FONTSIZE;
         };
-        #ifdef __ORDER_CAN_SELL__
         class RscButtonSell: RscButton
         {
             idc = 20004;
@@ -154,7 +153,6 @@ class GVAR(dlg_order)
 			action = __EVAL(format["[] call %1", QFUNC(sellVehicle)]);
             sizeEx = FONTSIZE;
         };
-        #endif
         class RscButtonCancel: RscButton
         {
             idc = 20003;

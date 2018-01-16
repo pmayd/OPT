@@ -22,7 +22,7 @@ private _currentCutDisplay = uiNamespace getVariable QGVAR(display);
 	
 //--------------------- update players ------------------------------------------
 private _control = _currentCutDisplay displayCtrl 5101;
-#ifdef __HUD_NUMBER_PLAYERS__
+if (OPT_HUD_NUMBER_PLAYERS) then {
 
 	private _playersStr = format ["Spieler: (N) %1 vs %2 (C)", playersNumber west, playersNumber east];
 
@@ -30,14 +30,14 @@ private _control = _currentCutDisplay displayCtrl 5101;
 	// Update Text
 	_control ctrlSetText _playersStr;	
 
-#else
+} else {
 
 	_control ctrlShow false;
-#endif
+};
 
 //--------------------- update Frames ------------------------------------------
 _control = _currentCutDisplay displayCtrl 5102;
-#ifdef __HUD_FPS__
+if (OPT_HUD_FPS) then {
 
 	private _frameStr = format ["FPS: %1", round (diag_fps)];
 
@@ -45,25 +45,25 @@ _control = _currentCutDisplay displayCtrl 5102;
 	// Update Text
 	_control ctrlSetText _frameStr;
 
-#else
+} else {
 
 	_control ctrlShow false;
-#endif
+};
 
 //--------------------- update Budget ------------------------------------------
 _control = _currentCutDisplay displayCtrl 5103;
-#ifdef __HUD_BUDGET__
+if (OPT_HUD_BUDGET) then {
 
 	[_control] call EFUNC(common,renderBudget);
 
-#else
+} else {
 
 	_control ctrlShow false;
-#endif
+};
 
 //----------------------- update score --------------------------------------------
 _control = _currentCutDisplay displayCtrl 5104;
-#ifdef __HUD_SCORE__
+if (OPT_HUD_SCORE) then {
 
 	private _scoreStr = format ["Punkte: (N) %1 : %2 (C)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
 
@@ -71,14 +71,14 @@ _control = _currentCutDisplay displayCtrl 5104;
 	// Update Text
 	_control ctrlSetText _scoreStr;	
 
-#else
+} else {
 
 	_control ctrlShow false;
-#endif
+};
 
 //--------------------- update clock ---------------------------------------
 _control = _currentCutDisplay displayCtrl 5105;
-#ifdef __HUD_TIMER__
+if (OPT_HUD_TIMER) then {
 
 	private "_timeStr";
 	private _timeElapsed = (serverTime - EGVAR(mission,startTime));
@@ -123,7 +123,7 @@ _control = _currentCutDisplay displayCtrl 5105;
 		_control ctrlSetTextColor [0.9, 0.2, 0.2, 1];
 	};
 
-#else
+} else {
 
 	_control ctrlShow false;
-#endif
+};

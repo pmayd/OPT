@@ -21,10 +21,7 @@ Death-Dialog by Psychobastard<br/>
 //////////////////////////////////////////////////Notizen//////////////////////////////////////////////////////
 _subject = player createDiarySubject ["keys", "OPT Eigenschaften"];
 _log_briefing = player createDiaryRecord ["keys", ["Tastenbelegung","
-	Dynamisches Gruppen System	-	Teamwechsel Taste ('U')<br/><br/>
-	Ohrstöpsel Rein/Raus  -	 Linke Windows Taste<br/><br/>
-	Maintainer Menü  -  Rechte Windows Taste (nur für MT)<br/><br/>
-	Magazine Neupacken  -  Strg + R (CTRL + R)
+	OPT HUD ein-/ausblenden	- F1 (konfigurierbare Tastenbelegung unter OPT)<br/><br/>
 "]];
 _log_briefing = player createDiaryRecord ["keys", ["Feldreperatur", "
 	Realistisches Feldreperatur script von Zealot: <br/> Das Script erlaubt es jedem Spieler, beschädigte Fahrzeuge einmalig mit Ersatzteilen zu reparieren. <br/>- Die Reparatur dauert je nach Schweregrad des Schadens zwischen 30 und 240 Sekunden. Die Reparatur kann abgebrochen und an der gleichen Stelle wieder aufgenommen werden. <br/>- Jedes Fahrzeug kann einmalig mit vorhandenen Ersatzteilen repariert werden. Danach benötigt man eine Werkzeugbox im Rucksack (nur Pio-Slots). <br/>- Reparaturen stellen das Fahrzeug nicht immer wieder komplett her (manche Teile bleiben gelb).<br/>- Reparaturen an Rep-LKW dauern 3 Minuten und stellen die Fahrzeuge komplett wieder her. Ein Rep-LKW kann 5 mal für Reparaturen genutzt werden, danach sind die Ersatzteile in ihm erschöpft.<br/>- Um den Rep-LKW zu nutzen, einfach auf den Fahrersitz setzen und mit Blick auf das beschädigte Fahrzeug und Komplettreparatur auswählen!
@@ -50,7 +47,7 @@ if (OPT_PARAM_TFAR_INTERCEPTION == 1) then {
     ];
 };
 
-if (OPT_PARAM_TRAINING == 1) then {
+if (OPT_PARAM_TRAINING) then {
 	player createDiarySubject ["Training", "Training"];
 	player createDiaryRecord ["Training", ["Flaggen verschieben", "
 	Im Trainingsmodus kann jeder Spieler die CSAT und NATO Flagge verschieben. Dazu einfach auf der Karte ALT + Linksklick auf die Flaggenmarkierung. Unten links erscheint ein Text, wenn die Aktion erfolgreich war. Wurde die Flagge ausgewählt, so kann mit erneutem ALT + Linksklick die neue Position gewählt werden.

@@ -33,7 +33,7 @@ if (count GVARMAIN(csat_flags) == 0) then {
 
 {
     // erzeuge fuer jede gefundene Flagge einen Marker auf der Karte
-    if (OPT_PARAM_FLAG_MARKER == 1) then {
+    if (OPT_PARAM_FLAG_MARKER) then {
         private _markerName = format["marker_%1_%2", _x, _forEachIndex];
         private _marker = createMarker [_markerName, getPos _x];
         _marker setMarkerType "flag_CSAT";
@@ -44,7 +44,7 @@ if (count GVARMAIN(csat_flags) == 0) then {
 
 {   
     // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
-    if (OPT_PARAM_FLAG_MARKER == 1) then {
+    if (OPT_PARAM_FLAG_MARKER) then {
         private _markerName = format["marker_%1_%2", _x, _forEachIndex];
         private _marker = createMarker [_markerName, getPos _x];
         _marker setMarkerType "flag_NATO";

@@ -2,8 +2,9 @@
 
 PREP(deployRadarEast);
 PREP(deployRadarWest);
-PREP(runRadarWest);
+PREP(initCBASettings);
+PREP(postInit);
 PREP(runRadarEast);
+PREP(runRadarWest);
 PREP(undeployRadarEast);
 PREP(undeployRadarWest);
-PREP(postInit);

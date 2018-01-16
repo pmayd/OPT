@@ -46,10 +46,10 @@ if (_unitCost > (_side_Budget + GVARMAIN(dispo))) exitWith {
 };
 
 private _spawnObj = nearestObject [player, "Land_HelipadCircle_F"];
-private _empty_pos = (position _spawnObj) findEmptyPosition [0.2, __ORDER_SPAWN_RADIUS__, _unitType];
+private _empty_pos = (position _spawnObj) findEmptyPosition [0.2, GVAR(orderSpawnRadius), _unitType];
 
 if (count _empty_pos == 0) exitWith {
-    private _txt = format["Kein freier Platz im Umkreis von %1m. Bereich räumen.", __ORDER_SPAWN_RADIUS__];
+    private _txt = format["Kein freier Platz im Umkreis von %1m. Bereich räumen.", GVAR(orderSpawnRadius)];
 	[QEGVAR(gui,message), ["Platz unzureichend", _txt, "red"]] call CBA_fnc_localEvent;
 };
 

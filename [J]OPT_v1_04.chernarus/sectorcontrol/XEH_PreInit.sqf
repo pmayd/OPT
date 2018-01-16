@@ -8,6 +8,9 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+// CBA settings
+[] call FUNC(initCBASettings);
+
 if (isServer) then {
     [] call FUNC(initServerCBAEvents);
     [] call FUNC(setup_flagPositions);

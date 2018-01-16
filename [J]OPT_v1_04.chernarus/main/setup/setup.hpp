@@ -57,21 +57,3 @@
 // 	6 = 	System
 //#define __DISABLE_CHAT_CHANNELS__ {0}
 
-/**
-* Umwelt und Grafik 
-*/
-
-/**
-* BUDGET
-*/
-// Startbudget NATO
-#define __BUDGET_NATO__ 4847250
-
-// Startbudget CSAT
-#define __BUDGET_CSAT__ 4413720
-
-// Dispo-Kredit für beide Seiten, falls Budget < 0
-#define __BUDGET_DISPO__ 1e5
-
-// wie viel ist eine Einheit wert? Wird für jeden Respawn vom Budget abgezogen.
-#define __RESPAWN_COST__ 2500

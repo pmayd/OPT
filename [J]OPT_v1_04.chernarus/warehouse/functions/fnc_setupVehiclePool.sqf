@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-#define DEF_PROD(var1) var1, __ORDER_SELL_RETURN_VALUE__ * var1 // default product with 0.75 sold value
+#define DEF_PROD(var1) var1, GVAR(saleReturnValue) * var1 // default product with 0.75 sold value
 
 /* ANLEITUNG: 
 * Jedes Fahrzeug besitzt einen Eintrag der Form [classname, Kaufpreis, Verkaufpreis]
@@ -22,7 +22,7 @@
 * Kaufpreis größer 0 heißt, dass Fahrzeug steht zum Kaufen bereit, sonst taucht es nicht auf
 * Verkaufspreis größer 0 heißt, das Fahrzeug kann verkauft werden, sonst taucht es nicht auf
 * DEF_PROD(PREIS) sorgt dafür, dass Kauf und Verkaufspreis automatisch bestimmt werden mit der Variable
-* __ORDER_SELL_RETURN_VALUE__, die in der main\setup\setup.hpp definiert ist (aktuell 75%)
+* GVAR(saleReturnValue), die in der main\setup\setup.hpp definiert ist (aktuell 75%)
 * Es kann aber jedes Fahrzeug individuell angepasst werden, indem einfach manuell zwei Preise eingetragen werden, z.B.
 * ["OPT_B_Quadbike_01_F", 1500, 0]
 */
@@ -52,23 +52,23 @@ GVAR(nato_vehicles_supply) = [
 ];
 	
 GVAR(nato_choppers) = [
-	["OPT_B_Heli_Light_01_F", DEF_PROD(60000)],					// MH-9 Hummingbird
+	["OPT_B_Heli_Light_01_F", DEF_PROD(80000)],					// MH-9 Hummingbird
 	["OPT_B_Heli_Light_01_armed_F", DEF_PROD(140000)],			// AH-9 Pawnee
-	["OPT_B_Heli_Light_01_armed_2_F", DEF_PROD(0)],				// AH-9 Pawnee DAGR - erstma raus wegen DAGR-problematik
+	["OPT_B_Heli_Light_01_armed_2_F", DEF_PROD(350000)],				// AH-9 Pawnee DAGR - testweise wieder drin
 	["OPT_B_Heli_Transport_01_F", DEF_PROD(90000)],				// UH-80 Ghosthawk
 	["OPT_B_Heli_Transport_03_unarmed_F", DEF_PROD(150000)],	// CH-67 Huron unarmed (Transport+Lift)
 	["OPT_B_Heli_Transport_03_F", DEF_PROD(170000)],			// CH-67 Huron armed (Transport+Lift)
 	["OPT_B_UAV_02_light_F", DEF_PROD(300000)],					// Greyhawk unbewaffnet
-	["OPT_B_UAV_02_CAS_F", DEF_PROD(400000)],					// Greyhawk LGB
-	["OPT_B_UAV_02_F", DEF_PROD(380000)],						// Greyhawk Raketen
-	["OPT_B_UAV_02_AA_F", DEF_PROD(400000)],					// Greyhawk AA-Raketen	
+	["OPT_B_UAV_02_CAS_F", DEF_PROD(0)],					// Greyhawk LGB
+	["OPT_B_UAV_02_F", DEF_PROD(0)],						// Greyhawk Raketen
+	["OPT_B_UAV_02_AA_F", DEF_PROD(0)],					// Greyhawk AA-Raketen	
 	["OPT_B_Heli_Transport_02_F", DEF_PROD(150000)],			// CH-49 Mohawk (Transport+Lift)
 	["OPT_B_T_UAV_03_dynamicLoadout_F", DEF_PROD(650000)],		// MQ12-Falcon - noch in arbeit erstma nur testweise mit preis eingebaut
 	["OPT_B_T_VTOL_01_infantry_F", DEF_PROD(200000)],			// VTOL Blackfish (Inf-Transport)
 	["OPT_B_T_VTOL_01_vehicle_F", DEF_PROD(180000)],			// VTOL Blackfish (Fahrzeug-Transport)
 	["OPT_B_T_VTOL_01_armed_F", DEF_PROD(0)],					// VTOL Blackfish BEWAFFNET
 	["OPT_B_Heli_Attack_01_F", DEF_PROD(650000)],				// AH-99 Blackfoot
-	["OPT_B_Plane_CAS_01_F", DEF_PROD(600000)],				    // A-164 Wipeout
+	["OPT_B_Plane_CAS_01_F", DEF_PROD(0)],				    // A-164 Wipeout
 	["OPT_B_Plane_Fighter_AA_01_F", DEF_PROD(0)]				// F/A-181 Black Wasp II (AA)
 ];
 	
@@ -81,15 +81,17 @@ GVAR(nato_armored) = [
 	["OPT_B_MBT_01_cannon_F", DEF_PROD(340000)],						// M2A4 Slammer
 	["OPT_B_MBT_01_TUSK_F", DEF_PROD(430000)],						    // M2A4 SlammerUp
 	["OPT_B_MBT_03_cannon_F", DEF_PROD(0)],							    // MBT-52 Kuma, fliegt raus
-	["OPT_B_MBT_01_Arty_F", DEF_PROD(400000)],						    // M4 Scorcher
-	["OPT_B_MBT_01_mlrs_F", DEF_PROD(400000)]							// M5 Sandstorm	
+	["OPT_B_MBT_01_Arty_F", DEF_PROD(600000)],						    // M4 Scorcher
+	["OPT_B_MBT_01_mlrs_F", DEF_PROD(600000)]							// M5 Sandstorm	
 ];
 
 GVAR(nato_supplies) = [
 	["OPT_Box_NATO_Ammo_F", DEF_PROD(40000)],            			// Munitionskiste
-	["OPT_Box_NATO_Grenades_F", DEF_PROD(75000)],         			// Explosivkiste
-	["OPT_Box_NATO_WpsSpecial_AT2_F", DEF_PROD(30000)],				// AT Raketenkiste (RPG-42)
-	["OPT_Box_NATO_WpsSpecial_AA_F", DEF_PROD(40000)],				// AA Raketenkiste
+	["OPT_Box_NATO_WpsSpecial_F", DEF_PROD(60000)],            			// Munition spezial
+	["OPT_Box_NATO_Grenades_F", DEF_PROD(75000)],         			// granatenkiste
+	["OPT_NATO_Sprengstoffkiste", DEF_PROD(200000)],         			// sprengstoffkiste
+	["OPT_Box_NATO_WpsSpecial_AT3_F", DEF_PROD(60000)],				// AT Raketenkiste (RPG-42)
+	["OPT_Box_NATO_WpsSpecial_AA_F", DEF_PROD(60000)],				// AA Raketenkiste
    	["OPT_B_supplyCrate_F", DEF_PROD(500)],							// Transportkiste (leer)
 	["OPT_B_CargoNet_01_ammo_F", DEF_PROD(5000)],					// Ausrstungskiste
 	["OPT_Box_NATO_WpsSpecial_Diver_F", DEF_PROD(5000)],			// Taucherkiste	
@@ -97,7 +99,7 @@ GVAR(nato_supplies) = [
 	["OPT_Box_NATO_WpsSpecial_AT_F", DEF_PROD(0)],					// PCML Raketenkiste	
 	["OPT_Box_NATO_WpsLaunch_F", DEF_PROD(0)],						// HAT-Kiste (Titan)
 	["OPT_B_UGV_01_F", DEF_PROD(2000)],								// UGV Stomper
-	["OPT_B_UAV_01_F", DEF_PROD(30000)],							// Darter AR-2
+	["OPT_B_UAV_01_F", DEF_PROD(90000)],							// Darter AR-2
 	["OPT_FlexibleTank_01_forest_F", DEF_PROD(1000)],				// Treibstoff-Fass
     ["OPT_B_Slingload_01_Ammo_F", DEF_PROD(90000)],            		// Munitionscontainer
 	["OPT_B_Slingload_01_Fuel_F", DEF_PROD(8000)],           		// Fuelcontainer
@@ -126,7 +128,7 @@ GVAR(nato_static) = [
 	["OPT_B_GMG_01_F", DEF_PROD(15000)],							// Stand-GMG niedrig
 	["OPT_B_static_AA_F", DEF_PROD(25000)],							// Stand-AA
 	["OPT_B_static_AT_F", DEF_PROD(200000)],						// Stand-AT
-	["OPT_B_Mortar_01_F", DEF_PROD(200000)],						// MK6 - Mrser
+	["OPT_B_Mortar_01_F", DEF_PROD(300000)],						// MK6 - Mrser
 	["OPT_B_Static_Designator_01_F", DEF_PROD(10000)] 				// Remote Designator
 ];
 
@@ -168,7 +170,7 @@ GVAR(csat_choppers) = [
 	["OPT_O_Heli_Light_02_v2_F", DEF_PROD(0)],						// PO-30 Orca (DAR)
 	["OPT_O_Heli_Light_02_v2_black_F", DEF_PROD(180000)],			// PO-30 Orca (DAR)
 	["OPT_O_Heli_Light_02_F", DEF_PROD(0)],							// PO-30 Orca (DAGR) - erstma raus wegen DAGR-problematik
-	["OPT_O_Heli_Light_02_black_F", DEF_PROD(0)],					// PO-30 Orca (DAGR) - erstma raus wegen DAGR-problematik
+	["OPT_O_Heli_Light_02_black_F", DEF_PROD(300000)],					// PO-30 Orca (DAGR) - erstma raus wegen DAGR-problematik
 	["OPT_O_Heli_Transport_04_F", DEF_PROD(0)],						// Mi-290 Taru (Lift)
 	["OPT_O_Heli_Transport_04_black_F", DEF_PROD(85000)],			// Mi-290 Taru (Lift)
 	["OPT_O_Heli_Transport_04_covered_F", DEF_PROD(0)], 			// Mi-290 Taru (Transport)
@@ -176,9 +178,9 @@ GVAR(csat_choppers) = [
 	["OPT_O_Heli_Transport_04_bench_F", DEF_PROD(0)],				// Mi-290 Taru (Bench)
 	["OPT_O_Heli_Transport_04_bench_black_F", DEF_PROD(90000)],		// Mi-290 Taru (Bench)
 	["OPT_O_UAV_02_light_F", DEF_PROD(300000)],						// Ababil unbewaffnet
-	["OPT_O_UAV_02_CAS_F", DEF_PROD(400000)],						// Ababil GBU-12
-	["OPT_O_UAV_02_F", DEF_PROD(600000)],							// Ababil Scalpel
-	["OPT_O_UAV_02_AA_F", DEF_PROD(400000)],						// Ababil AA	
+	["OPT_O_UAV_02_CAS_F", DEF_PROD(0)],						// Ababil GBU-12
+	["OPT_O_UAV_02_F", DEF_PROD(0)],							// Ababil Scalpel
+	["OPT_O_UAV_02_AA_F", DEF_PROD(0)],						// Ababil AA	
 	["OPT_O_T_VTOL_02_infantry_unarmed_F", DEF_PROD(170000)],		// VTOL Y-32 Xi'an (Inf-Transport)
 	["OPT_O_T_VTOL_02_vehicle_unarmed_F", DEF_PROD(170000)],		// VTOL Y-32 Xi'an (Fahrzeug-Transport)
 	["OPT_O_T_VTOL_02_infantry_F", DEF_PROD(0)],					// VTOL Y-32 Xi'an (Inf-Transport)
@@ -186,10 +188,10 @@ GVAR(csat_choppers) = [
 	["OPT_O_Heli_Attack_02_F", DEF_PROD(0)],						// Mi-48 Kajman	
 	["OPT_O_Heli_Attack_02_black_F", DEF_PROD(680000)],				// Mi-48 Kajman (Schwarz)
 	["OPT_O_Plane_CAS_02_AA_F", DEF_PROD(0)],						// To-199 Neophron light - raus
-	["OPT_O_Plane_CAS_02_F", DEF_PROD(600000)],						// To-199 Neophron
+	["OPT_O_Plane_CAS_02_F", DEF_PROD(0)],						// To-199 Neophron
 	["OPT_O_Plane_Fighter_03_AA_F", DEF_PROD(0)],					// A-143 Buzzard (AA)
 	["OPT_O_Plane_Fighter_03_CAS_F" , DEF_PROD(0)],					// A-143 Buzzard (CAS)	
-	["OPT_O_T_UAV_04_CAS_F", DEF_PROD(650000)],						// KH-3A Fenghuan - noch in arbeit erstma nur testweise mit preis eingebaut
+	["OPT_O_T_UAV_04_CAS_F", DEF_PROD(0)],						// KH-3A Fenghuan - noch in arbeit erstma nur testweise mit preis eingebaut
 	["OPT_O_Plane_Fighter_AA_02_F", DEF_PROD(0)]					// To-201 Shikra (AA)
 ];
 	
@@ -201,20 +203,22 @@ GVAR(csat_armored) = [
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_light_F", DEF_PROD(120000)],	// BTR-K Kamysh
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_F", DEF_PROD(275000)],		    // BTR-K Kamysh (Titan)
 	["OPT_O_T_MBT_02_cannon_ghex_F", DEF_PROD(450000)],				    // T-100 Varsuk
-	["OPT_O_T_MBT_02_arty_ghex_F", DEF_PROD(400000)]					// 2S9 Sochor <-- Psycho, Preis runter solange es die zustzliche Munition nicht gibt	
+	["OPT_O_T_MBT_02_arty_ghex_F", DEF_PROD(600000)]					// 2S9 Sochor <-- Psycho, Preis runter solange es die zustzliche Munition nicht gibt	
 ];
 
 GVAR(csat_supplies) = [
 	["OPT_Box_East_Ammo_F", DEF_PROD(40000)],            			        // Munitionskiste
-	["OPT_Box_East_Grenades_F", DEF_PROD(75000)],            		        // Explosivkiste
-	["OPT_Box_East_WpsSpecial_F", DEF_PROD(30000)],            		        // AT Raketenkiste (RPG-42)
-    ["OPT_Box_East_WpsSpecial_AA_F", DEF_PROD(40000)],				        // AA Raketenkiste
+		["OPT_Box_East_WpsSpecial_F", DEF_PROD(60000)],            			        // Munition spezial kiste
+	["OPT_Box_East_Grenades_F", DEF_PROD(75000)],            		        // granatenkiste
+	["OPT_CSAT_Sprengstoffkiste", DEF_PROD(200000)],            		        // sprengstoffkiste
+	["OPT_Box_East_WpsSpecial_AT_F", DEF_PROD(60000)],            		        // AT Raketenkiste (RPG-42)
+    ["OPT_Box_East_WpsSpecial_AA_F", DEF_PROD(60000)],				        // AA Raketenkiste
 	["OPT_O_supplyCrate_F", DEF_PROD(500)],							        // Transportkiste
 	["OPT_O_CargoNet_01_ammo_F", DEF_PROD(5000)],					        // Ausrstungskiste
 	["OPT_Box_East_WpsSpecial_Diver_F", DEF_PROD(5000)],			        // Taucherkiste
 	["OPT_Box_East_WpsLaunch_F", DEF_PROD(0)],						        // HAT-Kiste (Titan)
 	["OPT_O_T_UGV_01_ghex_F", DEF_PROD(2000)],						        // UGV Saif	
-	["OPT_O_UAV_01_F", DEF_PROD(30000)],							        // Tayran AR-2
+	["OPT_O_UAV_01_F", DEF_PROD(90000)],							        // Tayran AR-2
 	["OPT_FlexibleTank_01_sand_F", DEF_PROD(1000)],					        // Treibstoff-Fass
 	["OPT_Land_Pod_Heli_Transport_04_fuel_F", DEF_PROD(0)],			        // Fuelcontainer
 	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", DEF_PROD(8000)],        // Fuelcontainer (schwarz)
@@ -246,7 +250,7 @@ GVAR(csat_static) = [
 	["OPT_O_GMG_01_F", DEF_PROD(15000)],							// Stand-GMG niedrig
 	["OPT_O_static_AA_F", DEF_PROD(25000)],							// Stand-AA
 	["OPT_O_static_AT_F", DEF_PROD(200000)],						// Stand-AT
-	["OPT_O_Mortar_01_F", DEF_PROD(200000)],						// MK6 Mrser
+	["OPT_O_Mortar_01_F", DEF_PROD(300000)],						// MK6 Mrser
 	["OPT_O_Static_Designator_02_F", DEF_PROD(10000)]			    // Remote Designator
 ];
 

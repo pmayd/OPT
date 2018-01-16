@@ -182,7 +182,7 @@ registriert alle Events via CBA Event Handling
     // end script if either player or pilot is unconscious
     if (_unit getVariable ["FAR_isUnconscious", 0] == 1 or (_vec getVariable ["opt_var_vec_pilot", objNull]) getVariable ["FAR_isUnconscious", 0] == 1 ) exitWith {};
 
-    if ( _pos in ["cargo", "gunner"] && (_dis > DISTANCE_FROM_BASE) ) then {
+    if ( _pos in ["cargo", "gunner"] and (_dis > GVAR(distanceToBase)) ) then {
 
         _nameUnit = UNIT_NAME(_unit);
 

@@ -4,6 +4,7 @@ PREP(addFlagMenu);
 PREP(calcDominator);
 PREP(captureFlag);
 PREP(chooseFlag);
+PREP(initCBASettings);
 PREP(initPlayerEH);
 PREP(initServerCBAEvents);
 PREP(postInit);

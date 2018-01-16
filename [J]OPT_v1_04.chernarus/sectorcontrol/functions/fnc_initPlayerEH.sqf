@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 /* EH für das Versetzen der Flaggen im Trainingsmodus */
-if (OPT_PARAM_TRAINING == 1) then {
+if (OPT_PARAM_TRAINING) then {
 
 	// use stackedEH, cannot override default behavior
 	[QGVAR(move_flag), "onMapSingleClick", {
@@ -56,29 +56,28 @@ if (OPT_PARAM_TRAINING == 1) then {
 };
 
 // EH für Minensperre
-#ifdef __MINE_FREE_FLAG__
-	if (OPT_PARAM_MINE_FREE_FLAG == 1) then {
+if (OPT_PARAM_MINE_FREE_FLAG) then {
 
-        GVAR(eh_ace_interactMenuClosed) = ["ace_interactMenuClosed", {
-            _this spawn {
-                _this params ["_menuType"];
+	GVAR(eh_ace_interactMenuClosed) = ["ace_interactMenuClosed", {
+		_this spawn {
+			_this params ["_menuType"];
 
-                sleep 0.1;
+			sleep 0.1;
 
-                if (
-                    _menuType == 1 and // Eigenmenü
-                    {(_x distance player) <= __MINE_FREE_FLAG_RADIUS__} count (GVARMAIN(csat_flags) + GVARMAIN(nato_flags)) > 0 and 
-                    ace_explosives_pfeh_running // explosive placing in progress
-                ) then {
-                    ace_explosives_placeAction = PLACE_CANCEL; // end explosive setup process
-                    
-                    // Warnhinweis
-                    private _txt = SECTORCONTROL_MINE_FREE_FLAG_MESSAGE;
-                    [QEGVAR(gui,message), ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;
+			if (
+				_menuType == 1 and // Eigenmenü
+				{(_x distance player) <= GVAR(freeFlagRadius)} count (GVARMAIN(csat_flags) + GVARMAIN(nato_flags)) > 0 and 
+				ace_explosives_pfeh_running // explosive placing in progress
+			) then {
+				ace_explosives_placeAction = PLACE_CANCEL; // end explosive setup process
+				
+				// Warnhinweis
+				private _txt = SECTORCONTROL_MINE_FREE_FLAG_MESSAGE;
+				[QEGVAR(gui,message), ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;
 
-                };
-            };
+			};
+		};
 
-        }] call CBA_fnc_addEventHandler;
-	};
-#endif
+	}] call CBA_fnc_addEventHandler;
+};
+

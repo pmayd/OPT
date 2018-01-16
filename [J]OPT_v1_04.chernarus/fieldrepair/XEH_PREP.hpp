@@ -4,6 +4,7 @@ PREP(getPartsRepairTime);
 PREP(hasTK);
 PREP(heavyRepair);
 PREP(initCBAClassEvents);
+PREP(initCBASettings);
 PREP(needRepair);
 PREP(partRepair);
 PREP(preInit);

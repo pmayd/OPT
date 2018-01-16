@@ -9,7 +9,6 @@ MISSION_VERSION;
 
 /* COMPONENT DIALOGS */
 #include "beam\config.hpp"      // Beam dialog for players
-#include "hud\config.hpp"       // HUD for players
 #include "revive\config.hpp"    // dialog for bleed out overlay
 #include "training\config.hpp"  // dialog for changing flag positions in training mode
 #include "warehouse\config.hpp" // economic system for buying and selling
@@ -20,6 +19,6 @@ class RscTitles {
     #include "hud\rsc.hpp"
 };
 
-//#include "war.ext"
-#include "train.ext"
+#include "war.ext"
+//#include "train.ext"
 
