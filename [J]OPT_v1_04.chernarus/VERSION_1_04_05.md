@@ -4,6 +4,7 @@
 - Bugfix Reparatur-Pad: min funktionierte nicht korrekt bei Reparatur
 - Bugfix Parameter: Einige Parameter waren nicht mehr wählbar (mit #ifdef)
 - Bugfix TFAR: TFAR Funktionen entfernt, bis auf Funkabhören -> Ersetzt durch TFAR CBA Settings
+- Bugfix Kaufsystem: Liste wird nun auch angezeigt, wenn "Suchtext..." dasteht oder Leerzeichen hinzukommen
 
 ### Reine Updates
 - kauflistenupdate -> warehouse/funct/setuppool
