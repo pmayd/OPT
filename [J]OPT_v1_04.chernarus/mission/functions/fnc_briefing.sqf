@@ -36,7 +36,7 @@ _log_briefing = player createDiaryRecord ["keys", ["Fahrzeug Nutzung", "
 "]];
 
 // call OPT specific items
-if (OPT_PARAM_TFAR_INTERCEPTION == 1) then {
+if (OPT_PARAM_TFAR_INTERCEPTION) then {
 	_log_briefing = player createDiaryRecord 
     [
         "keys", 
