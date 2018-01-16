@@ -27,7 +27,8 @@ private _searchStr = ctrlText _edit_search;
 
 // find all vehicle names with searchStr in it
 private _filteredPool = [];
-if (_searchStr isEqualTo "") then {
+if (_searchStr isEqualTo "" or ((toLower _searchStr) find "such") != -1 or ({_x == 32} count (toArray _searchStr
+) == count _searchStr) ) then {
     _filteredPool = GVAR(orderDialogObjects);
     
 } else {
