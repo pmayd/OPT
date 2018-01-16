@@ -29,6 +29,7 @@ if (OPT_HUD_NUMBER_PLAYERS) then {
 	// Anzeige updaten
 	// Update Text
 	_control ctrlSetText _playersStr;	
+    _control ctrlShow true;
 
 } else {
 
@@ -44,6 +45,7 @@ if (OPT_HUD_FPS) then {
 	// Anzeige updaten
 	// Update Text
 	_control ctrlSetText _frameStr;
+    _control ctrlShow true;
 
 } else {
 
@@ -55,6 +57,7 @@ _control = _currentCutDisplay displayCtrl 5103;
 if (OPT_HUD_BUDGET) then {
 
 	[_control] call EFUNC(common,renderBudget);
+    _control ctrlShow true;
 
 } else {
 
@@ -64,12 +67,13 @@ if (OPT_HUD_BUDGET) then {
 //----------------------- update score --------------------------------------------
 _control = _currentCutDisplay displayCtrl 5104;
 if (OPT_HUD_SCORE) then {
-
+    
 	private _scoreStr = format ["Punkte: (N) %1 : %2 (C)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
 
 	// Anzeige updaten
 	// Update Text
 	_control ctrlSetText _scoreStr;	
+    _control ctrlShow true;
 
 } else {
 
@@ -122,6 +126,8 @@ if (OPT_HUD_TIMER) then {
 	if (_playTime < 300) then {
 		_control ctrlSetTextColor [0.9, 0.2, 0.2, 1];
 	};
+
+     _control ctrlShow true;
 
 } else {
 

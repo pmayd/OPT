@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1759;
+		nextID=1823;
 	};
 	class Camera
 	{
@@ -34,6 +34,7 @@ addons[]=
 	"opt_a3_vehicles",
 	"opt_a3_weapons",
 	"A3_Modules_F",
+	"Desert",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Civ_Camping",
 	"A3_Structures_F_Mil_Flags",
@@ -110,7 +111,6 @@ addons[]=
 	"A3_Structures_F_Argo_Industrial_Agriculture",
 	"CUP_CAStructures_E_Wall_Wall_L",
 	"CUP_CAStructuresHouse_HouseV",
-	"DSHouses",
 	"CUP_Farm_Cowshed",
 	"A3_Structures_F_Exp_Naval_Piers",
 	"CUP_CAStructuresLand_Nav_Boathouse",
@@ -185,6 +185,7 @@ addons[]=
 	"A3_Structures_F_Mil_BagFence",
 	"A3_Props_F_Jets_Military_Trolley",
 	"A3_Structures_F_EPC_Items_Electronics",
+	"CUP_Desert2_Config",
 	"A3_Structures_F_Ind_Transmitter_Tower",
 	"A3_Rocks_F",
 	"CUP_CAStructures_E_Misc_Misc_Garbage",
@@ -196,7 +197,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=105;
+		items=106;
 		class Item0
 		{
 			className="opt_a3_characters";
@@ -226,384 +227,384 @@ class AddonsMetaData
 		};
 		class Item5
 		{
+			className="Desert";
+			name="Desert";
+		};
+		class Item6
+		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item7
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item8
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item9
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item10
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item11
 		{
 			className="A3_Props_F_Exp_A";
 			name="Arma 3 Nexus Update - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item12
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item13
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item14
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item14
+		class Item15
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item16
 		{
 			className="ace_advanced_ballistics";
 			name="ACE3 - Advanced Ballistics";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item16
+		class Item17
 		{
 			className="ace_advanced_throwing";
 			name="ACE3 - Advanced Throwing";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item17
+		class Item18
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item18
+		class Item19
 		{
 			className="ace_common";
 			name="ACE3 - Common";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item19
+		class Item20
 		{
 			className="ace_fastroping";
 			name="ACE3 - Fastroping";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item20
+		class Item21
 		{
 			className="ace_explosives";
 			name="ACE3 - Explosives";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item21
+		class Item22
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item22
+		class Item23
 		{
 			className="ace_interaction";
 			name="ACE3 - Interaction";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item23
+		class Item24
 		{
 			className="ace_map";
 			name="ACE3 - Map";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item24
+		class Item25
 		{
 			className="ace_map_gestures";
 			name="ACE3 - Map Gestures";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item25
+		class Item26
 		{
 			className="ace_markers";
 			name="ACE3 - Markers";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item26
+		class Item27
 		{
 			className="ace_mk6mortar";
 			name="ACE3 - Mk6 Mortar";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item27
+		class Item28
 		{
 			className="ace_nametags";
 			name="ACE3 - Name Tags";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item28
+		class Item29
 		{
 			className="ace_finger";
 			name="ACE3 - Finger";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item29
+		class Item30
 		{
 			className="ace_rearm";
 			name="ACE3 - Rearm";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item30
+		class Item31
 		{
 			className="ace_respawn";
 			name="ACE3 - Respawn";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item31
+		class Item32
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item32
+		class Item33
 		{
 			className="ace_ui";
 			name="ACE3 - UI";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item33
+		class Item34
 		{
 			className="ace_viewdistance";
 			name="ACE3 - View Distance";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item34
+		class Item35
 		{
 			className="ace_weather";
 			name="ACE3 - Weather";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item35
+		class Item36
 		{
 			className="ace_zeus";
 			name="ACE3 - Zeus";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item36
+		class Item37
 		{
 			className="ace_advanced_fatigue";
 			name="ACE3 - Advanced Fatigue";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item37
+		class Item38
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item38
+		class Item39
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item40
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item40
+		class Item41
 		{
 			className="CUP_Editor_Plants_Config";
 			name="CUP_Editor_Plants_Config";
 		};
-		class Item41
+		class Item42
 		{
 			className="A3_Props_F_Orange";
 			name="Arma 3 Orange - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item42
+		class Item43
 		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item43
+		class Item44
 		{
 			className="CUP_Ind_SawMill";
 			name="CUP_Ind_SawMill";
 		};
-		class Item44
+		class Item45
 		{
 			className="CUP_Ind_Workshop01";
 			name="CUP_Ind_Workshop01";
 		};
-		class Item45
+		class Item46
 		{
 			className="CUP_CAStructures_E_Wall";
 			name="CUP_CAStructures_E_Wall";
 		};
-		class Item46
+		class Item47
 		{
 			className="A3_Structures_F_Orange";
 			name="Arma 3 Orange - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item47
+		class Item48
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item48
+		class Item49
 		{
 			className="A3_Structures_F_Exp_Industrial";
 			name="Arma 3 Apex - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item49
+		class Item50
 		{
 			className="CUP_CAMisc_E_WF";
 			name="CUP_CAMisc_E_WF";
 		};
-		class Item50
+		class Item51
 		{
 			className="CUP_CAStructures_PMC_Ruins";
 			name="CUP_CAStructures_PMC_Ruins";
 		};
-		class Item51
+		class Item52
 		{
 			className="CUP_WarfareBuildings";
 			name="CUP_WarfareBuildings";
 		};
-		class Item52
+		class Item53
 		{
 			className="CUP_StandaloneTerrains_Core_Faction";
 			name="CUP_StandaloneTerrains_Core_Faction";
 		};
-		class Item53
+		class Item54
 		{
 			className="A3_Rocks_F";
 			name="Arma 3 - Rocks and Stones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item54
+		class Item55
 		{
 			className="A3_Structures_F_EPA";
 			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item55
+		class Item56
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item56
+		class Item57
 		{
 			className="CUP_Buildings_Config";
 			name="CUP_Buildings_Config";
 		};
-		class Item57
+		class Item58
 		{
 			className="CUP_CABuildings_Misc";
 			name="CUP_CABuildings_Misc";
 		};
-		class Item58
+		class Item59
 		{
 			className="A3_Static_F_Jets";
 			name="Arma 3 Jets - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item59
+		class Item60
 		{
 			className="CUP_HouseRuins";
 			name="CUP_HouseRuins";
 		};
-		class Item60
+		class Item61
 		{
 			className="CUP_CAMisc";
 			name="CUP_CAMisc";
 		};
-		class Item61
+		class Item62
 		{
 			className="CUP_CAStructures_E_Wall_Wall_L";
 			name="CUP_CAStructures_E_Wall_Wall_L";
 		};
-		class Item62
+		class Item63
 		{
 			className="CUP_CAStructuresHouse_HouseV";
 			name="CUP_CAStructuresHouse_HouseV";
-		};
-		class Item63
-		{
-			className="DShouses";
-			name="DSHouses";
 		};
 		class Item64
 		{
@@ -827,15 +828,20 @@ class AddonsMetaData
 		};
 		class Item102
 		{
+			className="CUP_Desert2_Config";
+			name="CUP_Desert2_Config";
+		};
+		class Item103
+		{
 			className="CUP_CAStructures_E_Misc_Misc_Garbage";
 			name="CUP_CAStructures_E_Misc_Misc_Garbage";
 		};
-		class Item103
+		class Item104
 		{
 			className="CUP_Editor_Buildings_Config";
 			name="CUP_Editor_Buildings_Config";
 		};
-		class Item104
+		class Item105
 		{
 			className="CUP_CA_Config";
 			name="CUP_CA_Config";
@@ -1011,7 +1017,7 @@ class Mission
 					};
 					id=53;
 					type="EmptyDetector";
-					atlOffset=1.2770081;
+					atlOffset=1.3339996;
 				};
 				class Item1
 				{
@@ -1053,7 +1059,7 @@ class Mission
 					};
 					id=55;
 					type="EmptyDetector";
-					atlOffset=1.2680054;
+					atlOffset=1.3249969;
 				};
 				class Item3
 				{
@@ -1228,6 +1234,7 @@ class Mission
 									};
 									id=61;
 									type="OPT_CSAT_Gruppenfuehrer_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1289,6 +1296,7 @@ class Mission
 									};
 									id=62;
 									type="OPT_CSAT_Pionier_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1351,6 +1359,7 @@ class Mission
 									};
 									id=63;
 									type="OPT_CSAT_Sanitaeter_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1431,6 +1440,7 @@ class Mission
 									};
 									id=64;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1492,6 +1502,7 @@ class Mission
 									};
 									id=65;
 									type="OPT_CSAT_Grenadier_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1554,6 +1565,7 @@ class Mission
 									};
 									id=66;
 									type="OPT_CSAT_PA_Schuetze_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1615,6 +1627,7 @@ class Mission
 									};
 									id=67;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1676,6 +1689,7 @@ class Mission
 									};
 									id=68;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1724,6 +1738,7 @@ class Mission
 							{
 							};
 							id=60;
+							atlOffset=0.057022095;
 						};
 						class Item2
 						{
@@ -1752,6 +1767,7 @@ class Mission
 									};
 									id=70;
 									type="OPT_CSAT_Gruppenfuehrer_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1814,6 +1830,7 @@ class Mission
 									};
 									id=71;
 									type="OPT_CSAT_Sanitaeter_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1894,6 +1911,7 @@ class Mission
 									};
 									id=72;
 									type="OPT_CSAT_Grenadier_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -1956,6 +1974,7 @@ class Mission
 									};
 									id=73;
 									type="OPT_CSAT_Luftabwehrspezialist_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2017,6 +2036,7 @@ class Mission
 									};
 									id=74;
 									type="OPT_CSAT_LMG_Schuetze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2079,6 +2099,7 @@ class Mission
 									};
 									id=75;
 									type="OPT_CSAT_Sanitaeter_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2159,6 +2180,7 @@ class Mission
 									};
 									id=76;
 									type="OPT_CSAT_LMG_Schuetze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2221,6 +2243,7 @@ class Mission
 									};
 									id=77;
 									type="OPT_CSAT_PA_Schuetze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2282,6 +2305,7 @@ class Mission
 									};
 									id=78;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2343,6 +2367,7 @@ class Mission
 									};
 									id=79;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2404,6 +2429,7 @@ class Mission
 									};
 									id=80;
 									type="OPT_CSAT_Aufklaerung_Truppfuehrer_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2465,6 +2491,7 @@ class Mission
 									};
 									id=81;
 									type="OPT_CSAT_Aufklaerung_Sprengmeister_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2526,6 +2553,7 @@ class Mission
 									};
 									id=82;
 									type="OPT_CSAT_Aufklaerung_Scharfschutze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2574,6 +2602,7 @@ class Mission
 							{
 							};
 							id=69;
+							atlOffset=0.056991577;
 						};
 						class Item3
 						{
@@ -2740,7 +2769,7 @@ class Mission
 									};
 									id=87;
 									type="OPT_CSAT_Pilot_T";
-									atlOffset=0.0990448;
+									atlOffset=0.15606689;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2803,7 +2832,7 @@ class Mission
 									};
 									id=88;
 									type="OPT_CSAT_Pilot_T";
-									atlOffset=0.17393494;
+									atlOffset=0.23095703;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2866,6 +2895,7 @@ class Mission
 									};
 									id=89;
 									type="OPT_CSAT_Pilot_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -2914,7 +2944,7 @@ class Mission
 							{
 							};
 							id=86;
-							atlOffset=0.0990448;
+							atlOffset=0.15606689;
 						};
 						class Item5
 						{
@@ -2942,6 +2972,7 @@ class Mission
 									};
 									id=91;
 									type="OPT_CSAT_Sanitaeter_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3022,6 +3053,7 @@ class Mission
 									};
 									id=92;
 									type="OPT_CSAT_LMG_Schuetze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3083,6 +3115,7 @@ class Mission
 									};
 									id=93;
 									type="OPT_CSAT_Grenadier_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3147,6 +3180,7 @@ class Mission
 									};
 									id=94;
 									type="OPT_CSAT_Gruppenfuehrer_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3209,6 +3243,7 @@ class Mission
 									};
 									id=95;
 									type="OPT_CSAT_Sanitaeter_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3290,6 +3325,7 @@ class Mission
 									};
 									id=96;
 									type="OPT_CSAT_MG_Schuetze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3371,6 +3407,7 @@ class Mission
 									};
 									id=97;
 									type="OPT_CSAT_Pionier_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3452,6 +3489,7 @@ class Mission
 									};
 									id=98;
 									type="OPT_CSAT_Pionier_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3533,6 +3571,7 @@ class Mission
 									};
 									id=99;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3614,6 +3653,7 @@ class Mission
 									};
 									id=100;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3694,6 +3734,7 @@ class Mission
 									};
 									id=101;
 									type="OPT_CSAT_PA_Schuetze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3742,6 +3783,7 @@ class Mission
 							{
 							};
 							id=90;
+							atlOffset=0.056991577;
 						};
 						class Item6
 						{
@@ -3769,6 +3811,7 @@ class Mission
 									};
 									id=103;
 									type="OPT_CSAT_Besatzungsmitglied_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3830,6 +3873,7 @@ class Mission
 									};
 									id=104;
 									type="OPT_CSAT_Besatzungsmitglied_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3892,6 +3936,7 @@ class Mission
 									};
 									id=105;
 									type="OPT_CSAT_PA_Schuetze_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -3954,6 +3999,7 @@ class Mission
 									};
 									id=106;
 									type="OPT_CSAT_Luftabwehrspezialist_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4015,6 +4061,7 @@ class Mission
 									};
 									id=107;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4076,6 +4123,7 @@ class Mission
 									};
 									id=108;
 									type="OPT_CSAT_Besatzungsmitglied_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4138,6 +4186,7 @@ class Mission
 									};
 									id=109;
 									type="OPT_CSAT_Luftabwehrspezialist_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4201,6 +4250,7 @@ class Mission
 									};
 									id=110;
 									type="OPT_CSAT_Gruppenfuehrer_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4262,6 +4312,7 @@ class Mission
 									};
 									id=111;
 									type="OPT_CSAT_MG_Schuetze_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4323,6 +4374,7 @@ class Mission
 									};
 									id=112;
 									type="OPT_CSAT_Pionier_T";
+									atlOffset=0.057022095;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4371,6 +4423,7 @@ class Mission
 							{
 							};
 							id=102;
+							atlOffset=0.057022095;
 						};
 						class Item7
 						{
@@ -4473,6 +4526,7 @@ class Mission
 									};
 									id=116;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4534,6 +4588,7 @@ class Mission
 									};
 									id=117;
 									type="OPT_CSAT_Soldat_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4595,6 +4650,7 @@ class Mission
 									};
 									id=118;
 									type="OPT_CSAT_LMG_Schuetze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4657,6 +4713,7 @@ class Mission
 									};
 									id=119;
 									type="OPT_CSAT_Beobachter_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4719,6 +4776,7 @@ class Mission
 									};
 									id=120;
 									type="OPT_CSAT_Scharfschuetze_T";
+									atlOffset=0.056991577;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -4767,6 +4825,7 @@ class Mission
 							{
 							};
 							id=115;
+							atlOffset=0.056991577;
 						};
 					};
 					id=56;
@@ -4878,6 +4937,7 @@ class Mission
 					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
 					id=122;
 					type="ModuleCurator_F";
+					atlOffset=0.057022095;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4971,6 +5031,7 @@ class Mission
 					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
 					id=123;
 					type="ModuleCurator_F";
+					atlOffset=0.056991577;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5064,6 +5125,7 @@ class Mission
 					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
 					id=124;
 					type="ModuleCurator_F";
+					atlOffset=0.056991577;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5157,6 +5219,7 @@ class Mission
 					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
 					id=125;
 					type="ModuleCurator_F";
+					atlOffset=0.057022095;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5436,6 +5499,7 @@ class Mission
 					presenceCondition="OPT_PARAM_ZEUS and OPT_PARAM_TRAINING";
 					id=128;
 					type="ModuleCurator_F";
+					atlOffset=0.056991577;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -7011,6 +7075,7 @@ class Mission
 							angle=265.9689;
 							drawBorder=1;
 							id=186;
+							atlOffset=0.056991577;
 						};
 						class Item12
 						{
@@ -29580,7 +29645,7 @@ class Mission
 							};
 							id=3372;
 							type="Land_houseV_2T2";
-							atlOffset=1.2510071;
+							atlOffset=0.4296875;
 						};
 						class Item74
 						{
@@ -29596,7 +29661,7 @@ class Mission
 							};
 							id=4335;
 							type="Land_HouseV_2I";
-							atlOffset=2.7772217;
+							atlOffset=0.63232422;
 						};
 						class Item75
 						{
@@ -30090,7 +30155,7 @@ class Mission
 						};
 					};
 					id=3297;
-					atlOffset=0.73709106;
+					atlOffset=0.73703003;
 				};
 				class Item3
 				{
@@ -31478,7 +31543,7 @@ class Mission
 							};
 							id=3413;
 							type="Land_HouseV_1T";
-							atlOffset=2.954046;
+							atlOffset=0.97497606;
 						};
 						class Item39
 						{
@@ -31695,7 +31760,7 @@ class Mission
 						};
 					};
 					id=3373;
-					atlOffset=0.54425287;
+					atlOffset=0.53794789;
 				};
 				class Item4
 				{
@@ -31762,13 +31827,14 @@ class Mission
 								angles[]={0,0.90921187,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								dynamicSimulation=1;
 							};
 							id=4332;
 							type="Land_HouseV_2L";
-							atlOffset=0.76501465;
+							atlOffset=0.067077637;
 						};
 						class Item4
 						{
@@ -31784,7 +31850,7 @@ class Mission
 							};
 							id=3503;
 							type="Land_HouseV_2I";
-							atlOffset=2.7772217;
+							atlOffset=0.37902832;
 						};
 						class Item5
 						{
@@ -31977,7 +32043,7 @@ class Mission
 						};
 					};
 					id=4348;
-					atlOffset=-42.979279;
+					atlOffset=-42.980499;
 				};
 				class Item5
 				{
@@ -32363,12 +32429,13 @@ class Mission
 								angles[]={0,1.1136451,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 							};
 							id=4330;
 							type="Land_HouseV_3I1";
-							atlOffset=2.0234175;
+							atlOffset=-0.032001019;
 						};
 						class Item1
 						{
@@ -32735,7 +32802,7 @@ class Mission
 						};
 					};
 					id=4441;
-					atlOffset=-0.46823454;
+					atlOffset=-0.46824551;
 				};
 				class Item8
 				{
@@ -32753,12 +32820,13 @@ class Mission
 								angles[]={0,0.69813228,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 							};
 							id=4380;
 							type="Land_HouseV_2L";
-							atlOffset=0.76499939;
+							atlOffset=0.091186523;
 						};
 						class Item1
 						{
@@ -32769,12 +32837,13 @@ class Mission
 								angles[]={0,3.6651917,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 							};
 							id=4391;
 							type="Land_HouseV_1L2";
-							atlOffset=0.7525177;
+							atlOffset=-0.19607544;
 						};
 						class Item2
 						{
@@ -32846,7 +32915,7 @@ class Mission
 						};
 					};
 					id=4445;
-					atlOffset=0.13095093;
+					atlOffset=-0.092254639;
 				};
 				class Item9
 				{
@@ -32864,12 +32933,13 @@ class Mission
 								angles[]={0,1.5707964,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 							};
 							id=4342;
 							type="Land_HouseV_2L";
-							atlOffset=0.76500034;
+							atlOffset=0.10707903;
 						};
 						class Item1
 						{
@@ -32923,7 +32993,7 @@ class Mission
 						};
 					};
 					id=4446;
-					atlOffset=0.53157282;
+					atlOffset=0.015957832;
 				};
 				class Item10
 				{
@@ -33613,16 +33683,17 @@ class Mission
 								angles[]={0,1.2217305,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 							};
 							id=4453;
 							type="Land_HouseV_3I2";
-							atlOffset=2.0326538;
+							atlOffset=0.1053772;
 						};
 					};
 					id=4464;
-					atlOffset=-1.9003906;
+					atlOffset=-3.1650696;
 				};
 				class Item12
 				{
@@ -35243,11 +35314,11 @@ class Mission
 							};
 							id=4481;
 							type="Land_HouseV_2I";
-							atlOffset=2.7772064;
+							atlOffset=0.88270569;
 						};
 					};
 					id=4480;
-					atlOffset=3.2276154;
+					atlOffset=1.7496796;
 				};
 				class Item17
 				{
@@ -36227,7 +36298,7 @@ class Mission
 							};
 							id=4702;
 							type="Land_HouseV_3I4";
-							atlOffset=2.7819519;
+							atlOffset=0.50241089;
 						};
 						class Item1
 						{
@@ -37535,7 +37606,7 @@ class Mission
 				};
 			};
 			id=3037;
-			atlOffset=72.713745;
+			atlOffset=72.701843;
 		};
 		class Item23
 		{
@@ -37553,12 +37624,13 @@ class Mission
 						angles[]={0,5.3897018,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 					};
 					id=3416;
 					type="Land_HouseV_3I1";
-					atlOffset=2.0234375;
+					atlOffset=-0.44540405;
 				};
 				class Item1
 				{
@@ -37569,12 +37641,13 @@ class Mission
 						angles[]={0,4.7279844,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 					};
 					id=3415;
 					type="Land_houseV_2T1";
-					atlOffset=3.1959229;
+					atlOffset=0.22940063;
 				};
 				class Item2
 				{
@@ -37584,12 +37657,13 @@ class Mission
 						position[]={6328.6992,334.79977,13960.319};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 					};
 					id=3414;
 					type="Land_HouseV_2L";
-					atlOffset=0.76501465;
+					atlOffset=-0.10842896;
 				};
 				class Item3
 				{
@@ -37600,12 +37674,13 @@ class Mission
 						angles[]={0,0,0.010664274};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 					};
 					id=3418;
 					type="Land_HouseV_1T";
-					atlOffset=2.8638611;
+					atlOffset=-0.36428833;
 				};
 				class Item4
 				{
@@ -37616,12 +37691,13 @@ class Mission
 						angles[]={0,1.5078354,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 					};
 					id=3419;
 					type="Land_houseV_2T2";
-					atlOffset=1.2510071;
+					atlOffset=-0.37957764;
 				};
 				class Item5
 				{
@@ -37637,7 +37713,7 @@ class Mission
 					};
 					id=3420;
 					type="Land_HouseV_2I";
-					atlOffset=2.7927246;
+					atlOffset=0.78793335;
 				};
 				class Item6
 				{
@@ -37653,7 +37729,7 @@ class Mission
 					};
 					id=3423;
 					type="Land_HouseV_3I2";
-					atlOffset=2.0420227;
+					atlOffset=0.51898193;
 				};
 				class Item7
 				{
@@ -37664,12 +37740,13 @@ class Mission
 						angles[]={0.0013372133,0,0.095706634};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 					};
 					id=3422;
 					type="Land_HouseV_1L2";
-					atlOffset=0.75601196;
+					atlOffset=0.17349243;
 				};
 				class Item8
 				{
@@ -37685,7 +37762,7 @@ class Mission
 					};
 					id=3421;
 					type="Land_HouseV_3I4";
-					atlOffset=2.7819519;
+					atlOffset=0.51116943;
 				};
 				class Item9
 				{
@@ -37696,16 +37773,17 @@ class Mission
 						angles[]={0,0.98425978,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 					};
 					id=4812;
 					type="Land_houseV_2T2";
-					atlOffset=1.2510071;
+					atlOffset=-0.4083252;
 				};
 			};
 			id=3417;
-			atlOffset=10.267853;
+			atlOffset=6.2609253;
 		};
 		class Item24
 		{
@@ -39931,7 +40009,7 @@ class Mission
 					b=7;
 					angle=129.88199;
 					id=4392;
-					atlOffset=1.9633636;
+					atlOffset=2.1869965;
 				};
 				class Item187
 				{
@@ -41744,7 +41822,7 @@ class Mission
 					type="rectangle";
 					a=8;
 					b=4;
-					angle=28.236979;
+					angle=28.236977;
 					id=4770;
 					atlOffset=-0.58654785;
 				};
@@ -82896,7 +82974,7 @@ class Mission
 									};
 									id=2491;
 									type="Land_HouseV_2L";
-									atlOffset=0.76501465;
+									atlOffset=0.45440674;
 								};
 								class Item95
 								{
@@ -82941,11 +83019,11 @@ class Mission
 								};
 							};
 							id=2394;
-							atlOffset=-0.074584961;
+							atlOffset=-1.105835;
 						};
 					};
 					id=2281;
-					atlOffset=-12.573944;
+					atlOffset=-13.089569;
 				};
 				class Item3
 				{
@@ -91933,7 +92011,7 @@ class Mission
 									};
 									id=2836;
 									type="Land_houseV_2T1";
-									atlOffset=3.1959229;
+									atlOffset=0.97018433;
 								};
 								class Item102
 								{
@@ -92060,7 +92138,7 @@ class Mission
 								};
 							};
 							id=2730;
-							atlOffset=-2.5061951;
+							atlOffset=-2.7081604;
 						};
 						class Item1
 						{
@@ -93912,7 +93990,7 @@ class Mission
 						};
 					};
 					id=2729;
-					atlOffset=71.730896;
+					atlOffset=71.629944;
 				};
 				class Item8
 				{
@@ -98618,16 +98696,17 @@ class Mission
 								angles[]={0,5.3897018,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 							};
 							id=2994;
 							type="Land_HouseV_3I1";
-							atlOffset=2.023407;
+							atlOffset=-0.70349121;
 						};
 					};
 					id=2906;
-					atlOffset=1.4128113;
+					atlOffset=0.010345459;
 				};
 				class Item10
 				{
@@ -100154,7 +100233,7 @@ class Mission
 				};
 			};
 			id=4328;
-			atlOffset=-41.098633;
+			atlOffset=-41.456543;
 		};
 		class Item30
 		{
