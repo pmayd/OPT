@@ -186,11 +186,11 @@ GVAR(canBeTransported) =
 GVAR(canBeDragged) = 
 [											
     // NATO supplies	
-    ["OPT_B_CargoNet_01_ammo_F", [0, 2, 0.1], 0],                         // Ausrüstungskiste
+    ["OPT_B_CargoNet_01_ammo_F", [0, 2, 0.1], 0],                         	// Ausrüstungskiste
     ["OPT_B_supplyCrate_F", [0, 2, 0.1], 0],			                    // Transportkiste (leer),500
 	["OPT_Box_NATO_WpsSpecial_Diver_F"],				                    // Taucherkiste,5000	
 	["OPT_Box_NATO_Ammo_F"],            				                    // Munitionskiste,40000
-	["OPT_Box_NATO_WpsSpecial_F"],            				                    // Munition spezial kiste		NEUE KISTE!	
+	["OPT_Box_NATO_WpsSpecial_F"],            				                // Munition spezial kiste		NEUE KISTE!	
     ["OPT_Box_NATO_Grenades_F"],         				                    // granatenkiste,75000
     ["OPT_NATO_Sprengstoffkiste"],         				                    // sprengstoffkiste,75000			NEUE KISTE!	
  	["OPT_Box_NATO_WpsSpecial_AT3_F"],			    	                    // AT Raketenkiste (RPG-42),30000	NEUE KISTE!	
@@ -215,13 +215,13 @@ GVAR(canBeDragged) =
 	//"OPT_B_Boat_Armed_01_minigun_F",				                        // Speedboat Minigun,10000
 	//"OPT_B_SDV_01_F",								                        // Submarine,2000
 //CSAT supplies
-    ["OPT_O_CargoNet_01_ammo_F", [0, 2, 0.1], 0],                         // Ausrüstungskiste
-	["OPT_O_supplyCrate_F", [0, 2, 0.1], 0],							                    // Transportkiste,500
+    ["OPT_O_CargoNet_01_ammo_F", [0, 2, 0.1], 0],                        	// Ausrüstungskiste
+	["OPT_O_supplyCrate_F", [0, 2, 0.1], 0],							    // Transportkiste,500
 	["OPT_Box_East_WpsSpecial_Diver_F"],				                    // Taucherkiste,5000
 	["OPT_Box_East_WpsSpecial_AA_F"],				                        // AA Raketenkiste,40000
-	["OPT_Box_East_WpsSpecial_AT_F"],            		                        // AT Raketenkiste (RPG-42),30000	NEUE KISTE!	
+	["OPT_Box_East_WpsSpecial_AT_F"],            		                   	// AT Raketenkiste (RPG-42),30000	NEUE KISTE!	
 	["OPT_Box_East_Ammo_F"],            			                        // Munitionskiste,40000	
-	["OPT_Box_East_WpsSpecial_F"],            			                        // Munition spezial kiste			NEUE KISTE!	
+	["OPT_Box_East_WpsSpecial_F"],            			                    // Munition spezial kiste			NEUE KISTE!	
     ["OPT_Box_East_Grenades_F"],            		                        // granatenkiste,75000	
     ["OPT_CSAT_Sprengstoffkiste"],            		                        // sprengstoffkiste,75000				NEUE KISTE!	
 	["OPT_Box_East_WpsLaunch_F"],					                		// HAT-Kiste (Titan),400000	
@@ -255,7 +255,7 @@ GVAR(canBeCarried) =
     ["OPT_B_supplyCrate_F"],							// Transportkiste (leer),500
 	["OPT_Box_NATO_WpsSpecial_Diver_F"],				// Taucherkiste,5000	
 	["OPT_Box_NATO_Ammo_F"],            				// Munitionskiste,40000
-	["OPT_Box_NATO_WpsSpecial_F"],            			  // Munition spezial kiste		NEUE KISTE!	
+	["OPT_Box_NATO_WpsSpecial_F"],            			// Munition spezial kiste		NEUE KISTE!	
     ["OPT_Box_NATO_Grenades_F"],         				// granatenkiste,75000
     ["OPT_NATO_Sprengstoffkiste"],         				// sprengstoffkiste,75000			NEUE KISTE!		
 	["OPT_Box_NATO_WpsSpecial_AT3_F"],			    	// AT Raketenkiste (RPG-42),30000	NEUE KISTE!	
@@ -267,17 +267,17 @@ GVAR(canBeCarried) =
 	["OPT_B_static_AA_F"],						    	// Stand-AA,25000
 	["OPT_B_static_AT_F"],						    	// Stand-AT,200000	
 	["OPT_B_Mortar_01_F"],						    	// MK6 - Mörser,200000
-	["OPT_FlexibleTank_01_forest_F"],					//Spritfass
+	["OPT_FlexibleTank_01_forest_F"],					// Spritfass
 	["OPT_B_Static_Designator_01_F"],					// Remote Designator,10000
 //CSAT supplies
 	["OPT_O_supplyCrate_F"],							// Transportkiste,500
 	["OPT_Box_East_WpsSpecial_Diver_F"],				// Taucherkiste,5000
 	["OPT_Box_East_WpsSpecial_AA_F"],					// AA Raketenkiste,40000
-	["OPT_Box_East_WpsSpecial_AT_F"],            		                    // AT Raketenkiste (RPG-42),30000	NEUE KISTE!	
+	["OPT_Box_East_WpsSpecial_AT_F"],            		// AT Raketenkiste (RPG-42),30000	NEUE KISTE!	
 	["OPT_Box_East_Ammo_F"],            				// Munitionskiste,40000	
-	["OPT_Box_East_WpsSpecial_F"],            			                        // Munition spezial kiste			NEUE KISTE!		
+	["OPT_Box_East_WpsSpecial_F"],            			// Munition spezial kiste			NEUE KISTE!		
     ["OPT_Box_East_Grenades_F"],                		// granatenkiste,75000	
-	["OPT_CSAT_Sprengstoffkiste"],            		                        // sprengstoffkiste,75000				NEUE KISTE!		
+	["OPT_CSAT_Sprengstoffkiste"],            		    // sprengstoffkiste,75000				NEUE KISTE!		
 	["OPT_Box_East_WpsLaunch_F"],						// HAT-Kiste (Titan),400000	
 	["OPT_O_HMG_01_F"],						    		// Stand-MG niedrig,10000	
 	["OPT_O_HMG_01_high_F"],							// Stand-MG hoch,10000

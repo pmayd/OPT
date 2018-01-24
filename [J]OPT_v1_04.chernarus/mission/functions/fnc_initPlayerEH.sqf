@@ -33,7 +33,7 @@ player addEventHandler ["GetInMan", {
     */
     params ["_unit", "_pos", "_vec", "_turret"];
 
-    if (OPT_PARAM_ONLY_PILOTS == 1) then {
+    if (OPT_PARAM_ONLY_PILOTS) then {
         if (!(typeOf _unit in GVARMAIN(pilots)) && {!(typeOf _unit in ["O_Helipilot_F","B_Helipilot_F"])}) then {
             if (_vec isKindOf "Air" && _pos in GVAR(blockedVehiclePositions)) then {
                 if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
@@ -45,7 +45,7 @@ player addEventHandler ["GetInMan", {
         };
     };
 
-    if (OPT_PARAM_ONLY_CREW == 1) then {
+    if (OPT_PARAM_ONLY_CREW) then {
         if (!(typeOf _unit in GVARMAIN(crew)) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
             if (_pos in GVAR(blockedVehiclePositions)) then {
                 if (typeOf _vec in GVARMAIN(crew_vecs) || _vec isKindOf "Tank") then {
@@ -67,7 +67,7 @@ player addEventHandler ["SeatSwitchedMan", {
     */
     params ["_unit1", "_unit2", "_vec"];
 
-    if (OPT_PARAM_ONLY_PILOTS == 1) then {
+    if (OPT_PARAM_ONLY_PILOTS) then {
         if (!(typeOf _unit1 in GVARMAIN(pilots)) && {!(typeOf _unit1 in ["O_Helipilot_F","B_Helipilot_F"])}) then {
             if (_vec isKindOf "Air" && (assignedVehicleRole  _unit1 select 0) in GVAR(blockedVehiclePositions)) then {
                 if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
@@ -79,7 +79,7 @@ player addEventHandler ["SeatSwitchedMan", {
         };
     };
 
-    if (OPT_PARAM_ONLY_CREW == 1) then {
+    if (OPT_PARAM_ONLY_CREW) then {
         if (!(typeOf _unit1 in GVARMAIN(crew)) && {!(typeOf _unit1 in ["O_crew_F","B_crew_F"])}) then {
             if ( (assignedVehicleRole _unit1 select 0) in GVAR(blockedVehiclePositions)) then {
                 if (typeOf _vec in GVARMAIN(crew_vecs) || _vec isKindOf "Tank") then {

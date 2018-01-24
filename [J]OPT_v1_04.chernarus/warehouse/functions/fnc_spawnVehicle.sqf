@@ -21,12 +21,13 @@ params ["_vecType", "_spawnObj"];
 private _spawnPos = if (typeName _spawnObj == "OBJECT") then {getPosATL _spawnObj} else {_spawnObj};
 
 private _vec = createVehicle [_vecType, _spawnPos, [], 0, "NONE"];
+_vec allowDamage false; // avoid any damage during spawn process
 
 if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};
 if (surfaceIsWater _spawnPos) then {
 	_vec setPosASL ((getPosASL _vec) set [2, 0]);
 } else {
-	_vec setPosATL (getPosATL _vec vectorAdd [0,0,0.1]);
+	_vec setPosATL (getPosATL _vec vectorAdd [0,0,0]);
 };
 
 //datalink-test-eintrag, kallek
@@ -55,4 +56,10 @@ if (_vecType in (_uavs + GVARMAIN(big_uavs))) then {
 	_vec setSkill 0.8;
 };
 
-_vec setDamage 0;
+GVAR(damageEH) = _vec addEventHandler ["GetIn", {
+	params ["_vehicle", "_pos", "_unit", "_turret"];
+
+	[_vehicle, true] remoteExec ["allowDamage", _vehicle, false];
+	_vehicle removeEventHandler ["GetIn", GVAR(damageEH)];
+
+}];

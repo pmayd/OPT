@@ -854,10 +854,23 @@ class AddonsMetaData
 		};
 	};
 };
+class DynamicSimulation
+{
+	enable=0;
+};
 randomSeed=11854623;
 class ScenarioData
 {
 	author="heavens demon";
+	wreckManagerMode=1;
+	wreckLimit=10;
+	wreckRemovalMinTime=600;
+	wreckRemovalMaxTime=900;
+	corpseManagerMode=1;
+	corpseLimit=5;
+	corpseRemovalMinTime=180;
+	corpseRemovalMaxTime=300;
+	minPlayerDistance=50;
 };
 class CustomAttributes
 {
@@ -16084,7 +16097,7 @@ class Mission
 						};
 					};
 					id=56;
-					atlOffset=51.599998;
+					atlOffset=0.044723511;
 				};
 				class Item4
 				{
@@ -18351,7 +18364,7 @@ class Mission
 				};
 			};
 			id=52;
-			atlOffset=4016702.8;
+			atlOffset=4016703;
 		};
 		class Item11
 		{
@@ -22129,7 +22142,7 @@ class Mission
 						};
 					};
 					id=204;
-					atlOffset=51.599998;
+					atlOffset=0.15396404;
 				};
 				class Item4
 				{
@@ -24501,7 +24514,7 @@ class Mission
 				};
 			};
 			id=200;
-			atlOffset=0.50452518;
+			atlOffset=0.50668716;
 		};
 		class Item13
 		{
@@ -28243,7 +28256,7 @@ class Mission
 				};
 			};
 			id=1947;
-			atlOffset=-111.92174;
+			atlOffset=-0.0093688965;
 		};
 		class Item22
 		{
