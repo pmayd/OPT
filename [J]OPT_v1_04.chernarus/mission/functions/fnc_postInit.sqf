@@ -17,7 +17,7 @@ private _action_earplug = [
         [] call FUNC(earplugs);
     },
     {
-
+        true
     }
 ] call ace_interact_menu_fnc_createAction;
 
