@@ -45,7 +45,7 @@ GVAR(nato_vehicles) = [
 	["OPT_B_MRAP_03_gmg_F", DEF_PROD(35000)]				// Strider GMG, Ladefläche)
 ];
 
-// Fahrzeuge dieser Liste knnen nicht verkauft werden!
+// Fahrzeuge dieser Liste können nicht verkauft werden!
 GVAR(nato_vehicles_supply) = [
 	["OPT_B_Truck_01_ammo_F", DEF_PROD(50000)], 			// HEMTT Ammo, 50000 ersetzt durch Container
 	["OPT_B_Truck_01_fuel_F", DEF_PROD(10000)] 			    // HEMTT Fuel, 10000 ersetzt durch Container
@@ -53,8 +53,8 @@ GVAR(nato_vehicles_supply) = [
 	
 GVAR(nato_choppers) = [
 	["OPT_B_Heli_Light_01_F", DEF_PROD(80000)],					// MH-9 Hummingbird
-	["OPT_B_Heli_Light_01_armed_F", DEF_PROD(140000)],			// AH-9 Pawnee
-	["OPT_B_Heli_Light_01_armed_2_F", DEF_PROD(350000)],				// AH-9 Pawnee DAGR - testweise wieder drin
+	["OPT_B_Heli_Light_01_armed_F", DEF_PROD(220000)],			// AH-9 Pawnee
+	["OPT_B_Heli_Light_01_armed_2_F", DEF_PROD(380000)],				// AH-9 Pawnee DAGR - testweise wieder drin
 	["OPT_B_Heli_Transport_01_F", DEF_PROD(90000)],				// UH-80 Ghosthawk
 	["OPT_B_Heli_Transport_03_unarmed_F", DEF_PROD(150000)],	// CH-67 Huron unarmed (Transport+Lift)
 	["OPT_B_Heli_Transport_03_F", DEF_PROD(170000)],			// CH-67 Huron armed (Transport+Lift)
@@ -63,7 +63,7 @@ GVAR(nato_choppers) = [
 	["OPT_B_UAV_02_F", DEF_PROD(0)],						// Greyhawk Raketen
 	["OPT_B_UAV_02_AA_F", DEF_PROD(0)],					// Greyhawk AA-Raketen	
 	["OPT_B_Heli_Transport_02_F", DEF_PROD(150000)],			// CH-49 Mohawk (Transport+Lift)
-	["OPT_B_T_UAV_03_dynamicLoadout_F", DEF_PROD(650000)],		// MQ12-Falcon - noch in arbeit erstma nur testweise mit preis eingebaut
+	["OPT_B_T_UAV_03_dynamicLoadout_F", DEF_PROD(0)],		// MQ12-Falcon - noch in arbeit erstma nur testweise mit preis eingebaut
 	["OPT_B_T_VTOL_01_infantry_F", DEF_PROD(200000)],			// VTOL Blackfish (Inf-Transport)
 	["OPT_B_T_VTOL_01_vehicle_F", DEF_PROD(180000)],			// VTOL Blackfish (Fahrzeug-Transport)
 	["OPT_B_T_VTOL_01_armed_F", DEF_PROD(0)],					// VTOL Blackfish BEWAFFNET
@@ -140,24 +140,40 @@ GVAR(nato_sea) = [
 ];
 
 GVAR(csat_vehicles) = [
-	["OPT_O_T_Quadbike_01_ghex_F", DEF_PROD(1500)],					// Quadbike
+//Vanilla
+	["OPT_O_Quadbike_01_F", DEF_PROD(1500)],					// Quadbike
 	["OPT_O_T_LSV_02_unarmed_F", DEF_PROD(3000)], 					// Quilin unarmed
 	["OPT_O_T_LSV_02_armed_F", DEF_PROD(4000)], 					// Quilin armed
-	["OPT_O_T_Truck_03_covered_ghex_F", DEF_PROD(8000)],			// Tempest Transport
-	["OPT_O_T_Truck_03_repair_ghex_F", DEF_PROD(10000)],			// Tempest Repair, ersetzt durch container
-	["OPT_O_T_Truck_03_medical_ghex_F", DEF_PROD(10000)],			// Tempest Medical, ersetzt durch container
-	["OPT_O_T_Truck_03_transport_ghex_F", DEF_PROD(2000)],			// Tempest (fr Radar, keine Sitze auf Ladeflche)
+	["OPT_O_Truck_03_covered_F", DEF_PROD(8000)],			// Tempest Transport
+	["OPT_O_Truck_03_repair_F", DEF_PROD(10000)],			// Tempest Repair, ersetzt durch container
+	["OPT_O_Truck_03_medical_F", DEF_PROD(10000)],			// Tempest Medical, ersetzt durch container
+	["OPT_O_Truck_03_transport_F", DEF_PROD(2000)],			// Tempest (fr Radar, keine Sitze auf Ladeflche)
 	["OPT_O_G_Offroad_01_F", DEF_PROD(0)],							// Pickup, ersetzt durch quilin
 	["OPT_O_G_Offroad_01_armed_F", DEF_PROD(0)],					// Pickup HMG, ersetzt durch quilin
-	["OPT_O_T_MRAP_02_ghex_F", DEF_PROD(5500)],						// Ifrit
-	["OPT_O_T_MRAP_02_hmg_ghex_F", DEF_PROD(26000)],				// Ifrit HMG
-	["OPT_O_T_MRAP_02_gmg_ghex_F", DEF_PROD(31000)]					// Ifrit GMG
+	["OPT_O_MRAP_02_F", DEF_PROD(5500)],						// Ifrit
+	["OPT_O_MRAP_02_hmg_F", DEF_PROD(26000)],				// Ifrit HMG
+	["OPT_O_MRAP_02_gmg_F", DEF_PROD(31000)],					// Ifrit GMG
+//Tropentarn
+	["OPT_O_T_Quadbike_01_ghex_F", DEF_PROD(0)],					// Quadbike 1500
+	["OPT_O_T_LSV_02_unarmed_F", DEF_PROD(0)], 					// Quilin unarmed 3000
+	["OPT_O_T_LSV_02_armed_F", DEF_PROD(0)], 					// Quilin armed 4000
+	["OPT_O_T_Truck_03_covered_ghex_F", DEF_PROD(0)],			// Tempest Transport 8000
+	["OPT_O_T_Truck_03_repair_ghex_F", DEF_PROD(0)],			// Tempest Repair, ersetzt durch container 10000
+	["OPT_O_T_Truck_03_medical_ghex_F", DEF_PROD(0)],			// Tempest Medical, ersetzt durch container 10000
+	["OPT_O_T_Truck_03_transport_ghex_F", DEF_PROD(0)],			// Tempest (fr Radar, keine Sitze auf Ladeflche) 2000
+	["OPT_O_G_Offroad_01_F", DEF_PROD(0)],							// Pickup, ersetzt durch quilin
+	["OPT_O_G_Offroad_01_armed_F", DEF_PROD(0)],					// Pickup HMG, ersetzt durch quilin
+	["OPT_O_T_MRAP_02_ghex_F", DEF_PROD(0)],						// Ifrit 5500
+	["OPT_O_T_MRAP_02_hmg_ghex_F", DEF_PROD(0)],				// Ifrit HMG 26000
+	["OPT_O_T_MRAP_02_gmg_ghex_F", DEF_PROD(0)]					// Ifrit GMG 31000
 ];
 
 // Fahrzeuge dieser Liste knnen nicht verkauft werden!
 GVAR(csat_vehicles_supply) = [
-	["OPT_O_T_Truck_03_ammo_ghex_F", DEF_PROD(50000)],				// Tempest Ammo, ersetzt durch container
-	["OPT_O_T_Truck_03_fuel_ghex_F", DEF_PROD(10000)]				// Tempest Fuel, ersetzt durch container
+	["OPT_O_T_Truck_03_ammo_ghex_F", DEF_PROD(0)],				// Tempest Ammo, ersetzt durch container 50000
+	["OPT_O_T_Truck_03_fuel_ghex_F", DEF_PROD(0)],				// Tempest Fuel, ersetzt durch container 10000
+	["OPT_O_Truck_03_ammo_F", DEF_PROD(50000)],				// Tempest Ammo, ersetzt durch container
+	["OPT_O_Truck_03_fuel_F", DEF_PROD(10000)]				// Tempest Fuel, ersetzt durch container
 ];
 
 GVAR(csat_choppers) = [
@@ -165,18 +181,18 @@ GVAR(csat_choppers) = [
 	["OPT_O_Heli_Light_03_unarmed_green_F", DEF_PROD(0)],			// WY-55 Hellcat
 	["OPT_O_Heli_Light_03_F", DEF_PROD(170000)],					// WY-55 Hellcat (DAR)
 	["OPT_O_Heli_Light_03_green_F", DEF_PROD(0)],					// WY-55 Hellcat (DAR)
-	["OPT_O_Heli_Light_02_unarmed_F", DEF_PROD(0)],					// PO-30 Orca
-	["OPT_O_Heli_Light_02_unarmed_black_F", DEF_PROD(80000)],		// PO-30 Orca
-	["OPT_O_Heli_Light_02_v2_F", DEF_PROD(0)],						// PO-30 Orca (DAR)
-	["OPT_O_Heli_Light_02_v2_black_F", DEF_PROD(180000)],			// PO-30 Orca (DAR)
-	["OPT_O_Heli_Light_02_F", DEF_PROD(0)],							// PO-30 Orca (DAGR) - erstma raus wegen DAGR-problematik
-	["OPT_O_Heli_Light_02_black_F", DEF_PROD(300000)],					// PO-30 Orca (DAGR) - erstma raus wegen DAGR-problematik
-	["OPT_O_Heli_Transport_04_F", DEF_PROD(0)],						// Mi-290 Taru (Lift)
-	["OPT_O_Heli_Transport_04_black_F", DEF_PROD(85000)],			// Mi-290 Taru (Lift)
-	["OPT_O_Heli_Transport_04_covered_F", DEF_PROD(0)], 			// Mi-290 Taru (Transport)
-	["OPT_O_Heli_Transport_04_covered_black_F", DEF_PROD(110000)], 	// Mi-290 Taru (Transport)
-	["OPT_O_Heli_Transport_04_bench_F", DEF_PROD(0)],				// Mi-290 Taru (Bench)
-	["OPT_O_Heli_Transport_04_bench_black_F", DEF_PROD(90000)],		// Mi-290 Taru (Bench)
+	["OPT_O_Heli_Light_02_unarmed_F", DEF_PROD(80000)],					// PO-30 Orca
+	["OPT_O_Heli_Light_02_unarmed_black_F", DEF_PROD(0)],		// PO-30 Orca
+	["OPT_O_Heli_Light_02_v2_F", DEF_PROD(180000)],						// PO-30 Orca (DAR)
+	["OPT_O_Heli_Light_02_v2_black_F", DEF_PROD(0)],			// PO-30 Orca (DAR)
+	["OPT_O_Heli_Light_02_F", DEF_PROD(300000)],							// PO-30 Orca (DAGR) - erstma raus wegen DAGR-problematik
+	["OPT_O_Heli_Light_02_black_F", DEF_PROD(0)],					// PO-30 Orca (DAGR) - erstma raus wegen DAGR-problematik
+	["OPT_O_Heli_Transport_04_F", DEF_PROD(85000)],						// Mi-290 Taru (Lift)
+	["OPT_O_Heli_Transport_04_black_F", DEF_PROD(0)],			// Mi-290 Taru (Lift)
+	["OPT_O_Heli_Transport_04_covered_F", DEF_PROD(110000)], 			// Mi-290 Taru (Transport)
+	["OPT_O_Heli_Transport_04_covered_black_F", DEF_PROD(0)], 	// Mi-290 Taru (Transport)
+	["OPT_O_Heli_Transport_04_bench_F", DEF_PROD(90000)],				// Mi-290 Taru (Bench)
+	["OPT_O_Heli_Transport_04_bench_black_F", DEF_PROD(0)],		// Mi-290 Taru (Bench)
 	["OPT_O_UAV_02_light_F", DEF_PROD(300000)],						// Ababil unbewaffnet
 	["OPT_O_UAV_02_CAS_F", DEF_PROD(0)],						// Ababil GBU-12
 	["OPT_O_UAV_02_F", DEF_PROD(0)],							// Ababil Scalpel
@@ -185,8 +201,8 @@ GVAR(csat_choppers) = [
 	["OPT_O_T_VTOL_02_vehicle_unarmed_F", DEF_PROD(170000)],		// VTOL Y-32 Xi'an (Fahrzeug-Transport)
 	["OPT_O_T_VTOL_02_infantry_F", DEF_PROD(0)],					// VTOL Y-32 Xi'an (Inf-Transport)
 	["OPT_O_T_VTOL_02_vehicle_F", DEF_PROD(0)],						// VTOL Y-32 Xi'an (Fahrzeug-Transport)
-	["OPT_O_Heli_Attack_02_F", DEF_PROD(0)],						// Mi-48 Kajman	
-	["OPT_O_Heli_Attack_02_black_F", DEF_PROD(680000)],				// Mi-48 Kajman (Schwarz)
+	["OPT_O_Heli_Attack_02_F", DEF_PROD(680000)],						// Mi-48 Kajman	
+	["OPT_O_Heli_Attack_02_black_F", DEF_PROD(0)],				// Mi-48 Kajman (Schwarz)
 	["OPT_O_Plane_CAS_02_AA_F", DEF_PROD(0)],						// To-199 Neophron light - raus
 	["OPT_O_Plane_CAS_02_F", DEF_PROD(0)],						// To-199 Neophron
 	["OPT_O_Plane_Fighter_03_AA_F", DEF_PROD(0)],					// A-143 Buzzard (AA)
@@ -196,14 +212,24 @@ GVAR(csat_choppers) = [
 ];
 	
 GVAR(csat_armored) = [
-	["OPT_O_T_APC_Wheeled_02_rcws_ghex_F", DEF_PROD(50000)],			// MSE-3 Marid
+//Vanilla
+	["OPT_O_APC_Wheeled_02_rcws_F", DEF_PROD(50000)],			// MSE-3 Marid
 	["OPT_O_APC_Wheeled_03_cannon_light_F", DEF_PROD(70000)],			// AFV-4 Gorgon (Leicht)
 	["OPT_O_APC_Wheeled_03_cannon_F", DEF_PROD(120000)],				// AFV-4 Gorgon
-	["OPT_O_T_APC_Tracked_02_AA_ghex_F", DEF_PROD(275000)],			    // ZSU-39 Tigris
-	["OPT_O_T_APC_Tracked_02_cannon_ghex_light_F", DEF_PROD(120000)],	// BTR-K Kamysh
-	["OPT_O_T_APC_Tracked_02_cannon_ghex_F", DEF_PROD(275000)],		    // BTR-K Kamysh (Titan)
-	["OPT_O_T_MBT_02_cannon_ghex_F", DEF_PROD(450000)],				    // T-100 Varsuk
-	["OPT_O_T_MBT_02_arty_ghex_F", DEF_PROD(600000)]					// 2S9 Sochor <-- Psycho, Preis runter solange es die zustzliche Munition nicht gibt	
+	["OPT_O_APC_Tracked_02_AA_F", DEF_PROD(275000)],			    // ZSU-39 Tigris
+	["OPT_O_APC_Tracked_02_cannon_light_F", DEF_PROD(120000)],	// BTR-K Kamysh
+	["OPT_O_APC_Tracked_02_cannon_F", DEF_PROD(275000)],		    // BTR-K Kamysh (Titan)
+	["OPT_O_MBT_02_cannon_F", DEF_PROD(450000)],				    // T-100 Varsuk
+	["OPT_O_MBT_02_arty_F", DEF_PROD(600000)],					// 2S9 Sochor
+//Tropentarn
+	["OPT_O_T_APC_Wheeled_02_rcws_ghex_F", DEF_PROD(0)],			// MSE-3 Marid 50000
+	["OPT_O_APC_Wheeled_03_cannon_light_F", DEF_PROD(0)],			// AFV-4 Gorgon (Leicht) 70000
+	["OPT_O_APC_Wheeled_03_cannon_F", DEF_PROD(0)],				// AFV-4 Gorgon 120000
+	["OPT_O_T_APC_Tracked_02_AA_ghex_F", DEF_PROD(0)],			    // ZSU-39 Tigris 275000
+	["OPT_O_T_APC_Tracked_02_cannon_ghex_light_F", DEF_PROD(0)],	// BTR-K Kamysh 120000
+	["OPT_O_T_APC_Tracked_02_cannon_ghex_F", DEF_PROD(0)],		    // BTR-K Kamysh (Titan) 275000
+	["OPT_O_T_MBT_02_cannon_ghex_F", DEF_PROD(0)],				    // T-100 Varsuk 450000
+	["OPT_O_T_MBT_02_arty_ghex_F", DEF_PROD(0)]					// 2S9 Sochor 600000
 ];
 
 GVAR(csat_supplies) = [
@@ -217,15 +243,16 @@ GVAR(csat_supplies) = [
 	["OPT_O_CargoNet_01_ammo_F", DEF_PROD(5000)],					        // Ausrstungskiste
 	["OPT_Box_East_WpsSpecial_Diver_F", DEF_PROD(5000)],			        // Taucherkiste
 	["OPT_Box_East_WpsLaunch_F", DEF_PROD(0)],						        // HAT-Kiste (Titan)
-	["OPT_O_T_UGV_01_ghex_F", DEF_PROD(2000)],						        // UGV Saif	
+	["OPT_O_T_UGV_01_ghex_F", DEF_PROD(0)],						        // UGV Saif	
+	["OPT_O_UGV_01_F", DEF_PROD(2000)],						        // UGV Saif	
 	["OPT_O_UAV_01_F", DEF_PROD(90000)],							        // Tayran AR-2
 	["OPT_FlexibleTank_01_sand_F", DEF_PROD(1000)],					        // Treibstoff-Fass
-	["OPT_Land_Pod_Heli_Transport_04_fuel_F", DEF_PROD(0)],			        // Fuelcontainer
-	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", DEF_PROD(8000)],        // Fuelcontainer (schwarz)
-   	["OPT_Land_Pod_Heli_Transport_04_ammo_F", DEF_PROD(0)],			        // Munitionscontainer
-	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F", DEF_PROD(90000)],       // Munitionscontainer (Schwarz)
-   	["OPT_Land_Pod_Heli_Transport_04_repair_F", DEF_PROD(0)],		        // Reparaturcontainer
-	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", DEF_PROD(8000)],      // Reparaturcontainer (schwarz)
+	["OPT_Land_Pod_Heli_Transport_04_fuel_F", DEF_PROD(8000)],			        // Fuelcontainer
+	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", DEF_PROD(0)],        // Fuelcontainer (schwarz)
+   	["OPT_Land_Pod_Heli_Transport_04_ammo_F", DEF_PROD(90000)],			        // Munitionscontainer
+	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F", DEF_PROD(0)],       // Munitionscontainer (Schwarz)
+   	["OPT_Land_Pod_Heli_Transport_04_repair_F", DEF_PROD(8000)],		        // Reparaturcontainer
+	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", DEF_PROD(0)],      // Reparaturcontainer (schwarz)
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_radar_F", DEF_PROD(0)],	// Radar Container
 	["OPT_Land_Pod_Heli_Transport_04_medevac_F", DEF_PROD(0)],			    // Lazarettcontainer, psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
 	["Land_Cargo20_white_F", DEF_PROD(0)],							// weier Container (Lazarett)
