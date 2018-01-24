@@ -23,8 +23,8 @@ private _action_earplug = [
 
 [
     player, 
-    0, 
-    ["ACE_MainActions"],
+    1, 
+    ["ACE_SelfActions", "ACE_Equipment"],
     _action_earplug
 ] call ace_interact_menu_fnc_addActionToObject;
 
