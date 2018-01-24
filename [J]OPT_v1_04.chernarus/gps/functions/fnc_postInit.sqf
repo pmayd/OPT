@@ -27,7 +27,7 @@ if (OPT_PARAM_SHOW_ALL_UNITS) then {
 if (leader player == player) then {
     GVAR(mode)=1;
 };
-if (((player isKindOf "OPT_NATO_Offizier_T") or (player isKindOf "OPT_CSAT_Offizier_T")) and GVAR(showAll)) then {
+if (typeOf player in GVARMAIN(officer) and GVAR(showAll)) then {
     GVAR(mode)=2;
 };
 

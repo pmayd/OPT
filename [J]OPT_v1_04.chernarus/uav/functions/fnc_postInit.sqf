@@ -38,11 +38,11 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
                     [QEGVAR(gui,message),["UAV-Station","In UAV-Station eingeloggt.<br/>Verbindung geht verloren, wenn mehr als 4m entfernt.","green"]] call CBA_fnc_localEvent;
                     player setVariable [QGVAR(loggedInStation), _terminal];
                     
-                    if ((typeOf player) isEqualTo "OPT_NATO_Pilot_T") then {
+                    if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == west) then {
                         player removeWeapon "ItemGPS";
                         player addWeapon "B_UavTerminal";
                     };
-                    if ((typeOf player) isEqualTo "OPT_CSAT_Pilot_T") then {
+                    if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == east) then {
                         player removeWeapon "ItemGPS";
                         player addWeapon "O_UavTerminal";
                     };
@@ -72,11 +72,11 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
                     player connectTerminalToUAV objNull;
                     player setVariable [QGVAR(loggedInStation), objNull];
                     
-                    if ((typeOf player) isEqualTo "OPT_NATO_Pilot_T") then {
+                    if ((typeOf player) in  GVARMAIN(pilots) and PLAYER_SIDE == west) then {
                         player removeWeapon "B_UavTerminal";
                         player addWeapon "ItemGPS";
                     };
-                    if ((typeOf player) isEqualTo "OPT_CSAT_Pilot_T") then {
+                    if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == east) then {
                         player removeWeapon "O_UavTerminal";
                         player addWeapon "ItemGPS";
                     };
@@ -109,7 +109,7 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
         };
 
     } else {
-        if !(typeOf player in ["OPT_NATO_Operator_T","OPT_CSAT_Operator_T"]) then {
+        if !(typeOf player in GVARMAIN(operator)) then {
             player connectTerminalToUAV objNull;
             [QEGVAR(gui,message), ["UAV-Station","Diese Ausrüstung kann nur ein Operator benutzen.","red"]] call CBA_fnc_localEvent;
 
@@ -130,13 +130,13 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
 		player connectTerminalToUAV objNull;
         [QEGVAR(gui,message), ["UAV-Station","Verbindung zur UAV-Station verloren.","red"]] call CBA_fnc_localEvent;
         
-        if ((typeOf player) isEqualTo "OPT_NATO_Pilot_T") then {
+        if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == west) then {
 			player removeWeapon "B_UavTerminal";
 			player addWeapon "ItemGPS";
 
 		};
 
-		if ((typeOf player) isEqualTo "OPT_CSAT_Pilot_T") then {
+		if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == east) then {
 			player removeWeapon "O_UavTerminal";
 			player addWeapon "ItemGPS";
 

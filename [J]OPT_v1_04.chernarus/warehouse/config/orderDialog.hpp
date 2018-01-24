@@ -101,7 +101,7 @@ class GVAR(dlg_order)
             h = 1.5 * GUI_GRID_H;
             colorBackground[] = COLOR_CONTROL_BG;
             onMouseButtonDblClick = "(_this select 0) ctrlSetText '';[] call opt_warehouse_fnc_filterVehicleList;";
-            onKeyUp = __EVAL(format["[] call %1", QFUNC(filterVehicleList)]);
+            onKeyUp = QUOTE([] call FUNC(filterVehicleList););
             tooltip="Doppelklick löscht Zeile. Sucht nach Fahrzeugen mit dem Suchtext im Namen.";
             sizeEx = FONTSIZE;
         };
@@ -112,7 +112,7 @@ class GVAR(dlg_order)
             y = 6.5 * GUI_GRID_H + GUI_GRID_Y;
             w = 23 * GUI_GRID_W;
             h = 16.5 * GUI_GRID_H;
-            onLBSelChanged =  __EVAL(format["[] call %1", QFUNC(showVehicleInfo)]);
+            onLBSelChanged =  QUOTE([] call FUNC(showVehicleInfo););
             sizeEx = FONTSIZE;
             colorBackground[] = COLOR_CONTROL_BG;
             rowHeight = 0.06;
@@ -150,7 +150,7 @@ class GVAR(dlg_order)
             w = 7.5 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
             tooltip = "Verkaufe Fahrzeug auf dem Bestell-Pad";
-			action = __EVAL(format["[] call %1", QFUNC(sellVehicle)]);
+			action = QUOTE([] call FUNC(sellVehicle););
             sizeEx = FONTSIZE;
         };
         class RscButtonCancel: RscButton
