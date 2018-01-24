@@ -93,6 +93,13 @@ GVAR(canTransportCargo) =
 	["OPT_O_T_MRAP_02_gmg_ghex_F", 4],					// Ifrit GMG  - tropentarn hinzugefügt
 	["OPT_O_T_Truck_03_covered_ghex_F", 6],			// Tempest Transport	
 	["OPT_O_T_Truck_03_transport_ghex_F", 8],			// Tempest Logistik - hinzugefügt
+//vanilla	
+	["OPT_O_Quadbike_01_F", 2],					// Quadbike	- checken!	
+	["OPT_O_MRAP_02_F", 4],						// Ifrit - tropentarn hinzugefügt
+	["OPT_O_MRAP_02_hmg_F", 4],					// Ifrit HMG  - tropentarn hinzugefügt
+	["OPT_O_MRAP_02_gmg_F", 4],					// Ifrit GMG  - tropentarn hinzugefügt
+	["OPT_O_Truck_03_covered_F", 6],			// Tempest Transport	
+	["OPT_O_Truck_03_transport_F", 8],			// Tempest Logistik - hinzugefügt	
 // CSAT Armored
 	["OPT_O_APC_Wheeled_03_cannon_F", 4],				// AFV-4 Gorgon
 	["OPT_O_APC_Wheeled_03_cannon_light_F", 4],		// AFV-4 Gorgon (Leicht)
@@ -100,6 +107,11 @@ GVAR(canTransportCargo) =
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_F", 4],		// BTR-K Kamysh (Titan)
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_light_F", 4],	// BTR-K Kamysh	
 	["OPT_O_T_MBT_02_cannon_ghex_F", 4],				// T-100  - hinzugefügt
+//vanilla	
+	["OPT_O_APC_Wheeled_02_rcws_F", 4],			// MSE-3 Marid  - tropentarn hinzugefügt
+	["OPT_O_APC_Tracked_02_cannon_F", 4],		// BTR-K Kamysh (Titan)
+	["OPT_O_APC_Tracked_02_cannon_light_F", 4],	// BTR-K Kamysh	
+	["OPT_O_MBT_02_cannon_F", 4],				// T-100  - hinzugefügt	
 // CSAT Helicopter
 	["OPT_O_Heli_Light_03_unarmed_F", 4],				// WY-55 Hellcat,70000
 	["OPT_O_Heli_Light_03_unarmed_green_F", 4],		// WY-55 Hellcat,70000
@@ -109,6 +121,8 @@ GVAR(canTransportCargo) =
 	["OPT_O_T_VTOL_02_infantry_unarmed_F", 4],			// Y-32 Xi'an (Inf-Transport), 180000
 // CSAT Supplies	
 	["OPT_O_T_UGV_01_ghex_F", 6],						// UGV Saif	
+//vanilla
+	["OPT_O_UGV_01_F", 6],						// UGV Saif	
 // CSAT Ships
 	["OPT_O_Boat_Transport_01_F", 2],					// Assault Boat,500
 	["OPT_O_Boat_Armed_01_hmg_F", 4],					// Speedboat HMG,14000
