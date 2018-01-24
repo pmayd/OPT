@@ -24,7 +24,7 @@ if (_veh isEqualTo objNull) exitWith {false};
 	if (not isNil {_dmg}) then {
 		if ( _dmg > 0.64 ) then {
 			if (_x in GVAR(hardRepairParts)) then {
-				_veh setHitPointDamage [_x, 0.2];
+				_veh setHitPointDamage [_x, 0.3];
 
 			} else {
 				_veh setHitPointDamage [_x, 0];
