@@ -2,6 +2,7 @@
 
 PREP(briefing);
 PREP(countdown);
+PREP(earplugs);
 PREP(initCBAEvents);
 PREP(initCBASettings);
 PREP(initMissionEH);

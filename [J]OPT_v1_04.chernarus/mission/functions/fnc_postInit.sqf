@@ -6,6 +6,29 @@ LOG_1("%1 --- opt_mission_fnc_postInit started",diag_ticktime);
 // store playerSide for logs and other functions
 player setVariable [QGVARMAIN(playerSide), playerSide, true];
 
+// setup earplug ace menu
+private _action_earplug = [
+    QGVAR(earplug),
+    OPT_MISSION_ACTION_EARPLUG,
+    "",
+    {
+        params ["_target", "_player", "_params"]; 
+
+        [] call FUNC(earplugs);
+    },
+    {
+
+    }
+] call ace_interact_menu_fnc_createAction;
+
+[
+    player, 
+    0, 
+    ["ACE_MainActions"],
+    _action_earplug
+] call ace_interact_menu_fnc_addActionToObject;
+
+
 // startet das End-Skript. Wartet, bis Ende eintrifft
 //[] execVM "common\client\opt_endMission.sqf"; // TODO:
 
