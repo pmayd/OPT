@@ -147,7 +147,14 @@ GVAR(heavy_vehicles) = [
 	"OPT_O_T_APC_Tracked_02_cannon_ghex_F", 		    // BTR-K Kamysh (Titan)
 	"OPT_O_T_MBT_02_cannon_ghex_F", 				    // T-100 Varsuk
 	"OPT_O_T_MBT_02_arty_ghex_F", 				    // 2S9 Sochor 
-	
+//vanilla
+	"OPT_O_APC_Wheeled_02_rcws_F", 			// MSE-3 Marid
+	"OPT_O_APC_Tracked_02_AA_F", 			    // ZSU-39 Tigris
+	"OPT_O_APC_Tracked_02_cannon_light_F", 	// BTR-K Kamysh
+	"OPT_O_APC_Tracked_02_cannon_F", 		    // BTR-K Kamysh (Titan)
+	"OPT_O_MBT_02_cannon_F", 				    // T-100 Varsuk
+	"OPT_O_MBT_02_arty_F", 				    // 2S9 Sochor 
+		
 	"OPT_B_APC_Tracked_01_rcws_F", 					// IFV-6c Panther
 	"OPT_B_APC_Wheeled_01_cannon_light_F", 			// AMV-7 Marshall (Leicht)
 	"OPT_B_APC_Wheeled_01_cannon_F", 				// AMV-7 Marshall	
