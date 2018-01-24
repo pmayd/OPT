@@ -42,21 +42,21 @@ disableChannels[] = __DISABLE_CHAT_CHANNELS__;
 
 
 class CfgDebriefing { 
-	class End1 {
+	class END1 {
 		subtitle = "NATO hat die Schlacht gewonnen!";
 		description = "Die NATO Truppen eroberten weitere Gebiete in diesem Krieg.";
 		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
 		picture = "flag_NATO";
 		pictureColor[] = {0.0,0.3,0.6,1};
 	};
-	class End2 {
+	class END2 {
 		subtitle = "CSAT hat die Schlacht gewonnen!";
 		description = "Die CSAT Truppen eroberten weitere Gebiete in diesem Krieg.";
 		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
 		picture = "flag_CSAT";
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
-	class End3 {
+	class END3 {
 		title = "Untentschieden";
 		subtitle = "Wer ist schuld? Das kann nicht sein!";
 		description = "Beide Fraktionen sind gleich stark. Das sinnlose Blutvergießen wird für heute beendet und die Fraktionen ziehen sich zurück.";
