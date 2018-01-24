@@ -34,7 +34,7 @@ player addEventHandler ["GetInMan", {
     params ["_unit", "_pos", "_vec", "_turret"];
     
     if (OPT_PARAM_ONLY_PILOTS) then {
-        if (!(typeOf _unit in GVARMAIN(pilots)) && {!(typeOf _unit in ["O_Helipilot_F","B_Helipilot_F"])}) then {
+        if (!(typeOf _unit in GVARMAIN(pilots))) then {
             if (_vec isKindOf "Air" && _pos in EGVAR(warehouse,blockedVehiclePositions)) then {
                 if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
                     _unit action ["GetOut", _vec];
@@ -46,7 +46,7 @@ player addEventHandler ["GetInMan", {
     };
 
     if (OPT_PARAM_ONLY_CREW) then {
-        if (!(typeOf _unit in GVARMAIN(crew)) && {!(typeOf _unit in ["O_crew_F","B_crew_F"])}) then {
+        if (!(typeOf _unit in GVARMAIN(crew))) then {
             if (_pos in EGVAR(warehouse,blockedVehiclePositions)) then {
                 if (typeOf _vec in GVARMAIN(crew_vecs) || _vec isKindOf "Tank") then {
                     _unit action ["GetOut", _vec];
@@ -68,7 +68,7 @@ player addEventHandler ["SeatSwitchedMan", {
     params ["_unit1", "_unit2", "_vec"];
 
     if (OPT_PARAM_ONLY_PILOTS) then {
-        if (!(typeOf _unit1 in GVARMAIN(pilots)) && {!(typeOf _unit1 in ["O_Helipilot_F","B_Helipilot_F"])}) then {
+        if (!(typeOf _unit1 in GVARMAIN(pilots))) then {
             if (_vec isKindOf "Air" && (assignedVehicleRole  _unit1 select 0) in EGVAR(warehouse,blockedVehiclePositions)) then {
                 if (!(typeOf _vec in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])) then {
                     _unit1 action ["GetOut", _vec];
@@ -80,7 +80,7 @@ player addEventHandler ["SeatSwitchedMan", {
     };
 
     if (OPT_PARAM_ONLY_CREW) then {
-        if (!(typeOf _unit1 in GVARMAIN(crew)) && {!(typeOf _unit1 in ["O_crew_F","B_crew_F"])}) then {
+        if (!(typeOf _unit1 in GVARMAIN(crew))) then {
             if ( (assignedVehicleRole _unit1 select 0) in EGVAR(warehouse,blockedVehiclePositions)) then {
                 if (typeOf _vec in GVARMAIN(crew_vecs) || _vec isKindOf "Tank") then {
                     _unit1 action ["GetOut", _vec];
