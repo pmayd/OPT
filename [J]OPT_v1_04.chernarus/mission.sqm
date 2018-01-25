@@ -12,7 +12,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1559;
+		nextID=1626;
 	};
 	class Camera
 	{
@@ -10439,7 +10439,7 @@ class Mission
 						angles[]={0,2.7756212,0};
 					};
 					name="zeus_csat_adler1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=350;
 					type="ModuleCurator_F";
 					atlOffset=0.75845337;
@@ -10533,7 +10533,7 @@ class Mission
 						angles[]={0,2.8908248,0};
 					};
 					name="zeus_csat_alpha1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=351;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -10626,7 +10626,7 @@ class Mission
 						angles[]={0,2.8388071,0};
 					};
 					name="zeus_csat_Charlie1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=352;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -10719,7 +10719,7 @@ class Mission
 						angles[]={0,2.8219364,0};
 					};
 					name="zeus_csat_Speznas";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=353;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -10812,7 +10812,7 @@ class Mission
 						angles[]={0,2.8741779,0};
 					};
 					name="zeus_csat_fox1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=354;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -10905,7 +10905,7 @@ class Mission
 						angles[]={0,3.0918694,0};
 					};
 					name="zeus_csat_opz1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=355;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -10998,7 +10998,7 @@ class Mission
 						angles[]={0,2.8582397,0};
 					};
 					name="zeus_csat_opz2";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=356;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -11091,7 +11091,7 @@ class Mission
 						angles[]={0,2.7188575,0};
 					};
 					name="zeus_csat_recon1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=357;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -12750,7 +12750,7 @@ class Mission
 					};
 					id=411;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.20082903;
+					atlOffset=-0.074218392;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -12941,7 +12941,7 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=12.077141;
+			atlOffset=12.072707;
 		};
 		class Item18
 		{
@@ -18604,7 +18604,7 @@ class Mission
 						angles[]={0,1.2263434,0};
 					};
 					name="zeus_nato_alpha1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=539;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -18697,7 +18697,7 @@ class Mission
 						angles[]={0,1.0338005,0};
 					};
 					name="zeus_nato_aviation1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=540;
 					type="ModuleCurator_F";
 					atlOffset=0.052041054;
@@ -18791,7 +18791,7 @@ class Mission
 						angles[]={0,0.97296447,0};
 					};
 					name="zeus_nato_bravo1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=541;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -18884,7 +18884,7 @@ class Mission
 						angles[]={0,1.2085441,0};
 					};
 					name="zeus_nato_delta1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=542;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -18977,7 +18977,7 @@ class Mission
 						angles[]={0,1.2633317,0};
 					};
 					name="zeus_nato_echo1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=543;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -19070,7 +19070,7 @@ class Mission
 						angles[]={0,1.2085441,0};
 					};
 					name="zeus_nato_fantom1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=544;
 					type="ModuleCurator_F";
 					atlOffset=0.0069522858;
@@ -19164,7 +19164,7 @@ class Mission
 						angles[]={0,1.4200082,0};
 					};
 					name="zeus_nato_fox1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=545;
 					type="ModuleCurator_F";
 					atlOffset=0.07845211;
@@ -19258,7 +19258,7 @@ class Mission
 						angles[]={0.039979152,1.0856409,6.2432065};
 					};
 					name="zeus_nato_opz1";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=546;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -19351,7 +19351,7 @@ class Mission
 						angles[]={0.039977662,1.0856409,0};
 					};
 					name="zeus_nato_opz2";
-					presenceCondition="OPT_PARAM_ZEUS == 1 && OPT_PARAM_TRAINING == 1";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
 					id=547;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -19455,6 +19455,7 @@ class Mission
 						angles[]={0,3.6354651,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -19463,7 +19464,7 @@ class Mission
 					};
 					id=549;
 					type="Land_InfoStand_V1_F";
-					atlOffset=11.09559;
+					atlOffset=0.0012164116;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19671,7 +19672,7 @@ class Mission
 				};
 			};
 			id=548;
-			atlOffset=37.851257;
+			atlOffset=37.851269;
 		};
 		class Item20
 		{
