@@ -86,7 +86,7 @@ if (PLAYER_SIDE == west) then {
         private _unit = _x;
 
         //systemChat format ["O:%1",_unit];
-        if (alive _unit) then {
+        if (alive _unit and _unit getVariable ["FAR_isUnconscious", 0] == 0) then {
             private _marker = [_unit] call FUNC(createUnitMarker);
             private _name = UNIT_NAME(_unit);
 
@@ -137,7 +137,7 @@ if (PLAYER_SIDE == east) then {
     {
         private _unit = _x;
         
-        if (alive _unit) then {
+        if (alive _unit and _unit getVariable ["FAR_isUnconscious", 0] == 0) then {
             _marker = [_unit] call FUNC(createUnitMarker);
             private _name = UNIT_NAME(_unit);
             
