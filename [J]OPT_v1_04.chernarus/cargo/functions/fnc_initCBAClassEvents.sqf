@@ -15,7 +15,25 @@
 #include "script_component.hpp" 
 
 // setzt ACE cargo settings für jedes Fahrzeug
-["AllVehicles", "init", {
+["LandVehicle", "init", {
+	params ["_vec"];
+
+    private _type = typeOf _vec;
+
+    // set cargo space
+    private _index = (GVAR(canTransportCargo) apply {toLower (_x select 0)}) find toLower _type;
+	if (_index != -1) then {
+        (GVAR(canTransportCargo) select _index) params ["_class", "_space"];
+        [_vec, _space] call ace_cargo_fnc_setSpace;
+
+    } else {
+        [_vec, -1] call ace_cargo_fnc_setSpace;
+
+    };
+
+}] call CBA_fnc_addClassEventHandler;
+
+["Air", "init", {
 	params ["_vec"];
 
     private _type = typeOf _vec;

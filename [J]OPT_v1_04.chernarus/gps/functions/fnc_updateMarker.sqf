@@ -181,7 +181,7 @@ if (PLAYER_SIDE == east) then {
 
 };
 
-// delete all marker that are no longer active
+// delete all unit marker that are no longer active
 {
     if (!(_x in _westplayer) and !(_x in _eastplayer)) then {
         deleteMarkerLocal (_x getVariable QGVAR(unitMarker));

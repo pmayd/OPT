@@ -26,7 +26,18 @@ This event happens every time a soldier enters a vehicle.
 
 // fügt auf allen clients einen Add Action Eintrag für umgekippte Fahrzeuge hinzu
 // ersetzt player add action in onPlayerRespawn (viel performanter, da kein pulling)
-["AllVehicles", "init", {
+["LandVehicle", "init", {
+	params ["_vec"];
+	[QEGVAR(common,addAction), 
+		[
+			_vec, 
+			["Fahrzeug aufrichten" call XTuerkiesText, {[] call EFUNC(common,unFlip);}, [], 0, false, true, "", format["[_target, player] call %1", QEFUNC(common,flipCheck)]]
+		]
+	] call CBA_fnc_localEvent;
+
+}] call CBA_fnc_addClassEventHandler;
+
+["Air", "init", {
 	params ["_vec"];
 	[QEGVAR(common,addAction), 
 		[
@@ -40,7 +51,12 @@ This event happens every time a soldier enters a vehicle.
 
 // add killed EH to all kind of vehicles, either on map or later spawned via crteateVehicle arrayIntersect
 // -> log kill and delete if near base
-["AllVehicles", "killed", {
+["LandVehicle", "killed", {
+	[QGVAR(handleDeadVehicle), (_this select [0,2])] call CBA_fnc_serverEvent;
+
+}] call CBA_fnc_addClassEventHandler;
+
+["Air", "killed", {
 	[QGVAR(handleDeadVehicle), (_this select [0,2])] call CBA_fnc_serverEvent;
 
 }] call CBA_fnc_addClassEventHandler;
