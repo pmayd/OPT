@@ -4,7 +4,7 @@
 [] call FUNC(briefing); // fügt Briefing und Tagebuch hinzu
 
 if (isServer) then {
-    [] call FUNC(initMissionEH);
+    [] call FUNC(initServerMissionEH);
     [] spawn FUNC(startMission); // Waffenruhe und Missionsstart, für Server und Client
 
     //Function that adds dynamic groups to the mission as seen in End Game
@@ -18,5 +18,6 @@ GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     */
 
     [] call FUNC(initPlayerEH); // lädt alle EH  
+    [] call FUNC(initMissionEH);
     [] call FUNC(postInit); // führt alle wichtigen Skripte aus
 }];

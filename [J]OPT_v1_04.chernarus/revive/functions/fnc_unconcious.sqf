@@ -73,19 +73,19 @@ sleep 4;
 _unit enableSimulation false;
 _unit setVariable ["FAR_isUnconscious", 1, true];
 
-_bleedOut = time + FAR_BleedOut;
+GVAR(bleedOut) = time + FAR_BleedOut;
 
 // fix the key binding after respawn/revive
 disableUserInput false;
 disableUserInput true;
 disableUserInput false;
 
-while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1} && {_unit getVariable "FAR_isStabilized" == 0} && {(FAR_BleedOut <= 0 || time < _bleedOut)}} do {
+while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1} && {_unit getVariable "FAR_isStabilized" == 0} && {(FAR_BleedOut <= 0 || time < GVAR(bleedOut))}} do {
 	if (FAR_checkNearbyMedics) then {
-		hintSilent format["Ausgeblutet in %1 Sekunden\n\n%2", round (_bleedOut - time), [] call FUNC(checkForNearbyMedics)];
+		hintSilent format["Ausgeblutet in %1 Sekunden\n\n%2", round (GVAR(bleedOut) - time), [] call FUNC(checkForNearbyMedics)];
 	};
-	FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (_bleedOut - time)];
-	FAR_bleedoutTimer = round (_bleedOut - time);
+	FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (GVAR(bleedOut) - time)];
+	FAR_bleedoutTimer = round (GVAR(bleedOut) - time);
 	sleep 0.5;
 };
 
@@ -104,7 +104,7 @@ if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
 };
 
 // Player bled out
-if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
+if (FAR_BleedOut > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
 	//["tfar_removeMapMarker", _unit] call tcb_fnc_NetCallEvent;
 	_unit setDamage 1; // sofortiger Tod -> schließt Dialog automatisch?!
 	disableUserInput false;

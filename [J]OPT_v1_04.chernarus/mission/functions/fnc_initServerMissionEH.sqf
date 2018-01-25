@@ -1,6 +1,6 @@
 /**
 * Author: James
-* initialize mission EH
+* initialize server mission EH
 *
 * Arguments:
 * None
@@ -9,7 +9,7 @@
 * None
 *
 * Example:
-* [] call fnc_initMissionEH.sqf;
+* [] call fnc_initServerMissionEH.sqf;
 *
 */
 #include "script_component.hpp"
@@ -30,4 +30,3 @@ GVAR(EH_PlayerConnected) = addMissionEventHandler ["PlayerConnected", {
     };
 
 }];
-    

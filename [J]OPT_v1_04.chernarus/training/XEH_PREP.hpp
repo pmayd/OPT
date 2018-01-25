@@ -1,6 +1,6 @@
 
 PREP(initCBASettings);
 PREP(initFlagDialog);
-PREP(initMissionEH);
+PREP(initPlayerMissionEH);
 PREP(setFlag);
 PREP(teleport);

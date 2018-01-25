@@ -89,9 +89,9 @@
 		
 		class GREUH_Respawn : GreuhButton {
 			idc = -1;
-			x = 0.45 * safezoneW + safezoneX; y= 0.75 * safezoneH + safezoneY;
-			w = 0.1 * safezoneW; h = 0.04 * safezoneH;
-			text = "Respawn";
+			x = 0.39 * safezoneW + safezoneX; y= 0.75 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW; h = 0.04 * safezoneH;
+			text = FAR_REVIVE_RESPAWN_BUTTON;
 			action = "player setVariable ['FAR_isUnconscious', 0, false]; player setDamage 1;";	// setVar only local at this point to kill the dialogs on local machine!
 		};
 		

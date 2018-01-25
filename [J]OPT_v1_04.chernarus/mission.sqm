@@ -12,7 +12,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1626;
+		nextID=1760;
 	};
 	class Camera
 	{
@@ -964,6 +964,8 @@ randomSeed=10155503;
 class ScenarioData
 {
 	disabledAI=1;
+	respawn=3;
+	respawnDelay=10;
 	wreckManagerMode=1;
 	wreckLimit=10;
 	wreckRemovalMinTime=600;
@@ -992,6 +994,24 @@ class CustomAttributes
 						type[]=
 						{
 							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Counter";
+							};
 						};
 					};
 				};
@@ -10428,7 +10448,7 @@ class Mission
 						};
 					};
 					id=285;
-					atlOffset=51.599998;
+					atlOffset=0.044723511;
 				};
 				class Item4
 				{
@@ -12723,7 +12743,7 @@ class Mission
 				};
 			};
 			id=281;
-			atlOffset=4016702.8;
+			atlOffset=4016703;
 		};
 		class Item17
 		{
@@ -17084,7 +17104,7 @@ class Mission
 						};
 					};
 					id=422;
-					atlOffset=51.599998;
+					atlOffset=0.15397167;
 				};
 				class Item4
 				{
@@ -19437,7 +19457,7 @@ class Mission
 				};
 			};
 			id=418;
-			atlOffset=0.50444508;
+			atlOffset=0.5066061;
 		};
 		class Item19
 		{
@@ -22453,7 +22473,7 @@ class Mission
 				};
 			};
 			id=581;
-			atlOffset=-111.92174;
+			atlOffset=-0.0093688965;
 		};
 		class Item22
 		{
