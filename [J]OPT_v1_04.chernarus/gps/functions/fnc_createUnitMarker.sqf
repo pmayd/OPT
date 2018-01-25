@@ -32,7 +32,9 @@ if (_marker isEqualTo "") then {
         _marker setMarkerColorLocal "ColorBLUFOR";
         _marker setMarkerSizeLocal MARKER_SIZE;
         _marker setMarkerAlphaLocal MARKER_ALPHA;
-    } else {
+    };
+    
+    if (_side == east) then {
         _marker = createMarkerLocal [format["%1_%2_%3", QGVAR(unitMarker), _name, time], [0,0]];
         _marker setMarkerTypeLocal MARKER_SYMBOL;
         _marker setMarkerColorLocal "ColorOPFOR";

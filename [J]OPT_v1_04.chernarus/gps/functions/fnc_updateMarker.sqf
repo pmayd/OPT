@@ -21,6 +21,14 @@ private _leadergroupeast=[];
 private _gruppeinheitenwest=[];	
 private _gruppeinheiteneast=[];
 
+if (PLAYER_SIDE == west) then {
+    _westplayer pushBack player;
+};
+
+if (PLAYER_SIDE == east) then {
+    _eastplayer pushBack player;
+};
+
 // add all leaders from all groups		
 {
     private _leader = leader _x;
@@ -33,6 +41,7 @@ private _gruppeinheiteneast=[];
         if (_leader == player) then {
             _gruppeinheitenwest append (units _x);
         };
+
     };	
 
     if (_side == east) then {
