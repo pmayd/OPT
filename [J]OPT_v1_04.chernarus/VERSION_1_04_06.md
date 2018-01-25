@@ -8,6 +8,7 @@
 - Bugfix: Crew und Pilotenplätze werden wieder gesperrt
 - Ohrstöpsel eingefügt
 - Bugfix: GPS aktualisiert nun korrekt
+- Bugfix: Spieler wurden als Fahrzeuge gewertet
 
 ### Editor
 - Garbage-Collector: Eingestellt auf 3-5 Minuten für Personen und 10-15 für Fahrzeuge

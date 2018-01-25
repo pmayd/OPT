@@ -59,9 +59,9 @@ registriert alle Events via CBA Event Handling
 
         case east: {
             if (_owner isEqualTo east) then {
-                _message = format ["NATO Flagge erobert von %1", _name];
-            } else {
                 _message = format ["CSAT Flagge gesichert von %1", _name];
+            } else {
+                _message = format ["NATO Flagge erobert von %1", _name];
             };
         };
 
