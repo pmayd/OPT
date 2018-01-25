@@ -10,6 +10,7 @@
 - Bugfix: GPS aktualisiert nun korrekt
 - Bugfix: Spieler wurden als Fahrzeuge gewertet
 - Bugfix CSAT Flagge wurde falsch erkannt
+- Bugfix: CBA Settings jetzt korrekt für client verfügbar bzw. nicht überschreibbar
 
 ### Editor
 - Garbage-Collector: Eingestellt auf 3-5 Minuten für Personen und 10-15 für Fahrzeuge
