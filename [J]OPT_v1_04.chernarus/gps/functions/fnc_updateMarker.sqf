@@ -21,14 +21,6 @@ private _leadergroupeast=[];
 private _gruppeinheitenwest=[];	
 private _gruppeinheiteneast=[];
 
-if (PLAYER_SIDE == west) then {
-    _westplayer pushBack player;
-};
-
-if (PLAYER_SIDE == east) then {
-    _eastplayer pushBack player;
-};
-
 // add all leaders from all groups		
 {
     private _leader = leader _x;
@@ -37,8 +29,7 @@ if (PLAYER_SIDE == east) then {
     if (_side == west) then {	
         _leadergroupwest pushBack _leader;
 
-        // if player is leader, add all units
-        if (_leader == player) then {
+        if (player in units _leader) then {
             _gruppeinheitenwest append (units _x);
         };
 
@@ -47,10 +38,10 @@ if (PLAYER_SIDE == east) then {
     if (_side == east) then {
         _leadergroupeast pushBack _leader;
 
-        // if player is leader, add all units
-        if (_leader == player) then {
+        if (player in units _leader) then {
             _gruppeinheiteneast append (units _x);
         };
+
     };			
 		
 } forEach allGroups;
