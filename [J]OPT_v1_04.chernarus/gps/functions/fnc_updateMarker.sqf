@@ -72,7 +72,7 @@ if (GVAR(mode) == 2) then {
         if (_side == east) then {
             _eastplayer pushBack _x;
         };
-    } foreach allUnits;	// Drohnen für HL sichtbar machen
+    } foreach allPlayers;	// Drohnen für HL sichtbar machen
 };					
 //systemChat format ["G:%1",_westplayer];
                             
@@ -180,3 +180,11 @@ if (PLAYER_SIDE == east) then {
     } forEach _eastplayer;
 
 };
+
+// delete all marker that are no longer active
+{
+    if (!(_x in _westplayer) and !(_x in _eastplayer)) then {
+        deleteMarkerLocal (_x getVariable QGVAR(unitMarker));
+        _x setVariable [QGVAR(unitMarker), nil];
+    };
+} forEach allPlayers;
