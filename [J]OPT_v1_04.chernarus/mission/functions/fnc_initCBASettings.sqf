@@ -20,7 +20,7 @@
     "Spielzeit", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [180, 10800, 9000, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -30,7 +30,7 @@
     "Waffenruhe", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [30, 900, 300, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -40,7 +40,7 @@
     "Überhangregel", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [0, 15, 5, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -50,7 +50,7 @@
     "Zeit, in der zu Beginn alle Einheiten eingeforen sind", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [0, 300, 0, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -60,7 +60,7 @@
     "Intro", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -71,7 +71,7 @@
     "Budget NATO", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     "3000000", // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];
         GVARMAIN(nato_budget) = parseNumber _value;
@@ -84,7 +84,7 @@
     "Budget CSAT", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     "3000000", // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];
         GVARMAIN(csat_budget) = parseNumber _value;
@@ -97,7 +97,7 @@
     "Dispokredit", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     "100000", // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];
         GVARMAIN(dispo) = parseNumber _value;
@@ -110,7 +110,7 @@
     "Kosten für eine neue Einheit (Respawn)", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     "2500", // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];
         GVARMAIN(respawn_cost) = parseNumber _value;

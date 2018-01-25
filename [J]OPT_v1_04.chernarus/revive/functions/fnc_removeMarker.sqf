@@ -29,6 +29,14 @@ if (!isNil "_marker") then {
 		deleteMarkerLocal _marker;
 		_unit setVariable ["far_unitMarker", nil];
 	};
+} else {
+    private _name = UNIT_NAME(_unit);
+    _marker = format ["FAR_marker_%1", _name];
+    _index = allMapMarkers find _marker;
+
+    if (_index != -1) then {
+        deleteMarker _marker;
+    };
 };
 
 true

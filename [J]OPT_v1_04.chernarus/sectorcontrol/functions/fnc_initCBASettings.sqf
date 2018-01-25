@@ -20,7 +20,7 @@
     "Minensperrzone um Flagge", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Sektorkontrolle", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // Default value <BOOLEAN>
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -31,7 +31,7 @@
     "Markiere Angriffsflaggen mit Mapmarker", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Sektorkontrolle", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // Default value <BOOLEAN>
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -41,7 +41,7 @@
     "Radius in Metern der Minen-Sperrzone um die Flagge.", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Sektorkontrolle", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [5, 50, 20, 0], // Default value <BOOLEAN>
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -51,7 +51,7 @@
     "Entfernung zur Flagge für Menü-Eintrag.", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Sektorkontrolle", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [1, 20, 5, 0], // Default value <BOOLEAN>
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 

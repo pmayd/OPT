@@ -20,7 +20,7 @@
     "Zeit bis zum Ausbluten", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [60, 1200, 600, 0], // [min, max, default, decimal]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -40,7 +40,7 @@
     "Zeige 3D-Marker für Verwundete", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // [min, max, default, decimal]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -50,7 +50,7 @@
     "Zeige Karten-Marker für Verwundete", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // [min, max, default, decimal]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -60,7 +60,7 @@
     "Zeige Entfernung bis zum nächsten Sanitäter", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     false, // [min, max, default, decimal]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -70,7 +70,7 @@
     "Maximaler Schaden bis zur Bewusstlosigkeit", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [0, 0.99, 0.95, 2], // [min, max, default, decimal]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -80,7 +80,7 @@
     "Radius, in dem verbündete Sanitäter erkannt werden", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [50, 500, 300, 0], // [min, max, default, decimal]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -90,7 +90,7 @@
     "Wer kann wiederbeleben?", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [[0,1,2,3], ["nur Sanitäter", "alle Einheiten", "alle Einheiten mit Medkit", "alle Sanitäter mit Medkit"], 3], // [values, names, index of default]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 

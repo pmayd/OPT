@@ -20,7 +20,7 @@
     "Trainingsmodus", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Trainingsmodus", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // Default value <BOOLEAN>
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -30,7 +30,7 @@
     "Jeder kann Teleporten", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Trainingsmodus", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // Default value <BOOLEAN>
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -40,7 +40,7 @@
     "Zeus für Gruppenführer im Trainingsmodus", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Trainingsmodus", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
@@ -51,6 +51,6 @@
     "Budget im OPT Trainingsmodus", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Trainingsmodus", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     "10000000", // data for this setting: [min, max, default, number of shown trailing decimals]
-    2, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
