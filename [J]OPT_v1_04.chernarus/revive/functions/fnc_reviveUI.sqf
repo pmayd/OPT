@@ -36,7 +36,7 @@ while {dialog && alive player} do {
 			_labelwidth = BAR_CONTROL_POS select 2;
 		};
 		
-		_labelpos = [BAR_CONTROL_POS select 0, BAR_CONTROL_POS select 1, _labelwidth * (FAR_bleedoutTimer / FAR_BleedOut), BAR_CONTROL_POS select 3];
+		_labelpos = [BAR_CONTROL_POS select 0, BAR_CONTROL_POS select 1, _labelwidth * (FAR_bleedoutTimer / FAR_REVIVE_BLEEDOUT), BAR_CONTROL_POS select 3];
 		BAR_CONTROL ctrlSetPosition _labelpos;
 		ctrlSetText [5567, FAR_bleedoutMessage];
 

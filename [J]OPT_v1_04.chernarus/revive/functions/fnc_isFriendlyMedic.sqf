@@ -24,9 +24,9 @@ if (
 	alive _unit and
 	UNIT_SIDE(_unit) == PLAYER_SIDE and
 	_unit getVariable "FAR_isUnconscious" == 0 and
-	(_isMedic || FAR_ReviveMode > 0)
+	(_isMedic || FAR_REVIVE_MODE > 0)
 ) then {
-	_return = if (FAR_ReviveMode > 2 and !_isMedic) then {
+	_return = if (FAR_REVIVE_MODE > 2 and !_isMedic) then {
 		false
 	} else {
 		true

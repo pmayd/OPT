@@ -74,7 +74,7 @@ if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1) then{
 
 	};
 		
-	if(_return >= FAR_maxDamage) then {				//Psycho, Inhalt in einen Framehandler auslagern um mehrfache Auslösung zu verhindern...
+	if(_return >= FAR_REVIVE_MAX_DAMAGE) then {				//Psycho, Inhalt in einen Framehandler auslagern um mehrfache Auslösung zu verhindern...
 		_return = 0;
 		if (FAR_Debugging) then {
 			diag_log format["FAR REVIVE: Schadensgrenzwert ueberschritten fuer: %1", name _unit];

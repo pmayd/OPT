@@ -14,16 +14,6 @@
 */
 #include "script_component.hpp"
 
-/* CUSTOM SETTINGS */
-FAR_BleedOut = FAR_REVIVE_BLEEDOUT;
-FAR_EnableDeathMessages = FAR_REVIVE_DEATH_MESSAGE;
-FAR_show3DIcons = FAR_REVIVE_3D_ICONS;
-FAR_downMarker = FAR_REVIVE_DOWN_MARKER;
-FAR_checkNearbyMedics = FAR_REVIVE_CALL_NEARBY_MEDICS;
-FAR_maxDamage =  FAR_REVIVE_MAX_DAMAGE;   // damage threshold before being knocked out (0->1)
-FAR_ReviveMode = FAR_REVIVE_MODE;
-
-
 /* PLAYER VAR */
 FAR_isDragging = false;
 FAR_Debugging = false;
@@ -59,7 +49,7 @@ player addEventHandler ["Respawn", {
 
 // 3D Marker
 [] spawn {
-	if (FAR_show3DIcons) then {
+	if (FAR_REVIVE_3D_ICONS) then {
 		_icons = addMissionEventHandler ["Draw3D", {
 			{
 				if (

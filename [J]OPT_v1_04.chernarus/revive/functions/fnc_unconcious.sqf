@@ -29,12 +29,12 @@ if (isPlayer _unit) then {
 [false] call FUNC(toggleTFAR);
 	
 // create marker
-if (FAR_downMarker) then {
+if (FAR_REVIVE_DOWN_MARKER) then {
 	[QGVAR(createMarker), [_unit]] call CBA_fnc_globalEvent;
 };
 
 // Death message
-if (FAR_EnableDeathMessages) then {
+if (FAR_REVIVE_DEATH_MESSAGE) then {
 	_name = [_unit, _killer] call FUNC(showKiller);
 	if (_name != "") then {
 		[_name] spawn {
@@ -73,15 +73,15 @@ sleep 4;
 _unit enableSimulation false;
 _unit setVariable ["FAR_isUnconscious", 1, true];
 
-GVAR(bleedOut) = time + FAR_BleedOut;
+GVAR(bleedOut) = time + FAR_REVIVE_BLEEDOUT;
 
 // fix the key binding after respawn/revive
 disableUserInput false;
 disableUserInput true;
 disableUserInput false;
 
-while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1} && {_unit getVariable "FAR_isStabilized" == 0} && {(FAR_BleedOut <= 0 || time < GVAR(bleedOut))}} do {
-	if (FAR_checkNearbyMedics) then {
+while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1} && {_unit getVariable "FAR_isStabilized" == 0} && {(FAR_REVIVE_BLEEDOUT <= 0 || time < GVAR(bleedOut))}} do {
+	if (FAR_REVIVE_CALL_NEARBY_MEDICS) then {
 		hintSilent format["Ausgeblutet in %1 Sekunden\n\n%2", round (GVAR(bleedOut) - time), [] call FUNC(checkForNearbyMedics)];
 	};
 	FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (GVAR(bleedOut) - time)];
@@ -94,17 +94,17 @@ if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
 	//[true] call opt_addons_fnc_toggleTFAR; // Funk im stabilisierten Zustand möglich!
 			
 	while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1}} do {
-		if (FAR_checkNearbyMedics) then {
+		if (FAR_REVIVE_CALL_NEARBY_MEDICS) then {
 			hintSilent format ["Du wurdest stabilisiert\n\n%1", call FUNC(checkForNearbyMedics)]
 		};
 		FAR_bleedoutMessage = "Stabilisiert";
-		FAR_bleedoutTimer = FAR_BleedOut;
+		FAR_bleedoutTimer = FAR_REVIVE_BLEEDOUT;
 		sleep 0.5;
 	};
 };
 
 // Player bled out
-if (FAR_BleedOut > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
+if (FAR_REVIVE_BLEEDOUT > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
 	//["tfar_removeMapMarker", _unit] call tcb_fnc_NetCallEvent;
 	_unit setDamage 1; // sofortiger Tod -> schließt Dialog automatisch?!
 	disableUserInput false;

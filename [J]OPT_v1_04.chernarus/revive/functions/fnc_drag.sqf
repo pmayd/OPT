@@ -43,7 +43,7 @@ waitUntil {
 };
 
 // setze Marker neu
-if (FAR_downMarker) then {
+if (FAR_REVIVE_DOWN_MARKER) then {
 	[QGVAR(createMarker), [_target]] call CBA_fnc_globalEvent;
 };
 

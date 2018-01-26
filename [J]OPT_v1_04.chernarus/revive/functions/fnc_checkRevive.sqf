@@ -32,10 +32,10 @@ private _isDragged = _target getVariable "FAR_isDragged";
 private _Handler = _target getVariable "FAR_healer";
 
 // Make sure target is unconscious and _caller is a medic 
-if (_isTargetUnconscious == 1 && {_isDragged == 0} && {isNull _Handler} && {([_caller] call FUNC(isMedic)) || FAR_ReviveMode > 0}) then {
+if (_isTargetUnconscious == 1 && {_isDragged == 0} && {isNull _Handler} && {([_caller] call FUNC(isMedic)) || FAR_REVIVE_MODE > 0}) then {
 	_return = true;
 	// [ReviveMode] Check if _caller has a Medikit
-	if ( FAR_ReviveMode > 1 && !("Medikit" in (items _caller)) ) then {
+	if ( FAR_REVIVE_MODE > 1 && !("Medikit" in (items _caller)) ) then {
 		_return = false;
 	};
 };
