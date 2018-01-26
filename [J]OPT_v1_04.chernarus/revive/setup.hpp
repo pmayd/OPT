@@ -15,4 +15,4 @@
 
 #define FAR_REVIVE_ACTION_STABILIZE_BAR_TEXT "Stabilisieren wird %1 s in Anspruch nehmen..."
 
-#define FAR_REVIVE_RESPAWN_BUTTON FORMAT_3("Respawn (%1, %2 ab %3 min)",GVARMAIN(respawn_cost_max)GVARMAIN(respawn_cost_min),FAR_BleedOut/2)
+#define FAR_REVIVE_RESPAWN_BUTTON(cost) format["Respawn (%1 €)", cost]

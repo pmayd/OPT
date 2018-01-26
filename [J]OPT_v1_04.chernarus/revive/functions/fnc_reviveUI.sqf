@@ -20,12 +20,18 @@ private _tick = 0;
 
 #define BAR_CONTROL ((findDisplay 5566) displayCtrl 6699)
 #define BAR_CONTROL_POS (ctrlPosition ((findDisplay 5566) displayCtrl 6699))
+#define RESPAWN_BTN ((findDisplay 5566) displayCtrl 5566)
 
 private _dialog = createDialog "GREUH_respawn";
 waitUntil {dialog};
 
 while {dialog && alive player} do {
 	if (!isNil "FAR_bleedoutMessage" && !isNil "FAR_bleedoutTimer") then {
+
+		// update button text
+		private _cost = [] call EFUNC(mission,respawnCost);
+		RESPAWN_BTN ctrlSetText FAR_REVIVE_RESPAWN_BUTTON(_cost);
+
 		if (_labelwidth == -1) then {
 			_labelwidth = BAR_CONTROL_POS select 2;
 		};
