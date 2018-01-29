@@ -12,6 +12,7 @@
 - Bugfix CSAT Flagge wurde falsch erkannt
 - Bugfix: CBA Settings jetzt korrekt für client verfügbar bzw. nicht überschreibbar
 - Respawnkosten eingefügt, neue CBA settings für min und max Kosten, Respawn-Button zeigt nun Kosten, Log korrigiert
+- Bugfix: Spawn von gewissen Fahrzeugen verursacht Schaden. Gelöst durch neue Spawnlogik. Unverwundbar-Bug ebenfalls behoben
 
 ### Editor
 - Garbage-Collector: Eingestellt auf 3-5 Minuten für Personen und 10-15 für Fahrzeuge

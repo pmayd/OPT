@@ -177,23 +177,24 @@ registriert alle Events via CBA Event Handling
 
     params ["_vec", "_pos", "_unit"];
 
-    private _dis = (getPosASL _vec) distance2D (_unit getVariable QGVAR(transport_start_loc));
+    private _pilot = _vec getVariable [QGVAR(transport_pilot), objNull];
 
     // end script if either player or pilot is unconscious
-    if (_unit getVariable ["FAR_isUnconscious", 0] == 1 or (_vec getVariable ["opt_var_vec_pilot", objNull]) getVariable ["FAR_isUnconscious", 0] == 1 ) exitWith {};
+    if (
+        (_unit getVariable ["FAR_isUnconscious", 0] == 1) or 
+        _pilot getVariable ["FAR_isUnconscious", 0] == 1 
+    ) exitWith {};
+
+    private _dis = (getPos _vec) distance2D (_unit getVariable QGVAR(transport_start_loc));
 
     if ( _pos in ["cargo", "gunner"] and (_dis > GVAR(distanceToBase)) ) then {
 
-        _nameUnit = UNIT_NAME(_unit);
-
-        _namePilot = UNIT_NAME(_vec getVariable ["opt_var_vec_pilot", objNull]);
-
         private _message = format[
             "%1 (%2) wurde von %3 (%4) eingeflogen (%5 m)", 
-            _nameUnit, 
+            UNIT_NAME(_unit), 
             UNIT_SIDE(_unit),  
-            _namePilot, 
-            UNIT_SIDE(_vec getVariable "opt_var_vec_pilot"),
+            UNIT_NAME(_pilot), 
+            UNIT_SIDE(_pilot),
             _dis
         ];
 
