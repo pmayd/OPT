@@ -24,7 +24,6 @@ _success = ["Helicopter", "GetIn", {
     (Since Arma 3 v1.36)
     turret: Array - turret path
     */
-    LOG_1("%1",_this);
     params ["_vec", "_pos", "_unit"];
 
     // speichere Pilot als Variable des Objekts Heli
@@ -36,7 +35,6 @@ _success = ["Helicopter", "GetIn", {
     _unit setVariable [QGVAR(transport_start_loc), getPosASL _vec];
             
 }] call CBA_fnc_addClassEventHandler;
-
 if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopters")};
 
 _success = ["Helicopter", "GetOut", {
@@ -46,10 +44,9 @@ _success = ["Helicopter", "GetOut", {
     unit: Object - Unit that left the vehicle
     turret: Array - turret path (since Arma 3 v1.36)
     */
-    LOG_1("%1",_this);
 
     // logge transport von Spielern, falls Spieler nicht Pilot und Strecke > 500m
     [QGVAR(transportDistance), _this] call CBA_fnc_serverEvent;
 
 }] call CBA_fnc_addClassEventHandler;
-if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopters")};
+if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetOut' for Helicopters")};

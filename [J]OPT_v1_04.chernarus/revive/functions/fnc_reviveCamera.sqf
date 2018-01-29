@@ -57,7 +57,7 @@ _cam camSetPos _destpos;
 _cam camCommit 1800;
 
 
-waitUntil {(player getVariable "FAR_isUnconscious") == 1};
+waitUntil {(player getVariable ["FAR_isUnconscious", 0]) == 1};
 closeDialog 0;
 waitUntil {!dialog};
 

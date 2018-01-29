@@ -174,7 +174,6 @@ registriert alle Events via CBA Event Handling
 /* T */
 // logge transport von Spielern, falls Spieler nicht Pilot und Strecke geflogen
 [QGVAR(transportDistance), {
-
     params ["_vec", "_pos", "_unit"];
 
     private _pilot = _vec getVariable [QGVAR(transport_pilot), objNull];
@@ -187,7 +186,7 @@ registriert alle Events via CBA Event Handling
 
     private _dis = (getPos _vec) distance2D (_unit getVariable QGVAR(transport_start_loc));
 
-    if ( _pos in ["cargo", "gunner"] and (_dis > GVAR(distanceToBase)) ) then {
+    if ( _pos in ["cargo", "gunner"] and (_dis > GVAR(distanceFromBase)) ) then {
 
         private _message = format[
             "%1 (%2) wurde von %3 (%4) eingeflogen (%5 m)", 

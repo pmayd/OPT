@@ -19,6 +19,9 @@ params ["_unit", "_killer"];
 
 if (_unit getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
 
+_unit setVariable ["FAR_isUnconscious", 1, true];
+
+
 if (isPlayer _unit) then {
 	disableUserInput true;
 };
@@ -71,7 +74,6 @@ _unit setUnconscious true;
 sleep 4;
 //_unit switchMove "AinjPpneMstpSnonWrflDnon";
 _unit enableSimulation false;
-_unit setVariable ["FAR_isUnconscious", 1, true];
 
 GVAR(bleedOut) = time + FAR_REVIVE_BLEEDOUT;
 
