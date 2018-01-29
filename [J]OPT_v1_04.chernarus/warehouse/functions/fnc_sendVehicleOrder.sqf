@@ -55,7 +55,7 @@ if (count _empty_pos == 0) exitWith {
 };
 
 [QEGVAR(common,updateBudget), [PLAYER_SIDE, _unitCost, "-"]] call CBA_fnc_serverEvent;
-[QGVAR(spawnVehicle), [_unitType, _spawnObj]] call CBA_fnc_serverEvent; // sheduled environment
+[QGVAR(spawnVehicle), [_unitType, _spawnObj, _empty_pos]] call CBA_fnc_serverEvent; // sheduled environment
 
 private _txt = format["%1 geliefert.",_displayName];
 [QEGVAR(gui,message), ["Bestellung", _txt, "green"]] call CBA_fnc_localEvent;

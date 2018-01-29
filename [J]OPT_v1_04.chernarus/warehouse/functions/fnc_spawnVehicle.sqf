@@ -5,6 +5,7 @@
 * Arguments:
 * 0: <type> description
 * 1: <OBJECT> object for spawn position
+* 2: <POSITION> empty position
 *
 * Return Value:
 * None
@@ -15,19 +16,21 @@
 */
 #include "script_component.hpp"
 
-params ["_vecType", "_spawnObj"];
+params ["_vecType", "_spawnObj", "_empty_pos"];
 
-// get spawnPos right
-private _spawnPos = if (typeName _spawnObj == "OBJECT") then {getPosATL _spawnObj} else {_spawnObj};
-
-private _vec = createVehicle [_vecType, _spawnPos, [], 0, "NONE"];
-_vec allowDamage false; // avoid any damage during spawn process
+/* security check
+spawn vehicle somewhere in the air
+stop physics and damage calculation
+move vehicle to free position
+*/
+private _vec = createVehicle [_vecType, [0,0, 1000 + random(500)], [], 0, "NONE"];
+_vec enableSimulationGlobal false;
+_vec allowDamage  false; // avoid any damage during spawn process
+_vec setPosATL _empty_pos;
 
 if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};
-if (surfaceIsWater _spawnPos) then {
+if (surfaceIsWater _empty_pos) then {
 	_vec setPosASL ((getPosASL _vec) set [2, 0]);
-} else {
-	_vec setPosATL (getPosATL _vec vectorAdd [0,0,0]);
 };
 
 //datalink-test-eintrag, kallek
@@ -56,10 +59,7 @@ if (_vecType in (_uavs + GVARMAIN(big_uavs))) then {
 	_vec setSkill 0.8;
 };
 
-GVAR(damageEH) = _vec addEventHandler ["GetIn", {
-	params ["_vehicle", "_pos", "_unit", "_turret"];
-
-	[_vehicle, true] remoteExec ["allowDamage", _vehicle, false];
-	_vehicle removeEventHandler ["GetIn", GVAR(damageEH)];
-
-}];
+waitUntil { speed _vec == 0; };
+_vec enableSimulationGlobal true;
+_vec setDamage 0;
+_vec allowDamage true;
