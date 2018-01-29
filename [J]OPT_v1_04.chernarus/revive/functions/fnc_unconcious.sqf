@@ -21,7 +21,6 @@ if (_unit getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
 
 _unit setVariable ["FAR_isUnconscious", 1, true];
 
-
 if (isPlayer _unit) then {
 	disableUserInput true;
 };
