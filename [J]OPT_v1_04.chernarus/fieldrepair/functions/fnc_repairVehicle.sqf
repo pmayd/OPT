@@ -46,8 +46,9 @@ private _maxlength = (_veh getVariable [QGVAR(longrepair), [_veh] call FUNC(getP
 private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 
 // was vehicle already repaired?
+private _startTime = time;
 if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
-    _maxlength = (_maxlength - _veh getVariable QGVAR(repTimeLeft)) min 10; // reduce max length
+    _maxlength = (_veh getVariable QGVAR(repTimeLeft)) max 10; // reduce max length
 };
 
 /*		
@@ -62,7 +63,7 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
 */
 [
 	_maxlength,
-	[_veh],
+	[_veh, _startTime, _maxlength],
 	{
 		(_this select 0) params ["_veh"];
 
@@ -74,9 +75,11 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
 		_veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
 		_veh setVariable [QGVAR(repTimeLeft), 0, true];
 	},
-	{
+	{   
+        (_this select 0) params ["_veh", "_startTime", "_maxlength"];
+
 		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
-        _veh setVariable [QGVAR(repTimeLeft), _maxlengtht - (time - _startTime), true];
+        _veh setVariable [QGVAR(repTimeLeft), _maxlength - (time - _startTime), true];
 	},
 	format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],
 	{
