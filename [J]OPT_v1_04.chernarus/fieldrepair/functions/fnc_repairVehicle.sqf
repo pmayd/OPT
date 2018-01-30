@@ -29,8 +29,7 @@ if (not alive player or (player distance _veh) > 7 or (vehicle player != player)
 };
 
 // if player has no tool kit or vehicle was repaired more often than free repair
-private _hasTK = [_veh] call FUNC(hasTK);
-if !(_hasTK) exitWith {
+if (!(typeOf player in GVARMAIN(pioniers)) and (_veh getVariable [QGVAR(longRepairTimes), 0] > 0)) exitWith {
 	[QEGVAR(gui,message), ["Feldreparatur", STR_NEED_TOOLKIT, "red"]] call CBA_fnc_localEvent;
 };
 
@@ -43,7 +42,7 @@ private _lastPlayerState = animationState player;
 // player playActionNow "medicStartRightSide";
 player playMove "Acts_carFixingWheel";
 sleep 0.5;
-private _maxlength = _veh getVariable [QGVAR(longrepair), [_veh] call FUNC(getPartsRepairTime)];
+private _maxlength = (_veh getVariable [QGVAR(longrepair), [_veh] call FUNC(getPartsRepairTime)]) max DEFAULT_FIELDREPAIR_MAX_REP_TIME;
 private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 
 /*		
@@ -67,10 +66,6 @@ private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "dis
 
 		[_veh] remoteExec [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
 
-		//if (_hastk == 1) then {player removeItem "ToolKit";};
-		if (itemCargo _veh find "ToolKit" != -1) then { 
-			["ToolKit", _veh] call FUNC(removeItemFromCargo);
-		};
 		_veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
 		
 	},

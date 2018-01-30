@@ -32,7 +32,7 @@ player addEventHandler ["GetInMan", {
         turret: Array - turret path
     */
     params ["_unit", "_pos", "_vec", "_turret"];
-    
+
     if (OPT_PARAM_ONLY_PILOTS) then {
         if (!(typeOf _unit in GVARMAIN(pilots))) then {
             if (_vec isKindOf "Air" && _pos in EGVAR(warehouse,blockedVehiclePositions)) then {

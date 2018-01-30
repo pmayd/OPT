@@ -103,7 +103,6 @@ GVARMAIN(crew_vecs) = [
 
 
 /* AT-Schützen UND LAUNCHER */
-
 GVARMAIN(rocketmen) = [
 	"OPT_NATO_Luftabwehrspezialist",
 	"OPT_CSAT_Luftabwehrspezialist",
@@ -132,7 +131,6 @@ GVARMAIN(launchers) = [
 ];
 
 /* OPERATOR */
-
 GVARMAIN(operator) = [
 	"OPT_NATO_Operator_T",
 	"OPT_CSAT_Operator_T",
@@ -141,7 +139,6 @@ GVARMAIN(operator) = [
 ];
 
 /* MEDIC */
-
 GVARMAIN(medic) = [
 	"OPT_NATO_Sanitaeter_T",
 	"OPT_CSAT_Sanitaeter_T",
@@ -166,7 +163,6 @@ GVARMAIN(snipers) = [
 ];
 
 /* MG */
-
 GVARMAIN(soldatMG) = [
 	"OPT_CSAT_MG_Schuetze_T",
 	"OPT_NATO_MG_Schuetze_T",
@@ -179,7 +175,6 @@ GVARMAIN(soldatMG) = [
 ];
 
 /* GRENADIER */
-
 GVARMAIN(grenadiers) = [
 	"OPT_CSAT_Grenadier_T",
 	"OPT_NATO_Grenadier_T",
@@ -191,7 +186,6 @@ GVARMAIN(grenadiers) = [
 ];
 
 /* PIONIER */
-
 GVARMAIN(pioniers) = [
 	"OPT_NATO_Pionier_T",
 	"OPT_CSAT_Pionier_T",

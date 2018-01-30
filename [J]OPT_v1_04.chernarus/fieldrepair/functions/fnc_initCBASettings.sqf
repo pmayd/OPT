@@ -19,7 +19,7 @@
     "SLIDER", // setting type
     "Zeit für die Reparatur normaler Teile", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Feldreparatur", // Pretty name of the category where the setting can be found. Can be stringtable entry.
-    [10, 60, 30, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
+    [10, 60, 15, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
@@ -29,7 +29,17 @@
     "SLIDER", // setting type
     "Zeit für die Reparatur schwerer Teile", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Feldreparatur", // Pretty name of the category where the setting can be found. Can be stringtable entry.
-    [10, 120, 60, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
+    [10, 120, 30, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_Settings_fnc_init;
+
+[
+   "DEFAULT_FIELDREPAIR_MAX_REP_TIME", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Max. Zeit für die Reparatur", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "OPT Feldreparatur", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [60, 600, 240, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;

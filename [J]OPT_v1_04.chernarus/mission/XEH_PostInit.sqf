@@ -18,6 +18,6 @@ GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     */
 
     [] call FUNC(initPlayerMissionEH); // lädt alle EH  
-    [] call FUNC(initMissionEH);
+    [] call FUNC(initPlayerEH);
     [] call FUNC(postInit); // führt alle wichtigen Skripte aus
 }];
