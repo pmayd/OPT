@@ -42,7 +42,7 @@ private _lastPlayerState = animationState player;
 // player playActionNow "medicStartRightSide";
 player playMove "Acts_carFixingWheel";
 sleep 0.5;
-private _maxlength = (_veh getVariable [QGVAR(longrepair), [_veh] call FUNC(getPartsRepairTime)]) max DEFAULT_FIELDREPAIR_MAX_REP_TIME;
+private _maxlength = (_veh getVariable [QGVAR(longrepair), [_veh] call FUNC(getPartsRepairTime)]) min DEFAULT_FIELDREPAIR_MAX_REP_TIME;
 private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 
 // was vehicle already repaired?
