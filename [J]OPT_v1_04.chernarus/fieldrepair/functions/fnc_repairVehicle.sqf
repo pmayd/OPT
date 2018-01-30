@@ -45,6 +45,11 @@ sleep 0.5;
 private _maxlength = (_veh getVariable [QGVAR(longrepair), [_veh] call FUNC(getPartsRepairTime)]) max DEFAULT_FIELDREPAIR_MAX_REP_TIME;
 private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 
+// was vehicle already repaired?
+if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
+    _maxlength = (_maxlength - _veh getVariable QGVAR(repTimeLeft)) min 10; // reduce max length
+};
+
 /*		
 	* Arguments:
 	* 0: Total Time (in game "time" seconds) <NUMBER>
@@ -67,16 +72,17 @@ private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "dis
 		[_veh] remoteExec [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
 
 		_veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
-		
+		_veh setVariable [QGVAR(repTimeLeft), 0, true];
 	},
 	{
 		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
+        _veh setVariable [QGVAR(repTimeLeft), _maxlengtht - (time - _startTime), true];
 	},
 	format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],
 	{
 		(_this select 0) params ["_veh"];
 		alive player and (player distance _veh) < 7 and 
-		player getVariable ["FAR_isUnconscious", 0] == 0 and // behebt Fehler, dass bewusstlose Soldaten weiter reparieren // TODO:
+		player getVariable ["FAR_isUnconscious", 0] == 0 and
 		isNull objectParent player and 
 		speed _veh < 3
 	}
