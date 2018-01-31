@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2229;
+		nextID=2497;
 	};
 	class Camera
 	{
-		pos[]={4791.874,136.18607,2343.3806};
-		dir[]={0.036825802,-0.59276372,0.80453402};
-		up[]={0.02710448,0.80537647,0.59214377};
-		aside[]={0.99895418,-3.0733645e-007,-0.045725189};
+		pos[]={14177.322,27.241896,12218.34};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -11349,7 +11349,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this allowDamage false;  this addAction [""Beam-System benutzen"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+								init="call{this allowDamage false;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
 							};
 							id=361;
 							type="Flag_CSAT_F";
@@ -12912,17 +12912,16 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14186.999,5.9756618,12250.798};
+						position[]={14187,5.9755716,12250.798};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
-						init="call{this addAction [""Teleport zu Hauptbasis"", ""addons\base_teleport\teleport_csat_basis_1.sqf"", false, 5, false, true, """"]; }";
+						init="call{this allowDamage false;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
 					};
 					id=413;
 					type="Flag_CSAT_F";
-					atlOffset=5.3286552e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -12952,8 +12951,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14182.087,2.1730125,12250.548};
-						angles[]={0,3.9713647,0};
+						position[]={14182.087,2.1729593,12250.548};
+						angles[]={0,3.9713571,0};
 					};
 					side="Empty";
 					class Attributes
@@ -12963,7 +12962,7 @@ class Mission
 					};
 					id=414;
 					type="Land_HelipadEmpty_F";
-					atlOffset=5.3405762e-005;
+					atlOffset=2.3841858e-007;
 				};
 				class Item4
 				{
@@ -13037,7 +13036,7 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=12.077141;
+			atlOffset=12.077217;
 		};
 		class Item18
 		{
@@ -17241,7 +17240,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this allowDamage false;  this addAction [""Beam-System benutzen"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+								init="call{this allowDamage false;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
 							};
 							id=489;
 							type="Flag_NATO_F";
@@ -19656,7 +19655,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="call{this addAction [""Teleport zur Hauptbasis"", ""addons\base_teleport\teleport_nato_basis_1.sqf"", false, 5, false, true, """"];}";
+						init="call{this allowDamage false;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
 					};
 					id=552;
 					type="Flag_NATO_F";

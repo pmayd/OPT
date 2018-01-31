@@ -23,12 +23,6 @@ private _display = findDisplay IDD_DLG_BEAM;
 private _lb = _display displayCtrl IDC_CTRL_LIST_BOX;
 
 //Zeitabgelaufen check
-if (GVARMAIN(missionStarted)) exitWith { 
-	closeDialog 0;
-
-	[QEGVAR(gui,message), ["Beamsystem", "Das System steht nur während der Waffenruhe zur Verfügung!", "red"]] call CBA_fnc_localEvent;
-};
-
 private _orte = [];
 if (PLAYER_SIDE == east) then { 
 	_orte = GVAR(locations_east); 
@@ -37,8 +31,13 @@ if (PLAYER_SIDE == east) then {
 	_orte = GVAR(locations_west);
 
 };
-		
-GVAR(box) = _orte select {(_x select 2) > 0}; // only locations with level greater 0 (0,1,2,3 possible)
+
+// nach Waffenruhe nur noch Orte mit -1
+if (GVARMAIN(missionStarted)) then {
+    GVAR(box) = _orte select {(_x select 2) == -1}; // only locations with level greater 0 (0,1,2,3 possible)
+} else {
+    GVAR(box) = _orte select {(_x select 2) != 0}; // only locations with level greater 0 (0,1,2,3 possible)
+};
 
 //Boxen mit Orte füllen
 {

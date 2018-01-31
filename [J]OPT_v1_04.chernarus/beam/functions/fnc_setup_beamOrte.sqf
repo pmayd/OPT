@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 // Position=[0, 0, 0]
 // Name = "ABC"
-// Stufe = 0-1-2 // 0 Nicht Wählbar,  1 Inf,  2 inf + leichte Fahrzeuge,  3 inf + Schwere Fahrzeuge
+// Stufe = -1-0-1-2 // -1 nach Waffenruhe wählbar, 0 Nicht Wählbar,  1 Inf,  2 inf + leichte Fahrzeuge,  3 inf + Schwere Fahrzeuge
 //
 // Bsp [[Position], Name, Stufe], 
 
@@ -23,6 +23,8 @@
 //West
 GVAR(locations_west) =
 [
+    [[4713.8179, 8.9878902, 2573.408], "NATO Basis", -1],
+    [[4327.6089, 3.145803, 2154.875], "NATO Marinebasis", -1],
 	[[11989.029, 10.129433, 3529.2573], "Kamyshovo-Zentrum", 0], 
 	[[12465.595, 6.8708162, 3336.8975], "Kamyshovo-Insel", 0], 
 	[[13360.739, 15.423439, 2758.8049], "Kamyshovo-Skalisty Dorf", 0], 
@@ -80,6 +82,8 @@ GVAR(locations_west) =
 //East
 GVAR(locations_east) =
 [
+    [[12097.098, 158.91089, 12648.875], "CSAT Basis", -1],
+    [[14182.087, 2.1730125, 12250.548], "CSAT Marinebasis", -1],
 	[[12788.279, 9.9679699, 9531.6094], "Berezino-Sägewerk", 0], 
 	[[12383.195, 16.064194, 9438.915], "Berezino-Vorort", 0], 
 	[[12177.619, 16.071527, 9803.8301], "Berezino-Militär", 0], 
