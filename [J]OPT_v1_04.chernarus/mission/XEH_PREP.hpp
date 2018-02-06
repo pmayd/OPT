@@ -6,7 +6,6 @@ PREP(earplugs);
 PREP(initCBAEvents);
 PREP(initCBASettings);
 PREP(initPlayerEH);
-PREP(initPlayerMissionEH);
 PREP(initServerMissionEH);
 PREP(intro);
 PREP(postInit);

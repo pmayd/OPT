@@ -15,14 +15,14 @@
 #include "script_component.hpp"
 
 // update marker as long as map is open (works for uav stations as well)
-GVAR(eh_onEachFrame) = addMissionEventHandler ["EachFrame", {
+GVAR(EH_EachFrame) = addMissionEventHandler ["EachFrame", {
     [] call FUNC(updateMarker);
 
 }];
 
 // delete old marker if unit disconnects
 if (isServer) then {
-    GVAR(eh_PlayerDisconnected) = addMissionEventHandler ["PlayerDisconnected", {
+    GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["PlayerDisconnected", {
         /*
             id: Number - unique DirectPlay ID (very large number). It is also the same id used for user placed markers (same as _id param)
             uid: String - getPlayerUID of the leaving client. The same as Steam ID (same as _uid param)

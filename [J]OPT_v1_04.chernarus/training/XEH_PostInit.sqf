@@ -11,6 +11,10 @@ if (OPT_PARAM_TRAINING) then {
 	GVARMAIN(csat_budget) = parseNumber GVAR(budget);
 };
 
+if (isServer) then {
+    [] call FUNC(initServerMissionEH);
+};
+
 // executed after briefing right to mission start
 GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     /*  	

@@ -30,3 +30,19 @@ GVAR(EH_PlayerConnected) = addMissionEventHandler ["PlayerConnected", {
     };
 
 }];
+
+GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
+    params ["_newEntity", "_oldEntity"];
+
+    // respawn costs
+    if !(_oldEntity isEqualTo objNull) then {
+        
+        // Kosten für Seite abziehen + log
+        private _cost = [] call FUNC(respawnCost);
+
+	    [QEGVAR(common,updateBudget), [UNIT_SIDE(_newEntity), _cost, "-"]] call CBA_fnc_localEvent;
+        [QEGVAR(log,write), ["Respawn", format["Spieler: %1 - Kosten: %2", UNIT_NAME(_newEntity), _cost]]] call CBA_fnc_localEvent;
+
+    };
+
+}];

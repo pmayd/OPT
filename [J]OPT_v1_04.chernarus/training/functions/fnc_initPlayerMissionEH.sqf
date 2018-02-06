@@ -27,11 +27,4 @@ if (OPT_PARAM_TELEPORT and OPT_PARAM_TRAINING) then {
         "alive _target and _target == player and OPT_PARAM_TRAINING"
     ];
 
-    addMissionEventHandler ["EntityRespawned", {
-        params ["_newEntity", "_oldEntity"];
-
-        _newEntity addAction [TRAINING_ACTION_TELEPORT call XGreyText, {[] call FUNC(teleport)}, [], 0, false, true, '', "alive _target and _target == player and OPT_PARAM_TRAINING"];
-        _newEntity addAction [TRAINING_ACTION_FLAG call XGreyText, {createDialog QGVAR(dlg_flag)}, [], 0, false, true, '', "alive _target and _target == player and OPT_PARAM_TRAINING"];
-    }];
-
 };
