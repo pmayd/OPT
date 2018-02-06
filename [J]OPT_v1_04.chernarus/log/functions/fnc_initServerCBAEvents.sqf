@@ -41,8 +41,6 @@ registriert alle Events via CBA Event Handling
 
     private _side = UNIT_SIDE(_unit);
 
-    private _owner = _flag getVariable ["owner", nil];
-
     // log player
     private _message = "";
 
@@ -50,7 +48,7 @@ registriert alle Events via CBA Event Handling
 
     switch (_side) do {
         case west: {
-            if (_owner isEqualTo west) then {
+            if (_flag in GVARMAIN(nato_flags)) then {
                 _message = format ["NATO Flagge gesichert von %1", _name];
             } else {
                 _message = format ["CSAT Flagge erobert von %1", _name];
@@ -58,7 +56,7 @@ registriert alle Events via CBA Event Handling
         };
 
         case east: {
-            if (_owner isEqualTo east) then {
+            if (_flag in GVARMAIN(csat_flags)) then {
                 _message = format ["CSAT Flagge gesichert von %1", _name];
             } else {
                 _message = format ["NATO Flagge erobert von %1", _name];

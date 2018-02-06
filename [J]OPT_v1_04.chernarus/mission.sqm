@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2497;
+		nextID=2564;
 	};
 	class Camera
 	{
 		pos[]={14177.322,27.241896,12218.34};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -12846,7 +12846,7 @@ class Mission
 					};
 					id=411;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.20082903;
+					atlOffset=-0.074218392;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -12922,6 +12922,7 @@ class Mission
 					};
 					id=413;
 					type="Flag_CSAT_F";
+					atlOffset=-1.1920929e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13036,7 +13037,7 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=12.077217;
+			atlOffset=12.072701;
 		};
 		class Item18
 		{
@@ -19556,6 +19557,7 @@ class Mission
 						angles[]={0,3.6354651,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -19564,7 +19566,7 @@ class Mission
 					};
 					id=549;
 					type="Land_InfoStand_V1_F";
-					atlOffset=11.09559;
+					atlOffset=0.0012164116;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -19772,7 +19774,7 @@ class Mission
 				};
 			};
 			id=548;
-			atlOffset=37.851257;
+			atlOffset=37.851269;
 		};
 		class Item20
 		{
