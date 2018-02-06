@@ -28,7 +28,7 @@ _success = ["Helicopter", "GetIn", {
 
     // speichere Pilot als Variable des Objekts Heli
     if (_pos isEqualTo "driver") then {
-        _vec setVariable [QGVAR(transport_pilot), _unit, true];
+        _vec setVariable [QGVAR(transport_pilot), _unit];
     };
 
     // speichere aktuellen Ort an der Einheit
@@ -46,7 +46,7 @@ _success = ["Helicopter", "GetOut", {
     */
 
     // logge transport von Spielern, falls Spieler nicht Pilot und Strecke > 500m
-    [QGVAR(transportDistance), _this] call CBA_fnc_serverEvent;
+    [QGVAR(transportDistance), _this] call CBA_fnc_localEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetOut' for Helicopters")};
