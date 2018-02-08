@@ -6,7 +6,7 @@
 * 0: <OBJECT> unit that called the action
 *
 * Return Value:
-* None
+* 0: <BOOL> true - caller can commit suicide, false - otherwise
 *
 * Example:
 * [player] call fnc_checkSuizide.sqf;

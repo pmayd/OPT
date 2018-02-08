@@ -85,6 +85,26 @@
 ] call CBA_Settings_fnc_init;
 
 [
+    "FAR_REVIVE_FIRST_AID_TIME", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Dauer der Eigenversorgung", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [10, 60, 30, 0], // [min, max, default, decimal]
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_Settings_fnc_init;
+
+[
+    "FAR_REVIVE_FIRST_AID_MIN_DAMAGE", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Minimalschaden, ab dem Behandlung möglich wird", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [0, 1, 0.15, 1], // [min, max, default, decimal]
+    1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_Settings_fnc_init;
+
+[
     "FAR_REVIVE_MODE", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "LIST", // setting type
     "Wer kann wiederbeleben?", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.

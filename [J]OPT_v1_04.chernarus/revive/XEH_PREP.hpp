@@ -1,5 +1,6 @@
 
 PREP(checkDragging);
+PREP(checkFirstAid);
 PREP(checkForNearbyMedics);
 PREP(checkRevive);
 PREP(checkStabilize);
@@ -9,6 +10,7 @@ PREP(createMarker);
 PREP(drag);
 PREP(handleAction);
 PREP(handleDamage);
+PREP(handleFirstAid);
 PREP(handleRevive);
 PREP(handleStabilize);
 PREP(initCBAClassEvents);

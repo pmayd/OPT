@@ -25,8 +25,11 @@ switch (_action) do {
 	case "action_revive": {
 		[_target, _caller] spawn FUNC(handleRevive);
 	};
+    case "action_first_aid": {
+		[_caller] spawn FUNC(handleFirstAid);
+	};
 	case "action_stabilize": {
-		[_target, _caller] spawn FUNC(handleStabilize); // TODO:
+		[_target, _caller] spawn FUNC(handleStabilize);
 	};
 	case "action_suicide": {
 		_caller setDamage 1;

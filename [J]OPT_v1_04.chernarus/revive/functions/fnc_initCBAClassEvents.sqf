@@ -47,6 +47,23 @@
         }
     ] call ace_interact_menu_fnc_createAction;
 
+     _action_first_aid = [
+        "OPT_REVIVE_REVIVE",
+        FAR_REVIVE_ACTION_FIRST_AID,
+        "",
+        {
+            params ["_target", "_player", "_params"]; 
+
+            [_target, _player, "action_first_aid"] call FUNC(handleAction);
+        },
+        {
+            params ["_target", "_player", "_params"];
+
+            [_player] call FUNC(checkFirstAid);
+        }
+    ] call ace_interact_menu_fnc_createAction;
+
+
     _action_stabilize = [
         "OPT_REVIVE_STABILIZE",
         FAR_REVIVE_ACTION_STABILIZE,
@@ -94,5 +111,12 @@
             _x
         ] call ace_interact_menu_fnc_addActionToObject;
     } forEach [_action_revive, _action_stabilize, _action_drag];
+
+    [
+        _unit,
+        1,
+        ["ACE_SelfActions"],
+        _action_first_aid
+    ] call ace_interact_menu_fnc_addActionToObject;
 
 }] call CBA_fnc_addClassEventHandler;

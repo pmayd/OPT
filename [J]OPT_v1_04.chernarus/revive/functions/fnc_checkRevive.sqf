@@ -7,7 +7,7 @@
 * 1: <OBJECT> unit that called the add action
 *
 * Return Value:
-* None
+* 0: <BOOL> true - patient can be revived, false - otherwise
 *
 * Example:
 * [cursorObject, player] call fnc_checkRevive.sqf;

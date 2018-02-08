@@ -85,8 +85,11 @@ sleep 1;
 
         //_patient setDamage 0.25; -> has to be argument local 
         _patient setDammage 0.25;
-        ["legs", 0.5] remoteExec ["setHit", _patient, false];
-        ["hands", 0.5] remoteExec ["setHit", _patient, false];
+        [_patient, ["legs", 0.5]] remoteExec ["setHit", _patient, false];
+        [_patient, ["hands", 0.5]] remoteExec ["setHit", _patient, false];
+
+        // reset first aid multiplicator
+        _patient setVariable ["FAR_firstAidMultiplicator", 0, true];
 				
 		_patient setVariable ["FAR_isUnconscious", 0, true];
 		_patient setVariable ["FAR_isDragged", 0, true];
