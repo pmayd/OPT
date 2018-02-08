@@ -26,28 +26,6 @@ FAR_healerStopped = false;
 _healer selectWeapon primaryWeapon _healer;
 sleep 1;
 _healer playAction "medicStart";
-FAR_animDelay = time + 2;
-
-private "_animChangeEVH";
-if (isPlayer _healer) then {
-	_animChangeEVH = _healer addEventhandler ["AnimChanged", {
-		params ["_healer", "_anim"];
-
-		// Wenn Spieler zu Waffe greift -> beende Animation und Vorgang
-		if (primaryWeapon _healer != "") then {
-			if (time >= FAR_animDelay) then {FAR_healerStopped = true};
-		} else {
-			if (_anim in ["amovpknlmstpsnonwnondnon","amovpknlmstpsraswlnrdnon"]) then {
-				_healer playAction "medicStart";
-			} else {
-				if (!(_anim in ["ainvpknlmstpsnonwnondnon_medic0s","ainvpknlmstpsnonwnondnon_medic"])) then {
-					if (time >= FAR_animDelay) then {FAR_healerStopped = true};
-				};
-			};
-		};	
-	}];
-};
-
 
 private _offset = [0,0,0]; 
 _dir = 0;
@@ -146,7 +124,6 @@ sleep 1;
 
 _patient setVariable ["FAR_healer", objNull, true]; // bugfix: reset FAR_healer in every case!
 
-if (isPlayer _healer) then {_healer removeEventHandler ["AnimChanged", _animChangeEVH]};
 detach _healer;
 detach _patient;
 

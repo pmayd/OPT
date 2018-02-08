@@ -125,7 +125,6 @@ if (FAR_REVIVE_BLEEDOUT > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["F
 	
 	_unit enableSimulation true;
 	_unit allowDamage true;
-	_unit setDamage 0.6;
 	_unit setFatigue 0.9;
 	//_unit playMove "amovppnemstpsraswrfldnon";
 	//_unit playMove "";

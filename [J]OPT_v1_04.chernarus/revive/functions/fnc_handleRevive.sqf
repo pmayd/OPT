@@ -19,20 +19,18 @@ params ["_patient", "_healer"];
 
 if (_healer getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
 
+// check if patient is stabilized
+if (_patient getVariable ["FAR_isStabilized", 0] == 0) then {
+    [QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_NOT_STABILIZED, "yellow"]] call CBA_fnc_localEvent;
+    [_patient, _healer] call FUNC(handleStabilize);
+};
+
 _patient setVariable ["FAR_healer", _healer, true];
 FAR_healerStopped = false;
 
 _healer selectWeapon primaryWeapon _healer;
 sleep 1;
-_healer playAction "medicStart";
-
-private _animChangeEVH = _healer addEventhandler ["AnimChanged", {
-    params ["_healer", "_anim"];
-
-    if (!(_anim in ["ainvpknlmstpsnonwnondnon_medic0s","ainvpknlmstpsnonwnondnon_medic", "ainvpknlmstpsnonwrfldnon_medic0s", "ainvpknlmstpsnonwrfldnon_ainvpknlmstpsnonwrfldnon_medic"])) then {
-        _healer playActionNow "medicStart";
-    };
-}];
+_healer playAction "medicStart"; // endless loop until we call "medicStop"
 
 private _offset = [0,0,0]; 
 private _dir = 0;
@@ -82,25 +80,11 @@ sleep 1;
 		(_this select 0) params ["_healer", "_patient"];
 
 		private _isMedic = _healer call FUNC(isMedic);
-		private _healed = switch (true) do {
-			case (_isMedic && {(items _healer) find "Medikit" > -1}): {
-				0.05
-			};
-			case (_isMedic && {(items _healer) find "FirstAidKit" >= 0}): {
-				_healer removeItem "FirstAidKit";
-				0.25
-			};
-			case (!_isMedic && {(items _healer) find "FirstAidKit" >= 0}): {
-				_healer removeItem "FirstAidKit"; 
-				_patient setHit ["hands", 0.9]; 
-				0.4
-			};
-			default {
-				_patient setHit ["legs", 0.4]; 
-				_patient setHit ["hands", 0.9]; 
-				0.6
-			};
-		};
+
+        _patient setDamage 0.25;
+        _patient setHit ["legs", 0.5]; 
+        _patient setHit ["hands", 0.5]; 
+
 				
 		_patient setVariable ["FAR_isUnconscious", 0, true];
 		_patient setVariable ["FAR_isDragged", 0, true];
@@ -134,7 +118,6 @@ sleep 1;
             [QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_REVIVE_CANCLED, "red"]] call CBA_fnc_localEvent;
         };
 
-
 	},
 	format[FAR_REVIVE_ACTION_REVIVE_BAR_TEXT, _damage],
 	{
@@ -148,7 +131,6 @@ sleep 1;
 		// -> aktualisiere Fortschrittsbalken
 		alive _healer and
 		alive _patient and
-		(_healer distance _patient) < 2 and
 		_healer getVariable "FAR_isUnconscious" == 0 and
 		!FAR_healerStopped
 
@@ -156,8 +138,6 @@ sleep 1;
 ] call ace_common_fnc_progressBar;
 
 _patient setVariable ["FAR_healer", objNull, true]; 
-
-_healer removeEventHandler ["AnimChanged", _animChangeEVH];
 
 detach _healer;
 detach _patient;	
