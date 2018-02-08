@@ -83,10 +83,10 @@ sleep 1;
 
 		private _isMedic = _healer call FUNC(isMedic);
 
-        _patient setDamage 0.25;
-        _patient setHit ["legs", 0.5]; 
-        _patient setHit ["hands", 0.5]; 
-
+        //_patient setDamage 0.25; -> has to be argument local 
+        _patient setDammage 0.25;
+        ["legs", 0.5] remoteExec ["setHit", _patient, false];
+        ["hands", 0.5] remoteExec ["setHit", _patient, false];
 				
 		_patient setVariable ["FAR_isUnconscious", 0, true];
 		_patient setVariable ["FAR_isDragged", 0, true];
