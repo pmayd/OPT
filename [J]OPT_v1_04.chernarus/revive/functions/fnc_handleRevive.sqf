@@ -23,6 +23,8 @@ if (_healer getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
 if (_patient getVariable ["FAR_isStabilized", 0] == 0) then {
     [QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_NOT_STABILIZED, "yellow"]] call CBA_fnc_localEvent;
     [_patient, _healer] call FUNC(handleStabilize);
+
+    waitUntil { _patient getVariable "FAR_isStabilized" == 1; };
 };
 
 _patient setVariable ["FAR_healer", _healer, true];
