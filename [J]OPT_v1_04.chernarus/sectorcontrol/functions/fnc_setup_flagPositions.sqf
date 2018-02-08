@@ -14,7 +14,7 @@ GVARMAIN(nato_flags_pos) = [
 	   
 //	   [11242, 4281, west], // Staroye - Rog-Burg
 //	   [10126, 5491, west], // Staroye - Zentrum
-	   [8376, 5962, west] // Staroye - Ruinenstadt Kumyrna
+//	   [8376, 5962, west], // Staroye - Ruinenstadt Kumyrna
 	   
 //	   [8442, 6682, west], // Guglovo - Zentrum
 //	   [7778, 6888, west], // Guglovo - Farm
@@ -50,7 +50,7 @@ GVARMAIN(nato_flags_pos) = [
 	   
 //	   [4766, 6807, west], // Rogovo - Zentrum
 //	   [4495, 6477, west], // Rogovo - Pogorevka
-//	   [3126, 7954, west], // Rogovo - Pustoshka
+	   [3126, 7954, west] // Rogovo - Pustoshka
 	   
 //	   [3699, 5986, west], // Pass Sosnovy - Green Mountain
 //	   [3005, 6734, west], // Pass Sosnovy - Farm
@@ -108,11 +108,11 @@ GVARMAIN(csat_flags_pos) = [
 	   
 //	   [11192, 6572, east], // Shakovka - Vorort
 //	   [9577, 6571, east], // Shakovka - Zentrum
-	   [9023, 7828, east] // Shakovka - Militär (muss gebaut werden!)
+//	   [9023, 7828, east], // Shakovka - Militär (muss gebaut werden!)
 	   	   
 //	   [7205, 9059, east], // Grishino - Farm (muss gebaut werden!)
 //	   [5945, 10347, east], // Grishino - Zentrum
-//	   [5437, 11088, east], // Grishino - Militär (muss gebaut werden!)
+	   [5437, 11088, east] // Grishino - Militär (muss gebaut werden!)
 	   
 //	   [4975, 12512, east], // Petrovka - Zentrum
 //	   [4004, 11659, east], // Petrovka - Militär (muss gebaut werden!)

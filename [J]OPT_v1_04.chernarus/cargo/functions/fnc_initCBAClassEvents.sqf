@@ -92,7 +92,7 @@
     // set drag and carry flags
     private _index = (GVAR(canBeDragged) apply {toLower (_x select 0)}) find toLower _type;
 	if (_index != -1) then {
-        (GVAR(canBeDragged) select _index) params ["_class", ["_offset", [0, 1, 0.1]], ["_dir", 0]];
+        (GVAR(canBeDragged) select _index) params ["_class", ["_offset", [0, 3, 0.2]], ["_dir", 0]];
 
         [_item, true, _offset, _dir] call ace_dragging_fnc_setDraggable;
 
@@ -103,7 +103,7 @@
 
     private _index = (GVAR(canBeCarried) apply {toLower (_x select 0)}) find toLower _type;
 	if (_index != -1) then {
-        (GVAR(canBeCarried) select _index) params ["_class", ["_offset", [0, 1, 0.1]], ["_dir", 0]];
+        (GVAR(canBeCarried) select _index) params ["_class", ["_offset", [0, 5, 0.2]], ["_dir", 0]];
         
         [_item, true, _offset, _dir] call ace_dragging_fnc_setCarryable;
 
