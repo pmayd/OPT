@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=554;
+	toggles=682;
 	class ItemIDProvider
 	{
 		nextID=3893;

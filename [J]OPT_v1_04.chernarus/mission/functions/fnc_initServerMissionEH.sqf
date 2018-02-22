@@ -34,6 +34,10 @@ GVAR(EH_PlayerConnected) = addMissionEventHandler ["PlayerConnected", {
 GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
     params ["_newEntity", "_oldEntity"];
 
+    {
+        _x addCuratorEditableObjects [[_newEntity] - [zeus_ziv1, zeus_ziv2, zeus_ziv3], false];
+    } forEach [zeus_ziv1, zeus_ziv2, zeus_ziv3];
+
     // respawn costs
     if !(_oldEntity isEqualTo objNull) then {
         
