@@ -89,7 +89,7 @@
 
 }] call CBA_fnc_addEventHandler;
 
-[QVAR(addToCurator), {
+[QGVAR(addToCurator), {
     params ["_unit"];
 
     {

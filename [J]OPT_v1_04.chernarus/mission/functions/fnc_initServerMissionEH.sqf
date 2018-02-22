@@ -38,7 +38,7 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
     if !(_oldEntity isEqualTo objNull) then {
 
         // add to zeus
-        [QEGVAR(common,addToCurator), [player]] call CBA_fnc_serverEvent;
+        [QEGVAR(common,addToCurator), [_newEntity]] call CBA_fnc_serverEvent;
         
         // Kosten für Seite abziehen + log
         private _cost = [] call FUNC(respawnCost);
