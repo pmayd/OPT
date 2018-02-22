@@ -15,8 +15,7 @@
 */
 #include "script_component.hpp"
 
-if (GVAR(containerEast) getVariable ["RADAREASTaufgebaut", false]) then
-{
+if (GVAR(containerEast) getVariable ["RADAREASTaufgebaut", false]) then {
 	GVAR(containerEast) setVariable ["RADAREASTaufgebaut", false, true];
 	deleteVehicle Radarturmeast;
 	deleteVehicle Radarnetzeast;		

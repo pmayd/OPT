@@ -24,6 +24,8 @@
 - Feature: Neue Möglichkeit der Erstversorgung für alle Einheiten über ACE Eigenmenü. Beginnt bei 15% Schaden (CBA Settings) und wird mit jedem Heilvorgang schlechter (CBA Settings)
 - neue Komponente marker: Versieht Kartenmarker mit automatische Zeitstempel
 - Bugfix: missionEH muss bei jedem Player sein, dadurch Umbau auf lokalen Funktionsaufruf. Einbau einer "0" bei Zahlen kleiner 10.
+- Bugfix Beam: Zahlfeld entfernt, Schrift weiß plus größer
+- Bugfix Earplugs: Bei Respawn entfernt
 
 ### Editor
 - Garbage-Collector: Eingestellt auf 3-5 Minuten für Personen und 10-15 für Fahrzeuge

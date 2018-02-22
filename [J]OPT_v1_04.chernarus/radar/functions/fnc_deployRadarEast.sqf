@@ -22,8 +22,11 @@ if (!alive GVAR(containerEast)) exitWith {
 if (!(GVAR(containerEast) getVariable ["RADAREASTaufgebaut", false])) then
 {
 	Radarturmeast = createVehicle ["Land_TTowerSmall_1_F", getpos GVAR(containerEast), [], 0, "NONE"];
+    publicVariable "Radarturmeast";
 	Radarturmeast attachTo [GVAR(containerEast), [-0.5, 0.5, 0.0]];
+
 	Radarnetzeast = createVehicle ["CamoNet_ghex_big_F", getpos GVAR(containerEast), [], 0, "NONE"];
+    publicVariable "Radarnetzeast";
 	Radarnetzeast attachTo [GVAR(containerEast), [0.0, 0.0, 0.0]];
 	GVAR(containerEast) setVariable ["RADAREASTaufgebaut", true, true];
 	private _objekte = nearestTerrainObjects [getpos GVAR(containerEast), ["Tree","BUILDING"], 100];
