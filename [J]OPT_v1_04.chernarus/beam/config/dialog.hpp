@@ -17,31 +17,18 @@ class DialogBeam
   };
 
   objects[] = { };
-  controls[] = { Name0,Name1,box1,buttonwm,buttonwp};
+  controls[] = { Name0,box1,buttonwm,buttonwp};
 
   class Name0 : RSCText
   {
 		style = ST_CENTER;
-		sizeEx = 0.05;
-		colorText[] = {0.0,0.0,1.0,1};
+		sizeEx = 0.06;
+		colorText[] = {1.0,1.0,1.0,1};
      	x = 0.25;
     	y = 0.00;
      	w = 0.5;
      	h = 0.15;
 		text = "Ortswahl";
-    	default = true;
-  };
-  class Name1 : RSCText
-  {
-		idc = 10000;
-    	style = ST_CENTER;
-		sizeEx = 0.04;
-		colorText[] = {1,1,0,1};
-     	x = 0.6;
-    	y = 0.72;
-     	w = 0.2;
-     	h = 0.05;
-		text = "10000";
     	default = true;
   };
   class box1 : RSCListBox
