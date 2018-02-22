@@ -88,3 +88,11 @@
     call compile format["%1 = %2", _var, _value];
 
 }] call CBA_fnc_addEventHandler;
+
+[QVAR(addToCurator), {
+    params ["_unit"];
+
+    {
+        _x addCuratorEditableObjects [[_unit] - [zeus_ziv1, zeus_ziv2, zeus_ziv3], false];
+    } forEach [zeus_ziv1, zeus_ziv2, zeus_ziv3];
+}] call CBA_fnc_addEventHandler;
