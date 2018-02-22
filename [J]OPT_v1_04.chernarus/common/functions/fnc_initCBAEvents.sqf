@@ -40,7 +40,7 @@
 
 		};
 		case "+":  {
-				if (_side == east) then {
+				if (_side == west) then {
 					_budget_neu = GVARMAIN(nato_budget) + _unitCost;
 				} else {					
 					_budget_neu = GVARMAIN(csat_budget) + _unitCost;
@@ -78,4 +78,13 @@
         _operator assignCurator _module;	
     };
     
+}] call CBA_fnc_addEventHandler;
+
+
+[QGVAR(setVariable), {
+
+    params ["_var", "_value"];
+
+    call compile format["%1 = %2", _var, _value];
+
 }] call CBA_fnc_addEventHandler;

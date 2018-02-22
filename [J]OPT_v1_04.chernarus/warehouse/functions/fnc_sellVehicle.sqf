@@ -31,7 +31,22 @@ if (_index < 0) exitWith {
 
 private _selectedVehicle = (GVAR(vehiclesToSell) select _index) select 0;
 private _selectionText = _listbox_vehicle lbText _index;
-private _unitCost = (GVAR(vehiclesToSell) select _index) select 1;
+private _unitCost = 0;
+private _class = typeOf _selectedVehicle;
+
+if (toLower _class in (GVAR(allNato) apply {toLower (_x select 0)})) then {
+    if (PLAYER_SIDE == west) then {
+        _unitCost = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 2;
+    } else {
+        _unitCost = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 3;
+    };
+} else {
+    if (PLAYER_SIDE == east) then {
+        _unitCost = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 2;
+    } else {
+        _unitCost = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 3;
+    };
+};
 
 [QEGVAR(common,updateBudget), [PLAYER_SIDE, _unitCost, "+"]] call CBA_fnc_serverEvent;
 deleteVehicle _selectedVehicle;

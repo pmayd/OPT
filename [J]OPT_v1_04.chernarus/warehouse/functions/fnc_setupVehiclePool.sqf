@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-#define DEF_PROD(var1) var1, GVAR(saleReturnValue) * var1 // default product with 0.75 sold value
+#define DEF_PROD(var1) var1, GVAR(saleReturnValueForOwn) * var1,  GVAR(saleReturnValueForEnemy) * var1 // default product with 0.75 sold value for own and 1.50 for enemy
 
 /* ANLEITUNG: 
 * Jedes Fahrzeug besitzt einen Eintrag der Form [classname, Kaufpreis, Verkaufpreis]
@@ -288,17 +288,19 @@ GVAR(csat_sea) = [
 	["OPT_O_SDV_01_F", DEF_PROD(2000)]								// Submarine
 ];
 
-GVAR(all) = GVAR(nato_vehicles) +
-GVAR(nato_vehicles_supply) +
+GVAR(allNato) = GVAR(nato_vehicles_supply) +
 GVAR(nato_choppers) +
 GVAR(nato_armored) +
 GVAR(nato_supplies) +
 GVAR(nato_static) +
-GVAR(nato_sea) +
-GVAR(csat_vehicles) +
+GVAR(nato_sea);
+
+GVAR(allCsat) = GVAR(csat_vehicles) +
 GVAR(csat_vehicles_supply) +
 GVAR(csat_choppers) +
 GVAR(csat_armored) +
 GVAR(csat_supplies) +
 GVAR(csat_static) + 
 GVAR(csat_sea);
+
+GVAR(all) = GVAR(allNato) + GVAR(allCsat);

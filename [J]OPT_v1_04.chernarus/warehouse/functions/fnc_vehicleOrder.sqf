@@ -134,7 +134,7 @@ if (count GVAR(orderDialogObjects) != 0) then {
 		if (_index == -1) then {
 			_objs = _objs - [_x]; 
 		} else {
-			_pool pushBack [_x, (GVAR(all) select _index) select 2]; // füge Fahrzeug und Verkaufspreis hinzu
+			_pool pushBack [_x, (GVAR(all) select _index) select 2, (GVAR(all) select _index) select 3]; // füge Fahrzeug und Verkaufspreis hinzu
 		};
 
 	} foreach _objs;

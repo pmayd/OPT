@@ -23,9 +23,10 @@
 - Revive: Sanitäter stabilisieren nun erst, wenn Patient noch instabil. Restschaden einheitlich auf 25% sowie Beinschaden auf 50% (verhindert schnelles Laufen). Animationshandler entfernt.
 - Feature: Neue Möglichkeit der Erstversorgung für alle Einheiten über ACE Eigenmenü. Beginnt bei 15% Schaden (CBA Settings) und wird mit jedem Heilvorgang schlechter (CBA Settings)
 - neue Komponente marker: Versieht Kartenmarker mit automatische Zeitstempel
-- Bugfix: missionEH muss bei jedem Player sein, dadurch Umbau auf lokalen Funktionsaufruf. Einbau einer "0" bei Zahlen kleiner 10.
+- Bugfix Marker: missionEH muss bei jedem Player sein, dadurch Umbau auf lokalen Funktionsaufruf. Einbau einer "0" bei Zahlen kleiner 10.
 - Bugfix Beam: Zahlfeld entfernt, Schrift weiß plus größer
-- Bugfix Earplugs: Bei Respawn entfernt
+- Bugfix Earplugs: Bei Respawn wieder raus
+- Bugfix Verkauf: Budget wird korrekt aktualisiert
 
 ### Editor
 - Garbage-Collector: Eingestellt auf 3-5 Minuten für Personen und 10-15 für Fahrzeuge
