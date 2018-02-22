@@ -25,7 +25,7 @@ GVAR(eh_EachFrame) = addMissionEventHandler ["EachFrame", {
             if ((_x find "_USER_DEFINED" != -1) and !(_x in GVAR(changedMarker))) then {
     
                 GVAR(changedMarker) pushBack _x;
-                [QGVAR(updateMarkerWithTimestemp), [_x]] call CBA_fnc_globalEvent;
+                [_x] call FUNC(updateMarker);
 
             };
         } forEach allMapMarkers;

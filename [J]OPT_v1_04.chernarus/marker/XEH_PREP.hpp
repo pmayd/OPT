@@ -1,4 +1,4 @@
 
-PREP(initPlayerCBAEvents);
-PREP(initServerMissionEH);
+PREP(initPlayerMissionEH);
 PREP(updateMarker);
+PREP(initCBASettings);

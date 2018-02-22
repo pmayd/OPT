@@ -6,9 +6,5 @@
 */
 
 if (local player) then {
-    [] call FUNC(initPlayerCBAEvents);
-};
-
-if (isServer) then {
-    [] call FUNC(initServerMissionEH);
+    [] call FUNC(initPlayerMissionEH);
 };

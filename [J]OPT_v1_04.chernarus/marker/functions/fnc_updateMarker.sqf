@@ -26,16 +26,32 @@ params ["_marker"];
     markeralpha _marker,        7
     markertext _marker          8
 */
-if !(_marker in allMapMarkers) exitWith{};
 if (markerShape _marer != "ICON") exitWith{};
 
 //  [year, month, day, hour, minute, second]
+// realtime
 private _hour = missionStart select 3;
 private _minute = missionStart select 4;
+
+// ingame time
+if (!GVAR(useRealTime)) then {
+    _hour = date select 3;
+    _minute = date select 4;
+};
+
 private _time = time; // time since mission start
 private _hoursToAdd = floor (_time / 3600);
 private _minutesToAdd = floor ((_time - _hoursToAdd * 3600) / 60);
 
-_marker setMarkerTextLocal format["%1 (%2:%3)", markerText _marker, _hour + _hoursToAdd, _minute + _minutesToAdd];
+private _hourTxt = str(_hour + _hoursToAdd);
+if (_hour + _hoursToAdd < 10) then {
+    _hourTxt = "0" + _hourTxt;
+};
+private _minuteTxt = str(_minute + _minutesToAdd);
+if (_minute + _minutesToAdd < 10) then {
+    _minuteTxt = "0" + _minuteTxt;
+};
+_marker setMarkerTextLocal format["%1 (%2:%3)", markerText _marker, _hourTxt, _minuteTxt];
+
 
 true
