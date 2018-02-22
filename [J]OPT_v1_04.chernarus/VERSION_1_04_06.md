@@ -28,7 +28,8 @@
 - Bugfix Earplugs: Bei Respawn wieder raus
 - Bugfix Verkauf: Budget wird korrekt aktualisiert
 - Verkaufsystem: Verkauf fremder Fahrzeuge für 150% des Kaufpreises
-- Bugfix Teleport: Teleport nach Respawn aus Fahrzeugen wieder möglich 
+- Bugfix Teleport: Teleport nach Respawn aus Fahrzeugen wieder möglich
+- Bugfix Sansystem: Bleedouttext und Respawn button korrekt beschriftet
 
 ### Editor
 - Garbage-Collector: Eingestellt auf 3-5 Minuten für Personen und 10-15 für Fahrzeuge
