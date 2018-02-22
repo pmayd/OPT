@@ -20,6 +20,9 @@ params ["_unit", "_killer"];
 if (_unit getVariable ["FAR_isUnconscious", 0] == 1) exitWith {};
 
 _unit setVariable ["FAR_isUnconscious", 1, true];
+GVAR(bleedOut) = time + FAR_REVIVE_BLEEDOUT;
+FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (GVAR(bleedOut) - time)];
+FAR_bleedoutTimer = round (GVAR(bleedOut) - time);
 
 if (isPlayer _unit) then {
 	disableUserInput true;
@@ -59,7 +62,6 @@ if (FAR_REVIVE_DEATH_MESSAGE) then {
 if (vehicle _unit != _unit) then {
 	unAssignVehicle _unit;
 	_unit action ["GetOut", vehicle _unit];
-	sleep 2;
 };
 
 _unit setDamage 0;
@@ -69,12 +71,8 @@ _unit allowDamage false;
 //_unit playActionNow "Down"; // verursacht ragdoll problem -> Stehaufmännchen
 _unit setUnconscious true;
 
-// time for animation
-sleep 4;
 //_unit switchMove "AinjPpneMstpSnonWrflDnon";
 _unit enableSimulation false;
-
-GVAR(bleedOut) = time + FAR_REVIVE_BLEEDOUT;
 
 // fix the key binding after respawn/revive
 disableUserInput false;
