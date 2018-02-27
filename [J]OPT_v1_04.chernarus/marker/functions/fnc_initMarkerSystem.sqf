@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-if (QGVAR(isOn)) then {
+if (GVAR(isOn)) then {
     GVAR(changedMarker) = [];
     GVAR(nrMarker) = count allMapMarkers;
 
