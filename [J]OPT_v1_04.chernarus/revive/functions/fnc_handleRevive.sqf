@@ -84,7 +84,7 @@ sleep 1;
 		private _isMedic = _healer call FUNC(isMedic);
 
 		// completely healed, no damage left
-		_patient setDamage 0;
+		_patient setDammage 0;
 
         // reset first aid multiplicator
         _patient setVariable ["FAR_firstAidMultiplicator", 0, true];

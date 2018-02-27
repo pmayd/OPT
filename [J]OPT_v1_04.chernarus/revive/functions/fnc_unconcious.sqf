@@ -63,9 +63,9 @@ if (vehicle _unit != _unit) then {
 	unAssignVehicle _unit;
 	_unit action ["GetOut", vehicle _unit];
 
-};
+    sleep 2;
 
-waitUntil{isNull {objectParent _unit}};
+};
 
 _unit setDamage 0;
 _unit setVelocity [0,0,0];
