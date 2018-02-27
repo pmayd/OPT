@@ -1,6 +1,21 @@
-## Changelog
+﻿## Changelog
 
-### Skript
+### 04_07
+#### Skript
+- offestpunkte in cargo/initcbaevents erneut angepasst
+- offestpunkte in cargo/setupcargoand size erneut angepasst
+- verkaufspreise bei kisten in warehouse/setupvehiclepool eingetragen
+
+#### Editor
+- radarcontainer nato und csat ausgetauscht
+- basenänderungen der fraktionen implementiert
+- infslots neu gesetzt und gruppiert
+
+#### Settings
+TODO! - classnames für sprengstoffexperten (leider nicht mehr gefunden)
+
+### 04_06
+#### Skript
 - Bugfix Classnames in GPS + UAV Komponente
 - neue Classnames in setupVehiclePool (Vanilla)
 - Bugfix: Bestellpad liefert jetzt auch beim Sortieren korrektes Fahrzeug
@@ -28,8 +43,7 @@
 - Bugfix Earplugs: Bei Respawn wieder raus
 - Bugfix Verkauf: Budget wird korrekt aktualisiert
 - Verkaufsystem: Verkauf fremder Fahrzeuge für 150% des Kaufpreises
-- Bugfix Teleport: Teleport nach Respawn aus Fahrzeugen wieder möglich
-- Bugfix Sansystem: Bleedouttext und Respawn button korrekt beschriftet
+- Bugfix Teleport: Teleport nach Respawn aus Fahrzeugen wieder möglich 
 
-### Editor
+#### Editor
 - Garbage-Collector: Eingestellt auf 3-5 Minuten für Personen und 10-15 für Fahrzeuge
