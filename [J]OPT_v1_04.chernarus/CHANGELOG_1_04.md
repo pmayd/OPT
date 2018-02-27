@@ -5,6 +5,7 @@
 - offestpunkte in cargo/initcbaevents erneut angepasst
 - offestpunkte in cargo/setupcargoand size erneut angepasst
 - verkaufspreise bei kisten in warehouse/setupvehiclepool eingetragen
+- Bugfix: Fahrzeugkills wieder verfügbar im Log + Fix für Spielerseite bei Fahrzeugkill
 
 #### Editor
 - radarcontainer nato und csat ausgetauscht

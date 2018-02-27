@@ -128,7 +128,7 @@ registriert alle Events via CBA Event Handling
 
                 _nameKiller = UNIT_NAME(_killer);
 
-				_message = format["%1 von: %2 (%3).", _message, _nameKiller, _faction];
+				_message = format["%1 von: %2 (%3).", _message, _nameKiller, UNIT_SIDE(_killer)];
 
 			};
 
