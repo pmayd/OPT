@@ -62,7 +62,10 @@ if (FAR_REVIVE_DEATH_MESSAGE) then {
 if (vehicle _unit != _unit) then {
 	unAssignVehicle _unit;
 	_unit action ["GetOut", vehicle _unit];
+
 };
+
+waitUntil{isNull {parentObject _unit}};
 
 _unit setDamage 0;
 _unit setVelocity [0,0,0];

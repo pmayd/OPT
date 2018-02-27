@@ -74,7 +74,8 @@ registriert alle Events via CBA Event Handling
 [QGVAR(kill), {
 	params [
         "_victim", 
-        ["_killer", objNull, [objNull], 1]
+        ["_killer", objNull, [objNull], 1],
+        ["_instigator", objNull, [objNull], 1] // instigator: Object - Person who pulled the trigger
     ];
 	private _cat = "Abschuss";
 	private _message = "";
@@ -88,18 +89,16 @@ registriert alle Events via CBA Event Handling
 
         if !(_killer isEqualTo objNull) then {
             
-		    if (_victim == _killer) then {
+		    if (_victim == _instigator) then {
 			    _message = format[
                     "%1 (%2) von: Selbstverschulden.",
                     _nameVictim, UNIT_SIDE(_victim)
                 ];
 
             } else {
-                _nameKiller = UNIT_NAME(_killer);
-
                 _message = format[
                     "%1 (%2) von: %3 (%4).",
-                    _nameVictim, UNIT_SIDE(_victim), _nameKiller, UNIT_SIDE(_killer)
+                    _nameVictim, UNIT_SIDE(_victim), UNIT_NAME(_instigator), UNIT_SIDE(_instigator)
                 ];
 
             };
@@ -125,10 +124,7 @@ registriert alle Events via CBA Event Handling
 				_message = format["%1 von: Selbstverschulden", _message];
 
 			} else {
-
-                _nameKiller = UNIT_NAME(_killer);
-
-				_message = format["%1 von: %2 (%3).", _message, _nameKiller, UNIT_SIDE(_killer)];
+                _message = format["%1 von: %2 (%3).", _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator)];
 
 			};
 

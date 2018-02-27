@@ -83,10 +83,8 @@ sleep 1;
 
 		private _isMedic = _healer call FUNC(isMedic);
 
-        //_patient setDamage 0.25; -> has to be argument local 
-        _patient setDammage 0.25;
-        [_patient, ["legs", 0.5]] remoteExec ["setHit", _patient, false];
-        [_patient, ["hands", 0.5]] remoteExec ["setHit", _patient, false];
+		// completely healed, no damage left
+		_patient setDamage 0;
 
         // reset first aid multiplicator
         _patient setVariable ["FAR_firstAidMultiplicator", 0, true];
