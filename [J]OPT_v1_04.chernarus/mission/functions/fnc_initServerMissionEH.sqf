@@ -90,9 +90,9 @@ GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["PlayerDisconnected", {
     params ["_id", "_uid", "_name", "_jip", "_owner"];
 
     {
-        if (owner _x == _owner or groupOwner _x == _owner) then {
+        if (owner _x == 0) then {
             deleteVehicle _x;
         };
-        
+
     } forEach playableUnits;
 }];
