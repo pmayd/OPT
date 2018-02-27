@@ -72,7 +72,6 @@ _unit allowDamage false;
 _unit setUnconscious true;
 
 //_unit switchMove "AinjPpneMstpSnonWrflDnon";
-_unit enableSimulation false;
 
 // fix the key binding after respawn/revive
 disableUserInput false;
@@ -121,7 +120,6 @@ if (FAR_REVIVE_BLEEDOUT > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["F
 	// Unmute TFAR
 	[true] call FUNC(toggleTFAR);
 	
-	_unit enableSimulation true;
 	_unit allowDamage true;
 	_unit setFatigue 0.9;
 	//_unit playMove "amovppnemstpsraswrfldnon";

@@ -4,6 +4,9 @@
     this line is commented, otherwise it would disturb the linter.
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
+
+[] call FUNC(initCBAClassEvents);
+
 if (isServer) then {
     [] call FUNC(createMenu);
 

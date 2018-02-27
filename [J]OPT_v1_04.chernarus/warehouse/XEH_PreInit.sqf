@@ -12,7 +12,6 @@ ADDON = true;
 [] call FUNC(initCBASettings);
 
 [] call FUNC(setupVehiclePool);
-[] call FUNC(initCBAClassEvents);
 
 if (isServer) then {
     [] call FUNC(initServerCBAEvents);
