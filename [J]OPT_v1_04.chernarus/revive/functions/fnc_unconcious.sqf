@@ -129,6 +129,10 @@ if (FAR_REVIVE_BLEEDOUT > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["F
 	//_unit playMove "";
 	_unit setUnconscious false;
 
+    sleep 1;
+
+    _unit action ["WeaponInHand", player];
+
 	if (dialog) then {
 		[] spawn {
 			while {dialog} do {

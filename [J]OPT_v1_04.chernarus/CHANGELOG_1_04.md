@@ -6,6 +6,9 @@
 - offestpunkte in cargo/setupcargoand size erneut angepasst
 - verkaufspreise bei kisten in warehouse/setupvehiclepool eingetragen
 - Bugfix: Fahrzeugkills wieder verfügbar im Log + Fix für Spielerseite bei Fahrzeugkill
+- Versuch, Leiche bei disconnect zu löschen
+- Bugfix: Revive hängt nicht mehr in Animationen fest, nach Revive kein Auf-den-Rückenliegen mehr
+- Maker: Zeitstempel jetzt optional an/aus
 
 #### Editor
 - radarcontainer nato und csat ausgetauscht

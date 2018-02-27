@@ -1,4 +1,4 @@
 
-PREP(initPlayerMissionEH);
-PREP(updateMarker);
 PREP(initCBASettings);
+PREP(initMarkerSystem);
+PREP(updateMarker);

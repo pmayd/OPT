@@ -55,3 +55,44 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
     [QEGVAR(common,renewCurator), [_newEntity]] call CBA_fnc_localEvent;
 
 }];
+
+/**
+* Author: James
+* initialize mission echo
+*
+* Arguments:
+* None
+*
+* Return Value:
+* None
+*
+* Example:
+* [] call fnc_initMissionEH.sqf;
+*
+*/
+#include "script_component.hpp"
+
+// update marker as long as map is open (works for uav stations as well)
+GVAR(EH_EachFrame) = addMissionEventHandler ["EachFrame", {
+    [] call FUNC(updateMarker);
+
+}];
+
+// delete body if unit disconnects
+GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["PlayerDisconnected", {
+    /*
+        id: Number - unique DirectPlay ID (very large number). It is also the same id used for user placed markers (same as _id param)
+        uid: String - getPlayerUID of the leaving client. The same as Steam ID (same as _uid param)
+        name: String - profileName of the leaving client (same as _name param)
+        jip: Boolean - didJIP of the leaving client (same as _jip param)
+        owner: Number - owner id of the leaving client (same as _owner param)
+    */
+    params ["_id", "_uid", "_name", "_jip", "_owner"];
+
+    {
+        if (owner _x == _owner or groupOwner _x == _owner) then {
+            deleteVehicle _x;
+        };
+        
+    } forEach playableUnits;
+}];
