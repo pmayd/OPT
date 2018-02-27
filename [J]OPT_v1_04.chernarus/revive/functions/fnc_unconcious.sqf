@@ -65,7 +65,7 @@ if (vehicle _unit != _unit) then {
 
 };
 
-waitUntil{isNull {parentObject _unit}};
+waitUntil{isNull {objectParent _unit}};
 
 _unit setDamage 0;
 _unit setVelocity [0,0,0];

@@ -10,3 +10,6 @@ ADDON = true;
 
 // CBA settings
 [] call FUNC(initCBASettings);
+
+GVAR(changedMarker) = [];
+GVAR(nrMarker) = count allMapMarkers;

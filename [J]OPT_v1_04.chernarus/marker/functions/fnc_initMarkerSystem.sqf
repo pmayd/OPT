@@ -15,8 +15,6 @@
 #include "script_component.hpp"
 
 if (GVAR(isOn)) then {
-    GVAR(changedMarker) = [];
-    GVAR(nrMarker) = count allMapMarkers;
 
     GVAR(eh_EachFrame) = addMissionEventHandler ["EachFrame", {
 
