@@ -53,16 +53,12 @@ This event happens every time a soldier enters a vehicle.
 // add killed EH to all kind of vehicles, either on map or later spawned via crteateVehicle arrayIntersect
 // -> log kill and delete if near base
 ["LandVehicle", "killed", {
-    params ["_vec", "_killer", "_instigator"];
-
-	[QGVAR(handleDeadVehicle), [_vec, _killer, _instigator]] call CBA_fnc_serverEvent;
+	[QGVAR(handleDeadVehicle), _this] call CBA_fnc_serverEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 
 ["Air", "killed", {
-    params ["_vec", "_killer", "_instigator"];
-
-	[QGVAR(handleDeadVehicle),  [_vec, _killer, _instigator]] call CBA_fnc_serverEvent;
+	[QGVAR(handleDeadVehicle),  _this] call CBA_fnc_serverEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 

@@ -23,5 +23,5 @@
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(handleDeadVehicle), {
-     (_this select [0,2]) call FUNC(handleDeadVehicle);
+    (_this) call FUNC(handleDeadVehicle);
 }] call CBA_fnc_addEventHandler;

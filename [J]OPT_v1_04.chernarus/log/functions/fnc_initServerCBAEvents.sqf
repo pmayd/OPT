@@ -77,11 +77,9 @@ registriert alle Events via CBA Event Handling
         ["_killer", objNull, [objNull], 1],
         ["_instigator", objNull, [objNull], 1] // instigator: Object - Person who pulled the trigger
     ];
-    systemChat "Aufruf: log " + str(_this);
+
 	private _cat = "Abschuss";
 	private _message = "";
-
-    systemChat str(_this);
 
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
