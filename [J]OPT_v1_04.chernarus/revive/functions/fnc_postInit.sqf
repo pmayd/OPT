@@ -33,18 +33,15 @@ player addEventHandler ["Respawn", {
 };
 
 // Drag & Carry animation fix
-[] spawn {
-	while {true} do {
-		if (animationState player in ["acinpknlmstpsraswrfldnon_acinpercmrunsraswrfldnon", "helper_switchtocarryrfl", "AcinPknlMstpSrasWrflDnon"]) then {
-			if (FAR_isDragging) then {
-				player switchMove "AcinPknlMstpSrasWrflDnon";
-			} else {
-				player switchMove "amovpknlmstpsraswrfldnon";
-			};
-		};
-		sleep 3;
-	};
-};
+GVAR(eh_EachFrame) = addMissionEventHandler ["EachFrame", {
+    if (animationState player in ["acinpknlmstpsraswrfldnon_acinpercmrunsraswrfldnon", "helper_switchtocarryrfl", "AcinPknlMstpSrasWrflDnon"]) then {
+        if (FAR_isDragging) then {
+            player switchMove "AcinPknlMstpSrasWrflDnon";
+        } else {
+            player switchMove "amovpknlmstpsraswrfldnon";
+        };
+    };
+}];
 
 
 // 3D Marker

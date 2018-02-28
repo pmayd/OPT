@@ -28,6 +28,7 @@ This event happens every time a soldier enters a vehicle.
 // ersetzt player add action in onPlayerRespawn (viel performanter, da kein pulling)
 ["LandVehicle", "init", {
 	params ["_vec"];
+    
 	[QEGVAR(common,addAction), 
 		[
 			_vec, 
@@ -52,12 +53,16 @@ This event happens every time a soldier enters a vehicle.
 // add killed EH to all kind of vehicles, either on map or later spawned via crteateVehicle arrayIntersect
 // -> log kill and delete if near base
 ["LandVehicle", "killed", {
-	[QGVAR(handleDeadVehicle), (_this select [0,2])] call CBA_fnc_serverEvent;
+    params ["_vec", "_killer", "_instigator"];
+
+	[QGVAR(handleDeadVehicle), [_vec, _killer, _instigator]] call CBA_fnc_serverEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 
 ["Air", "killed", {
-	[QGVAR(handleDeadVehicle), (_this select [0,2])] call CBA_fnc_serverEvent;
+    params ["_vec", "_killer", "_instigator"];
+
+	[QGVAR(handleDeadVehicle),  [_vec, _killer, _instigator]] call CBA_fnc_serverEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 

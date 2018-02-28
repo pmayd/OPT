@@ -21,7 +21,6 @@ params ["_patient", "_healer"];
 if (_healer getVariable ["FAR_isUnconscious",0] == 1) exitWith {};
 
 _patient setVariable ["FAR_healer", _healer, true];
-FAR_healerStopped = false;
 
 _healer selectWeapon primaryWeapon _healer;
 sleep 1;
@@ -98,9 +97,7 @@ sleep 1;
 			_patient setVariable ["FAR_healer", objNull, true]
 		};
 
-		if (FAR_healerStopped) then {
-			[QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_REVIVE_CANCLED, "red"]] call CBA_fnc_localEvent;
-		};
+		[QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_REVIVE_CANCLED, "red"]] call CBA_fnc_localEvent;
 
 	},
 	format[FAR_REVIVE_ACTION_STABILIZE_BAR_TEXT, _damage],
@@ -111,13 +108,11 @@ sleep 1;
 		// beide am Leben, 
 		// Abstand zu Patient kleiner 2m,
 		// Heiler nicht bewusstlos und 
-		// Animation nicht abgebrochen
 		// -> aktualisiere Fortschrittsbalken
 		alive _healer and
 		alive _patient and
 		(_healer distance _patient) < 2 and
-		_healer getVariable "FAR_isUnconscious" == 0 and
-		!FAR_healerStopped
+		_healer getVariable "FAR_isUnconscious" == 0
 
 	}
 ] call ace_common_fnc_progressBar;

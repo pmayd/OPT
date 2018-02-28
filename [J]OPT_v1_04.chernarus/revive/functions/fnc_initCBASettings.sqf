@@ -99,7 +99,7 @@
     "SLIDER", // setting type
     "Minimalschaden, ab dem Behandlung möglich wird", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
-    [0, 1, 0.15, 1], // [min, max, default, decimal]
+    [0, 1, 0.3, 1], // [min, max, default, decimal]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;

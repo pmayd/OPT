@@ -25,7 +25,7 @@ move vehicle to free position
 */
 private _vec = createVehicle [_vecType, [0,0, 1000 + random(500)], [], 0, "NONE"];
 _vec enableSimulationGlobal false;
-_vec allowDamage  false; // avoid any damage during spawn process
+_vec allowDamage false; // avoid any damage during spawn process
 _vec setPosATL _empty_pos;
 
 if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};

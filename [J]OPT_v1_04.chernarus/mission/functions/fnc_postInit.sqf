@@ -6,6 +6,9 @@ LOG_1("%1 --- opt_mission_fnc_postInit started",diag_ticktime);
 // store playerSide for logs and other functions
 player setVariable [QGVARMAIN(playerSide), playerSide, true];
 
+// store player owner ID 
+player setVariable [QGVARMAIN(ownerID), clientOwner, true];
+
 // add to zeus
 [QEGVAR(common,addToCurator), [player]] call CBA_fnc_serverEvent;
 
@@ -32,15 +35,11 @@ private _action_earplug = [
 ] call ace_interact_menu_fnc_addActionToObject;
 
 
-// startet das End-Skript. Wartet, bis Ende eintrifft
-//[] execVM "common\client\opt_endMission.sqf"; // TODO:
-
 // checking for failed player init
 if (isMultiplayer && !isServer) then {	// only on dedicated environment
 	true spawn {
-		private "_puid";
 		waitUntil {player == player && local player};
-		_puid = getPlayerUID player;
+		private _puid = getPlayerUID player;
 		if (isNil "_puid") exitWith {diag_log "UID is Nil - init stoped"; endMission "LOSER";};
 		if (_puid == "") exitWith {diag_log "UID is empty - init stoped"; endMission "LOSER";};
 	};

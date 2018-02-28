@@ -77,6 +77,7 @@ registriert alle Events via CBA Event Handling
         ["_killer", objNull, [objNull], 1],
         ["_instigator", objNull, [objNull], 1] // instigator: Object - Person who pulled the trigger
     ];
+    systemChat "Aufruf: log " + str(_this);
 	private _cat = "Abschuss";
 	private _message = "";
 
@@ -85,20 +86,18 @@ registriert alle Events via CBA Event Handling
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
 
-        private _nameVictim = UNIT_NAME(_victim);
-
         if !(_killer isEqualTo objNull) then {
             
 		    if (_victim == _instigator) then {
 			    _message = format[
                     "%1 (%2) von: Selbstverschulden.",
-                    _nameVictim, UNIT_SIDE(_victim)
+                    UNIT_NAME(_victim), UNIT_SIDE(_victim)
                 ];
 
             } else {
                 _message = format[
                     "%1 (%2) von: %3 (%4).",
-                    _nameVictim, UNIT_SIDE(_victim), UNIT_NAME(_instigator), UNIT_SIDE(_instigator)
+                    UNIT_NAME(_victim), UNIT_SIDE(_victim), UNIT_NAME(_instigator), UNIT_SIDE(_instigator)
                 ];
 
             };

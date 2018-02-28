@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4541;
+		nextID=4673;
 	};
 	class Camera
 	{
@@ -2576,7 +2576,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="71.9,72.9,73.9,74.9,75.9,76.9,77.9,78.9";
+														value="151,152,153,154,155,156,157,158";
 													};
 												};
 												class Item1
@@ -2587,7 +2587,7 @@ class CustomAttributes
 														{
 															type[]=
 															{
-																"BOOL"
+																"SCALAR"
 															};
 														};
 														value=1;
@@ -2711,7 +2711,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="31.7,32.7,33.7,34.7,35.7,36.7,37.7,38.7";
+														value="51,52,53,54,55,56,57,58,59";
 													};
 												};
 												class Item1
@@ -2722,7 +2722,7 @@ class CustomAttributes
 														{
 															type[]=
 															{
-																"BOOL"
+																"SCALAR"
 															};
 														};
 														value=1;
@@ -15295,7 +15295,7 @@ class Mission
 					};
 					id=411;
 					type="Land_InfoStand_V1_F";
-					atlOffset=-0.074218392;
+					atlOffset=0.20082903;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -15486,7 +15486,7 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=12.072701;
+			atlOffset=12.077217;
 		};
 		class Item7
 		{

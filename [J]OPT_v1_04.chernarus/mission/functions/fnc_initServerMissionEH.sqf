@@ -90,7 +90,7 @@ GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["PlayerDisconnected", {
     params ["_id", "_uid", "_name", "_jip", "_owner"];
 
     {
-        if (owner _x == 0) then {
+        if (_x getVariable [QGVARMAIN(ownerID), 0] == _owner) then {
             deleteVehicle _x;
         };
 

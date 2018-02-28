@@ -63,7 +63,7 @@ if (vehicle _unit != _unit) then {
 	unAssignVehicle _unit;
 	_unit action ["GetOut", vehicle _unit];
 
-    sleep 2;
+    sleep 1.2;
 
 };
 

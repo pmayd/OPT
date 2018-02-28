@@ -19,8 +19,11 @@ params ["_caller"];
 private _return = false;
 private _multiplier = _caller getVariable ["FAR_firstAidMultiplicator", 0];
 
+// damage calculation
+private _damagedParts = {_x > (FAR_REVIVE_FIRST_AID_MIN_DAMAGE + _multiplier * FAR_REVIVE_FIRST_AID_MULTIPLIER) } count (getAllHitPointsDamage _caller select 2); 
+
 // Make sure player is alive and not unconscious and has at least 25% damage
-if(!alive _caller || {_caller getVariable "FAR_isUnconscious" == 1} || FAR_isDragging || damage _caller < (FAR_REVIVE_FIRST_AID_MIN_DAMAGE + _multiplier * FAR_REVIVE_FIRST_AID_MULTIPLIER)) exitWith {
+if(!alive _caller || {_caller getVariable "FAR_isUnconscious" == 1} || FAR_isDragging || _damagedParts == 0) exitWith {
 	_return
 };
 
