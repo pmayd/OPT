@@ -9,6 +9,8 @@
 - Versuch, Leiche bei disconnect zu löschen
 - Bugfix: Revive hängt nicht mehr in Animationen fest, nach Revive kein Auf-den-Rückenliegen mehr
 - Maker: Zeitstempel jetzt optional an/aus
+- Marker timestemp: Neues CBA Setting für custom marker: mittels #z (default) kann ein Zeitstempel hinzugefügt werden
+- Bugfix: Markerzeitstempel prüfen jetzt Überlauf. Bei ingame time wird nicht mehr doppelt gezählt.
 
 #### Editor
 - radarcontainer nato und csat ausgetauscht
