@@ -68,7 +68,12 @@ if (count _hourTxt < 2) then {
 if (count _minuteTxt < 2) then {
     _minuteTxt = "0" + _minuteTxt;
 };
-_marker setMarkerTextLocal format["%1 (%2:%3)", markerText _marker select [0, (markerText _marker) find GVAR(customMarkerTxt)], _hourTxt, _minuteTxt];
+
+if (GVAR(customMarkerTxt) isEqualTo "") then {
+    _marker setMarkerTextLocal format["%1 (%2:%3)", markerText _marker, _hourTxt, _minuteTxt];
+} else {
+    _marker setMarkerTextLocal format["%1 (%2:%3)", markerText _marker select [0, (markerText _marker) find GVAR(customMarkerTxt)], _hourTxt, _minuteTxt];
+};
 
 
 true
