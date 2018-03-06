@@ -33,22 +33,39 @@ if (markerShape _marer != "ICON") exitWith{};
 private _hour = missionStart select 3;
 private _minute = missionStart select 4;
 
+private _minuteTxt = "";
+private _hourTxt = "";
+
 // ingame time
 if (!GVAR(useRealTime)) then {
     _hour = date select 3;
     _minute = date select 4;
+
+    _minuteTxt = str(_minute);
+    _hourTxt = str(_hour);
+
+} else {
+
+    private _time = time; // time since mission start
+    private _hoursToAdd = floor (_time / 3600);
+    private _minutesToAdd = floor ((_time - _hoursToAdd * 3600) / 60);
+
+    // check for overflow
+    if (_minute + _minutesToAdd > 59) then {
+        _minuteTxt = str((_minute + _minutesToAdd) % 60);
+        _hourTxt = str(_hour + _hoursToAdd + 1);
+    } else {
+        _minuteTxt = str(_minute + _minutesToAdd);
+        _hourTxt = str(_hour + _hoursToAdd);
+    };
 };
 
-private _time = time; // time since mission start
-private _hoursToAdd = floor (_time / 3600);
-private _minutesToAdd = floor ((_time - _hoursToAdd * 3600) / 60);
 
-private _hourTxt = str(_hour + _hoursToAdd);
-if (_hour + _hoursToAdd < 10) then {
+// add leading "0"
+if (count _hourTxt < 2) then {
     _hourTxt = "0" + _hourTxt;
 };
-private _minuteTxt = str(_minute + _minutesToAdd);
-if (_minute + _minutesToAdd < 10) then {
+if (count _minuteTxt < 2) then {
     _minuteTxt = "0" + _minuteTxt;
 };
 _marker setMarkerTextLocal format["%1 (%2:%3)", markerText _marker, _hourTxt, _minuteTxt];
