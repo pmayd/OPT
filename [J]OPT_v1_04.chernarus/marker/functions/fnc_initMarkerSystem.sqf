@@ -23,7 +23,7 @@ GVAR(eh_EachFrame) = addMissionEventHandler ["EachFrame", {
             if ((_x find "_USER_DEFINED" != -1) and !(_x in GVAR(changedMarker))) then {
     
                 GVAR(changedMarker) pushBack _x;
-                if (GVAR(isOn)) then {
+                if (GVAR(isOn) and (GVAR(customMarkerTxt) isEqualTo "" or (markerText _x) find GVAR(customMarkerTxt) != -1)) then {
                     [_x] call FUNC(updateMarker);
                 };
 
