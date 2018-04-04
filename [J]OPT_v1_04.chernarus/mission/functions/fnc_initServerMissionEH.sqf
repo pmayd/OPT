@@ -62,7 +62,7 @@ GVAR(EH_EntityKilled) = addMissionEventHandler ["EntityKilled", {
     // Funkgeräte löschen
     _inventory = (assignedItems _killed) + (items _killed);
     if ((backpack _killed find "TFAR_" == 0) or (backpack _killed find "tf_" == 0)) then {
-        removeBackpack _killed;
+        removeBackpackGlobal _killed;
     };
 
 
@@ -73,28 +73,6 @@ GVAR(EH_EntityKilled) = addMissionEventHandler ["EntityKilled", {
 
         };
     } foreach _inventory;
-
-}];
-
-/**
-* Author: James
-* initialize mission echo
-*
-* Arguments:
-* None
-*
-* Return Value:
-* None
-*
-* Example:
-* [] call fnc_initMissionEH.sqf;
-*
-*/
-#include "script_component.hpp"
-
-// update marker as long as map is open (works for uav stations as well)
-GVAR(EH_EachFrame) = addMissionEventHandler ["EachFrame", {
-    [] call FUNC(updateMarker);
 
 }];
 
