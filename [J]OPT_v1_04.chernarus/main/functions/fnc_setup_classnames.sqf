@@ -237,7 +237,9 @@ GVARMAIN(grenadelaunchers) = [
 	"OPT_arifle_Katiba_GL_RCO_pointer_snds_F",
 	"OPT_arifle_Katiba_GL_ACO_pointer_snds_F",
 	"OPT_arifle_SPAR_01_GL_blk_F",
-	"OPT_arifle_CTAR_GL_blk_F"
+	"OPT_arifle_CTAR_GL_blk_F",
+    "OPT_arifle_Katiba_GL_F",
+    "OPT_arifle_MX_GL_Black_F"
 ];
 
 
@@ -266,14 +268,10 @@ GVARMAIN(recon) = [
 ];
 
 GVARMAIN(reconRifles) = [
-	"OPT_arifle_MX_Black_RCO_pointer_snds_F",
-	"OPT_arifle_MX_Black_ACO_pointer_snds_F",
-	"OPT_arifle_Katiba_RCO_pointer_snds_F",
-	"OPT_arifle_Katiba_ACO_pointer_snds_F",
-	"OPT_arifle_Katiba_GL_RCO_pointer_snds_F",
-	"OPT_arifle_Katiba_GL_ACO_pointer_snds_F",
-	"OPT_arifle_MX_GL_Black_RCO_pointer_snds_F",
-	"OPT_arifle_MX_GL_Black_ACO_pointer_snds_F"
+    "OPT_arifle_Katiba_F",
+	"OPT_arifle_Katiba_GL_F",
+    "OPT_arifle_MX_Black_F",
+	"OPT_arifle_MX_GL_Black_F"
 ];
 
 
