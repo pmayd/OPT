@@ -9,6 +9,7 @@
 - Warehouse: neue Option zum Räumen des Bestell-Pads. Achtung: KEIN GELD ZURÜCK!
 - San-System: Nächster Medic wird nun korrekt angezeigt
 - Main: Lösche Funkgeräte von Leichen
+- Bugfix: Take EH für Einheiten überarbeitet
 
 #### Editor
 - TFAR-Module angepasst
