@@ -56,6 +56,26 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
 
 }];
 
+GVAR(EH_EntityKilled) = addMissionEventHandler ["EntityKilled", {
+    params ["_killed", "_killer", "_instigator", "_useEffects"];
+
+    // Funkgeräte löschen
+    _inventory = (assignedItems _killed) + (items _killed);
+    if ((backpack _killed find "TFAR_" == 0) or (backpack _killed find "tf_" == 0)) then {
+        removeBackpack _killed;
+    };
+
+
+    {
+        if ((_x find "TFAR_" == 0) or (_x find "tf_" == 0)) then {
+            _killed unassignItem _x;
+            _killed removeItem _x;
+
+        };
+    } foreach _inventory;
+
+}];
+
 /**
 * Author: James
 * initialize mission echo
