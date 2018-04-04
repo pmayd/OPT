@@ -20,10 +20,80 @@ params ["_unit", "_container","_item"];
 private _typeOfPlayer = typeOf _unit;
 private _bad_item_used = false;
 
+// check SMG
+if !(_typeOfPlayer in (GVARMAIN(officer) + GVARMAIN(pilots) + GVARMAIN(crew))) then {
+	{
+        if (_x in GVARMAIN(SMG)) then {
+            _unit removeWeapon _x;
+            _bad_item_used = true;
+        };
+    } forEach (weapons _unit);
+};
+
 // check launcher
 if !(_typeOfPlayer in GVARMAIN(rocketmen)) then {
 	{
         if (_x in GVARMAIN(launchers)) then {
+            _unit removeWeapon _x;
+            _bad_item_used = true;
+        };
+    } forEach (weapons _unit);
+};
+
+// check recon Sniper
+if !(_typeOfPlayer in GVARMAIN(reconSnipers)) then {
+	{
+        if (_x in GVARMAIN(reconSniperRifles)) then {
+            _unit removeWeapon _x;
+            _bad_item_used = true;
+        };
+    } forEach (weapons _unit);
+};
+
+// check sniper
+if !(_typeOfPlayer in GVARMAIN(snipers)) then {
+	{
+        if (_x in GVARMAIN(sniperRifles)) then {
+            _unit removeWeapon _x;
+            _bad_item_used = true;
+        };
+    } forEach (weapons _unit);
+};
+
+// check MG
+if !(_typeOfPlayer in GVARMAIN(soldatMG)) then {
+	{
+        if (_x in GVARMAIN(MG)) then {
+            _unit removeWeapon _x;
+            _bad_item_used = true;
+        };
+    } forEach (weapons _unit);
+};
+
+// check SMG
+if !(_typeOfPlayer in GVARMAIN(soldatSMG)) then {
+	{
+        if (_x in GVARMAIN(SMG)) then {
+            _unit removeWeapon _x;
+            _bad_item_used = true;
+        };
+    } forEach (weapons _unit);
+};
+
+// check recon
+if !(_typeOfPlayer in GVARMAIN(recon)) then {
+	{
+        if (_x in GVARMAIN(reconRifles)) then {
+            _unit removeWeapon _x;
+            _bad_item_used = true;
+        };
+    } forEach (weapons _unit);
+};
+
+// check grenade launcher
+if !(_typeOfPlayer in GVARMAIN(grenadiers)) then {
+	{
+        if (_x in GVARMAIN(grenadelaunchers)) then {
             _unit removeWeapon _x;
             _bad_item_used = true;
         };
@@ -43,64 +113,6 @@ if !(_typeOfPlayer in GVARMAIN(medic)) then {
 	{
         _unit removeItems _x
     } forEach ["Medikit"]; //TODO: ACE
-};
-
-// check primary weapon
-private _pw = primaryWeapon _unit;
-private _spw = _unit getVariable ["opt_pw_storage", ""];
-
-if (_pw != "") then {
-	if (_pw != _spw) then {
-		_w_typeStringArray = _pw splitString "_";
-		_w_typeString = if (toUpper(_w_typeStringArray select 0) == "OPT") then {
-            toUpper(_w_typeStringArray select 1)
-        } else {
-            toUpper(_w_typeStringArray select 0)
-        };
-		
-		diag_log format ["--- %1 --- %2 --- %3", _pw, _w_typeStringArray, _w_typeString];
-	
-		_remove_pm = false;
-		switch (true) do {
-			case (_typeOfPlayer in GVARMAIN(snipers)) : {
-                if (_w_typeString != "SRIFLE") then {
-                    _remove_pm = true
-                }
-            };	// sniper
-			case (_typeOfPlayer in GVARMAIN(soldatMG)) : {
-                if (!(_w_typeString in ["LMG","MMG"])) then {
-                    _remove_pm = true
-                }
-            };	// machine gunner
-			case (_typeOfPlayer in GVARMAIN(crew) || _typeOfPlayer in GVARMAIN(pilots)) : {
-                if (!(_w_typeString in ["HGUN","SMG"])) then {
-                    _remove_pm = true;
-                }
-            };	// crew
-			case (_typeOfPlayer in GVARMAIN(grenadiers)) : {
-				_w_typeString = if (toUpper(_w_typeStringArray select 0) == "OPT") then {
-                    toUpper(_w_typeStringArray select 3)
-                } else {
-                    toUpper(_w_typeStringArray select 2)
-                };
-				if (_w_typeString != "GL") then {
-                    _remove_pm = true
-                };	// grenadier
-			};
-			default {
-                if (_w_typeString != "ARIFLE") then {
-                    _remove_pm = true
-                }
-            };	// default - all assault rifle types
-		};
-	
-		if (_remove_pm) then {
-			_unit removeWeapon _pw;
-			_bad_item_used = true;
-		} else {
-			_unit setVariable ["opt_pw_storage", _pw];
-		};
-	};
 };
 
 if (_bad_item_used) then {

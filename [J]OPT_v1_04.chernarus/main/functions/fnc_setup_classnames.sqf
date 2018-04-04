@@ -101,6 +101,11 @@ GVARMAIN(crew_vecs) = [
 	"OPT_O_MBT_02_arty_F"					// 2S9 Sochor,650000
 ];
 
+/* Waffenabfrage Offizier/Pilot/Crew*/
+GVARMAIN(SMG) = [
+	"OPT_SMG_01_ACO_F",
+	"OPT_SMG_02_ACO_F"
+];
 
 /* AT-Schützen UND LAUNCHER */
 GVARMAIN(rocketmen) = [
@@ -146,32 +151,70 @@ GVARMAIN(medic) = [
 	"OPT_CSAT_Sanitaeter"
 ];
 
-/* SNIPER */
+/* RECONSNIPER+waffen */
+GVARMAIN(reconSnipers) = [
+	"OPT_NATO_Aufklaerung_Scharfschutze_T",
+	"OPT_NATO_Aufklaerung_Scharfschutze_2",
+	"OPT_CSAT_Aufklaerung_Scharfschutze_T",
+	"OPT_CSAT_Aufklaerung_Scharfschutze_2"
+];
+
+GVARMAIN(reconSniperRifles) = [
+	"OPT_arifle_MXM_Black_RCO_LP_BI_snds_F",
+	"OPT_srifle_DMR_07_blk_F"
+];	
+						
+/* SNIPER+waffen */
 GVARMAIN(snipers) = [
 	"OPT_NATO_Scharfschuetze_T",
 	"OPT_NATO_Scharfschuetze_2",
 	"OPT_CSAT_Scharfschuetze_T",
 	"OPT_CSAT_Scharfschuetze_2",
-	"OPT_NATO_Aufklaerung_Scharfschutze_T",
-	"OPT_NATO_Aufklaerung_Scharfschutze_2",
-	"OPT_CSAT_Aufklaerung_Scharfschutze_T",
-	"OPT_CSAT_Aufklaerung_Scharfschutze_2",
 	"OPT_NATO_Scharfschuetze_2_T",
 	"OPT_CSAT_Scharfschuetze_2_T",
 	"OPT_NATO_Scharfschuetze",
 	"OPT_CSAT_Scharfschuetze"
 ];
 
+GVARMAIN(sniperRifles) = [
+	"OPT_srifle_DMR_01_DMS_LP_BI_snds_F",
+	"OPT_srifle_DMR_01_RCO_LP_BI_snds_F",
+	"OPT_srifle_EBR_DMS_LP_BI_snds_F",
+	"OPT_srifle_DMR_02_AMS_LP_BI_snds_F",
+	"OPT_srifle_DMR_05_hex_KHS_LP_BI_F",
+	"OPT_srifle_DMR_03_AMS_LP_BI_snds_F",
+	"OPT_srifle_DMR_06_olive_KHS_BI_snds_F",
+	"OPT_srifle_GM6_camo_LRPS_F",
+	"OPT_srifle_LRR_LRPS_F",
+	"OPT_srifle_LRR_tna_F",
+	"OPT_srifle_LRR_tna_LRPS_F"
+];
+
 /* MG */
 GVARMAIN(soldatMG) = [
 	"OPT_CSAT_MG_Schuetze_T",
 	"OPT_NATO_MG_Schuetze_T",
+	"OPT_CSAT_MG_Schuetze",
+	"OPT_NATO_MG_Schuetze"
+];
+
+GVARMAIN(MG) = [
+	"OPT_LMG_Zafir_ACO_pointer_F",
+	"OPT_LMG_Mk200_ACO_BI_pointer_F"
+];
+
+/* SMG */
+GVARMAIN(soldatSMG) = [
 	"OPT_CSAT_SMG_Schuetze_T",
 	"OPT_NATO_SMG_Schuetze_T",
-	"OPT_CSAT_MG_Schuetze",
-	"OPT_NATO_MG_Schuetze",
 	"OPT_CSAT_SMG_Schuetze",
 	"OPT_NATO_SMG_Schuetze"
+];
+
+GVARMAIN(SMG) = [
+    "OPT_MMG_02_black_ACO_BI_Pointer_F",
+    "OPT_MMG_01_hex_ACO_BI_Pointer_F",
+    "OPT_MMG_01_tan_ACO_BI_Pointer_F"
 ];
 
 /* GRENADIER */
@@ -185,6 +228,19 @@ GVARMAIN(grenadiers) = [
 	"OPT_NATO_Grenadier"
 ];
 
+GVARMAIN(grenadelaunchers) = [
+	"OPT_arifle_MX_GL_Black_RCO_pointer_F",
+	"OPT_arifle_MX_GL_Black_ACO_pointer_F",
+	"OPT_arifle_MX_GL_Black_RCO_pointer_snds_F",
+	"OPT_arifle_MX_GL_Black_ACO_pointer_snds_F",
+	"OPT_arifle_Katiba_GL_RCO_pointer_F",
+	"OPT_arifle_Katiba_GL_RCO_pointer_snds_F",
+	"OPT_arifle_Katiba_GL_ACO_pointer_snds_F",
+	"OPT_arifle_SPAR_01_GL_blk_F",
+	"OPT_arifle_CTAR_GL_blk_F"
+];
+
+
 /* PIONIER */
 GVARMAIN(pioniers) = [
 	"OPT_NATO_Pionier_T",
@@ -197,6 +253,30 @@ GVARMAIN(pioniers) = [
 	"OPT_NATO_Aufklaerung_Sprengmeister"
 ];
 
+/* RECON */
+GVARMAIN(recon) = [
+	"OPT_NATO_Pionier_T",
+	"OPT_CSAT_Pionier_T",
+	"OPT_CSAT_Aufklaerung_Sprengmeister_T",
+	"OPT_NATO_Aufklaerung_Sprengmeister_T",
+	"OPT_NATO_Pionier",
+	"OPT_CSAT_Pionier",
+	"OPT_CSAT_Aufklaerung_Sprengmeister",
+	"OPT_NATO_Aufklaerung_Sprengmeister"
+];
+
+GVARMAIN(reconRifles) = [
+	"OPT_arifle_MX_Black_RCO_pointer_snds_F",
+	"OPT_arifle_MX_Black_ACO_pointer_snds_F",
+	"OPT_arifle_Katiba_RCO_pointer_snds_F",
+	"OPT_arifle_Katiba_ACO_pointer_snds_F",
+	"OPT_arifle_Katiba_GL_RCO_pointer_snds_F",
+	"OPT_arifle_Katiba_GL_ACO_pointer_snds_F",
+	"OPT_arifle_MX_GL_Black_RCO_pointer_snds_F",
+	"OPT_arifle_MX_GL_Black_ACO_pointer_snds_F"
+];
+
+
 #ifdef __ONLY_PIO_CAN_BUILD_FARPS__
     GVARMAIN(engineers) = [
         "OPT_NATO_Pionier_T",
@@ -206,7 +286,6 @@ GVARMAIN(pioniers) = [
 
 
 /* UAV */
-
 GVARMAIN(big_uavs) = [
 	"OPT_B_UAV_02_F",
 	"OPT_B_UAV_02_CAS_F",
