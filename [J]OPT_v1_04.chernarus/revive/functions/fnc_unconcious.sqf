@@ -23,6 +23,7 @@ _unit setVariable ["FAR_isUnconscious", 1, true];
 GVAR(bleedOut) = time + FAR_REVIVE_BLEEDOUT;
 FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (GVAR(bleedOut) - time)];
 FAR_bleedoutTimer = round (GVAR(bleedOut) - time);
+FAR_nearMedicMessage = "Kein Sanitäter in der Nähe";
 
 if (isPlayer _unit) then {
 	disableUserInput true;
@@ -83,7 +84,7 @@ disableUserInput false;
 
 while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1} && {_unit getVariable "FAR_isStabilized" == 0} && {(FAR_REVIVE_BLEEDOUT <= 0 || time < GVAR(bleedOut))}} do {
 	if (FAR_REVIVE_CALL_NEARBY_MEDICS) then {
-		hintSilent format["Ausgeblutet in %1 Sekunden\n\n%2", round (GVAR(bleedOut) - time), [] call FUNC(checkForNearbyMedics)];
+	    FAR_nearMedicMessage = [] call FUNC(checkForNearbyMedics);
 	};
 	FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (GVAR(bleedOut) - time)];
 	FAR_bleedoutTimer = round (GVAR(bleedOut) - time);

@@ -7,6 +7,7 @@
 - GPS: Bugfix für "False"-Marker (Lord)
 - tfar anpassungen wegen neuer version und neuer kanäle
 - Warehouse: neue Option zum Räumen des Bestell-Pads. Achtung: KEIN GELD ZURÜCK!
+- San-System: Nächster Medic wird nun korrekt angezeigt
 
 #### Editor
 - TFAR-Module angepasst

@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-private _units =nearestObjects [getpos player, ["CAManBase", "Car", "Air", "Ship"], 300];
+private _units = nearestObjects [getpos player, ["CAManBase", "Car", "Air", "Ship"], 300];
 private _dist = FAR_REVIVE_NEARBY_MEDIC_DISTANCE;
 private _medics = [];
 private _hintMsg = "";

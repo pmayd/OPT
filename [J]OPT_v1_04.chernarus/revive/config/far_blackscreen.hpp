@@ -89,7 +89,8 @@
 		
 		class GREUH_Respawn : GreuhButton {
 			idc = 5566;
-			x = 0.43 * safezoneW + safezoneX; y= 0.75 * safezoneH + safezoneY;
+			x = 0.43 * safezoneW + safezoneX; 
+            y= 0.75 * safezoneH + safezoneY;
 			w = 0.14 * safezoneW; h = 0.04 * safezoneH;
 			text = "Respawn";
 			action = "player setVariable ['FAR_isUnconscious', 0, false]; player setDamage 1;";	// setVar only local at this point to kill the dialogs on local machine!
@@ -107,6 +108,22 @@
 			x = 0.4 * safezoneW + safezoneX; y= 0.7 * safezoneH + safezoneY;
 			w = 0.2 * safezoneW; h = 0.025 * safezoneH;
 			text = "";
+		};
+
+        class GREUH_MedicNearLabel {
+			idc = 5568;
+			type =  CT_STATIC;
+			style = ST_CENTER;
+			colorText[] = Color_White;
+			colorBackground[] = Color_NoColor;
+			font = DEFAULTFONT;
+			sizeEx = 0.023 * safezoneH;
+			shadow = 1;
+			x = 0.43 * safezoneW + safezoneX; 
+            y= 0.8 * safezoneH + safezoneY;
+			w = 0.14 * safezoneW;
+            h = 0.04 * safezoneH;
+			text = "Keine Sanitäter in Reichweite";
 		};
 		
 		class GREUH_WoundedLabel {
