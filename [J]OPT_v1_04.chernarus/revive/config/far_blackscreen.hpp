@@ -84,7 +84,7 @@
 		idd = 5566;
 		movingEnable = false;
 		controlsBackground[] = {"GREUH_BleedoutBar_BG"};
-		controls[] = {"GREUH_BleedoutBar","GREUH_BleedoutBar_F","GREUH_Respawn","GREUH_ReviveLabel","GREUH_WoundedLabel"};
+		controls[] = {"GREUH_BleedoutBar","GREUH_BleedoutBar_F","GREUH_Respawn","GREUH_ReviveLabel","GREUH_WoundedLabel", "GREUH_MedicNearLabel"};
 		objects[] = {};
 		
 		class GREUH_Respawn : GreuhButton {
