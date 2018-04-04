@@ -6,6 +6,7 @@
 - Warehouse: Platzabfrage wird nun vom Server vorgenommen
 - GPS: Bugfix für "False"-Marker (Lord)
 - tfar anpassungen wegen neuer version und neuer kanäle
+- Warehouse: neue Option zum Räumen des Bestell-Pads. Achtung: KEIN GELD ZURÜCK!
 
 #### Editor
 - TFAR-Module angepasst
