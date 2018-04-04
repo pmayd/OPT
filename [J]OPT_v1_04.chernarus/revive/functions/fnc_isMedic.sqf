@@ -16,7 +16,7 @@
 
 params ["_unit"];
 
-private _isMedic = if (getNumber (configFile >> "CfgVehicles" >> (typeOf _unit) >> "attendant") == 1) then {
+private _isMedic = if (typeOf _unit in GVARMAIN(medic)) then {
 	true
 } else {
 	false

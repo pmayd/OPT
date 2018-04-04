@@ -103,10 +103,12 @@
 			colorText[] = Color_White;
 			colorBackground[] = Color_NoColor;
 			font = DEFAULTFONT;
-			sizeEx = 0.02 * safezoneH;
+			sizeEx = 0.018 * safezoneH;
 			shadow = 1;
-			x = 0.4 * safezoneW + safezoneX; y= 0.7 * safezoneH + safezoneY;
-			w = 0.2 * safezoneW; h = 0.025 * safezoneH;
+			x = 0.4 * safezoneW + safezoneX; 
+            y= 0.7 * safezoneH + safezoneY;
+			w = 0.2 * safezoneW; 
+            h = 0.025 * safezoneH;
 			text = "";
 		};
 
@@ -119,9 +121,9 @@
 			font = DEFAULTFONT;
 			sizeEx = 0.023 * safezoneH;
 			shadow = 1;
-			x = 0.43 * safezoneW + safezoneX; 
+			x = 0.4 * safezoneW + safezoneX; 
             y= 0.8 * safezoneH + safezoneY;
-			w = 0.14 * safezoneW;
+			w = 0.2 * safezoneW;
             h = 0.04 * safezoneH;
 			text = "Keine Sanitäter in Reichweite";
 		};
