@@ -1,5 +1,19 @@
 ﻿## Changelog
 
+### 04_08
+#### Skript
+- Radarscript: Radar zeigt keine HuntIR mehr (Lord)
+- Warehouse: Platzabfrage wird nun vom Server vorgenommen
+- GPS: Bugfix für "False"-Marker (Lord)
+- tfar anpassungen wegen neuer version und neuer kanäle
+
+#### Editor
+- TFAR-Module angepasst
+- sämtliche Einheiten wegen Classnames (Waffen und Funken) überprüft und bearbeitet
+- 5 fehlerhafte Dekoobjekte (SAM-Stellungen) entfernt
+- Spawnpunkt am NATO-Marinepunkt verschoben wegen spawn im Wasser
+
+
 ### 04_07
 #### Skript
 - offestpunkte in cargo/initcbaevents erneut angepasst
@@ -8,17 +22,27 @@
 - Bugfix: Fahrzeugkills wieder verfügbar im Log + Fix für Spielerseite bei Fahrzeugkill
 - Versuch, Leiche bei disconnect zu löschen
 - Bugfix: Revive hängt nicht mehr in Animationen fest, nach Revive kein Auf-den-Rückenliegen mehr
-- Maker: Zeitstempel jetzt optional an/aus
-- Marker timestemp: Neues CBA Setting für custom marker: mittels #z (default) kann ein Zeitstempel hinzugefügt werden
-- Bugfix: Markerzeitstempel prüfen jetzt Überlauf. Bei ingame time wird nicht mehr doppelt gezählt.
+- Marker: Zeitstempel jetzt optional an/aus
+- preislisten in setupVehiclePool angepasst
+- radarcontainer NEU in setupcargoandsize nachgetragen
+- ausbaustufen der sektoren gesetzt
+- TFAR->setfrequencies - csat-frequenzen aktualisiert (20.3.)
+- beam und flaggenposis aktualisiert und alphabetisch sortiert + staroye an csat lvl1 (20.3.)
+- setupvehiclepool angepasst - preise stand-AT, khs und xian (20.3.)
 
 #### Editor
 - radarcontainer nato und csat ausgetauscht
 - basenänderungen der fraktionen implementiert
 - infslots neu gesetzt und gruppiert
+- basenbilchen repariert und als paa verlinkt
+- ghillies der grossen sniper getauscht (20.3.)
+- tfar-modul auf karte gesetzt und eingestellt (29.3.)
+
 
 #### Settings
-TODO! - classnames für sprengstoffexperten (leider nicht mehr gefunden)
+TODO! 
+- classnames für sprengstoffexperten (leider nicht mehr gefunden)
+- neue bilder als paa in mod einbauen
 
 ### 04_06
 #### Skript

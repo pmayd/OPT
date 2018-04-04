@@ -11,11 +11,11 @@ GVARMAIN(nato_flags_pos) = [
 //	   [13424, 2792, west], // Kamyshovo - Skalisty Dorf
 //	   [12390, 3303, west], // Kamyshovo - Insel (muss gebaut werden!)
 //	   [12049, 3554, west], // Kamyshovo - Zentrum
-	   
-//	   [11242, 4281, west], // Staroye - Rog-Burg
-//	   [10126, 5491, west], // Staroye - Zentrum
-//	   [8376, 5962, west], // Staroye - Ruinenstadt Kumyrna
-	   
+
+//	   [4614, 9658, east], // Flughafen - Stützpunkt
+//	   [4731, 10335, east], // Flughafen - Tower
+//	   [4195, 10953, east] // Flughafen - Militär  (muss gebaut werden!)	   
+
 //	   [8442, 6682, west], // Guglovo - Zentrum
 //	   [7778, 6888, west], // Guglovo - Farm
 //	   [7080, 7708, west], // Guglovo - Novi Sobor
@@ -36,9 +36,9 @@ GVARMAIN(nato_flags_pos) = [
 //	   [6539, 6097, west], // Vyshnoye - Zentrum
 //	   [7533, 5120, west], // Vyshnoye - Mogilevka
 	   
-//	   [9142, 3857, west], // Pusta - Zentrum   
-//	   [10422, 2586, west], // Pusta - Kraftwerk
-//	   [10481, 2265, west], // Vyshnoye - Elektro-Zentrum
+	   [9142, 3857, west], // Pusta - Zentrum   
+	   [10422, 2586, west], // Pusta - Kraftwerk
+	   [10481, 2265, west] // Pusta - Elektro-Zentrum
 	   
 //	   [10088, 1912, west], // Elektrozavodsk - Industrie
 //	   [8687, 2428, west], // Elektrozavodsk - Vorort
@@ -50,7 +50,7 @@ GVARMAIN(nato_flags_pos) = [
 	   
 //	   [4766, 6807, west], // Rogovo - Zentrum
 //	   [4495, 6477, west], // Rogovo - Pogorevka
-	   [3126, 7954, west] // Rogovo - Pustoshka
+//	   [3126, 7954, west], // Rogovo - Pustoshka
 	   
 //	   [3699, 5986, west], // Pass Sosnovy - Green Mountain
 //	   [3005, 6734, west], // Pass Sosnovy - Farm
@@ -86,6 +86,10 @@ GVARMAIN(csat_flags_pos) = [
 //	   [8557, 11927, east], // Gvozdno - Zentrum
 //	   [9160, 11015, east], // Gvozdno - Vorort
 
+//	   [11242, 4281, west], // Staroye - Rog-Burg
+//	   [10126, 5491, west], // Staroye - Zentrum
+//	   [8376, 5962, west], // Staroye - Ruinenstadt Kumyrna
+
 //	   [13372, 6237, east], // Solnichniy - Zentrum
 //	   [12945, 6276, east], // Solnichniy - Zementwerk
 //	   [12182, 6283, east], // Solnichniy - Vorort
@@ -112,15 +116,12 @@ GVARMAIN(csat_flags_pos) = [
 	   	   
 //	   [7205, 9059, east], // Grishino - Farm (muss gebaut werden!)
 //	   [5945, 10347, east], // Grishino - Zentrum
-	   [5437, 11088, east] // Grishino - Militär (muss gebaut werden!)
+//	   [5437, 11088, east], // Grishino - Militär (muss gebaut werden!)
 	   
-//	   [4975, 12512, east], // Petrovka - Zentrum
-//	   [4004, 11659, east], // Petrovka - Militär (muss gebaut werden!)
-//	   [1903, 12442, east], // Petrovka - Sägewerk (muss gebaut werden!)
-	   
-//	   [4614, 9658, east], // Flughafen - Stützpunkt
-//	   [4731, 10335, east], // Flughafen - Tower
-//	   [4195, 10953, east] // Flughafen - Militär  (muss gebaut werden!)
+	   [4975, 12512, east], // Petrovka - Zentrum
+	   [4004, 11659, east], // Petrovka - Militär (muss gebaut werden!)
+	   [1903, 12442, east] // Petrovka - Sägewerk (muss gebaut werden!)
+
     ];
 
 

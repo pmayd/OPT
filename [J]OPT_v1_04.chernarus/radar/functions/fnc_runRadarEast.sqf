@@ -102,7 +102,7 @@ sleep 1;
                     if (side _obj == east) then {
                         _marker = _markerost select _i;		
 
-                        if ((_obj iskindof "Helicopter") and !(_obj iskindof "OPT_O_UAV_01_F")) then {
+                        if ((_obj iskindof "Helicopter") and !(_obj iskindof "OPT_O_UAV_01_F") and !(_obj iskindof "Steerable_Parachute_F")) then {
                             _marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
                             _marker setMarkerTypelocal "b_air";
                             //systemChat format ["O:%1 M:%2 P:%3",_obj,_marker,(getPosATLVisual (vehicle _obj))];					
@@ -112,11 +112,11 @@ sleep 1;
                             _marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
                             _marker setMarkerTypelocal "b_plane";
                         };	
-
-                    } else {
+					};
+                    if (side _obj == west) then {
                         _marker = _markerwest select _i;		
 
-                        if ((_obj iskindof "Helicopter") and !(_obj iskindof "OPT_B_UAV_01_F")) then {
+                        if ((_obj iskindof "Helicopter") and !(_obj iskindof "OPT_B_UAV_01_F") and !(_obj iskindof "Steerable_Parachute_F")) then {
                             _marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
                             _marker setMarkerTypelocal "b_air";
                         };
@@ -125,7 +125,7 @@ sleep 1;
                             _marker setmarkerposlocal (getPosATLVisual (vehicle _obj));
                             _marker setMarkerTypelocal "b_plane";
                         };
-
+						
                     };
                 };
             };

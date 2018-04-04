@@ -89,11 +89,16 @@ if (PLAYER_SIDE == west) then {
         if (alive _unit and _unit getVariable ["FAR_isUnconscious", 0] == 0) then {
             private _marker = [_unit] call FUNC(createUnitMarker);
             private _name = UNIT_NAME(_unit);
-
-            // create or update unit marker
-            _marker setMarkerPosLocal (getPosATLVisual (vehicle _unit));
-            _marker setMarkerDirLocal (getDirVisual (vehicle _unit));
-
+			
+			if (_name isEqualTo "False") then {
+			        _marker setMarkerTextLocal "";
+                    deleteMarkerLocal _marker;
+			} else {
+                // create or update unit marker
+                _marker setMarkerPosLocal (getPosATLVisual (vehicle _unit));
+                _marker setMarkerDirLocal (getDirVisual (vehicle _unit));
+			};
+			
             // Fahrzeuginfo
             if (vehicle _unit != _unit) then {
                 private _vec_name = getText (configFile >> "cfgVehicles" >> typeOf (vehicle _unit) >> "displayName");
@@ -141,9 +146,15 @@ if (PLAYER_SIDE == east) then {
             _marker = [_unit] call FUNC(createUnitMarker);
             private _name = UNIT_NAME(_unit);
             
-            _marker setmarkerposlocal (getPosATLVisual (vehicle _unit));
-            _marker setmarkerdirlocal (getDirVisual (vehicle _unit));
-
+			if (_name isEqualTo "False") then {
+			        _marker setMarkerTextLocal "";
+                    deleteMarkerLocal _marker;
+			} else {
+                // create or update unit marker
+                _marker setMarkerPosLocal (getPosATLVisual (vehicle _unit));
+                _marker setMarkerDirLocal (getDirVisual (vehicle _unit));
+			};
+			
             // Fahrzeuginfo
             if (vehicle _unit != _unit) then {
 

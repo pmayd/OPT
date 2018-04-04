@@ -47,18 +47,10 @@ if (_unitCost > (_side_Budget + GVARMAIN(dispo))) exitWith {
 };
 
 private _spawnObj = nearestObject [player, "Land_HelipadCircle_F"];
-private _empty_pos = (position _spawnObj) findEmptyPosition [0.2, GVAR(orderSpawnRadius), _unitType];
-
-if (count _empty_pos == 0) exitWith {
-    private _txt = format["Kein freier Platz im Umkreis von %1m. Bereich räumen.", GVAR(orderSpawnRadius)];
-	[QEGVAR(gui,message), ["Platz unzureichend", _txt, "red"]] call CBA_fnc_localEvent;
-};
 
 [QEGVAR(common,updateBudget), [PLAYER_SIDE, _unitCost, "-"]] call CBA_fnc_serverEvent;
-[QGVAR(spawnVehicle), [_unitType, _spawnObj, _empty_pos]] call CBA_fnc_serverEvent; // sheduled environment
-
-private _txt = format["%1 geliefert.",_displayName];
-[QEGVAR(gui,message), ["Bestellung", _txt, "green"]] call CBA_fnc_localEvent;
+[QGVAR(spawnVehicle), [player, _unitType, _spawnObj]] call CBA_fnc_serverEvent; // sheduled environment
+//systemChat format ["VT:%1 SO:%2 OSR:%3",_unitType, _spawnObj,(position _spawnObj)];
 
 // Budget in Dialog updaten
 [] call FUNC(updateBudget);

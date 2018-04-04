@@ -9,7 +9,7 @@
 * wird in descprition.ext verwendet
 */
 // hier den Missionsnamen festlegen
-#define __MISSION_NAME__ "OPT - Testevent 11.2."
+#define __MISSION_NAME__ "Schlacht #3"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
 #define __VERSION__ Complete new build 1.04
 // made by
@@ -27,7 +27,7 @@
 #define __RESPAWN_TYPE__ 3
 
 // Anzahl max. möglicher Spieler eingeben
-#define __PLNUM__ 106
+#define __PLNUM__ 115
 
 // falls die Mission respawn haben soll, dann die folgende Zeile auskommentieren und respawn Zeit festlegen
 // wenn das Respawndelay größer als 10 Sekunden ist erscheint ein berühmtes Zitat während die Kamera den leblosen Körper zeigt

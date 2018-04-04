@@ -8,6 +8,8 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+GVAR(spawnInProgress) = false;
+
 // CBA settings
 [] call FUNC(initCBASettings);
 

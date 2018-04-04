@@ -3,9 +3,9 @@
 * spawn a vehicle 
 *
 * Arguments:
-* 0: <type> description
-* 1: <OBJECT> object for spawn position
-* 2: <POSITION> empty position
+* 0: <OBJECT> unit which send the order
+* 1: <string> classname to spawn
+* 2: <OBJECT> nearest spawn pos
 *
 * Return Value:
 * None
@@ -16,21 +16,27 @@
 */
 #include "script_component.hpp"
 
-params ["_vecType", "_spawnObj", "_empty_pos"];
+params ["_unit", "_vecType", "_spawnObj"];
 
-/* security check
-spawn vehicle somewhere in the air
-stop physics and damage calculation
-move vehicle to free position
-*/
-private _vec = createVehicle [_vecType, [0,0, 1000 + random(500)], [], 0, "NONE"];
-_vec enableSimulationGlobal false;
-_vec allowDamage false; // avoid any damage during spawn process
-_vec setPosATL _empty_pos;
+// semaphore -> wait for other spawn processes to finish
+waitUntil { !GVAR(spawnInProgress); };
+GVAR(spawnInProgress) = true;
+
+private _empty_pos = (position _spawnObj) findEmptyPosition [0.2, GVAR(orderSpawnRadius), _vecType];
+
+if (count _empty_pos == 0) exitWith {
+    private _txt = format["Kein freier Platz im Umkreis von %1m. Bereich räumen.", GVAR(orderSpawnRadius)];
+	[QEGVAR(gui,message), ["Platz unzureichend", _txt, "red"], _unit] call CBA_fnc_targetEvent;
+};
+
+private _vec = createVehicle [_vecType, _empty_pos, [], 0, "NONE"];
+// _vec enableSimulationGlobal false;
+// _vec allowDamage false; // avoid any damage during spawn process
+// _vec setPosATL _empty_pos;
 
 if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};
 if (surfaceIsWater _empty_pos) then {
-	_vec setPosASL ((getPosASL _vec) set [2, 0]);
+	_vec setPos [(getpos _empty_pos select 0),(getpos _empty_pos select 1),0.2]; 
 };
 
 //datalink-test-eintrag, kallek
@@ -59,7 +65,14 @@ if (_vecType in (_uavs + GVARMAIN(big_uavs))) then {
 	_vec setSkill 0.8;
 };
 
-waitUntil { speed _vec == 0; };
-_vec enableSimulationGlobal true;
+//waitUntil { speed _vec == 0; };
+//_vec enableSimulationGlobal true;
 _vec setDamage 0;
-_vec allowDamage true;
+//_vec allowDamage true;
+sleep 1;
+_vec setDamage 0;
+
+GVAR(spawnInProgress) = false;
+
+private _txt = format["%1 geliefert.",_displayName];
+[QEGVAR(gui,message), ["Bestellung", _txt, "green"], _unit] call CBA_fnc_targetEvent;
