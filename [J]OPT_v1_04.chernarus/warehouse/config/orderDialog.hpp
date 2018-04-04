@@ -153,6 +153,19 @@ class GVAR(dlg_order)
 			action = QUOTE([] call FUNC(sellVehicle););
             sizeEx = FONTSIZE;
         };
+         class RscButtonClear: RscButton
+        {
+            idc = 20005;
+            text = "Räumen"; //--- ToDo: Localize;
+            x = 9 * GUI_GRID_W + GUI_GRID_X;
+            y = 23.23 * GUI_GRID_H + GUI_GRID_Y;
+            w = 7.5 * GUI_GRID_W;
+            h = 1.5 * GUI_GRID_H;
+            tooltip = "Löscht alle Fahrzeuge um das Bestell-Pad (kein Verkauf!)";
+			action = QUOTE([] call FUNC(deleteVehicle););
+            sizeEx = FONTSIZE;
+            colorBackground[] = Color_DarkRed;
+        };
         class RscButtonCancel: RscButton
         {
             idc = 20003;

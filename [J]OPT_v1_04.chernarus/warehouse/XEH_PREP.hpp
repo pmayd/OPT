@@ -1,5 +1,6 @@
 
 PREP(createMenu);
+PREP(deleteVehicle);
 PREP(filterVehicleList);
 PREP(getVehicleInfo);
 PREP(handleDeadVehicle);
