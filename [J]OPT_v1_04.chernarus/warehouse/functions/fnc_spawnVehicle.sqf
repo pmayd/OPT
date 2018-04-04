@@ -74,5 +74,6 @@ _vec setDamage 0;
 
 GVAR(spawnInProgress) = false;
 
+private _displayName = getText (configFile >> "CfgVehicles" >> _vecType >> "displayName");
 private _txt = format["%1 geliefert.",_displayName];
 [QEGVAR(gui,message), ["Bestellung", _txt, "green"], _unit] call CBA_fnc_targetEvent;

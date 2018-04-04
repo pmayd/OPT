@@ -17,7 +17,7 @@
 [
     "OPT_PARAM_PLAYTIME", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "SLIDER", // setting type
-    "Spielzeit", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Spielzeit in Sek.", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [180, 10800, 9000, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
@@ -27,7 +27,7 @@
 [
     "OPT_PARAM_TRUCETIME", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "SLIDER", // setting type
-    "Waffenruhe", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Waffenruhe in Sek.", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [30, 900, 300, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
@@ -47,7 +47,7 @@
 [
     "OPT_PARAM_FREEZE_TIME", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "SLIDER", // setting type
-    "Zeit, in der zu Beginn alle Einheiten eingeforen sind", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Freeze-Time in Sek.", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [0, 300, 0, 0], // data for this setting: [min, max, default, number of shown trailing decimals]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
@@ -57,7 +57,7 @@
 [
     "OPT_PARAM_SHOW_INTRO", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "CHECKBOX", // setting type
-    "Intro", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Intro an/aus", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // data for this setting: [min, max, default, number of shown trailing decimals]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer

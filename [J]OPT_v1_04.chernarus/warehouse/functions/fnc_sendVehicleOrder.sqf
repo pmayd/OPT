@@ -37,8 +37,6 @@ private _unitCost = _unitRecord select 1;
 
 private _side_Budget = if (PLAYER_SIDE == west) then {GVARMAIN(nato_budget)} else {GVARMAIN(csat_budget)};
 
-private _displayName = getText (configFile >> "CfgVehicles" >> _unitType >> "displayName");
-
 // Prüfe, ob aktuelle Kosten größer sind als aktuelles Budget + Dispo
 // wenn Budget < 0, dann kann noch bis dispo eingekauft werden (siehe setup_publicvariable)
 if (_unitCost > (_side_Budget + GVARMAIN(dispo))) exitWith {

@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=8237;
+		nextID=8303;
 	};
 	class Camera
 	{
@@ -786,6 +786,24 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -800,24 +818,6 @@ class CustomAttributes
 						};
 					};
 					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
 				};
 			};
 		};
@@ -22840,7 +22840,7 @@ class Mission
 					};
 					id=411;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.20099998;
+					atlOffset=-0.074047446;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23031,7 +23031,7 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=12.077219;
+			atlOffset=12.072703;
 		};
 		class Item7
 		{
@@ -34860,6 +34860,7 @@ class Mission
 						angles[]={0,3.6354685,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -34868,7 +34869,7 @@ class Mission
 					};
 					id=549;
 					type="Land_InfoStand_V1_F";
-					atlOffset=11.096;
+					atlOffset=0.0016064644;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35076,7 +35077,7 @@ class Mission
 				};
 			};
 			id=548;
-			atlOffset=37.851257;
+			atlOffset=37.851273;
 		};
 		class Item9
 		{
