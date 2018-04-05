@@ -111,7 +111,20 @@ registriert alle Events via CBA Event Handling
         
 		private _faction = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'faction'));
 		private _name = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'displayName'));
-		_message = format["Fahrzeug: %1 (%2)", _name, _faction];
+        private _category = if (typeOf _vec in (GVAR(nato_vehicles) + GVAR(csat_vehicles))) then {
+            "Leicht"
+        } else {
+            if (typeOf _vec in (GVAR(nato_armored) + GVAR(csat_armored))) then {
+                "Schwer"
+            } else {
+                if (typeOf _vec in (GVAR(nato_choppers) + GVAR(csat_choppers))) then {
+                    "Flug"
+                } else {
+                    "Unbekannt"
+                };
+            };
+        };
+		_message = format["Fahrzeug: %1 (%2) (%3)", _name, _category, _faction];
 
 		// Täter nicht bekannt?
 		if !(_killer isEqualTo objNull) then {

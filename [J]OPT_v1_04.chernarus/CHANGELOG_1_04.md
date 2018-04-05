@@ -10,6 +10,7 @@
 - San-System: Nächster Medic wird nun korrekt angezeigt
 - Main: Lösche Funkgeräte von Leichen
 - Bugfix: Take EH für Einheiten überarbeitet
+- Fahrzeugkills werden nun mit Klasse Leicht, Schwer, Flug geloggt
 
 #### Editor
 - TFAR-Module angepasst
