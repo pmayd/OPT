@@ -73,7 +73,7 @@ if (OPT_PARAM_MINE_FREE_FLAG) then {
                 private _explosive = nearestObject [player, "ACE_Explosives_Place"];
 
                 // allow satchel and charge
-                if ((typeOf _explosive) find "SatchelCharge" == 0 or (typeOf _explosive) find "DemoCharge" == 0) exitWith {};	
+                if ((typeOf _explosive) find "SatchelCharge" != -1 or (typeOf _explosive) find "DemoCharge" != -1) exitWith {};	
 
                 // only if near flag
                 if ({_explosive distance _x <= GVAR(freeFlagRadius)} count (GVARMAIN(nato_flags) + GVARMAIN(csat_flags)) == 0) exitWith {};
