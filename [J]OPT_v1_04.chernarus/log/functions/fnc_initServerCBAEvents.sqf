@@ -111,13 +111,16 @@ registriert alle Events via CBA Event Handling
         
 		private _faction = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'faction'));
 		private _name = (getText(configFile >> 'CfgVehicles' >> typeOf _vec >> 'displayName'));
-        private _category = if (typeOf _vec in (EGVAR(warehouse,nato_vehicles) + EGVAR(warehouse,csat_vehicles))) then {
+        private _light = (EGVAR(warehouse,nato_vehicles) + EGVAR(warehouse,csat_vehicles)) apply {toLower _x select 0};
+        private _heavy = (EGVAR(warehouse,nato_armored) + EGVAR(warehouse,csat_armored)) apply {toLower _x select 0;}
+        private _air = (EGVAR(warehouse,nato_choppers) + EGVAR(warehouse,csat_choppers)) apply {toLower _x select 0};
+        private _category = if (toLower (typeOf _vec) in _light) then {
             "Leicht"
         } else {
-            if (typeOf _vec in (EGVAR(warehouse,nato_armored) + EGVAR(warehouse,csat_armored))) then {
+            if (toLower (typeOf _vec) in _heavy) then {
                 "Schwer"
             } else {
-                if (typeOf _vec in (EGVAR(warehouse,nato_choppers) + EGVAR(warehouse,csat_choppers))) then {
+                if (toLower (typeOf _vec) in _air) then {
                     "Flug"
                 } else {
                     "Unbekannt"
