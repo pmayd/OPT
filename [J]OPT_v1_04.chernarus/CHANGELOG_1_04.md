@@ -11,6 +11,7 @@
 - Main: Lösche Funkgeräte von Leichen
 - Bugfix: Take EH für Einheiten überarbeitet
 - Fahrzeugkills werden nun mit Klasse Leicht, Schwer, Flug geloggt
+- Log: Kauflog nun mit Käufer und Fahrzeugtyp
 
 #### Editor
 - TFAR-Module angepasst

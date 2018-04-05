@@ -46,7 +46,7 @@ if (_unitCost > (_side_Budget + GVARMAIN(dispo))) exitWith {
 
 private _spawnObj = nearestObject [player, "Land_HelipadCircle_F"];
 
-[QEGVAR(common,updateBudget), [PLAYER_SIDE, _unitCost, "-"]] call CBA_fnc_serverEvent;
+[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _unitType, _unitCost, "-"]] call CBA_fnc_serverEvent;
 [QGVAR(spawnVehicle), [player, _unitType, _spawnObj]] call CBA_fnc_serverEvent; // sheduled environment
 //systemChat format ["VT:%1 SO:%2 OSR:%3",_unitType, _spawnObj,(position _spawnObj)];
 
