@@ -66,11 +66,19 @@ if (OPT_PARAM_MINE_FREE_FLAG) then {
 
 			if (
 				_menuType == 1 and // Eigenmenü
-				{(_x distance player) <= GVAR(freeFlagRadius)} count (GVARMAIN(csat_flags) + GVARMAIN(nato_flags)) > 0 and 
 				ace_explosives_pfeh_running // explosive placing in progress
 			) then {
-				ace_explosives_placeAction = PLACE_CANCEL; // end explosive setup process
-				
+				waitUntil { ace_explosives_placeAction == PLACE_APPROVE; }; // wait until explosive was placed by player
+
+                private _explosive = nearestObject [player, "ACE_Explosives_Place"];
+
+                // allow satchel and charge
+                if ((typeOf _explosive) find "SatchelCharge" == 0 or (typeOf _explosive) find "DemoCharge" == 0) exitWith {};	
+
+                // only if near flag
+                if ({_explosive distance _x <= GVAR(freeFlagRadius)} count (GVARMAIN(nato_flags) + GVARMAIN(csat_flags)) == 0) exitWith {};
+
+                deleteVehicle _explosive;	
 				// Warnhinweis
 				private _txt = SECTORCONTROL_MINE_FREE_FLAG_MESSAGE;
 				[QEGVAR(gui,message), ["Sperrzone", _txt, "red"]] call CBA_fnc_localEvent;

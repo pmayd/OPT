@@ -12,6 +12,7 @@
 - Bugfix: Take EH für Einheiten überarbeitet
 - Fahrzeugkills werden nun mit Klasse Leicht, Schwer, Flug geloggt
 - Log: Kauflog nun mit Käufer und Fahrzeugtyp
+- Sektorcontrol: Verbesserte Abfrage bei Minenplatzierung. Minensperre greift nicht mehr bei Satchel und Charge
 
 #### Editor
 - TFAR-Module angepasst
