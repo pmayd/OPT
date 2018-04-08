@@ -58,7 +58,7 @@ class CfgDebriefing {
 	};
 	class End3 {
 		title = "Untentschieden";
-		subtitle = "Wer ist schuld? Das kann nicht sein!";
+		subtitle = "Eine knappe Kiste ohne echten Sieger!";
 		description = "Beide Fraktionen sind gleich stark. Das sinnlose Blutvergießen wird für heute beendet und die Fraktionen ziehen sich zurück.";
 		pictureBackground = "opt_a3_core\bilder\opt4_logo.paa";
 		picture = "KIA";

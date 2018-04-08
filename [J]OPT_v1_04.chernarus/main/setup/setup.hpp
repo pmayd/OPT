@@ -13,7 +13,7 @@
 // Versionsnummer eintragen (nur die des Base Templates!!!)
 #define __VERSION__ Complete new build 1.04
 // made by
-#define __MADE_BY__ "James & Lord"
+#define __MADE_BY__ "James und Lord"
 // short description
 #define __MISSION_DESCRIPTION__ "This is an Operation Pandora Trigger Mission"
 

@@ -59,4 +59,4 @@ waitUntil { _timeElapsed = (serverTime - GVAR(startTime)); (OPT_PARAM_PLAYTIME -
 
 [QGVAR(endMission), [], playableUnits] call CBA_fnc_targetEvent; // call end script on all clients
 
-"SideScore" call BIS_fnc_endMissionServer;
+//"SideScore" call BIS_fnc_endMissionServer;

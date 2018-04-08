@@ -48,7 +48,7 @@ if (toLower _class in (GVAR(allNato) apply {toLower (_x select 0)})) then {
     };
 };
 
-[QEGVAR(common,updateBudget), [PLAYER_SIDE, _unitCost, "+"]] call CBA_fnc_serverEvent;
+[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _class, _unitCost, "+"]] call CBA_fnc_serverEvent;
 deleteVehicle _selectedVehicle;
 
 private _txt = format["%1 für %2 € verkauft.", _selectionText, _unitCost];
