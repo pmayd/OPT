@@ -36,7 +36,7 @@ private _vec = createVehicle [_vecType, _empty_pos, [], 0, "NONE"];
 
 if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};
 if (surfaceIsWater _empty_pos) then {
-	_vec setPos [(getpos _empty_pos select 0),(getpos _empty_pos select 1),0.2]; 
+	_vec setPos [(_empty_pos select 0),(_empty_pos select 1), 0.2]; 
 };
 
 //datalink-test-eintrag, kallek

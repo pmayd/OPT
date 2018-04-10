@@ -13,6 +13,10 @@
 - Fahrzeugkills werden nun mit Klasse Leicht, Schwer, Flug geloggt
 - Log: Kauflog nun mit Käufer und Fahrzeugtyp
 - Sektorcontrol: Verbesserte Abfrage bei Minenplatzierung. Minensperre greift nicht mehr bei Satchel und Charge
+- Bugfix: Fehler im Respawn-Log. Kosten werden wieder korrekt berechnet.
+- Bugfix: Anpassung im Respawn-Log. Keine Kosten mehr, dafür korrekter Log bei Budget-Meldung
+- Bugfix: Respawn-Counter wieder aktiv
+- Bugfix: Marine-Basis: Fahrzeuge können wieder gekauft werden
 
 #### Editor
 - TFAR-Module angepasst
