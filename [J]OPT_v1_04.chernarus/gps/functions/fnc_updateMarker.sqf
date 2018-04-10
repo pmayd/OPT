@@ -90,7 +90,7 @@ if (PLAYER_SIDE == west) then {
             private _marker = [_unit] call FUNC(createUnitMarker);
             private _name = UNIT_NAME(_unit);
 			
-			if (_name isEqualTo "False") then {
+			if (_name isEqualTo "false") then {
 			        _marker setMarkerTextLocal "";
                     deleteMarkerLocal _marker;
 			} else {
@@ -146,7 +146,7 @@ if (PLAYER_SIDE == east) then {
             _marker = [_unit] call FUNC(createUnitMarker);
             private _name = UNIT_NAME(_unit);
             
-			if (_name isEqualTo "False") then {
+			if (_name isEqualTo "false") then {
 			        _marker setMarkerTextLocal "";
                     deleteMarkerLocal _marker;
 			} else {
