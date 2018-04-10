@@ -100,7 +100,7 @@ for "_i" from _min to _max - 1 do {
 _txt = format["%1</t>", _txt];
 
 [_txt,0,0,14,2,-0.5,3010] spawn bis_fnc_dynamicText;
-sleep 15;
+sleep 25;
 
 titlecut ["","BLACK IN",1];
 sleep 0.1;
