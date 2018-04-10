@@ -72,9 +72,9 @@
     };
 
     if (_respawn) then {
-        _message = format["%1. Respawn von %2", _message, _buyerName];
+        _message = format["%1 Respawn von %2", _message, _buyerName];
     } else {
-        _message = format["%1. %5 (ver)kaufte %6", _message, _buyerName, _unitName];
+        _message = format["%1 %2 (ver)kaufte %3", _message, _buyerName, _unitName];
     };
 
 	[QEGVAR(log,write), [_cat, _message]] call CBA_fnc_localEvent;
