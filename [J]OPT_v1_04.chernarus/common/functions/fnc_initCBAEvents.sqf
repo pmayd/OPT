@@ -24,7 +24,14 @@
 
 // update budget
 [QGVAR(updateBudget), {
-	params ["_buyerName", "_side", "_unitType", "_unitCost", "_sign"];
+	params [
+        "_buyerName", 
+        "_side", 
+        "_unitType", 
+        "_unitCost", 
+        "_sign", 
+        ["_respawn", false]
+    ];
 
 	private _cat = "Budget";
 	private _message = "";
@@ -51,18 +58,25 @@
 
 	// server log sowie Aktualisierung via publicVarialbe
     private _unitName = (getText(configFile >> 'CfgVehicles' >> _unitType >> 'displayName'));
-	if (_side == west) then {
-		_message = format["NATO alt: %1 - neu: %2 - Differenz: %3%4. %5 (ver)kaufte %6", GVARMAIN(nato_budget), _budget_neu, _sign, _unitCost, _buyerName, _unitName];
-		GVARMAIN(nato_budget) = _budget_neu;
-		publicVariable QGVARMAIN(nato_budget);
+    if (_side == west) then {
+        _message = format["NATO alt: %1 - neu: %2 - Differenz: %3%4.", GVARMAIN(nato_budget), _budget_neu, _sign, _unitCost];
 
-	} else {
-		_message = format["CSAT alt: %1 - neu: %2 - Differenz: %3%4. %5 (ver)kaufte %6", GVARMAIN(csat_budget), _budget_neu, _sign, _unitCost, _buyerName, _unitName];
-		GVARMAIN(csat_budget) = _budget_neu;
-		publicVariable QGVARMAIN(csat_budget);
+        GVARMAIN(nato_budget) = _budget_neu;
+        publicVariable QGVARMAIN(nato_budget);
 
-	};
-	
+    } else {
+        _message = format["CSAT alt: %1 - neu: %2 - Differenz: %3%4.", GVARMAIN(csat_budget), _budget_neu, _sign, _unitCost];
+        GVARMAIN(csat_budget) = _budget_neu;
+        publicVariable QGVARMAIN(csat_budget);
+
+    };
+
+    if (_respawn) then {
+        _message = format["%1. Respawn von %2", _message, _buyerName];
+    } else {
+        _message = format["%1. %5 (ver)kaufte %6", _message, _buyerName, _unitName];
+    };
+
 	[QEGVAR(log,write), [_cat, _message]] call CBA_fnc_localEvent;
 
 }] call CBA_fnc_addEventHandler;
