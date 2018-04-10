@@ -22,7 +22,7 @@ private _return = false;
 private _isPlayerUnconscious = _caller getVariable "FAR_isUnconscious";
 
 // Make sure _caller is alive and target is an injured unit
-if(!alive _caller || {_isPlayerUnconscious == 1} || {FAR_isDragging} || {isNil "_target"} || {!alive _target} || {!isPlayer _target && !FAR_Debugging} || {(_target distance _caller) > 2}) exitWith {
+if(!alive _caller || {_isPlayerUnconscious == 1} || {FAR_isDragging} || {isNil "_target"} || {!alive _target} || {!isPlayer _target && !FAR_Debugging} || {(_target distance _caller) > 5}) exitWith {
 	_return
 };
 
