@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12129.288,162.48914,12593.305};
-		dir[]={-0.39583874,-0.2459977,-0.88483036};
-		up[]={-0.10048112,0.9692542,-0.22460766};
-		aside[]={-0.91287661,2.4438486e-007,0.40838593};
+		pos[]={12126.033,173.19254,12603.391};
+		dir[]={-0.30860695,-0.46658313,-0.82898206};
+		up[]={-0.16279723,0.88445359,-0.4373067};
+		aside[]={-0.93723488,2.2296445e-007,0.34890556};
 	};
 };
 binarizationWanted=0;
@@ -22922,13 +22922,13 @@ class Mission
 					{
 						name="csat_trigger_beam";
 						text="Trigger für Beam-Dialog";
-						condition="call{this && local player}";
+						condition="call{this && vehicle player in thislist}";
 						onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
 						sizeA=7;
 						sizeB=7;
 						sizeC=2;
 						repeatable=1;
-						activationBy="ANYPLAYER";
+						activationBy="EAST";
 					};
 					id=4793;
 					type="EmptyDetectorAreaR50";
@@ -34887,13 +34887,13 @@ class Mission
 					{
 						name="nato_trigger_beam";
 						text="Trigger für Beam-Dialog";
-						condition="call{this && local player}";
+						condition="call{this && vehicle player in thislist}";
 						onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
 						sizeA=7;
 						sizeB=7;
 						sizeC=2;
 						repeatable=1;
-						activationBy="ANYPLAYER";
+						activationBy="WEST";
 					};
 					id=4792;
 					type="EmptyDetectorAreaR50";
