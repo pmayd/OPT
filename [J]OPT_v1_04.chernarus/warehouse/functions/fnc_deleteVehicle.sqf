@@ -21,7 +21,7 @@ _objs = nearestObjects [_spawnpos, ["AllVehicles", "Thing"], GVAR(orderSpawnRadi
 // now delete
 {
     // Current result is saved in variable _x
-    if (toLower (typeOf _x) in (GVAR(orderDialogObjects) apply {toLower (_x select 0)}) and {isPlayer _x} count (fullCrew _x) == 0) then {
+    if (toLower (typeOf _x) in (GVAR(orderDialogObjects) apply {toLower (_x select 0)}) and ({isPlayer (_x select 0)} count (fullCrew _x)) == 0) then {
         deleteVehicle _x;
     };
 
