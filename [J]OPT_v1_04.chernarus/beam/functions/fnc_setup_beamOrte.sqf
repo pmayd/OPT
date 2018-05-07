@@ -48,7 +48,7 @@ GVAR(locations_west) =
 
 	[[2803.2329, 276.33618, 9802.4512], "Lopatino - Zentrum", 1], 
 	[[2152.7996,263.89948,10882.993], "Lopatino - Alte Zollstation", 1], 
-
+	
 	[[3615.5242, 356.65347, 6311.3462], "Pass Sosnovy - Green Mountain", 3], 
 	[[2916.1772, 371.79553, 6677.3145], "Pass Sosnovy - Bernhards Ziegenfarm", 3], 
 	[[2092.9773, 277.4227, 7377.126], "Pass Sosnovy - Myshkino", 3], 
@@ -56,10 +56,6 @@ GVAR(locations_west) =
 	[[4916.1128, 322.12228, 5707.3896], "Pulkovo - Zentrum", 1], 
 	[[5797.9277, 132.39203, 4831.9346], "Pulkovo - Nadezhdino", 1], 
 	[[6853.4727,335.94174,4581.9102], "Pulkovo - Pumas Artistellung", 1], 
-
-	[[9178.7568, 222.90584, 3745.874], "Pusta - Zentrum", 3], 
-	[[10343.482, 16.177559, 2607.2998], "Pusta - Kraftwerk", 3], 
-	[[10354.342, 12.808233, 2343.188], "Pusta - Kirche des oldeurope", 3], 
 
 	[[4807.7271, 268.57898, 6740.1064], "Rogovo - Zentrum", 2], 
 	[[4437.2344, 307.31317, 6331.7627], "Rogovo - Pogorevka", 2], 
@@ -86,6 +82,10 @@ GVAR(locations_east) =
     [[12097.098, 158.91089, 12648.875], "CSAT Basis", -1],
     [[14182.087, 2.1730125, 12250.548], "CSAT Marinebasis", -1],
 	
+	[[9178.7568, 222.90584, 3745.874], "Pusta - Zentrum", 1], 
+	[[10343.482, 16.177559, 2607.2998], "Pusta - Kraftwerk", 1], 
+	[[10354.342, 12.808233, 2343.188], "Pusta - Kirche des oldeurope", 1], 
+
 	[[12788.279, 9.9679699, 9531.6094], "Berezino - Sägewerk", 1], 
 	[[12383.195, 16.064194, 9438.915], "Berezino - Vorort", 1], 
 	[[12177.619, 16.071527, 9803.8301], "Berezino - Stützpunkt Wiesl", 1], 

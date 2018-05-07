@@ -193,7 +193,9 @@ GVARMAIN(sniperRifles) = [
 	"OPT_srifle_GM6_camo_F",
 	"OPT_srifle_LRR_F",
 	"OPT_srifle_LRR_tna_F",
-	"OPT_srifle_GM6_ghex_F"
+	"OPT_srifle_GM6_ghex_F",
+	"srifle_GM6_ghex_F",
+	"srifle_LRR_F"
 ];
 
 /* MG */

@@ -9,11 +9,11 @@
 * wird in descprition.ext verwendet
 */
 // hier den Missionsnamen festlegen
-#define __MISSION_NAME__ "Schlacht #3"
+#define __MISSION_NAME__ "Schlacht #5"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
 #define __VERSION__ Complete new build 1.04
 // made by
-#define __MADE_BY__ "James und Lord"
+#define __MADE_BY__ "OPT-Missionsteam"
 // short description
 #define __MISSION_DESCRIPTION__ "This is an Operation Pandora Trigger Mission"
 

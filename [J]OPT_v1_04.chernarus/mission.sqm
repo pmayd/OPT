@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=4784;
+		nextID=4790;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9161;
+		nextID=9623;
 	};
 	class Camera
 	{
-		pos[]={4727.541,41.640884,2506.1199};
-		dir[]={0.43853879,-0.45261839,0.77649814};
-		up[]={0.22259091,0.89168423,0.39413205};
-		aside[]={0.87078416,2.3733446e-007,-0.49179295};
+		pos[]={4658.2837,34,2573.7476};
+		dir[]={0.89615226,-0.23990329,-0.37331906};
+		up[]={0.2214593,0.9707967,-0.092255794};
+		aside[]={-0.38454878,4.2608008e-008,-0.92311025};
 	};
 };
 binarizationWanted=0;
@@ -37,7 +37,6 @@ addons[]=
 	"A3_Weapons_F",
 	"A3_Weapons_F_Pistols_Pistol_Heavy_02",
 	"A3_Weapons_F_Acc",
-	"ace_optics",
 	"task_force_radio_items",
 	"A3_Characters_F",
 	"A3_Characters_F_Orange_Facewear",
@@ -47,9 +46,9 @@ addons[]=
 	"A3_Weapons_F_Pistols_Rook40",
 	"A3_Characters_F_Tacops",
 	"A3_Weapons_F_Mark_Acc",
+	"A3_Characters_F_Exp",
 	"A3_Drones_F_Weapons_F_Gamma_Items",
 	"A3_Weapons_F_Orange",
-	"A3_Characters_F_Exp",
 	"A3_Structures_F_Civ_Camping",
 	"A3_Structures_F_Mil_Flags",
 	"A3_Structures_F_Mil_Helipads",
@@ -62,7 +61,6 @@ addons[]=
 	"A3_Structures_F_Bootcamp_Civ_SportsGrounds",
 	"A3_Supplies_F_Exp_Ammoboxes",
 	"ace_dragging",
-	"A3_Structures_F_Heli_Ind_Cargo",
 	"CUP_Misc3_Config",
 	"A3_Signs_F_Signs_Ad",
 	"A3_Misc_F_Helpers",
@@ -73,6 +71,8 @@ addons[]=
 	"A3_Weapons_F_Pistols_P07",
 	"ace_reload",
 	"A3_Characters_F_Heads",
+	"A3_Weapons_F_LongRangeRifles_M320",
+	"A3_Weapons_F_Mark_LongRangeRifles_M320",
 	"A3_Weapons_F_Ammoboxes",
 	"CUP_Editor_Plants_Config",
 	"A3_Props_F_Orange_Humanitarian_Supplies",
@@ -91,6 +91,7 @@ addons[]=
 	"CUP_CAStructures_E_Wall",
 	"A3_Structures_F_Orange_Industrial_Cargo",
 	"A3_Structures_F_Argo_Military_Fortifications",
+	"A3_Structures_F_Tank_Military_Fortifications",
 	"A3_Structures_F_Exp_Industrial_Port",
 	"CUP_CAMisc_E_WF",
 	"CUP_CAStructures_PMC_Ruins",
@@ -229,57 +230,57 @@ class AddonsMetaData
 		};
 		class Item6
 		{
-			className="ace_optics";
-			name="ACE3 - Optics";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item7
-		{
 			className="task_force_radio_items";
 			name="task_force_radio_items";
 			author="[TF]Nkey";
 			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
 		};
-		class Item8
+		class Item7
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item8
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item9
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item11
+		class Item10
 		{
 			className="A3_Weapons_F_Exp";
 			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item11
 		{
 			className="A3_Characters_F_Tacops";
 			name="Arma 3 Tac-Ops - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item12
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item13
+		{
+			className="A3_Characters_F_Exp";
+			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -299,159 +300,159 @@ class AddonsMetaData
 		};
 		class Item16
 		{
-			className="A3_Characters_F_Exp";
-			name="Arma 3 Apex - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item17
-		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item17
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item18
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item19
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item20
 		{
 			className="A3_Props_F_Exp_A";
 			name="Arma 3 Nexus Update - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item21
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item22
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item23
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item25
+		class Item24
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item26
+		class Item25
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item26
 		{
 			className="A3_Misc_F";
 			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item27
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item29
+		class Item28
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item30
+		class Item29
 		{
 			className="ace_reload";
 			name="ACE3 - Reload";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item31
+		class Item30
 		{
 			className="CUP_Editor_Plants_Config";
 			name="CUP_Editor_Plants_Config";
 		};
-		class Item32
+		class Item31
 		{
 			className="A3_Props_F_Orange";
 			name="Arma 3 Orange - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item33
+		class Item32
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item34
+		class Item33
 		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item35
+		class Item34
 		{
 			className="CUP_Ind_SawMill";
 			name="CUP_Ind_SawMill";
 		};
-		class Item36
+		class Item35
 		{
 			className="CUP_Ind_Workshop01";
 			name="CUP_Ind_Workshop01";
 		};
-		class Item37
+		class Item36
 		{
 			className="CUP_CAStructures_E_Wall";
 			name="CUP_CAStructures_E_Wall";
 		};
-		class Item38
+		class Item37
 		{
 			className="A3_Structures_F_Orange";
 			name="Arma 3 Orange - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item38
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item39
+		{
+			className="A3_Structures_F_Tank";
+			name="Arma 3 Tank - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -786,6 +787,24 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -800,42 +819,6 @@ class CustomAttributes
 						};
 					};
 					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-					class value
-					{
-						items=1;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="Counter";
-							};
-						};
-					};
 				};
 			};
 		};
@@ -889,7 +872,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=150;
+									items=151;
 									class Item0
 									{
 										class data
@@ -2990,6 +2973,20 @@ class CustomAttributes
 											value="opt_warehouse_blockedvehiclepositions";
 										};
 									};
+									class Item150
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="opt_training_budget";
+										};
+									};
 								};
 							};
 						};
@@ -3006,7 +3003,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=150;
+									items=151;
 									class Item0
 									{
 										class data
@@ -3977,7 +3974,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -7037,7 +7034,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=7;
+														value=7.664887;
 													};
 												};
 												class Item1
@@ -7172,7 +7169,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="4248500";
+														value="4594125";
 													};
 												};
 												class Item1
@@ -7217,7 +7214,7 @@ class CustomAttributes
 																"STRING"
 															};
 														};
-														value="3691000";
+														value="4589375";
 													};
 												};
 												class Item1
@@ -9197,7 +9194,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -9242,7 +9239,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -9287,7 +9284,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -9774,6 +9771,51 @@ class CustomAttributes
 											};
 										};
 									};
+									class Item150
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"STRING"
+															};
+														};
+														value="10000000";
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=1;
+													};
+												};
+											};
+										};
+									};
 								};
 							};
 						};
@@ -9802,24 +9844,22 @@ class Mission
 {
 	class Intel
 	{
-		timeOfChanges=4800;
-		startWeather=0.32633016;
+		timeOfChanges=3600;
+		startWeather=0;
 		startWind=0.1;
-		startRain=0.21619803;
+		startRain=0.00016946725;
 		startWaves=0.1;
-		forecastWeather=0.49576423;
+		forecastWeather=0.00016946725;
 		forecastWind=0.1;
 		forecastWaves=0.1;
-		forecastRain=0.41951895;
-		forecastLightnings=0.30091506;
 		rainForced=1;
 		lightningsForced=1;
 		year=2008;
 		month=8;
 		day=11;
-		hour=14;
+		hour=9;
 		minute=0;
-		startFogBase=-1000;
+		startFogBase=-999.76666;
 		forecastFogBase=-1000;
 		startFogDecay=0;
 		forecastFogDecay=0;
@@ -9890,7 +9930,7 @@ class Mission
 			name="CSAT Base";
 			class Entities
 			{
-				items=15;
+				items=17;
 				class Item0
 				{
 					dataType="Layer";
@@ -10014,7 +10054,6 @@ class Mission
 											radio="tf_fadak";
 											gps="ItemGPS";
 											goggles="G_Aviator";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_Beret_ocamo";
 										};
 									};
@@ -10185,7 +10224,6 @@ class Mission
 											radio="tf_fadak";
 											gps="ItemGPS";
 											goggles="G_Aviator";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_Beret_ocamo";
 										};
 									};
@@ -10356,7 +10394,6 @@ class Mission
 											radio="tf_fadak";
 											gps="ItemGPS";
 											goggles="G_Aviator";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_Beret_ocamo";
 										};
 									};
@@ -10983,7 +11020,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetLeaderO_ocamo";
 										};
 									};
@@ -11078,15 +11114,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -11115,16 +11142,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -11133,7 +11155,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -11285,7 +11306,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -11425,7 +11445,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -11567,7 +11586,7 @@ class Mission
 													class Item3
 													{
 														name="1Rnd_HE_Grenade_shell";
-														count=2;
+														count=1;
 														ammoLeft=1;
 													};
 													class Item4
@@ -11583,7 +11602,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -11723,7 +11741,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -11869,7 +11886,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -12015,7 +12031,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -12161,7 +12176,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -12307,7 +12321,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -12471,7 +12484,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetLeaderO_ocamo";
 										};
 									};
@@ -12566,15 +12578,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -12603,16 +12606,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -12621,7 +12619,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -12716,15 +12713,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -12753,16 +12741,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -12771,7 +12754,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -12923,7 +12905,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -13027,15 +13008,6 @@ class Mission
 														ammoLeft=1;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -13075,7 +13047,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -13217,7 +13188,7 @@ class Mission
 													class Item3
 													{
 														name="1Rnd_HE_Grenade_shell";
-														count=2;
+														count=1;
 														ammoLeft=1;
 													};
 													class Item4
@@ -13233,7 +13204,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -13374,7 +13344,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -13478,15 +13447,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -13520,7 +13480,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -13666,7 +13625,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -13770,15 +13728,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -13812,7 +13761,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -13906,7 +13854,7 @@ class Mission
 											};
 											class uniform
 											{
-												typeName="U_O_GhillieSuit";
+												typeName="U_O_T_Sniper_F";
 												isBackpack=0;
 												class MagazineCargo
 												{
@@ -13916,15 +13864,6 @@ class Mission
 														name="20Rnd_762x51_Mag";
 														count=2;
 														ammoLeft=20;
-													};
-												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
 													};
 												};
 											};
@@ -13960,7 +13899,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 										};
 									};
 									id=4285;
@@ -14110,7 +14048,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="O_UavTerminal";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -14288,7 +14225,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_MilCap_ocamo";
 										};
 									};
@@ -14383,15 +14319,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -14420,16 +14347,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -14438,7 +14360,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -14533,15 +14454,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -14570,16 +14482,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -14588,7 +14495,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -14740,7 +14646,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -14896,7 +14801,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -15036,7 +14940,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -15182,7 +15085,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -15330,7 +15232,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_Watchcap_camo";
 										};
 									};
@@ -15503,7 +15404,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_Watchcap_camo";
 										};
 									};
@@ -15645,7 +15545,7 @@ class Mission
 													class Item3
 													{
 														name="1Rnd_HE_Grenade_shell";
-														count=2;
+														count=1;
 														ammoLeft=1;
 													};
 													class Item4
@@ -15661,7 +15561,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -15812,7 +15711,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="O_UavTerminal";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -15976,7 +15874,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetLeaderO_ocamo";
 										};
 									};
@@ -16116,7 +16013,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -16272,7 +16168,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -16428,7 +16323,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -16568,7 +16462,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -16709,7 +16602,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -16850,7 +16742,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -16996,7 +16887,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -17064,7 +16954,7 @@ class Mission
 										{
 											class primaryWeapon
 											{
-												name="OPT_srifle_GM6_ghex_F";
+												name="srifle_GM6_ghex_F";
 												optics="optic_LRPS";
 												class primaryMuzzleMag
 												{
@@ -17154,7 +17044,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 										};
 									};
 									id=4309;
@@ -17309,7 +17198,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_HelmetCrew_O";
 										};
 									};
@@ -17452,7 +17340,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_HelmetCrew_O";
 										};
 									};
@@ -17595,7 +17482,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="H_HelmetCrew_O";
 										};
 									};
@@ -17741,7 +17627,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -17897,7 +17782,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -18053,7 +17937,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -18209,7 +18092,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetO_ocamo";
 										};
 									};
@@ -18360,7 +18242,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_fadak";
 											gps="ItemGPS";
-											hmd="NVGoggles_OPFOR";
 											headgear="OPT_H_HelmetLeaderO_ocamo";
 										};
 									};
@@ -18417,7 +18298,7 @@ class Mission
 						};
 					};
 					id=285;
-					atlOffset=51.599998;
+					atlOffset=-0.037811279;
 				};
 				class Item1
 				{
@@ -19849,25 +19730,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11958.028,160.1946,12713.79};
-								angles[]={0,0.34189475,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								name="OPT_radar_containerEast";
-								presenceCondition="OPT_PARAM_RADAR == 1";
-							};
-							id=3951;
-							type="Land_Cargo10_grey_F";
-							atlOffset=-0.15829468;
-						};
-						class Item35
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={12159.408,159.37695,12618.929};
 								angles[]={6.2698507,1.8912388,0};
 							};
@@ -19923,7 +19785,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item36
+						class Item35
 						{
 							dataType="Object";
 							class PositionInfo
@@ -19982,7 +19844,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item37
+						class Item36
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20042,7 +19904,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item38
+						class Item37
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20081,7 +19943,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item39
+						class Item38
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20120,7 +19982,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item40
+						class Item39
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20159,7 +20021,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item41
+						class Item40
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20198,7 +20060,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item42
+						class Item41
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20238,7 +20100,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item43
+						class Item42
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20277,7 +20139,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item44
+						class Item43
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20316,7 +20178,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item45
+						class Item44
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20355,7 +20217,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item46
+						class Item45
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20394,7 +20256,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item47
+						class Item46
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20433,7 +20295,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item48
+						class Item47
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20472,7 +20334,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item49
+						class Item48
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20511,7 +20373,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item50
+						class Item49
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20550,7 +20412,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item51
+						class Item50
 						{
 							dataType="Object";
 							class PositionInfo
@@ -20590,7 +20452,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item52
+						class Item51
 						{
 							dataType="Layer";
 							name="csat_schilder";
@@ -21246,7 +21108,7 @@ class Mission
 							id=4058;
 							atlOffset=5.3025208;
 						};
-						class Item53
+						class Item52
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21285,7 +21147,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item54
+						class Item53
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21324,7 +21186,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item55
+						class Item54
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21364,7 +21226,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item56
+						class Item55
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21404,7 +21266,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item57
+						class Item56
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21444,7 +21306,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item58
+						class Item57
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21484,7 +21346,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item59
+						class Item58
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21523,7 +21385,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item60
+						class Item59
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21563,7 +21425,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item61
+						class Item60
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21603,7 +21465,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item62
+						class Item61
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21620,7 +21482,7 @@ class Mission
 							type="Land_HelipadSquare_F";
 							atlOffset=-1.5258789e-005;
 						};
-						class Item63
+						class Item62
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21636,7 +21498,7 @@ class Mission
 							id=4748;
 							type="Land_HelipadSquare_F";
 						};
-						class Item64
+						class Item63
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21696,7 +21558,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item65
+						class Item64
 						{
 							dataType="Object";
 							class PositionInfo
@@ -21755,9 +21617,28 @@ class Mission
 								nAttributes=2;
 							};
 						};
+						class Item65
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11958.028,160.03659,12713.79};
+								angles[]={0,0.34189257,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								name="OPT_radar_containerEast";
+								presenceCondition="OPT_PARAM_RADAR == 1";
+							};
+							id=4788;
+							type="OPT_Land_Pod_Heli_Transport_04_repair_radar_F";
+							atlOffset=-0.15800476;
+						};
 					};
 					id=358;
-					atlOffset=-307.30103;
+					atlOffset=-19.803955;
 				};
 				class Item2
 				{
@@ -22829,9 +22710,195 @@ class Mission
 						nAttributes=4;
 					};
 				};
+				class Item15
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={12152.658,159,12628.031};
+						angles[]={0,2.7188566,0};
+					};
+					name="zeus_csat_echo9";
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					id=4786;
+					type="ModuleCurator_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ModuleCurator_F_Owner";
+							expression="_this setVariable ['Owner',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="csat_echo9";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleCurator_F_Forced";
+							expression="_this setVariable ['Forced',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleCurator_F_Name";
+							expression="_this setVariable ['Name',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleCurator_F_Addons";
+							expression="_this setVariable ['Addons',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=3;
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+				class Item16
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={12152.521,159.00035,12627.354};
+						angles[]={0,2.7188566,0};
+					};
+					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					id=4787;
+					type="ModuleCurator_F";
+					atlOffset=0.0019989014;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ModuleCurator_F_Owner";
+							expression="_this setVariable ['Owner',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="76561198192093002";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleCurator_F_Forced";
+							expression="_this setVariable ['Forced',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleCurator_F_Name";
+							expression="_this setVariable ['Name',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleCurator_F_Addons";
+							expression="_this setVariable ['Addons',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=3;
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
 			};
 			id=281;
-			atlOffset=980.60522;
+			atlOffset=245.15448;
 		};
 		class Item6
 		{
@@ -23187,7 +23254,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Black";
-											hmd="NVGoggles";
 											headgear="H_Beret_Colonel";
 										};
 									};
@@ -23345,7 +23411,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="H_Beret_Colonel";
 										};
 									};
@@ -23505,7 +23570,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Aviator";
-											hmd="NVGoggles";
 											headgear="H_Beret_Colonel";
 										};
 									};
@@ -23645,7 +23709,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="H_PilotHelmetHeli_B";
 										};
 									};
@@ -23790,7 +23853,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="H_PilotHelmetHeli_B";
 										};
 									};
@@ -23934,7 +23996,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="H_PilotHelmetHeli_B";
 										};
 									};
@@ -24081,7 +24142,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -24243,7 +24303,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="H_Cap_khaki_specops_UK";
 										};
 									};
@@ -24379,7 +24438,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -24456,15 +24514,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -24493,16 +24542,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -24512,7 +24556,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -24589,15 +24632,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -24626,16 +24660,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -24645,7 +24674,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Aviator";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -24767,7 +24795,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -24891,7 +24918,7 @@ class Mission
 													class Item3
 													{
 														name="1Rnd_HE_Grenade_shell";
-														count=3;
+														count=2;
 														ammoLeft=1;
 													};
 													class Item4
@@ -24908,7 +24935,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -25036,7 +25062,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -25165,7 +25190,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -25242,7 +25266,7 @@ class Mission
 											};
 											class uniform
 											{
-												typeName="U_B_GhillieSuit";
+												typeName="U_B_T_Sniper_F";
 												isBackpack=0;
 												class MagazineCargo
 												{
@@ -25296,7 +25320,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 										};
 									};
 									id=4178;
@@ -25453,7 +25476,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Black";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -25587,7 +25609,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="B_UavTerminal";
 											goggles="G_Tactical_Black";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -25757,7 +25778,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Black";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_snakeskin";
 										};
 									};
@@ -25892,7 +25912,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -26028,7 +26047,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -26105,15 +26123,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -26142,16 +26151,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -26161,7 +26165,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Black";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -26238,15 +26241,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -26275,16 +26269,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -26294,7 +26283,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -26416,7 +26404,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -26540,7 +26527,7 @@ class Mission
 													class Item3
 													{
 														name="1Rnd_HE_Grenade_shell";
-														count=3;
+														count=2;
 														ammoLeft=1;
 													};
 													class Item4
@@ -26557,7 +26544,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Black";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -26686,7 +26672,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -26825,7 +26810,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -26964,7 +26948,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -27098,7 +27081,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="B_UavTerminal";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -27245,7 +27227,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_snakeskin";
 										};
 									};
@@ -27381,7 +27362,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -27458,15 +27438,6 @@ class Mission
 														ammoLeft=30;
 													};
 												};
-												class ItemCargo
-												{
-													items=1;
-													class Item0
-													{
-														name="FirstAidKit";
-														count=2;
-													};
-												};
 											};
 											class vest
 											{
@@ -27495,16 +27466,11 @@ class Mission
 												isBackpack=1;
 												class ItemCargo
 												{
-													items=2;
+													items=1;
 													class Item0
 													{
 														name="Medikit";
 														count=1;
-													};
-													class Item1
-													{
-														name="FirstAidKit";
-														count=8;
 													};
 												};
 											};
@@ -27513,7 +27479,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -27637,7 +27602,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -27761,7 +27725,7 @@ class Mission
 													class Item3
 													{
 														name="1Rnd_HE_Grenade_shell";
-														count=3;
+														count=2;
 														ammoLeft=1;
 													};
 													class Item4
@@ -27778,7 +27742,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -27907,7 +27870,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -28175,7 +28137,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -28319,7 +28280,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="H_Booniehat_grn";
 										};
 									};
@@ -28475,7 +28435,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="H_Booniehat_grn";
 										};
 									};
@@ -28622,7 +28581,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_snakeskin";
 										};
 									};
@@ -28758,7 +28716,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -28882,7 +28839,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -29005,7 +28961,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -29134,7 +29089,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -29262,7 +29216,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -29391,7 +29344,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -29538,7 +29490,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_snakeskin";
 										};
 									};
@@ -29674,7 +29625,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Black";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -29803,7 +29753,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_light_snakeskin";
 										};
 									};
@@ -29942,7 +29891,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -29990,7 +29938,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={4745.9819,8.7584276,2586.2178};
+										position[]={4745.9819,8.7584391,2586.218};
 										angles[]={0,3.4732051,0};
 									};
 									side="West";
@@ -30005,7 +29953,7 @@ class Mission
 										{
 											class primaryWeapon
 											{
-												name="OPT_srifle_LRR_F";
+												name="srifle_LRR_F";
 												optics="optic_LRPS";
 												class primaryMuzzleMag
 												{
@@ -30089,11 +30037,11 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 										};
 									};
 									id=4224;
 									type="OPT_NATO_Scharfschuetze";
+									atlOffset=1.1444092e-005;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -30142,6 +30090,7 @@ class Mission
 							{
 							};
 							id=4225;
+							atlOffset=1.1444092e-005;
 						};
 						class Item10
 						{
@@ -30246,7 +30195,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="H_HelmetCrew_B";
 										};
 									};
@@ -30372,7 +30320,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="H_HelmetCrew_B";
 										};
 									};
@@ -30497,7 +30444,6 @@ class Mission
 											watch="ItemWatch";
 											radio="tf_anprc152";
 											gps="ItemGPS";
-											hmd="NVGoggles";
 											headgear="H_HelmetCrew_B";
 										};
 									};
@@ -30636,7 +30582,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Combat";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -30760,7 +30705,6 @@ class Mission
 											radio="tf_anprc152";
 											gps="ItemGPS";
 											goggles="G_Tactical_Clear";
-											hmd="NVGoggles";
 											headgear="OPT_H_HelmetB_grass";
 										};
 									};
@@ -30798,7 +30742,7 @@ class Mission
 						};
 					};
 					id=422;
-					atlOffset=51.599998;
+					atlOffset=0.051131248;
 				};
 				class Item1
 				{
@@ -32180,26 +32124,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4658.6929,10.360517,2597.7529};
-								angles[]={0,5.2167368,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="call{ }";
-								name="OPT_radar_containerWest";
-								presenceCondition="OPT_PARAM_RADAR == 1";
-							};
-							id=4012;
-							type="Land_Cargo10_military_green_F";
-							atlOffset=0.0076284409;
-						};
-						class Item35
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={4760.6528,9.5603027,2562.0701};
 								angles[]={0,5.2359877,0};
 							};
@@ -32254,7 +32178,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item36
+						class Item35
 						{
 							dataType="Object";
 							class PositionInfo
@@ -32294,7 +32218,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item37
+						class Item36
 						{
 							dataType="Object";
 							class PositionInfo
@@ -32355,7 +32279,7 @@ class Mission
 								nAttributes=2;
 							};
 						};
-						class Item38
+						class Item37
 						{
 							dataType="Object";
 							class PositionInfo
@@ -32396,7 +32320,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item39
+						class Item38
 						{
 							dataType="Object";
 							class PositionInfo
@@ -32436,7 +32360,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item40
+						class Item39
 						{
 							dataType="Object";
 							class PositionInfo
@@ -32476,7 +32400,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item41
+						class Item40
 						{
 							dataType="Layer";
 							name="nato_schilder";
@@ -33534,9 +33458,52 @@ class Mission
 							id=4057;
 							atlOffset=-303.29572;
 						};
+						class Item41
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4658.6929,10.368517,2597.7529};
+								angles[]={0,5.2167368,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="call{ }";
+								name="OPT_radar_containerWest";
+								presenceCondition="OPT_PARAM_RADAR == 1";
+							};
+							id=4789;
+							type="OPT_B_Slingload_01_Repair_Radar_F";
+							atlOffset=0.0080003738;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ace_cargo_size";
+									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=8;
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=487;
-					atlOffset=-243.86539;
+					atlOffset=-131.39153;
 				};
 				class Item2
 				{
@@ -33727,7 +33694,7 @@ class Mission
 							text=" Radar Container";
 							type="b_recon";
 							id=4032;
-							atlOffset=306.73044;
+							atlOffset=309.36285;
 						};
 						class Item15
 						{
@@ -34860,7 +34827,7 @@ class Mission
 				};
 			};
 			id=418;
-			atlOffset=0.07012558;
+			atlOffset=0.069960594;
 		};
 		class Item8
 		{
@@ -36221,7 +36188,7 @@ class Mission
 				};
 			};
 			id=581;
-			atlOffset=2.5137162;
+			atlOffset=2.6473866;
 		};
 		class Item10
 		{

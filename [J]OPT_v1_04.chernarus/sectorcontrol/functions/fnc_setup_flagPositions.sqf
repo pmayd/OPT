@@ -12,9 +12,9 @@ GVARMAIN(nato_flags_pos) = [
 //	   [12390, 3303, west], // Kamyshovo - Insel (muss gebaut werden!)
 //	   [12049, 3554, west], // Kamyshovo - Zentrum
 
-//	   [4614, 9658, east], // Flughafen - Stützpunkt
-//	   [4731, 10335, east], // Flughafen - Tower
-//	   [4195, 10953, east] // Flughafen - Militär  (muss gebaut werden!)	   
+//	   [4614, 9658, west], // Flughafen - Stützpunkt
+//	   [4731, 10335, west], // Flughafen - Tower
+//	   [4195, 10953, west], // Flughafen - Militär  (muss gebaut werden!)	   
 
 //	   [8442, 6682, west], // Guglovo - Zentrum
 //	   [7778, 6888, west], // Guglovo - Farm
@@ -24,10 +24,6 @@ GVARMAIN(nato_flags_pos) = [
 //	   [5971, 7884, west], // Stary Sobor - Zentrum
 //	   [5342, 8626, west], // Stary Sobor - Kabanino
 	   
-//	   [2718, 10032, west], // Lopatino - Zentrum
-//	   [2880, 9746, west], // Lopatino - Farm	   
-//	   [2305, 10894, west], // Lopatino - Militär (muss gebaut werden!)
-
 //	   [3794, 8908, west], // Vybor - Zentrum
 //	   [4159, 8947, west], // Vybor - Fabrik
 //	   [4361, 8174, west], // Vybor - Militär (muss gebaut werden!)
@@ -36,21 +32,21 @@ GVARMAIN(nato_flags_pos) = [
 //	   [6539, 6097, west], // Vyshnoye - Zentrum
 //	   [7533, 5120, west], // Vyshnoye - Mogilevka
 	   
-	   [9142, 3857, west], // Pusta - Zentrum   
-	   [10422, 2586, west], // Pusta - Kraftwerk
-	   [10481, 2265, west] // Pusta - Elektro-Zentrum
-	   
-//	   [10088, 1912, west], // Elektrozavodsk - Industrie
-//	   [8687, 2428, west], // Elektrozavodsk - Vorort
-//	   [8073, 3350, west], // Elektrozavodsk - Prigorodky
+	   [10088, 1912, west], // Elektrozavodsk - Industrie
+	   [8687, 2428, west], // Elektrozavodsk - Vorort
+	   [8073, 3350, west] // Elektrozavodsk - Prigorodky
 
+//	   [2718, 10032, west], // Lopatino - Zentrum
+//	   [2880, 9746, west], // Lopatino - Farm	   
+//	   [2305, 10894, west], // Lopatino - Militär (muss gebaut werden!)
+	   
 //	   [6492, 4660, west], // Pulkovo - Militär (muss gebaut werden!)
 //	   [5859, 4857, west], // Pulkovo - Nadezhdino
 //	   [4940, 5604, west], // Pulkovo - Zentrum
 	   
 //	   [4766, 6807, west], // Rogovo - Zentrum
 //	   [4495, 6477, west], // Rogovo - Pogorevka
-//	   [3126, 7954, west], // Rogovo - Pustoshka
+//	   [3126, 7954, west] // Rogovo - Pustoshka
 	   
 //	   [3699, 5986, west], // Pass Sosnovy - Green Mountain
 //	   [3005, 6734, west], // Pass Sosnovy - Farm
@@ -66,7 +62,7 @@ GVARMAIN(nato_flags_pos) = [
     ];
 
 GVARMAIN(csat_flags_pos) = [
-//      [12781, 9635, east], // Berezino - Sägewerk (muss gebaut werden!)
+//     [12781, 9635, east], // Berezino - Sägewerk (muss gebaut werden!)
 //	   [12399, 9523, east], // Berezino - Vorort
 //	   [12105, 9729, east], // Berezino - Militär (muss gebaut werden!)
 	   
@@ -74,7 +70,7 @@ GVARMAIN(csat_flags_pos) = [
 //	   [10220, 11781, east], // Black Mountain - Ruine (muss gebaut werden!)
 //	   [10749, 10784, east], // Black Mountain - Tanke (muss gebaut werden!)
 
-//       [12933, 8121, east], // Nizhnoye - Farm
+//     [12933, 8121, east], // Nizhnoye - Farm
 //	   [12297, 8497, east], // Nizhnoye - Vorort
 //	   [11938, 8869, east], // Nizhnoye - Müllhalde
 	   
@@ -85,10 +81,10 @@ GVARMAIN(csat_flags_pos) = [
 //	   [8779, 11617, east], // Gvozdno - Farm
 //	   [8557, 11927, east], // Gvozdno - Zentrum
 //	   [9160, 11015, east], // Gvozdno - Vorort
-
-//	   [11242, 4281, west], // Staroye - Rog-Burg
-//	   [10126, 5491, west], // Staroye - Zentrum
-//	   [8376, 5962, west], // Staroye - Ruinenstadt Kumyrna
+	   
+	   [11242, 4281, east], // Staroye - Rog-Burg
+	   [10126, 5491, east], // Staroye - Zentrum
+	   [8376, 5962, east] // Staroye - Ruinenstadt Kumyrna
 
 //	   [13372, 6237, east], // Solnichniy - Zentrum
 //	   [12945, 6276, east], // Solnichniy - Zementwerk
@@ -97,6 +93,10 @@ GVARMAIN(csat_flags_pos) = [
 //	   [10652, 8051, east], // Polana - Zentrum
 //	   [11452, 7448, east], // Polana - Fabrik
 //	   [12123, 7260, east], // Polana - Vorort
+
+//	   [9142, 3857, east], // Pusta - Zentrum   
+//	   [10422, 2586, east], // Pusta - Kraftwerk
+//	   [10481, 2265, east], // Pusta - Elektro-Zentrum
  
 //	   [9444, 8800, east], 	// Gorka - Zentrum
 //	   [9785, 8725, east], 	// Gorka - Farm
@@ -118,9 +118,9 @@ GVARMAIN(csat_flags_pos) = [
 //	   [5945, 10347, east], // Grishino - Zentrum
 //	   [5437, 11088, east], // Grishino - Militär (muss gebaut werden!)
 	   
-	   [4975, 12512, east], // Petrovka - Zentrum
-	   [4004, 11659, east], // Petrovka - Militär (muss gebaut werden!)
-	   [1903, 12442, east] // Petrovka - Sägewerk (muss gebaut werden!)
+//	   [4975, 12512, east], // Petrovka - Zentrum
+//	   [4004, 11659, east], // Petrovka - Militär (muss gebaut werden!)
+//	   [1903, 12442, east] // Petrovka - Sägewerk (muss gebaut werden!)
 
     ];
 
