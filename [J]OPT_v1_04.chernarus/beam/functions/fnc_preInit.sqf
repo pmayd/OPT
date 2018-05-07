@@ -24,7 +24,7 @@ if (hasInterface) then {
     [
         "OPT", 
         QGVAR(cba_open_beam_dialog), 
-        ["Open Beam Dialog", "Öffnet den Beam-Dialog im Fahnenbereich"], 
+        ["Open Beam Dialog", "Öffnet den Beam-Dialog im Fahnenbereich."], 
         {
             if (player in (list nato_trigger_beam) or player in (list csat_trigger_beam)) then {
                 [] call FUNC(openDialog);
@@ -33,7 +33,7 @@ if (hasInterface) then {
         }, 
         {}, 
         [
-            DIK_LMENU, 
+            DIK_F2, 
             [false, false, false] // [shift, ctrl, alt]
         ]
     ] call CBA_fnc_addKeybind;
