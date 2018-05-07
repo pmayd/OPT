@@ -4,6 +4,8 @@
 ### Skript
 - fix #5 https://github.com/Jamesadamar/OPT/issues/5
 - Sortierfunktion für Kaufpads wieder deaktiviert
+- fix #9 https://github.com/Jamesadamar/OPT/issues/9, 
+- fix #10 https://github.com/Jamesadamar/OPT/issues/10
 
 ### 04_08
 #### Skript
