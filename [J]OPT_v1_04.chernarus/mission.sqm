@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=4790;
+		nextID=4794;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4658.2837,34,2573.7476};
-		dir[]={0.89615226,-0.23990329,-0.37331906};
-		up[]={0.2214593,0.9707967,-0.092255794};
-		aside[]={-0.38454878,4.2608008e-008,-0.92311025};
+		pos[]={12137.621,199.44029,12545.811};
+		dir[]={-0.00086192478,-0.67205971,0.74050188};
+		up[]={-0.00078221824,0.74049121,0.67206609};
+		aside[]={1.0000014,6.0726677e-009,0.0011639666};
 	};
 };
 binarizationWanted=0;
@@ -9930,7 +9930,7 @@ class Mission
 			name="CSAT Base";
 			class Entities
 			{
-				items=17;
+				items=18;
 				class Item0
 				{
 					dataType="Layer";
@@ -18306,7 +18306,7 @@ class Mission
 					name="Objekte";
 					class Entities
 					{
-						items=66;
+						items=67;
 						class Item0
 						{
 							dataType="Object";
@@ -18419,7 +18419,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this allowDamage false;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+								init="call{this allowDamage false; }";
 							};
 							id=3919;
 							type="Flag_CSAT_F";
@@ -18591,7 +18591,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12089.42,158.8,12632.804};
-								angles[]={0,1.1957042,0};
+								angles[]={0,1.1957077,0};
 							};
 							side="Empty";
 							flags=4;
@@ -18641,8 +18641,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12119.441,162.24707,12591.806};
-								angles[]={0,0.29679409,0};
+								position[]={12119.441,162.24699,12591.806};
+								angles[]={0,0.29679322,0};
 							};
 							side="Empty";
 							class Attributes
@@ -18652,7 +18652,7 @@ class Mission
 							};
 							id=3927;
 							type="Land_HelipadEmpty_F";
-							atlOffset=0.92207336;
+							atlOffset=0.92199707;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21636,9 +21636,27 @@ class Mission
 							type="OPT_Land_Pod_Heli_Transport_04_repair_radar_F";
 							atlOffset=-0.15800476;
 						};
+						class Item66
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12127.44,161.42781,12588.595};
+								angles[]={0.15865043,1.1957077,6.2312269};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.60000002;
+								name="csat_pad_beam";
+							};
+							id=4790;
+							type="Land_HelipadCircle_F";
+						};
 					};
 					id=358;
-					atlOffset=-19.803955;
+					atlOffset=-115.62405;
 				};
 				class Item2
 				{
@@ -22896,9 +22914,28 @@ class Mission
 						nAttributes=4;
 					};
 				};
+				class Item17
+				{
+					dataType="Trigger";
+					position[]={12127.44,161.40862,12588.715};
+					class Attributes
+					{
+						name="csat_trigger_beam";
+						text="Trigger für Beam-Dialog";
+						condition="call{this && local player}";
+						onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
+						sizeA=7;
+						sizeB=7;
+						sizeC=2;
+						repeatable=1;
+						activationBy="ANYPLAYER";
+					};
+					id=4793;
+					type="EmptyDetectorAreaR50";
+				};
 			};
 			id=281;
-			atlOffset=245.15448;
+			atlOffset=123.79875;
 		};
 		class Item6
 		{
@@ -23124,7 +23161,7 @@ class Mission
 			name="NATO Base";
 			class Entities
 			{
-				items=17;
+				items=18;
 				class Item0
 				{
 					dataType="Layer";
@@ -30750,7 +30787,7 @@ class Mission
 					name="Objekte_1";
 					class Entities
 					{
-						items=42;
+						items=43;
 						class Item0
 						{
 							dataType="Object";
@@ -30795,15 +30832,15 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4671.312,12.976805,2588.1536};
-								angles[]={0,5.9356027,0};
+								position[]={4652.7441,12.950697,2596.958};
+								angles[]={0.013334315,5.9356027,0};
 							};
 							side="Empty";
 							flags=4;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this allowDamage false;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+								init="call{this allowDamage false;}";
 							};
 							id=3979;
 							type="Flag_NATO_F";
@@ -31047,8 +31084,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4674.6865,9,2588.842};
-								angles[]={0,5.0408072,0};
+								position[]={4655.5103,8.9734735,2597.2212};
+								angles[]={-0,5.0408072,0.013327583};
 							};
 							side="Empty";
 							class Attributes
@@ -33463,8 +33500,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4658.6929,10.368517,2597.7529};
-								angles[]={0,5.2167368,0};
+								position[]={4673.1465,10.360517,2591.3564};
+								angles[]={-0,5.2167368,0};
 							};
 							side="Empty";
 							flags=4;
@@ -33476,7 +33513,6 @@ class Mission
 							};
 							id=4789;
 							type="OPT_B_Slingload_01_Repair_Radar_F";
-							atlOffset=0.0080003738;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -33501,9 +33537,27 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item42
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4661.4912,9,2594.6741};
+								angles[]={-0,1.1957077,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								skill=0.60000002;
+								name="nato_pad_beam";
+							};
+							id=4791;
+							type="Land_HelipadCircle_F";
+						};
 					};
 					id=487;
-					atlOffset=-131.39153;
+					atlOffset=-66.426964;
 				};
 				class Item2
 				{
@@ -34825,9 +34879,28 @@ class Mission
 						nAttributes=4;
 					};
 				};
+				class Item17
+				{
+					dataType="Trigger";
+					position[]={4661.4121,9,2594.5449};
+					class Attributes
+					{
+						name="nato_trigger_beam";
+						text="Trigger für Beam-Dialog";
+						condition="call{this && local player}";
+						onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
+						sizeA=7;
+						sizeB=7;
+						sizeC=2;
+						repeatable=1;
+						activationBy="ANYPLAYER";
+					};
+					id=4792;
+					type="EmptyDetectorAreaR50";
+				};
 			};
 			id=418;
-			atlOffset=0.069960594;
+			atlOffset=-0.029992104;
 		};
 		class Item8
 		{

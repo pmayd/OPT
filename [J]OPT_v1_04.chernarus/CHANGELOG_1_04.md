@@ -6,6 +6,7 @@
 - Sortierfunktion für Kaufpads wieder deaktiviert
 - fix #9 https://github.com/Jamesadamar/OPT/issues/9, 
 - fix #10 https://github.com/Jamesadamar/OPT/issues/10
+- first version for #12
 
 ### 04_08
 #### Skript
