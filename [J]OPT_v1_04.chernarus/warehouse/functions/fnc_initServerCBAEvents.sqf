@@ -16,9 +16,9 @@
 
 /* CUSTOM EH */
 [QGVAR(spawnVehicle), {
-    params ["_unit", "_vecType", "_spawnObj"];
+    params ["_unit", "_vecType", "_spawnObj", "_unitCost"];
 
-    [_unit, _vecType, _spawnObj] spawn FUNC(spawnVehicle);
+    [_unit, _vecType, _spawnObj, _unitCost] spawn FUNC(spawnVehicle);
 
 }] call CBA_fnc_addEventHandler;
 

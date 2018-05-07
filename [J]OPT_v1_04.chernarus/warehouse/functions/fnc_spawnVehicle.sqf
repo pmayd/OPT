@@ -6,6 +6,7 @@
 * 0: <OBJECT> unit which send the order
 * 1: <string> classname to spawn
 * 2: <OBJECT> nearest spawn pos
+* 3: <NUMBER> unit cost
 *
 * Return Value:
 * None
@@ -16,7 +17,7 @@
 */
 #include "script_component.hpp"
 
-params ["_unit", "_vecType", "_spawnObj"];
+params ["_unit", "_vecType", "_spawnObj", "_unitCost"];
 
 // semaphore -> wait for other spawn processes to finish
 waitUntil { !GVAR(spawnInProgress); };
@@ -27,6 +28,7 @@ private _empty_pos = (position _spawnObj) findEmptyPosition [0.2, GVAR(orderSpaw
 if (count _empty_pos == 0) exitWith {
     private _txt = format["Kein freier Platz im Umkreis von %1m. Bereich räumen.", GVAR(orderSpawnRadius)];
 	[QEGVAR(gui,message), ["Platz unzureichend", _txt, "red"], _unit] call CBA_fnc_targetEvent;
+    GVAR(spawnInProgress) = false;
 };
 
 private _vec = createVehicle [_vecType, _empty_pos, [], 0, "NONE"];
@@ -77,3 +79,9 @@ GVAR(spawnInProgress) = false;
 private _displayName = getText (configFile >> "CfgVehicles" >> _vecType >> "displayName");
 private _txt = format["%1 geliefert.",_displayName];
 [QEGVAR(gui,message), ["Bestellung", _txt, "green"], _unit] call CBA_fnc_targetEvent;
+
+// update budget initialized by server!
+[] spawn {
+    sleep 0.1;
+    [QEGVAR(common,updateBudget), [UNIT_NAME(_unit), UNIT_SIDE(_unit), _vecType, _unitCost, "-"]] call CBA_fnc_serverEvent;
+};

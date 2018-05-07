@@ -1,5 +1,10 @@
 ﻿## Changelog
 
+### 04_09
+### Skript
+- fix #5 https://github.com/Jamesadamar/OPT/issues/5
+- Sortierfunktion für Kaufpads wieder deaktiviert
+
 ### 04_08
 #### Skript
 - Radarscript: Radar zeigt keine HuntIR mehr (Lord)
