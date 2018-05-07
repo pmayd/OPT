@@ -81,8 +81,8 @@ private _txt = format["%1 geliefert.",_displayName];
 [QEGVAR(gui,message), ["Bestellung", _txt, "green"], _unit] call CBA_fnc_targetEvent;
 
 // update budget initialized by server!
-[[_unit, _unitType, _unitCost]] spawn {
-    params ["_unit", "_unitType", "_unitCost"];
+[[_unit, _vecType, _unitCost]] spawn {
+    params ["_unit", "_vecType", "_unitCost"];
     sleep 0.1;
     [QEGVAR(common,updateBudget), [UNIT_NAME(_unit), UNIT_SIDE(_unit), _vecType, _unitCost, "-"]] call CBA_fnc_localEvent;
 };
