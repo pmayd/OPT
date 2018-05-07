@@ -60,3 +60,7 @@ private _txt = format["%1 für %2 € verkauft.", _selectionText, _unitCost];
 // lösche Option aus Verkaufsmenü!
 _listbox_vehicle lbDelete _index;
 
+// lösche Fahrzeug aus vehicleToSell!
+GVAR(vehiclesToSell) deleteAt _index;
+GVAR(orderDialogObjects) = GVAR(vehiclesToSell);
+

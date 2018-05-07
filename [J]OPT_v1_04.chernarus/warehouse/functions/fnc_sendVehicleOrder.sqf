@@ -27,8 +27,10 @@ if (_selectedVehicle < 0) exitWith {
     [QEGVAR(gui,message), ["Fehler", _txt, "yellow"]] call CBA_fnc_localEvent;
 };
 
+/*
 [] call FUNC(filterVehicleList); // check that filteredPool is up to date
-private _unitRecord = GVAR(filteredPool) select _selectedVehicle;
+*/
+private _unitRecord = GVAR(orderDialogObjects) select _selectedVehicle;
 private _selectionText = lbtext [IDC_CTRL_VEHICLE_LIST, _selectedVehicle];
 if (_selectionText == "") exitWith {};
 

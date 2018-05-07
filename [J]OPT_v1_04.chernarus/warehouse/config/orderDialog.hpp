@@ -91,6 +91,7 @@ class GVAR(dlg_order)
             colorBackground[] = COLOR_CONTROL_BG;
             sizeEx = FONTSIZE;
         };
+        /* gelöscht aufgrund der Probleme mit Kauf und Verkaufpad
         class RscEditSearch: RscEdit
         {
             idc = 1400;
@@ -105,6 +106,7 @@ class GVAR(dlg_order)
             tooltip="Doppelklick löscht Zeile. Sucht nach Fahrzeugen mit dem Suchtext im Namen.";
             sizeEx = FONTSIZE;
         };
+        */
         class RscListboxVehicleList: RscListBox_OPT
         {
             idc = 20100;

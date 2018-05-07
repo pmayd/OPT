@@ -129,7 +129,7 @@ if (count GVAR(orderDialogObjects) != 0) then {
 	// gehe alle gefundenen Objekte durch und lösche sie, falls nicht in pool, oder ergänze um Verkaufspreis
 	{
 		
-        _index = ((GVAR(all) apply {toLower (_x select 0)}) find (toLower (typeOf _x)));
+    _index = ((GVAR(all) apply {toLower (_x select 0)}) find (toLower (typeOf _x)));
 
 		if (_index == -1) then {
 			_objs = _objs - [_x]; 
@@ -139,7 +139,7 @@ if (count GVAR(orderDialogObjects) != 0) then {
 
 	} foreach _objs;
 
-    // show onlly objects with a price greater than 0 €
+    // show only objects with a price greater than 0 €
     GVAR(vehiclesToSell) = [_pool, 1, false] call CBA_fnc_sortNestedArray; // teuerste zuerst
 	{
 		_class = typeOf (_x select 0);
@@ -154,6 +154,9 @@ if (count GVAR(orderDialogObjects) != 0) then {
             _picture = getText (configFile >> "cfgVehicles" >> _class >> "editorPreview");
         };
         _listbox_vehicles lbSetPicture [_forEachIndex, _picture];
-	} foreach GVAR(vehiclesToSell);
+    } foreach GVAR(vehiclesToSell);
+
+    // orderDialogObjects is needed by filterVehicle and deleteVehicle script
+    GVAR(orderDialogObjects) =  GVAR(vehiclesToSell);
 
 };
