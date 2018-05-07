@@ -84,5 +84,5 @@ private _txt = format["%1 geliefert.",_displayName];
 [[_unit, _unitType, _unitCost]] spawn {
     params ["_unit", "_unitType", "_unitCost"];
     sleep 0.1;
-    [QEGVAR(common,updateBudget), [UNIT_NAME(_unit), UNIT_SIDE(_unit), _vecType, _unitCost, "-"]] call CBA_fnc_serverEvent;
+    [QEGVAR(common,updateBudget), [UNIT_NAME(_unit), UNIT_SIDE(_unit), _vecType, _unitCost, "-"]] call CBA_fnc_localEvent;
 };
