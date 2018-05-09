@@ -7,6 +7,7 @@
 - fix #9 https://github.com/Jamesadamar/OPT/issues/9, 
 - fix #10 https://github.com/Jamesadamar/OPT/issues/10
 - first version for #12
+- fix for #13
 
 ### 04_08
 #### Skript
