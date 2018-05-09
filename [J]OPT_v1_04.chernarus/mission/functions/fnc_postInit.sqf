@@ -38,7 +38,7 @@ private _action_earplug = [
 // checking for failed player init
 if (isMultiplayer && !isServer) then {	// only on dedicated environment
 	true spawn {
-		waitUntil {player == player && local player};
+		waitUntil {player == player && hasInterface};
 		private _puid = getPlayerUID player;
 		if (isNil "_puid") exitWith {diag_log "UID is Nil - init stoped"; endMission "LOSER";};
 		if (_puid == "") exitWith {diag_log "UID is empty - init stoped"; endMission "LOSER";};

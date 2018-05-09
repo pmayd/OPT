@@ -19,3 +19,7 @@ if (isServer) then {
     [] call FUNC(initServerCBAEvents);
 
 };
+
+if (hasInterface) then {
+    [] call FUNC(initPlayerCBAEvents);
+};

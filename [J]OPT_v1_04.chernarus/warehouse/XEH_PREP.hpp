@@ -1,11 +1,12 @@
 
+/*PREP(filterVehicleList);*/
 PREP(createMenu);
 PREP(deleteVehicle);
-/*PREP(filterVehicleList);*/
 PREP(getVehicleInfo);
 PREP(handleDeadVehicle);
 PREP(initCBAClassEvents);
 PREP(initCBASettings);
+PREP(initPlayerCBAEvents);
 PREP(initServerCBAEvents);
 PREP(sellVehicle);
 PREP(sendVehicleOrder);

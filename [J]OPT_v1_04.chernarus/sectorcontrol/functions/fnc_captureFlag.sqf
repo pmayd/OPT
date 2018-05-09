@@ -15,7 +15,7 @@
 */
 #include "script_component.hpp"
 
-if (!local player) exitWith {};
+if (!hasInterface) exitWith {};
 params ["_flag", "_caller"];
 
 _side = UNIT_SIDE(_caller);

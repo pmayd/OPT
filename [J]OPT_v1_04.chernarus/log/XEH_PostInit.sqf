@@ -10,6 +10,6 @@ if (isServer) then {
 };
 
 
-if (local player) then {
+if (hasInterface) then {
     [QGVAR(updatePlayerList), [getPlayerUID player, profileName, playerSide]] call CBA_fnc_serverEvent; 
 };

@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-if (!local player) exitWith {};
+if (!hasInterface) exitWith {};
 
 {
 	deleteVehicle _x;
