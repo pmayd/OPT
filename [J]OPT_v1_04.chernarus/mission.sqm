@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9755;
+		nextID=9821;
 	};
 	class Camera
 	{
-		pos[]={12126.033,173.19254,12603.391};
-		dir[]={-0.30860695,-0.46658313,-0.82898206};
-		up[]={-0.16279723,0.88445359,-0.4373067};
-		aside[]={-0.93723488,2.2296445e-007,0.34890556};
+		pos[]={12128.292,183.50934,12567.363};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -787,24 +787,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -819,6 +801,24 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -22926,7 +22926,7 @@ class Mission
 						onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
 						sizeA=7;
 						sizeB=7;
-						sizeC=2;
+						sizeC=4;
 						repeatable=1;
 						activationBy="EAST";
 					};
@@ -31085,7 +31085,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={4655.5103,8.9734735,2597.2212};
-								angles[]={-0,5.0408072,0.013327583};
+								angles[]={0,5.0408072,0.013327583};
 							};
 							side="Empty";
 							class Attributes
@@ -33501,7 +33501,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={4673.1465,10.360517,2591.3564};
-								angles[]={-0,5.2167368,0};
+								angles[]={0,5.2167368,0};
 							};
 							side="Empty";
 							flags=4;
@@ -33543,7 +33543,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={4661.4912,9,2594.6741};
-								angles[]={-0,1.1957077,0};
+								angles[]={0,1.1957077,0};
 							};
 							side="Empty";
 							flags=4;
