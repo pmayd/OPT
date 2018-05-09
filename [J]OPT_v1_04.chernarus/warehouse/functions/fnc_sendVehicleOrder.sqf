@@ -52,4 +52,8 @@ private _spawnObj = nearestObject [player, "Land_HelipadCircle_F"];
 //systemChat format ["VT:%1 SO:%2 OSR:%3",_unitType, _spawnObj,(position _spawnObj)];
 
 // Budget in Dialog updaten
-[] call FUNC(updateBudget);
+// small wait time for server to finish spawn process
+[] spawn {
+    sleep 0.1;
+    [] call FUNC(updateBudget);
+};
