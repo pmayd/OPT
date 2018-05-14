@@ -26,8 +26,8 @@
 - [x] Neuer Parameter für Zeus -> Im Trainingsmodus steht Gruppenführern und der HL Zeus zur Verfügung. Dies kann in der Lobby getrennt eingestellt werden.
 - [x] Minensperrzone um die Flagge -> Radius ist in setup.sqf einstellbar. Alle Minen werden innerhalb der Zone gelöscht und dem Spieler wieder zurückgegeben.
 - [x] Radarcontainer -> Lords Radar System. Jede Fraktion verfügt über einen einmaligen Radar Container, der mehrfach aufgebaut werden sowie transportiert werden kann. Aufgebaut erlaubt er die Detektion von Luftkontakten in einem bestimmten Radius.
+- [x] revive mit drag und stabilisieren + 3d- und kartenmarker -> Prüfe Kartenmarker
 
 ## geplante & gewünschte Features
 - [ ] Logistiksystem - bestenfalls auch die containerverladerei auf die dafür vorgesehenen lkw
-- [ ] revive mit drag und stabilisieren + 3d- und kartenmarker -> Prüfe Kartenmarker
 - [ ] TFAR Frequenzmodul macht Probleme
