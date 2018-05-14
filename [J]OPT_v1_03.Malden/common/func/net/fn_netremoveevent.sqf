@@ -1,1 +1,0 @@
-if (!isNil {x_event_holder getVariable _this}) then {x_event_holder setVariable [_this, nil]};

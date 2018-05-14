@@ -1,2 +1,0 @@
-
-#include "config\BarDlg.hpp"

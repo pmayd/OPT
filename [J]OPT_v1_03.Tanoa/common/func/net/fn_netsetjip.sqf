@@ -1,1 +1,0 @@
-X_JIPH setVariable [_this select 0, _this select 1, true];
