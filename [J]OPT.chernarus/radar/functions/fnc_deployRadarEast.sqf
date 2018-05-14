@@ -19,6 +19,9 @@ if (!alive GVAR(containerEast)) exitWith {
     removeAllActions GVAR(containerEast);
 };
 
+[(GVAR(containerEast), false, [0, 2, 0], 0] call ace_dragging_fnc_setDraggable;
+[(GVAR(containerEast), false, [0, 2, 0], 0] call ace_dragging_fnc_setCarryable;
+
 if (!(GVAR(containerEast) getVariable ["RADAREASTaufgebaut", false])) then
 {
 	Radarturmeast = createVehicle ["Land_TTowerSmall_1_F", getpos GVAR(containerEast), [], 0, "NONE"];
