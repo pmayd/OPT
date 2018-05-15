@@ -18,7 +18,7 @@ params [
     ["_item", [objNull], [1]]
 ];
 
-private _type = typeOf _type;
+private _type = typeOf _item;
 
 // set cargo space
 private _index = (GVAR(canTransportCargo) apply {toLower (_x select 0)}) find toLower _type;
