@@ -19,8 +19,8 @@ if (!alive GVAR(containerEast)) exitWith {
     removeAllActions GVAR(containerEast);
 };
 
-[(GVAR(containerEast), false, [0, 2, 0], 0] call ace_dragging_fnc_setDraggable;
-[(GVAR(containerEast), false, [0, 2, 0], 0] call ace_dragging_fnc_setCarryable;
+[(GVAR(containerEast), false, [0, 5, 0], 0] call ace_dragging_fnc_setDraggable;
+[(GVAR(containerEast), false, [0, 5, 0], 0] call ace_dragging_fnc_setCarryable;
 
 if (!(GVAR(containerEast) getVariable ["RADAREASTaufgebaut", false])) then
 {
