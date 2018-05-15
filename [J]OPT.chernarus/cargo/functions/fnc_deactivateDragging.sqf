@@ -15,8 +15,10 @@
 #include "script_component.hpp"
 
 params [
-    ["_item", [objNull], [1]]
+    ["_item", objNull, [objNull], [1]]
 ];
+
+if (_item isEqualTo objNull) exitWith{false};
 
 [_item, false] call ace_dragging_fnc_setDraggable;
 [_item, false] call ace_dragging_fnc_setCarryable;
