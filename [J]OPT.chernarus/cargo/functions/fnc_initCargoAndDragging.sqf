@@ -15,8 +15,10 @@
 #include "script_component.hpp"
 
 params [
-    ["_item", [objNull], [1]]
+    ["_item", objNull, [objNull], [1]]
 ];
+
+if (_item isEqualTo objNull) exitWith{false};
 
 private _type = typeOf _item;
 
