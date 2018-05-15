@@ -19,8 +19,7 @@ if (!alive GVAR(containerEast)) exitWith {
     removeAllActions GVAR(containerEast);
 };
 
-[GVAR(containerEast), false] call ace_dragging_fnc_setDraggable;
-[GVAR(containerEast), false] call ace_dragging_fnc_setCarryable;
+[QEGVAR(cargo,deactivateDragging), [GVAR(containerEast)]] call CBA_fnc_globalEvent;
 
 if (!(GVAR(containerEast) getVariable ["RADAREASTaufgebaut", false])) then
 {
