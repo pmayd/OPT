@@ -1,6 +1,7 @@
 /**
 * Author: James
-* initialize all ACE cargo and dragging settings for a given fnc_initCargoForObject
+* initialize all ACE cargo settings for a given fnc_initCargoForObject
+* global effect
 *
 * Arguments:
 * 0: <OBJECT> object to be initialized
@@ -43,28 +44,3 @@ if (_index != -1) then {
     [_item, -1] call ace_cargo_fnc_setSize; // deactivate inventory
 
 };
-
-// set drag and carry flags
-private _index = (GVAR(canBeDragged) apply {toLower (_x select 0)}) find toLower _type;
-if (_index != -1) then {
-    (GVAR(canBeDragged) select _index) params ["_class", ["_offset", [0, 4, 0.2]], ["_dir", 0]];
-
-    [_item, true, _offset, _dir] call ace_dragging_fnc_setDraggable; // only local?
-
-} else {
-    [_item, false] call ace_dragging_fnc_setDraggable;
-
-};
-
-private _index = (GVAR(canBeCarried) apply {toLower (_x select 0)}) find toLower _type;
-if (_index != -1) then {
-    (GVAR(canBeCarried) select _index) params ["_class", ["_offset", [0, 3, 0.2]], ["_dir", 0]];
-    
-    [_item, true, _offset, _dir] call ace_dragging_fnc_setCarryable; // only local?
-
-} else {
-    [_item, false] call ace_dragging_fnc_setCarryable;
-
-};
-
-true

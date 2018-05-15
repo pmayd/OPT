@@ -18,14 +18,16 @@
 ["LandVehicle", "init", {
 	params ["_vec"];
 
-   [_vec] call FUNC(initCargoAndDragging);
+    [_vec] call FUNC(initCargo); // global effect
+     [QGVAR(initDragging), [_vec]] call CBA_fnc_globalEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 
 ["Air", "init", {
-	params ["_vec"];
+    params ["_vec"];
 
-   [_vec] call FUNC(initCargoAndDragging);
+    [_vec] call FUNC(initCargo); // global effect
+    [QGVAR(initDragging), [_vec]] call CBA_fnc_globalEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 
@@ -43,6 +45,7 @@
 ["Thing", "init", {
 	params ["_item"];
 
-   [_item] call FUNC(initCargoAndDragging);
+    [_item] call FUNC(initCargo); // global effect
+    [QGVAR(initDragging), [_item]] call CBA_fnc_globalEvent;
 
 }] call CBA_fnc_addClassEventHandler;

@@ -19,7 +19,7 @@ if (!alive GVAR(containerWest)) exitWith {
     removeAllActions GVAR(containerWest);
 };
 
-[GVAR(containerWest)] call EFUNC(cargo,deactivateDragging);
+[QEGVAR(cargo,deactivateDragging), [GVAR(containerWest)]] call CBA_fnc_globalEvent;
 
 if (!(GVAR(containerWest) getVariable ["RADARWESTaufgebaut", false])) then
 {
