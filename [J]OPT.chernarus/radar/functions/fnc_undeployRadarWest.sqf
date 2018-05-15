@@ -14,8 +14,7 @@
 */
 #include "script_component.hpp"
 
-[GVAR(containerWest), true, [0, 5, 0], 0] call ace_dragging_fnc_setDraggable;
-[GVAR(containerWest), true, [0, 5, 0], 0] call ace_dragging_fnc_setCarryable;
+[GVAR(containerWest)] call EFUNC(cargo,initCargoAndDragging);
 
 if (GVAR(containerWest) getVariable ["RADARWESTaufgebaut", false]) then
 {
