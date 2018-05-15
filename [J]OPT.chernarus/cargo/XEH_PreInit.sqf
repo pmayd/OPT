@@ -11,8 +11,6 @@ ADDON = true;
 [] call FUNC(setupCargoSpaceAndSize);
 
 // has to be called in PreInit so that all mission objects are affected!
-if (isServer) then {
-    [] call FUNC(initCBAClassEvents);
-};
+[] call FUNC(initCBAClassEvents);
 
 [] call FUNC(initCBAEvents);
