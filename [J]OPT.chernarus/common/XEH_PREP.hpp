@@ -1,6 +1,7 @@
 
 PREP(clearDebugMarker);
 PREP(createDebugMarker);
+PREP(createMarker);
 PREP(fillLB);
 PREP(flipCheck);
 PREP(getPlayerSide);

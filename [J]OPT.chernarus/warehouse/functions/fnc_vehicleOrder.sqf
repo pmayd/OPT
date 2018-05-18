@@ -140,6 +140,7 @@ if (count GVAR(orderDialogObjects) != 0) then {
 	} foreach _objs;
 
     // show only objects with a price greater than 0 €
+    _pool = _pool select {_x select 2 > 0};
     GVAR(vehiclesToSell) = [_pool, 1, false] call CBA_fnc_sortNestedArray; // teuerste zuerst
 	{
 		_class = typeOf (_x select 0);

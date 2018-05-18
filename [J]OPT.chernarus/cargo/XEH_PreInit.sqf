@@ -10,5 +10,7 @@ ADDON = true;
 
 [] call FUNC(setupCargoSpaceAndSize);
 
-// has to be called in PreInit so that all mission objects are affected!
+// has to be called in preInit to affect all vehicles
 [] call FUNC(initCBAClassEvents);
+
+[] call FUNC(initCBAEvents);

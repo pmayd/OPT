@@ -33,7 +33,11 @@ if (isPlayer _unit) then {
 
 // mute TFAR
 [false] call FUNC(toggleTFAR);
-	
+
+// activate dead man switch and delete the trigger
+[_unit] call ace_explosives_fnc_onIncapacitated;
+
+
 // create marker
 if (FAR_REVIVE_DOWN_MARKER) then {
 	[QGVAR(createMarker), [_unit]] call CBA_fnc_globalEvent;

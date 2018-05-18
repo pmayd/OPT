@@ -1,10 +1,10 @@
 
 
-PREP(deployRadarEast);
-PREP(deployRadarWest);
+PREP(calcSignalLoss);
+PREP(createObjects);
+PREP(deployRadar);
+PREP(getRadar);
 PREP(initCBASettings);
 PREP(postInit);
-PREP(runRadarEast);
-PREP(runRadarWest);
-PREP(undeployRadarEast);
-PREP(undeployRadarWest);
+PREP(runRadar);
+PREP(undeployRadar);

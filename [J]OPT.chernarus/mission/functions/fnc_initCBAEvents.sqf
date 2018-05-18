@@ -72,3 +72,26 @@
 [QGVAR(startIntro), {
     [] spawn FUNC(intro);
 }] call CBA_fnc_addEventHandler;
+
+[QGVAR(addBackpack), {
+    [] call FUNC(addBackpack);
+}] call CBA_fnc_addEventHandler;
+
+["ace_interactMenuClosed", {
+    params ["_menuType"];
+
+    // check if player has new attachedObjects
+    if (_menuType == 1) then {
+        // objects are not immediately attached
+        [] spawn {
+            sleep 1;
+            if  (count (attachedObjects player select {!(_x isEqualTo objNull)}) > 0) then {
+                player setVariable [QGVAR(attachedBackpack), typeOf ((attachedObjects player select {!(_x isEqualTo objNull)}) select 0)];
+            } else {
+                player setVariable [QGVAR(attachedBackpack), ""];
+            };
+        };
+        
+    };
+
+}] call CBA_fnc_addEventHandler;

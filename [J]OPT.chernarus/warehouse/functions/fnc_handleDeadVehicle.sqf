@@ -17,14 +17,15 @@
 */
 #include "script_component.hpp"
 
+// TODO: rewrite into killed and damagged EH so we have the source parameter available
 params [
-    "_vec", 
-    ["_killer", objNull, [objNull], 1],
-    ["_instigator", objNull, [objNull], 1]
+    ["_vec", objNull, [objNull], 1],
+    ["_instigator", objNull, [objNull], 1],
+    ["_killer", objNull, [objNull], 1]
 ];
 
 // log destroyed vehicle and killer
-[QEGVAR(log,kill), [_vec, _killer, _instigator]] call CBA_fnc_localEvent;
+[QEGVAR(log,kill), [_vec, _instigator, _killer]] call CBA_fnc_localEvent;
 
 
 // delete all wrecks within the base safezone

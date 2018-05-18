@@ -36,7 +36,7 @@ This event happens every time a soldier enters a vehicle.
 		]
 	] call CBA_fnc_localEvent;
 
-}] call CBA_fnc_addClassEventHandler;
+}, nil, nil, true] call CBA_fnc_addClassEventHandler;
 
 ["Air", "init", {
 	params ["_vec"];
@@ -47,7 +47,7 @@ This event happens every time a soldier enters a vehicle.
 		]
 	] call CBA_fnc_localEvent;
 
-}] call CBA_fnc_addClassEventHandler;
+}, nil, nil, true] call CBA_fnc_addClassEventHandler;
 
 
 // add killed EH to all kind of vehicles, either on map or later spawned via crteateVehicle arrayIntersect
