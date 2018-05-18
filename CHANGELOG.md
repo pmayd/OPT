@@ -1,16 +1,20 @@
-﻿## Changelog
+﻿# Changelog
 
-### 1.4.9
+## 1.4.9
+
 ### Skript
-- fix #5 https://github.com/Jamesadamar/OPT/issues/5
+
+- fix [#5](https://github.com/Jamesadamar/OPT/issues/5)
 - Sortierfunktion für Kaufpads wieder deaktiviert
-- fix #9 https://github.com/Jamesadamar/OPT/issues/9, 
-- fix #10 https://github.com/Jamesadamar/OPT/issues/10
+- fix [#9](https://github.com/Jamesadamar/OPT/issues/9)
+- fix [#10](https://github.com/Jamesadamar/OPT/issues/10)
 - first version for #12
 - fix for #13
 
-### 1.4.8
-#### Skript
+## 1.4.8
+
+### Skript
+
 - Radarscript: Radar zeigt keine HuntIR mehr (Lord)
 - Warehouse: Platzabfrage wird nun vom Server vorgenommen
 - GPS: Bugfix für "False"-Marker (Lord)
@@ -27,15 +31,17 @@
 - Bugfix: Respawn-Counter wieder aktiv
 - Bugfix: Marine-Basis: Fahrzeuge können wieder gekauft werden
 
-#### Editor
+### Editor
+
 - TFAR-Module angepasst
 - sämtliche Einheiten wegen Classnames (Waffen und Funken) überprüft und bearbeitet
 - 5 fehlerhafte Dekoobjekte (SAM-Stellungen) entfernt
 - Spawnpunkt am NATO-Marinepunkt verschoben wegen spawn im Wasser
 
+## 1.4.7
 
-### 1.4.7
-#### Skript
+### Skript
+
 - offestpunkte in cargo/initcbaevents erneut angepasst
 - offestpunkte in cargo/setupcargoand size erneut angepasst
 - verkaufspreise bei kisten in warehouse/setupvehiclepool eingetragen
@@ -50,7 +56,8 @@
 - beam und flaggenposis aktualisiert und alphabetisch sortiert + staroye an csat lvl1 (20.3.)
 - setupvehiclepool angepasst - preise stand-AT, khs und xian (20.3.)
 
-#### Editor
+### Editor
+
 - radarcontainer nato und csat ausgetauscht
 - basenänderungen der fraktionen implementiert
 - infslots neu gesetzt und gruppiert
@@ -58,14 +65,17 @@
 - ghillies der grossen sniper getauscht (20.3.)
 - tfar-modul auf karte gesetzt und eingestellt (29.3.)
 
-
 #### Settings
-TODO! 
+
+TODO!
+
 - classnames für sprengstoffexperten (leider nicht mehr gefunden)
 - neue bilder als paa in mod einbauen
 
-### 1.4.6
-#### Skript
+## 1.4.6
+
+### Skript
+
 - Bugfix Classnames in GPS + UAV Komponente
 - neue Classnames in setupVehiclePool (Vanilla)
 - Bugfix: Bestellpad liefert jetzt auch beim Sortieren korrektes Fahrzeug
@@ -93,7 +103,8 @@ TODO!
 - Bugfix Earplugs: Bei Respawn wieder raus
 - Bugfix Verkauf: Budget wird korrekt aktualisiert
 - Verkaufsystem: Verkauf fremder Fahrzeuge für 150% des Kaufpreises
-- Bugfix Teleport: Teleport nach Respawn aus Fahrzeugen wieder möglich 
+- Bugfix Teleport: Teleport nach Respawn aus Fahrzeugen wieder möglich
 
-#### Editor
+### Editor
+
 - Garbage-Collector: Eingestellt auf 3-5 Minuten für Personen und 10-15 für Fahrzeuge
