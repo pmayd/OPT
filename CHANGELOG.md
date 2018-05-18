@@ -1,6 +1,6 @@
 ﻿## Changelog
 
-### 04_09
+### 1.4.9
 ### Skript
 - fix #5 https://github.com/Jamesadamar/OPT/issues/5
 - Sortierfunktion für Kaufpads wieder deaktiviert
@@ -9,7 +9,7 @@
 - first version for #12
 - fix for #13
 
-### 04_08
+### 1.4.8
 #### Skript
 - Radarscript: Radar zeigt keine HuntIR mehr (Lord)
 - Warehouse: Platzabfrage wird nun vom Server vorgenommen
@@ -34,7 +34,7 @@
 - Spawnpunkt am NATO-Marinepunkt verschoben wegen spawn im Wasser
 
 
-### 04_07
+### 1.4.7
 #### Skript
 - offestpunkte in cargo/initcbaevents erneut angepasst
 - offestpunkte in cargo/setupcargoand size erneut angepasst
@@ -64,7 +64,7 @@ TODO!
 - classnames für sprengstoffexperten (leider nicht mehr gefunden)
 - neue bilder als paa in mod einbauen
 
-### 04_06
+### 1.4.6
 #### Skript
 - Bugfix Classnames in GPS + UAV Komponente
 - neue Classnames in setupVehiclePool (Vanilla)
