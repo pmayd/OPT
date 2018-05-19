@@ -49,6 +49,7 @@ if (_markerIsGlobal) then {
     _marker setMarkerColor _markerColor;
     _marker setMarkerBrush _markerBrush;
     _marker setMarkerAlpha _markerAlpha;
+    _marker setMarkerDir _markerDir;
 } else {
     _marker = createMarkerLocal [_markerName, _markerPos];
     _marker setMarkerTypeLocal _markerType;
@@ -58,6 +59,7 @@ if (_markerIsGlobal) then {
     _marker setMarkerColorLocal _markerColor;
     _marker setMarkerBrushLocal _markerBrush;
     _marker setMarkerAlphaLocal _markerAlpha;
+    _marker setMarkerDirLocal _markerDir;
 };
 
 _marker
