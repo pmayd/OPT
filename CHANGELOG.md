@@ -4,8 +4,9 @@
 
 ### Skript
 
-- Radar: work on [#2](https://github.com/Jamesadamar/OPT/issues/2), Code-Überarbeitung der Komponente
+- Radar: work on [#2](https://github.com/Jamesadamar/OPT/issues/2), [#14](https://github.com/Jamesadamar/OPT/issues/14), Code-Überarbeitung der Komponente
 - Beam: Umstellung auf CBA-Tastenzuweisung (default F2)
+- Mission: work on [#15](https://github.com/Jamesadamar/OPT/issues/15), Bugfix Backpack on Chest, Rucksack wird jetzt nach Respawn wieder zugeteilt
 
 ## 1.4.9
 
