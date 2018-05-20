@@ -1,6 +1,7 @@
 /**
 * Author: James
-* calculate signal loss due to terrain
+* calculate signal loss due to terrain. 
+* Signal loss is number of objects divided by 35 multiplied with 100.
 *
 * Arguments:
 * 0: <BOOL> true - inform player about signal loss value, false - no message
