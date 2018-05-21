@@ -173,7 +173,7 @@ GVAR(canBeTransported) =
     ["OPT_Land_Pod_Heli_Transport_04_repair_F", 8],		    // Reparaturcontainer
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", 8],	// Repcontainer schwarz
 	["OPT_Land_Pod_Heli_Transport_04_repair_radar_F", 8],	// Radar Container NEU
-	//["Land_Cargo10_grey_F", 8],									// Radar Container NEU - wieder ausgetauscht
+	//["Land_Cargo10_grey_F", 8],							// Radar Container NEU - wieder ausgetauscht
     // CSAT Ships
 	["OPT_O_Boat_Transport_01_F", 4],						// Assault Boat,500
 	["OPT_O_C_Boat_Transport_02_F", 4]				        // rhib unbewaffnet,7000	
