@@ -18,9 +18,7 @@
 ["LandVehicle", "init", {
 	params ["_vec"];
 
-    if (isServer) then {
-        [_vec] call FUNC(initCargo); // global effect
-    };
+    [_vec] call FUNC(initCargo); // global effect
     [_vec] call FUNC(initDragging);
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
@@ -28,9 +26,7 @@
 ["Air", "init", {
     params ["_vec"];
 
-    if (isServer) then {
-        [_vec] call FUNC(initCargo); // global effect
-    };
+    [_vec] call FUNC(initCargo); // global effect
     [_vec] call FUNC(initDragging);
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
@@ -49,9 +45,7 @@
 ["Thing", "init", {
 	params ["_item"];
 
-    if (isServer) then {
-        [_item] call FUNC(initCargo); // global effect
-    };
+    [_item] call FUNC(initCargo); // global effect
     [_item] call FUNC(initDragging);
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;

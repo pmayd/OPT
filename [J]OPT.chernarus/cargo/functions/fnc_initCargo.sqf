@@ -28,11 +28,9 @@ private _type = typeOf _item;
 private _index = (GVAR(canTransportCargo) apply {toLower (_x select 0)}) find toLower _type;
 if (_index != -1) then {
     (GVAR(canTransportCargo) select _index) params ["_class", "_space"];
-    [_item, -1] call ace_cargo_fnc_setSpace; // deactivate space
     [_item, _space] call ace_cargo_fnc_setSpace; // has global effect
 
 } else {
-    [_item, 0] call ace_cargo_fnc_setSpace; // deactivate space
     [_item, -1] call ace_cargo_fnc_setSpace; // deactivate space
 
 };
@@ -41,11 +39,9 @@ if (_index != -1) then {
 private _index = (GVAR(canBeTransported) apply {toLower (_x select 0)}) find toLower _type;
 if (_index != -1) then {
     (GVAR(canBeTransported) select _index) params ["_class", "_size"];
-    [_item, -1] call ace_cargo_fnc_setSize; // has global effect
     [_item, _size] call ace_cargo_fnc_setSize; // has global effect
 
 } else {
-    [_item, 0] call ace_cargo_fnc_setSize; // deactivate inventory
     [_item, -1] call ace_cargo_fnc_setSize; // deactivate inventory
 
 };
