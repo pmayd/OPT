@@ -205,12 +205,12 @@ GVAR(canBeDragged) =
 	["OPT_B_Mortar_01_F"],							                        // MK6 - Mörser,200000
 	["OPT_FlexibleTank_01_forest_F"],					                    //Spritfass
 	["OPT_B_Static_Designator_01_F"],					                    // Remote Designator,10000
-	["OPT_B_Slingload_01_Fuel_F", [0, 4, 0.1], 0],                         // Fuelcontainer,5000
-	["OPT_B_Slingload_01_Ammo_F", [0, 4, 0.1], 0],                         // Munitionscontainer,50000
-	["OPT_B_Slingload_01_Repair_F", [0, 4, 0.1], 0],                       // Reparaturcontainer,5000
-	["OPT_B_Slingload_01_Repair_radar_F", [0, 4, 0.1], 0],
+	["OPT_B_Slingload_01_Fuel_F",  [0, 5, 0.05], 0],                         // Fuelcontainer,5000
+	["OPT_B_Slingload_01_Ammo_F",  [0, 5, 0.05], 0],                         // Munitionscontainer,50000
+	["OPT_B_Slingload_01_Repair_F",  [0, 5, 0.05], 0],                       // Reparaturcontainer,5000
+	["OPT_B_Slingload_01_Repair_radar_F",  [0, 5, 0.05], 0],
 	["Land_Cargo10_military_green_F"],	// NATO Radar Container
-	["OPT_B_Slingload_01_Medevac_F", [0, 4, 0.1], 0], // Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weissen Container ersetzt welcher zum Lazarett ausgebaut werden kann
+	["OPT_B_Slingload_01_Medevac_F",  [0, 5, 0.05], 0], // Lazarettcontainer,5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weissen Container ersetzt welcher zum Lazarett ausgebaut werden kann
 // NATO ships	
 	["OPT_B_Boat_Transport_01_F", [0, 2, 0.1], 0],					        // Assault Boat,500
 	["OPT_B_C_Boat_Transport_02_F", [0, 2, 0.1], 0],				    	// Rhib unbewaffnet,2000
@@ -236,11 +236,11 @@ GVAR(canBeDragged) =
 	["OPT_O_Mortar_01_F"],							                        // MK6 Mörser,200000
 	["OPT_FlexibleTank_01_sand_F"],					                        // Treibstoff-Fass
 	["OPT_O_Static_Designator_02_F"],					                    // Remote Designator,10000
-	["OPT_Land_Pod_Heli_Transport_04_fuel_F", [0, 4, 0.1], 0],			    // Fuelcontainer,5000
-	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", [0, 4, 0.1], 0],	    // Fuelcontainer (schwarz),5000
-	["OPT_Land_Pod_Heli_Transport_04_ammo_F", [0, 4, 0.1], 0],		        // Munitionscontainer,50000
-	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F", [0, 4, 0.1], 0],	    // Munitionscontainer (Schwarz),50000
-	["OPT_Land_Pod_Heli_Transport_04_repair_F",	[0, 4, 0.1], 0],		    // Reparaturcontainer,5000
+	["OPT_Land_Pod_Heli_Transport_04_fuel_F",  [0, 5, 0.05], 0],			    // Fuelcontainer,5000
+	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F",  [0, 5, 0.05], 0],	    // Fuelcontainer (schwarz),5000
+	["OPT_Land_Pod_Heli_Transport_04_ammo_F",  [0, 5, 0.05], 0],		        // Munitionscontainer,50000
+	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F",  [0, 5, 0.05], 0],	    // Munitionscontainer (Schwarz),50000
+	["OPT_Land_Pod_Heli_Transport_04_repair_F",	 [0, 5, 0.05], 0],		    // Reparaturcontainer,5000
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", [0, 5, 0.05], 0],	    // Reparaturcontainer (schwarz),5000
 	["OPT_Land_Pod_Heli_Transport_04_repair_radar_F", [0, 5, 0.05], 0],      // CSAT Radar Container
 	["Land_Cargo10_grey_F"],										        // Radar Container NEU
