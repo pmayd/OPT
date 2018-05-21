@@ -119,4 +119,4 @@
         _action_first_aid
     ] call ace_interact_menu_fnc_addActionToObject;
 
-}] call CBA_fnc_addClassEventHandler;
+}, nil, nil, true] call CBA_fnc_addClassEventHandler;

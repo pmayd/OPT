@@ -14,6 +14,11 @@
 */
 #include "script_component.hpp"
 
+[QGVAR(initCargo), {
+    params ["_vec"];
+
+    [_vec] call FUNC(initCargo);
+}];
 
 [QGVAR(deactivateDragging), {
 	params ["_item"];

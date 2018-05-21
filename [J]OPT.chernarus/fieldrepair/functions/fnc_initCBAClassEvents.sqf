@@ -53,7 +53,7 @@
 		_vec setVariable [QGVAR(repair_cargo), 1]; 
 	};
 
-}] call CBA_fnc_addClassEventHandler;
+}, nil, nil, true] call CBA_fnc_addClassEventHandler;
 
 ["Air", "init", {
     params ["_vec"];
@@ -94,4 +94,4 @@
 		_vec setVariable [QGVAR(repair_cargo), 1]; 
 	};
 
-}] call CBA_fnc_addClassEventHandler;
+}, nil, nil, true] call CBA_fnc_addClassEventHandler;
