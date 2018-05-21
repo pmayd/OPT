@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9887;
+		nextID=9953;
 	};
 	class Camera
 	{
-		pos[]={12128.292,183.50934,12567.363};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={12138.669,188.68839,12546.372};
+		dir[]={-0.035365522,-0.40001807,0.91582555};
+		up[]={-0.015435635,0.91650718,0.39972091};
+		aside[]={0.99925607,-1.5188562e-009,0.038587298};
 	};
 };
 binarizationWanted=0;
@@ -787,24 +787,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -819,6 +801,24 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -22926,7 +22926,7 @@ class Mission
 						onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
 						sizeA=7;
 						sizeB=7;
-						sizeC=4;
+						sizeC=5;
 						repeatable=1;
 						activationBy="EAST";
 					};
@@ -22962,7 +22962,7 @@ class Mission
 					};
 					id=411;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.20099998;
+					atlOffset=-0.074047446;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23153,7 +23153,7 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=12.077219;
+			atlOffset=12.072703;
 		};
 		class Item7
 		{
@@ -34891,7 +34891,7 @@ class Mission
 						onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
 						sizeA=7;
 						sizeB=7;
-						sizeC=2;
+						sizeC=5;
 						repeatable=1;
 						activationBy="WEST";
 					};
@@ -34918,6 +34918,7 @@ class Mission
 						angles[]={0,3.6354685,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -34926,7 +34927,7 @@ class Mission
 					};
 					id=549;
 					type="Land_InfoStand_V1_F";
-					atlOffset=11.096;
+					atlOffset=0.0016064644;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35134,7 +35135,7 @@ class Mission
 				};
 			};
 			id=548;
-			atlOffset=37.851257;
+			atlOffset=37.851273;
 		};
 		class Item9
 		{
