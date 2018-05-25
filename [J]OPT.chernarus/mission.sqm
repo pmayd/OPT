@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10019;
+		nextID=10085;
 	};
 	class Camera
 	{
@@ -787,24 +787,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -819,6 +801,24 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -21724,7 +21724,6 @@ class Mission
 							text="Fahrzeuge";
 							type="n_motor_inf";
 							colorName="ColorEAST";
-							angle=299.9866;
 							id=3962;
 						};
 						class Item5
@@ -33569,34 +33568,32 @@ class Mission
 						class Item0
 						{
 							dataType="Marker";
-							position[]={12141.455,158.93555,12648.141};
+							position[]={12141.455,158.936,12648.14};
 							name="marker_4";
 							text="CSAT Fahne";
 							type="o_unknown";
-							angle=247.63077;
 							id=3973;
-							atlOffset=-0.022567749;
+							atlOffset=-0.022125244;
 						};
 						class Item1
 						{
 							dataType="Marker";
-							position[]={12175.402,158.94141,12636.151};
+							position[]={12175.402,158.94099,12636.151};
 							name="marker_3";
 							text="NATO Fahne";
 							type="o_unknown";
-							angle=248.46432;
 							id=3974;
-							atlOffset=0.0234375;
+							atlOffset=0.023025513;
 						};
 						class Item2
 						{
 							dataType="Marker";
-							position[]={4765.9355,331.64502,2572.6897};
+							position[]={4765.936,331.64499,2572.6899};
 							name="marker_32";
 							text="Drohnenstation";
 							type="b_uav";
 							id=4019;
-							atlOffset=322.94501;
+							atlOffset=322.94498;
 						};
 						class Item3
 						{
@@ -33610,7 +33607,6 @@ class Mission
 							fillName="SolidBorder";
 							a=150;
 							b=150;
-							angle=121.268;
 							drawBorder=1;
 							id=4020;
 							atlOffset=309.39499;
@@ -33626,7 +33622,6 @@ class Mission
 							fillName="Border";
 							a=2500;
 							b=2500;
-							angle=324.50485;
 							drawBorder=1;
 							id=4021;
 							atlOffset=312.92401;
@@ -33644,7 +33639,6 @@ class Mission
 							fillName="Border";
 							a=4000;
 							b=4000;
-							angle=324.50485;
 							drawBorder=1;
 							id=4022;
 							atlOffset=312.92899;
@@ -33652,25 +33646,24 @@ class Mission
 						class Item6
 						{
 							dataType="Marker";
-							position[]={4711.9673,332.14499,2589.418};
+							position[]={4711.9668,332.14499,2589.418};
 							name="marker_nato_kettenfahrzeuge_1";
 							text="Ketten-Fahrzeuge";
 							type="n_armor";
 							colorName="ColorWEST";
-							angle=268.08224;
 							id=4023;
 							atlOffset=323.14499;
 						};
 						class Item7
 						{
 							dataType="Marker";
-							position[]={4777.2051,332.06586,2547.9438};
+							position[]={4777.2051,332.06601,2547.9441};
 							name="marker_nato_luftwaffe_1";
 							text="Luftwaffe";
 							type="b_air";
 							colorName="ColorWEST";
 							id=4024;
-							atlOffset=323.06586;
+							atlOffset=323.06601;
 						};
 						class Item8
 						{
@@ -33680,14 +33673,13 @@ class Mission
 							text="Nachschub";
 							type="o_support";
 							colorName="ColorWEST";
-							angle=314.72995;
 							id=4025;
 							atlOffset=322.85013;
 						};
 						class Item9
 						{
 							dataType="Marker";
-							position[]={4784.3853,331.845,2475.4548};
+							position[]={4784.3848,331.845,2475.4551};
 							name="marker_nato_flagge_2";
 							type="flag_NATO";
 							id=4026;
@@ -33696,31 +33688,29 @@ class Mission
 						class Item10
 						{
 							dataType="Marker";
-							position[]={4720.4521,332.14423,2573.8772};
+							position[]={4720.4521,332.14401,2573.877};
 							name="marker_nato_radfahrzeuge_1";
 							text="Rad-Fahrzeuge";
 							type="n_motor_inf";
 							colorName="ColorWEST";
-							angle=2.999177;
 							id=4027;
-							atlOffset=323.14423;
+							atlOffset=323.14401;
 						};
 						class Item11
 						{
 							dataType="Marker";
-							position[]={4898.5532,331.89844,2463.9434};
+							position[]={4898.5532,331.89801,2463.9431};
 							name="marker_nato_service_1";
 							text="Service";
 							type="n_maint";
 							colorName="ColorWEST";
-							angle=179.76308;
 							id=4029;
-							atlOffset=322.83182;
+							atlOffset=322.83139;
 						};
 						class Item12
 						{
 							dataType="Marker";
-							position[]={4674.3086,331.91,2546.6357};
+							position[]={4674.3091,331.91,2546.636};
 							name="marker_80";
 							text="Beampunkt ";
 							type="mil_join";
@@ -33731,41 +33721,39 @@ class Mission
 						class Item13
 						{
 							dataType="Marker";
-							position[]={4854.7119,329.34363,2503.7104};
+							position[]={4854.7119,329.34399,2503.71};
 							name="marker_nato_verkaufpad";
 							text="Verkaufen";
 							type="respawn_unknown";
 							colorName="ColorWEST";
-							angle=61.307537;
 							id=4031;
-							atlOffset=320.34363;
+							atlOffset=320.34399;
 						};
 						class Item14
 						{
 							dataType="Marker";
-							position[]={4658.7266,318.36285,2597.7256};
+							position[]={4658.7271,318.36301,2597.7261};
 							name="nato_radar";
 							text=" Radar Container";
 							type="b_recon";
 							id=4032;
-							atlOffset=309.36285;
+							atlOffset=309.36301;
 						};
 						class Item15
 						{
 							dataType="Marker";
-							position[]={4738.3813,331.85013,2562.7065};
+							position[]={4738.3809,331.85001,2562.707};
 							name="Nachschubversorgung_Nato_3";
 							text="Nachschub";
 							type="o_support";
 							colorName="ColorWEST";
-							angle=314.72995;
 							id=4033;
-							atlOffset=322.8717;
+							atlOffset=322.87158;
 						};
 						class Item16
 						{
 							dataType="Marker";
-							position[]={4714.5947,9,2520.9111};
+							position[]={4714.5952,9,2520.9109};
 							name="marker_262";
 							text="A Fahne";
 							type="b_inf";
@@ -33796,7 +33784,7 @@ class Mission
 				class Item3
 				{
 					dataType="Trigger";
-					position[]={4819.8086,9.0121393,2490.2668};
+					position[]={4819.8091,9.0120001,2490.2671};
 					angle=4.3004389;
 					class Attributes
 					{
@@ -33811,7 +33799,7 @@ class Mission
 					};
 					id=3975;
 					type="EmptyDetector";
-					atlOffset=0.01213932;
+					atlOffset=0.012000084;
 				};
 				class Item4
 				{
@@ -129404,8 +129392,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={12151.688,159.65108,12587.672};
-				angles[]={0.079830162,0,6.2033553};
+				position[]={4793.8467,8.5830536,2618.7708};
+				angles[]={0.013327583,0,0};
 			};
 			id=4766;
 			type="tfar_ModuleTaskForceRadio";

@@ -86,12 +86,12 @@ GVAR(nato_armored) = [
 ];
 
 GVAR(nato_supplies) = [
-	["OPT_Box_NATO_Ammo_F", 40000, 10000],            			// Munitionskiste
-	["OPT_Box_NATO_WpsSpecial_F", 60000, 10000],            			// Munition spezial
-	["OPT_Box_NATO_Grenades_F", 75000, 10000],         			// granatenkiste
-	["OPT_NATO_Sprengstoffkiste", 150000, 10000],         			// sprengstoffkiste
-	["OPT_Box_NATO_WpsSpecial_AT3_F", 30000, 10000],				// AT Raketenkiste (RPG-42)
-	["OPT_Box_NATO_WpsSpecial_AA_F", 40000, 10000],				// AA Raketenkiste
+	["OPT_Box_NATO_Ammo_F", 40000, 10000, 20000],            			// Munitionskiste
+	["OPT_Box_NATO_WpsSpecial_F", 60000, 10000, 20000],            			// Munition spezial
+	["OPT_Box_NATO_Grenades_F", 75000, 10000, 20000],         			// granatenkiste
+	["OPT_NATO_Sprengstoffkiste", 150000, 10000, 20000],         			// sprengstoffkiste
+	["OPT_Box_NATO_WpsSpecial_AT3_F", 30000, 10000, 20000],				// AT Raketenkiste (RPG-42)
+	["OPT_Box_NATO_WpsSpecial_AA_F", 40000, 10000, 20000],				// AA Raketenkiste
    	["OPT_B_supplyCrate_F", DEF_PROD(500)],							// Transportkiste (leer)
 	["OPT_B_CargoNet_01_ammo_F", DEF_PROD(5000)],					// Ausrstungskiste
 	["OPT_Box_NATO_WpsSpecial_Diver_F", DEF_PROD(5000)],			// Taucherkiste	
@@ -101,7 +101,7 @@ GVAR(nato_supplies) = [
 	["OPT_B_UGV_01_F", DEF_PROD(2000)],								// UGV Stomper
 	["OPT_B_UAV_01_F", DEF_PROD(120000)],							// Darter AR-2
 	["OPT_FlexibleTank_01_forest_F", DEF_PROD(1000)],				// Treibstoff-Fass
-    ["OPT_B_Slingload_01_Ammo_F", 90000, 10000],            		// Munitionscontainer
+    ["OPT_B_Slingload_01_Ammo_F", 90000, 10000, 20000],            		// Munitionscontainer
 	["OPT_B_Slingload_01_Fuel_F", DEF_PROD(8000)],           		// Fuelcontainer
     ["OPT_B_Slingload_01_Repair_F", DEF_PROD(8000)], 	       		// Reparaturcontainer
 	["OPT_B_Slingload_01_Medevac_F", DEF_PROD(0)],                  // Lazarettcontainer, 5000			//psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
@@ -237,12 +237,12 @@ GVAR(csat_armored) = [
 ];
 
 GVAR(csat_supplies) = [
-	["OPT_Box_East_Ammo_F", 40000, 10000],            			        // Munitionskiste
-		["OPT_Box_East_WpsSpecial_F", 60000, 10000],            			        // Munition spezial kiste
-	["OPT_Box_East_Grenades_F", 75000, 10000],            		        // granatenkiste
-	["OPT_CSAT_Sprengstoffkiste", 150000, 10000],            		        // sprengstoffkiste
-	["OPT_Box_East_WpsSpecial_AT_F", 30000, 10000],            		        // AT Raketenkiste (RPG-42)
-    ["OPT_Box_East_WpsSpecial_AA_F", 40000, 10000],				        // AA Raketenkiste
+	["OPT_Box_East_Ammo_F", 40000, 10000, 20000],            			        // Munitionskiste
+	["OPT_Box_East_WpsSpecial_F", 60000, 10000, 20000],            			        // Munition spezial kiste
+	["OPT_Box_East_Grenades_F", 75000, 10000, 20000],            		        // granatenkiste
+	["OPT_CSAT_Sprengstoffkiste", 150000, 10000, 20000],            		        // sprengstoffkiste
+	["OPT_Box_East_WpsSpecial_AT_F", 30000, 10000, 20000],            		        // AT Raketenkiste (RPG-42)
+    ["OPT_Box_East_WpsSpecial_AA_F", 40000, 10000, 20000],				        // AA Raketenkiste
 	["OPT_O_supplyCrate_F", DEF_PROD(500)],							        // Transportkiste
 	["OPT_O_CargoNet_01_ammo_F", DEF_PROD(5000)],					        // Ausrstungskiste
 	["OPT_Box_East_WpsSpecial_Diver_F", DEF_PROD(5000)],			        // Taucherkiste
@@ -253,7 +253,7 @@ GVAR(csat_supplies) = [
 	["OPT_FlexibleTank_01_sand_F", DEF_PROD(1000)],					        // Treibstoff-Fass
 	["OPT_Land_Pod_Heli_Transport_04_fuel_F", DEF_PROD(8000)],			        // Fuelcontainer
 	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", DEF_PROD(0)],        // Fuelcontainer (schwarz)
-   	["OPT_Land_Pod_Heli_Transport_04_ammo_F", 90000, 10000],			        // Munitionscontainer
+   	["OPT_Land_Pod_Heli_Transport_04_ammo_F", 90000, 10000, 20000],			        // Munitionscontainer
 	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F", DEF_PROD(0)],       // Munitionscontainer (Schwarz)
    	["OPT_Land_Pod_Heli_Transport_04_repair_F", DEF_PROD(8000)],		        // Reparaturcontainer
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", DEF_PROD(0)],      // Reparaturcontainer (schwarz)
