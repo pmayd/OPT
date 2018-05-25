@@ -17,14 +17,16 @@
 #define DEF_PROD(var1) var1, GVAR(saleReturnValueForOwn) * var1,  GVAR(saleReturnValueForEnemy) * var1 // default product with 0.75 sold value for own and 1.50 for enemy
 
 /* ANLEITUNG: 
-* Jedes Fahrzeug besitzt einen Eintrag der Form [classname, Kaufpreis, Verkaufpreis]
+* Jedes Fahrzeug besitzt einen Eintrag der Form [classname, Kaufpreis, Verkaufpreis für eigene Seite, Verkaufpreis für Feindseite]
 * Klassname kann dem Editor mit Rechtsklick -> Log -> Classnames entnommen werden
 * Kaufpreis größer 0 heißt, dass Fahrzeug steht zum Kaufen bereit, sonst taucht es nicht auf
-* Verkaufspreis größer 0 heißt, das Fahrzeug kann verkauft werden, sonst taucht es nicht auf
+* Verkaufspreis größer 0 heißt, das Fahrzeug kann verkauft werden, sonst taucht es nicht auf (für beide)
 * DEF_PROD(PREIS) sorgt dafür, dass Kauf und Verkaufspreis automatisch bestimmt werden mit der Variable
-* GVAR(saleReturnValue), die in der main\setup\setup.hpp definiert ist (aktuell 75%)
-* Es kann aber jedes Fahrzeug individuell angepasst werden, indem einfach manuell zwei Preise eingetragen werden, z.B.
-* ["OPT_B_Quadbike_01_F", 1500, 0]
+* GVAR(saleReturnValueForOwn), die in der fnc_initCBASettings.sqf ist (aktuell 75%)
+* GVAR(saleReturnValueForEnemy), die in der fnc_initCBASettings.sqf definiert ist (aktuell 150%)
+* Es kann aber jedes Fahrzeug individuell angepasst werden, indem einfach manuell drei Preise eingetragen werden, z.B.
+* ["OPT_B_Quadbike_01_F", 1500, 0, 0] -> nur kaufen
+* ["OPT_B_Quadbike_01_F", 0, 500, 1000] -> nur verkaufen, wobei 500 für eigenes Quad, 1000 für Feind-Quad
 */
 
 GVAR(nato_vehicles) = [
