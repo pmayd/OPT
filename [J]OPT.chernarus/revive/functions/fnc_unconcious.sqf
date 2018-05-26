@@ -41,7 +41,7 @@ if (count _explosives > 0) then {
         [_unit, -1, [[(_x select 0), 1]], "ACE_DeadManSwitch"] call ACE_Explosives_fnc_detonateExplosiveAll; 
     } foreach _explosives;
 
-    if (toLower "ACE_DeadManSwitch" in ((items _unit) apply {toLower _x})) then {
+    if ("ACE_DeadManSwitch" in (items _unit)) then {
         _unit removeItem "ACE_DeadManSwitch";
     };
 };
