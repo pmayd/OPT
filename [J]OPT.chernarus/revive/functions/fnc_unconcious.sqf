@@ -33,7 +33,19 @@ if (isPlayer _unit) then {
 
 // mute TFAR
 [false] call FUNC(toggleTFAR);
-	
+
+// activate dead man switch and delete the trigger
+private _explosives = [_unit, "DeadManSwitch"] call ACE_Explosives_fnc_getPlacedExplosives;
+if (count _explosives > 0) then {
+    { 
+        [_unit, -1, [[(_x select 0), 1]], "ACE_DeadManSwitch"] call ACE_Explosives_fnc_detonateExplosiveAll; 
+    } foreach _explosives;
+
+    if (toLower "ACE_DeadManSwitch" in ((items _unit) apply {toLower _x})) then {
+        _unit removeItem "ACE_DeadManSwitch";
+    };
+};
+
 // create marker
 if (FAR_REVIVE_DOWN_MARKER) then {
 	[QGVAR(createMarker), [_unit]] call CBA_fnc_globalEvent;
