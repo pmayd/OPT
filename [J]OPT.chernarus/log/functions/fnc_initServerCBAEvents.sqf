@@ -70,7 +70,7 @@ registriert alle Events via CBA Event Handling
 }] call CBA_fnc_addEventHandler;
 
 /* K */
-// loggt Abschüsse
+// log player kills
 [QGVAR(kill), {
 	params [
         "_victim", 
@@ -83,20 +83,30 @@ registriert alle Events via CBA Event Handling
 
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
+        _message = format[
+            "Einheit: %1 (%2)",
+            UNIT_NAME(_victim), UNIT_SIDE(_victim)
+        ];
 
         if !(_killer isEqualTo objNull) then {
             
-		    if (_victim == _instigator) then {
-			    _message = format[
-                    "%1 (%2) von: Selbstverschulden.",
-                    UNIT_NAME(_victim), UNIT_SIDE(_victim)
-                ];
+		    if (_victim isEqualTo _instigator) then {
+			    _message = format["%1 von: Selbstverschulden.", _message];
 
             } else {
-                _message = format[
-                    "%1 (%2) von: %3 (%4).",
-                    UNIT_NAME(_victim), UNIT_SIDE(_victim), UNIT_NAME(_instigator), UNIT_SIDE(_instigator)
-                ];
+                // killer in vehicle or not?
+                if (_killer isEqualTo _instigator) then {
+                    _message = format[
+                        "%1 von: %2 (%3).",
+                        _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator)
+                    ];
+                } else {
+                    private _name = getText (configFile >> "CfgVehicles" >> typeOf _killer >> "displayName");
+                    _message = format[
+                        "%1 von: %2 (%3) (in: %4).",
+                        _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator), _name
+                    ];
+                };
 
             };
 
@@ -137,8 +147,19 @@ registriert alle Events via CBA Event Handling
 				_message = format["%1 von: Selbstverschulden", _message];
 
 			} else {
-                _message = format["%1 von: %2 (%3).", _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator)];
-
+                 // killer in vehicle or not?
+                if (_killer isEqualTo _instigator) then {
+                    _message = format[
+                        "%1 von: %2 (%3).",
+                        _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator)
+                    ];
+                } else {
+                    private _name = getText (configFile >> "CfgVehicles" >> typeOf _killer >> "displayName");
+                    _message = format[
+                        "%1 von: %2 (%3) (in: %4).",
+                        _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator), _name
+                    ];
+                };
 			};
 
 		} else {
