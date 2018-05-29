@@ -73,9 +73,10 @@ registriert alle Events via CBA Event Handling
 // log player kills
 [QGVAR(kill), {
 	params [
-        "_victim", 
-        ["_killer", objNull, [objNull], 1],
-        ["_instigator", objNull, [objNull], 1] // instigator: Object - Person who pulled the trigger
+        ["_victim", objNull, [objNull], 1],
+        ["_instigator", objNull, [objNull], 1], // instigator: Object - Person who pulled the trigger
+        ["_source", objNull, [objNull], 1], // The source unit that caused the damage
+        ["_projectile", "", ["s"], 1] //  Class name of the projectile that inflicted the damage ("" for unknown, such as falling damage)
     ];
 
 	private _cat = "Abschuss";
@@ -83,35 +84,64 @@ registriert alle Events via CBA Event Handling
 
 	// Abschuss war Spieler oder Fahrzeug?
 	if (_victim isKindOf "Man") then {
+
+        // base information about victim
         _message = format[
-            "Einheit: %1 (%2)",
+            "Einheit: %1 (side: %2)",
             UNIT_NAME(_victim), UNIT_SIDE(_victim)
         ];
 
-        if !(_killer isEqualTo objNull) then {
+        // was victim in a vehicle?
+        if !(vehicle _victim isEqualTo _victim) then {
+            private _name = getText (configFile >> "CfgVehicles" >> typeOf (vehicle _victim) >> "displayName");
+            _message = format["%1 (vehicle: %2)", _message, _name];
+        };
+
+        // instigator known?
+        if !(_instigator isEqualTo objNull) then {
             
 		    if (_victim isEqualTo _instigator) then {
 			    _message = format["%1 von: Selbstverschulden.", _message];
 
             } else {
-                // killer in vehicle or not?
-                if (_killer isEqualTo _instigator) then {
-                    _message = format[
-                        "%1 von: %2 (%3).",
-                        _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator)
-                    ];
-                } else {
-                    private _name = getText (configFile >> "CfgVehicles" >> typeOf _killer >> "displayName");
-                    _message = format[
-                        "%1 von: %2 (%3) (in: %4).",
-                        _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator), _name
-                    ];
+                
+                // base information about instigator
+                _message = format["%1 von: %2 (side: %3)", _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator)];
+
+                // source in vehicle or not?
+                if !(_source isEqualTo _instigator) then {
+                    private _name = getText (configFile >> "CfgVehicles" >> typeOf _source >> "displayName");
+                    _message = format["%1 (vehicle: %2)", _message, _name];
                 };
 
             };
 
 		} else {
             _message = format["%1 von: unbekannt", _message];
+            
+        };
+
+        // projectile known?
+        if !(_projectile isEqualTo "") then {
+            
+            // find display name of magazine
+            private _name = "";
+            {
+                if (getText (_x >> "ammo") isEqualTo _projectile) exitWith {
+                    // find upmost parent that is not too generic
+                    private _parent = _x;
+                    while {!(getText ((inheritsFrom _parent) >> "displayName") isEqualTo "")} do {
+                        _parent = inheritsFrom _x;
+                    };
+                    _name = getText (_parent >> "displayName");
+
+                    if !(_name isEqualTo "") then {
+                        _message = format["%1 (magazine: %2)", _message, _name];
+                    };
+                    
+                };  
+            
+            } forEach ([configFile >> "CfgMagazines", 0, true] call BIS_fnc_returnChildren);
             
         };
 
@@ -137,26 +167,26 @@ registriert alle Events via CBA Event Handling
                 };
             };
         };
-		_message = format["Fahrzeug: %1 (%2) (%3)", _name, _category, _faction];
+		_message = format["Fahrzeug: %1 (category: %2) (side: %3)", _name, _category, _faction];
 
 		// Täter nicht bekannt?
-		if !(_killer isEqualTo objNull) then {
+		if !(_instigator isEqualTo objNull) then {
 
             // Selbstverschulden?
-			if (_vec == _killer) then {
+			if (_vec == _source) then {
 				_message = format["%1 von: Selbstverschulden", _message];
 
 			} else {
-                 // killer in vehicle or not?
-                if (_killer isEqualTo _instigator) then {
+                 // source is vehicle or player?
+                if (_source isEqualTo _instigator) then {
                     _message = format[
-                        "%1 von: %2 (%3).",
+                        "%1 von: %2 (side: %3).",
                         _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator)
                     ];
                 } else {
-                    private _name = getText (configFile >> "CfgVehicles" >> typeOf _killer >> "displayName");
+                    private _name = getText (configFile >> "CfgVehicles" >> typeOf _source >> "displayName");
                     _message = format[
-                        "%1 von: %2 (%3) (in: %4).",
+                        "%1 von: %2 (side: %3) (vehicle: %4).",
                         _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator), _name
                     ];
                 };
