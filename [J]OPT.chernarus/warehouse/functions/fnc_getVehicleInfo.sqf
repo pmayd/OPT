@@ -23,19 +23,7 @@ private _price = 0;
 private _priceTxt = "";
 switch (GVAR(vehicleType)) do {
     case "sell": {
-        if (toLower _class in (GVAR(allNato) apply {toLower (_x select 0)})) then {
-            if (PLAYER_SIDE == west) then {
-                _price = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 2;
-            } else {
-                _price = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 3;
-            };
-        } else {
-            if (PLAYER_SIDE == east) then {
-                _price = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 2;
-            } else {
-                _price = (GVAR(all) select {toLower (_x select 0) isEqualTo toLower _class}) select 0 select 3;
-            };
-        };
+        _price = [_class] call FUNC(getPrice);
         _priceTxt = "Gutschrift";
     };
     default {

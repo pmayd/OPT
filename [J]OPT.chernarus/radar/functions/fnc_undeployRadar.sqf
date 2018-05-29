@@ -24,6 +24,9 @@ if (_container getVariable [QGVAR(isDeployed), false]) then {
 		deleteVehicle _x;
 	}	forEach (_container getVariable [QGVAR(attachedObjects), []]);	
 	_container setVariable [QGVAR(attachedObjects), [], true];
+
+    // add ACE dragging entries
+    [QEGVAR(cargo,initDragging), [_container]] call CBA_fnc_globalEvent;
 };
 
 

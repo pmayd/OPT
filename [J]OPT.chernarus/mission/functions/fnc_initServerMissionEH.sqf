@@ -49,6 +49,10 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
         // reset earplugs
         [QEGVAR(common,setVariable), [QGVAR(inUse), 1], _newEntity] call CBA_fnc_targetEvent;
 
+        // give backpack back to player
+        // fix BackpackonChest Bug #15
+        [QGVAR(addBackpack), [], _newEntity] call CBA_fnc_targetEvent;
+
     };
 
     // renew zeus

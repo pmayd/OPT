@@ -19,7 +19,8 @@ params [
     ["_item", objNull, [objNull], [1]]
 ];
 
-if (_item isEqualTo objNull) exitWith{false};
+LOG_1("Script called for %1", _item);
+if (_item isEqualTo objNull) exitWith {false};
 
 private _type = typeOf _item;
 

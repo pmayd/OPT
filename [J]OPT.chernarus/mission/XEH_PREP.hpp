@@ -1,5 +1,6 @@
 
 
+PREP(addBackpack);
 PREP(briefing);
 PREP(countdown);
 PREP(earplugs);

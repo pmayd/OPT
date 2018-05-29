@@ -21,6 +21,9 @@ if (damage _container > GVAR(maxDammage)) exitWith {
     removeAllActions _container;
 };
 
+// remove ACE dragging entries
+[QEGVAR(cargo,deactivateDragging), [_container]] call CBA_fnc_globalEvent;
+
 // deploy radar, calc signal loss and save status
 if (!(_container getVariable [QGVAR(isDeployed), false])) then {
 	

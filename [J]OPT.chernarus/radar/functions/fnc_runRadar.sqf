@@ -92,6 +92,9 @@ _RadarZONE setTriggerStatements ["this", "", ""];
 
         removeAllActions _container;
 
+        // remove ACE dragging entries
+        [QEGVAR(cargo,deactivateDragging), [GVAR(containerEast)]] call CBA_fnc_globalEvent;
+
     };
 
     // reset all marker

@@ -4,8 +4,11 @@
 
 ### Skript
 
-- Radar: work on [#2](https://github.com/Jamesadamar/OPT/issues/2), Code-Überarbeitung der Komponente
+- Radar: work on [#2](https://github.com/Jamesadamar/OPT/issues/2), [#14](https://github.com/Jamesadamar/OPT/issues/14), Code-Überarbeitung der Komponente
 - Beam: Umstellung auf CBA-Tastenzuweisung (default F2)
+- Mission: work on [#15](https://github.com/Jamesadamar/OPT/issues/15), Bugfix Backpack on Chest, Rucksack wird jetzt nach Respawn wieder zugeteilt
+- Revive: work on [#7](https://github.com/Jamesadamar/OPT/issues/7), Schaden wird nun noch genauer geprüft
+- Warehouse: work on [#19](https://github.com/Jamesadamar/OPT/issues/19). "Any" Budgetproblem beim Verkauf behoben. Gegenstände mit Verkaufspreis 0 werden nicht mehr angezeigt.
 
 ## 1.4.9
 

@@ -2,6 +2,7 @@
 /*PREP(filterVehicleList);*/
 PREP(createMenu);
 PREP(deleteVehicle);
+PREP(getPrice);
 PREP(getVehicleInfo);
 PREP(handleDeadVehicle);
 PREP(initCBAClassEvents);
