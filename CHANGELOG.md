@@ -1,5 +1,17 @@
 ﻿# Changelog
 
+## 1.4.10
+
+### Skript
+
+- Radar: work on [#2](https://github.com/Jamesadamar/OPT/issues/2), [#14](https://github.com/Jamesadamar/OPT/issues/14), Code-Überarbeitung der Komponente
+- Beam: Umstellung auf CBA-Tastenzuweisung (default F2)
+- Mission: work on [#15](https://github.com/Jamesadamar/OPT/issues/15), Bugfix Backpack on Chest, Rucksack wird jetzt nach Respawn wieder zugeteilt
+- Revive: work on [#7](https://github.com/Jamesadamar/OPT/issues/7), Schaden wird nun noch genauer geprüft
+- Warehouse: work on [#19](https://github.com/Jamesadamar/OPT/issues/19). "Any" Budgetproblem beim Verkauf behoben. Gegenstände mit Verkaufspreis 0 werden nicht mehr angezeigt.
+- Log: work on [#18](https://github.com/Jamesadamar/OPT/issues/18) Kill-Log überarbeitet, nun mit Angabe des Magazines sowie Anpassung der Log-Zeile auf neuen Standard (vehicle:)(side:)(magazine:)(category:)
+- Deadmanswitch: work on [#17](https://github.com/Jamesadamar/OPT/issues/17): Bei Bewusstlosigkeit werden alle Sprengladungen mit Deadmanswitch gezündet und der Trigger aus dem Inventar gelöscht
+
 ## 1.4.9
 
 ### Skript
