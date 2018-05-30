@@ -20,6 +20,13 @@
     [_vec] call FUNC(initCargo);
 }];
 
+[QGVAR(initDragging), {
+	params ["_item"];
+
+	[_item] call FUNC(initDragging);
+
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(deactivateDragging), {
 	params ["_item"];
 
@@ -31,12 +38,5 @@
 	params ["_item"];
 
 	[_item] call FUNC(deactivateCargo);
-
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(initDragging), {
-	params ["_item"];
-
-	[_item] call FUNC(initDragging);
 
 }] call CBA_fnc_addEventHandler;

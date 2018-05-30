@@ -17,8 +17,8 @@
 // setzt ACE cargo settings für jedes Fahrzeug
 ["LandVehicle", "init", {
 	params ["_vec"];
-
-    [_vec] call FUNC(initCargo); // global effect
+    
+    [QGVAR(initCargo), [_vec]] call CBA_fnc_serverEvent; // global effect
     [_vec] call FUNC(initDragging);
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
@@ -26,7 +26,7 @@
 ["Air", "init", {
     params ["_vec"];
 
-    [_vec] call FUNC(initCargo); // global effect
+    [QGVAR(initCargo), [_vec]] call CBA_fnc_serverEvent; // global effect
     [_vec] call FUNC(initDragging);
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
@@ -45,7 +45,7 @@
 ["Thing", "init", {
 	params ["_item"];
 
-    [_item] call FUNC(initCargo); // global effect
+    [QGVAR(initCargo), [_vec]] call CBA_fnc_serverEvent; // global effect
     [_item] call FUNC(initDragging);
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
