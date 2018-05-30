@@ -18,7 +18,7 @@
     params ["_vec"];
 
     [_vec] call FUNC(initCargo);
-}];
+}] call CBA_fnc_addEventHandler;
 
 [QGVAR(initDragging), {
 	params ["_item"];

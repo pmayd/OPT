@@ -54,10 +54,10 @@
 ["Thing", "init", {
 	params ["_item"];
 
-    if (local _vec) then {
-        [QGVAR(initCargo), [_vec]] call CBA_fnc_localEvent; // global effect
+    if (local _item) then {
+        [QGVAR(initCargo), [_item]] call CBA_fnc_localEvent; // global effect
     } else {
-        [QGVAR(initCargo), [_vec]] call CBA_fnc_serverEvent; // global effect
+        [QGVAR(initCargo), [_item]] call CBA_fnc_serverEvent; // global effect
     };
     [_item] call FUNC(initDragging);
 
