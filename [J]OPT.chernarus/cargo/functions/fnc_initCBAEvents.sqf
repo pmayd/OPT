@@ -27,6 +27,13 @@
 
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(deactivateCargo), {
+	params ["_item"];
+
+	[_item] call FUNC(deactivateCargo);
+
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(initDragging), {
 	params ["_item"];
 

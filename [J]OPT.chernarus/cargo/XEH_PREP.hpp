@@ -1,3 +1,4 @@
+PREP(deactivateCargo);
 PREP(deactivateDragging);
 PREP(initCargo);
 PREP(initCBAClassEvents);
