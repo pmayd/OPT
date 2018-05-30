@@ -26,7 +26,7 @@ if (_container getVariable [QGVAR(isDeployed), false]) then {
 	_container setVariable [QGVAR(attachedObjects), [], true];
 
     // add ACE dragging entries
-    [QEGVAR(cargo,initDragging), [_container]] call CBA_fnc_globalEvent;
+    [QEGVAR(cargo,initCargo), [_container]] call CBA_fnc_globalEvent;
 };
 
 
