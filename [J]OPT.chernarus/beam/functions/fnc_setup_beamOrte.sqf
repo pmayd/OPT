@@ -24,7 +24,7 @@
 GVAR(locations_west) =
 [
     [[4713.8179, 8.9878902, 2573.408], "NATO Basis", -1],
-    [[4327.6089, 3.145803, 2154.875], "NATO Marinebasis", -1],
+    [[4380.3735,3.0014389,2251.5574], "NATO Marinebasis", -1],
 
 	[[7147.27, 9.9895916, 2609.0459], "Chernogorsk - Zentrum", 1], 
 	[[6272.6069, 76.666931, 3729.7595], "Chernogorsk - Farm", 1], 
@@ -37,10 +37,6 @@ GVAR(locations_west) =
 	[[4663.7095, 342.97681, 9776.4922], "Flughafen - Kommandoposten", 1], 
 	[[4663.3428, 342.97681, 10302.391], "Flughafen - El Locos Garage", 1], 
 	[[4273.0098, 342.97681, 10904.86], "Flughafen - Trainingszentrum", 1],
-
-	[[8501.1631, 363.09842, 6581.9077], "Guglovo - Zentrum", 1], 
-	[[7744.2329, 315.65472, 6874.2544], "Guglovo - Farm", 1], 
-	[[7019.8843, 297.86713, 7630.8462], "Guglovo - Novy Sobor", 1], 
 
 	[[11989.029, 10.129433, 3529.2573], "Kamyshovo - Zentrum", 1], 
 	[[12465.595, 6.8708162, 3336.8975], "Kamyshovo - Heikos Ferienhaus", 1], 
@@ -82,10 +78,6 @@ GVAR(locations_east) =
     [[12097.098, 158.91089, 12648.875], "CSAT Basis", -1],
     [[14182.087, 2.1730125, 12250.548], "CSAT Marinebasis", -1],
 	
-	[[9178.7568, 222.90584, 3745.874], "Pusta - Zentrum", 1], 
-	[[10343.482, 16.177559, 2607.2998], "Pusta - Kraftwerk", 1], 
-	[[10354.342, 12.808233, 2343.188], "Pusta - Kirche des oldeurope", 1], 
-
 	[[12788.279, 9.9679699, 9531.6094], "Berezino - Sägewerk", 1], 
 	[[12383.195, 16.064194, 9438.915], "Berezino - Vorort", 1], 
 	[[12177.619, 16.071527, 9803.8301], "Berezino - Stützpunkt Wiesl", 1], 
@@ -109,6 +101,10 @@ GVAR(locations_east) =
 	[[7190.7236, 381.09818, 8952.0078], "Grishino - Wodka-Farm", 1], 
 	[[5959.6548, 273.3353, 10430.288], "Grishino - Zentrum", 1], 
 	[[5522.1758, 275.22858, 11094.381], "Grishino - Radarstation dutchmill", 1], 
+
+	[[8501.1631, 363.09842, 6581.9077], "Guglovo - Zentrum", 1], 
+	[[7744.2329, 315.65472, 6874.2544], "Guglovo - Farm", 1], 
+	[[7019.8843, 297.86713, 7630.8462], "Guglovo - Novy Sobor", 1], 
 	
 	[[8704.6396, 219.46088, 11605.145], "Gvozdno - Pferdezucht", 1], 
 	[[8510.7109, 185.3669, 11891.032], "Gvozdno - Zentrum", 1], 
@@ -126,6 +122,10 @@ GVAR(locations_east) =
 	[[11360.828, 229.46248, 7498.981], "Polana - Fabrik", 3], 
 	[[12032.386, 199.59885, 7282.8027], "Polana - Orlovets", 3], 
 
+	[[9178.7568, 222.90584, 3745.874], "Pusta - Zentrum", 1], 
+	[[10343.482, 16.177559, 2607.2998], "Pusta - Kraftwerk", 1], 
+	[[10354.342, 12.808233, 2343.188], "Pusta - Kirche des oldeurope", 1], 
+	
 	[[11121.455, 88.226479, 6611.583], "Shakovka - Dolina", 1], 
 	[[9687.9326, 223.50797, 6471.4492], "Shakovka - Zentrum", 1], 
 	[[8757.7051, 321.04938, 7773.2549], "Shakovka - Radarstation Fox", 1],
