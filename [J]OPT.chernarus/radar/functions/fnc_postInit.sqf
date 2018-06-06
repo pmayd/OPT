@@ -14,28 +14,29 @@
 */
 #include "script_component.hpp"
 
-private _container = [] call FUNC(getRadar);
+{
+    _x addAction[
+        ("<t color=""#df8601"">" + STR_RADAR_DEPLOY + "</t>"),
+        {[_this select 0] call FUNC(deployRadar); },
+        '', 
+        1, 
+        true, 
+        true, 
+        "", 
+        format["!(_target getVariable ['%1', false])", QGVAR(isDeployed)]
+    ]; 
 
-_container addAction[
-    ("<t color=""#df8601"">" + STR_RADAR_DEPLOY + "</t>"),
-    {[] call FUNC(deployRadar); },
-    '', 
-    1, 
-    true, 
-    true, 
-    "", 
-    format["!(%1 getVariable ['%2', false])", _container, QGVAR(isDeployed)]
-]; 
+    _x addAction[
+        ("<t color=""#df8601"">" + STR_RADAR_UNDEPLOY + "</t>"),
+        {[_this select 0] call FUNC(undeployRadar); },
+        '', 
+        1,
+        true,
+        true, 
+        "", 
+        format["(_target getVariable ['%1', false])", QGVAR(isDeployed)]
+    ]; 
 
-_container addAction[
-    ("<t color=""#df8601"">" + STR_RADAR_UNDEPLOY + "</t>"),
-    {[] call FUNC(undeployRadar); },
-    '', 
-    1,
-    true,
-    true, 
-    "", 
-    format["(%1 getVariable ['%2', false])", _container, QGVAR(isDeployed)]
-]; 
+} forEach [GVAR(containerWest), GVAR(containerEast)];
 
 [] spawn FUNC(runRadar);

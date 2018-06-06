@@ -3,7 +3,7 @@
 * create some objects around the radar for better immersion
 *
 * Arguments:
-* None
+* 0: <OBJECT> radar container
 *
 * Return Value:
 * None
@@ -14,7 +14,12 @@
 */
 #include "script_component.hpp"
 
-private _container = [] call FUNC(getRadar);
+params [
+    ["_container", objNull, [objNull], 1]
+];
+
+if (_container isEqualTo objNull) exitWith {};
+
 private _containerObj = []; // list of objects attached to container
 
 private _tower = createVehicle ["Land_TTowerSmall_1_F", getpos _container, [], 0, "NONE"];

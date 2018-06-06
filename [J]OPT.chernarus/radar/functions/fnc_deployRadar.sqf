@@ -3,7 +3,7 @@
 * deploy radar container for player side
 *
 * Arguments:
-* None
+* 0: <OBJECT> radar container
 *
 * Return Value:
 * None
@@ -14,7 +14,11 @@
 */
 #include "script_component.hpp"
 
-private _container = [] call FUNC(getRadar);
+params [
+    ["_container", objNull, [objNull], 1]
+];
+
+if (_container isEqualTo objNull) exitWith {};
 
 // Container destroyed?
 if (damage _container > GVAR(maxDammage)) exitWith {
@@ -29,7 +33,7 @@ if (damage _container > GVAR(maxDammage)) exitWith {
 if (!(_container getVariable [QGVAR(isDeployed), false])) then {
 	
     // create objects for better immersion
-    [] call FUNC(createObjects);
+    [_container] call FUNC(createObjects);
 
     // calculate signal loss
 	[true] call FUNC(calcSignalLoss);
