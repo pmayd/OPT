@@ -8,18 +8,14 @@ east -> Angriffsziel für NATO
 #include "script_component.hpp"
 
 GVARMAIN(nato_flags_pos) = [
-//	   [13424, 2792, west], // Kamyshovo - Skalisty Dorf
-//	   [12390, 3303, west], // Kamyshovo - Insel (muss gebaut werden!)
-//	   [12049, 3554, west], // Kamyshovo - Zentrum
+	   [13424, 2792, west], // Kamyshovo - Skalisty Dorf
+	   [12390, 3303, west], // Kamyshovo - Insel (muss gebaut werden!)
+	   [12049, 3554, west] // Kamyshovo - Zentrum
 
 //	   [4614, 9658, west], // Flughafen - Stützpunkt
 //	   [4731, 10335, west], // Flughafen - Tower
 //	   [4195, 10953, west], // Flughafen - Militär  (muss gebaut werden!)	   
 
-//	   [8442, 6682, west], // Guglovo - Zentrum
-//	   [7778, 6888, west], // Guglovo - Farm
-//	   [7080, 7708, west], // Guglovo - Novi Sobor
-	   
 //	   [6242, 7748, west], // Stary Sobor - Farm
 //	   [5971, 7884, west], // Stary Sobor - Zentrum
 //	   [5342, 8626, west], // Stary Sobor - Kabanino
@@ -32,9 +28,9 @@ GVARMAIN(nato_flags_pos) = [
 //	   [6539, 6097, west], // Vyshnoye - Zentrum
 //	   [7533, 5120, west], // Vyshnoye - Mogilevka
 	   
-	   [10088, 1912, west], // Elektrozavodsk - Industrie
-	   [8687, 2428, west], // Elektrozavodsk - Vorort
-	   [8073, 3350, west] // Elektrozavodsk - Prigorodky
+//	   [10088, 1912, west], // Elektrozavodsk - Industrie
+//	   [8687, 2428, west], // Elektrozavodsk - Vorort
+//	   [8073, 3350, west], // Elektrozavodsk - Prigorodky
 
 //	   [2718, 10032, west], // Lopatino - Zentrum
 //	   [2880, 9746, west], // Lopatino - Farm	   
@@ -78,13 +74,17 @@ GVARMAIN(csat_flags_pos) = [
 //	   [9882, 10326, east], // Dubrovka - Militär (muss gebaut werden!)
 //	   [10544, 9726, east], // Dubrovka - Zentrum
 	   
+//	   [8442, 6682, east], // Guglovo - Zentrum
+//	   [7778, 6888, east], // Guglovo - Farm
+//	   [7080, 7708, east], // Guglovo - Novi Sobor
+	   
 //	   [8779, 11617, east], // Gvozdno - Farm
 //	   [8557, 11927, east], // Gvozdno - Zentrum
 //	   [9160, 11015, east], // Gvozdno - Vorort
 	   
-	   [11242, 4281, east], // Staroye - Rog-Burg
-	   [10126, 5491, east], // Staroye - Zentrum
-	   [8376, 5962, east] // Staroye - Ruinenstadt Kumyrna
+//	   [11242, 4281, east], // Staroye - Rog-Burg
+//	   [10126, 5491, east], // Staroye - Zentrum
+//	   [8376, 5962, east], // Staroye - Ruinenstadt Kumyrna
 
 //	   [13372, 6237, east], // Solnichniy - Zentrum
 //	   [12945, 6276, east], // Solnichniy - Zementwerk
@@ -118,9 +118,9 @@ GVARMAIN(csat_flags_pos) = [
 //	   [5945, 10347, east], // Grishino - Zentrum
 //	   [5437, 11088, east], // Grishino - Militär (muss gebaut werden!)
 	   
-//	   [4975, 12512, east], // Petrovka - Zentrum
-//	   [4004, 11659, east], // Petrovka - Militär (muss gebaut werden!)
-//	   [1903, 12442, east] // Petrovka - Sägewerk (muss gebaut werden!)
+	   [4975, 12512, east], // Petrovka - Zentrum
+	   [4004, 11659, east], // Petrovka - Militär (muss gebaut werden!)
+	   [1903, 12442, east] // Petrovka - Sägewerk (muss gebaut werden!)
 
     ];
 

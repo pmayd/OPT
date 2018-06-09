@@ -4,7 +4,7 @@
 * undeploy radar container, delete attached objects
 *
 * Arguments:
-* None
+* 0: <OBJECT> radar container
 *
 * Return Value:
 * None
@@ -15,7 +15,11 @@
 */
 #include "script_component.hpp"
 
-private _container = [] call FUNC(getRadar);
+params [
+    ["_container", objNull, [objNull], 1]
+];
+
+if (_container isEqualTo objNull) exitWith {};
 
 if (_container getVariable [QGVAR(isDeployed), false]) then {
 	_container setVariable [QGVAR(isDeployed), false, true];

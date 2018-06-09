@@ -144,12 +144,19 @@ GVAR(canBeTransported) =
 	["OPT_NATO_Sprengstoffkiste", 2],  					    // sprengstoffkiste NEUE KISTE!
 	["OPT_Box_NATO_WpsSpecial_AT3_F", 2],				    // Raketenkiste RPG42 NEUE KISTE!
 	["OPT_Box_NATO_WpsSpecial_AA_F", 2],				    // Raketenkiste AA 
-	["OPT_Box_NATO_WpsSpecial_Diver_F", 2],				    // Taucherkiste,5000	
+	["OPT_Box_NATO_WpsSpecial_Diver_F", 2],				    // Taucherkiste,5000
+	["OPT_B_HMG_01_F", 2],							    	                    // Stand-MG niedrig,10000
+	["OPT_B_HMG_01_high_F", 2],							                    // Stand-MG hoch,10000
+	["OPT_B_GMG_01_F", 2],							       	                    // Stand-GMG niedrig,15000
+	["OPT_B_GMG_01_high_F", 2],							                    // Stand-GMG hoch,15000
+	["OPT_B_static_AA_F", 2],						    	                    // Stand-AA,25000
+	["OPT_B_static_AT_F", 2],						    	                    // Stand-AT,200000	
+	["OPT_B_Mortar_01_F", 2],							                        // MK6 - Mörser,200000	
 	["OPT_B_Slingload_01_Fuel_F", 8],     				    // Fuelcontainer  
 	["OPT_B_Slingload_01_Repair_F", 8],       			    // Reparaturcontainer 
 	["OPT_B_Slingload_01_Ammo_F", 8],					    // Munitionscontainer - von 110 runtergesetzt damit es in lkw passt
 	["OPT_B_Slingload_01_Medevac_F", 8],				    // Lazarettcontainer
-	//["Land_Cargo10_military_green_F", 8],				    // Radarcontainer NEU - wieder getauscht
+	["Land_Cargo10_military_green_F", 8],				    // Radarcontainer NEU - wieder getauscht
 	["OPT_B_Slingload_01_Repair_Radar_F", 8],			    // Radarcontainer NEU
 	["OPT_Box_NATO_WpsSpecial_Diver_F", 2],				    // Taucherkiste
 	["OPT_FlexibleTank_01_forest_F", 1],				    //Spritfass
@@ -165,6 +172,14 @@ GVAR(canBeTransported) =
 	["OPT_Box_East_WpsSpecial_AT_F", 2],   				    // AT Raketenkiste NEUE KISTE!
 	["OPT_Box_East_WpsSpecial_AA_F", 2],				    // AA Raketenkiste
 	["OPT_Box_East_WpsSpecial_Diver_F", 2],				    // Taucherkiste
+	["OPT_O_HMG_01_F", 2],								                        // Stand-MG niedrig,10000
+	["OPT_O_HMG_01_high_F", 2],							                    // Stand-MG hoch,10000
+	["OPT_O_GMG_01_F", 2],								                        // Stand-GMG niedrig,15000
+	["OPT_O_GMG_01_high_F", 2],						                        // Stand-GMG hoch,15000
+	["OPT_O_static_AA_F", 2],							                        // Stand-AA,25000
+	["OPT_O_static_AT_F", 2],							                        // Stand-AT,200000
+	["OPT_O_Mortar_01_F", 2],							                        // MK6 Mörser,200000
+	
 	["OPT_FlexibleTank_01_sand_F", 1],					    // Treibstoff-Fass
 	["OPT_Land_Pod_Heli_Transport_04_fuel_F", 8],		    // Fuelcontainer
 	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", 8], 	// Fuelcontainer (schwarz)
@@ -173,7 +188,7 @@ GVAR(canBeTransported) =
     ["OPT_Land_Pod_Heli_Transport_04_repair_F", 8],		    // Reparaturcontainer
 	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", 8],	// Repcontainer schwarz
 	["OPT_Land_Pod_Heli_Transport_04_repair_radar_F", 8],	// Radar Container NEU
-	//["Land_Cargo10_grey_F", 8],							// Radar Container NEU - wieder ausgetauscht
+	["Land_Cargo10_grey_F", 8],							// Radar Container NEU - wieder ausgetauscht
     // CSAT Ships
 	["OPT_O_Boat_Transport_01_F", 4],						// Assault Boat,500
 	["OPT_O_C_Boat_Transport_02_F", 4]				        // rhib unbewaffnet,7000	
@@ -271,10 +286,10 @@ GVAR(canBeCarried) =
 	["OPT_B_static_AT_F"],						    	// Stand-AT,200000
 	["OPT_B_Mortar_01_F"],						    	// MK6 - Mörser,200000
 	["OPT_FlexibleTank_01_forest_F"],					// Spritfass
-	["OPT_B_Slingload_01_Fuel_F"],                      // Fuelcontainer,5000
-	["OPT_B_Slingload_01_Ammo_F"],                      // Munitionscontainer,50000
-	["OPT_B_Slingload_01_Repair_F"],                    // Reparaturcontainer,5000
-	["OPT_B_Slingload_01_Repair_radar_F"],    	        // NATO Radar Container
+	["OPT_B_Slingload_01_Fuel_F", [0, 5, 0.05], 0],                      // Fuelcontainer,5000
+	["OPT_B_Slingload_01_Ammo_F", [0, 5, 0.05], 0],                      // Munitionscontainer,50000
+	["OPT_B_Slingload_01_Repair_F", [0, 5, 0.05], 0],                    // Reparaturcontainer,5000
+	["OPT_B_Slingload_01_Repair_radar_F", [0, 5, 0.05], 0],    	        // NATO Radar Container
 	["Land_Cargo10_military_green_F"],
 	["OPT_B_Static_Designator_01_F"],					// Remote Designator,10000
 //CSAT supplies
@@ -294,13 +309,13 @@ GVAR(canBeCarried) =
 	["OPT_O_static_AA_F"],						    	// Stand-AA,25000
 	["OPT_O_static_AT_F"],						    	// Stand-AT,200000
 	["OPT_O_Mortar_01_F"],						    	// MK6 Mörser,200000
-	["OPT_Land_Pod_Heli_Transport_04_fuel_F"],			// Fuelcontainer,5000
-	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F"],	// Fuelcontainer (schwarz),5000
-	["OPT_Land_Pod_Heli_Transport_04_ammo_F"],		    // Munitionscontainer,50000
-	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F"],	// Munitionscontainer (Schwarz),50000
-	["OPT_Land_Pod_Heli_Transport_04_repair_F"],		// Reparaturcontainer,5000
-	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", [0, 5, 0.05]],	// Reparaturcontainer (schwarz),5000
-	["OPT_Land_Pod_Heli_Transport_04_repair_radar_F", [0, 5, 0.05]],  // CSAT Radar Container
+	["OPT_Land_Pod_Heli_Transport_04_fuel_F", [0, 5, 0.05], 0],			// Fuelcontainer,5000
+	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", [0, 5, 0.05], 0],	// Fuelcontainer (schwarz),5000
+	["OPT_Land_Pod_Heli_Transport_04_ammo_F", [0, 5, 0.05], 0],		    // Munitionscontainer,50000
+	["OPT_Land_Pod_Heli_Transport_04_ammo_black_F", [0, 5, 0.05], 0],	// Munitionscontainer (Schwarz),50000
+	["OPT_Land_Pod_Heli_Transport_04_repair_F", [0, 5, 0.05], 0],		// Reparaturcontainer,5000
+	["OPT_Land_Pod_Heli_Transport_04_repair_black_F", [0, 5, 0.05], 0],	// Reparaturcontainer (schwarz),5000
+	["OPT_Land_Pod_Heli_Transport_04_repair_radar_F", [0, 5, 0.05], 0],  // CSAT Radar Container
 	["Land_Cargo10_grey_F"],					        // CSAT Radar Container NEU
 	["OPT_FlexibleTank_01_sand_F"]				    	// Treibstoff-Fass
 ];

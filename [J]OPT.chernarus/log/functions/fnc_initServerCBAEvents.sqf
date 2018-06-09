@@ -185,10 +185,27 @@ registriert alle Events via CBA Event Handling
                     ];
                 } else {
                     private _name = getText (configFile >> "CfgVehicles" >> typeOf _source >> "displayName");
+                    private _killerTxt = [];
+                    // in case of a vehicle, credit kill to all crew members
+                    {
+                        private _unit = _x select 0;
+                        private _cargoIdx = _x select 2;
+
+                        // crew member have cargo index of -1, else > 0
+                        if (_cargoIdx == -1) then {
+                             _killerTxt pushBack format[
+                                "%1 (side: %2) (vehicle: %3)",
+                                UNIT_NAME(_unit), UNIT_SIDE(_unit), _name
+                            ];
+                        };
+                       
+                    } forEach (fullCrew _source);
+
+                    _killerTxt = _killerTxt joinString ", ";
                     _message = format[
-                        "%1 von: %2 (side: %3) (vehicle: %4).",
-                        _message, UNIT_NAME(_instigator), UNIT_SIDE(_instigator), _name
+                        "%1 von: %2", _message, _killerTxt
                     ];
+
                 };
 			};
 

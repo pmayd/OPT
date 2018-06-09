@@ -249,10 +249,12 @@ GVARMAIN(grenadelaunchers) = [
 GVARMAIN(pioniers) = [
 	"OPT_NATO_Pionier_T",
 	"OPT_CSAT_Pionier_T",
+	"OPT_CSAT_Sprengmeister",
 	"OPT_CSAT_Aufklaerung_Sprengmeister_T",
 	"OPT_NATO_Aufklaerung_Sprengmeister_T",
 	"OPT_NATO_Pionier",
 	"OPT_CSAT_Pionier",
+	"OPT_NATO_Sprengmeister",
 	"OPT_CSAT_Aufklaerung_Sprengmeister",
 	"OPT_NATO_Aufklaerung_Sprengmeister"
 ];
