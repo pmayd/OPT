@@ -20,12 +20,13 @@
 // TODO: rewrite into killed and damagged EH so we have the source parameter available
 params [
     ["_vec", objNull, [objNull], 1],
+    ["_source", objNull, [objNull], 1],
     ["_instigator", objNull, [objNull], 1],
-    ["_killer", objNull, [objNull], 1]
+    "_useEffects"
 ];
 
 // log destroyed vehicle and killer
-[QEGVAR(log,kill), [_vec, _instigator, _killer]] call CBA_fnc_localEvent;
+[QEGVAR(log,kill), [_vec, _instigator, _source]] call CBA_fnc_localEvent;
 
 
 // delete all wrecks within the base safezone
