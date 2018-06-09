@@ -13,7 +13,7 @@
 - Log: work on [#17](https://github.com/Jamesadamar/OPT/issues/18) Kill-Log überarbeitet, nun mit Angabe des Magazines sowie Anpassung der Log-Zeile auf neuen Standard (vehicle:)(side:)(magazine:)(category:)
 - Log: work on [#17](https://github.com/Jamesadamar/OPT/issues/18) Kill-Log überarbeitet für den Fall Fahrzeugabschuss durch Fahrzeug: Jetzt wird der gesamten Besatzung ein Kill angerechnet.
 - Merge mit Schlachtversion #9, Anpassung an diversen Skripten wie setupbeamorte, setupflagpositons, setupcargosizeandspace 
-- Radar: work on [#27](https://github.com/Jamesadamar/OPT/issues/27) Bugfix im Radar-Modul, jetzt ist es wieder möglich, mit dem Feindradar zu interagieren
+- Radar: work on [#27](https://github.com/Jamesadamar/OPT/issues/27) Bugfix im Radar-Modul, jetzt ist es wieder möglich, mit dem Feindradar zu interagieren 
 
 ## 1.4.9
 
