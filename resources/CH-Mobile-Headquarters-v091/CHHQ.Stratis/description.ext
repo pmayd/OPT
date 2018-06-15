@@ -1,0 +1,11 @@
+respawn = "BASE";
+respawnDelay = 15;
+RespawnDialog = 1;
+disabledAI = 1;
+joinUnassigned = 0;
+enableDebugConsole = 1;
+forceRotorLibSimulation = 0;
+
+author = "Champ"; // Author
+onLoadName = "CH Mobile Headquarters"; // Mission name (temporary solution; actual name set in editor will be used later in the alpha)
+onLoadMission = ""; // Description
