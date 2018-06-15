@@ -172,7 +172,7 @@ CHHQ_fnc_undeploy = {
 	[[_veh,["Deploy HQ", "_this spawn CHHQ_fnc_deploy", [_side, _cargoInfo, _composition], 0, false, true, "", "[_target, _this] call CHHQ_fnc_actionConditions"]], "CHHQ_fnc_addAction", _side] call BIS_fnc_MP;
 	
 	_veh setVariable ["CHHQ_inProgress", false, true];
-	[[_veh, "cargo"], "CHHQ_fnc_deleteVehicleEH", false] call BIS_fnc_MP;
+	[[_veh, "cargo"], "CHHQ_fnc_deleteVehicleEH", false] call BIS_fnc_MP; // only delete objects on server
 };
 CHHQ_fnc_boundingSize = {
 	_type = _this select 0;
