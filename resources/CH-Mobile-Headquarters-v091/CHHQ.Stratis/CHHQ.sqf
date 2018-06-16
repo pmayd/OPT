@@ -6,115 +6,22 @@ CHHQ_fnc_deploy = {
 	_composition = _this select 3 select 2;
 	_cargo = _veh getVariable ["CHHQ_cargo", objNull];
 	
-	if (_veh getVariable ["CHHQ_compositionRadius", -1] < 0) then {
-		_sortedByDist = [_composition,[],{
-			_frstNum = abs (_x select 1 select 0);
-			_secNum = abs (_x select 1 select 1);
-			if (_frstNum > _secNum) then {_frstNum} else {_secNum}
-		},"DESCEND"] call BIS_fnc_sortBy;	
-		_biggestOffset = (_sortedByDist select 0) select 1;
-		_biggestOffsetAbs = if (abs (_biggestOffset select 0) > abs (_biggestOffset select 1)) then {abs (_biggestOffset select 0)} else {abs (_biggestOffset select 1)};
-		
-		_boundingSize = [_sortedByDist select 0 select 0] call CHHQ_fnc_boundingSize;
-		_radius = _biggestOffsetAbs + _boundingSize;
-		
-		_sortedBySize = [_composition,[],{sizeOf (_x select 0)},"DESCEND"] call BIS_fnc_sortBy;
-		_boundingSize = [_sortedBySize select 0 select 0] call CHHQ_fnc_boundingSize;	
-		
-		if (_boundingSize > _radius) then {
-			_radius = _boundingSize;
-		};
-		_veh setVariable ["CHHQ_compositionRadius", _radius, true];
-	};
-	_radius = _veh getVariable ["CHHQ_compositionRadius", -1];
-	
-	_flatPos = (getPosASL _veh) isFlatEmpty [
-		_radius,	//--- Minimal distance from another object
-		0,				//--- If 0, just check position. If >0, select new one
-		0.4,			//--- Max gradient
-		_radius max 5,	//--- Gradient area
-		0,				//--- 0 for restricted water, 2 for required water,
-		false,			//--- Has to have shore nearby!
-		objNull			//--- Ignored object
-	];
-	
-	if (count _flatPos isEqualTo 0) exitWith {systemChat format ["You can't deploy HQ here! Find a flat position without any objects nearby (%1m).", round _radius]};
-	if (_veh getVariable ["CHHQ_inProgress", false]) exitWith {};
-	
-	_veh setVariable ["CHHQ_inProgress", true, true];
-	
+    // does all the magic
+    [_veh, _composition] call EFUNC(composition,deployComposition);
+
+    // TODO
 	[[_veh], "CHHQ_fnc_removeAction", _side] call BIS_fnc_MP;
-	_nearestPlayers = [];
-	{
-		if (isPlayer _x && _x distance _veh < 25) then {
-			_nearestPlayers pushBack _x
-		};
-	} forEach (playableUnits + switchableUnits);
-	[["CHHQ_deployBlackout"],"BIS_fnc_blackOut",_nearestPlayers,false,true] call BIS_fnc_MP;
-	[["DEPLOYING HQ"],"BIS_fnc_dynamicText",_nearestPlayers] call BIS_fnc_MP;
-	sleep 3;	
-	{moveOut _x} forEach crew _veh;
-	{_x allowDamage false; _x enableSimulationGlobal false} forEach _nearestPlayers;
 	
-	deleteVehicle _cargo;
-	
-	_veh enableSimulationGlobal false;
-	_veh allowDamage false;
-	
-	[[_veh, _side, "HQ"],"CHHQ_fnc_drawMarker",_side] call BIS_fnc_MP;
-	_objArray = [];
-	{
-		_type = _x select 0;
-		_offset = _x select 1;
-		_newdir = _x select 2;
-		_code = [_x, 3, "", ["", {}]] call BIS_fnc_param;
-		
-		_obj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
-		_obj allowDamage false;
-		[_veh,_obj,_offset,_newdir, true, true] call BIS_fnc_relPosObject;
-		_objArray pushBack _obj;
-		
-		if !(_code isEqualTo "") then {
-			_code = [_code] call CHHQ_fnc_compileCode;
-			[[[_obj,_veh], _code],"BIS_fnc_spawn",true] call BIS_fnc_MP;
-		};
-	} forEach _composition;
-	
-	/*
-	_grp = createGroup _side;
-	_unitType = switch _side do {
-		case east: {"O_soldier_F"};
-		case west: {"B_soldier_F"};
-		case resistance: {"I_soldier_F"};
-		default {"C_man_1"};
-	};
-	_unit = _grp createUnit [_unitType, [0,0,0], [], 0, "NONE"];
-	[[_unit,{hideObject _this}],"BIS_fnc_spawn",true] call BIS_fnc_MP;
-	_unit moveInCargo _veh;
-	_veh setPilotLight false;
-	_veh setCollisionLight false;
-	_veh engineOn false;
-	_grp setBehaviour "CARELESS";
-	{_unit disableAI _x} forEach ["MOVE","TARGET","AUTOTARGET","ANIM","FSM"];
-	_objArray pushBack _unit;
-	*/
-	
-	[[_veh, 2],"lock",true] call BIS_fnc_MP;
-		
-	_veh enableSimulationGlobal true;
-	_veh allowDamage true;
-	{_x allowDamage true} forEach _objArray;	
-	{_x setPos ((getPosASL _x) findEmptyPosition [0, 25, "CAManBase"]); _x allowDamage true; _x enableSimulationGlobal true} forEach _nearestPlayers;
-	
-	sleep 3;
-	[["CHHQ_deployBlackout"],"BIS_fnc_blackIn",_nearestPlayers,false,true] call BIS_fnc_MP;
+    // TODO
+	[[_veh, _side, "HQ"],"CHHQ_fnc_drawMarker",_side] call BIS_fnc_MP;	
+
+    // TODO
 	[[_veh, ["Undeploy HQ", "_this spawn CHHQ_fnc_undeploy", [_side, _cargoInfo, _composition], 0, false, true, "", "[_target, _this] call CHHQ_fnc_actionConditions"]], "CHHQ_fnc_addAction", _side] call BIS_fnc_MP;
+
+    // TODO
 	[["RespawnAdded",["DEPLOYMENT POINT",format ["HQ deployed at grid %1", mapGridPosition (getPos _veh)],"\A3\ui_f\data\map\markers\nato\b_hq.paa"]],"BIS_fnc_showNotification",_side] call BIS_fnc_MP;
 
-	_veh setVariable ["CHHQ_inProgress", false, true];
-	_veh setVariable ["CHHQ_deployed", true, true];
-	_veh setVariable ["CHHQ_objArray", _objArray, true];
-	[[_veh], "CHHQ_fnc_deleteVehicleEH", false] call BIS_fnc_MP;
+
 };
 CHHQ_fnc_undeploy = {
 	_veh = _this select 0;
@@ -153,7 +60,7 @@ CHHQ_fnc_undeploy = {
 	
 	_cargo = createVehicle [_cargoType, [0,0,0], [], 0, "CAN_COLLIDE"];		
 	_cargo attachTo [_veh, _cargoOffset]; 
-					
+
 	_veh setPos (getPos _veh);
 	_veh setDir (getDir _veh);
 	_cargo setDir _cargoDir;	
@@ -174,42 +81,7 @@ CHHQ_fnc_undeploy = {
 	_veh setVariable ["CHHQ_inProgress", false, true];
 	[[_veh, "cargo"], "CHHQ_fnc_deleteVehicleEH", false] call BIS_fnc_MP; // only delete objects on server
 };
-CHHQ_fnc_boundingSize = {
-	_type = _this select 0;
-	_bbdummy = _type createVehicleLocal [0,0,0];
-	_boundingBox = (boundingBox _bbdummy) select 1;
-	deleteVehicle _bbdummy;
-	_boundingSize = if (_boundingBox select 0 > _boundingBox select 1) then {_boundingBox select 0} else {_boundingBox select 1};
-	_boundingSize
-};
-CHHQ_fnc_compileCode = {
-	_code = [_this, 0, "", ["", {}]] call BIS_fnc_param;
-	
-	if (toLower typeName _code == "code") then {
-		_array = toArray str _code;
-		_array deleteAt 0;
-		_array deleteAt count _array - 1;
-		_code = toString _array;
-	};
-	if !(_code isEqualTo "") then {
-		_prefix = "_target = _this select 1; _this = _this select 0; ";
-		_code = _prefix + _code;
-	};
-	compile _code
-};
-CHHQ_fnc_deleteVehicleEH = {
-	_veh = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
-	_type = [_this, 1, "", [""]] call BIS_fnc_param;
-	_objArray = _veh getVariable ["CHHQ_objArray", []];
-	_cargo = _veh getVariable ["CHHQ_cargo", objNull];
-		
-	waitUntil {isNull _veh};
-	if (_type isEqualTo "cargo") then {
-		deleteVehicle _cargo;
-	} else {
-		{deleteVehicle _x} forEach _objArray;
-	};
-};
+
 CHHQ_fnc_arrayUpdateEH = {
 	_array = _this select 0;
 	_code = _this select 1;
@@ -275,17 +147,7 @@ CHHQ_fnc_drawMarker = {
 	};
 	_veh setVariable ["CHHQ_drawMarkerHandle", _handle];
 };
-CHHQ_fnc_addAction = {
-	_veh = _this select 0;
-	_settings = _this select 1;
 
-	_id = _veh addAction _settings;
-	_veh setVariable ["CHHQ_actionID",_id];
-};
-CHHQ_fnc_removeAction = {
-	_obj = _this select 0;
-	_obj removeAction (_obj getVariable ["CHHQ_actionID",-1]);
-};
 CHHQ_fnc_actionConditions = {
 	_target = _this select 0;
 	_caller = _this select 1;
@@ -570,7 +432,7 @@ CHHQ_fnc_startingSetup = {
 	_cargoCode = [_cargoInfo, 3, "", ["", {}]] call BIS_fnc_param;
 	_composition = _this select 3;
 		
-	if (_veh getVariable ["CHHQ_deployed",false]) then {
+	if (_veh getVariable ["CHHQ_deployed", false]) then {
 		_veh lock 2;
 		
 		if (playerSide isEqualTo _side) then {		

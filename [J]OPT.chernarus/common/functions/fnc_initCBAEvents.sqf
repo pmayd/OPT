@@ -16,9 +16,29 @@
 
 // fügt einen AddAction Eintrag hinzu
 [QGVAR(addAction), {
-	params ["_obj", "_parameter"];
+	params [
+        ["_obj", objNull, [objNull], 1],
+        ["_varName", "", ["s"], 1],
+        ["_args", [], [[]]]
+    ];
 
-	_obj addAction _parameter;
+    if (_obj isEqualTo objNull or _args isEqualTo []) exitWith{};
+
+	private _id = _obj addAction _args;
+    // make id of add action entry available through object var
+    _obj setVariable [_varName, _id];
+
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(removeAction), {
+    params [
+        ["_obj", objNull, [objNull], 1],
+        ["_varName", "", ["s"], 1]
+    ];
+
+    if (_obj isEqualTo objNull) exitWith{};
+
+    _obj removeAction (_obj getVariable [_varName, -1]);
 
 }] call CBA_fnc_addEventHandler;
 
@@ -95,19 +115,29 @@
     
 }] call CBA_fnc_addEventHandler;
 
-
-[QGVAR(setVariable), {
-
-    params ["_var", "_value"];
-
-    call compile format["%1 = %2", _var, _value];
-
-}] call CBA_fnc_addEventHandler;
-
 [QGVAR(addToCurator), {
     params ["_unit"];
 
     {
         _x addCuratorEditableObjects [[_unit] - [zeus_ziv1, zeus_ziv2, zeus_ziv3], false];
     } forEach [zeus_ziv1, zeus_ziv2, zeus_ziv3];
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(notification), {
+    params [
+        ["_templateName", "", ["s"], 1],
+        ["_args", [], [[]]]
+    ]
+    /*
+        [template,(arguments)] call BIS_fnc_showNotification; 
+        template: String - notification template from CfgNotifications 
+        arguments: Array - additional arguments passed to the template (default: [])
+    */
+    if (_templateName isEqualTo "") exitWith {};
+
+    [
+        _templateName,
+        _args
+    ] call BIS_fnc_showNotification; 
+
 }] call CBA_fnc_addEventHandler;

@@ -19,6 +19,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(common) {
         init = QUOTE(call compile preProcessFileLineNumbers 'common\XEH_PreInit.sqf');
     };
+    class GVARMAIN(composition) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'composition\XEH_PreInit.sqf');
+    };
     class GVARMAIN(fieldrepair) {
         init = QUOTE(call compile preProcessFileLineNumbers 'fieldrepair\XEH_PreInit.sqf');
     };
@@ -76,6 +79,9 @@ class Extended_PostInit_EventHandlers {
     };
     class GVARMAIN(cargo) {
         init = QUOTE(call compile preProcessFileLineNumbers 'cargo\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(composition) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'composition\XEH_PostInit.sqf');
     };
     class GVARMAIN(common) {
         init = QUOTE(call compile preProcessFileLineNumbers 'common\XEH_PostInit.sqf');
