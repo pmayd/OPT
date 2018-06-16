@@ -11,7 +11,10 @@ CHHQ_fnc_deploy = {
 
     // TODO
 	[[_veh], "CHHQ_fnc_removeAction", _side] call BIS_fnc_MP;
-	
+
+    // TODO
+	deleteVehicle _cargo;
+
     // TODO
 	[[_veh, _side, "HQ"],"CHHQ_fnc_drawMarker",_side] call BIS_fnc_MP;	
 

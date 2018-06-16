@@ -18,15 +18,17 @@
 [QGVAR(addAction), {
 	params [
         ["_obj", objNull, [objNull], 1],
-        ["_varName", "", ["s"], 1],
-        ["_args", [], [[]]]
+        ["_args", [], [[]]],
+        ["_varName", "", ["s"], 1]
     ];
 
     if (_obj isEqualTo objNull or _args isEqualTo []) exitWith{};
 
 	private _id = _obj addAction _args;
     // make id of add action entry available through object var
-    _obj setVariable [_varName, _id];
+    if !(_varName isEqualTo "") then {
+        _obj setVariable [_varName, _id];
+    };    
 
 }] call CBA_fnc_addEventHandler;
 
@@ -127,7 +129,7 @@
     params [
         ["_templateName", "", ["s"], 1],
         ["_args", [], [[]]]
-    ]
+    ];
     /*
         [template,(arguments)] call BIS_fnc_showNotification; 
         template: String - notification template from CfgNotifications 

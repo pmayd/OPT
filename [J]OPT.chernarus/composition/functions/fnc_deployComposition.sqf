@@ -12,6 +12,9 @@
 * Example:
 * [player, ["class1", [0,1,0], 100, "_this setDamage 1"]] call fnc_deployComposition.sqf;
 *
+* example of composition
+* _composition = [["Land_PowerGenerator_F",[-2.99756,2.07959,0.0971174],180.556],["CamoNet_BLUFOR_big_F",[0.013916,-0.0551758,0.0971174],337.248],["Land_ToiletBox_F",[3.71655,3.98242,0.097096],181.571],["MapBoard_altis_F",[4.04272,1.50049,0.0449162],359.984],["Land_CampingTable_F",[-3.40649,-1.95361,0.0971169],252.548],["Land_CampingChair_V1_F",[-4.34302,-1.66504,0.100242],253.27],["Land_Cargo20_grey_F",[4.11963,-0.677246,0.0971179],271.612,{_this animate ["Door_1_rot",1]; _this animate ["Door_2_rot",1]}]];
+*
 */
 #include "script_component.hpp"
 
@@ -21,7 +24,7 @@ params [
 ];
 private _retVal = false;
 
-private _side = [_centerObj] call FUNC(getVehicleSide);
+private _side = [_centerObj] call EFUNC(common,getVehicleSide);
 
 if (_centerObj isEqualTo objNull) exitWith {_retVal};
 if (_composition isEqualTo []) exitWith {_retVal};
@@ -57,12 +60,9 @@ if (_centerObj getVariable [QGVAR(deploymentInProgress), false]) exitWith {};
 
 _centerObj setVariable [QGVAR(deploymentInProgress), true, true];
 
-// TODO: param
-// [[_centerObj], "CHHQ_fnc_removeAction", _side] call BIS_fnc_MP;
-
 _nearestPlayers = [];
 {
-    if (isPlayer _x && _x distance _centerObj < RADIUS_NEARBY_PLAYER) then {
+    if (isPlayer _x && _x distance _centerObj < COMPOSITION_RADIUS_NEARBY_PLAYER) then {
         _nearestPlayers pushBack _x
     };
 } forEach (playableUnits + switchableUnits);
@@ -85,30 +85,10 @@ sleep 3;
 _centerObj enableSimulationGlobal false;
 _centerObj allowDamage false;
 
-// TODO: marker
-//[[_centerObj, _side, "HQ"],"CHHQ_fnc_drawMarker",_side] call BIS_fnc_MP;
-
 // spawn composition
-_objArray = [];
-{
-    _x params [
-        ["_type", "", ["s"], 1],
-        ["_offset", [0,0,0], [[]], 3],
-        ["_newDir", 0, [0], 1],
-        ["_code", "",  ["", {}], 1]
-    ];
-    
-    _obj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
-    _obj allowDamage false;
-    [_centerObj, _obj, _offset, _newdir, true, true] call BIS_fnc_relPosObject;
-    _objArray pushBack _obj;
-    
-    if !(_code isEqualTo "") then {
-        _code = [_code] call CHHQ_fnc_compileCode;
-        [[[_obj, _centerObj], _code],"BIS_fnc_spawn", true] call BIS_fnc_MP;
-    };
-} forEach _composition;
+_objArray = [_composition] call FUNC(spawnComposition);
 
+//  3 - Locked for player;
 [[_centerObj, 2], "lock", true] call BIS_fnc_MP;
 
 _centerObj enableSimulationGlobal true;
@@ -128,31 +108,12 @@ _centerObj allowDamage true;
 sleep 3;
 // black in and add addAction entries
 [[QGVAR(deployBlackout)], "BIS_fnc_blackIn", _nearestPlayers, false, true] call BIS_fnc_MP;
-// TODO
-//[[_centerObj, ["Undeploy HQ", "_this spawn CHHQ_fnc_undeploy", [_side, _cargoInfo, _composition], 0, false, true, "", "[_target, _this] call CHHQ_fnc_actionConditions"]], "CHHQ_fnc_addAction", _side] call BIS_fnc_MP;
-/*
-    [template,(arguments)] call BIS_fnc_showNotification; 
-    template: String - notification template from CfgNotifications 
-    arguments: Array - additional arguments passed to the template (default: [])
-*/
-[
-    [
-        COMPOSITION_DEPLOY_TEMPLATE_NAME,
-        [
-            COMPOSITION_DEPLOY_TEMPLATE_TITLE, 
-            COMPOSITION_DEPLOY_TEMPLATE_DESC(_centerObj),
-            COMPOSITION_DEPLOY_TEMPLATE_ICON
-        ]
-    ], 
-    "BIS_fnc_showNotification", 
-    _side
-] call BIS_fnc_MP;
 
 _centerObj setVariable [QGVAR(deploymentInProgress), false, true];
 _centerObj setVariable [QGVAR(deployed), true, true];
 _centerObj setVariable [QGVAR(composition), _objArray, true];
-// TODO
-//[[_centerObj], "CHHQ_fnc_deleteVehicleEH", false] call BIS_fnc_MP; // only delete objects on server
+
+[[_centerObj], QGVAR(deleteComposition), false] call BIS_fnc_MP; // only delete objects on server if vehicle is null
 
 _retVal = true;
 
