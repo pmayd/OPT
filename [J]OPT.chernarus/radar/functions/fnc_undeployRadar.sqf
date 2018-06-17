@@ -22,16 +22,16 @@ params [
 if (_container isEqualTo objNull) exitWith {};
 
 if (_container getVariable [QGVAR(isDeployed), false]) then {
-	_container setVariable [QGVAR(isDeployed), false, true];
+    _container setVariable [QGVAR(isDeployed), false, true];
 
-	{
-		deleteVehicle _x;
-	}	forEach (_container getVariable [QGVAR(attachedObjects), []]);	
-	_container setVariable [QGVAR(attachedObjects), [], true];
+    {
+        deleteVehicle _x;
+    } forEach (_container getVariable [QGVAR(attachedObjects), []]);	
+    _container setVariable [QGVAR(attachedObjects), [], true];
 
     // add ACE dragging entries
     [QEGVAR(cargo,initCargo), [_container]] call CBA_fnc_serverEvent;
-    [QEGVAR(cargo,initDragging), [_container]] call CBA_fnc_globalEvent;
+    [QEGVAR(cargo,initDragging), [_container], QGVAR(jipID_initDragging)] call CBA_fnc_globalEventJIP;
 };
 
 

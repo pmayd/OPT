@@ -26,7 +26,7 @@ if (damage _container > GVAR(maxDammage)) exitWith {
 };
 
 // remove ACE dragging entries
-[QEGVAR(cargo,deactivateDragging), [_container]] call CBA_fnc_globalEvent; // has to be called on each client
+[QEGVAR(cargo,deactivateDragging), [_container], QGVAR(jipID_deactivateDragging)] call CBA_fnc_globalEventJIP; // has to be called on each client
 [QEGVAR(cargo,deactivateCargo), [_container]] call CBA_fnc_serverEvent; // global effect
 
 // deploy radar, calc signal loss and save status
