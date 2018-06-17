@@ -3,7 +3,7 @@
 * delete all objects of a deployed composition or the cargo container of a vehicle
 *
 * Arguments:
-* 0: <OBJECT> vehicle the composition belongs to
+* 0: <OBJECT> vehicle or object the composition belongs to
 * 1: <TYPE> if "cargo", function deletes cargo, else composition
 *
 * Return Value:

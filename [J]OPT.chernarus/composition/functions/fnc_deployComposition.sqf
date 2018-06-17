@@ -1,6 +1,6 @@
 /**
 * Author: James
-* deploy a list of objects around a given center object
+* deploy a composition around a given center object
 *
 * Arguments:
 * 0: <OBJECT> vehicle or object to deploy composition around
@@ -23,8 +23,8 @@ params [
     ["_composition", [], [[]]]
 ];
 private _retVal = false;
-
 private _side = [_centerObj] call EFUNC(common,getVehicleSide);
+private _cargo = _centerObj getVariable [QGVAR(cargo), objNull];
 
 if (_centerObj isEqualTo objNull) exitWith {_retVal};
 if (_composition isEqualTo []) exitWith {_retVal};
@@ -37,7 +37,7 @@ if (_centerObj getVariable [QGVAR(compositionRadius), -1] == -1) then {
     _radius = [_composition] call FUNC(calcCompositionRadius);
 };
 
-_flatPos = (getPosASL _centerObj) isFlatEmpty [
+private _flatPos = (getPosASL _centerObj) isFlatEmpty [
     _radius,	//--- Minimal distance from another object
     0,				//--- If 0, just check position. If >0, select new one
     0.4,			//--- Max gradient
@@ -60,15 +60,12 @@ if (_centerObj getVariable [QGVAR(deploymentInProgress), false]) exitWith {};
 
 _centerObj setVariable [QGVAR(deploymentInProgress), true, true];
 
-_nearestPlayers = [];
-{
-    if (isPlayer _x && _x distance _centerObj < COMPOSITION_RADIUS_NEARBY_PLAYER) then {
-        _nearestPlayers pushBack _x
-    };
-} forEach (playableUnits + switchableUnits);
+deleteVehicle _cargo;
 
-[[QGVAR(deployBlackout)], "BIS_fnc_blackOut", _nearestPlayers, false, true] call BIS_fnc_MP;
-[[COMPOSITION_DEPLOY_BLACKOUT_TEXT], "BIS_fnc_dynamicText", _nearestPlayers] call BIS_fnc_MP;
+private _nearestPlayers = [_centerObj, COMPOSITION_RADIUS_NEARBY_PLAYER] call EFUNC(common,getNearestPlayer);
+
+[QGVAR(deployBlackout)] remoteExec ["BIS_fnc_blackOut", _nearestPlayers, false];
+[COMPOSITION_DEPLOY_BLACKOUT_TEXT] remoteExec ["BIS_fnc_dynamicText", _nearestPlayers, false];
 
 sleep 3;
 // move all player out of vehicle
@@ -86,10 +83,10 @@ _centerObj enableSimulationGlobal false;
 _centerObj allowDamage false;
 
 // spawn composition
-_objArray = [_composition] call FUNC(spawnComposition);
+private _objArray = [_composition] call FUNC(spawnComposition);
 
 //  3 - Locked for player;
-[[_centerObj, 2], "lock", true] call BIS_fnc_MP;
+[_centerObj, 2] remoteExec ["lock", _centerObj, true];
 
 _centerObj enableSimulationGlobal true;
 _centerObj allowDamage true;
@@ -107,13 +104,15 @@ _centerObj allowDamage true;
 
 sleep 3;
 // black in and add addAction entries
-[[QGVAR(deployBlackout)], "BIS_fnc_blackIn", _nearestPlayers, false, true] call BIS_fnc_MP;
+[QGVAR(deployBlackout)] remoteExec ["BIS_fnc_blackIn", _nearestPlayers, false];
 
 _centerObj setVariable [QGVAR(deploymentInProgress), false, true];
 _centerObj setVariable [QGVAR(deployed), true, true];
 _centerObj setVariable [QGVAR(composition), _objArray, true];
 
-[[_centerObj], QGVAR(deleteComposition), false] call BIS_fnc_MP; // only delete objects on server if vehicle is null
+// call on server
+// wait until vehicle or object is null and delete objects
+[_centerObj] remoteExec [QGVAR(deleteComposition), 2, false];
 
 _retVal = true;
 
