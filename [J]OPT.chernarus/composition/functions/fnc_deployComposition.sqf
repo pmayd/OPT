@@ -60,7 +60,9 @@ if (_centerObj getVariable [QGVAR(deploymentInProgress), false]) exitWith {};
 
 _centerObj setVariable [QGVAR(deploymentInProgress), true, true];
 
-deleteVehicle _cargo;
+if !(_cargo isEqualTo objNull) then {
+    deleteVehicle _cargo;
+};
 
 private _nearestPlayers = [_centerObj, COMPOSITION_RADIUS_NEARBY_PLAYER] call EFUNC(common,getNearestPlayer);
 

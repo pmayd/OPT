@@ -24,10 +24,7 @@ if (_container isEqualTo objNull) exitWith {};
 if (_container getVariable [QGVAR(isDeployed), false]) then {
 	_container setVariable [QGVAR(isDeployed), false, true];
 
-	{
-		deleteVehicle _x;
-	}	forEach (_container getVariable [QGVAR(attachedObjects), []]);	
-	_container setVariable [QGVAR(attachedObjects), [], true];
+	[_container] spawn EFUNC(composition,undeployComposition);
 
     // add ACE dragging entries
     [QEGVAR(cargo,initCargo), [_container]] call CBA_fnc_serverEvent;

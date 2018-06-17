@@ -25,15 +25,15 @@ if (damage _container > GVAR(maxDammage)) exitWith {
     removeAllActions _container;
 };
 
-// remove ACE dragging entries
-[QEGVAR(cargo,deactivateDragging), [_container]] call CBA_fnc_globalEvent; // has to be called on each client
-[QEGVAR(cargo,deactivateCargo), [_container]] call CBA_fnc_serverEvent; // global effect
-
 // deploy radar, calc signal loss and save status
 if (!(_container getVariable [QGVAR(isDeployed), false])) then {
-	
+
+    // remove ACE dragging entries
+    [QEGVAR(cargo,deactivateDragging), [_container]] call CBA_fnc_globalEvent; // has to be called on each client
+    [QEGVAR(cargo,deactivateCargo), [_container]] call CBA_fnc_serverEvent; // global effect
+
     // create objects for better immersion
-    [_container] call FUNC(createObjects);
+    [_container, RADAR_COMPOSITION] spawn EFUNC(composition,deployComposition);
 
     // calculate signal loss
 	[true] call FUNC(calcSignalLoss);
