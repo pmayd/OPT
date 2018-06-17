@@ -13,9 +13,6 @@ CHHQ_fnc_deploy = {
 	[[_veh], "CHHQ_fnc_removeAction", _side] call BIS_fnc_MP;
 
     // TODO
-	deleteVehicle _cargo;
-
-    // TODO
 	[[_veh, _side, "HQ"],"CHHQ_fnc_drawMarker",_side] call BIS_fnc_MP;	
 
     // TODO
@@ -37,52 +34,15 @@ CHHQ_fnc_undeploy = {
 	_cargoCode = [_cargoInfo, 3, "", ["", {}]] call BIS_fnc_param;
 	_composition = _this select 3 select 2;
 	
-	if (_veh getVariable ["CHHQ_inProgress", false]) exitWith {};	
-	_veh setVariable ["CHHQ_inProgress", true, true];
-	
+    // TODO:
 	[[_veh], "CHHQ_fnc_removeAction", _side] call BIS_fnc_MP;
 	
-	_nearestPlayers = [];
-	{
-		if (isPlayer _x && _x distance _veh < 25) then {
-			_nearestPlayers pushBack _x
-		};
-	} forEach (playableUnits + switchableUnits);
-	[["CHHQ_deployBlackout"],"BIS_fnc_blackOut",_nearestPlayers,false,true] call BIS_fnc_MP;
-	[["UNDEPLOYING HQ"],"BIS_fnc_dynamicText",_nearestPlayers] call BIS_fnc_MP;
-	sleep 3;
-	{_x allowDamage false; _x enableSimulationGlobal false} forEach _nearestPlayers;	
-	
-	{deleteVehicle _x} forEach (_veh getVariable ["CHHQ_objArray", []]);
-	_veh setVariable ["CHHQ_deployed", false, true];	
-	
+	// TODO:	
 	[[_veh, _side, "MHQ"],"CHHQ_fnc_drawMarker",_side] call BIS_fnc_MP;	
-	[[_veh, false],"lock",true] call BIS_fnc_MP;	
-	[[_veh, true],"lockCargo",true] call BIS_fnc_MP;
-	[[_veh, [0,false]],"lockCargo",true] call BIS_fnc_MP;
-	
-	_cargo = createVehicle [_cargoType, [0,0,0], [], 0, "CAN_COLLIDE"];		
-	_cargo attachTo [_veh, _cargoOffset]; 
 
-	_veh setPos (getPos _veh);
-	_veh setDir (getDir _veh);
-	_cargo setDir _cargoDir;	
-	_veh setVariable ["CHHQ_cargo", _cargo, true];
-			
-	if !(_cargoCode isEqualTo "") then {
-		_cargoCode = [_cargoCode] call CHHQ_fnc_compileCode;
-		[[[_cargo,_veh], _cargoCode],"BIS_fnc_spawn",true] call BIS_fnc_MP;
-	};
-	
-	sleep 3;	
-	_veh enableSimulationGlobal true;
-	_veh allowDamage true;
-	{_x setPos ((getPosASL _x) findEmptyPosition [0, 25, "CAManBase"]); _x allowDamage true; _x enableSimulationGlobal true} forEach _nearestPlayers;
-	[["CHHQ_deployBlackout"],"BIS_fnc_blackIn",_nearestPlayers,false,true] call BIS_fnc_MP;
+	// TODO:
 	[[_veh,["Deploy HQ", "_this spawn CHHQ_fnc_deploy", [_side, _cargoInfo, _composition], 0, false, true, "", "[_target, _this] call CHHQ_fnc_actionConditions"]], "CHHQ_fnc_addAction", _side] call BIS_fnc_MP;
-	
-	_veh setVariable ["CHHQ_inProgress", false, true];
-	[[_veh, "cargo"], "CHHQ_fnc_deleteVehicleEH", false] call BIS_fnc_MP; // only delete objects on server
+
 };
 
 CHHQ_fnc_arrayUpdateEH = {
@@ -412,10 +372,8 @@ CHHQ_fnc_BISshowOSD = {
 		_output = _output + [[_tMap,""],["","<br/>"]];
 	};
 
-	private["_handle"];
-
 	//vertically align to cinematic border
-	_handle = [_output,safezoneX - 0.01,safeZoneY + (1 - 0.125) * safeZoneH,true,"<t align='right' size='1.0' font='PuristaLight'>%1</t>"] spawn BIS_fnc_typeText2;
+	private _handle = [_output,safezoneX - 0.01,safeZoneY + (1 - 0.125) * safeZoneH,true,"<t align='right' size='1.0' font='PuristaLight'>%1</t>"] spawn BIS_fnc_typeText2;
 
 	waitUntil
 	{
