@@ -16,32 +16,11 @@
 
 // fügt einen AddAction Eintrag hinzu
 [QGVAR(addAction), {
-	params [
-        ["_obj", objNull, [objNull], 1],
-        ["_args", [], [[]]],
-        ["_varName", "", ["s"], 1]
-    ];
-
-    if (_obj isEqualTo objNull or _args isEqualTo []) exitWith{};
-
-	private _id = _obj addAction _args;
-    // make id of add action entry available through object var
-    if !(_varName isEqualTo "") then {
-        _obj setVariable [_varName, _id];
-    };    
-
+    _this call FUNC(addAction);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(removeAction), {
-    params [
-        ["_obj", objNull, [objNull], 1],
-        ["_varName", "", ["s"], 1]
-    ];
-
-    if (_obj isEqualTo objNull) exitWith{};
-
-    _obj removeAction (_obj getVariable [_varName, -1]);
-
+    _this call FUNC(removeAction);
 }] call CBA_fnc_addEventHandler;
 
 // update budget

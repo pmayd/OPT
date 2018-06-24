@@ -4,8 +4,9 @@
 *
 * Arguments:
 * 0: <OBJECT> mhq vehicle
-* 1: <ARRAY> cargo info in format [classname, offset, dir, code]
-* 2: <ARRAY> composition in format [classname, offset, dir, code]
+* 1: <SIDE> vehicle's side
+* 2: <ARRAY> cargo info in format [classname, offset, dir, code]
+* 3: <ARRAY> composition in format [classname, offset, dir, code]
 *
 * Return Value:
 * None
@@ -18,25 +19,43 @@
 
 params [
     ["_vec", objNull, [objNull], 1],
-    ["_cargoInfo", [], [[]]],
-    ["_composition", [], [[]]]
+    ["_side", sideUnknown, [sideUnknown], 1],
+    ["_composition", [], [[]]],
+    ["_cargoInfo", [], [[]]]
 ];
 
-private _side = [_vec] call EFUNC(common,getVehicleSide);
+private _cargo = _vec getVariable [QEGVAR(composition,cargo), objNull];
 
-private _cargo = _vec getVariable [QGVAR(cargo), objNull];
+// abort script if deployment is not possible
+if (!([_vec, _composition] call EFUNC(composition,deployComposition))) exitWith{};
 
-[_vec, _composition] call EFUNC(composition,deployComposition);
+// remove deploy actions for side only
+[_vec, QGVAR(deployAction)] remoteExec [QEFUNC(common,removeAction), _side];
 
-// TODO
-[[_vec], "CHHQ_fnc_removeAction", _side] call BIS_fnc_MP;
+// update/draw hq marker
+if (GVAR(showMarkers)) then {
+    [_vec, _side, "HQ"] remoteExec [QFUNC(drawMarker), _side];
+};
 
-// TODO
-[[_vec, _side, "HQ"],"CHHQ_fnc_drawMarker",_side] call BIS_fnc_MP;	
+// add undeploy action entry to vehicle for all units of given side
+[
+    _vec,               // obj
+    [                   // args
+        MHQ_ACTION_UNDEPLOY,
+        {(_this select 3) spawn FUNC(undeploy);},
+        [_vec, _side, _composition, _cargoInfo],
+        0,
+        false,
+        true,
+        "",
+        format ["[_target, _this] call %1", QFUNC(actionConditions)]
+    ], 
+    QGVAR(undeployAction)    // action ID
+] remoteExec [QEFUNC(common,addAction), _side];
 
-// TODO
-[[_vec, ["Undeploy HQ", "_this spawn CHHQ_fnc_undeploy", [_side, _cargoInfo, _composition], 0, false, true, "", "[_target, _this] call CHHQ_fnc_actionConditions"]], "CHHQ_fnc_addAction", _side] call BIS_fnc_MP;
-
-// TODO
-[["RespawnAdded",["DEPLOYMENT POINT",format ["HQ deployed at grid %1", mapGridPosition (getPos _veh)],"\A3\ui_f\data\map\markers\nato\b_hq.paa"]],"BIS_fnc_showNotification",_side] call BIS_fnc_MP;
+// show notification for all players of given side
+[
+    MHQ_NOTIFICATION_TEMPLATE,
+    [MHQ_NOTIFICATION_TITLE, MHQ_NOTIFICATION_DESC(_vec), MHQ_NOTIFICATION_ICON]
+] remoteExec ["BIS_fnc_showNotification", _side];
 

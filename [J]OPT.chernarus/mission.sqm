@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=4800;
+		nextID=4802;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10415;
+		nextID=10877;
 	};
 	class Camera
 	{
-		pos[]={12138.669,188.68839,12546.372};
-		dir[]={-0.035365522,-0.40001807,0.91582555};
-		up[]={-0.015435635,0.91650718,0.39972091};
-		aside[]={0.99925607,-1.5188562e-009,0.038587298};
+		pos[]={12139.28,186.05707,12545.583};
+		dir[]={-0.23971148,-0.50513607,0.82909441};
+		up[]={-0.14031111,0.86301547,0.48529759};
+		aside[]={0.96066093,-2.4132896e-007,0.27775174};
 	};
 };
 binarizationWanted=0;
@@ -187,13 +187,15 @@ addons[]=
 	"CUP_CAStructures_E_Misc_Misc_Garbage",
 	"CUP_Editor_Buildings_Config",
 	"CUP_CA_Config",
-	"A3_Structures_F_Orange_Humanitarian_Camps"
+	"A3_Structures_F_Orange_Humanitarian_Camps",
+	"A3_Soft_F_Beta_Truck_01",
+	"A3_Soft_F_EPC_Truck_03"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=94;
+		items=96;
 		class Item0
 		{
 			className="opt_a3_characters";
@@ -758,6 +760,20 @@ class AddonsMetaData
 			className="CUP_CA_Config";
 			name="CUP_CA_Config";
 		};
+		class Item94
+		{
+			className="A3_Soft_F_Beta";
+			name="Arma 3 Beta - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item95
+		{
+			className="A3_Soft_F_EPC";
+			name="Arma 3 Win Episode - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 class DynamicSimulation
@@ -787,24 +803,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -819,6 +817,24 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -9866,7 +9882,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=23;
 		class Item0
 		{
 			dataType="Logic";
@@ -18419,7 +18435,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this allowDamage false; }";
+								init="call{this allowDamage false; [this, east] spawn opt_mhq_fnc_init;}";
 							};
 							id=3919;
 							type="Flag_CSAT_F";
@@ -22961,7 +22977,7 @@ class Mission
 					};
 					id=411;
 					type="Land_InfoStand_V1_F";
-					atlOffset=-0.074047446;
+					atlOffset=0.20099998;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23152,7 +23168,7 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=12.072703;
+			atlOffset=12.077219;
 		};
 		class Item7
 		{
@@ -129713,6 +129729,41 @@ class Mission
 			};
 			id=4794;
 			atlOffset=72.091629;
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12202.87,161.19434,12661.928};
+				angles[]={0.013332055,0.33808774,6.2698536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, east] spawn opt_mhq_fnc_init;}";
+			};
+			id=4800;
+			type="B_Truck_01_transport_F";
+			atlOffset=-0.00019836426;
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12168.397,161.4165,12674.669};
+				angles[]={-0,0.32232741,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{[this, east] spawn opt_mhq_fnc_init;}";
+			};
+			id=4801;
+			type="O_Truck_03_transport_F";
 		};
 	};
 	class Connections
