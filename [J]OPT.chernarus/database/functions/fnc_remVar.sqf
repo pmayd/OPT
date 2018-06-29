@@ -51,9 +51,11 @@ if (_completeRemoveFlag) then {
     };
 
     _countDel = (count _oldVal) - (count _newVal);
+
 } else {
     _oldVal deleteAt (_oldVal find _varContent);
     _newVal = _oldVal;
+    
 };
 
 [_varName, _newVal, true] call FUNC(setVar);

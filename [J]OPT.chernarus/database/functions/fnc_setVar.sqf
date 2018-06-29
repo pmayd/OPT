@@ -34,7 +34,7 @@ if (isNil "_varContent") exitWith {
     false;
 };
 
-if (toLower _qualifiedName in allVariables profileNamespace && !_overwriteFlag) exitWith {
+if (!(isNil {profileNamespace getVariable _qualifiedName}) && !_overwriteFlag) exitWith {
     WARNING(format ["Variable %1 already exists in server profileNamespace", _varName]);
     false;
 };

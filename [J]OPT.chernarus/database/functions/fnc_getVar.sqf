@@ -28,7 +28,7 @@ if (_varName isEqualTo "") exitWith {
     _default;
 };
 
-if (!(toLower _qualifiedName in allVariables profileNamespace)) exitWith {
+if (isNil {profileNamespace getVariable _qualifiedName}) exitWith {
     WARNING(format ["Variable name not in server profileNamespace"]);
     _default;
 };

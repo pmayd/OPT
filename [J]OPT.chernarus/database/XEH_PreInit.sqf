@@ -14,8 +14,8 @@ PREP_RECOMPILE_END;
 
 // define EH for server, client can use functions directly
 /*
- (example) ["DMC_database_getVar", [["myVar"], player]] call CBA_fnc_serverEvent;
- -> content in DMC_database_getVar on client available
+ (example) ["OPT_database_getVar", [["myVar"], player]] call CBA_fnc_serverEvent;
+ -> content in OPT_database_getVar on client available
 */
 SERVER_EH(delVar);
 SERVER_EH(getVar);

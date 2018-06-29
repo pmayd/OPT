@@ -41,7 +41,7 @@ if (_appendFlag and !IS_ARRAY(_varContent)) exitWith {
     _index;
 };
 
-if (toLower _qualifiedName in allVariables profileNamespace && !_overwriteFlag) exitWith {
+if (!(isNil {profileNamespace getVariable _qualifiedName}) && !_overwriteFlag) exitWith {
     WARNING(format ["Variable %1 already exists in server profileNamespace", _varName]);
     _index;
 };
