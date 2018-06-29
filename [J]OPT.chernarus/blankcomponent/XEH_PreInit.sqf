@@ -7,3 +7,6 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
+
+// initialize CBA Settings
+[] call FUNC(initCBASettings);
