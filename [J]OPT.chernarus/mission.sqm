@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1541;
 	class ItemIDProvider
 	{
-		nextID=4802;
+		nextID=4804;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10877;
+		nextID=10943;
 	};
 	class Camera
 	{
-		pos[]={12139.28,186.05707,12545.583};
-		dir[]={-0.23971148,-0.50513607,0.82909441};
-		up[]={-0.14031111,0.86301547,0.48529759};
-		aside[]={0.96066093,-2.4132896e-007,0.27775174};
+		pos[]={4659.8154,37.668541,2567.885};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -64,6 +64,8 @@ addons[]=
 	"CUP_Misc3_Config",
 	"A3_Signs_F_Signs_Ad",
 	"A3_Misc_F_Helpers",
+	"A3_Soft_F_EPC_Truck_03",
+	"ace_cargo",
 	"A3_Ui_F",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Naval_Piers",
@@ -73,11 +75,11 @@ addons[]=
 	"A3_Characters_F_Heads",
 	"A3_Weapons_F_LongRangeRifles_M320",
 	"A3_Weapons_F_Mark_LongRangeRifles_M320",
+	"A3_Soft_F_Beta_Truck_01",
 	"A3_Weapons_F_Ammoboxes",
 	"CUP_Editor_Plants_Config",
 	"A3_Props_F_Orange_Humanitarian_Supplies",
 	"A3_Structures_F_Bootcamp_Ind_Cargo",
-	"ace_cargo",
 	"A3_Structures_F_Ind_Cargo",
 	"A3_Structures_F_Walls",
 	"A3_Structures_F_Mil_Fortification",
@@ -187,9 +189,7 @@ addons[]=
 	"CUP_CAStructures_E_Misc_Misc_Garbage",
 	"CUP_Editor_Buildings_Config",
 	"CUP_CA_Config",
-	"A3_Structures_F_Orange_Humanitarian_Camps",
-	"A3_Soft_F_Beta_Truck_01",
-	"A3_Soft_F_EPC_Truck_03"
+	"A3_Structures_F_Orange_Humanitarian_Camps"
 };
 class AddonsMetaData
 {
@@ -377,402 +377,402 @@ class AddonsMetaData
 		};
 		class Item27
 		{
-			className="A3_Ui_F";
-			name="Arma 3 - User Interface";
+			className="A3_Soft_F_EPC";
+			name="Arma 3 Win Episode - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item28
-		{
-			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item29
-		{
-			className="ace_reload";
-			name="ACE3 - Reload";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item30
-		{
-			className="CUP_Editor_Plants_Config";
-			name="CUP_Editor_Plants_Config";
-		};
-		class Item31
-		{
-			className="A3_Props_F_Orange";
-			name="Arma 3 Orange - Decorative and Mission Objects";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item32
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item33
+		class Item29
 		{
-			className="A3_Structures_F_Ind";
-			name="Arma 3 - Industrial Structures";
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item34
+		class Item30
 		{
-			className="CUP_Ind_SawMill";
-			name="CUP_Ind_SawMill";
-		};
-		class Item35
-		{
-			className="CUP_Ind_Workshop01";
-			name="CUP_Ind_Workshop01";
-		};
-		class Item36
-		{
-			className="CUP_CAStructures_E_Wall";
-			name="CUP_CAStructures_E_Wall";
-		};
-		class Item37
-		{
-			className="A3_Structures_F_Orange";
-			name="Arma 3 Orange - Buildings and Structures";
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item38
+		class Item31
 		{
-			className="A3_Structures_F_Argo";
-			name="Arma 3 Malden - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item39
-		{
-			className="A3_Structures_F_Tank";
-			name="Arma 3 Tank - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item40
-		{
-			className="A3_Structures_F_Exp_Industrial";
-			name="Arma 3 Apex - Industrial Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item41
-		{
-			className="CUP_CAMisc_E_WF";
-			name="CUP_CAMisc_E_WF";
-		};
-		class Item42
-		{
-			className="CUP_CAStructures_PMC_Ruins";
-			name="CUP_CAStructures_PMC_Ruins";
-		};
-		class Item43
-		{
-			className="A3_Rocks_F";
-			name="Arma 3 - Rocks and Stones";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item44
-		{
-			className="CUP_StandaloneTerrains_Core_Faction";
-			name="CUP_StandaloneTerrains_Core_Faction";
-		};
-		class Item45
-		{
-			className="A3_Structures_F_Exp";
-			name="Arma 3 Apex - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item46
-		{
-			className="CUP_Buildings_Config";
-			name="CUP_Buildings_Config";
-		};
-		class Item47
-		{
-			className="CUP_CABuildings_Misc";
-			name="CUP_CABuildings_Misc";
-		};
-		class Item48
-		{
-			className="CUP_WarfareBuildings";
-			name="CUP_WarfareBuildings";
-		};
-		class Item49
-		{
-			className="CUP_HouseRuins";
-			name="CUP_HouseRuins";
-		};
-		class Item50
-		{
-			className="CUP_CAMisc";
-			name="CUP_CAMisc";
-		};
-		class Item51
-		{
-			className="CUP_CAStructures_E_Wall_Wall_L";
-			name="CUP_CAStructures_E_Wall_Wall_L";
-		};
-		class Item52
-		{
-			className="CUP_CAStructuresHouse_HouseV";
-			name="CUP_CAStructuresHouse_HouseV";
-		};
-		class Item53
-		{
-			className="DShouses";
-			name="DSHouses";
-		};
-		class Item54
-		{
-			className="CUP_Farm_Cowshed";
-			name="CUP_Farm_Cowshed";
-		};
-		class Item55
-		{
-			className="CUP_CAStructuresLand_Nav_Boathouse";
-			name="CUP_CAStructuresLand_Nav_Boathouse";
-		};
-		class Item56
-		{
-			className="A3_Structures_F_EPB";
-			name="Arma 3 Adapt Episode - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item57
-		{
-			className="A3_Structures_F_Exp_Civilian";
-			name="Arma 3 Apex - Civilian Buildings";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item58
-		{
-			className="CUP_Shed_small";
-			name="CUP_Shed_small";
-		};
-		class Item59
-		{
-			className="A3_Structures_F_Wrecks";
-			name="Arma 3 - Vehicle Wrecks";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item60
-		{
-			className="CUP_CAStructuresBarn_W";
-			name="CUP_CAStructuresBarn_W";
-		};
-		class Item61
-		{
-			className="A3_Structures_F_EPA";
-			name="Arma 3 Survive Episode - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item62
-		{
-			className="A3_Structures_F_Households";
-			name="Arma 3 - Houses";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item63
-		{
-			className="CUP_Editor_Rocks_Config";
-			name="CUP_Editor_Rocks_Config";
-		};
-		class Item64
-		{
-			className="CUP_CAStructures_E_Misc_Misc_Market";
-			name="CUP_CAStructures_E_Misc_Misc_Market";
-		};
-		class Item65
-		{
-			className="CUP_CAStructures_A_BuildingWIP";
-			name="CUP_CAStructures_A_BuildingWIP";
-		};
-		class Item66
-		{
-			className="CUP_Barn_Metal";
-			name="CUP_Barn_Metal";
-		};
-		class Item67
-		{
-			className="CUP_CAStructures_E_Ind_Ind_Coltan_Mine";
-			name="CUP_CAStructures_E_Ind_Ind_Coltan_Mine";
-		};
-		class Item68
-		{
-			className="CUP_CAStructures_Wall";
-			name="CUP_CAStructures_Wall";
-		};
-		class Item69
-		{
-			className="A3_Rocks_F_Exp";
-			name="Arma 3 Apex - Rocks and Stones";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item70
-		{
-			className="CUP_CAHouseBlock_B";
-			name="CUP_CAHouseBlock_B";
-		};
-		class Item71
-		{
-			className="CUP_CAHouseBlock_D";
-			name="CUP_CAHouseBlock_D";
-		};
-		class Item72
-		{
-			className="CUP_CAStructuresLand_A_MunicipalOffice";
-			name="CUP_CAStructuresLand_A_MunicipalOffice";
-		};
-		class Item73
-		{
-			className="A3_Structures_F_Exp_Cultural";
-			name="Arma 3 Apex - Cultural Buildings";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item74
-		{
-			className="CUP_Misc_e_Config";
-			name="CUP_Misc_e_Config";
-		};
-		class Item75
-		{
-			className="CUP_CAStructuresHouse_Shed_Ind";
-			name="CUP_CAStructuresHouse_Shed_Ind";
-		};
-		class Item76
-		{
-			className="CUP_Editor_A2_Roads_Config";
-			name="CUP_Editor_A2_Roads_Config";
-		};
-		class Item77
-		{
-			className="CUP_Editor_A1_Roads_Config";
-			name="CUP_Editor_A1_Roads_Config";
-		};
-		class Item78
-		{
-			className="A3_Weapons_F_Bootcamp";
-			name="Arma 3 Bootcamp Update - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item79
-		{
-			className="CUP_CABuildings2_Misc_Cargo";
-			name="CUP_CABuildings2_Misc_Cargo";
-		};
-		class Item80
-		{
-			className="A3_Supplies_F_Heli";
-			name="Arma 3 Helicopters - Ammoboxes and Supplies";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item81
-		{
-			className="CUP_CAStructures_Castle";
-			name="CUP_CAStructures_Castle";
-		};
-		class Item82
-		{
-			className="CUP_CAHouseBlock_C";
-			name="CUP_CAHouseBlock_C";
-		};
-		class Item83
-		{
-			className="A3_Structures_F_Exp_Commercial";
-			name="Arma 3 Apex - Commercial Buildings";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item84
-		{
-			className="ace_logistics_wirecutter";
-			name="ACE3 - Logistics Wire Cutter";
+			className="ace_reload";
+			name="ACE3 - Reload";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item85
-		{
-			className="CUP_Ind_Garage01";
-			name="CUP_Ind_Garage01";
-		};
-		class Item86
-		{
-			className="A3_Structures_F_EPC";
-			name="Arma 3 Win Episode - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item87
-		{
-			className="CUP_CAStructuresHouse_Church_05R";
-			name="CUP_CAStructuresHouse_Church_05R";
-		};
-		class Item88
-		{
-			className="CUP_CAStructures_Mil";
-			name="CUP_CAStructures_Mil";
-		};
-		class Item89
-		{
-			className="A3_Props_F_Jets";
-			name="Arma 3 Jets - Decorative and Mission Objects";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item90
-		{
-			className="CUP_Desert2_Config";
-			name="CUP_Desert2_Config";
-		};
-		class Item91
-		{
-			className="CUP_CAStructures_E_Misc_Misc_Garbage";
-			name="CUP_CAStructures_E_Misc_Misc_Garbage";
-		};
-		class Item92
-		{
-			className="CUP_Editor_Buildings_Config";
-			name="CUP_Editor_Buildings_Config";
-		};
-		class Item93
-		{
-			className="CUP_CA_Config";
-			name="CUP_CA_Config";
-		};
-		class Item94
+		class Item32
 		{
 			className="A3_Soft_F_Beta";
 			name="Arma 3 Beta - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item95
+		class Item33
 		{
-			className="A3_Soft_F_EPC";
-			name="Arma 3 Win Episode - Unarmored Land Vehicles";
+			className="CUP_Editor_Plants_Config";
+			name="CUP_Editor_Plants_Config";
+		};
+		class Item34
+		{
+			className="A3_Props_F_Orange";
+			name="Arma 3 Orange - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item35
+		{
+			className="A3_Structures_F_Ind";
+			name="Arma 3 - Industrial Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item36
+		{
+			className="CUP_Ind_SawMill";
+			name="CUP_Ind_SawMill";
+		};
+		class Item37
+		{
+			className="CUP_Ind_Workshop01";
+			name="CUP_Ind_Workshop01";
+		};
+		class Item38
+		{
+			className="CUP_CAStructures_E_Wall";
+			name="CUP_CAStructures_E_Wall";
+		};
+		class Item39
+		{
+			className="A3_Structures_F_Orange";
+			name="Arma 3 Orange - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item40
+		{
+			className="A3_Structures_F_Argo";
+			name="Arma 3 Malden - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item41
+		{
+			className="A3_Structures_F_Tank";
+			name="Arma 3 Tank - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item42
+		{
+			className="A3_Structures_F_Exp_Industrial";
+			name="Arma 3 Apex - Industrial Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item43
+		{
+			className="CUP_CAMisc_E_WF";
+			name="CUP_CAMisc_E_WF";
+		};
+		class Item44
+		{
+			className="CUP_CAStructures_PMC_Ruins";
+			name="CUP_CAStructures_PMC_Ruins";
+		};
+		class Item45
+		{
+			className="A3_Rocks_F";
+			name="Arma 3 - Rocks and Stones";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item46
+		{
+			className="CUP_StandaloneTerrains_Core_Faction";
+			name="CUP_StandaloneTerrains_Core_Faction";
+		};
+		class Item47
+		{
+			className="A3_Structures_F_Exp";
+			name="Arma 3 Apex - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item48
+		{
+			className="CUP_Buildings_Config";
+			name="CUP_Buildings_Config";
+		};
+		class Item49
+		{
+			className="CUP_CABuildings_Misc";
+			name="CUP_CABuildings_Misc";
+		};
+		class Item50
+		{
+			className="CUP_WarfareBuildings";
+			name="CUP_WarfareBuildings";
+		};
+		class Item51
+		{
+			className="CUP_HouseRuins";
+			name="CUP_HouseRuins";
+		};
+		class Item52
+		{
+			className="CUP_CAMisc";
+			name="CUP_CAMisc";
+		};
+		class Item53
+		{
+			className="CUP_CAStructures_E_Wall_Wall_L";
+			name="CUP_CAStructures_E_Wall_Wall_L";
+		};
+		class Item54
+		{
+			className="CUP_CAStructuresHouse_HouseV";
+			name="CUP_CAStructuresHouse_HouseV";
+		};
+		class Item55
+		{
+			className="DShouses";
+			name="DSHouses";
+		};
+		class Item56
+		{
+			className="CUP_Farm_Cowshed";
+			name="CUP_Farm_Cowshed";
+		};
+		class Item57
+		{
+			className="CUP_CAStructuresLand_Nav_Boathouse";
+			name="CUP_CAStructuresLand_Nav_Boathouse";
+		};
+		class Item58
+		{
+			className="A3_Structures_F_EPB";
+			name="Arma 3 Adapt Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item59
+		{
+			className="A3_Structures_F_Exp_Civilian";
+			name="Arma 3 Apex - Civilian Buildings";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item60
+		{
+			className="CUP_Shed_small";
+			name="CUP_Shed_small";
+		};
+		class Item61
+		{
+			className="A3_Structures_F_Wrecks";
+			name="Arma 3 - Vehicle Wrecks";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item62
+		{
+			className="CUP_CAStructuresBarn_W";
+			name="CUP_CAStructuresBarn_W";
+		};
+		class Item63
+		{
+			className="A3_Structures_F_EPA";
+			name="Arma 3 Survive Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item64
+		{
+			className="A3_Structures_F_Households";
+			name="Arma 3 - Houses";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item65
+		{
+			className="CUP_Editor_Rocks_Config";
+			name="CUP_Editor_Rocks_Config";
+		};
+		class Item66
+		{
+			className="CUP_CAStructures_E_Misc_Misc_Market";
+			name="CUP_CAStructures_E_Misc_Misc_Market";
+		};
+		class Item67
+		{
+			className="CUP_CAStructures_A_BuildingWIP";
+			name="CUP_CAStructures_A_BuildingWIP";
+		};
+		class Item68
+		{
+			className="CUP_Barn_Metal";
+			name="CUP_Barn_Metal";
+		};
+		class Item69
+		{
+			className="CUP_CAStructures_E_Ind_Ind_Coltan_Mine";
+			name="CUP_CAStructures_E_Ind_Ind_Coltan_Mine";
+		};
+		class Item70
+		{
+			className="CUP_CAStructures_Wall";
+			name="CUP_CAStructures_Wall";
+		};
+		class Item71
+		{
+			className="A3_Rocks_F_Exp";
+			name="Arma 3 Apex - Rocks and Stones";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item72
+		{
+			className="CUP_CAHouseBlock_B";
+			name="CUP_CAHouseBlock_B";
+		};
+		class Item73
+		{
+			className="CUP_CAHouseBlock_D";
+			name="CUP_CAHouseBlock_D";
+		};
+		class Item74
+		{
+			className="CUP_CAStructuresLand_A_MunicipalOffice";
+			name="CUP_CAStructuresLand_A_MunicipalOffice";
+		};
+		class Item75
+		{
+			className="A3_Structures_F_Exp_Cultural";
+			name="Arma 3 Apex - Cultural Buildings";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item76
+		{
+			className="CUP_Misc_e_Config";
+			name="CUP_Misc_e_Config";
+		};
+		class Item77
+		{
+			className="CUP_CAStructuresHouse_Shed_Ind";
+			name="CUP_CAStructuresHouse_Shed_Ind";
+		};
+		class Item78
+		{
+			className="CUP_Editor_A2_Roads_Config";
+			name="CUP_Editor_A2_Roads_Config";
+		};
+		class Item79
+		{
+			className="CUP_Editor_A1_Roads_Config";
+			name="CUP_Editor_A1_Roads_Config";
+		};
+		class Item80
+		{
+			className="A3_Weapons_F_Bootcamp";
+			name="Arma 3 Bootcamp Update - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item81
+		{
+			className="CUP_CABuildings2_Misc_Cargo";
+			name="CUP_CABuildings2_Misc_Cargo";
+		};
+		class Item82
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item83
+		{
+			className="CUP_CAStructures_Castle";
+			name="CUP_CAStructures_Castle";
+		};
+		class Item84
+		{
+			className="CUP_CAHouseBlock_C";
+			name="CUP_CAHouseBlock_C";
+		};
+		class Item85
+		{
+			className="A3_Structures_F_Exp_Commercial";
+			name="Arma 3 Apex - Commercial Buildings";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item86
+		{
+			className="ace_logistics_wirecutter";
+			name="ACE3 - Logistics Wire Cutter";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item87
+		{
+			className="CUP_Ind_Garage01";
+			name="CUP_Ind_Garage01";
+		};
+		class Item88
+		{
+			className="A3_Structures_F_EPC";
+			name="Arma 3 Win Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item89
+		{
+			className="CUP_CAStructuresHouse_Church_05R";
+			name="CUP_CAStructuresHouse_Church_05R";
+		};
+		class Item90
+		{
+			className="CUP_CAStructures_Mil";
+			name="CUP_CAStructures_Mil";
+		};
+		class Item91
+		{
+			className="A3_Props_F_Jets";
+			name="Arma 3 Jets - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item92
+		{
+			className="CUP_Desert2_Config";
+			name="CUP_Desert2_Config";
+		};
+		class Item93
+		{
+			className="CUP_CAStructures_E_Misc_Misc_Garbage";
+			name="CUP_CAStructures_E_Misc_Misc_Garbage";
+		};
+		class Item94
+		{
+			className="CUP_Editor_Buildings_Config";
+			name="CUP_Editor_Buildings_Config";
+		};
+		class Item95
+		{
+			className="CUP_CA_Config";
+			name="CUP_CA_Config";
 		};
 	};
 };
@@ -803,6 +803,24 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -817,24 +835,6 @@ class CustomAttributes
 						};
 					};
 					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
 				};
 			};
 		};
@@ -9882,7 +9882,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=23;
+		items=21;
 		class Item0
 		{
 			dataType="Logic";
@@ -18322,7 +18322,7 @@ class Mission
 					name="Objekte";
 					class Entities
 					{
-						items=67;
+						items=69;
 						class Item0
 						{
 							dataType="Object";
@@ -21670,9 +21670,43 @@ class Mission
 							id=4790;
 							type="Land_HelipadCircle_F";
 						};
+						class Item67
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12168.397,161.4165,12674.669};
+								angles[]={0,0.32232741,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="call{[this, east] spawn opt_mhq_fnc_init;}";
+							};
+							id=4801;
+							type="O_Truck_03_transport_F";
+						};
+						class Item68
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12186.894,161.4165,12667.03};
+								angles[]={0,0.32232741,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="call{[this, east] spawn opt_mhq_fnc_init;}";
+							};
+							id=4802;
+							type="O_Truck_03_transport_F";
+						};
 					};
 					id=358;
-					atlOffset=-115.62405;
+					atlOffset=12.848282;
 				};
 				class Item2
 				{
@@ -22950,7 +22984,7 @@ class Mission
 				};
 			};
 			id=281;
-			atlOffset=123.79875;
+			atlOffset=123.79895;
 		};
 		class Item6
 		{
@@ -22977,7 +23011,7 @@ class Mission
 					};
 					id=411;
 					type="Land_InfoStand_V1_F";
-					atlOffset=0.20099998;
+					atlOffset=-0.074047446;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23168,7 +23202,7 @@ class Mission
 				};
 			};
 			id=410;
-			atlOffset=12.077219;
+			atlOffset=12.072703;
 		};
 		class Item7
 		{
@@ -30802,7 +30836,7 @@ class Mission
 					name="Objekte_1";
 					class Entities
 					{
-						items=43;
+						items=45;
 						class Item0
 						{
 							dataType="Object";
@@ -30855,7 +30889,7 @@ class Mission
 							class Attributes
 							{
 								skill=0.60000002;
-								init="call{this allowDamage false;}";
+								init="call{this allowDamage false; [this, west] spawn opt_mhq_fnc_init;}";
 							};
 							id=3979;
 							type="Flag_NATO_F";
@@ -33570,9 +33604,43 @@ class Mission
 							id=4791;
 							type="Land_HelipadCircle_F";
 						};
+						class Item43
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4752.7651,11.197195,2527.7532};
+								angles[]={6.2698536,3.6440251,0.013332055};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="call{[this, west] spawn opt_mhq_fnc_init;}";
+							};
+							id=4800;
+							type="B_Truck_01_transport_F";
+						};
+						class Item44
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={4738.0322,11.224396,2536.9734};
+								angles[]={0,3.6806202,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="call{[this, west] spawn opt_mhq_fnc_init;}";
+							};
+							id=4803;
+							type="B_Truck_01_transport_F";
+						};
 					};
 					id=487;
-					atlOffset=-66.426964;
+					atlOffset=-7.3809605;
 				};
 				class Item2
 				{
@@ -34904,7 +34972,7 @@ class Mission
 				};
 			};
 			id=418;
-			atlOffset=-0.029992104;
+			atlOffset=-0.029996872;
 		};
 		class Item8
 		{
@@ -34922,6 +34990,7 @@ class Mission
 						angles[]={0,3.6354685,0};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -34930,7 +34999,7 @@ class Mission
 					};
 					id=549;
 					type="Land_InfoStand_V1_F";
-					atlOffset=11.096;
+					atlOffset=0.0016064644;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35138,7 +35207,7 @@ class Mission
 				};
 			};
 			id=548;
-			atlOffset=37.851257;
+			atlOffset=37.851273;
 		};
 		class Item9
 		{
@@ -129729,41 +129798,6 @@ class Mission
 			};
 			id=4794;
 			atlOffset=72.091629;
-		};
-		class Item21
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={12202.87,161.19434,12661.928};
-				angles[]={0.013332055,0.33808774,6.2698536};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, east] spawn opt_mhq_fnc_init;}";
-			};
-			id=4800;
-			type="B_Truck_01_transport_F";
-			atlOffset=-0.00019836426;
-		};
-		class Item22
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={12168.397,161.4165,12674.669};
-				angles[]={-0,0.32232741,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="call{[this, east] spawn opt_mhq_fnc_init;}";
-			};
-			id=4801;
-			type="O_Truck_03_transport_F";
 		};
 	};
 	class Connections
