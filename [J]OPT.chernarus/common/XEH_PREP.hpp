@@ -9,3 +9,4 @@ PREP(initCBAEvents);
 PREP(renderBudget);
 PREP(unFlip);
 PREP(weaponCheck);
+PREP(execFunc);
