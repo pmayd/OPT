@@ -26,8 +26,8 @@ if (damage _container > GVAR(maxDammage)) exitWith {
 };
 
 // remove ACE dragging entries
-[QEGVAR(cargo,deactivateDragging), [_container], QGVAR(jipID_deactivateDragging)] call CBA_fnc_globalEventJIP; // has to be called on each client
-[QEGVAR(cargo,deactivateCargo), [_container]] call CBA_fnc_serverEvent; // global effect
+["cargo", "deactivateDragging", [_container], false] remoteExec [QEFUNC(common,execFunc), 0, QGVAR(jipID_deactivateDragging)]; // has to be called on each client and also JIP
+["cargo", "deactivateCargo", [_container], false] remoteExec [QEFUNC(common,execFunc), 2, false]; // global effect
 
 // deploy radar, calc signal loss and save status
 if (!(_container getVariable [QGVAR(isDeployed), false])) then {

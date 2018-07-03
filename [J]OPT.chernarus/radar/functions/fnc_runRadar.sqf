@@ -93,8 +93,7 @@ _RadarZONE setTriggerStatements ["this", "", ""];
         removeAllActions _container;
 
         // remove ACE dragging entries
-        [QEGVAR(cargo,deactivateDragging), [GVAR(containerEast)]] call CBA_fnc_globalEvent;
-
+        ["cargo", "deactivateDragging", [GVAR(containerEast)], false] remoteExec [QEFUNC(common,execFunc), 0, QGVAR(jipID_deactivateDragging)]; // has to be called on each client and also JIP
     };
 
     // reset all marker
