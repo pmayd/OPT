@@ -10,8 +10,6 @@ if (!GVAR(on)) exitWith{};
 // has to be called in preInit to affect all vehicles
 [] call FUNC(initCBAClassEvents);
 
-[] call FUNC(initCBAEvents);
-
 if (hasInterface) then {
     [] call FUNC(initPlayer);
 };

@@ -10,7 +10,5 @@ ADDON = true;
 
 [] call FUNC(initCBASettings);
 
-if (!GVAR(on)) exitWith{};
-
 // setup all global variables
 [] call FUNC(setupCargoSpaceAndSize);

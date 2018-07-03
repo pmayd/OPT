@@ -30,8 +30,10 @@ if (_container getVariable [QGVAR(isDeployed), false]) then {
     _container setVariable [QGVAR(attachedObjects), [], true];
 
     // add ACE dragging entries
-    [QEGVAR(cargo,initCargo), [_container]] call CBA_fnc_serverEvent;
-    [QEGVAR(cargo,initDragging), [_container], QGVAR(jipID_initDragging)] call CBA_fnc_globalEventJIP;
+    // call on server only
+    ["cargo", "initCargo", [_container], false] remoteExec [QEFUNC(common,execFunc), 2, false];
+    // call on each client and JIP
+    ["cargo", "initDragging", [_container], false] remoteExec [QEFUNC(common,execFunc), 0, QGVAR(jipID_initDragging)];
 };
 
 
