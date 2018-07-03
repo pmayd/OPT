@@ -9,7 +9,7 @@
 * 3: <BOOLEAN> true - function will be spawned, false - otherwise called
 *
 * Return Value:
-* <BOOLEAN> true - component is active and can function can be called, false - otherwise
+* <ANY> return value of function or nil
 *
 * Example:
 * ["cargo", "deactivateDragging", [crate], <optional: false>] call fnc_execFunc.sqf;
@@ -25,21 +25,32 @@ params [
     ["_args", [], [[]]],
     ["_spawnFlag", false, [true], 1]
 ];
+systemChat str(_this);
 
-private _retVal = false;
+private _retVal = nil;
 
 if (_component isEqualTo "" or _func isEqualTo "") exitWith{_retVal};
 
-// check if component is active
-private _check = call compile format["opt_%1_on", _component]; // identical to GVAR(on) in given component
+// check if component is active. If variable is not defined, always execute function
+private _code = {call compile format["opt_%1_on", _component]}; // identical to GVAR(on) in given component
+private _check = true;
 
-if (!(isNil "_check") and !_check) exitWith{_retVal);
+if (!(isNil _code)) then {
+    _check = call _code;
+};
+
+if (!_check) exitWith{_retVal};
+
+// check wether function exists
+private _code = {call compile format["opt_%1_fnc_%2", _component, _func]};
+if (isNil _code) exitWith{_retVal};
 
 // call func
 if (_spawnFlag) then {
-    call compile format["%1 spawn opt_%2_fnc_%3", _args, _component, _func];
+    _retVal = call compile format["%1 spawn opt_%2_fnc_%3", _args, _component, _func];
 } else {
-    call compile format["%1 call opt_%2_fnc_%3", _args, _component, _func];
+    systemChat "here we are";
+    _retVal = call compile format["%1 call opt_%2_fnc_%3", _args, _component, _func];
 };
 
 _retVal
