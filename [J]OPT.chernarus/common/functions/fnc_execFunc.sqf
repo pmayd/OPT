@@ -25,7 +25,6 @@ params [
     ["_args", [], [[]]],
     ["_spawnFlag", false, [true], 1]
 ];
-systemChat str(_this);
 
 private _retVal = nil;
 
@@ -49,8 +48,8 @@ if (isNil _code) exitWith{_retVal};
 if (_spawnFlag) then {
     _retVal = call compile format["%1 spawn opt_%2_fnc_%3", _args, _component, _func];
 } else {
-    systemChat "here we are";
     _retVal = call compile format["%1 call opt_%2_fnc_%3", _args, _component, _func];
 };
 
-_retVal
+// do not get compiler error if retVal is itself nil
+if (!isNil "_retVal") exitWith{_retVal};
