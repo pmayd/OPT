@@ -47,7 +47,7 @@ if (OPT_PARAM_TFAR_INTERCEPTION) then {
     ];
 };
 
-if (OPT_PARAM_TRAINING) then {
+if (EGVAR(training,on)) then {
 	player createDiarySubject ["Training", "Training"];
 	player createDiaryRecord ["Training", ["Flaggen verschieben", "
 	Im Trainingsmodus kann jeder Spieler die CSAT und NATO Flagge verschieben. Dazu einfach auf der Karte ALT + Linksklick auf die Flaggenmarkierung. Unten links erscheint ein Text, wenn die Aktion erfolgreich war. Wurde die Flagge ausgewählt, so kann mit erneutem ALT + Linksklick die neue Position gewählt werden.

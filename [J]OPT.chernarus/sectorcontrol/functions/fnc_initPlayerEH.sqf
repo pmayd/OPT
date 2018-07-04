@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 /* EH für das Versetzen der Flaggen im Trainingsmodus */
-if (OPT_PARAM_TRAINING) then {
+if (EGVAR(training,on)) then {
 
 	// use stackedEH, cannot override default behavior
 	[QGVAR(move_flag), "onMapSingleClick", {
