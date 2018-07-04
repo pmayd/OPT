@@ -1,6 +1,6 @@
 
 
 PREP(initCBASettings);
-PREP(preInit);
+PREP(postInit);
 PREP(toggleHUD);
 PREP(updateHUD);
