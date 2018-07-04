@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.017453292;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=641;
 	class ItemIDProvider
 	{
 		nextID=4800;
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=10415;
+		nextID=10481;
 	};
 	class Camera
 	{
@@ -787,24 +787,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -819,6 +801,24 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -21630,7 +21630,7 @@ class Mission
 							class Attributes
 							{
 								name="OPT_radar_containerEast";
-								presenceCondition="OPT_PARAM_RADAR == 1";
+								presenceCondition="OPT_radar_on";
 							};
 							id=4788;
 							type="OPT_Land_Pod_Heli_Transport_04_repair_radar_F";
@@ -33499,7 +33499,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4673.1465,10.360517,2591.3564};
+								position[]={4673.146,10.360517,2591.356};
 								angles[]={0,5.2167368,0};
 							};
 							side="Empty";
@@ -33508,7 +33508,7 @@ class Mission
 							{
 								init="call{ }";
 								name="OPT_radar_containerWest";
-								presenceCondition="OPT_PARAM_RADAR == 1";
+								presenceCondition="OPT_radar_on";
 							};
 							id=4789;
 							type="OPT_B_Slingload_01_Repair_Radar_F";
@@ -33556,7 +33556,7 @@ class Mission
 						};
 					};
 					id=487;
-					atlOffset=-66.426964;
+					atlOffset=-66.426979;
 				};
 				class Item2
 				{
