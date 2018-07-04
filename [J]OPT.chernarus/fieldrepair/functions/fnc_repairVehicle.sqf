@@ -20,22 +20,22 @@ if (_veh isEqualTo objNull) exitWith {false};
 
 // if another action is ongoing
 if (GVAR(mutexAction)) exitWith {
-	[QEGVAR(gui,message), ["Feldreparatur", STR_ANOTHER_ACTION, "yellow"]] call CBA_fnc_localEvent;
+    [QEGVAR(gui,message), ["Feldreparatur", STR_ANOTHER_ACTION, "yellow"]] call CBA_fnc_localEvent;
 };
 
 // if conditions are not met
 if (not alive player or (player distance _veh) > 7 or (vehicle player != player) or speed _veh > 3) exitWith {
-	[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_CONDITIONS, "red"]] call CBA_fnc_localEvent;
+    [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_CONDITIONS, "red"]] call CBA_fnc_localEvent;
 };
 
 // if player has no tool kit or vehicle was repaired more often than free repair
 if (!(typeOf player in GVARMAIN(pioniers)) and (_veh getVariable [QGVAR(longRepairTimes), 0] > 0)) exitWith {
-	[QEGVAR(gui,message), ["Feldreparatur", STR_NEED_TOOLKIT, "red"]] call CBA_fnc_localEvent;
+    [QEGVAR(gui,message), ["Feldreparatur", STR_NEED_TOOLKIT, "red"]] call CBA_fnc_localEvent;
 };
 
 GVAR(mutexAction) = true;
 
-player selectWeapon primaryWeapon player;	// psycho, animation only able to play while primary weapon is in use
+player selectWeapon primaryWeapon player;    // psycho, animation only able to play while primary weapon is in use
 sleep 1;
 private _lastPlayerState = animationState player;
 
@@ -51,44 +51,44 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
     _maxlength = (_veh getVariable QGVAR(repTimeLeft)) max 10; // reduce max length
 };
 
-/*		
-	* Arguments:
-	* 0: Total Time (in game "time" seconds) <NUMBER>
-	* 1: Arguments, passed to condition, fail and finish <ARRAY>
-	* 2: On Finish: Code called or STRING raised as event. <CODE, STRING>
-	* 3: On Failure: Code called or STRING raised as event. <CODE, STRING>
-	* 4: (Optional) Localized Title <STRING>
-	* 5: Code to check each frame (Optional) <CODE>
-	* 6: Exceptions for checking EFUNC(common,canInteractWith) (Optional)<ARRAY>
+/*        
+    * Arguments:
+    * 0: Total Time (in game "time" seconds) <NUMBER>
+    * 1: Arguments, passed to condition, fail and finish <ARRAY>
+    * 2: On Finish: Code called or STRING raised as event. <CODE, STRING>
+    * 3: On Failure: Code called or STRING raised as event. <CODE, STRING>
+    * 4: (Optional) Localized Title <STRING>
+    * 5: Code to check each frame (Optional) <CODE>
+    * 6: Exceptions for checking EFUNC(common,canInteractWith) (Optional)<ARRAY>
 */
 [
-	_maxlength,
-	[_veh, _startTime, _maxlength],
-	{
-		(_this select 0) params ["_veh"];
+    _maxlength,
+    [_veh, _startTime, _maxlength],
+    {
+        (_this select 0) params ["_veh"];
 
-		player switchMove "";
-		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_FINISHED, "green"]] call CBA_fnc_localEvent;
+        player switchMove "";
+        [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_FINISHED, "green"]] call CBA_fnc_localEvent;
 
-		[_veh] remoteExec [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
+        [_veh] remoteExec [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
 
-		_veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
-		_veh setVariable [QGVAR(repTimeLeft), 0, true];
-	},
-	{   
+        _veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
+        _veh setVariable [QGVAR(repTimeLeft), 0, true];
+    },
+    {   
         (_this select 0) params ["_veh", "_startTime", "_maxlength"];
 
-		[QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
+        [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
         _veh setVariable [QGVAR(repTimeLeft), _maxlength - (time - _startTime), true];
-	},
-	format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],
-	{
-		(_this select 0) params ["_veh"];
-		alive player and (player distance _veh) < 7 and 
-		player getVariable ["FAR_isUnconscious", 0] == 0 and
-		isNull objectParent player and 
-		speed _veh < 3
-	}
+    },
+    format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],
+    {
+        (_this select 0) params ["_veh"];
+        alive player and (player distance _veh) < 7 and 
+        player getVariable ["FAR_isUnconscious", 0] == 0 and
+        isNull objectParent player and 
+        speed _veh < 3
+    }
 ] call ace_common_fnc_progressBar;
 
 GVAR(mutexAction) = false; 
