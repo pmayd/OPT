@@ -24,6 +24,8 @@
     {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
+if (!GVAR(on)) exitWith{};
+
 [
     "OPT_PARAM_SHOW_ALL_UNITS", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "CHECKBOX", // setting type
