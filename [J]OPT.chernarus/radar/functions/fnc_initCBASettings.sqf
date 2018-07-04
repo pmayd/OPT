@@ -14,7 +14,6 @@
 */
 #include "script_component.hpp"
 
-
 [
     QGVAR(on), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "CHECKBOX", // setting type
