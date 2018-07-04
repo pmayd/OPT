@@ -26,7 +26,7 @@ params ["_marker"];
     markeralpha _marker,        7
     markertext _marker          8
 */
-if (markerShape _marer != "ICON") exitWith{};
+if (markerShape _marker != "ICON") exitWith{};
 
 //  [year, month, day, hour, minute, second]
 // realtime
