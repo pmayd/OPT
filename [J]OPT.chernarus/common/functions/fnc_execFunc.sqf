@@ -7,9 +7,10 @@
 * 1: <STRING> function name
 * 2: <ARRAY> arguments passed to function
 * 3: <BOOLEAN> true - function will be spawned, false - otherwise called
+* 4: <ANY> default return value if component is off
 *
 * Return Value:
-* <ANY> return value of function or nil
+* <ANY> return value of function or objNull
 *
 * Example:
 * ["cargo", "deactivateDragging", [crate], <optional: false>] call fnc_execFunc.sqf;
@@ -23,10 +24,11 @@ params [
     ["_component", "", ["s"], 1],
     ["_func", "", ["s"], 1],
     ["_args", [], [[]]],
-    ["_spawnFlag", false, [true], 1]
+    ["_spawnFlag", false, [true], 1],
+    ["_default", objNull]
 ];
 
-private _retVal = nil;
+private _retVal = _default;
 
 if (_component isEqualTo "" or _func isEqualTo "") exitWith{_retVal};
 
