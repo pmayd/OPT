@@ -70,7 +70,7 @@ if (_state) then {
         _vec setFuel 0;
         
         [
-            (["fieldrepair", "getPartsRepairTime", compile "[_vec]", false, 10] call EFUNC(common,execFunc)) min 10,
+            (["fieldrepair", "getPartsRepairTime", [_vec], false, 10] call EFUNC(common,execFunc)) min 10,
             [_vec, _fuel],
             {
                 (_this select 0) params ["_vec", "_fuel"];

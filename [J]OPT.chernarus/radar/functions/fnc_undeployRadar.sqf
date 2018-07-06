@@ -31,9 +31,9 @@ if (_container getVariable [QGVAR(isDeployed), false]) then {
 
     // add ACE dragging entries
     // call on server only
-    ["cargo", "initCargo", compile "[_container]", false] remoteExecCall [QEFUNC(common,execFunc), 2, false];
+    ["cargo", "initCargo", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 2, false];
     // call on each client and JIP
-    ["cargo", "initDragging", compile "[_container]", false] remoteExecCall [QEFUNC(common,execFunc), 0, QGVAR(jipID_initDragging)];
+    ["cargo", "initDragging", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 0, QGVAR(jipID_initDragging)];
 };
 
 
