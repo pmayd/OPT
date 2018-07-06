@@ -5,7 +5,7 @@
 * Arguments:
 * 0: <STRING> component name
 * 1: <STRING> function name
-* 2: <ARRAY> arguments passed to function
+* 2: <CODE> arguments passed to function as Array, has to be code to work properly for all special cases like vehicle object
 * 3: <BOOLEAN> true - function will be spawned, false - otherwise called
 * 4: <ANY> default return value if component is off
 *
@@ -23,7 +23,7 @@
 params [
     ["_component", "", ["s"], 1],
     ["_func", "", ["s"], 1],
-    ["_args", [], [[]]],
+    ["_argsAsCode", {}, [{}]],
     ["_spawnFlag", false, [true], 1],
     ["_default", objNull]
 ];
@@ -48,9 +48,9 @@ if (isNil _code) exitWith{_retVal};
 
 // call func
 if (_spawnFlag) then {
-    _retVal = call compile format["%1 spawn opt_%2_fnc_%3", _args, _component, _func];
+    _retVal = call compile format["(call %1) spawn opt_%2_fnc_%3", _argsAsCode, _component, _func];
 } else {
-    _retVal = call compile format["%1 call opt_%2_fnc_%3", _args, _component, _func];
+    _retVal = call compile format["(call %1) call opt_%2_fnc_%3", _argsAsCode, _component, _func];
 };
 
 // do not get compiler error if retVal is itself nil
