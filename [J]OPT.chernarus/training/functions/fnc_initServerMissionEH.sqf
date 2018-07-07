@@ -17,6 +17,31 @@
 GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
     params ["_newEntity", "_oldEntity"];
 
-    [QEGVAR(common,addAction), [_newEntity, [TRAINING_ACTION_TELEPORT call XGreyText, {[] call FUNC(teleport)}, [], 0, false, true, '', "alive _target"]], _newEntity] call CBA_fnc_targetEvent;
-    [QEGVAR(common,addAction), [_newEntity, [TRAINING_ACTION_FLAG call XGreyText, {createDialog QGVAR(dlg_flag)}, [], 0, false, true, '', "alive _target and _target == player"]], _newEntity] call CBA_fnc_targetEvent;
+    [
+        _newEntity, 
+        [
+            TRAINING_ACTION_TELEPORT call XGreyText, 
+            {[] call FUNC(teleport)}, 
+            [], 
+            0, 
+            false,
+            true, 
+            '', 
+            "alive _target"
+        ]
+    ] remoteExecCall ["addAction", _newEntity, false];  
+
+    [
+        _newEntity, 
+        [
+            TRAINING_ACTION_FLAG call XGreyText,
+            {createDialog QGVAR(dlg_flag)}, 
+            [],
+            0, 
+            false, 
+            true, 
+            '', 
+            "alive _target and _target == player"
+        ]
+    ] remoteExecCall ["addAction", _newEntity, false];
 }];

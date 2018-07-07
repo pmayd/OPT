@@ -24,7 +24,7 @@
 
         switch (_side) do {
             case west: {
-                [QEGVAR(common,addAction), [
+                [
                     _x,
                     [
                         _txt call XBlueText,
@@ -38,11 +38,11 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ]] call CBA_fnc_globalEventJIP;
+                ] remoteExecCall ["addAction", -2, QGVAR(jip_warehouseAction)];
 
             };
             case east: {                
-                [QEGVAR(common,addAction), [
+                [
                     _x,
                     [
                         _txt call XRedText,
@@ -56,7 +56,7 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ]] call CBA_fnc_globalEventJIP;
+                ] remoteExecCall ["addAction", -2, QGVAR(jip_warehouseAction)];
 
             };
             default {};

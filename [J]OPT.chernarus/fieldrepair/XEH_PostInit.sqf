@@ -7,4 +7,6 @@
 
 if (!GVAR(on)) exitWith{};
 
-[] call FUNC(initCBAClassEvents);
+if (isServer) then {
+    [] call FUNC(initCBAClassEvents);
+};

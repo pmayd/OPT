@@ -58,20 +58,20 @@ Fuer jede Flagge in einem Sektor: unverwundbar, Logistik-Script aus
 Sowie Actionmeneintrag fuer Spieler
 */
 {
-    [QEGVAR(common,addAction), 
+    
+    [
+        _x, 
         [
-            _x, 
-            [
-                SECTORCONTROL_ACTION_FLAG call XRedText, 	// Anzeigetext
-                {[_this select 0, _this select 1] call FUNC(captureFlag);}, 	// Skript
-                [], 														// Parameter fr Skript
-                1, 															// priority
-                true, 													    // showWindow
-                true,														// hideOnUse 
-                "",															// shortcut
-                SECTORCONTROL_FLAG_CONDITION
-            ]
+            SECTORCONTROL_ACTION_FLAG call XRedText, 	// Anzeigetext
+            {[_this select 0, _this select 1] call FUNC(captureFlag);}, 	// Skript
+            [], 														// Parameter fr Skript
+            1, 															// priority
+            true, 													    // showWindow
+            true,														// hideOnUse 
+            "",															// shortcut
+            SECTORCONTROL_FLAG_CONDITION
         ]
-    ] call CBA_fnc_globalEventJIP; // jip is important, otherwise, clients which join later wont have the menu!
+    ] remoteExecCall ["addAction", -2, QGVAR(jip_flagAction)];
+   
     _x allowDamage false; 						                    // Flagge kann nicht beschdigt werden
 } foreach (GVARMAIN(csat_flags) + GVARMAIN(nato_flags));

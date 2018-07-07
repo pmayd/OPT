@@ -28,24 +28,33 @@ This event happens every time a soldier enters a vehicle.
 // ersetzt player add action in onPlayerRespawn (viel performanter, da kein pulling)
 ["LandVehicle", "init", {
     params ["_vec"];
-    
-    [QEGVAR(common,addAction), 
-        [
-            _vec, 
-            ["Fahrzeug aufrichten" call XTuerkiesText, {[] call EFUNC(common,unFlip);}, [], 0, false, true, "", format["[_target, player] call %1", QEFUNC(common,flipCheck)]]
-        ]
-    ] call CBA_fnc_localEvent;
+     
+    _vec addAction [
+        "Fahrzeug aufrichten" call XTuerkiesText, 
+        {[] call EFUNC(common,unFlip);},
+        [], 
+        0, 
+        false, 
+        true, 
+        "", 
+        format["[_target, player] call %1", QEFUNC(common,flipCheck)]
+    ];
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
 
 ["Air", "init", {
-    params ["_vec"];
-    [QEGVAR(common,addAction), 
-        [
-            _vec, 
-            ["Fahrzeug aufrichten" call XTuerkiesText, {[] call EFUNC(common,unFlip);}, [], 0, false, true, "", format["[_target, player] call %1", QEFUNC(common,flipCheck)]]
-        ]
-    ] call CBA_fnc_localEvent;
+    params ["_vec"]; 
+        
+    _vec addAction [
+        "Fahrzeug aufrichten" call XTuerkiesText,
+        {[] call EFUNC(common,unFlip);}, 
+        [], 
+        0, 
+        false, 
+        true, 
+        "", 
+        format["[_target, player] call %1", QEFUNC(common,flipCheck)]
+    ];
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
 

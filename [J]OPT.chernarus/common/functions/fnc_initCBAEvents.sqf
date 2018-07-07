@@ -14,14 +14,6 @@
 */
 #include "script_component.hpp"
 
-// fügt einen AddAction Eintrag hinzu
-[QGVAR(addAction), {
-	params ["_obj", "_parameter"];
-
-	_obj addAction _parameter;
-
-}] call CBA_fnc_addEventHandler;
-
 // update budget
 [QGVAR(updateBudget), {
 	params [
