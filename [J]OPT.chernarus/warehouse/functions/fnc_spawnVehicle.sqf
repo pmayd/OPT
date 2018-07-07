@@ -81,5 +81,5 @@ private _txt = format["%1 geliefert.",_displayName];
 [QEGVAR(gui,message), ["Bestellung", _txt, "green"], _unit] call CBA_fnc_targetEvent;
 
 // update budget initialized by server!
-[QEGVAR(common,updateBudget), [UNIT_NAME(_unit), UNIT_SIDE(_unit), _vecType, _unitCost, "-"]] call CBA_fnc_localEvent;
+[UNIT_NAME(_unit), UNIT_SIDE(_unit), _vecType, _unitCost, "-"] call EFUNC(common,updateBudget);
 [QGVAR(renderBudget), [], _unit] call CBA_fnc_targetEvent;

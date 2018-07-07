@@ -34,7 +34,7 @@ private _class = typeOf _selectedVehicle;
 private _selectionText = _listbox_vehicle lbText _index;
 private _unitCost = [_class] call FUNC(getPrice);
 
-[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _class, _unitCost, "+"]] call CBA_fnc_serverEvent;
+[PLAYER_NAME, PLAYER_SIDE, _class, _unitCost, "+"] remoteExecCall [QEFUNC(common,updateBudget), 2, false];
 deleteVehicle _selectedVehicle;
 
 private _txt = format["%1 für %2 € verkauft.", _selectionText, _unitCost];

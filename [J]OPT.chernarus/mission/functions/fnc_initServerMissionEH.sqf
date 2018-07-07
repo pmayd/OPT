@@ -43,7 +43,7 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
         // Kosten für Seite abziehen + log
         private _cost = [] call FUNC(respawnCost);
 
-	    [QEGVAR(common,updateBudget), [UNIT_NAME(_newEntity), UNIT_SIDE(_newEntity), typeOf _newEntity, _cost, "-", true]] call CBA_fnc_localEvent;
+	    [UNIT_NAME(_newEntity), UNIT_SIDE(_newEntity), typeOf _newEntity, _cost, "-", true] call EFUNC(common,updateBudget);
         [QEGVAR(log,write), ["Respawn", format["Spieler: %1", UNIT_NAME(_newEntity)]]] call CBA_fnc_localEvent;
 
         // reset earplugs
