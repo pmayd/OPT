@@ -70,7 +70,7 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
         player switchMove "";
         [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_FINISHED, "green"]] call CBA_fnc_localEvent;
 
-        [_veh] remoteExec [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
+        [_veh] remoteExecCall [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
 
         _veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
         _veh setVariable [QGVAR(repTimeLeft), 0, true];

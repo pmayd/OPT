@@ -53,7 +53,7 @@ private _length = _maxlength;
         (_this select 0) params ["_veh", "_truck"];
 
         [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_FINISHED, "green"]] call CBA_fnc_localEvent;
-        [_veh] remoteExec [QFUNC(fullRepair), _veh, false]; // called where vehicle is local!
+        [_veh] remoteExecCall [QFUNC(fullRepair), _veh, false]; // called where vehicle is local!
         _truck setVariable [
             QGVAR(repair_cargo), 
             ((_truck getVariable [QGVAR(repair_cargo), 0]) - (1 / DEFAULT_REPAIR_TRUCK_USES)), 
