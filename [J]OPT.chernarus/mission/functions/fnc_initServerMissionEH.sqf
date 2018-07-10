@@ -38,7 +38,7 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
     if !(_oldEntity isEqualTo objNull) then {
 
         // add to zeus
-        [QEGVAR(common,addToCurator), [_newEntity]] call CBA_fnc_serverEvent;
+        [_newEntity] remoteExecCall [QEFUNC(common,addToCurator), 2, false];
         
         // Kosten für Seite abziehen + log
         private _cost = [] call FUNC(respawnCost);
@@ -47,7 +47,7 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
         [QEGVAR(log,write), ["Respawn", format["Spieler: %1", UNIT_NAME(_newEntity)]]] call CBA_fnc_localEvent;
 
         // reset earplugs
-        [QEGVAR(common,setVariable), [QGVAR(inUse), 1], _newEntity] call CBA_fnc_targetEvent;
+        {GVAR(earplugsInUse) = 1;} remoteExecCall ["call", _newEntity, false];
 
         // give backpack back to player
         // fix BackpackonChest Bug #15
@@ -56,7 +56,7 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
     };
 
     // renew zeus
-    [QEGVAR(common,renewCurator), [_newEntity]] call CBA_fnc_localEvent;
+    [_newEntity] call EFUNC(common,renewCurator);
 
 }];
 

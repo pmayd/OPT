@@ -10,7 +10,7 @@ player setVariable [QGVARMAIN(playerSide), playerSide, true];
 player setVariable [QGVARMAIN(ownerID), clientOwner, true];
 
 // add to zeus
-[QEGVAR(common,addToCurator), [player]] call CBA_fnc_serverEvent;
+[player] remoteExecCall [QEFUNC(common,addToCurator), 2, false];
 
 // setup earplug ace menu
 private _action_earplug = [
