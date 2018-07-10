@@ -28,7 +28,7 @@
                     _x,
                     [
                         _txt call XBlueText,
-                        compile QUOTE([_type] call FUNC(vehicleOrder)),
+                        compile format["['%1'] call %2", _type, QFUNC(vehicleOrder)],
                         [],
                         1, 
                         true, 
@@ -36,7 +36,7 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ] remoteExecCall ["addAction", -2, QGVAR(jip_warehouseActionWest)];
+                ] remoteExecCall ["addAction", -2, true];
 
             };
             case east: {                
@@ -44,7 +44,7 @@
                     _x,
                     [
                         _txt call XRedText,
-                        compile QUOTE([_type] call FUNC(vehicleOrder)),
+                        compile format["['%1'] call %2", _type, QFUNC(vehicleOrder)],
                         [],
                         1, 
                         true, 
@@ -52,7 +52,7 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ] remoteExecCall ["addAction", -2, QGVAR(jip_warehouseActionEast)];
+                ] remoteExecCall ["addAction", -2, true];
 
             };
             default {};

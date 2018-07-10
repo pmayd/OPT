@@ -33,7 +33,7 @@ if (_container getVariable [QGVAR(isDeployed), false]) then {
     // call on server only
     ["cargo", "initCargo", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 2, false];
     // call on each client and JIP
-    ["cargo", "initDragging", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 0, QGVAR(jipID_initDragging)];
+    ["cargo", "initDragging", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 0, true];
 };
 
 

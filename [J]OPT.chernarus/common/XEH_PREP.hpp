@@ -9,4 +9,5 @@ PREP(getPlayerSide);
 PREP(initCBAEvents);
 PREP(renderBudget);
 PREP(unFlip);
+PREP(updateBudget);
 PREP(weaponCheck);
