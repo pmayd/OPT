@@ -17,13 +17,13 @@
 // Zeus neu vergeben
 [QGVAR(renewCurator), {
 
-	params ["_operator"];
+    params ["_operator"];
 
-	if (_operator in (allCurators apply {getAssignedCuratorUnit _x})) then {
+    if (_operator in (allCurators apply {getAssignedCuratorUnit _x})) then {
         _id = (allCurators apply {getAssignedCuratorUnit _x}) find _operator;
         _module = allCurators select _id;
         unassignCurator _module;
-        _operator assignCurator _module;	
+        _operator assignCurator _module;
     };
     
 }] call CBA_fnc_addEventHandler;
