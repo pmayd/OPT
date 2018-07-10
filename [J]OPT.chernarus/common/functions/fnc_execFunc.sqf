@@ -1,6 +1,8 @@
 /**
 * Author: James
-* helper function to call or spawn any function of a component. Checks if component is activateAddons
+* Helper function to call or spawn any function of a component. 
+* Check if component is activated (GVAR(on) = true).
+* If component is deactivated or something goes wrong, return default.
 *
 * Arguments:
 * 0: <STRING> component name
