@@ -28,7 +28,7 @@
 			'',
 			QUOTE([_target] call FUNC(needRepair))
 		]
-	] remoteExecCall ["addAction", -2, QGVAR(jip_fieldRepairAction)];
+	] remoteExecCall ["addAction", -2, true];
 
 	
 	[
@@ -43,7 +43,7 @@
 			'',
 			format["_truck = vehicle _this; [_target] call %1 and _truck getVariable ['%2', -1] != -1 and {alive _target} and {speed _truck < 3}", QFUNC(vehicleDamaged), QGVAR(repair_cargo)]
 		]
-	] remoteExecCall ["addAction", -2, QGVAR(jip_fieldRepairAction)];
+	] remoteExecCall ["addAction", -2, true];
 
 	if (getRepairCargo _vec > 0) then {
 		_vec setRepairCargo 0;
@@ -67,7 +67,7 @@
 			'',
 			QUOTE([_target] call FUNC(needRepair))
 		]
-	] remoteExecCall ["addAction", -2, QGVAR(jip_fieldRepairAction)];
+	] remoteExecCall ["addAction", -2, true];
      
 	[
 		_vec, 
@@ -81,7 +81,7 @@
 			'',
 			format["_truck = vehicle _this; [_target] call %1 and _truck getVariable ['%2', -1] != -1 and {alive _target} and {speed _truck < 3}", QFUNC(vehicleDamaged), QGVAR(repair_cargo)]
 		]
-	] remoteExecCall ["addAction", -2, QGVAR(jip_fieldRepairAction)];    
+	] remoteExecCall ["addAction", -2, true];    
 
 	if (getRepairCargo _vec > 0) then {
 		_vec setRepairCargo 0;

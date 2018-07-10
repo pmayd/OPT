@@ -71,7 +71,7 @@ Sowie Actionmeneintrag fuer Spieler
             "",															// shortcut
             SECTORCONTROL_FLAG_CONDITION
         ]
-    ] remoteExecCall ["addAction", -2, QGVAR(jip_flagAction)];
+    ] remoteExecCall ["addAction", -2, true];
    
     _x allowDamage false; 						                    // Flagge kann nicht beschdigt werden
 } foreach (GVARMAIN(csat_flags) + GVARMAIN(nato_flags));
