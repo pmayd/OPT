@@ -31,7 +31,7 @@ while {true} do {
         GVAR(nrMarker) = count allMapMarkers;
     };
     
-    sleep GVAR(updateTime);
+    sleep GVAR(updateInterval);
 };
 
 
