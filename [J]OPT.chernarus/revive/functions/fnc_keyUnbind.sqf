@@ -19,10 +19,10 @@ _key = _this select 1;
 _return = false;
 
 {
-	if ((player getVariable ['FAR_isUnconscious',0] == 1) && {_key in (actionkeys _x)}) then {
-		_return = (_key == (actionkeys _x) select 0);
-		[QEGVAR(gui,message), ["San-System", "Chat deaktiviert", "red"]] call CBA_fnc_localEvent;
-	};
+    if ((player getVariable ['FAR_isUnconscious',0] == 1) && {_key in (actionkeys _x)}) then {
+        _return = (_key == (actionkeys _x) select 0);
+        ["San-System", "Chat deaktiviert", "red"] call EFUNC(gui,message);
+    };
 } forEach ['Chat'];
 
 

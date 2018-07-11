@@ -20,17 +20,17 @@ if (_veh isEqualTo objNull) exitWith {false};
 
 // if another action is ongoing
 if (GVAR(mutexAction)) exitWith {
-    [QEGVAR(gui,message), ["Feldreparatur", STR_ANOTHER_ACTION, "yellow"]] call CBA_fnc_localEvent;
+    ["Feldreparatur", STR_ANOTHER_ACTION, "yellow"] call EFUNC(gui,message);
 };
 
 // if conditions are not met
 if (not alive player or (player distance _veh) > 7 or (vehicle player != player) or speed _veh > 3) exitWith {
-    [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_CONDITIONS, "red"]] call CBA_fnc_localEvent;
+    ["Feldreparatur", STR_REPAIR_CONDITIONS, "red"] call EFUNC(gui,message);
 };
 
 // if player has no tool kit or vehicle was repaired more often than free repair
 if (!(typeOf player in GVARMAIN(pioniers)) and (_veh getVariable [QGVAR(longRepairTimes), 0] > 0)) exitWith {
-    [QEGVAR(gui,message), ["Feldreparatur", STR_NEED_TOOLKIT, "red"]] call CBA_fnc_localEvent;
+    ["Feldreparatur", STR_NEED_TOOLKIT, "red"] call EFUNC(gui,message);
 };
 
 GVAR(mutexAction) = true;
@@ -68,7 +68,7 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
         (_this select 0) params ["_veh"];
 
         player switchMove "";
-        [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_FINISHED, "green"]] call CBA_fnc_localEvent;
+        ["Feldreparatur", STR_REPAIR_FINISHED, "green"] call EFUNC(gui,message);
 
         [_veh] remoteExecCall [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
 
@@ -78,7 +78,7 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
     {   
         (_this select 0) params ["_veh", "_startTime", "_maxlength"];
 
-        [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
+        ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"] call EFUNC(gui,message);
         _veh setVariable [QGVAR(repTimeLeft), _maxlength - (time - _startTime), true];
     },
     format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],

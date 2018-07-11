@@ -24,39 +24,39 @@ private _beam_pos = _arry select 0;
 
 //Zeitabgelaufen check -> oder lvl gleich -1 (Marinebasis)
 if (GVARMAIN(missionStarted) and _lvl != -1) exitWith { 
-	closeDialog 0;
+    closeDialog 0;
 
-	[QEGVAR(gui,message), ["Beamsystem", "Das System steht nur während der Waffenruhe zur Verfügung!", "red"]] call CBA_fnc_localEvent;
-	_beamfrei = false;
+    ["Beamsystem", "Das System steht nur während der Waffenruhe zur Verfügung!", "red"] call EFUNC(gui,message);
+    _beamfrei = false;
 };
 
 private _SF = false;
 if ((typeOf vehicle player) in GVAR(heavy_vehicles)) then {
     _SF = true;
 };
-	
+
 // Schwere Fahrzeuge zum Beamziel klein Stufe 3 verneinen
 if (_SF and (_lvl < 3)) then { 
     _beamfrei = false;
     
-    [QEGVAR(gui,message), ["Beamsystem", "Der gewählte Ort ist nicht für schwere Fahrzeuge freigegeben!", "red"]] call CBA_fnc_localEvent;	
+    ["Beamsystem", "Der gewählte Ort ist nicht für schwere Fahrzeuge freigegeben!", "red"] call EFUNC(gui,message);
 
-};		
+};
 
 if ((vehicle player != player) and (_lvl < 2)) then { 
     _beamfrei = false;
 
-    [QEGVAR(gui,message), ["Beamsystem", "Der gewählte Ort ist nicht für Fahrzeuge freigegeben!", "red"]] call CBA_fnc_localEvent;	
+    ["Beamsystem", "Der gewählte Ort ist nicht für Fahrzeuge freigegeben!", "red"] call EFUNC(gui,message);
 
-};	
+};
 if (_beamfrei) then { 
     (QGVAR(rsc_layer) call BIS_fnc_rscLayer) cutText ["Teleport...", "BLACK OUT", 3]; // fade out in black
 
     // beam vehicle and player
     // mission sqm format of x,z,y...
     private _X = _beam_pos select 0; 
-    private _y = _beam_pos select 2;	
-    private	_TempLogic = "Land_HelipadEmpty_F" createVehicle [(_x) - 10 * sin(random 360), (_y) - 10 * cos(random 360)]; 
+    private _y = _beam_pos select 2;    
+    private    _TempLogic = "Land_HelipadEmpty_F" createVehicle [(_x) - 10 * sin(random 360), (_y) - 10 * cos(random 360)]; 
     sleep 1;
 
     (vehicle player) setPos getPos _TempLogic;

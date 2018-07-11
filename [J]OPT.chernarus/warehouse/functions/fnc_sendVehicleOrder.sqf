@@ -24,7 +24,7 @@ private _selectedVehicle = lbCurSel _list;
 
 if (_selectedVehicle < 0) exitWith {	
     private _txt = "Bitte ein Fahrzeug auswählen";
-    [QEGVAR(gui,message), ["Fehler", _txt, "yellow"]] call CBA_fnc_localEvent;
+    ["Fehler", _txt, "yellow"] call EFUNC(gui,message);
 };
 
 /*
@@ -42,8 +42,8 @@ private _side_Budget = if (PLAYER_SIDE == west) then {GVARMAIN(nato_budget)} els
 // Prüfe, ob aktuelle Kosten größer sind als aktuelles Budget + Dispo
 // wenn Budget < 0, dann kann noch bis dispo eingekauft werden (siehe setup_publicvariable)
 if (_unitCost > (_side_Budget + GVARMAIN(dispo))) exitWith {
-	private _txt = "Budget reicht nicht aus, Dispo überzogen!";
-    [QEGVAR(gui,message), ["Budget unzureichend", _txt, "red"]] call CBA_fnc_localEvent;
+    private _txt = "Budget reicht nicht aus, Dispo überzogen!";
+    ["Budget unzureichend", _txt, "red"] call EFUNC(gui,message);
 };
 
 private _spawnObj = nearestObject [player, "Land_HelipadCircle_F"];

@@ -31,12 +31,12 @@ _dir = 0;
 private _relpos = _healer worldToModel position _patient;
 
 if((_relpos select 0) < 0) then {
-	_offset=[-0.2,0.7,0]; 
-	_dir=90;
+    _offset=[-0.2,0.7,0]; 
+    _dir=90;
 
 } else {
-	_offset=[0.2,0.7,0]; 
-	_dir=270;
+    _offset=[0.2,0.7,0]; 
+    _dir=270;
 
 };
 _patient attachTo [_healer,_offset];
@@ -53,27 +53,27 @@ private _damage = (damage _patient * _skill_factor);
 if (_damage < 13) then {_damage = 13};
 sleep 1;
 
-/*		
-	* Arguments:
-	* 0: Total Time (in game "time" seconds) <NUMBER>
-	* 1: Arguments, passed to condition, fail and finish <ARRAY>
-	* 2: On Finish: Code called or STRING raised as event. <CODE, STRING>
-	* 3: On Failure: Code called or STRING raised as event. <CODE, STRING>
-	* 4: (Optional) Localized Title <STRING>
-	* 5: Code to check each frame (Optional) <CODE>
-	* 6: Exceptions for checking EFUNC(common,canInteractWith) (Optional)<ARRAY>
+/*        
+    * Arguments:
+    * 0: Total Time (in game "time" seconds) <NUMBER>
+    * 1: Arguments, passed to condition, fail and finish <ARRAY>
+    * 2: On Finish: Code called or STRING raised as event. <CODE, STRING>
+    * 3: On Failure: Code called or STRING raised as event. <CODE, STRING>
+    * 4: (Optional) Localized Title <STRING>
+    * 5: Code to check each frame (Optional) <CODE>
+    * 6: Exceptions for checking EFUNC(common,canInteractWith) (Optional)<ARRAY>
 */
 [
-	_damage,
-	[_healer, _patient],
-	{
-		(_this select 0) params ["_healer", "_patient"];
+    _damage,
+    [_healer, _patient],
+    {
+        (_this select 0) params ["_healer", "_patient"];
 
-		_patient setVariable ["FAR_isStabilized", 1, true];
-		_patient setVariable ["FAR_isDragged", 0, true];
+        _patient setVariable ["FAR_isStabilized", 1, true];
+        _patient setVariable ["FAR_isDragged", 0, true];
 
         private _name1 = UNIT_NAME(_patient);
-		private _name2 = UNIT_NAME(_healer);
+        private _name2 = UNIT_NAME(_healer);
 
         private _message = format [
             "%1 (%2) wurde von %3 (%4) stabilisiert.", 
@@ -83,38 +83,38 @@ sleep 1;
             UNIT_SIDE(_healer)
         ];
 
-		// übergib Kategorie und Nachricht an log-FUnktion
-		[QEGVAR(log,write), ["Revive", _message]] call CBA_fnc_serverEvent;
-		
-	},
-	{
-		(_this select 0) params ["_healer", "_patient"];
-
-		if (!alive _patient) exitWith {
-			[QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_REVIVE_PATIENT_DIED, "yellow"]] call CBA_fnc_localEvent;
-		};
-		if (!alive _healer) exitWith {
-			_patient setVariable ["FAR_healer", objNull, true]
-		};
-
-		[QEGVAR(gui,message), ["San-System", FAR_REVIVE_ACTION_REVIVE_CANCLED, "red"]] call CBA_fnc_localEvent;
-
-	},
-	format[FAR_REVIVE_ACTION_STABILIZE_BAR_TEXT, _damage],
-	{
+        // übergib Kategorie und Nachricht an log-FUnktion
+        [QEGVAR(log,write), ["Revive", _message]] call CBA_fnc_serverEvent;
+        
+    },
+    {
         (_this select 0) params ["_healer", "_patient"];
 
-		// solange Zeit nicht abgelaufen, 
-		// beide am Leben, 
-		// Abstand zu Patient kleiner 2m,
-		// Heiler nicht bewusstlos und 
-		// -> aktualisiere Fortschrittsbalken
-		alive _healer and
-		alive _patient and
-		(_healer distance _patient) < 2 and
-		_healer getVariable "FAR_isUnconscious" == 0
+        if (!alive _patient) exitWith {
+            ["San-System", FAR_REVIVE_ACTION_REVIVE_PATIENT_DIED, "yellow"] call EFUNC(gui,message);
+        };
+        if (!alive _healer) exitWith {
+            _patient setVariable ["FAR_healer", objNull, true]
+        };
 
-	}
+        ["San-System", FAR_REVIVE_ACTION_REVIVE_CANCLED, "red"] call EFUNC(gui,message);
+
+    },
+    format[FAR_REVIVE_ACTION_STABILIZE_BAR_TEXT, _damage],
+    {
+        (_this select 0) params ["_healer", "_patient"];
+
+        // solange Zeit nicht abgelaufen, 
+        // beide am Leben, 
+        // Abstand zu Patient kleiner 2m,
+        // Heiler nicht bewusstlos und 
+        // -> aktualisiere Fortschrittsbalken
+        alive _healer and
+        alive _patient and
+        (_healer distance _patient) < 2 and
+        _healer getVariable "FAR_isUnconscious" == 0
+
+    }
 ] call ace_common_fnc_progressBar;
 
 _patient setVariable ["FAR_healer", objNull, true]; // bugfix: reset FAR_healer in every case!
@@ -123,5 +123,5 @@ detach _healer;
 detach _patient;
 
 _healer playAction "medicStop";
-	
+    
 true

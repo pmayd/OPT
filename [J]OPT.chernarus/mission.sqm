@@ -18298,7 +18298,7 @@ class Mission
 						};
 					};
 					id=285;
-					atlOffset=-0.037811279;
+					atlOffset=51.599998;
 				};
 				class Item1
 				{
@@ -22934,7 +22934,7 @@ class Mission
 				};
 			};
 			id=281;
-			atlOffset=123.79875;
+			atlOffset=123.79623;
 		};
 		class Item6
 		{
@@ -30778,7 +30778,7 @@ class Mission
 						};
 					};
 					id=422;
-					atlOffset=0.051131248;
+					atlOffset=51.599998;
 				};
 				class Item1
 				{
@@ -34888,7 +34888,7 @@ class Mission
 				};
 			};
 			id=418;
-			atlOffset=-0.029992104;
+			atlOffset=-0.0297966;
 		};
 		class Item8
 		{
@@ -36249,7 +36249,7 @@ class Mission
 				};
 			};
 			id=581;
-			atlOffset=2.6473866;
+			atlOffset=2.5137162;
 		};
 		class Item10
 		{

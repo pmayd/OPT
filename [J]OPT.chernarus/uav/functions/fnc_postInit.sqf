@@ -25,8 +25,8 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
 
 // add to each UAV PC addaction menu
 {
-	_x addAction [
-		"Verbinden mit UAV-Station" call XOrangeText,
+    _x addAction [
+        "Verbinden mit UAV-Station" call XOrangeText,
         {
             private _terminal = _this select 0;
             [
@@ -35,7 +35,7 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
                 {
                     params ["_terminal"];
                     
-                    [QEGVAR(gui,message),["UAV-Station","In UAV-Station eingeloggt.<br/>Verbindung geht verloren, wenn mehr als 4m entfernt.","green"]] call CBA_fnc_localEvent;
+                    ["UAV-Station","In UAV-Station eingeloggt.<br/>Verbindung geht verloren, wenn mehr als 4m entfernt.","green"] call EFUNC(gui,message);
                     player setVariable [QGVAR(loggedInStation), _terminal];
                     
                     if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == west) then {
@@ -59,8 +59,8 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
         format["isNull (player getVariable ['%1',objNull]) && {isNull objectParent player}", QGVAR(loggedInStation)]
     ];
 
-	_x addAction [
-		"Trennen mit UAV-Station" call XOrangeText,
+    _x addAction [
+        "Trennen mit UAV-Station" call XOrangeText,
         {
             private _terminal = _this select 0;
             [
@@ -68,7 +68,7 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
                 [],
                 {
                     
-                    [QEGVAR(gui,message),["UAV-Station","Von UAV-Station ausgeloggt.","green"]] call CBA_fnc_localEvent;
+                    ["UAV-Station","Von UAV-Station ausgeloggt.","green"] call EFUNC(gui,message);
                     player connectTerminalToUAV objNull;
                     player setVariable [QGVAR(loggedInStation), objNull];
                     
@@ -104,14 +104,14 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
     if (typeOf _uav in GVARMAIN(big_uavs)) then {
         if (player getVariable [QGVAR(loggedInStation), objNull] isEqualTo objNull) then {
             player connectTerminalToUAV objNull;
-            [QEGVAR(gui,message), ["UAV-Station","Diese Aktion kann nur an der UAV-Station ausgeführt werden.","red"]] call CBA_fnc_localEvent;
+            ["UAV-Station","Diese Aktion kann nur an der UAV-Station ausgeführt werden.","red"] call EFUNC(gui,message);
 
         };
 
     } else {
         if !(typeOf player in GVARMAIN(operator)) then {
             player connectTerminalToUAV objNull;
-            [QEGVAR(gui,message), ["UAV-Station","Diese Ausrüstung kann nur ein Operator benutzen.","red"]] call CBA_fnc_localEvent;
+            ["UAV-Station","Diese Ausrüstung kann nur ein Operator benutzen.","red"] call EFUNC(gui,message);
 
         };
 
@@ -127,20 +127,20 @@ _pcs = entities OPT_UAV_TERMINAL_OBJECT;
 
     if (player distance2D _station > 4) then {
         player setVariable [QGVAR(loggedInStation), objNull];
-		player connectTerminalToUAV objNull;
-        [QEGVAR(gui,message), ["UAV-Station","Verbindung zur UAV-Station verloren.","red"]] call CBA_fnc_localEvent;
+        player connectTerminalToUAV objNull;
+        ["UAV-Station","Verbindung zur UAV-Station verloren.","red"] call EFUNC(gui,message);
         
         if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == west) then {
-			player removeWeapon "B_UavTerminal";
-			player addWeapon "ItemGPS";
+            player removeWeapon "B_UavTerminal";
+            player addWeapon "ItemGPS";
 
-		};
+        };
 
-		if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == east) then {
-			player removeWeapon "O_UavTerminal";
-			player addWeapon "ItemGPS";
+        if ((typeOf player) in GVARMAIN(pilots) and PLAYER_SIDE == east) then {
+            player removeWeapon "O_UavTerminal";
+            player addWeapon "ItemGPS";
 
-		};
+        };
 
     };
   

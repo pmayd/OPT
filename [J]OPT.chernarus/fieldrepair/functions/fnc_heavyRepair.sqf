@@ -22,13 +22,13 @@ private _truck = vehicle player;
     
 // inform player if anything is wrong
 if (GVAR(mutexAction)) exitWith {
-    [QEGVAR(gui,message), ["Feldreparatur", STR_ANOTHER_ACTION, "yellow"]] call CBA_fnc_localEvent;
+    ["Feldreparatur", STR_ANOTHER_ACTION, "yellow"] call EFUNC(gui,message);
 };
 if (_truck getVariable [QGVAR(repair_cargo), 0] <= 0) then {
-    [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_TRUCK_DEPLETED, "yellow"]] call CBA_fnc_localEvent;
+    ["Feldreparatur", STR_REPAIR_TRUCK_DEPLETED, "yellow"] call EFUNC(gui,message);
 };    
 if (not alive player or vehicle player == player or speed _veh > 3 or _veh distance _truck > 15 ) exitWith {
-    [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_CONDITIONS, "red"]] call CBA_fnc_localEvent;
+    ["Feldreparatur", STR_REPAIR_CONDITIONS, "red"] call EFUNC(gui,message);
 };
 
 GVAR(mutexAction) = true;    
@@ -52,7 +52,7 @@ private _length = _maxlength;
     {
         (_this select 0) params ["_veh", "_truck"];
 
-        [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_FINISHED, "green"]] call CBA_fnc_localEvent;
+        ["Feldreparatur", STR_REPAIR_FINISHED, "green"] call EFUNC(gui,message);
         [_veh] remoteExecCall [QFUNC(fullRepair), _veh, false]; // called where vehicle is local!
         _truck setVariable [
             QGVAR(repair_cargo), 
@@ -62,7 +62,7 @@ private _length = _maxlength;
         
     },
     {
-        [QEGVAR(gui,message), ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"]] call CBA_fnc_localEvent;
+        ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"] call EFUNC(gui,message);
 
     },
     format[STR_REPAIR_MSG_STRING, _length, _vehname],

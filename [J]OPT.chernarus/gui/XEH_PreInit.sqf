@@ -10,5 +10,3 @@ ADDON = true;
 
 GVAR(msg_waiting) = [];
 GVAR(msg_cur) = [];
-
-[QGVAR(message), LINKFUNC(message)] call CBA_fnc_addEventHandler;
