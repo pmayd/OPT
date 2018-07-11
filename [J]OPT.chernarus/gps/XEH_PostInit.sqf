@@ -9,8 +9,6 @@ if (!GVAR(on)) exitWith{};
 
 if (hasInterface) then {
     [] call FUNC(postInit);
-    [] call FUNC(initPlayerMissionEH);
-    [] call FUNC(initPlayerCBAEvents);
 };
 
 if (isServer) then {    

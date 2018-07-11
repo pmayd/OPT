@@ -1,9 +1,9 @@
 /**
 * Author: James
-* clear a marker of a disconnected player
+* delete a units marker either local or globally
 *
 * Arguments:
-* 0: <STRING> name of disconnected unit
+* 0: <OBJECT> unit whose marker should be deleted
 
 * Return Value:
 * None
@@ -13,14 +13,34 @@
 *
 */
 #include "script_component.hpp"
+
+/* PARAMS */
 params [
-    ["_name", "", ["s"], 1]
+    ["_unit", objNull, [objNull], 1]
 ];
 
-// search for all markers with unit name in it and delete them globally
-{
-    if (_x find _name != -1) then {
-        deleteMarkerLocal _x;
+/* VALIDATION */
+if (_unit isEqualTo objNull) exitWith{};
+
+/* CODY BODY */
+// delete associated marker globally and reset variable
+private _marker = _unit getVariable [QGVAR(unitMarker), ""];
+
+if (hasInterface) then {
+    if !(_marker isEqualTo "") then {
+        _marker setMarkerTextLocal "";
+        deleteMarkerLocal _marker;
     };
 
-} forEach allMapMarkers;
+    _unit setVariable [QGVAR(unitMarker), nil];
+};
+
+// global
+if (isServer) then {
+    if !(_marker isEqualTo "") then {
+        _marker setMarkerText "";
+        deleteMarker _marker;
+    };
+
+    _unit setVariable [QGVAR(unitMarker), nil, true];
+};

@@ -15,18 +15,17 @@
 #include "script_component.hpp"
 
 // delete old marker if unit disconnects
-GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["PlayerDisconnected", {
+GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
     /*
-        id: Number - unique DirectPlay ID (very large number). It is also the same id used for user placed markers (same as _id param)
-        uid: String - getPlayerUID of the leaving client. The same as Steam ID (same as _uid param)
-        name: String - profileName of the leaving client (same as _name param)
-        jip: Boolean - didJIP of the leaving client (same as _jip param)
-        owner: Number - owner id of the leaving client (same as _owner param)
+        unit: Object - unit formerly occupied by player
+        id: Number - same as _id in onPlayerDisconnected
+        uid: String - same as _uid in onPlayerDisconnected
+        name: String - same as _name in onPlayerDisconnected
     */
-    params ["_id", "_uid", "_name", "_jip", "_owner"];
-    LOG_1("Spieler %1 disconnected!",_name);
+    params ["_unit", "_id", "_uid", "_name"];
+    LOG_1("%1 (%2) disconnected!",_name,_uid);
 
-    // search for all markers with unit name in it and delete them globally
-    [QGVAR(clearMarker), [_name]] call CBA_fnc_remoteEvent;
+    // search for all markers with unit name in it and delete them on all clients
+    [_unit] call FUNC(clearMarker);
 
 }];
