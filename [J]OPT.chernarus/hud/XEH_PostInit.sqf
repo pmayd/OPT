@@ -10,4 +10,6 @@ GVAR(EH_PreloadFinished) = addMissionEventHandler ["preloadFinished", {
 }];
 
 // CBA Keybinds
-[] call FUNC(postInit);
+if (hasInterface) then {
+    [] call FUNC(postInit);
+};
