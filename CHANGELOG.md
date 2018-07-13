@@ -1,5 +1,14 @@
 ﻿# Changelog
 
+## 1.4.11
+
+### Skript
+
+- umfangreiche Änderungen an allen Komponenten: Möglichkeit, optionale Komponenten an/aus zu stellen über CBA-Settings
+- umfangreiche Änderungen an allen Komponenten: Performanceverbesserungen, Umstieg von CBA EventHandler auf remoteExec
+- umfangreiche Änderungen an allen Komponenten: Performanceverbesserungen, Umstieg von onEachFrame Mission EH auf while-Schleifen
+- Möglichkeit, Update-Intervall für GPS und RADAR in den CBA-Settings clientseitig einzustellen
+
 ## 1.4.10
 
 ### Skript
