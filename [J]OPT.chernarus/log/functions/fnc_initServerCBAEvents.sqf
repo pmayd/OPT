@@ -26,6 +26,8 @@ registriert alle Events via CBA Event Handling
 
     [QGVAR(printPlayerList), []] call CBA_fnc_localEvent;
 
+    [QGVAR(printFPS), []] call CBA_fnc_localEvent;
+
     _message = format ["Endbudget: (NATO %1 | CSAT %2)",  GVARMAIN(nato_budget), GVARMAIN(csat_budget)];
     [QGVAR(write), ["Budget", _message]] call CBA_fnc_localEvent;
 
@@ -227,10 +229,47 @@ registriert alle Events via CBA Event Handling
 
     private _cat = "Fraktionsuebersicht";
     {
-        _message = format["%1 (%2), PUID %3", _x select 1, _x select 2, _x select 0];
+        private _message = format["%1 (%2), PUID %3", _x select 1, _x select 2, _x select 0];
         [QGVAR(write), [_cat, _message]] call CBA_fnc_localEvent;
 
     } forEach GVAR(playerList);
+
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(printFPS), {
+
+    private _cat = "FPS";
+    {   
+        private _key = x;
+        private _val = HASH_GET(GVAR(fpsHash), _key);
+
+        _val params ["_unitFps", "_unitFpsMin"];
+
+        private _message = format["Avg. FPS for %1: %2", _key, _unitFps];
+        [QGVAR(write), [_cat, _message]] call CBA_fnc_localEvent;
+
+        private _message = format["Min. FPS for %1: %2", _key, _unitFpsMin];
+        [QGVAR(write), [_cat, _message]] call CBA_fnc_localEvent;
+
+        private _sum = 0;
+        {
+            _sum = _sum + _x;
+        } forEach _unitFps;
+        private _mean = _sum / (count _unitFps);
+
+        private _message = format["Single avg. FPS for %1: %2", _key, _mean];
+        [QGVAR(write), [_cat, _message]] call CBA_fnc_localEvent;
+
+        private _sum = 0;
+        {
+            _sum = _sum + _x;
+        } forEach _unitFpsMin;
+        private _mean = _sum / (count _unitFpsMin);
+
+        private _message = format["Single min. FPS for %1: %2", _key, _mean];
+        [QGVAR(write), [_cat, _message]] call CBA_fnc_localEvent;
+
+    } forEach HASH_GETKEYS(GVAR(fpsHash));
 
 }] call CBA_fnc_addEventHandler;
 
