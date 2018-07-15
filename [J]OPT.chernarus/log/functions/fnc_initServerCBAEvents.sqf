@@ -239,9 +239,10 @@ registriert alle Events via CBA Event Handling
 [QGVAR(printFPS), {
 
     private _cat = "FPS";
+    private _keys = HASH_GETKEYS(GVAR(fpsHash));
     {   
-        private _key = x;
-        private _val = HASH_GET(GVAR(fpsHash), _key);
+        private _key = _x;
+        private _val = HASH_GET(GVAR(fpsHash),_key);
 
         _val params ["_unitFps", "_unitFpsMin"];
 
@@ -269,7 +270,7 @@ registriert alle Events via CBA Event Handling
         private _message = format["Single min. FPS for %1: %2", _key, _mean];
         [QGVAR(write), [_cat, _message]] call CBA_fnc_localEvent;
 
-    } forEach HASH_GETKEYS(GVAR(fpsHash));
+    } forEach _keys;
 
 }] call CBA_fnc_addEventHandler;
 

@@ -28,14 +28,16 @@ if (!isServer) exitWith{};
 if (_unitName isEqualTo "") exitWith{};
 
 // either update existing hash entry or create new one
-if (HASH_HASKEY(GVAR(fpsHash), _unitName)) then {
-    private _val = HASH_GET(GVAR(fpsHash), _unitName);
+if (HASH_HASKEY(GVAR(fpsHash),_unitName)) then {
+    private _val = HASH_GET(GVAR(fpsHash),_unitName);
 
     // add fps entry
     _val params ["_unitFps", "_unitFpsMin"];
-    _unitFps pushBack _fpsAvg; // works imemdiately, need no HASH_SET
-    _unitFpsMin pushBack _fpsMin;
+    _unitFps pushBack (round _fpsAvg); // works imemdiately, need no HASH_SET
+    _unitFpsMin pushBack (round _fpsMin);
 
 } else {
-    HASH_SET(GVAR(fpsHash), _unitName, [[_fpsAvg], [_fpsMin]]);
+    private _startVal = [[round _fpsAvg],[round _fpsMin]];
+    HASH_SET(GVAR(fpsHash),_unitName,_startVal);
+
 };

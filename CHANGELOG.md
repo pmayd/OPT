@@ -8,6 +8,8 @@
 - umfangreiche Änderungen an allen Komponenten: Performanceverbesserungen, Umstieg von CBA EventHandler auf remoteExec
 - umfangreiche Änderungen an allen Komponenten: Performanceverbesserungen, Umstieg von onEachFrame Mission EH auf while-Schleifen
 - Möglichkeit, Update-Intervall für GPS und RADAR in den CBA-Settings clientseitig einzustellen
+- Log: Neur FPS-Log am Ende der Schlacht mit allen FPS-Werten sowie gemittelten Werten
+
 
 ## 1.4.10
 
