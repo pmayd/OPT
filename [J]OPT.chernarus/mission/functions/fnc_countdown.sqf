@@ -57,6 +57,6 @@ waitUntil { _timeElapsed = (serverTime - GVAR(startTime)); (OPT_PARAM_PLAYTIME -
 
 [] call EFUNC(log,writeEndState);
 
-[QGVAR(endMission), [], playableUnits] call CBA_fnc_targetEvent; // call end script on all clients
+[] remoteExec [QFUNC(endMission), -2, true]; // call end script on all clients
 
 //"SideScore" call BIS_fnc_endMissionServer;
