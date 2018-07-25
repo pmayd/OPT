@@ -26,7 +26,7 @@ GVAR(EH_PlayerConnected) = addMissionEventHandler ["PlayerConnected", {
     //LOG_2("PlayerConnected - jip: %1 - owner: %2",_jip,_owner);
     
     if (OPT_PARAM_SHOW_INTRO and !EGVAR(training,on) and !(_jip)) then {
-        [QGVAR(startIntro), [], playableUnits select {owner _x == _owner}] call CBA_fnc_targetEvent;    
+        [] remoteExec [QFUNC(intro), _owner, false];
     };
 
 }];
@@ -51,7 +51,7 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
 
         // give backpack back to player
         // fix BackpackonChest Bug #15
-        [QGVAR(addBackpack), [], _newEntity] call CBA_fnc_targetEvent;
+        [] remoteExecCall [QFUNC(addBackpack), _newEntity, true];
 
     };
 
