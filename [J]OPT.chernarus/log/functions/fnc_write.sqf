@@ -16,6 +16,7 @@
 * Public:
 * yes
 */
+#include "script_component.hpp"
 
 /* VALIDATIOn */
 if !(isServer) exitWith {};

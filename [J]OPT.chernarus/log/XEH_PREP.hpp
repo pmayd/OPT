@@ -11,5 +11,5 @@ PREP(writeFlagCaptured);
 PREP(writeFPS);
 PREP(writeKill);
 PREP(writePlayerList);
-PREP(writeStartSate);
+PREP(writeStartState);
 PREP(writeTransportDistance);
