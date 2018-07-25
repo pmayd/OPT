@@ -6,15 +6,26 @@
 * 0: <OBJECT> down unit
 *
 * Return Value:
-* None
+* 0: <MARKER> created unit marker
 *
 * Example:
 * [player] call fnc_createMarker.sqf;
 *
+* Server only:
+* no
+*
+* Public:
+* yes
 */
 #include "script_component.hpp"
 
-params ["_unit"];
+/* PARAMS */
+params [
+    ["_unit", objNull, [objNull], 1]
+];
+
+/* VALIDATION */
+if (_unit isEqualTo objNull) exitWith{};
 
 private _marker = _unit getVariable ["FAR_unitMarker", ""];
 	

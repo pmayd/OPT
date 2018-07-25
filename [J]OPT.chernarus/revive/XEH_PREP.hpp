@@ -15,7 +15,6 @@ PREP(handleRevive);
 PREP(handleStabilize);
 PREP(initCBAClassEvents);
 PREP(initCBASettings);
-PREP(initPlayerCBAEvents);
 PREP(isFriendlyMedic);
 PREP(isMedic);
 PREP(keyUnbind);
