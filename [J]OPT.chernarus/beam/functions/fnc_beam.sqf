@@ -71,7 +71,7 @@ private _message = format[
     PLAYER_SIDE,
     _arry select 1
 ];
-[QEGVAR(log,write), ["Beam", _message]] call CBA_fnc_serverEvent;
+["Beam", _message] remoteExecCall [QEFUNC(log,write), 2, false];
 
 closeDialog 0;
 

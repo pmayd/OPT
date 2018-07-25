@@ -12,8 +12,3 @@ GVAR(playerList) = [];
 
 // CBA settings
 [] call FUNC(initCBASettings);
-
-if (isServer) then {
-    [] call FUNC(initServerCBAEvents);
-
-};

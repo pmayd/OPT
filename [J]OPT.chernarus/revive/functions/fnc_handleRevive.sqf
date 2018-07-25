@@ -104,7 +104,7 @@ sleep 1;
         ];
 
         // übergib Kategorie und Nachricht an log-FUnktion
-        [QEGVAR(log,write), ["Revive", _message]] call CBA_fnc_serverEvent;
+        ["Revive", _message] remoteExecCall [QEFUNC(write), 2, false];
         
     },
     {

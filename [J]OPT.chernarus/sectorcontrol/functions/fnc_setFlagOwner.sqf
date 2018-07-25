@@ -51,7 +51,7 @@ switch (_side_calculated) do {
     case (east) : {
 
         _log_msg = format["Dominator ist CSAT"];
-        [QEGVAR(log,write), ["Fahne", _log_msg]] call CBA_fnc_localEvent;
+        ["Fahne", _log_msg] call EFUNC(log,write);
 
         #ifdef __OPT_Sector_Message__
             _txt = "CSAT dominiert das Gebiet";
@@ -61,7 +61,7 @@ switch (_side_calculated) do {
     case (west) : {
 
         _log_msg = format["Dominator ist NATO"];
-        [QEGVAR(log,write), ["Fahne", _log_msg]] call CBA_fnc_localEvent;
+        ["Fahne", _log_msg] call EFUNC(log,write);
 
         #ifdef __OPT_Sector_Message__
              _txt = "NATO dominiert das Gebiet";

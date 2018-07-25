@@ -14,7 +14,7 @@ if (isServer) then {
 
 
 if (hasInterface) then {
-    [QGVAR(updatePlayerList), [getPlayerUID player, profileName, playerSide]] call CBA_fnc_serverEvent; 
+    [getPlayerUID player, profileName, playerSide] remoteExecCall [QFUNC(updatePlayerList), 2, false]; 
 
     [] spawn FUNC(logFPS);
 };

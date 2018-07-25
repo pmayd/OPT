@@ -76,4 +76,4 @@ if (_respawn) then {
 	_message = format["%1 %2 (ver)kaufte %3", _message, _buyerName, _unitName];
 };
 
-[QEGVAR(log,write), [_cat, _message]] call CBA_fnc_localEvent;
+[_cat, _message] remoteExecCall [QEFUNC(log,write), 2, false];

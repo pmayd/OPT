@@ -26,7 +26,7 @@ params [
 ];
 
 // log destroyed vehicle and killer
-[QEGVAR(log,kill), [_vec, _instigator, _source]] call CBA_fnc_localEvent;
+[_vec, _instigator, _source] call EFUNC(log,writeKill);
 
 
 // delete all wrecks within the base safezone

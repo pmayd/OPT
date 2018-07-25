@@ -24,7 +24,7 @@ if (GVARMAIN(missionStarted)) exitWith {};
 GVAR(startTime) = serverTime;
 publicVariable QGVAR(startTime); // gibt allen Clients die Startzeit des Servers bekannt
 
-[QEGVAR(log,startState), []] call CBA_fnc_localEvent;
+[] call EFUNC(log,writeStartState);
 
 // By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen
 // bestimme Zeit, die bis hierher vergangen ist. Es kann nicht angenommen werden
@@ -48,7 +48,7 @@ publicVariable QGVARMAIN(missionStarted);
 
 _timeElapsed = serverTime - GVAR(startTime);
 _log_msg = format["Beginn Rest-Spielzeit: %1 min", (OPT_PARAM_PLAYTIME - _timeElapsed) / 60];
-[QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_localEvent;
+["Mission", _log_msg] call EFUNC(log,write);
 
 // Beginnt mit dem Counter für die Spielzeit
 // startet erst, wenn GVAR(missionStarted) = true gesetzt wird

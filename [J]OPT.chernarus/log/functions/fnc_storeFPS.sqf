@@ -13,17 +13,22 @@
 * Example:
 * ["James", 60, 30] call fnc_storeFPS.sqf;
 *
+* Server only:
+* yes
+* 
 * Public:
 * yes
 */
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
    ["_unitName", "", [""], 1],
    ["_fpsAvg", 0, [0], 1],
    ["_fpsMin", 0, [0], 1]
 ];
 
+/* VALIDATION */
 if (!isServer) exitWith{};
 if (_unitName isEqualTo "") exitWith{};
 
