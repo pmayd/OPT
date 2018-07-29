@@ -6,3 +6,7 @@
 */
 
 if (!GVAR(on)) exitWith{};
+
+if (isServer) then {
+
+};

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=11075;
+		nextID=11471;
 	};
 	class Camera
 	{
-		pos[]={4765.1162,71.930801,2473.2405};
+		pos[]={12081.936,184.64651,12486.385};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
