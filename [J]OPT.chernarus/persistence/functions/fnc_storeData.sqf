@@ -26,7 +26,7 @@
 if (!isServer) exitWith{};
 
 /* CODE BODY */
-[] call FUNC(getHash);
+[] call FUNC(getHash); // makes GVAR(hash) available
 
 /* Process all categories for allMissionObjects */
 [] call FUNC(processVehicles);

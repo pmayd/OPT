@@ -43,10 +43,10 @@ if (_vec isEqualTo objNull) exitWith{};
 private _entry = [];
 _entry pushBack (typeOf _vec);
 _entry pushBack (getPosATL _vec);
-_entry pushBack (getDirVisual _vec);
+_entry pushBack [vectorDir _vec, vectorUp _vec];
 _entry pushBack (getAllHitPointsDamage _vec);
 _entry pushBack (fuel _vec);
-_entry pushBack [getWeaponCargo _vec, getMagazineCargo _vec, getItemCargo _vec, getBackpackCargo _vec, getVehicleCargo _vec];
+_entry pushBack [getWeaponCargo _vec, getMagazineCargo _vec, getItemCargo _vec, getBackpackCargo _vec];
 _entry pushBack (magazinesAllTurrets _vec);
 _entry pushBack (_vec getVariable ["ace_cargo_loaded", []]); // ACE
 _entry pushBack [getFuelCargo _vec, getAmmoCargo _vec, getRepairCargo _vec];

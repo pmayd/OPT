@@ -27,7 +27,7 @@ if (!GVAR(optionVehicles)) exitWith{};
 
 /* CODE BODY */
 private _vehicles = (allMissionObjects "LandVehicle") + (allMissionObjects "Air"); // base class for all vehicles, either land or air, only "All" is higher
-private _vehicleStore = [];
+private _vehicleStorage = [];
 private _newData = [];
 if (HASH_HASKEY(GVAR(hash), HASH_KEY_VEHICLES)) then {
     _newData = HASH_GET(GVAR(hash), HASH_KEY_VEHICLES);
@@ -42,7 +42,7 @@ if (HASH_HASKEY(GVAR(hash), HASH_KEY_VEHICLES)) then {
         // new vehicles are detected via position check
         if ((isVehicleCargo _x) isEqualTo objNull and !([_x, _newData] call FUNC(isDoubleEntry))) then {
             // store data
-            _vehicleStore pushBack ([_x] call FUNC(getVehicleData));
+            _vehicleStorage pushBack ([_x] call FUNC(getVehicleData));
 
         };
 
@@ -54,11 +54,11 @@ if !(_newData isEqualTo []) then {
     {
         // Current result is saved in variable _x
         _newData pushBack _x;
-    } forEach _vehicleStore;
+    } forEach _vehicleStorage;
 
 } else {
     // just store the whole data 
-    _newData = _vehicleStore;
+    _newData = _vehicleStorage;
 };
 
 HASH_SET(GVAR(hash), HASH_KEY_VEHICLES, _newData);
