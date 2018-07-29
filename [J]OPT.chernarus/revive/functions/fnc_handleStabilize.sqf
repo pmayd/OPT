@@ -84,7 +84,7 @@ sleep 1;
         ];
 
         // übergib Kategorie und Nachricht an log-FUnktion
-        ["Revive", _message] remoteExecCall [QEFUNC(write), 2, false];
+        ["Revive", _message] remoteExecCall [QEFUNC(log,write), 2, false];
         
     },
     {

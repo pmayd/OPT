@@ -29,7 +29,7 @@ while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 &
 			publicVariable QGVARMAIN(csat_points);
 			systemChat "CSAT: +1 Punkt";
 			_message = format ["CSAT +1 (NATO %1 | CSAT %2)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
-			["Punkte", _message] remoteExecCall [QEFUNC(write), 2, false];
+			["Punkte", _message] remoteExecCall [QEFUNC(log,write), 2, false];
 
 		};
 
@@ -39,7 +39,7 @@ while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 &
 			publicVariable QGVARMAIN(nato_points);
 			systemChat "NATO: +1 Punkt";
 			_message = format ["NATO +1 (NATO %1 | CSAT %2)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
-			["Punkte", _message] remoteExecCall [QEFUNC(write), 2, false];
+			["Punkte", _message] remoteExecCall [QEFUNC(log,write), 2, false];
 		};
 			
 	} else {

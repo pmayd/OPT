@@ -33,7 +33,7 @@ if (damage _container > GVAR(maxDammage)) exitWith {
 if (!(_container getVariable [QGVAR(isDeployed), false])) then {
 
     // create objects for better immersion
-    [_container] call FUNC(createObjects);
+    [_container, RADAR_COMPOSITION] spawn EFUNC(composition,deployComposition);
 
     // calculate signal loss
     [true] call FUNC(calcSignalLoss);
