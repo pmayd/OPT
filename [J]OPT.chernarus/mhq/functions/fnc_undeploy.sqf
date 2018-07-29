@@ -25,7 +25,7 @@ params [
 ];
 
 // remove undeploy action for all players of given side
-[_vec, QGVAR(undeployAction)] remoteExecCall ["removeAction", _side, true];
+[_vec, _vec getVariable [QGVAR(undeployAction), -1]] remoteExecCall ["removeAction", _side, true];
 
 // undeploy composition
 [_vec, _cargoInfo] call EFUNC(composition,undeployComposition);

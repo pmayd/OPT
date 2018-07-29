@@ -32,7 +32,7 @@ private _cargo = _vec getVariable [QEGVAR(composition,cargo), objNull];
 if (!([_vec, _composition] call EFUNC(composition,deployComposition))) exitWith{};
 
 // remove deploy actions for side only
-[_vec, QGVAR(deployAction)] remoteExecCall ["removeAction", _side, true];
+[_vec, _vec getVariable [QGVAR(deployAction), -1]] remoteExecCall ["removeAction", _side, true];
 
 // update/draw hq marker
 if (GVAR(showMarkers)) then {

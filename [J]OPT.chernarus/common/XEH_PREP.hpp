@@ -9,6 +9,7 @@ PREP(fillLB);
 PREP(flipCheck);
 PREP(getNearestPlayer);
 PREP(getPlayerSide);
+PREP(getVehicleSide);
 PREP(renderBudget);
 PREP(renewCurator);
 PREP(unFlip);
