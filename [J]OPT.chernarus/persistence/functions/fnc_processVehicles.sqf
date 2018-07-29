@@ -26,7 +26,7 @@ if (!isServer) exitWith{};
 if (!GVAR(optionVehicles)) exitWith{};
 
 /* CODE BODY */
-private _vehicles = allMissionObjects "AllVehicles"; // base class for all vehicles, either land or air, only "All" is higher
+private _vehicles = (allMissionObjects "LandVehicle") + (allMissionObjects "Air"); // base class for all vehicles, either land or air, only "All" is higher
 private _vehicleStore = [];
 private _newData = [];
 if (HASH_HASKEY(GVAR(hash), HASH_KEY_VEHICLES)) then {
