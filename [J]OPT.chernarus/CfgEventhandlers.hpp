@@ -122,7 +122,6 @@ class Extended_PostInit_EventHandlers {
     class GVARMAIN(persistence) {
         init = QUOTE(call compile preProcessFileLineNumbers 'persistence\XEH_PostInit.sqf');
     };
-    };    
     class GVARMAIN(radar) {
         init = QUOTE(call compile preProcessFileLineNumbers 'radar\XEH_PostInit.sqf');
     };
