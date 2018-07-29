@@ -3,3 +3,5 @@
 // Beispiele: Add-Action Texte, Variablen, Konstanten, Marker etc
 
 #define DEBUG_ENABLED_persistence true
+
+#define HASH_KEY_VEHICLES "vehicles"
