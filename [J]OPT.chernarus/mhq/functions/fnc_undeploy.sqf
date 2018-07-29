@@ -41,7 +41,7 @@ if (GVAR(showMarkers)) then {
     [
         MHQ_ACTION_DEPLOY,
         {(_this select 3) spawn FUNC(deploy);},
-        [_side, _cargoInfo, _composition],
+        [_vec, _side, _composition, _cargoInfo],
         0,
         false,
         true,
