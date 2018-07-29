@@ -40,7 +40,7 @@ if (isPlayer _unit) then {
 
 // create marker
 if (FAR_REVIVE_DOWN_MARKER) then {
-	[QGVAR(createMarker), [_unit]] call CBA_fnc_globalEvent;
+	[_unit] remoteExecCall [QFUNC(createMarker), -2, true];
 };
 
 // Death message

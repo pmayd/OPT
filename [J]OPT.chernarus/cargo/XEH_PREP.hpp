@@ -2,7 +2,7 @@ PREP(deactivateCargo);
 PREP(deactivateDragging);
 PREP(initCargo);
 PREP(initCBAClassEvents);
-PREP(initCBAEvents);
+PREP(initCBASettings);
 PREP(initDragging);
 PREP(initPlayer);
 PREP(setupCargoSpaceAndSize);

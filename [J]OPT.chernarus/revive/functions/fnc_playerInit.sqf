@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 if (isNull player) then {
-	diag_log "OPT Debug: Null player in revive Init found";
+    diag_log "OPT Debug: Null player in revive Init found";
 };
 
 // take away first aid kits to prevent vanilla san system to become active
@@ -41,4 +41,4 @@ closeDialog 5651;
 
 [true] call FUNC(toggleTFAR);
 
-[QGVAR(removeMarker), [player]] call CBA_fnc_globalEvent; // remove Marker on all clients
+[player] remoteExecCall [QFUNC(removeMarker), -2, false]; // remove marker on all clients

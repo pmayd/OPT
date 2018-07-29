@@ -26,7 +26,7 @@ params [
 ];
 
 // log destroyed vehicle and killer
-[QEGVAR(log,kill), [_vec, _instigator, _source]] call CBA_fnc_localEvent;
+[_vec, _instigator, _source] call EFUNC(log,writeKill);
 
 
 // delete all wrecks within the base safezone
@@ -39,6 +39,6 @@ if (!(_vec isKindOf "CAManBase") and ((_vec distance2D (getmarkerPos "respawn_we
         // message only for those within a 200m radius
         _name = getText(configFile >> "CfgVehicles" >> typeOf _vec >> "displayName");
         _txt = format["Es gab einen Unfall in der Basis.<br/> Das Wrack von %1 wurde entsorgt.", _name];
-        [QEGVAR(gui,message), ["Unfall", _txt, "red"], playableUnits select {_x distance _vec < 200}] call CBA_fnc_targetEvent;
+        ["Unfall", _txt, "red"] remoteExecCall [QEFUNC(gui,message), playableUnits select {_x distance _vec < 200}, false];
     };
 };

@@ -81,9 +81,9 @@ if ((_unit getVariable ["FAR_isUnconscious", 0]) == 1) then{
 		};
 
 		if (isNil "FAR_unconsciousHandler" && !isNull _unit && isPlayer _unit && alive _unit) then {
-			FAR_unconsciousHandler = [_unit, _instigator] spawn FUNC(unconcious); // TODO
-			// da Spieler nicht mehr sterben kann, muss Abschuss hier geloggt werden!
-			[QEGVAR(log,kill), [_unit, _instigator, _source, _projectile]] call CBA_fnc_serverEvent;
+			FAR_unconsciousHandler = [_unit, _instigator] spawn FUNC(unconcious);
+			// da Spieler nicht mehr sterben kann, muss Abschuss hier geloggt werden
+			[_unit, _instigator, _source, _projectile] remoteExecCall [QEFUNC(log,writeKill), 2, false];
 		};
 
 	};

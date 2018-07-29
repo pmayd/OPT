@@ -27,7 +27,7 @@ private _empty_pos = (position _spawnObj) findEmptyPosition [0.2, GVAR(orderSpaw
 
 if (count _empty_pos == 0) exitWith {
     private _txt = format["Kein freier Platz im Umkreis von %1m. Bereich räumen.", GVAR(orderSpawnRadius)];
-	[QEGVAR(gui,message), ["Platz unzureichend", _txt, "red"], _unit] call CBA_fnc_targetEvent;
+    ["Platz unzureichend", _txt, "red"] remoteExecCall [QEFUNC(gui,message), _unit, false];
     GVAR(spawnInProgress) = false;
 };
 
@@ -38,7 +38,7 @@ private _vec = createVehicle [_vecType, _empty_pos, [], 0, "NONE"];
 
 if (typeName _spawnObj == "OBJECT") then {_vec setDir (getDir _spawnObj)};
 if (surfaceIsWater _empty_pos) then {
-	_vec setPos [(_empty_pos select 0),(_empty_pos select 1), 0.2]; 
+    _vec setPos [(_empty_pos select 0),(_empty_pos select 1), 0.2]; 
 };
 
 //datalink-test-eintrag, kallek
@@ -49,22 +49,22 @@ _vec setVehicleReceiveRemoteTargets true;
 // Create Vehicle Crew
 // James: Nutze stattdessen UAV classname aus setup
 _uavs = [
-	"OPT_B_UGV_01_F",
-	"OPT_B_UGV_01_rcws_F",
-	"OPT_O_UGV_01_F",
-	"OPT_O_UGV_01_rcws_F",
-	"B_UCSV_01",
-	"O_UCSV_01",
-	"OPT_B_UAV_01_F",
-	"OPT_O_UAV_01_F",
-	"OPT_B_Static_Designator_01_F",
-	"OPT_O_Static_Designator_02_F",
+    "OPT_B_UGV_01_F",
+    "OPT_B_UGV_01_rcws_F",
+    "OPT_O_UGV_01_F",
+    "OPT_O_UGV_01_rcws_F",
+    "B_UCSV_01",
+    "O_UCSV_01",
+    "OPT_B_UAV_01_F",
+    "OPT_O_UAV_01_F",
+    "OPT_B_Static_Designator_01_F",
+    "OPT_O_Static_Designator_02_F",
     "OPT_O_T_UGV_01_ghex_F"
 ];
 
 if (_vecType in (_uavs + GVARMAIN(big_uavs))) then {
-	createVehicleCrew (_vec);
-	_vec setSkill 0.8;
+    createVehicleCrew (_vec);
+    _vec setSkill 0.8;
 };
 
 //waitUntil { speed _vec == 0; };
@@ -78,8 +78,8 @@ GVAR(spawnInProgress) = false;
 
 private _displayName = getText (configFile >> "CfgVehicles" >> _vecType >> "displayName");
 private _txt = format["%1 geliefert.",_displayName];
-[QEGVAR(gui,message), ["Bestellung", _txt, "green"], _unit] call CBA_fnc_targetEvent;
+["Bestellung", _txt, "green"] remoteExecCall [QEFUNC(gui,message), _unit, false];
 
 // update budget initialized by server!
-[QEGVAR(common,updateBudget), [UNIT_NAME(_unit), UNIT_SIDE(_unit), _vecType, _unitCost, "-"]] call CBA_fnc_localEvent;
+[UNIT_NAME(_unit), UNIT_SIDE(_unit), _vecType, _unitCost, "-"] call EFUNC(common,updateBudget);
 [QGVAR(renderBudget), [], _unit] call CBA_fnc_targetEvent;

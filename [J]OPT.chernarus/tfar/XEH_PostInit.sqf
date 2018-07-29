@@ -5,6 +5,8 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
+if (!GVAR(on)) exitWith{};
+
 // addon check
 if (count ("(configName _x) find 'TFAR' >= 0" configClasses (configFile >> "CfgPatches")) == 0) exitWith{};
 

@@ -35,12 +35,21 @@ addons[]=
 	"opt_a3_weapons",
 	"A3_Modules_F",
 	"A3_Weapons_F",
+	"ace_smallarms",
+	"ace_ballistics",
 	"A3_Weapons_F_Pistols_Pistol_Heavy_02",
+	"ace_realisticnames",
 	"A3_Weapons_F_Acc",
+	"ace_scopes",
+	"ace_optics",
 	"task_force_radio_items",
 	"A3_Characters_F",
 	"A3_Characters_F_Orange_Facewear",
+	"ace_goggles",
 	"A3_Weapons_F_Items",
+	"ace_medical",
+	"ace_nightvision",
+	"ace_gforces",
 	"ace_laserpointer",
 	"A3_Weapons_F_Exp",
 	"A3_Weapons_F_Pistols_Rook40",
@@ -70,6 +79,7 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"A3_Structures_F_Naval_Piers",
 	"A3_Weapons_F_Pistols_Pistol_Heavy_01",
+	"ace_hearing",
 	"A3_Weapons_F_Pistols_P07",
 	"ace_reload",
 	"A3_Characters_F_Heads",
@@ -157,6 +167,7 @@ addons[]=
 	"CUP_Editor_A1_Roads_Config",
 	"A3_Structures_F_Ind_AirPort",
 	"A3_Weapons_F_Bootcamp_Ammoboxes",
+	"ace_overheating",
 	"CUP_CABuildings2_Misc_Cargo",
 	"A3_Supplies_F_Heli_CargoNets",
 	"A3_Structures_F_Exp_Military_ContainerBases",
@@ -232,150 +243,199 @@ class AddonsMetaData
 		};
 		class Item6
 		{
-			className="task_force_radio_items";
-			name="task_force_radio_items";
-			author="[TF]Nkey";
-			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+			className="ace_smallarms";
+			name="ACE3 - Small Arms";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
 		};
 		class Item7
+		{
+			className="ace_ballistics";
+			name="ACE3 - Ballistics";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item8
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item9
+		{
+			className="ace_scopes";
+			name="ACE3 - Scopes";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item10
+		{
+			className="ace_optics";
+			name="ACE3 - Optics";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item11
+		{
+			className="task_force_radio_items";
+			name="task_force_radio_items";
+			author="[TF]Nkey";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+		};
+		class Item12
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item13
+		{
+			className="ace_goggles";
+			name="ACE3 - Goggles";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item14
+		{
+			className="ace_medical";
+			name="ACE3 - Medical";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item15
+		{
+			className="ace_nightvision";
+			name="ACE3 - Night Vision";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item16
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item10
+		class Item17
 		{
 			className="A3_Weapons_F_Exp";
 			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item18
 		{
 			className="A3_Characters_F_Tacops";
 			name="Arma 3 Tac-Ops - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item19
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item20
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item21
 		{
 			className="A3_Drones_F";
 			name="Arma 3 Beta - Drones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item22
 		{
 			className="A3_Weapons_F_Orange";
 			name="Arma 3 Orange - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item23
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item24
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item25
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item26
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item27
 		{
 			className="A3_Props_F_Exp_A";
 			name="Arma 3 Nexus Update - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item28
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item29
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item30
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item24
+		class Item31
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item25
+		class Item32
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item33
 		{
 			className="A3_Misc_F";
 			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item34
 		{
 			className="A3_Soft_F_EPC";
 			name="Arma 3 Win Episode - Unarmored Land Vehicles";
@@ -404,6 +464,13 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item31
+		{
+			className="ace_hearing";
+			name="ACE3 - Hearing";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item37
 		{
 			className="ace_reload";
 			name="ACE3 - Reload";
@@ -691,6 +758,13 @@ class AddonsMetaData
 		};
 		class Item81
 		{
+			className="ace_overheating";
+			name="ACE3 - Overheating";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item88
+		{
 			className="CUP_CABuildings2_Misc_Cargo";
 			name="CUP_CABuildings2_Misc_Cargo";
 		};
@@ -803,24 +877,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -835,6 +891,24 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -2818,7 +2892,7 @@ class CustomAttributes
 													"STRING"
 												};
 											};
-											value="opt_param_training";
+											value="OPT_training_on";
 										};
 									};
 									class Item138
@@ -2832,7 +2906,7 @@ class CustomAttributes
 													"STRING"
 												};
 											};
-											value="opt_param_teleport";
+											value="OPT_training_teleport";
 										};
 									};
 									class Item139
@@ -2846,7 +2920,7 @@ class CustomAttributes
 													"STRING"
 												};
 											};
-											value="opt_param_zeus";
+											value="OPT_training_zeus";
 										};
 									};
 									class Item140
@@ -21646,7 +21720,7 @@ class Mission
 							class Attributes
 							{
 								name="OPT_radar_containerEast";
-								presenceCondition="OPT_PARAM_RADAR == 1";
+								presenceCondition="OPT_radar_on";
 							};
 							id=4788;
 							type="OPT_Land_Pod_Heli_Transport_04_repair_radar_F";
@@ -21946,10 +22020,10 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12054.689,158.8,12654.768};
-						angles[]={0,3.9313688,0};
+						angles[]={0,3.9313717,0};
 					};
 					name="zeus_csat_luftwaffe1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=3909;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22042,7 +22116,7 @@ class Mission
 						angles[]={0,2.8908238,6.2698579};
 					};
 					name="zeus_csat_alpha1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=3910;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22135,7 +22209,7 @@ class Mission
 						angles[]={0,2.8388128,0};
 					};
 					name="zeus_csat_Charlie1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=3911;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22228,7 +22302,7 @@ class Mission
 						angles[]={0.013327583,2.8741732,0};
 					};
 					name="zeus_csat_fox1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=3913;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22321,7 +22395,7 @@ class Mission
 						angles[]={0.013327583,6.1487284,0};
 					};
 					name="zeus_csat_opz1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=3914;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22414,7 +22488,7 @@ class Mission
 						angles[]={0.013327583,5.9151049,0};
 					};
 					name="zeus_csat_pl1_1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=3915;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22507,7 +22581,7 @@ class Mission
 						angles[]={0,2.7188566,0};
 					};
 					name="zeus_csat_echo1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=3916;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22597,10 +22671,10 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12164.934,158.948,12641.399};
-						angles[]={0.013327583,5.9151049,0};
+						angles[]={0.013334315,5.915113,0};
 					};
 					name="zeus_csat_pl2_1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4246;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22693,7 +22767,7 @@ class Mission
 						angles[]={0,2.8388128,0};
 					};
 					name="zeus_csat_Bravo1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4269;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22786,7 +22860,7 @@ class Mission
 						angles[]={0,2.7188566,0};
 					};
 					name="zeus_csat_echo9";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4786;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -22878,7 +22952,7 @@ class Mission
 						position[]={12152.521,159.00035,12627.354};
 						angles[]={0,2.7188566,0};
 					};
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4787;
 					type="ModuleCurator_F";
 					atlOffset=0.0019989014;
@@ -33549,7 +33623,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={4673.1465,10.360517,2591.3564};
+								position[]={4673.146,10.360517,2591.356};
 								angles[]={0,5.2167368,0};
 							};
 							side="Empty";
@@ -33558,7 +33632,7 @@ class Mission
 							{
 								init="call{ }";
 								name="OPT_radar_containerWest";
-								presenceCondition="OPT_PARAM_RADAR == 1";
+								presenceCondition="OPT_radar_on";
 							};
 							id=4789;
 							type="OPT_B_Slingload_01_Repair_Radar_F";
@@ -33935,7 +34009,7 @@ class Mission
 						angles[]={0,1.2263381,0};
 					};
 					name="zeus_nato_alpha1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4036;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -34028,7 +34102,7 @@ class Mission
 						angles[]={0,1.0337933,0};
 					};
 					name="zeus_nato_aviation1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4037;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -34121,7 +34195,7 @@ class Mission
 						angles[]={0,0.9729687,0};
 					};
 					name="zeus_nato_bravo1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4038;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -34214,7 +34288,7 @@ class Mission
 						angles[]={0,1.2085358,0};
 					};
 					name="zeus_nato_delta1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4039;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -34307,7 +34381,7 @@ class Mission
 						angles[]={0,1.2633392,0};
 					};
 					name="zeus_nato_sf1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4040;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -34400,7 +34474,7 @@ class Mission
 						angles[]={0,1.2085358,0};
 					};
 					name="zeus_nato_fantom1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4041;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -34493,7 +34567,7 @@ class Mission
 						angles[]={0,1.4199998,0};
 					};
 					name="zeus_nato_amf1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4042;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -34586,7 +34660,7 @@ class Mission
 						angles[]={0,1.0856471,6.2432079};
 					};
 					name="zeus_nato_pl1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4043;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -34679,7 +34753,7 @@ class Mission
 						angles[]={0.039985489,1.0856471,0};
 					};
 					name="zeus_nato_pl2";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4044;
 					type="ModuleCurator_F";
 					atlOffset=9.5367432e-007;
@@ -34773,7 +34847,7 @@ class Mission
 						angles[]={0.039977662,1.0856471,0};
 					};
 					name="zeus_nato_opz";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4142;
 					type="ModuleCurator_F";
 					atlOffset=9.5367432e-007;
@@ -34867,7 +34941,7 @@ class Mission
 						angles[]={0,1.2085358,0};
 					};
 					name="zeus_nato_charlie1";
-					presenceCondition="OPT_PARAM_ZEUS && OPT_PARAM_TRAINING";
+					presenceCondition="OPT_training_zeus && OPT_training_on";
 					id=4195;
 					type="ModuleCurator_F";
 					class CustomAttributes
@@ -129626,7 +129700,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={12063.947,163.43889,12542.505};
-				angles[]={6.2361932,0,6.2779379};
+				angles[]={6.2362013,0,6.2779317};
 			};
 			id=4768;
 			type="tfar_ModuleTaskForceRadio";

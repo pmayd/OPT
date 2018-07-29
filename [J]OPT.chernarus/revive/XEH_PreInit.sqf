@@ -10,5 +10,3 @@ ADDON = true;
 
 // CBA settings
 [] call FUNC(initCBASettings);
-
-[] call FUNC(initCBAClassEvents);

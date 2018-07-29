@@ -158,6 +158,6 @@ if (count GVAR(orderDialogObjects) != 0) then {
     } foreach GVAR(vehiclesToSell);
 
     // orderDialogObjects is needed by filterVehicle and deleteVehicle script
-    GVAR(orderDialogObjects) =  GVAR(vehiclesToSell);
+    GVAR(orderDialogObjects) = GVAR(vehiclesToSell);
 
 };

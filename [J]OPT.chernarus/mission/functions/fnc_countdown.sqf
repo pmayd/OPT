@@ -29,7 +29,7 @@ while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 &
 			publicVariable QGVARMAIN(csat_points);
 			systemChat "CSAT: +1 Punkt";
 			_message = format ["CSAT +1 (NATO %1 | CSAT %2)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
-			[QEGVAR(log,write), ["Punkte", _message]] call CBA_fnc_localEvent;
+			["Punkte", _message] remoteExecCall [QEFUNC(write), 2, false];
 
 		};
 
@@ -39,13 +39,13 @@ while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 &
 			publicVariable QGVARMAIN(nato_points);
 			systemChat "NATO: +1 Punkt";
 			_message = format ["NATO +1 (NATO %1 | CSAT %2)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
-			[QEGVAR(log,write), ["Punkte", _message]] call CBA_fnc_localEvent;
+			["Punkte", _message] remoteExecCall [QEFUNC(write), 2, false];
 		};
 			
 	} else {
 
 			_message = format ["Kein Dominator (NATO %1 | CSAT %2)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
-			[QEGVAR(log,write), ["Punkte", _message]] call CBA_fnc_localEvent;
+			["Punkte", _message] call EFUNC(log,write);
 
 	};
 
@@ -55,8 +55,8 @@ while {_timeElapsed = (serverTime - GVAR(startTime)); (GVARMAIN(csat_win) == 0 &
 // wait last seconds exactly until mission ends
 waitUntil { _timeElapsed = (serverTime - GVAR(startTime)); (OPT_PARAM_PLAYTIME - _timeElapsed) < 0; };
 
-[QEGVAR(log,endState), []] call CBA_fnc_localEvent;
+[] call EFUNC(log,writeEndState);
 
-[QGVAR(endMission), [], playableUnits] call CBA_fnc_targetEvent; // call end script on all clients
+[] remoteExec [QFUNC(endMission), -2, true]; // call end script on all clients
 
 //"SideScore" call BIS_fnc_endMissionServer;

@@ -23,4 +23,4 @@ _side = UNIT_SIDE(_caller);
 [QGVAR(setFlagOwner), [_side, _flag]] call CBA_fnc_serverEvent;
 
 // log player
-[QEGVAR(log,flagCaptured), [_flag, _caller]] call CBA_fnc_serverEvent;
+[_flag, _caller] remoteExecCall [QEFUNC(log,writeFlagCaptured), 2, false];

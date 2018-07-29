@@ -22,13 +22,15 @@ params [
 if (_container isEqualTo objNull) exitWith {};
 
 if (_container getVariable [QGVAR(isDeployed), false]) then {
-	_container setVariable [QGVAR(isDeployed), false, true];
+    _container setVariable [QGVAR(isDeployed), false, true];
 
 	[_container] spawn EFUNC(composition,undeployComposition);
 
     // add ACE dragging entries
-    [QEGVAR(cargo,initCargo), [_container]] call CBA_fnc_serverEvent;
-    [QEGVAR(cargo,initDragging), [_container]] call CBA_fnc_globalEvent;
+    // call on server only
+    ["cargo", "initCargo", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 2, false];
+    // call on each client and JIP
+    ["cargo", "initDragging", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 0, true];
 };
 
 

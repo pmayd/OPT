@@ -4,9 +4,9 @@ openMap [true, false];
 
  // instructions for player
 _txt = "Alle möglichen Angriffsflaggen sind mit einem schwarzen Kreis markiert.";
-[QEGVAR(gui,message), ["Instruktionen", _txt, "blue"]] call CBA_fnc_localEvent;
+["Instruktionen", _txt, "blue"] call EFUNC(gui,message);
 _txt = "Die gewählte Flagge wird je nach Seite blau oder rot hervorgehoben.<br/>Es kann beliebig oft neu gewählt werden.<br/>";
-[QEGVAR(gui,message), ["Instruktionen", _txt, "blue"]] call CBA_fnc_localEvent;
+["Instruktionen", _txt, "blue"] call EFUNC(gui,message);
 
 // create local marker for each flag pole
 private _flagMarker = [];
@@ -66,8 +66,8 @@ private _flagMarker = [];
         deleteMarkerLocal "marker_active_flag";
         
         _markerName = format["marker_active_flag"];
-	    _marker = createMarkerLocal [_markerName, getPos _flag];
-	    _marker setMarkerTypeLocal "selector_selectedMission";
+        _marker = createMarkerLocal [_markerName, getPos _flag];
+        _marker setMarkerTypeLocal "selector_selectedMission";
         _marker setMarkerSizeLocal [2,2];
 
         switch (PLAYER_SIDE) do {

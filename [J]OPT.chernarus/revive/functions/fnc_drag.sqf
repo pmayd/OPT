@@ -22,7 +22,7 @@ _target setVariable ["FAR_isDragged", 1, true];
 player playMoveNow "AcinPknlMstpSrasWrflDnon";
 
 // Rotation fix
-[QGVAR(rotate), [_target, 180]] call CBA_fnc_globalEvent;
+[_target, 180] remoteExecCall ["setDir", -2, false];
 
 // Add release action and save its id so it can be removed
 _id = player addAction [
@@ -44,7 +44,7 @@ waitUntil {
 
 // setze Marker neu
 if (FAR_REVIVE_DOWN_MARKER) then {
-	[QGVAR(createMarker), [_target]] call CBA_fnc_globalEvent;
+	[_target] remoteExecCall [QFUNC(createMarker), -2, true];
 };
 
 // Handle release action

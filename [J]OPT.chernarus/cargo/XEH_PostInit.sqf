@@ -5,6 +5,12 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
+if (!GVAR(on)) exitWith{};
+
+// has to be called in preInit to affect all vehicles
+[] call FUNC(initCBAClassEvents);
+
 if (hasInterface) then {
     [] call FUNC(initPlayer);
 };
+

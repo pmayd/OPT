@@ -19,11 +19,12 @@ waitUntil { time > 1};
 if (GVARMAIN(missionStarted)) exitWith {};
 
 // SERVER ONLY
-GVAR(startTime) = serverTime;			// nicht time! time ist 0, da time Zeit von Missionsbeginn mitteilt. serverTime hingegen wird
+// nicht time! time ist 0, da time Zeit von Missionsbeginn mitteilt. serverTime hingegen wird
 // immer synchronisiert und beinhaltet Zeit seit Serverstart
+GVAR(startTime) = serverTime;
 publicVariable QGVAR(startTime); // gibt allen Clients die Startzeit des Servers bekannt
 
-[QEGVAR(log,startState), []] call CBA_fnc_localEvent;
+[] call EFUNC(log,writeStartState);
 
 // By James: ersetze while durch for, da wir genau wissen, wie viele Schritte wir brauchen
 // bestimme Zeit, die bis hierher vergangen ist. Es kann nicht angenommen werden
@@ -43,11 +44,11 @@ GVARMAIN(missionStarted) = true;
 publicVariable QGVARMAIN(missionStarted); 
 
 // Benachrichtigung über Missionsstart an alle Clients
-[QEGVAR(gui,message), ["Mission", "Mission gestartet", "green"]] call CBA_fnc_remoteEvent;
+["Mission", "Mission gestartet", "green"] remoteExecCall [QEFUNC(gui,message), -2, false];
 
 _timeElapsed = serverTime - GVAR(startTime);
 _log_msg = format["Beginn Rest-Spielzeit: %1 min", (OPT_PARAM_PLAYTIME - _timeElapsed) / 60];
-[QEGVAR(log,write), ["Mission", _log_msg]] call CBA_fnc_localEvent;
+["Mission", _log_msg] call EFUNC(log,write);
 
 // Beginnt mit dem Counter für die Spielzeit
 // startet erst, wenn GVAR(missionStarted) = true gesetzt wird

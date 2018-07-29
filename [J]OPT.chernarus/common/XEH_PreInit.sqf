@@ -8,4 +8,3 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
-[] call FUNC(initCBAEvents);

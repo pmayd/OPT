@@ -11,7 +11,7 @@
 // hier den Missionsnamen festlegen
 #define __MISSION_NAME__ "Schlacht #9"
 // Versionsnummer eintragen (nur die des Base Templates!!!)
-#define __VERSION__ Complete new build 1.04.10
+#define __VERSION__ Complete new build 1.MAJOR.MINOR.BUILD
 // made by
 #define __MADE_BY__ "OPT-Missionsteam"
 // short description

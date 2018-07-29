@@ -2,8 +2,8 @@
 
 #ifdef DEBUG_MODE_FULL
     #define LINKFUNC(x) {_this call FUNC(x)}
-    #define PREP_RECOMPILE_START    if (isNil "DMC_RECOMPILECACHE") then {DMC_RECOMPILECACHE = [[],[]];}; private _recomp = {
-    #define PREP_RECOMPILE_END      }; call _recomp;private _recompIndex = (DMC_RECOMPILECACHE select 0) pushBack (toLower QUOTE(ADDON)); (DMC_RECOMPILECACHE select 1) set [_recompIndex,_recomp];
+    #define PREP_RECOMPILE_START    if (isNil "OPT_RECOMPILECACHE") then {OPT_RECOMPILECACHE = [[],[]];}; private _recomp = {
+    #define PREP_RECOMPILE_END      }; call _recomp;private _recompIndex = (OPT_RECOMPILECACHE select 0) pushBack (toLower QUOTE(ADDON)); (OPT_RECOMPILECACHE select 1) set [_recompIndex,_recomp];
 #else
     #define LINKFUNC(x) FUNC(x)
     #define PREP_RECOMPILE_START /* */

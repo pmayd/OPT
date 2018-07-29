@@ -5,10 +5,10 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
+if (!GVAR(on)) exitWith{};
+
 if (hasInterface) then {
     [] call FUNC(postInit);
-    [] call FUNC(initPlayerMissionEH);
-    [] call FUNC(initPlayerCBAEvents);
 };
 
 if (isServer) then {    
