@@ -16,12 +16,14 @@
 */
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
     ["_vec", objNull, [objNull], 1],
     ["_side", sideUnknown, [sideUnknown], 1],
     ["_text", "", ["s"], 1]
 ];
 
+/* CODE BODY */
 terminate (_vec getVariable [QGVAR(drawMarkerHandle), scriptNull]);
 
 // determine color and icon dependent on player side

@@ -17,6 +17,7 @@
 */
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
     ["_vec", objNull, [objNull], 1],
     ["_side", sideUnknown, [sideUnknown], 1],
@@ -24,17 +25,18 @@ params [
     ["_cargoInfo", [], [[]]]
 ];
 
+/* CODE BODY */
 private _cargo = _vec getVariable [QEGVAR(composition,cargo), objNull];
 
 // abort script if deployment is not possible
 if (!([_vec, _composition] call EFUNC(composition,deployComposition))) exitWith{};
 
 // remove deploy actions for side only
-[_vec, QGVAR(deployAction)] remoteExec [QEFUNC(common,removeAction), _side];
+[_vec, QGVAR(deployAction)] remoteExecCall ["removeAction", _side, true];
 
 // update/draw hq marker
 if (GVAR(showMarkers)) then {
-    [_vec, _side, "HQ"] remoteExec [QFUNC(drawMarker), _side];
+    [_vec, _side, "HQ"] remoteExecCall [QFUNC(drawMarker), _side, true];
 };
 
 // add undeploy action entry to vehicle for all units of given side
@@ -51,7 +53,7 @@ if (GVAR(showMarkers)) then {
         format ["[_target, _this] call %1", QFUNC(actionConditions)]
     ], 
     QGVAR(undeployAction)    // action ID
-] remoteExec [QEFUNC(common,addAction), _side];
+] remoteExecCall [QEFUNC(common,addAction), _side, true];
 
 // show notification for all players of given side
 [

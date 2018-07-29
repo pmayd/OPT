@@ -25,14 +25,14 @@ params [
 ];
 
 // remove undeploy action for all players of given side
-[_vec, QGVAR(undeployAction)] remoteExec [QEFUNC(common,removeAction), _side];
+[_vec, QGVAR(undeployAction)] remoteExecCall ["removeAction", _side, true];
 
 // undeploy composition
 [_vec, _cargoInfo] call EFUNC(composition,undeployComposition);
 
 // create mhq marker for given side only
 if (GVAR(showMarkers)) then {
-    [_vec, _side, "MHQ"] remoteExec [QFUNC(drawMarker), _side];
+    [_vec, _side, "MHQ"] remoteExecCall [QFUNC(drawMarker), _side, true];
 };
 
 // add deploy action for all players of given side
@@ -49,4 +49,4 @@ if (GVAR(showMarkers)) then {
         format ["[_target, _this] call %1", QFUNC(actionConditions)]
     ],
     QGVAR(deployAction)
-] remoteExec [QEFUNC(common,addAction), _side];
+] remoteExecCall [QEFUNC(common,addAction), _side, true];

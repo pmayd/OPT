@@ -1,4 +1,5 @@
 
+PREP(addAction);
 PREP(addToCurator);
 PREP(clearDebugMarker);
 PREP(createDebugMarker);

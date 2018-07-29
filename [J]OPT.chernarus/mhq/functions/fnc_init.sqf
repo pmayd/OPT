@@ -15,12 +15,17 @@
 */
 #include "script_component.hpp"
 
-waitUntil {time > 1};
-
+/* PARAMS */
 params [
     ["_obj", objNull, [objNull], 1],
     ["_side", sideUnknown, [sideUnknown], 1]
 ];
+
+/* VALIDATION */
+if (!GVAR(on)) exitWith{};
+
+/* CODE BODY */
+waitUntil {time > 1};
 
 if (_side isEqualTo sideUnknown && toLower typeOf _obj != toLower "MapBoard_altis_F") then {
     _side = [_obj] call EFUNC(common,getVehicleSide);
@@ -59,6 +64,6 @@ switch (toLower typeOf _obj) do {
         [_obj] call FUNC(updateTeleportActions);
         
         // run this code each time a new mhq is added or removed from the list of mhq
-        [GVAR(HQarray), {params ["_obj", "_side"]; [_obj] remoteExec [QFUNC(updateTeleportActions), _side];}, [_obj,_side]] spawn FUNC(arrayUpdateEH);
+        [GVAR(HQarray), {params ["_obj", "_side"]; [_obj] remoteExecCall [QFUNC(updateTeleportActions), _side];}, [_obj,_side]] spawn FUNC(arrayUpdateEH);
     };
 };
