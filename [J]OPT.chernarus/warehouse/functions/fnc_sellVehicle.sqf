@@ -24,9 +24,9 @@ private _display = findDisplay IDD_DLG_ORDER;
 private _listbox_vehicle = _display displayCtrl IDC_CTRL_VEHICLE_LIST;
 private _index = lbCurSel _listbox_vehicle;
 
-if (_index < 0) exitWith {	
+if (_index < 0) exitWith {
     private _txt = "Bitte ein Fahrzeug auswählen";
-    [QEGVAR(gui,message), ["Fehler", _txt, "yellow"]] call CBA_fnc_localEvent;
+    ["Fehler", _txt, "yellow"] call EFUNC(gui,message);
 };
 
 private _selectedVehicle = (GVAR(vehiclesToSell) select _index) select 0;
@@ -34,11 +34,11 @@ private _class = typeOf _selectedVehicle;
 private _selectionText = _listbox_vehicle lbText _index;
 private _unitCost = [_class] call FUNC(getPrice);
 
-[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _class, _unitCost, "+"]] call CBA_fnc_serverEvent;
+[PLAYER_NAME, PLAYER_SIDE, _class, _unitCost, "+"] remoteExecCall [QEFUNC(common,updateBudget), 2, false];
 deleteVehicle _selectedVehicle;
 
 private _txt = format["%1 für %2 € verkauft.", _selectionText, _unitCost];
-[QEGVAR(gui,message), ["Verkauf", _txt, "green"]] call CBA_fnc_localEvent;
+["Verkauf", _txt, "green"] call EFUNC(gui,message);
 
 // Budget in Dialog updaten
 [] call FUNC(updateBudget);

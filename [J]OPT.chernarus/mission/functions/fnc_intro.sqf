@@ -9,10 +9,20 @@
 * None
 *
 * Example:
-* [] call fnc_intro.sqf;
+* [] spawn fnc_intro.sqf;
+*
+* Server only:
+* no
+*
+* Public:
+* yes
 *
 */
 #include "script_component.hpp"
+
+/* VALIDATION */
+if (isServer) exitWith{};
+if (!canSuspend) exitWith{};
 
 // wait until player is initializied
 waitUntil {!isNull player && !((findDisplay 46) isEqualTo displayNull)};
@@ -113,4 +123,4 @@ EnableEnvironment true;
 {_x setVariable ["BIS_noCoreConversations", false]} forEach allUnits;
 
 playMusic "";
-intro_done = true;
+GVAR(introDone) = true;

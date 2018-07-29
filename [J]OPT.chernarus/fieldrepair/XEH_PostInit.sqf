@@ -5,4 +5,8 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
-[] call FUNC(initCBAClassEvents);
+if (!GVAR(on)) exitWith{};
+
+if (isServer) then {
+    [] call FUNC(initCBAClassEvents);
+};

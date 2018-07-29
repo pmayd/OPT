@@ -10,6 +10,3 @@ ADDON = true;
 
 // CBA settings
 [] call FUNC(initCBASettings);
-
-// CBA Keybinds
-[] call FUNC(preInit);

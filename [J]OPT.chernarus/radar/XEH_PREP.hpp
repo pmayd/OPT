@@ -1,7 +1,6 @@
 
 
 PREP(calcSignalLoss);
-PREP(createObjects);
 PREP(deployRadar);
 PREP(getRadar);
 PREP(initCBASettings);

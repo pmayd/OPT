@@ -5,6 +5,8 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
+if (!GVAR(on)) exitWith{};
+
 // executed after briefing right to mission start
 GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     /*  	

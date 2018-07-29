@@ -27,25 +27,34 @@ This event happens every time a soldier enters a vehicle.
 // fügt auf allen clients einen Add Action Eintrag für umgekippte Fahrzeuge hinzu
 // ersetzt player add action in onPlayerRespawn (viel performanter, da kein pulling)
 ["LandVehicle", "init", {
-	params ["_vec"];
-    
-	[QEGVAR(common,addAction), 
-		[
-			_vec, 
-			["Fahrzeug aufrichten" call XTuerkiesText, {[] call EFUNC(common,unFlip);}, [], 0, false, true, "", format["[_target, player] call %1", QEFUNC(common,flipCheck)]]
-		]
-	] call CBA_fnc_localEvent;
+    params ["_vec"];
+     
+    _vec addAction [
+        "Fahrzeug aufrichten" call XTuerkiesText, 
+        {[] call EFUNC(common,unFlip);},
+        [], 
+        0, 
+        false, 
+        true, 
+        "", 
+        format["[_target, player] call %1", QEFUNC(common,flipCheck)]
+    ];
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
 
 ["Air", "init", {
-	params ["_vec"];
-	[QEGVAR(common,addAction), 
-		[
-			_vec, 
-			["Fahrzeug aufrichten" call XTuerkiesText, {[] call EFUNC(common,unFlip);}, [], 0, false, true, "", format["[_target, player] call %1", QEFUNC(common,flipCheck)]]
-		]
-	] call CBA_fnc_localEvent;
+    params ["_vec"]; 
+        
+    _vec addAction [
+        "Fahrzeug aufrichten" call XTuerkiesText,
+        {[] call EFUNC(common,unFlip);}, 
+        [], 
+        0, 
+        false, 
+        true, 
+        "", 
+        format["[_target, player] call %1", QEFUNC(common,flipCheck)]
+    ];
 
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
 
@@ -53,12 +62,12 @@ This event happens every time a soldier enters a vehicle.
 // add killed EH to all kind of vehicles, either on map or later spawned via crteateVehicle arrayIntersect
 // -> log kill and delete if near base
 ["LandVehicle", "killed", {
-	[QGVAR(handleDeadVehicle), _this] call CBA_fnc_serverEvent;
+    [QGVAR(handleDeadVehicle), _this] call CBA_fnc_serverEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 
 ["Air", "killed", {
-	[QGVAR(handleDeadVehicle),  _this] call CBA_fnc_serverEvent;
+    [QGVAR(handleDeadVehicle),  _this] call CBA_fnc_serverEvent;
 
 }] call CBA_fnc_addClassEventHandler;
 

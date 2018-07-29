@@ -7,9 +7,14 @@
 
 if (isServer) then {
     [] call FUNC(initCBAClassEvents);
+
+    // init fps hash
+    GVAR(fpsHash) = HASHCREATE;
 };
 
 
 if (hasInterface) then {
-    [QGVAR(updatePlayerList), [getPlayerUID player, profileName, playerSide]] call CBA_fnc_serverEvent; 
+    [getPlayerUID player, profileName, playerSide] remoteExecCall [QFUNC(updatePlayerList), 2, false]; 
+
+    [] spawn FUNC(logFPS);
 };

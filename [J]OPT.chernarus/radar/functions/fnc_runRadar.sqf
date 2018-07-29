@@ -23,7 +23,7 @@ private _Geschwindigkeitkapp = 275;
 private _Geschwindigkeitfaktor = 5;
 
 for "_i" from 1 to 10 do {
-	private _marker = [
+    private _marker = [
         format["%1_%2", QGVAR(contact_marker_west), _i],
         [0,0],
         "mil_dot",
@@ -36,11 +36,11 @@ for "_i" from 1 to 10 do {
         0,
         false
     ] call EFUNC(common,createMarker);
-	_markerwest pushBack _marker;
+    _markerwest pushBack _marker;
 };
 
 for "_i" from 1 to 10 do {
-	private _marker = [
+    private _marker = [
         format["%1_%2", QGVAR(contact_marker_east), _i],
         [0,0],
         "mil_dot",
@@ -53,7 +53,7 @@ for "_i" from 1 to 10 do {
         0,
         false
     ] call EFUNC(common,createMarker);
-	_markerost pushBack _marker;
+    _markerost pushBack _marker;
 };
 
 private _Radarring = [
@@ -75,103 +75,102 @@ _RadarZONE setTriggerArea [_size, _size, 0, false, 0];
 _RadarZONE setTriggerActivation ["ANY", "PRESENT", true];
 _RadarZONE setTriggerStatements ["this", "", ""];
 
-[QGVAR(radarActiveEH), "onEachFrame", {
-    params  ["_container", "_Radarring", "_RadarZONE", "_markerost", "_markerwest", "_size"];
-    private _Radaranzeige = [];
+while {true} do {
 
-    if (damage _container > GVAR(maxDammage)) exitWith {
+    if (visibleMap or visibleGPS) then {
+        private _Radaranzeige = [];
 
-        [QGVAR(radarActiveEH), "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+        if (damage _container > GVAR(maxDammage)) exitWith {
 
-        {deleteMarker _x;} foreach _markerost;
-        {deleteMarker _x;} foreach _markerwest;
-        deleteMarker _Radarring;
-        deleteVehicle _RadarZONE;
-        // delete objects around container - James
-        [] call FUNC(undeployRadar);
+            {deleteMarker _x;} foreach _markerost;
+            {deleteMarker _x;} foreach _markerwest;
+            deleteMarker _Radarring;
+            deleteVehicle _RadarZONE;
+            // delete objects around container - James
+            [] call FUNC(undeployRadar);
 
-        removeAllActions _container;
+            removeAllActions _container;
 
-        // remove ACE dragging entries
-        [QEGVAR(cargo,deactivateDragging), [GVAR(containerEast)]] call CBA_fnc_globalEvent;
-
-    };
-
-    // reset all marker
-    {
-
-        if (markerAlpha _x != 0) then {
-            _x setMarkerAlphaLocal 0;
+            // remove ACE dragging entries
+            ["cargo", "deactivateDragging", [GVAR(containerEast)], false] remoteExecCall [QEFUNC(common,execFunc), 0, true]; // has to be called on each client and also JIP
         };
 
-    } forEach (_markerost + _markerwest);
-
-    if !(_container getVariable [QGVAR(isDeployed), false]) then {
-        _Radarring setMarkerAlphaLocal 0;
-
-    } else {
-        
-        if (markerAlpha _Radarring == 0) then {
-            _Radarring setMarkerPosLocal getPos _container;
-            _Radarring setMarkerSizeLocal [_size, _size];
-            _Radarring setMarkerAlphaLocal 1;
-
-            _RadarZONE setPos getPos _container;
-        };       
-       
-        private _units = list _RadarZONE;
-        
-        private _signalLoss = [false] call FUNC(calcSignalLoss);
-
+        // reset all marker
         {
+
+            if (markerAlpha _x != 0) then {
+                _x setMarkerAlphaLocal 0;
+            };
+
+        } forEach (_markerost + _markerwest);
+
+        if !(_container getVariable [QGVAR(isDeployed), false]) then {
+            _Radarring setMarkerAlphaLocal 0;
+
+        } else {
             
-            if ((_x iskindof "AIR") and ((275 - ((getPos _x select 2) * (5 - _signalLoss))) < (speed _x))) then { 
-                _Radaranzeige pushBack _x;
-            };	
+            if (markerAlpha _Radarring == 0) then {
+                _Radarring setMarkerPosLocal getPos _container;
+                _Radarring setMarkerSizeLocal [_size, _size];
+                _Radarring setMarkerAlphaLocal 1;
+
+                _RadarZONE setPos getPos _container;
+            };       
         
-        //systemChat format ["X:%1 R:%2 B1:%3 B2:%4",_x,_Radaranzeige,(_x iskindof "AIR"),((275 - ((getPos _x select 2)*(5 - _signalLoss)))< (speed _x))];	
-        } forEach _units;
-        
-        if (count _Radaranzeige > 0) then	{
-            for "_i" from 0 to (count _Radaranzeige - 1) do {
-                _obj = _Radaranzeige select _i;
+            private _units = list _RadarZONE;
+            
+            private _signalLoss = [false] call FUNC(calcSignalLoss);
 
-                //systemChat format ["O:%1 OS:%2 B1:%3 B2:%4",_obj,side _obj,((side _obj) == east),(_obj iskindof "Helicopter")];
-                if (side _obj == east) then {
-                    _marker = _markerost select _i;
+            {
+                
+                if ((_x iskindof "AIR") and ((275 - ((getPos _x select 2) * (5 - _signalLoss))) < (speed _x))) then { 
+                    _Radaranzeige pushBack _x;
+                };    
+            
+            //systemChat format ["X:%1 R:%2 B1:%3 B2:%4",_x,_Radaranzeige,(_x iskindof "AIR"),((275 - ((getPos _x select 2)*(5 - _signalLoss)))< (speed _x))];    
+            } forEach _units;
+            
+            if (count _Radaranzeige > 0) then    {
+                for "_i" from 0 to (count _Radaranzeige - 1) do {
+                    _obj = _Radaranzeige select _i;
 
-                    if ((_obj iskindof "Helicopter") and !(_obj iskindof "OPT_O_UAV_01_F") and !(_obj iskindof "Steerable_Parachute_F")) then {
-                        _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
-                        _marker setMarkerTypeLocal "b_air";
-                        _marker setMarkerAlphaLocal 1;
-                        //systemChat format ["O:%1 M:%2 P:%3",_obj,_marker,(getPosATLVisual (vehicle _obj))];					
+                    //systemChat format ["O:%1 OS:%2 B1:%3 B2:%4",_obj,side _obj,((side _obj) == east),(_obj iskindof "Helicopter")];
+                    if (side _obj == east) then {
+                        _marker = _markerost select _i;
+
+                        if ((_obj iskindof "Helicopter") and !(_obj iskindof "OPT_O_UAV_01_F") and !(_obj iskindof "Steerable_Parachute_F")) then {
+                            _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
+                            _marker setMarkerTypeLocal "b_air";
+                            _marker setMarkerAlphaLocal 1;
+                            //systemChat format ["O:%1 M:%2 P:%3",_obj,_marker,(getPosATLVisual (vehicle _obj))];                    
+                        };
+
+                        if (_obj iskindof "Plane") then {
+                            _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
+                            _marker setMarkerTypelocal "b_plane";
+                            _marker setMarkerAlphaLocal 1;
+                        };    
                     };
+                    if (side _obj == west) then {
+                        _marker = _markerwest select _i;        
 
-                    if (_obj iskindof "Plane") then {
-                        _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
-                        _marker setMarkerTypelocal "b_plane";
-                        _marker setMarkerAlphaLocal 1;
-                    };	
-                };
-                if (side _obj == west) then {
-                    _marker = _markerwest select _i;		
+                        if ((_obj iskindof "Helicopter") and !(_obj iskindof "OPT_B_UAV_01_F") and !(_obj iskindof "Steerable_Parachute_F")) then {
+                            _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
+                            _marker setMarkerTypelocal "b_air";
+                            _marker setMarkerAlphaLocal 1;
+                        };
 
-                    if ((_obj iskindof "Helicopter") and !(_obj iskindof "OPT_B_UAV_01_F") and !(_obj iskindof "Steerable_Parachute_F")) then {
-                        _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
-                        _marker setMarkerTypelocal "b_air";
-                        _marker setMarkerAlphaLocal 1;
+                        if (_obj iskindof "Plane") then {
+                            _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
+                            _marker setMarkerTypelocal "b_plane";
+                            _marker setMarkerAlphaLocal 1;
+                        };
+                        
                     };
-
-                    if (_obj iskindof "Plane") then {
-                        _marker setMarkerPosLocal (getPosATLVisual (vehicle _obj));
-                        _marker setMarkerTypelocal "b_plane";
-                        _marker setMarkerAlphaLocal 1;
-                    };
-                    
                 };
             };
         };
     };
 
-}, [_container, _Radarring, _RadarZONE, _markerost, _markerwest, _size]] call BIS_fnc_addStackedEventHandler;
-
+    sleep GVAR(updateInterval);
+};

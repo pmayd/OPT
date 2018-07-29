@@ -14,7 +14,7 @@
 */
 #include "script_component.hpp"
 
-[QEGVAR(gui,message), ["Teleport", "Position zum Teleport mit Linksklick auswählen.", "blue"]] call CBA_fnc_localEvent;
+["Teleport", "Position zum Teleport mit Linksklick auswählen.", "blue"] call EFUNC(gui,message);
 openMap true;
 
 [QGVAR(onMapSingleClick), "onMapSingleClick", {

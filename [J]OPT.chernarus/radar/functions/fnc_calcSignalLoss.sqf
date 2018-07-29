@@ -23,8 +23,8 @@ private _objekte = nearestTerrainObjects [getpos _container, ["Tree","BUILDING"]
 private _signalLoss = RADAR_DAMPING(_objekte) * 100;
 
 if (_informPlayer) then {
-	private _message = format["%1: %2", STR_RADAR_HINT_TEXT, _signalLoss]; 
-	[QEGVAR(gui,message), [STR_RADAR_HINT_HEADER, _message, "blue"]] call CBA_fnc_localEvent;
+    private _message = format["%1: %2", STR_RADAR_HINT_TEXT, _signalLoss]; 
+    [STR_RADAR_HINT_HEADER, _message, "blue"] call EFUNC(gui,message);
 };
 
 _signalLoss;

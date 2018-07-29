@@ -25,12 +25,12 @@ player addEventHandler ["GetInMan", {
 
     if ((_vec call TFAR_fnc_getVehicleSide) != PLAYER_SIDE) then {
         // check if there is a radio in the vehicle
-		_LRinside = _vec call TFAR_fnc_hasVehicleRadio;
-		if (_LRinside) then {
-			_VehicleLR = player call TFAR_fnc_VehicleLR;
-			_encryption = _VehicleLR call TFAR_fnc_getLrRadioCode;
-			
-			switch (PLAYER_SIDE) do  {
+        _LRinside = _vec call TFAR_fnc_hasVehicleRadio;
+        if (_LRinside) then {
+            _VehicleLR = player call TFAR_fnc_VehicleLR;
+            _encryption = _VehicleLR call TFAR_fnc_getLrRadioCode;
+            
+            switch (PLAYER_SIDE) do  {
                 case west: {
                     if (toLower(_encryption) == "_opfor") then {
                         If (OPT_PARAM_TFAR_INTERCEPTION) then {
@@ -57,11 +57,11 @@ player addEventHandler ["GetInMan", {
                             };
                             systemChat "Frequenz auf Beginn des Frequenzbandes gestellt";
                         };
-                    };			
+                    };            
                 };
-			};
-		};
-	} else {
+            };
+        };
+    } else {
         [_vec] call FUNC(setTFARFrequencies);
     };
 

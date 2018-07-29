@@ -16,7 +16,7 @@
 
 /* Class EH */
 // Engine EH für Piloten -> Log transportierte Soldaten
-_success = ["Helicopter", "GetIn", {
+_success = ["Air", "GetIn", {
     /*
     vehicle: Object - Vehicle the event handler is assigned to
     position: String - Can be either "driver", "gunner" or "cargo"
@@ -37,7 +37,7 @@ _success = ["Helicopter", "GetIn", {
 }] call CBA_fnc_addClassEventHandler;
 if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetIn' for Helicopters")};
 
-_success = ["Helicopter", "GetOut", {
+_success = ["Air", "GetOut", {
     /*
     vehicle: Object - Vehicle the event handler is assigned to
     position: String - Can be either "driver", "gunner" or "cargo"
@@ -46,7 +46,7 @@ _success = ["Helicopter", "GetOut", {
     */
 
     // logge transport von Spielern, falls Spieler nicht Pilot und Strecke > 500m
-    [QGVAR(transportDistance), _this] call CBA_fnc_localEvent;
+    _this call EFUNC(log,writeTransportDistance);
 
 }] call CBA_fnc_addClassEventHandler;
 if !(_success) then {ERROR("Failed adding ClassEventHandler 'GetOut' for Helicopters")};

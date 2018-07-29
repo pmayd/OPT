@@ -8,5 +8,5 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
-[] call FUNC(setup_beamOrte);
-[] call FUNC(preInit);
+// initialize CBA settings
+[] call FUNC(initCBASettings);

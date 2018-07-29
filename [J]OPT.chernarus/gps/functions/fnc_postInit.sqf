@@ -14,15 +14,13 @@
 */
 #include "script_component.hpp"
 
-GVAR(mode) = 1;
-if (OPT_PARAM_SHOW_ALL_UNITS) then {
-    GVAR(showAll) = true;
-} else {
-    GVAR(showAll) = false;
-};
-
 //Modus
-if (typeOf player in GVARMAIN(officer) and GVAR(showAll)) then {
+GVAR(mode) = 1;
+if (typeOf player in GVARMAIN(officer) and GVAR(showAllUnits)) then {
     GVAR(mode)=2;
 };
+
+
+// update marker as long as map is open (works for uav stations as well)
+[] spawn FUNC(updateMarker);
 

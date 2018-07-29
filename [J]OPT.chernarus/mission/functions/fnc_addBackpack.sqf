@@ -11,8 +11,19 @@
 * Example:
 * [] call fnc_addBackpack.sqf;
 *
+* Server only:
+* no
+*
+* Public:
+* yes
+*
 */
 #include "script_component.hpp"
+
+/* Validation */
+if (isServer) exitWith{};
+
+/* Code Body */
 
 private _attachedBackpack = player getVariable [QGVAR(attachedBackpack), ""];
 

@@ -25,8 +25,8 @@ GVAR(EH_PlayerConnected) = addMissionEventHandler ["PlayerConnected", {
     params ["_id", "_uid", "_name", "_jip", "_owner"];
     //LOG_2("PlayerConnected - jip: %1 - owner: %2",_jip,_owner);
     
-    if (OPT_PARAM_SHOW_INTRO and !OPT_PARAM_TRAINING and !(_jip)) then {
-        [QGVAR(startIntro), [], playableUnits select {owner _x == _owner}] call CBA_fnc_targetEvent;    
+    if (OPT_PARAM_SHOW_INTRO and !EGVAR(training,on) and !(_jip)) then {
+        [] remoteExec [QFUNC(intro), _owner, false];
     };
 
 }];
@@ -38,25 +38,25 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
     if !(_oldEntity isEqualTo objNull) then {
 
         // add to zeus
-        [QEGVAR(common,addToCurator), [_newEntity]] call CBA_fnc_serverEvent;
+        [_newEntity] remoteExecCall [QEFUNC(common,addToCurator), 2, false];
         
         // Kosten für Seite abziehen + log
         private _cost = [] call FUNC(respawnCost);
 
-	    [QEGVAR(common,updateBudget), [UNIT_NAME(_newEntity), UNIT_SIDE(_newEntity), typeOf _newEntity, _cost, "-", true]] call CBA_fnc_localEvent;
-        [QEGVAR(log,write), ["Respawn", format["Spieler: %1", UNIT_NAME(_newEntity)]]] call CBA_fnc_localEvent;
+	    [UNIT_NAME(_newEntity), UNIT_SIDE(_newEntity), typeOf _newEntity, _cost, "-", true] call EFUNC(common,updateBudget);
+        ["Respawn", format["Spieler: %1", UNIT_NAME(_newEntity)]] call EFUNC(log,write);
 
         // reset earplugs
-        [QEGVAR(common,setVariable), [QGVAR(inUse), 1], _newEntity] call CBA_fnc_targetEvent;
+        {GVAR(earplugsInUse) = 1;} remoteExecCall ["call", _newEntity, false];
 
         // give backpack back to player
         // fix BackpackonChest Bug #15
-        [QGVAR(addBackpack), [], _newEntity] call CBA_fnc_targetEvent;
+        [] remoteExecCall [QFUNC(addBackpack), _newEntity, true];
 
     };
 
     // renew zeus
-    [QEGVAR(common,renewCurator), [_newEntity]] call CBA_fnc_localEvent;
+    [_newEntity] call EFUNC(common,renewCurator);
 
 }];
 

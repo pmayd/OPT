@@ -16,15 +16,16 @@
 
 
 [
-    QGVAR(isOn), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    QGVAR(on), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "CHECKBOX", // setting type
-    "Zeitstempel an/aus", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
-    "OPT Markersystem", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    "Aktiviert die Marker-Komponente", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "OPT Komponenten", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     true, // Default value <BOOLEAN>
     0, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
-    { [] call FUNC(initMarkerSystem); } // function that will be executed once on mission start and every time the setting is changed.
+    {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
+if (!GVAR(on)) exitWith{};
 
 [
     QGVAR(useRealTime), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
@@ -44,4 +45,14 @@
     "#z", // Default value <BOOLEAN>
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     { } // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_Settings_fnc_init;
+
+[
+    QGVAR(updateInterval), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    "SLIDER", // setting type
+    "Update Intervall in Sekunden", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "OPT Markersystem", // Pretty name of the category where the setting can be found. Can be stringtable entry.
+    [0.1, 10, 0.5, 1], // data for this setting: [min, max, default, number of shown trailing decimals]
+    0, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
+    {} // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;

@@ -20,17 +20,15 @@
 {
     if (count (_x getVariable [QGVAR(data), []]) > 0) then {
 
-        _x getVariable QGVAR(data) params ["_txt", "_type", "_side"];
+        (_x getVariable QGVAR(data)) params ["_txt", "_type", "_side"];
 
         switch (_side) do {
             case west: {
-                [QEGVAR(common,addAction), [
+                [
                     _x,
                     [
                         _txt call XBlueText,
-                        compile format["
-                            ['%1'] call %2;
-                        ", _type, FUNC(vehicleOrder)],
+                        compile format["['%1'] call %2", _type, QFUNC(vehicleOrder)],
                         [],
                         1, 
                         true, 
@@ -38,17 +36,15 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ]] call CBA_fnc_globalEventJIP;
+                ] remoteExecCall ["addAction", -2, true];
 
             };
             case east: {                
-                [QEGVAR(common,addAction), [
+                [
                     _x,
                     [
                         _txt call XRedText,
-                        compile format["
-                            ['%1'] call %2;
-                        ", _type, FUNC(vehicleOrder)],
+                        compile format["['%1'] call %2", _type, QFUNC(vehicleOrder)],
                         [],
                         1, 
                         true, 
@@ -56,7 +52,7 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ]] call CBA_fnc_globalEventJIP;
+                ] remoteExecCall ["addAction", -2, true];
 
             };
             default {};

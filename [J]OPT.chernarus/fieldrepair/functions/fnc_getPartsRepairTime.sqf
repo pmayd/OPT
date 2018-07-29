@@ -23,7 +23,6 @@ private _rprTime = 0;
 	private _cdmg = _veh getHitPointDamage (_x);
 
 	if (not isNil {_cdmg} ) then {
-		diag_log str ["REPAIR ", _x, _cdmg];
 		if (_cdmg > 0.64) exitWith {
 			if (_x in GVAR(hardRepairParts)) then {
 				_rprTime = _rprTime + DEFAULT_FIELDREPAIR_EACH_HARDPART_TIME;
