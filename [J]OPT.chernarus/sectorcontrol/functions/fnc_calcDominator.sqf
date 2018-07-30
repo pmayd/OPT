@@ -19,9 +19,9 @@ private _csat_owner = {_x isEqualTo east} count _allFlags;
 private _nato_owner = {_x isEqualTo west} count _allFlags;
 
 _side = switch (true) do {
-	case (_csat_owner > _nato_owner) : {east};
-	case (_nato_owner > _csat_owner) : {west};
-	case (_nato_owner == _csat_owner) : {sideUnknown};	// nobody
+    case (_csat_owner > _nato_owner) : {east};
+    case (_nato_owner > _csat_owner) : {west};
+    case (_nato_owner == _csat_owner) : {sideUnknown};    // nobody
 };
 
 _side

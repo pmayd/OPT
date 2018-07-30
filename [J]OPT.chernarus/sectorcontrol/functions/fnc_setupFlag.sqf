@@ -60,18 +60,19 @@ Sowie Actionmeneintrag fuer Spieler
 {
     
     [
-        _x, 
+        _x,
         [
-            SECTORCONTROL_ACTION_FLAG call XRedText, 	// Anzeigetext
-            {[_this select 0, _this select 1] call FUNC(captureFlag);}, 	// Skript
-            [], 														// Parameter fr Skript
-            1, 															// priority
-            true, 													    // showWindow
-            true,														// hideOnUse 
-            "",															// shortcut
-            SECTORCONTROL_FLAG_CONDITION
+            SECTORCONTROL_ACTION_FLAG call XRedText,     // Anzeigetext
+            {[_this select 0, _this select 1] call FUNC(captureFlag);},  // Skript
+            [],                                                          // Parameter fr Skript
+            999,                                                         // priority
+            true,                                                        // showWindow
+            true,                                                        // hideOnUse 
+            "",                                                          // shortcut
+            SECTORCONTROL_FLAG_CONDITION,                                // condition
+            GVAR(flagDistanceToPlayer)                                   // radius
         ]
     ] remoteExecCall ["addAction", -2, true];
    
-    _x allowDamage false; 						                    // Flagge kann nicht beschdigt werden
+    _x allowDamage false;                                             // Flagge kann nicht beschdigt werden
 } foreach (GVARMAIN(csat_flags) + GVARMAIN(nato_flags));

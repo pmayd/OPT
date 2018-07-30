@@ -12,6 +12,7 @@
 - Log: Transportdistanz wird nun auch für Flugzeuge geloggt
 - Persistence: Grundgerüst hinzugefügt
 - MHQ: Alpha Version hinzugefügt
+- Sectorcontrol: Flagge kann jetzt mit einer Taste gezogen werden (default: F)
 
 ## 1.4.10
 

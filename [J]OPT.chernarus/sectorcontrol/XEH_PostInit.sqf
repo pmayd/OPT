@@ -5,10 +5,8 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
-if (isServer) then {
-    [] call FUNC(postInit);
 
-};
+[] call FUNC(postInit);
 
 // executed after briefing right to mission start
 GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
