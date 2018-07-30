@@ -19,21 +19,6 @@ To update/change the vehicle pool you have to change the data files. You can fou
 
 ## Changelog:
 
-----Version 1.04.01
-
-- neue blanko-Version mit ACE
-- neues Nachrichtensystem mit bis zu 10 Nachrichten gleichzeitig und Farbcordierung
-- neues Missionsdesign auf Komponentenbasis, 100% refactored and rewritten
-
-----Version 1.04.02
-- update nach erster testrunde mit diversen fixes
-
-----Version 1.04.03
-- basen, einheiten und module von tanoa geportet und angeordnet
-- ace module erneut konfiguriert und überprüft (muss aber nochma mit den cba settings abgeglichen werden, gab schon wieder veraltete module)
-- kartenumbauten von kallek und oppa eingefügt (als eigene layer etc)
-- setflagposition.sqf aktualisiert mit den flaggenposis der kampagnenkarte
-- kaufliste geupdated (allerdings nur sachen zunächst rausgenommen per 0 setzen)
-- todo (neu): teleportscript marinebasis
+[Changelog](https://github.com/Jamesadamar/OPT/blob/master/CHANGELOG.md)
 
 
