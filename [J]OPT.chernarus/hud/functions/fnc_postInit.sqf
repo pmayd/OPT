@@ -21,7 +21,7 @@
 [
     "OPT", 
     QGVAR(cba_toggle_hud), 
-    ["Toggle HUD", "Blendet das HUD am unteren Bildschirmrand ein und aus"], 
+    ["HUD ein-/ausblenden", "Blendet das HUD am unteren Bildschirmrand ein und aus"], 
     {
         [] call FUNC(toggleHUD);
     }, 

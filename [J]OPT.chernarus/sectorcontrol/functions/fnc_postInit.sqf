@@ -34,7 +34,7 @@ if (hasInterface) then {
     [
         "OPT", 
         QGVAR(cba_capture_flag), 
-        ["Capture Flag", "Flagge ziehen, wenn anvisiert."], 
+        ["Flagge ziehen", "Flagge ziehen, wenn anvisiert."], 
         {
             if (
                 cursorObject in (GVARMAIN(nato_flags) + GVARMAIN(csat_flags)) and
