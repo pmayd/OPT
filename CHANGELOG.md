@@ -8,6 +8,7 @@
 - Letzte Änderungen an allen Komponenten zum Austausch von CBA Eventhandlersystem durch remoteExec
 - MHQ: Bugfix: Aufbau-Message wird nicht mehr global angezeigt
 - Fieldrepair: Funktioniert wieder für alle gespawnten Fahrzeuge. Umstieg von servercall auf clientcall
+- Sectorcontrol: Bugfix: HL kann keine Feindflagge mehr wählen
 
 ### Mission
 

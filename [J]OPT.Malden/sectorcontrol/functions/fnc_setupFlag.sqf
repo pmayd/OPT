@@ -72,7 +72,7 @@ Sowie Actionmeneintrag fuer Spieler
             SECTORCONTROL_FLAG_CONDITION,                                // condition
             GVAR(flagDistanceToPlayer)                                   // radius
         ]
-    ] remoteExecCall ["addAction", -2, true];
+    ] remoteExecCall ["addAction", 0, true];
    
     _x allowDamage false;                                             // Flagge kann nicht beschdigt werden
 } foreach (GVARMAIN(csat_flags) + GVARMAIN(nato_flags));
