@@ -1,3 +1,3 @@
 #define MAJOR 4
-#define MINOR 11
-#define BUILD 3
+#define MINOR 12
+#define BUILD 1
