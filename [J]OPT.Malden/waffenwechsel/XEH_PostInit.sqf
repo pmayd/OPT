@@ -6,3 +6,5 @@
 */
 
 if (!GVAR(on)) exitWith{};
+
+[] call FUNC(postInit);

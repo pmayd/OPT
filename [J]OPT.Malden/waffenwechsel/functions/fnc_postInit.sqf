@@ -22,7 +22,7 @@ if (hasInterface) then {
     [
         "OPT", 
         QGVAR(cba_open_waffenwechsel_dialog), 
-        ["Open Waffenwechsel Dialog", "Öffnet den Waffenwechsel-Dialog im Fahnenbereich."], 
+        ["Waffenwechsel-Dialog öffnen", "Öffnet den Waffenwechsel-Dialog im Fahnenbereich."], 
         {
             private _triggerUnits = (list csat_trigger_Waffenwechsel1) + (list nato_trigger_Waffenwechsel1) + (list csat_trigger_Waffenwechsel2) + (list nato_trigger_Waffenwechsel2);
             if (player isEqualTo assignedDriver vehicle player and (vehicle player in _triggerUnits)) then {
