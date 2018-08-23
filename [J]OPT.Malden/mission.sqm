@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8235.2871,53.771626,9945.8945};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={5884.9263,154.19867,8643.3389};
+		dir[]={-0.010438329,-0.49167171,0.87071919};
+		up[]={-0.005893826,0.87077987,0.49163666};
+		aside[]={0.99992859,1.8144419e-010,0.011987309};
 	};
 };
 binarizationWanted=0;
@@ -17599,7 +17599,7 @@ class Mission
 							};
 							id=59;
 							type="Land_InfoStand_V1_F";
-							atlOffset=0.011074066;
+							atlOffset=0.12999916;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18202,7 +18202,7 @@ class Mission
 						};
 					};
 					id=46;
-					atlOffset=-144.17686;
+					atlOffset=-144.17685;
 				};
 				class Item2
 				{
@@ -19169,7 +19169,7 @@ class Mission
 					{
 						name="csat_trigger_Waffenwechsel1";
 						text="Trigger für Waffenwechsel-Dialog";
-						condition="call{this && vehicle player in thislist && (driver vehicle player) == player}";
+						condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
 						onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
 						sizeA=7;
 						sizeB=7;
@@ -19184,13 +19184,13 @@ class Mission
 				class Item15
 				{
 					dataType="Trigger";
-					position[]={8285.2275,28.829248,10028.722};
-					angle=2.8358333;
+					position[]={8285.2275,28.828794,10028.722};
+					angle=2.8358285;
 					class Attributes
 					{
 						name="csat_trigger_Waffenwechsel2";
 						text="Trigger für Waffenwechsel-Dialog";
-						condition="call{this && vehicle player in thislist && (driver vehicle player) == player}";
+						condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
 						onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
 						sizeA=7;
 						sizeB=7;
@@ -19200,7 +19200,7 @@ class Mission
 					};
 					id=407;
 					type="EmptyDetectorAreaR50";
-					atlOffset=-0.035547256;
+					atlOffset=-0.036001205;
 				};
 				class Item16
 				{
@@ -25862,13 +25862,13 @@ class Mission
 				class Item13
 				{
 					dataType="Trigger";
-					position[]={5882.8789,130.375,8626.9404};
-					angle=4.2793455;
+					position[]={5882.8789,130.37495,8626.9404};
+					angle=4.2793379;
 					class Attributes
 					{
 						name="nato_trigger_Waffenwechsel1";
 						text="Trigger für Waffenwechsel-Dialog";
-						condition="call{this && vehicle player in thislist && (driver vehicle player) == player}";
+						condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
 						onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
 						sizeA=7;
 						sizeB=7;
@@ -25879,18 +25879,18 @@ class Mission
 					};
 					id=406;
 					type="EmptyDetectorAreaR50";
-					atlOffset=0.95204163;
+					atlOffset=0.95199585;
 				};
 				class Item14
 				{
 					dataType="Trigger";
-					position[]={5880.7573,128.87,8723.7061};
-					angle=4.3190365;
+					position[]={5880.7568,128.87,8723.7061};
+					angle=4.3190436;
 					class Attributes
 					{
 						name="nato_trigger_Waffenwechsel2";
 						text="Trigger für Waffenwechsel-Dialog";
-						condition="call{this && vehicle player in thislist && (driver vehicle player) == player}";
+						condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
 						onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent; Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
 						sizeA=7;
 						sizeB=7;
@@ -27242,7 +27242,7 @@ class Mission
 			};
 			id=332;
 			type="ModuleOrdnance_F";
-			atlOffset=0.37547302;
+			atlOffset=0.00012207031;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27276,6 +27276,7 @@ class Mission
 			};
 			id=334;
 			type="ModuleOrdnance_F";
+			atlOffset=1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27309,7 +27310,7 @@ class Mission
 			};
 			id=335;
 			type="ModuleOrdnance_F";
-			atlOffset=2.2888184e-005;
+			atlOffset=0.00015258789;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27343,6 +27344,7 @@ class Mission
 			};
 			id=336;
 			type="ModuleOrdnance_F";
+			atlOffset=6.1035156e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27376,7 +27378,7 @@ class Mission
 			};
 			id=337;
 			type="ModuleOrdnance_F";
-			atlOffset=8.392334e-005;
+			atlOffset=0.00010681152;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27515,6 +27517,7 @@ class Mission
 			};
 			id=343;
 			type="ModuleOrdnance_F";
+			atlOffset=6.1035156e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27606,7 +27609,7 @@ class Mission
 			};
 			id=348;
 			type="ModuleOrdnance_F";
-			atlOffset=0.041267395;
+			atlOffset=0.041397095;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27640,7 +27643,6 @@ class Mission
 			};
 			id=349;
 			type="ModuleOrdnance_F";
-			atlOffset=4.1644287;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27674,7 +27676,7 @@ class Mission
 			};
 			id=351;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00022888184;
+			atlOffset=0.00029754639;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27727,7 +27729,7 @@ class Mission
 			};
 			id=355;
 			type="ModuleOrdnance_F";
-			atlOffset=0.6713028;
+			atlOffset=0.67123413;
 			class CustomAttributes
 			{
 				class Attribute0

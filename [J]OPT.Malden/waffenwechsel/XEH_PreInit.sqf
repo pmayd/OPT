@@ -12,4 +12,3 @@ ADDON = true;
 [] call FUNC(initCBASettings);
 
 [] call FUNC(waffenconfig);
-[] call FUNC(preInit);

@@ -36,7 +36,7 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ] remoteExecCall ["addAction", -2, true];
+                ] remoteExecCall ["addAction", 0, true];
 
             };
             case east: {                
@@ -52,7 +52,7 @@
                         "", 
                         '((_target distance player) < 3) and vehicle player == player'
                     ]
-                ] remoteExecCall ["addAction", -2, true];
+                ] remoteExecCall ["addAction", 0, true];
 
             };
             default {};

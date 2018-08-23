@@ -14,12 +14,3 @@ GVAR(spawnInProgress) = false;
 [] call FUNC(initCBASettings);
 
 [] call FUNC(setupVehiclePool);
-
-if (isServer) then {
-    [] call FUNC(initServerCBAEvents);
-
-};
-
-if (hasInterface) then {
-    [] call FUNC(initPlayerCBAEvents);
-};
