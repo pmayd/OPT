@@ -6,10 +6,13 @@
 
 - Waffenwechsel: Neue Komponente hinzugefügt. Aufruf via Taste CBA Keyhandler, default "F3" (selbst wählen beim ersten Mal!).
 - Letzte Änderungen an allen Komponenten zum Austausch von CBA Eventhandlersystem durch remoteExec
+- MHQ: Bugfix: Aufbau-Message wird nicht mehr global angezeigt
+- Fieldrepair: Funktioniert wieder für alle gespawnten Fahrzeuge. Umstieg von servercall auf clientcall
 
 ### Mission
 
 - Waffenwechsel: Neue Trigger für Dialogöffnen hinzugefügt
+- Ab sofort werden alle CBA Settings in der mission.sqm gespeichert, sonst kein JIP sicher!
 
 ## 1.4.11
 

@@ -16,7 +16,7 @@
 
 // setzt ACE cargo settings für jedes Fahrzeug
 ["LandVehicle", "init", {
-	params ["_vec"];
+    params ["_vec"];
     
     [_vec] call FUNC(initCargo); // global effect
     [_vec] call FUNC(initDragging);
@@ -43,7 +43,7 @@
 
 // setzt ACE cargo settings für jede Kiste
 ["Thing", "init", {
-	params ["_item"];
+    params ["_item"];
 
     [_item] call FUNC(initCargo);
     [_item] call FUNC(initDragging);

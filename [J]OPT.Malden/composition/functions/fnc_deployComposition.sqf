@@ -50,7 +50,7 @@ private _flatPos = (getPosASL _centerObj) isFlatEmpty [
 if (count _flatPos isEqualTo 0) exitWith {
     private _message = COMPOSITION_DEPLOY_ERROR_MESSAGE(_radius);
     
-    [QEGVAR(gui,message), ["Aufbau", _message, "red"]] call CBA_fnc_localEvent;
+    ["Aufbau", _message, "red"] call EFUNC(gui,message);
     
     _retVal
 };

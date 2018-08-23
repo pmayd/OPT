@@ -7,6 +7,6 @@
 
 if (!GVAR(on)) exitWith{};
 
-if (isServer) then {
+if (hasInterface) then {
     [] call FUNC(initCBAClassEvents);
 };
