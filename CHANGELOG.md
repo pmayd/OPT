@@ -1,5 +1,16 @@
 ﻿# Changelog
 
+## 1.4.12
+
+### Skript
+
+- Waffenwechsel: Neue Komponente hinzugefügt. Aufruf via Taste CBA Keyhandler, default "F3" (selbst wählen beim ersten Mal!).
+- Letzte Änderungen an allen Komponenten zum Austausch von CBA Eventhandlersystem durch remoteExec
+
+### Mission
+
+- Waffenwechsel: Neue Trigger für Dialogöffnen hinzugefügt
+
 ## 1.4.11
 
 ### Skript
