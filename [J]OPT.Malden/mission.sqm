@@ -12,7 +12,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=655;
+		nextID=676;
 	};
 	class Camera
 	{
@@ -3202,7 +3202,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -3247,7 +3247,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -3337,7 +3337,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -25885,7 +25885,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={5880.7568,128.87,8723.7061};
-					angle=4.3190436;
+					angle=4.3190432;
 					class Attributes
 					{
 						name="nato_trigger_Waffenwechsel2";
@@ -27242,7 +27242,7 @@ class Mission
 			};
 			id=332;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00012207031;
+			atlOffset=0.00022125244;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27276,7 +27276,7 @@ class Mission
 			};
 			id=334;
 			type="ModuleOrdnance_F";
-			atlOffset=1.5258789e-005;
+			atlOffset=0.49946594;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27310,7 +27310,7 @@ class Mission
 			};
 			id=335;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00015258789;
+			atlOffset=0.00025177002;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27344,7 +27344,7 @@ class Mission
 			};
 			id=336;
 			type="ModuleOrdnance_F";
-			atlOffset=6.1035156e-005;
+			atlOffset=7.6293945e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27378,7 +27378,7 @@ class Mission
 			};
 			id=337;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00010681152;
+			atlOffset=4.5776367e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27517,7 +27517,7 @@ class Mission
 			};
 			id=343;
 			type="ModuleOrdnance_F";
-			atlOffset=6.1035156e-005;
+			atlOffset=7.6293945e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27609,7 +27609,7 @@ class Mission
 			};
 			id=348;
 			type="ModuleOrdnance_F";
-			atlOffset=0.041397095;
+			atlOffset=0.041412354;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27643,6 +27643,7 @@ class Mission
 			};
 			id=349;
 			type="ModuleOrdnance_F";
+			atlOffset=1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27729,7 +27730,7 @@ class Mission
 			};
 			id=355;
 			type="ModuleOrdnance_F";
-			atlOffset=0.67123413;
+			atlOffset=0.67115784;
 			class CustomAttributes
 			{
 				class Attribute0
