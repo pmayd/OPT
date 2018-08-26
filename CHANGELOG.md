@@ -9,6 +9,7 @@
 - MHQ: Bugfix: Aufbau-Message wird nicht mehr global angezeigt
 - Fieldrepair: Funktioniert wieder für alle gespawnten Fahrzeuge. Umstieg von servercall auf clientcall
 - Sectorcontrol: Bugfix: HL kann keine Feindflagge mehr wählen
+- Beam: Abschalten der Komponente erlaubt noch Beamen zu Orten mit Level -1 (Marinebasen)
 
 ### Mission
 

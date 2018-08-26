@@ -1,6 +1,6 @@
 /**
 * Author: James
-* check if there is already an object in the handsHit at the same position
+* check if there is already an object in the hash at the same position
 *
 * Arguments:
 * 0: <OBJECT> object to add to hash
