@@ -10,6 +10,7 @@
 - Fieldrepair: Funktioniert wieder für alle gespawnten Fahrzeuge. Umstieg von servercall auf clientcall
 - Sectorcontrol: Bugfix: HL kann keine Feindflagge mehr wählen
 - Beam: Abschalten der Komponente erlaubt noch Beamen zu Orten mit Level -1 (Marinebasen)
+- Waffenwechsel: Ich habe das Modul etwas umgeschrieben , damit du alles in der fnc_waffenconfig.sqf einstellen kann. du brauchst nicht mehr in der fnc_onLoadDialog.sqf was bearbeiten. Das müssen wir erster machen wenn sich gurndlegen etwas ändert oder neue Fahrzeuge hinzugefügt werden müssen. Die Boxen werden nun dynamisch beschrifte, so das man weis was es für eine box ist. Die Textmeldung ist jetzt wieder lokal und die Offiziere bekommt es Extra Meldung wer was gekauft hat. Und ich habe eine möglichen Fehler durch die Umstellung von James behoben , das das Geld nicht abgezogen wird. Das muss noch mal auf dem Server getestet werden zu Sicherheit. 
 
 ### Mission
 

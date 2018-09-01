@@ -1,6 +1,6 @@
-﻿#include "script_component.hpp"
+#include "script_component.hpp"
 
-private ["_pad","_veh","_fcDialog","_Fahrzeugbild","_Fahrzeugname","_Fbild","_Magazinveh","_weaponsveh","_Magazinfilter","_Magazinfilter2","_Magazinvehpylon","_Magazinvehpylonarry","_anzahlMagazinveh","_MuniKugel","_MuniRakete","_bild","_MuniBild1","_MuniBild2","_MuniBild3","_MuniBild4","_MuniBild5","_MuniBild6","_Fname","_Objket","_typveh","_boxarry","_anzahlboxarry","_side","_bewaffnungpreis","_Magazinveharry","_Magazinveharrynew","_draht","_tranung","_datalink","_pylon","_wert","_magazin","_weapon","_kontrolle","_buykontrolle","_buyrakmagazine","_buyrakweapon","_buygunmagazine","_buygunweapon","_buyDraht","_buyTarnung","_buyDatalink"];
+private ["_pad","_veh","_fcDialog","_Fahrzeugbild","_Fahrzeugname","_Fbild","_Magazinveh","_weaponsveh","_Magazinfilter","_Magazinfilter2","_Magazinvehpylon","_Magazinvehpylonarry","_anzahlMagazinveh","_MuniKugel","_MuniRakete","_bild","_MuniBild1","_MuniBild2","_MuniBild3","_MuniBild4","_MuniBild5","_MuniBild6","_Fname","_Objket","_typveh","_boxarry","_anzahlboxarry","_side","_bewaffnungpreis","_Magazinveharry","_Magazinveharrynew","_draht","_tranung","_datalink","_pylon","_Boxnamen","_wert","_magazin","_weapon","_kontrolle","_buykontrolle","_buyrakmagazine","_buyrakweapon","_buygunmagazine","_buygunweapon","_buyDraht","_buyTarnung","_buyDatalink"];
 
 disableSerialization;
 
@@ -44,36 +44,44 @@ _typveh="";
 _boxarry=[];
 _side=civilian;
 _pylon=[];
+_Boxnamen =[];
 
-switch (_typveh) do 
-{
-    case "OPT_B_Heli_Light_01_armed_F_un": {_boxarry = GVAR(Pawnee);_side=west;_pylon=["pylonleft1","pylonright1"];};
-    case "OPT_B_Heli_Attack_01_F_un": {_boxarry = GVAR(Blackfoot);_side=west;_pylon=["pylonleft1","pylonleft3","pylonright1","pylonright3"];};
-	case "OPT_B_MRAP_01_hmg_F_un": {_boxarry = GVAR(HunterHMG);_side=west;_pylon=[];};
-	case "OPT_B_MRAP_01_gmg_F_un": {_boxarry = GVAR(HunterGMG);_side=west;_pylon=[];};
-	case "OPT_B_T_LSV_01_armed_F_un": {_boxarry = GVAR(ProwlerHMG);_side=west;_pylon=[];};
-	case "OPT_B_T_LSV_01_AT_F_un": {_boxarry = GVAR(ProwlerAT);_side=west;_pylon=[];};
-	case "OPT_B_APC_Tracked_01_rcws_F_un": {_boxarry = GVAR(Panther);_side=west;_pylon=[];};
-	case "OPT_B_APC_Wheeled_01_cannon_F_un": {_boxarry = GVAR(Marshall);_side=west;_pylon=[];};
-	case "OPT_B_APC_tracked_03_cannon_F_un": {_boxarry = GVAR(Mora);_side=west;_pylon=[];};
-	case "OPT_B_APC_Tracked_01_AA_F_un": {_boxarry = GVAR(Cheetah);_side=west;_pylon=[];};
-	case "OPT_B_MBT_01_TUSK_F_un": {_boxarry = GVAR(SlammerUp);_side=west;_pylon=[];};	
-	
-	case "OPT_O_Heli_Light_02_F_un": {_boxarry = GVAR(Orca);_side=east;_pylon=["pylonleft1","pylonright1"];};
-	case "OPT_O_Heli_Light_03_F_un": {_boxarry = GVAR(hellcat);_side=east;_pylon=["pylonleft1","pylonright1"];};
-	case "OPT_O_Heli_Attack_02_F_un": {_boxarry = GVAR(Kajman);_side=east;_pylon=["pylonleft1","pylonleft2","pylonright1","pylonright2"];};	
-	case "OPT_O_MRAP_02_hmg_F_un": {_boxarry = GVAR(irifHMG);_side=east;_pylon=[];};
-	case "OPT_O_MRAP_02_gmg_F_un": {_boxarry = GVAR(irifGMG);_side=east;_pylon=[];};
-	case "OPT_O_T_LSV_02_armed_F_un": {_boxarry = GVAR(QuilinHMG);_side=east;_pylon=[];};
-	case "OPT_O_T_LSV_02_AT_F_un": {_boxarry = GVAR(QuilinAT);_side=east;_pylon=[];};
-	case "OPT_O_APC_Wheeled_02_rcws_F_un": {_boxarry = GVAR(Marid);_side=east;_pylon=[];};
-	case "OPT_O_APC_Wheeled_03_cannon_F_un": {_boxarry = GVAR(Gorgon);_side=east;_pylon=[];};
-	case "OPT_O_APC_Tracked_02_cannon_F_un": {_boxarry = GVAR(Kamysh);_side=east;_pylon=[];};
-	case "OPT_O_APC_Tracked_02_AA_F_un": {_boxarry = GVAR(Tigris);_side=east;_pylon=[];};	
-	case "OPT_O_MBT_02_cannon_F_un": {_boxarry = GVAR(Varsuk);_side=east;_pylon=[];};
-	
-    default {_boxarry = [];_side=civilian;};
-};
+if (_typveh in (GVAR(vehclasswestWW)+GVAR(vehclasseastWW))) then 
+	{
+		switch (_typveh) do 
+		{
+			case "OPT_B_Heli_Light_01_armed_F_un": {_boxarry = GVAR(Pawnee);_side=west;_pylon=["pylonleft1","pylonright1"];};
+			case "OPT_B_Heli_Attack_01_F_un": {_boxarry = GVAR(Blackfoot);_side=west;_pylon=["pylonleft1","pylonleft3","pylonright1","pylonright3"];};
+			case "OPT_B_MRAP_01_hmg_F_un": {_boxarry = GVAR(HunterHMG);_side=west;_pylon=[];};
+			case "OPT_B_MRAP_01_gmg_F_un": {_boxarry = GVAR(HunterGMG);_side=west;_pylon=[];};
+			case "OPT_B_T_LSV_01_armed_F_un": {_boxarry = GVAR(ProwlerHMG);_side=west;_pylon=[];};
+			case "OPT_B_T_LSV_01_AT_F_un": {_boxarry = GVAR(ProwlerAT);_side=west;_pylon=[];};
+			case "OPT_B_APC_Tracked_01_rcws_F_un": {_boxarry = GVAR(Panther);_side=west;_pylon=[];};
+			case "OPT_B_APC_Wheeled_01_cannon_F_un": {_boxarry = GVAR(Marshall);_side=west;_pylon=[];};
+			case "OPT_B_APC_tracked_03_cannon_F_un": {_boxarry = GVAR(Mora);_side=west;_pylon=[];};
+			case "OPT_B_APC_Tracked_01_AA_F_un": {_boxarry = GVAR(Cheetah);_side=west;_pylon=[];};
+			case "OPT_B_MBT_01_TUSK_F_un": {_boxarry = GVAR(SlammerUp);_side=west;_pylon=[];};	
+			
+			case "OPT_O_Heli_Light_02_F_un": {_boxarry = GVAR(Orca);_side=east;_pylon=["pylonleft1","pylonright1"];};
+			case "OPT_O_Heli_Light_03_F_un": {_boxarry = GVAR(hellcat);_side=east;_pylon=["pylonleft1","pylonright1"];};
+			case "OPT_O_Heli_Attack_02_F_un": {_boxarry = GVAR(Kajman);_side=east;_pylon=["pylonleft1","pylonleft2","pylonright1","pylonright2"];};	
+			case "OPT_O_MRAP_02_hmg_F_un": {_boxarry = GVAR(irifHMG);_side=east;_pylon=[];};
+			case "OPT_O_MRAP_02_gmg_F_un": {_boxarry = GVAR(irifGMG);_side=east;_pylon=[];};
+			case "OPT_O_T_LSV_02_armed_F_un": {_boxarry = GVAR(QuilinHMG);_side=east;_pylon=[];};
+			case "OPT_O_T_LSV_02_AT_F_un": {_boxarry = GVAR(QuilinAT);_side=east;_pylon=[];};
+			case "OPT_O_APC_Wheeled_02_rcws_F_un": {_boxarry = GVAR(Marid);_side=east;_pylon=[];};
+			case "OPT_O_APC_Wheeled_03_cannon_F_un": {_boxarry = GVAR(Gorgon);_side=east;_pylon=[];};
+			case "OPT_O_APC_Tracked_02_cannon_F_un": {_boxarry = GVAR(Kamysh);_side=east;_pylon=[];};
+			case "OPT_O_APC_Tracked_02_AA_F_un": {_boxarry = GVAR(Tigris);_side=east;_pylon=[];};	
+			case "OPT_O_MBT_02_cannon_F_un": {_boxarry = GVAR(Varsuk);_side=east;_pylon=[];};
+			
+			default {_boxarry = [];_side=civilian;};
+		};
+	}
+else
+	{
+	_boxarry = [];_side=civilian;
+	};
 
 //Festellung Bewaffnung
 
@@ -184,6 +192,7 @@ if (_side == civilian) then
 	//Box7 füllen
 	_index = lbAdd [10016,format ["Datalink $%1",GVAR(PreisDatalink)]];	
 	_index = lbAdd [10016,"Leer"];	
+	ctrlSetText [10043, "Datalink"];
 	}
 else
 	{
@@ -283,6 +292,8 @@ else
 						} forEach (_boxarry Select 1);
 						_index = lbAdd [10010,"Leer"];	
 						_index = lbAdd [10011,"Leer"];	
+						ctrlSetText [10037, "Magazin Gun"];
+						ctrlSetText [10038, "Magazin Gun"];
 					}
 			else
 					{
@@ -294,6 +305,8 @@ else
 						} forEach (_boxarry Select 1);
 						_index = lbAdd [10010,"Leer"];	
 						_index = lbAdd [10011,"Leer"];
+						ctrlSetText [10037, "Magazin Gun"];
+						ctrlSetText [10038, "Magazin Gun"];
 						
 					};
 		
@@ -308,6 +321,8 @@ else
 						} forEach (_boxarry Select 0);
 						_index = lbAdd [10012,"Leer"];	
 						_index = lbAdd [10013,"Leer"];
+						ctrlSetText [10039, "Magazin Raketen"];
+						ctrlSetText [10040, "Magazin Raketen"];
 					}
 				else
 					{
@@ -319,6 +334,8 @@ else
 						} forEach (_boxarry Select 0);
 						_index = lbAdd [10012,"Leer"];	
 						_index = lbAdd [10013,"Leer"];
+						ctrlSetText [10039, "Magazin Raketen"];
+						ctrlSetText [10040, "Magazin Raketen"];
 					};	
 					
 			//Box5+6
@@ -334,6 +351,8 @@ else
 						} forEach (_boxarry Select 0);
 						_index = lbAdd [10014,"Leer"];	
 						_index = lbAdd [10015,"Leer"];
+						ctrlSetText [10041, "Magazin Raketen"];
+						ctrlSetText [10042, "Magazin Raketen"];
 					}
 				else
 					{
@@ -345,6 +364,8 @@ else
 						} forEach (_boxarry Select 0);
 						_index = lbAdd [10014,"Leer"];	
 						_index = lbAdd [10015,"Leer"];
+						ctrlSetText [10041, "Magazin Raketen"];
+						ctrlSetText [10042, "Magazin Raketen"];
 					};
 			};	
 		}
@@ -361,6 +382,8 @@ else
 						} forEach (_boxarry Select 1);
 						_index = lbAdd [10010,"Leer"];	
 						_index = lbAdd [10011,"Leer"];
+						ctrlSetText [10037, "Magazin Gun"];
+						ctrlSetText [10038, "Magazin Gun"];
 					}
 			else
 					{
@@ -372,6 +395,8 @@ else
 						} forEach (_boxarry Select 1);
 						_index = lbAdd [10010,"Leer"];	
 						_index = lbAdd [10011,"Leer"];
+						ctrlSetText [10037, "Magazin Gun"];
+						ctrlSetText [10038, "Magazin Gun"];
 						
 					};
 			//Box3+4
@@ -385,6 +410,8 @@ else
 						} forEach (_boxarry Select 1);
 						_index = lbAdd [10012,"Leer"];	
 						_index = lbAdd [10013,"Leer"];
+						ctrlSetText [10039, "Magazin Gun"];
+						ctrlSetText [10040, "Magazin Gun"];
 					}
 			else
 					{
@@ -396,19 +423,23 @@ else
 						} forEach (_boxarry Select 1);
 						_index = lbAdd [10012,"Leer"];	
 						_index = lbAdd [10013,"Leer"];
+						ctrlSetText [10039, "Magazin Gun"];
+						ctrlSetText [10040, "Magazin Gun"];
 						
 					};
 			//Box5			
 			if (_draht > 0) then 
 			{	
 			_index = lbAdd [10014, format ["Drahtkäfig $%1",GVAR(PreisDrahtkafig)]];
-			_index = lbAdd [10014,"Leer"];	
+			_index = lbAdd [10014,"Leer"];
+			ctrlSetText [10041, "Drahtkäfig"];	
 			};
 			//Box6			
 			if (_tranung > 0) then 
 			{
 			_index = lbAdd [10015,format ["Tarnung $%1",GVAR(PreisTranung)]];
 			_index = lbAdd [10015,"Leer"];	
+			ctrlSetText [10042, "Tranung"];
 			};		
 		};
 	
@@ -417,6 +448,7 @@ else
 		{
 		_index = lbAdd [10016,format ["Datalink $%1",GVAR(PreisDatalink)]];	
 		_index = lbAdd [10016,"Leer"];	
+		ctrlSetText [10043, "Datalink"];
 		};	
 	};		
 	
@@ -875,11 +907,14 @@ if (OPTWWbuygo == 1) then
 			_veh setVehicleReportRemoteTargets true;
 			_veh setVehicleReceiveRemoteTargets true;					
 		
-			[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _Fname, _wert, "-"]] call CBA_fnc_serverEvent;
-			private _txt = format["%1 ausgerüstet für %2 €.", _Fname, _wert];
-			["Entwaffnen", _txt, "green"] remoteExec [QEFUNC(gui,message), Playerside, false];
-		
+			//[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _Fname, _wert, "-"]] call CBA_fnc_serverEvent;
 			
+			[PLAYER_NAME, PLAYER_SIDE, _Fname, _wert, "-"] call EFUNC(common,updateBudget);
+			[] remoteExecCall [QFUNC(updateBudget), Playerside, false];
+			
+			private _txt = format["%1 ausgerüstet für %2 €.", _Fname, _wert];
+			["Ausrüsten", _txt, "green"] call EFUNC(gui,message);
+								
 			};	
 		closeDialog 0;
 		}
@@ -965,15 +1000,27 @@ if (OPTWWbuygo == 1) then
 		
 		if ((_bewaffnungpreis -_wert) > 0) then 
 			{
-			[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _Fname, (_bewaffnungpreis -_wert), "+"]] call CBA_fnc_serverEvent;
+			//[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _Fname, (_bewaffnungpreis -_wert), "+"]] call CBA_fnc_serverEvent;
+			
+			[PLAYER_NAME, PLAYER_SIDE, _Fname, (_bewaffnungpreis -_wert), "+"] call EFUNC(common,updateBudget);
+			[] remoteExecCall [QFUNC(updateBudget), Playerside, false];
+			
 			private _txt = format["%1 ausgerüstet, Gutschrift %2 €.", _Fname, (_bewaffnungpreis -_wert)];
-			["Entwaffnen", _txt, "green"] remoteExec [QEFUNC(gui,message), _side, false];
+			["Ausrüsten", _txt, "green"] call EFUNC(gui,message);
+		
+			[[[name player,_wert,_txt] call FUNC(cbatext)]]remoteExec ["", Playerside, false];
 			}
 		else	
 			{
-			[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _Fname, ((_bewaffnungpreis -_wert)*-1), "-"]] call CBA_fnc_serverEvent;
+			//[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _Fname, ((_bewaffnungpreis -_wert)*-1), "-"]] call CBA_fnc_serverEvent;
+			
+			[PLAYER_NAME, PLAYER_SIDE, _Fname, ((_bewaffnungpreis -_wert)*-1), "-"] call EFUNC(common,updateBudget);
+			[] remoteExecCall [QFUNC(updateBudget), Playerside, false];
+			
 			private _txt = format["%1 ausgerüstet für %2 €.", _Fname, (_bewaffnungpreis -_wert)];
-			["Entwaffnen", _txt, "green"] remoteExec [QEFUNC(gui,message), _side, false];
+			["Ausrüsten", _txt, "green"] call EFUNC(gui,message);
+						
+			[[[name player,_wert,_txt] call FUNC(cbatext)]]remoteExec ["", Playerside, false];
 			};	
 		
 		closeDialog 0;
@@ -996,11 +1043,14 @@ if (OPTWWlostgo == 1) then
 			sleep 0.001;
 			};	
 		
-		[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _Fname, _bewaffnungpreis, "+"]] call CBA_fnc_serverEvent;
+		//[QEGVAR(common,updateBudget), [PLAYER_NAME, PLAYER_SIDE, _Fname, _bewaffnungpreis, "+"]] call CBA_fnc_serverEvent;
+		
+		[PLAYER_NAME, PLAYER_SIDE, _Fname, _bewaffnungpreis, "+"] call EFUNC(common,updateBudget);
+		[] remoteExecCall [QFUNC(updateBudget), Playerside, false];
+		
 		
 		private _txt = format["%1 entwaffnet für %2 €.", _Fname, _bewaffnungpreis];
-		["Entwaffnen", _txt, "green"] remoteExec [QEFUNC(gui,message), _side, false];
-
+		["Entwaffnen", _txt, "green"] call EFUNC(gui,message);
 		};
 	closeDialog 0;	
 	};

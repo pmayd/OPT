@@ -17,7 +17,7 @@ class Dialogwaffenwechseln
   };
 
   objects[] = { };
-  controls[] = { Name,Fahrzeugname,Kosten,Bild,MuniBild1,MuniBild2,MuniBild3,MuniBild4,MuniBild5,MuniBild6,boxslot1,boxslot2,boxslot3,boxslot4,boxslot5,boxslot6,boxslot7,buttonok,buttonAB,buttonEW,Munitext1,Munitext2,Munitext3,Munitext4,Munitext5,Munitext6};
+  controls[] = { Name,Fahrzeugname,Kosten,Bild,MuniBild1,MuniBild2,MuniBild3,MuniBild4,MuniBild5,MuniBild6,boxslot1,boxslot2,boxslot3,boxslot4,boxslot5,boxslot6,boxslot7,buttonok,buttonAB,buttonEW,Munitext1,Munitext2,Munitext3,Munitext4,Munitext5,Munitext6,boxtext1,boxtext2,boxtext3,boxtext4,boxtext5,boxtext6,boxtext7};
 
   class name : RSCText
   {
@@ -333,4 +333,96 @@ class Dialogwaffenwechseln
 		text = "10000";
     	default = true;
   };
+      class boxtext1 : RSCText
+  {
+		idc = 10037;
+    	style = ST_LEFT;
+		sizeEx = 0.025;
+		colorText[] = {1,1,0,1};
+     	x = 0.15;
+     	y = 0.58;
+     	w = 0.24;
+     	h = 0.02;
+		text = "";
+    	default = true;
+  };
+        class boxtext2 : RSCText
+  {
+		idc = 10038;
+    	style = ST_LEFT;
+		sizeEx = 0.025;
+		colorText[] = {1,1,0,1};
+    	x = 0.15;
+     	y = 0.68;
+     	w = 0.24;
+     	h = 0.02;
+		text = "";
+    	default = true;
+  };
+        class boxtext3 : RSCText
+  {
+		idc = 10039;
+    	style = ST_LEFT;
+		sizeEx = 0.025;
+		colorText[] = {1,1,0,1};
+    	x = 0.15;
+     	y = 0.78;
+     	w = 0.24;
+     	h = 0.02;
+		text = "";
+    	default = true;
+  };
+        class boxtext4 : RSCText
+  {
+		idc = 10040;
+    	style = ST_LEFT;
+		sizeEx = 0.025;
+		colorText[] = {1,1,0,1};
+    	x = 0.7;
+     	y = 0.58;
+     	w = 0.24;
+     	h = 0.02;
+		text = "";
+    	default = true;
+  };
+        class boxtext5 : RSCText
+  {
+		idc = 10041;
+    	style = ST_LEFT;
+		sizeEx = 0.025;
+		colorText[] = {1,1,0,1};
+    	x = 0.7;
+     	y = 0.68;
+     	w = 0.24;
+     	h = 0.02;
+		text = "";
+    	default = true;
+  };
+        class boxtext6 : RSCText
+  {
+		idc = 10042;
+    	style = ST_LEFT;
+		sizeEx = 0.025;
+		colorText[] = {1,1,0,1};
+    	x = 0.7;
+     	y = 0.78;
+     	w = 0.24;
+     	h = 0.02;
+		text = "";
+    	default = true;
+  };
+        class boxtext7 : RSCText
+  {
+		idc = 10043;
+    	style = ST_LEFT;
+		sizeEx = 0.025;
+		colorText[] = {1,1,0,1};
+    	x = 0.42;
+     	y = 0.78;
+     	w = 0.24;
+     	h = 0.02;
+		text = "";
+    	default = true;
+  };
+
 };
