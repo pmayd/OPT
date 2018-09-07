@@ -12,7 +12,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=739;
+		nextID=760;
 	};
 	class Camera
 	{
@@ -27656,7 +27656,7 @@ class Mission
 			};
 			id=332;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00024414063;
+			atlOffset=0.37547302;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27690,7 +27690,6 @@ class Mission
 			};
 			id=334;
 			type="ModuleOrdnance_F";
-			atlOffset=0.49946594;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27724,7 +27723,7 @@ class Mission
 			};
 			id=335;
 			type="ModuleOrdnance_F";
-			atlOffset=0.0002746582;
+			atlOffset=2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27791,6 +27790,7 @@ class Mission
 			};
 			id=337;
 			type="ModuleOrdnance_F";
+			atlOffset=8.392334e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28020,7 +28020,7 @@ class Mission
 			};
 			id=348;
 			type="ModuleOrdnance_F";
-			atlOffset=0.041542053;
+			atlOffset=0.041267395;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28054,7 +28054,7 @@ class Mission
 			};
 			id=349;
 			type="ModuleOrdnance_F";
-			atlOffset=0.0001449585;
+			atlOffset=4.1644287;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28088,7 +28088,7 @@ class Mission
 			};
 			id=351;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00032806396;
+			atlOffset=0.00022888184;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28141,7 +28141,7 @@ class Mission
 			};
 			id=355;
 			type="ModuleOrdnance_F";
-			atlOffset=0.67124176;
+			atlOffset=0.6713028;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28789,7 +28789,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={1708.2159,69.107254,1419.41};
-					angle=5.0139642;
+					angle=5.0139637;
 					class Attributes
 					{
 						name="csat_trigger_beam";
@@ -29600,7 +29600,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={1724.25,68.749992,1440.25};
-					angle=4.9230847;
+					angle=4.9230843;
 					class Attributes
 					{
 						name="nato_trigger_beam";

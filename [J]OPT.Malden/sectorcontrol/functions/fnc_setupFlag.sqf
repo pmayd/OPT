@@ -29,35 +29,36 @@ if (count GVARMAIN(csat_flags) == 0) then {
     publicVariable QGVARMAIN(csat_flags);
 };
 
-
-
-{
-    // erzeuge fuer jede gefundene Flagge einen Marker auf der Karte
-    if (OPT_PARAM_FLAG_MARKER) then {
-        private _markerName = format["marker_%1_%2", _x, _forEachIndex];
-        private _marker = createMarker [_markerName, getPos _x];
-        _marker setMarkerType "flag_CSAT";
-        _x setVariable [QGVAR(flagMarker), _marker, true];
-    };
-
-} foreach GVARMAIN(csat_flags);
-
-{   
-    // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
-    if (OPT_PARAM_FLAG_MARKER) then {
-        private _markerName = format["marker_%1_%2", _x, _forEachIndex];
-        private _marker = createMarker [_markerName, getPos _x];
-        _marker setMarkerType "flag_NATO";
-        _x setVariable [QGVAR(flagMarker), _marker, true];
-    };
-
-} foreach GVARMAIN(nato_flags);
-
 /*
-Fuer jede Flagge in einem Sektor: unverwundbar, Logistik-Script aus
-Sowie Actionmeneintrag fuer Spieler
+Fuer jede Flagge in einem Sektor: 
+Marker für Flag falls Marker an
+Marker für Minensperre falls Minensperre an
+unverwundbar, Logistik-Script aus sowie Actionmeneintrag fuer Spieler
 */
 {
+    // erzeuge fr jede gefundene Flagge einen Marker auf der Karte
+    if (GVAR(flagMarkerOn)) then {
+        private _markerName = format["marker_%1_%2", _x, _forEachIndex];
+        private _marker = createMarker [_markerName, getPos _x];
+
+        if (_x in GVARMAIN(csat_flags)) then {
+            _marker setMarkerType "flag_CSAT";
+        } else {
+            _marker setMarkerType "flag_NATO";
+        };
+        _x setVariable [QGVAR(flagMarker), _marker, true];
+    };
+
+    // mark free mine zone around flag
+    if (GVAR(flagFreeMineZoneMarkerOn)) then {
+        private _markerName = format["marker_%1_%2_free_mine_zone", _x, _forEachIndex];
+        private _marker = createMarker [_markerName, getPos _x];
+        _marker setMarkerShape "ELLIPSE";
+        _marker setMarkerBrush "Border";
+        _marker setMarkerColor "ColorRed";
+        _marker setMarkerAlpha 0.5;
+        _marker setMarkerSize [GVAR(flagFreeMineZoneRadius), GVAR(flagFreeMineZoneRadius)];
+    };
     
     [
         _x,
@@ -74,5 +75,6 @@ Sowie Actionmeneintrag fuer Spieler
         ]
     ] remoteExecCall ["addAction", 0, true];
    
-    _x allowDamage false;                                             // Flagge kann nicht beschdigt werden
+    _x allowDamage false;  // Flagge kann nicht beschaedigt werden
+
 } foreach (GVARMAIN(csat_flags) + GVARMAIN(nato_flags));

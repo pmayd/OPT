@@ -56,7 +56,7 @@ if (EGVAR(training,on)) then {
 };
 
 // EH für Minensperre
-if (OPT_PARAM_MINE_FREE_FLAG) then {
+if (GVAR(flagFreeMineZoneOn)) then {
 
     GVAR(eh_ace_interactMenuClosed) = ["ace_interactMenuClosed", {
         _this spawn {
@@ -76,7 +76,7 @@ if (OPT_PARAM_MINE_FREE_FLAG) then {
                 if ((typeOf _explosive) find "SatchelCharge" != -1 or (typeOf _explosive) find "DemoCharge" != -1) exitWith {};    
 
                 // only if near flag
-                if ({_explosive distance _x <= GVAR(freeFlagRadius)} count (GVARMAIN(nato_flags) + GVARMAIN(csat_flags)) == 0) exitWith {};
+                if ({_explosive distance _x <= GVAR(flagFreeMineZoneRadius)} count (GVARMAIN(nato_flags) + GVARMAIN(csat_flags)) == 0) exitWith {};
 
                 deleteVehicle _explosive;    
                 // Warnhinweis
