@@ -131,27 +131,27 @@
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVARMAIN(repair_cost), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    QGVARMAIN(repairSystem_repairCost), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "EDITBOX", // setting type
-    "Kosten für Reparatur am Reparatur-Pad", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Kosten für einmalige Reparatur am Service-Pad", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     "1000", // data for this setting: [min, max, default, number of shown trailing decimals]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];
-        GVARMAIN(repair_cost) = parseNumber _value;
+        GVARMAIN(repairSystem_repairCost) = parseNumber _value;
     }  // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVARMAIN(refuel_cost), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    QGVARMAIN(repairSystem_refuelCost), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "EDITBOX", // setting type
-    "Kosten für Auftanken am Reparatur-Pad", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Kosten für einmaliges Auftanken am Service-Pad", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     "1000", // data for this setting: [min, max, default, number of shown trailing decimals]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];
-        GVARMAIN(refuel_cost) = parseNumber _value;
+        GVARMAIN(repairSystem_refuelCost) = parseNumber _value;
     }  // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;

@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=718;
+		nextID=739;
 	};
 	class Camera
 	{
-		pos[]={5884.9263,154.19867,8643.3389};
-		dir[]={-0.010438329,-0.49167171,0.87071919};
-		up[]={-0.005893826,0.87077987,0.49163666};
-		aside[]={0.99992859,1.8144419e-010,0.011987309};
+		pos[]={5936.958,201.69463,8696.1533};
+		dir[]={-0.45056164,-0.70091897,0.55291426};
+		up[]={-0.44277507,0.71324044,0.54335833};
+		aside[]={0.7752102,-1.2745659e-007,0.63170838};
 	};
 };
 binarizationWanted=0;
@@ -85,7 +85,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=43;
+		items=36;
 		class Item0
 		{
 			className="opt_a3_characters";
@@ -127,247 +127,198 @@ class AddonsMetaData
 		};
 		class Item7
 		{
+			className="tfar_handhelds";
+			name="tfar_handhelds";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+		};
+		class Item8
+		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
-		{
-			className="ace_scopes";
-			name="ACE3 - Scopes";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
 		class Item9
-		{
-			className="ace_smallarms";
-			name="ACE3 - Small Arms";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item10
-		{
-			className="ace_ballistics";
-			name="ACE3 - Ballistics";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item11
-		{
-			className="ace_optics";
-			name="ACE3 - Optics";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item12
-		{
-			className="tfar_handhelds";
-			name="tfar_handhelds";
-			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
-		};
-		class Item13
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
-		{
-			className="ace_goggles";
-			name="ACE3 - Goggles";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item15
+		class Item10
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item16
+		class Item11
 		{
 			className="A3_Weapons_F_Exp";
 			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item12
 		{
 			className="ace_huntir";
 			name="ACE3 - HuntIR";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item18
+		class Item13
 		{
 			className="A3_Weapons_F_Orange";
 			name="Arma 3 Orange - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item14
 		{
 			className="A3_Drones_F";
 			name="Arma 3 Beta - Drones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item15
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item16
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item17
 		{
 			className="A3_Weapons_F_Tank";
 			name="Arma 3 Tank - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item18
 		{
 			className="A3_Characters_F_Tank";
 			name="Arma 3 Tank - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item19
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item20
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item21
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item22
 		{
 			className="A3_Supplies_F_Exp";
 			name="Arma 3 Apex - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item23
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item29
+		class Item24
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item30
+		class Item25
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item31
-		{
-			className="ace_hearing";
-			name="ACE3 - Hearing";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item32
-		{
-			className="ace_nightvision";
-			name="ACE3 - Night Vision";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item33
+		class Item26
 		{
 			className="ace_flashsuppressors";
 			name="ACE3 - Flash Suppressors";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item34
+		class Item27
 		{
 			className="A3_Props_F_Tank";
 			name="Arma 3 Tank - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item35
+		class Item28
 		{
 			className="A3_Structures_F_Wrecks";
 			name="Arma 3 - Vehicle Wrecks";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item36
+		class Item29
 		{
 			className="opt_a3_vehicles";
 			name="opt_a3_vehicles";
 		};
-		class Item37
+		class Item30
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item38
+		class Item31
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item32
 		{
 			className="A3_Props_F_Exp_A";
 			name="Arma 3 Nexus Update - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item40
+		class Item33
 		{
 			className="A3_Soft_F_EPC";
 			name="Arma 3 Win Episode - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item41
+		class Item34
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item42
+		class Item35
 		{
 			className="A3_Soft_F_Beta";
 			name="Arma 3 Beta - Unarmored Land Vehicles";
@@ -18033,17 +17984,17 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={8300.5977,30.434566,9987.7266};
-								angles[]={0,3.1530433,0};
+								position[]={8300.5977,28.839045,9987.7266};
+								angles[]={0,1.5707964,0};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								name="csat_repairpad";
 							};
 							id=58;
 							type="Land_HelipadSquare_F";
-							atlOffset=1.5955219;
 						};
 						class Item7
 						{
@@ -18062,7 +18013,7 @@ class Mission
 							};
 							id=59;
 							type="Land_InfoStand_V1_F";
-							atlOffset=0.011074066;
+							atlOffset=0.12999916;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18665,7 +18616,7 @@ class Mission
 						};
 					};
 					id=46;
-					atlOffset=-144.17686;
+					atlOffset=-144.17696;
 				};
 				class Item2
 				{
@@ -18837,25 +18788,25 @@ class Mission
 				class Item4
 				{
 					dataType="Trigger";
-					position[]={8300.25,30.125,9987.5};
-					angle=6.2822394;
+					position[]={8300.25,30.124601,9987.5};
+					angle=6.2822433;
 					class Attributes
 					{
 						name="trg_csat_repair";
 						text="Auslöser für Rep-Script";
-						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player && speed (vehicle player) < 0.1}";
+						condition="call{vehicle player in thislist && !(objectParent player isEqualTo objNull) && driver (vehicle player) == player}";
 						onActivation="call{nul = [true] spawn opt_mission_fnc_repairSystem;}";
-						onDeactivation="nul = [false] spawn opt_mission_fnc_repairSystem;";
-						sizeA=12;
-						sizeB=12;
-						sizeC=12;
+						onDeactivation="call{nul = [false] spawn opt_mission_fnc_repairSystem;}";
+						sizeA=10;
+						sizeB=10;
+						sizeC=10;
 						repeatable=1;
 						activationBy="EAST";
 						isRectangle=1;
 					};
 					id=131;
 					type="EmptyDetectorArea10x10";
-					atlOffset=1.2853985;
+					atlOffset=1.2849998;
 				};
 				class Item5
 				{
@@ -24660,7 +24611,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={5944,127.12769,8754.125};
-								angles[]={0,1.7642105,0};
+								angles[]={0,1.7642137,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25629,25 +25580,25 @@ class Mission
 				class Item4
 				{
 					dataType="Trigger";
-					position[]={5943.0659,127.07523,8754.7627};
-					angle=1.7708589;
+					position[]={5943.0659,127.07507,8754.7627};
+					angle=1.7708634;
 					class Attributes
 					{
 						name="trg_nato_repair";
 						text="Auslöser für Rep-Script";
-						condition="call{vehicle player in thislist && !isNull (objectParent player) && driver (vehicle player) == player && speed (vehicle player) < 0.1}";
-						onActivation="nul = [true] spawn opt_mission_fnc_repairSystem;";
-						onDeactivation="nul = [false] spawn opt_mission_fnc_repairSystem; ";
-						sizeA=12;
-						sizeB=12;
-						sizeC=12;
+						condition="call{vehicle player in thislist && !(objectParent player isEqualTo objNull) && driver (vehicle player) == player}";
+						onActivation="call{nul = [true] spawn opt_mission_fnc_repairSystem;}";
+						onDeactivation="call{nul = [false] spawn opt_mission_fnc_repairSystem; }";
+						sizeA=10;
+						sizeB=10;
+						sizeC=10;
 						repeatable=1;
 						activationBy="WEST";
 						isRectangle=1;
 					};
 					id=272;
 					type="EmptyDetectorArea10x10";
-					atlOffset=-0.10183716;
+					atlOffset=-0.10199738;
 				};
 				class Item5
 				{
@@ -27705,7 +27656,7 @@ class Mission
 			};
 			id=332;
 			type="ModuleOrdnance_F";
-			atlOffset=0.37547302;
+			atlOffset=0.00022125244;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27739,6 +27690,7 @@ class Mission
 			};
 			id=334;
 			type="ModuleOrdnance_F";
+			atlOffset=6.1035156e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27772,7 +27724,7 @@ class Mission
 			};
 			id=335;
 			type="ModuleOrdnance_F";
-			atlOffset=2.2888184e-005;
+			atlOffset=0.00025177002;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27806,6 +27758,7 @@ class Mission
 			};
 			id=336;
 			type="ModuleOrdnance_F";
+			atlOffset=0.00011444092;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27839,7 +27792,7 @@ class Mission
 			};
 			id=337;
 			type="ModuleOrdnance_F";
-			atlOffset=8.392334e-005;
+			atlOffset=0.00010681152;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27978,6 +27931,7 @@ class Mission
 			};
 			id=343;
 			type="ModuleOrdnance_F";
+			atlOffset=0.00011444092;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28069,7 +28023,7 @@ class Mission
 			};
 			id=348;
 			type="ModuleOrdnance_F";
-			atlOffset=0.041267395;
+			atlOffset=0.041526794;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28103,7 +28057,7 @@ class Mission
 			};
 			id=349;
 			type="ModuleOrdnance_F";
-			atlOffset=4.1644287;
+			atlOffset=0.00012969971;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28137,7 +28091,7 @@ class Mission
 			};
 			id=351;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00022888184;
+			atlOffset=0.00043487549;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28190,7 +28144,7 @@ class Mission
 			};
 			id=355;
 			type="ModuleOrdnance_F";
-			atlOffset=0.6713028;
+			atlOffset=0.67126465;
 			class CustomAttributes
 			{
 				class Attribute0
