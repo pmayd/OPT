@@ -1,13 +1,13 @@
 /*
-	author: 		James
-	file: 			fn_updateBudget.sqf
-	version: 		1.00
-	date: 			2017-05-20
-	purpose: 		Aktualisiert Budget Anzeige im Vehicle Order Dialog	
-	arguments: 	    none
-	return value:	none
+    author:         James
+    file:             fn_updateBudget.sqf
+    version:         1.00
+    date:             2017-05-20
+    purpose:         Aktualisiert Budget Anzeige im Vehicle Order Dialog    
+    arguments:         none
+    return value:    none
 
-	example call: 		[] execVM "fn_updateBudget.sqf"
+    example call:         [] execVM "fn_updateBudget.sqf"
 */
 #include "script_component.hpp"
 
