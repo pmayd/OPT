@@ -27,5 +27,6 @@ GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
 
     // search for all markers with unit name in it and delete them on all clients
     [_unit] call FUNC(clearMarker);
+    deleteVehicle _unit; 
 
 }];

@@ -1,6 +1,6 @@
 /**
 * Author: James
-* initialize CBA settings
+* Initialize CBA settings
 *
 * Arguments:
 * None
@@ -10,6 +10,12 @@
 *
 * Example:
 * [] call fnc_initCBASettings.sqf;
+*
+* Server only:
+* no
+*
+* Public:
+* no
 *
 */
 #include "script_component.hpp"

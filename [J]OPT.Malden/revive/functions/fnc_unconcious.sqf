@@ -26,7 +26,7 @@ FAR_bleedoutTimer = round (GVAR(bleedOut) - time);
 FAR_nearMedicMessage = "Kein Sanitäter in der Nähe";
 
 if (isPlayer _unit) then {
-	disableUserInput true;
+    disableUserInput true;
 };
 
 [] spawn FUNC(reviveCamera);
@@ -40,33 +40,33 @@ if (isPlayer _unit) then {
 
 // create marker
 if (FAR_REVIVE_DOWN_MARKER) then {
-	[_unit] remoteExecCall [QFUNC(createMarker), -2, true];
+    [_unit] remoteExecCall [QFUNC(createMarker), -2, true];
 };
 
 // Death message
 if (FAR_REVIVE_DEATH_MESSAGE) then {
-	_name = [_unit, _killer] call FUNC(showKiller);
-	if (_name != "") then {
-		[_name] spawn {
-			if (FAR_deathMassageIsShown) exitWith {};
-			FAR_deathMassageIsShown = true;
-			sleep 3.5;
-			_txt = format ["%1",(_this select 0)];
-			_print = [
-				["verwundet durch:","align = 'right' size = '0.8'","#f0bfbfbf"],				// grey
-				["","<br/>"],
-				[_txt, "align = 'right' size = '1.2' font='PuristaBold'","#f07f7f00"]	// yellow
-			];
-			[_print, safezoneX, 0.95] spawn BIS_fnc_typeText2;
-			FAR_deathMassageIsShown = false;
-		};
-	};
+    _name = [_unit, _killer] call FUNC(showKiller);
+    if (_name != "") then {
+        [_name] spawn {
+            if (FAR_deathMassageIsShown) exitWith {};
+            FAR_deathMassageIsShown = true;
+            sleep 3.5;
+            _txt = format ["%1",(_this select 0)];
+            _print = [
+                ["verwundet durch:","align = 'right' size = '0.8'","#f0bfbfbf"],                // grey
+                ["","<br/>"],
+                [_txt, "align = 'right' size = '1.2' font='PuristaBold'","#f07f7f00"]    // yellow
+            ];
+            [_print, safezoneX, 0.95] spawn BIS_fnc_typeText2;
+            FAR_deathMassageIsShown = false;
+        };
+    };
 };
-	
+    
 // Eject unit if inside vehicle
 if (vehicle _unit != _unit) then {
-	unAssignVehicle _unit;
-	_unit action ["GetOut", vehicle _unit];
+    unAssignVehicle _unit;
+    _unit action ["GetOut", vehicle _unit];
 
     sleep 1.2;
 
@@ -87,66 +87,66 @@ disableUserInput true;
 disableUserInput false;
 
 while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1} && {_unit getVariable "FAR_isStabilized" == 0} && {(FAR_REVIVE_BLEEDOUT <= 0 || time < GVAR(bleedOut))}} do {
-	if (FAR_REVIVE_CALL_NEARBY_MEDICS) then {
-	    FAR_nearMedicMessage = [] call FUNC(checkForNearbyMedics);
-	};
-	FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (GVAR(bleedOut) - time)];
-	FAR_bleedoutTimer = round (GVAR(bleedOut) - time);
-	sleep 0.5;
+    if (FAR_REVIVE_CALL_NEARBY_MEDICS) then {
+        FAR_nearMedicMessage = [] call FUNC(checkForNearbyMedics);
+    };
+    FAR_bleedoutMessage = format ["Ausgeblutet in %1 Sekunden", round (GVAR(bleedOut) - time)];
+    FAR_bleedoutTimer = round (GVAR(bleedOut) - time);
+    sleep 0.5;
 };
 
 if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
-	//Unit has been stabilized. Disregard bleedout timer and unmute player
-	//[true] call opt_addons_fnc_toggleTFAR; // Funk im stabilisierten Zustand möglich!
-			
-	while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1}} do {
-		if (FAR_REVIVE_CALL_NEARBY_MEDICS) then {
-			hintSilent format ["Du wurdest stabilisiert\n\n%1", call FUNC(checkForNearbyMedics)]
-		};
-		FAR_bleedoutMessage = "Stabilisiert";
-		FAR_bleedoutTimer = FAR_REVIVE_BLEEDOUT;
-		sleep 0.5;
-	};
+    //Unit has been stabilized. Disregard bleedout timer and unmute player
+    //[true] call opt_addons_fnc_toggleTFAR; // Funk im stabilisierten Zustand möglich!
+            
+    while {!isNull _unit && {alive _unit} && {_unit getVariable "FAR_isUnconscious" == 1}} do {
+        if (FAR_REVIVE_CALL_NEARBY_MEDICS) then {
+            hintSilent format ["Du wurdest stabilisiert\n\n%1", call FUNC(checkForNearbyMedics)]
+        };
+        FAR_bleedoutMessage = "Stabilisiert";
+        FAR_bleedoutTimer = FAR_REVIVE_BLEEDOUT;
+        sleep 0.5;
+    };
 };
 
 // Player bled out
 if (FAR_REVIVE_BLEEDOUT > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
-	//["tfar_removeMapMarker", _unit] call tcb_fnc_NetCallEvent;
-	_unit setDamage 1; // sofortiger Tod -> schließt Dialog automatisch?!
-	disableUserInput false;
-	_unit allowDamage true;
+    //["tfar_removeMapMarker", _unit] call tcb_fnc_NetCallEvent;
+    _unit setDamage 1; // sofortiger Tod -> schließt Dialog automatisch?!
+    disableUserInput false;
+    _unit allowDamage true;
 } else {
-	// Player got revived
-	_unit setVariable ["FAR_isStabilized", 0, true];
-	// remove down marker
-	[_unit] remoteExecCall [QEFUNC(removeMarker), -2, false];
-	sleep 3;
-	
-	// Clear the "medic nearby" hint
-	hintSilent "";
+    // Player got revived
+    _unit setVariable ["FAR_isStabilized", 0, true];
+    // remove down marker
+    [_unit] remoteExecCall [QFUNC(removeMarker), -2, false];
+    sleep 3;
+    
+    // Clear the "medic nearby" hint
+    hintSilent "";
 
-	// Unmute TFAR
-	[true] call FUNC(toggleTFAR);
-	
-	_unit allowDamage true;
-	_unit setFatigue 0.9;
-	//_unit playMove "amovppnemstpsraswrfldnon";
-	//_unit playMove "";
-	_unit setUnconscious false;
+    // Unmute TFAR
+    [true] call FUNC(toggleTFAR);
+    
+    _unit allowDamage true;
+    _unit setFatigue 0.9;
+    //_unit playMove "amovppnemstpsraswrfldnon";
+    //_unit playMove "";
+    _unit setUnconscious false;
 
     sleep 1;
 
     _unit action ["WeaponInHand", player];
 
-	if (dialog) then {
-		[] spawn {
-			while {dialog} do {
-				closeDialog 5566;
-				closeDialog 5651;
-				closeDialog 0;
-			};
-		};
-	};
+    if (dialog) then {
+        [] spawn {
+            while {dialog} do {
+                closeDialog 5566;
+                closeDialog 5651;
+                closeDialog 0;
+            };
+        };
+    };
 };
 
 FAR_unconsciousHandler = nil;

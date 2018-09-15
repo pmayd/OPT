@@ -28,20 +28,19 @@ params [
 if (_unit isEqualTo objNull) exitWith{diag_log format ["OPT Debug Message: Null Obj player found: %1",str(_unit)]};
 
 /* CODE BODY */
-_marker = _unit getVariable ["far_unitMarker", Nil];
+private _marker = _unit getVariable ["far_unitMarker", ""];
 
-if (!isNil "_marker") then {
-    if (_unit getVariable ["FAR_isUnconscious", 0] == 0) then {
-        deleteMarkerLocal _marker;
-        _unit setVariable ["far_unitMarker", nil];
-    };
-} else {
-    private _name = UNIT_NAME(_unit);
-    _marker = format ["FAR_marker_%1", _name];
+if (_marker isEqualTo "") then {
+    _marker = format ["FAR_marker_%1", UNIT_NAME(_unit)];
     _index = allMapMarkers find _marker;
 
     if (_index != -1) then {
-        deleteMarker _marker;
+        deleteMarkerLocal _marker;
+    };
+} else {
+   if (_unit getVariable ["FAR_isUnconscious", 0] == 0) then {
+        deleteMarkerLocal _marker;
+        _unit setVariable ["far_unitMarker", nil];
     };
 };
 

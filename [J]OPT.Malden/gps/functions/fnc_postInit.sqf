@@ -17,7 +17,7 @@
 //Modus
 GVAR(mode) = 1;
 if (typeOf player in GVARMAIN(officer) and GVAR(showAllUnits)) then {
-    GVAR(mode)=2;
+    GVAR(mode) = 2;
 };
 
 

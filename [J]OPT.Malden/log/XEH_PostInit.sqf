@@ -7,9 +7,7 @@
 
 if (isServer) then {
     [] call FUNC(initCBAClassEvents);
-
-    // init fps hash
-    GVAR(fpsHash) = HASHCREATE;
+    
 };
 
 

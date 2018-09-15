@@ -8,7 +8,9 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+/* INITIALIZE GLOBAL VARS */
 GVAR(playerList) = [];
+GVAR(fpsHash) = HASHCREATE;
 
 // CBA settings
 [] call FUNC(initCBASettings);

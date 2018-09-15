@@ -14,6 +14,8 @@
 - Service-Pad: Bugfix: Pad wieder funktionstüchtig. Neue Kosten für Repair und Refuel in den CBA Settings einstellbar. Neue Meldung, dass Motor abgestellt werden muss. Neue Prüfungen für die Aktionmenüeinträge, wird nur noch angezeigt, wenn Fahrzeug beschädigt oder nicht 100% Treibstoff.
 - Beam: Bugfix: Aufruf des Beam-Dialog nicht mehr möglich, wenn Kisten gezogen oder getragen werden
 - Sectorcontrol: Flaggen besitzen jetzt einen Marker für die Minensperrzone (per Skript)
+- GPS: Komponente sowie Skripte wurden überarbeitet. Probleme mit JIP sollten behoben sein. Performance verbessert
+- Revive: Probleme mit Down-Marker behoben. Marker sollte nicht mehr länger sichtbar sein.
 
 ### Mission
 

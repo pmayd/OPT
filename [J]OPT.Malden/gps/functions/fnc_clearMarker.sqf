@@ -8,6 +8,12 @@
 * Return Value:
 * None
 *
+* Server only:
+* no
+* 
+* Public:
+* yes
+*
 * Example:
 * [player] call fnc_clearMarker.sqf;
 *
@@ -24,7 +30,7 @@ if (_unit isEqualTo objNull) exitWith{};
 
 /* CODY BODY */
 // delete associated marker globally and reset variable
-private _marker = _unit getVariable [QGVAR(unitMarker), ""];
+private _marker = _unit getVariable [QGVAR(unitGPSMarker), ""];
 
 if (hasInterface) then {
     if !(_marker isEqualTo "") then {
@@ -32,7 +38,7 @@ if (hasInterface) then {
         deleteMarkerLocal _marker;
     };
 
-    _unit setVariable [QGVAR(unitMarker), nil];
+    _unit setVariable [QGVAR(unitGPSMarker), nil];
 };
 
 // global
@@ -42,5 +48,5 @@ if (isServer) then {
         deleteMarker _marker;
     };
 
-    _unit setVariable [QGVAR(unitMarker), nil, true];
+    _unit setVariable [QGVAR(unitGPSMarker), nil, true];
 };
