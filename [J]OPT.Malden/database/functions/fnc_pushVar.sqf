@@ -11,20 +11,30 @@
  * <NUMBER> index of inserted element
  *
  * Example:
- * ["helpMe", name player] call DMC_database_func_pushVar;
+ * ["helpMe", name player] call EFUNC(database,pushVar);
+ *
+ * Server only:
+ * yes
+ *
+ * Public:
+ * yes
+ *
+ * Global:
+ * no
  *
  */
 
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
     ["_varName", "", ["s"], 1],
     "_varContent",
     ["_appendFlag", false, [true], 1]
 ];
 
-private _qualifiedName = format["%1_%2", QUOTE(ADDON), _varName];
-private _index = -1;
+/* VALIDATION */
+if (!isServer) exitWith{};
 
 if (_varName isEqualTo "") exitWith {
     WARNING(format ["Variable name had wrong type or was empty."]);
@@ -41,11 +51,14 @@ if (_appendFlag and !IS_ARRAY(_varContent)) exitWith {
     _index;
 };
 
+private _qualifiedName = format["%1_%2", QUOTE(ADDON), _varName];
 if (!(isNil {profileNamespace getVariable _qualifiedName}) && !_overwriteFlag) exitWith {
     WARNING(format ["Variable %1 already exists in server profileNamespace", _varName]);
     _index;
 };
 
+/* CODE BODY */
+private _index = -1;
 private _oldVal = [_varName] call FUNC(getVar);
 
 if (!IS_ARRAY(_oldVal)) then {
@@ -62,6 +75,7 @@ switch (_appendFlag) do {
     };
 };
 
+// overwrite oldVal with new content
 [_varName, _oldVal, true] call FUNC(setVar);
 
 _index

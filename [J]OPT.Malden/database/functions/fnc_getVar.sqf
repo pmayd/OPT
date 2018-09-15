@@ -10,27 +10,39 @@
  * <any|nil> content of variable in profileNamespace, nil if varName does not exist
  *
  * Example:
- * ["helpMe", ""] call DMC_database_fnc_getVar;
+ * ["helpMe", ""] call EFUNC(database,getVar);
+ *
+ * Server only:
+ * yes
+ *
+ * Public:
+ * yes
+ *
+ * Global:
+ * no
  *
  */
-
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
     ["_varName", "", ["s"], 1],
     ["_default", nil, [], 1]
 ];
 
-private _qualifiedName = format["%1_%2", QUOTE(ADDON), _varName];
+/* VALIDATION */
+if (!isServer) exitWith{};
 
 if (_varName isEqualTo "") exitWith {
-    WARNING(format ["Variable name had wrong type or was empty."]);
+    WARNING("Variable name had wrong type or was empty.");
     _default;
 };
 
+private _qualifiedName = format["%1_%2", QUOTE(ADDON), _varName];
 if (isNil {profileNamespace getVariable _qualifiedName}) exitWith {
-    WARNING(format ["Variable name not in server profileNamespace"]);
+    WARNING("Variable name not in server profileNamespace");
     _default;
 };
 
+/* CODE BODY */
 profileNamespace getVariable _qualifiedName

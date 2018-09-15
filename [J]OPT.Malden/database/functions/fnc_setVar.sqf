@@ -11,18 +11,29 @@
  * <BOOL> true: value set/changed, false: else
  *
  * Example:
- * ["helpMe", "", true] call DMC_database_fnc_setVar
+ * ["helpMe", "", true] call EFUNC(database,setVar)
+ *
+ * Server only:
+ * yes
+ *
+ * Public:
+ * yes
+ *
+ * Global:
+ * no
+ *
  */
-
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
     ["_varName", "", ["s"], 1],
     "_varContent",
     ["_overwriteFlag", false, [true], 1]
 ];
 
-private _qualifiedName = format["%1_%2", QUOTE(ADDON), _varName];
+/* VALIDATION */
+if (!isServer) exitWith{};
 
 if (_varName isEqualTo "") exitWith {
     WARNING(format ["Variable name had wrong type or was empty."]);
@@ -34,11 +45,13 @@ if (isNil "_varContent") exitWith {
     false;
 };
 
-if (!(isNil {profileNamespace getVariable _qualifiedName}) && !_overwriteFlag) exitWith {
+private _qualifiedName = format["%1_%2", QUOTE(ADDON), _varName];
+if (!(isNil {profileNamespace getVariable _qualifiedName}) and !_overwriteFlag) exitWith {
     WARNING(format ["Variable %1 already exists in server profileNamespace", _varName]);
     false;
 };
 
+/* CODE BODY */
 profileNamespace setVariable [_qualifiedName, _varContent];
 
 true

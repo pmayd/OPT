@@ -11,30 +11,42 @@
  * <NUMBER> deleted elements
  *
  * Example:
- * ["helpMe", 0, true] call DMC_database_func_remVar
+ * ["helpMe", 0, true] call EFUNC(database,remVar);
+*
+ * Server only:
+ * yes
+ *
+ * Public:
+ * yes
+ *
+ * Global:
+ * no
+ *
  */
-
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
     ["_varName", "", ["s"], 1],
     "_varContent",
     ["_completeRemoveFlag", false, [true], 1]
 ];
 
-private _qualifiedName = format["%1_%2", QUOTE(ADDON), _varName];
-
-private _countDel = 0;
+/* VALIDATION */
+if (!isServer) exitWith{};
 
 if (_varName isEqualTo "") exitWith {
-    WARNING(format ["Variable name had wrong type or was empty."]);
+    WARNING("Variable name had wrong type or was empty.");
     _countDel;
 };
 
 if (isNil "_varContent") exitWith {
-    WARNING(format ["Variable content was nil."]);
+    WARNING("Variable content was nil.");
     _countDel;
 };
+
+/* CODE BODY */
+private _countDel = 0;
 
 private _oldVal = [_varName] call FUNC(getVar);
 private _newVal = [];
