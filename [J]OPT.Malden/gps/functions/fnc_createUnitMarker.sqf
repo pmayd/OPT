@@ -28,22 +28,29 @@ if (_unit isEqualTo objNull) exitWith {""};
 
 private _marker = _unit getVariable [QGVAR(unitGPSMarker), ""];
 private _side = UNIT_SIDE(_unit);
+private _name = UNIT_NAME(_unit);
 
 if (_marker isEqualTo "") then {
-    private _name = UNIT_NAME(_unit);
-
-    _marker = createMarkerLocal [format["%1_%2_%3", QGVAR(unitGPSMarker), _name, time], [0,0]];
-    _marker setMarkerTypeLocal MARKER_SYMBOL;
-    _marker setMarkerSizeLocal MARKER_SIZE;
-    _marker setMarkerAlphaLocal MARKER_ALPHA;
-    
+    private _color = "";
     if (_side == west) then {        
-        _marker setMarkerColorLocal "ColorBLUFOR";
+        _color = "ColorBLUFOR";
     };    
     if (_side == east) then {        
-        _marker setMarkerColorLocal "ColorOPFOR";
+        _color = "ColorOPFOR";
     };
-    
+
+    _marker = [
+        format["%1_%2_%3", QGVAR(unitGPSMarker), _name, time],
+        [0,0],
+        MARKER_SYMBOL,
+        "",
+        MARKER_SIZE,
+        "ICON",
+        _color,
+        "Solid",
+        MARKER_ALPHA
+    ] call EFUNC(common,createMarker);
+
     _unit setVariable [QGVAR(unitGPSMarker), _marker];
 };
 

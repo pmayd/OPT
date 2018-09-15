@@ -19,6 +19,8 @@
 * Public:
 * yes
 *
+* Global:
+* no
 */
 #include "script_component.hpp"
 

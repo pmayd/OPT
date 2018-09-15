@@ -22,12 +22,12 @@
 #include "script_component.hpp"
 
 params [
-	["_buyerName", "", [""], 1], 
-	["_side", sideUnknown, [sideUnknown], 1],
-	["_unitType", "", [""], 1],
-	["_unitCost", 0, [0], 1],
-	["_sign", "", [""], 1],
-	["_respawn", false, [true], 1]
+    ["_buyerName", "", [""], 1], 
+    ["_side", sideUnknown, [sideUnknown], 1],
+    ["_unitType", "", [""], 1],
+    ["_unitCost", 0, [0], 1],
+    ["_sign", "", [""], 1],
+    ["_respawn", false, [true], 1]
 ];
 
 if (_buyerName isEqualTo "" or _side isEqualTo sideUnknown or _unitType isEqualTo "" or _sign isEqualTo "") exitWith{};
@@ -37,43 +37,43 @@ private _message = "";
 private _budget_neu = 0;
 
 switch (_sign) do {
-	case "-": {
-			if (_side == west) then {
-				_budget_neu = GVARMAIN(nato_budget) - _unitCost;
-			} else {
-				_budget_neu = GVARMAIN(csat_budget) - _unitCost;
-			};
+    case "-": {
+            if (_side == west) then {
+                _budget_neu = GVARMAIN(nato_budget) - _unitCost;
+            } else {
+                _budget_neu = GVARMAIN(csat_budget) - _unitCost;
+            };
 
-	};
-	case "+":  {
-			if (_side == west) then {
-				_budget_neu = GVARMAIN(nato_budget) + _unitCost;
-			} else {					
-				_budget_neu = GVARMAIN(csat_budget) + _unitCost;
-			};
-			
-	};
+    };
+    case "+":  {
+            if (_side == west) then {
+                _budget_neu = GVARMAIN(nato_budget) + _unitCost;
+            } else {                    
+                _budget_neu = GVARMAIN(csat_budget) + _unitCost;
+            };
+            
+    };
 };
 
 // server log sowie Aktualisierung via publicVarialbe
 private _unitName = (getText(configFile >> 'CfgVehicles' >> _unitType >> 'displayName'));
 if (_side == west) then {
-	_message = format["NATO alt: %1 - neu: %2 - Differenz: %3%4.", GVARMAIN(nato_budget), _budget_neu, _sign, _unitCost];
+    _message = format["NATO alt: %1 - neu: %2 - Differenz: %3%4.", GVARMAIN(nato_budget), _budget_neu, _sign, _unitCost];
 
-	GVARMAIN(nato_budget) = _budget_neu;
-	publicVariable QGVARMAIN(nato_budget);
+    GVARMAIN(nato_budget) = _budget_neu;
+    publicVariable QGVARMAIN(nato_budget);
 
 } else {
-	_message = format["CSAT alt: %1 - neu: %2 - Differenz: %3%4.", GVARMAIN(csat_budget), _budget_neu, _sign, _unitCost];
-	GVARMAIN(csat_budget) = _budget_neu;
-	publicVariable QGVARMAIN(csat_budget);
+    _message = format["CSAT alt: %1 - neu: %2 - Differenz: %3%4.", GVARMAIN(csat_budget), _budget_neu, _sign, _unitCost];
+    GVARMAIN(csat_budget) = _budget_neu;
+    publicVariable QGVARMAIN(csat_budget);
 
 };
 
 if (_respawn) then {
-	_message = format["%1 Respawn von %2", _message, _buyerName];
+    _message = format["%1 Respawn von %2", _message, _buyerName];
 } else {
-	_message = format["%1 %2 (ver)kaufte %3", _message, _buyerName, _unitName];
+    _message = format["%1 %2 (ver)kaufte %3", _message, _buyerName, _unitName];
 };
 
 [_cat, _message] remoteExecCall [QEFUNC(log,write), 2, false];

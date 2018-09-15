@@ -20,11 +20,9 @@ params [
     ["_radius", 25, [1], 1]
 ];
 
-private _nearestPlayers = [];
+private _nearestPlayers = (playableUnits + switchableUnits) select
 {
-    if (isPlayer _x && _x distance2D _centerObj < _radius) then {
-        _nearestPlayers pushBack _x
-    };
-} forEach (playableUnits + switchableUnits);
+    isPlayer _x and (_x distance2D _centerObj) < _radius;
+};
 
 _nearestPlayers

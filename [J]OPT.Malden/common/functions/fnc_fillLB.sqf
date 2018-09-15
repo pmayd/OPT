@@ -1,6 +1,6 @@
 /**
 * Author: James
-* fill a listbox of a dialog with given deActivateKey
+* fill a listbox of a dialog with given keys
 *
 * Arguments:
 * 0: <IDD> idd of dialog listbox belongs to

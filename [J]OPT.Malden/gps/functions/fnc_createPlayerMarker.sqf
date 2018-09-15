@@ -17,12 +17,17 @@
 private _marker = player getVariable [QGVAR(playerGPSMarker), ""];
 
 if (_marker isEqualTo "") then {
-    private _name = profileName;
-    _marker = createMarkerLocal [format["%1_%2_%3", QGVAR(playerGPSMarker), _name, time], [0,0]];
-    _marker setMarkerTypeLocal MARKER_PLAYER_SYMBOL;
-    _marker setMarkerColorLocal MARKER_PLAYER_COLOR;
-    _marker setMarkerSizeLocal MARKER_SIZE;
-    _marker setMarkerAlphaLocal MARKER_ALPHA;
+    _marker = [
+        format["%1_%2_%3", QGVAR(playerGPSMarker), profileName, time],
+        [0,0],
+        MARKER_PLAYER_SYMBOL,
+        "",
+        MARKER_SIZE,
+        "ICON",
+        MARKER_PLAYER_COLOR,
+        "Solid",
+        MARKER_ALPHA
+    ] call EFUNC(common,createMarker);
 
     player setVariable [QGVAR(playerGPSMarker), _marker];
 };
