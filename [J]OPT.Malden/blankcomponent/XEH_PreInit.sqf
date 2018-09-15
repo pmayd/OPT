@@ -8,5 +8,8 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+/* INITIALIZE GLOBAL VARS */
+
+
 // initialize CBA Settings
 [] call FUNC(initCBASettings);
