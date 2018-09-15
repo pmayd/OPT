@@ -8,6 +8,12 @@ PREP_RECOMPILE_END;
 
 ADDON = true;
 
+/* INITIALIZE GLOBAL VARS*/
+GVAR(canTransportCargo) = []; // holds cargo definitions for all objects with cargo space
+GVAR(canBeTransported)  = []; // holds all objects that can be transported
+GVAR(canBeDragged) = []; // holds all objects that can be dragged
+GVAR(canBeCarried) = []; // holds all objects that can be carried
+
 [] call FUNC(initCBASettings);
 
 // setup all global variables
