@@ -25,7 +25,7 @@ while {true} do {
         {
             private _leader = leader _x;
 
-            if (UNIT_SIDE(_leader) isEqualTo PLAYER_SIDE) then {    
+            if ((UNIT_SIDE(_leader)) isEqualTo (PLAYER_SIDE)) then {    
                 _listOfLeaders pushBack _leader;
 
                 if (player in units _leader) then {
