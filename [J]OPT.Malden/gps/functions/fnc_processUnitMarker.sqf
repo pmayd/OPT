@@ -18,6 +18,8 @@
 * Public:
 * no - called within updateMarker function
 *
+* Global:
+* no - process each unit marker only locally for the client
 */
 #include "script_component.hpp"
 
