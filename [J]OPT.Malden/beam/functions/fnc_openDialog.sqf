@@ -14,6 +14,12 @@
 */
 #include "script_component.hpp"
 
-if (!dialog and !(player getVariable ["ace_dragging_isDragging", false]) and !(player getVariable ["ace_dragging_isCarrying", false])) then {
+private _cond = (
+    !dialog and 
+    !(player getVariable ["ace_dragging_isDragging", false]) and 
+    !(player getVariable ["ace_dragging_isCarrying", false])
+);
+
+if (_cond) then {
     createDialog "DialogBeam";
 };

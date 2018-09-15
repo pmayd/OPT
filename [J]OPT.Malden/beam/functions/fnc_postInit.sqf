@@ -14,8 +14,6 @@
 */
 #include "script_component.hpp"
 
-#define MAX_RADIUS_OPEN_BEAM_DIALOG 10
-
 if (hasInterface) then {
 
     /*
@@ -26,7 +24,7 @@ if (hasInterface) then {
         QGVAR(cba_open_beam_dialog), 
         ["Beam-Dialog öffnen", "Öffnet den Beam-Dialog im Fahnenbereich."], 
         {
-            if (player in ((list nato_trigger_beam) + (list csat_trigger_beam)) or (vehicle player) in ((list csat_trigger_beam) + (list nato_trigger_beam))) then {
+            if ( vehicle player in ((list nato_trigger_beam) + (list csat_trigger_beam)) ) then {
                 [] call FUNC(openDialog);
             };
             

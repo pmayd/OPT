@@ -13,11 +13,8 @@
 *
 */
 #include "script_component.hpp"
-#define IDD_DLG_BEAM 444001
-#define IDC_CTRL_LIST_BOX 10002
-disableSerialization;
 
-waitUntil {!isNull (findDisplay IDD_DLG_BEAM)};
+disableSerialization;
 
 private _display = findDisplay IDD_DLG_BEAM;
 private _lb = _display displayCtrl IDC_CTRL_LIST_BOX;
@@ -25,10 +22,10 @@ private _lb = _display displayCtrl IDC_CTRL_LIST_BOX;
 //Zeitabgelaufen check
 private _orte = [];
 if (PLAYER_SIDE == east) then { 
-	_orte = GVAR(locations_east); 
+    _orte = GVAR(locations_east); 
 
 } else { 
-	_orte = GVAR(locations_west);
+    _orte = GVAR(locations_west);
 
 };
 
@@ -43,20 +40,18 @@ if (GVAR(on)) then {
 
 //Boxen mit Orte füllen
 {
-	private _loc = _x;
-	private _lvl = _loc select 2;
+    private _loc = _x;
+    private _lvl = _loc select 2;
 
-	private _index = lbAdd [IDC_CTRL_LIST_BOX, format["%1", (_loc select 1)]]; // readable name
-	_lb lbSetColor [_index, [0, 1, 0, 1]];
+    private _index = lbAdd [IDC_CTRL_LIST_BOX, format["%1", (_loc select 1)]]; // readable name
+    _lb lbSetColor [_index, LB_COLOR_DEFAULT];
 
-	if (_lvl == 1) then { 
-		_lb lbSetColor [_index, [1, 0.5, 0.5, 1]];
-	};
+    if (_lvl == 1) then { 
+        _lb lbSetColor [_index, LB_COLOR_LVL_ONE];
+    };
 
-	if (_lvl == 2) then { 
-		_lb lbSetColor [_index, [1, 1,0, 1]];
-	};
+    if (_lvl == 2) then { 
+        _lb lbSetColor [_index, LB_COLOR_LVL_TWO];
+    };
 
 } forEach GVAR(box);
-
-		 
