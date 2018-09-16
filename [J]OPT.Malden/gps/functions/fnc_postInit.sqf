@@ -22,5 +22,8 @@ if (typeOf player in GVARMAIN(officer) and GVAR(showAllUnits)) then {
 
 
 // update marker as long as map is open (works for uav stations as well)
-[] spawn FUNC(updateMarker);
+addMissionEventHandler ["PreloadFinished", {
+    [] spawn FUNC(updateMarker);
+}];
+
 

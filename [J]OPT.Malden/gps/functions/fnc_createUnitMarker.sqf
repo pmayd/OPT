@@ -31,7 +31,7 @@ private _side = UNIT_SIDE(_unit);
 private _name = UNIT_NAME(_unit);
 
 if (_marker isEqualTo "") then {
-    private _color = "";
+    private _color = "ColorUnknown";
     if (_side == west) then {        
         _color = "ColorBLUFOR";
     };    

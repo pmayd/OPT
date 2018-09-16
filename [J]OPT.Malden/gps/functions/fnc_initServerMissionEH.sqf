@@ -15,7 +15,6 @@
 #include "script_component.hpp"
 
 // delete old marker if unit disconnects
-LOG("initServerMissionEH run!");
 GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
     /*
         unit: Object - unit formerly occupied by player
@@ -24,10 +23,12 @@ GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
         name: String - same as _name in onPlayerDisconnected
     */
     params ["_unit", "_id", "_uid", "_name"];
-    LOG_1("%1 (%2) disconnected!",_name,_uid);
+    LOG_2("%1 (%2) disconnected! Run GPS Cleanup",_name,_uid);
 
     // search for all markers with unit name in it and delete them on all clients
     [_unit] call FUNC(clearMarker);
     deleteVehicle _unit; 
 
 }];
+
+
