@@ -75,7 +75,7 @@ if (vehicle _unit != _unit) then {
 _unit setDamage 0;
 _unit setVelocity [0,0,0];
 _unit allowDamage false;
-_unit playAction "medicStop";
+//_unit playAction "medicStop";
 _unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 //_unit playActionNow "Down"; // verursacht ragdoll problem -> Stehaufmännchen
 _unit setUnconscious true;

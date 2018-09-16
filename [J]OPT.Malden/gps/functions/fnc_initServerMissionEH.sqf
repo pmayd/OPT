@@ -1,6 +1,6 @@
 /**
 * Author: James
-* initialize mission echo
+* initialize mission EH
 *
 * Arguments:
 * None
@@ -15,6 +15,7 @@
 #include "script_component.hpp"
 
 // delete old marker if unit disconnects
+LOG("initServerMissionEH run!");
 GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
     /*
         unit: Object - unit formerly occupied by player
