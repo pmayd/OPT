@@ -17,7 +17,7 @@
 params [
     ["_unit", objNull, [objNull], 1]
 ];
-private _ret = sideUnknown;
+private _ret = side _unit;
 
 if (_unit isEqualTo objNull) exitWith{_ret};
 
