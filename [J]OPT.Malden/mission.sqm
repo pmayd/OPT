@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=802;
+		nextID=823;
 	};
 	class Camera
 	{
-		pos[]={5909.896,153.27551,8596.2559};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={1694.4883,72.251625,1417.7778};
+		dir[]={-0.74446565,-0.31152046,-0.59053516};
+		up[]={-0.24406111,0.95023829,-0.1935975};
+		aside[]={-0.62145919,-9.1473339e-008,0.78344989};
 	};
 };
 binarizationWanted=0;
@@ -26298,7 +26298,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={5880.7568,128.87,8723.7061};
-					angle=4.3190436;
+					angle=4.3190432;
 					class Attributes
 					{
 						name="nato_trigger_Waffenwechsel2";
@@ -27655,7 +27655,7 @@ class Mission
 			};
 			id=332;
 			type="ModuleOrdnance_F";
-			atlOffset=0.37547302;
+			atlOffset=4.5776367e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27723,7 +27723,7 @@ class Mission
 			};
 			id=335;
 			type="ModuleOrdnance_F";
-			atlOffset=1.5258789e-005;
+			atlOffset=7.6293945e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27757,7 +27757,6 @@ class Mission
 			};
 			id=336;
 			type="ModuleOrdnance_F";
-			atlOffset=0.60041809;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27791,7 +27790,7 @@ class Mission
 			};
 			id=337;
 			type="ModuleOrdnance_F";
-			atlOffset=3.8146973e-005;
+			atlOffset=7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27930,7 +27929,6 @@ class Mission
 			};
 			id=343;
 			type="ModuleOrdnance_F";
-			atlOffset=0.59871674;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28022,7 +28020,7 @@ class Mission
 			};
 			id=348;
 			type="ModuleOrdnance_F";
-			atlOffset=0.041297913;
+			atlOffset=0.041252136;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28056,7 +28054,7 @@ class Mission
 			};
 			id=349;
 			type="ModuleOrdnance_F";
-			atlOffset=4.1644592;
+			atlOffset=4.1644135;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28090,7 +28088,7 @@ class Mission
 			};
 			id=351;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00025939941;
+			atlOffset=0.0002822876;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28143,7 +28141,7 @@ class Mission
 			};
 			id=355;
 			type="ModuleOrdnance_F";
-			atlOffset=0.67133331;
+			atlOffset=0.67121887;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28909,7 +28907,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this allowDamage false; [this, west] spawn opt_mhq_fnc_init;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {[] call opt_beam_function_openDialog;}, false, 5, false, true, """"]; }";
+						init="call{this allowDamage false; [this, west] spawn opt_mhq_fnc_init;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {[] call opt_beam_fnc_openDialog;}, false, 5, false, true, """"]; }";
 					};
 					id=376;
 					type="Flag_CSAT_F";
@@ -29740,7 +29738,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="call{this allowDamage false;  [this, west] spawn opt_mhq_fnc_init; this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+						init="call{this allowDamage false;  [this, west] spawn opt_mhq_fnc_init; this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {[] call opt_beam_fnc_openDialog}, false, 5, false, true, """"]; }";
 					};
 					id=400;
 					type="Flag_NATO_F";

@@ -16,6 +16,8 @@
 - Sectorcontrol: Flaggen besitzen jetzt einen Marker für die Minensperrzone (per Skript)
 - GPS: Komponente sowie Skripte wurden überarbeitet. Probleme mit JIP sollten behoben sein. Performance verbessert
 - Revive: Probleme mit Down-Marker behoben. Marker sollte nicht mehr länger sichtbar sein.
+- Service-Pad: Bugfix für falsche Preisanzeige
+- Beam: Bugfix für Skriptfehler bei Mausradmenüeintrag an Fahne
 
 ### Mission
 
@@ -23,6 +25,7 @@
 - Ab sofort werden alle CBA Settings in der mission.sqm gespeichert, sonst kein JIP sicher!
 - Änderungen an den Triggern für Service-Pad und Beam (Zahl am Ende durch Kopieren!)
 - Änderungen an den Flaggen für Beam-Eintrag (Aufruf von opt_beam_function_openDialog)
+- Änderungen an den Waffenwechsel-Triggern: Korrektur der lokalen Nachrichten, Entfernen von hint-Meldungen
 
 ## 1.4.11
 
