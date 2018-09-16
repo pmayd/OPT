@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=781;
+		nextID=802;
 	};
 	class Camera
 	{
-		pos[]={5883.8926,133.53163,8710.7314};
-		dir[]={-0.140797,-0.44385841,0.88496852};
-		up[]={-0.069740228,0.89609641,0.43834668};
-		aside[]={0.98758119,-8.4401108e-009,0.15712245};
+		pos[]={5909.896,153.27551,8596.2559};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -17801,7 +17801,7 @@ class Mission
 						};
 					};
 					id=6;
-					atlOffset=-0.00025367737;
+					atlOffset=96.5;
 				};
 				class Item1
 				{
@@ -19584,7 +19584,7 @@ class Mission
 						name="csat_trigger_Waffenwechsel1";
 						text="Trigger für Waffenwechsel-Dialog";
 						condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-						onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+						onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 						sizeA=7;
 						sizeB=7;
 						sizeC=5;
@@ -19636,7 +19636,7 @@ class Mission
 					text="Waffenwechsel";
 					type="mil_join";
 					colorName="ColorEAST";
-					angle=126.38599;
+					angle=126.38598;
 					id=417;
 					atlOffset=407.67532;
 				};
@@ -19676,7 +19676,7 @@ class Mission
 				};
 			};
 			id=5;
-			atlOffset=199.00987;
+			atlOffset=199.00981;
 		};
 		class Item6
 		{
@@ -24539,7 +24539,7 @@ class Mission
 						};
 					};
 					id=151;
-					atlOffset=0.00024414063;
+					atlOffset=96.5;
 				};
 				class Item1
 				{
@@ -26283,7 +26283,7 @@ class Mission
 						name="nato_trigger_Waffenwechsel1";
 						text="Trigger für Waffenwechsel-Dialog";
 						condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-						onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+						onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 						sizeA=7;
 						sizeB=7;
 						sizeC=5;
@@ -26304,7 +26304,7 @@ class Mission
 						name="nato_trigger_Waffenwechsel2";
 						text="Trigger für Waffenwechsel-Dialog";
 						condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-						onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message; Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+						onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message; }";
 						sizeA=7;
 						sizeB=7;
 						sizeC=5;
@@ -26372,7 +26372,7 @@ class Mission
 				};
 			};
 			id=150;
-			atlOffset=61.180588;
+			atlOffset=61.17807;
 		};
 		class Item7
 		{
@@ -27489,7 +27489,7 @@ class Mission
 				};
 			};
 			id=291;
-			atlOffset=2.4605942;
+			atlOffset=2.5291901;
 		};
 		class Item8
 		{
@@ -27655,7 +27655,7 @@ class Mission
 			};
 			id=332;
 			type="ModuleOrdnance_F";
-			atlOffset=6.1035156e-005;
+			atlOffset=0.37547302;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27689,7 +27689,7 @@ class Mission
 			};
 			id=334;
 			type="ModuleOrdnance_F";
-			atlOffset=3.0517578e-005;
+			atlOffset=0.49946594;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27723,7 +27723,7 @@ class Mission
 			};
 			id=335;
 			type="ModuleOrdnance_F";
-			atlOffset=9.1552734e-005;
+			atlOffset=1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27757,6 +27757,7 @@ class Mission
 			};
 			id=336;
 			type="ModuleOrdnance_F";
+			atlOffset=0.60041809;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27790,7 +27791,7 @@ class Mission
 			};
 			id=337;
 			type="ModuleOrdnance_F";
-			atlOffset=7.6293945e-006;
+			atlOffset=3.8146973e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -27929,6 +27930,7 @@ class Mission
 			};
 			id=343;
 			type="ModuleOrdnance_F";
+			atlOffset=0.59871674;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28020,7 +28022,7 @@ class Mission
 			};
 			id=348;
 			type="ModuleOrdnance_F";
-			atlOffset=0.041290283;
+			atlOffset=0.041297913;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28054,7 +28056,7 @@ class Mission
 			};
 			id=349;
 			type="ModuleOrdnance_F";
-			atlOffset=4.1644516;
+			atlOffset=4.1644592;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28088,7 +28090,7 @@ class Mission
 			};
 			id=351;
 			type="ModuleOrdnance_F";
-			atlOffset=0.00019836426;
+			atlOffset=0.00025939941;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28141,7 +28143,7 @@ class Mission
 			};
 			id=355;
 			type="ModuleOrdnance_F";
-			atlOffset=0.67118835;
+			atlOffset=0.67133331;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28789,7 +28791,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={1708.25,65.748489,1419.375};
-					angle=5.0139637;
+					angle=5.0139632;
 					class Attributes
 					{
 						name="csat_trigger_beam";
@@ -29600,7 +29602,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={1724.25,66.69899,1440.25};
-					angle=4.9230843;
+					angle=4.9230824;
 					class Attributes
 					{
 						name="nato_trigger_beam";
