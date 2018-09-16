@@ -42,7 +42,7 @@ while {true} do {
         };
 
         // mode 1: mode 0 + add all group units for leaders
-        if (GVAR(mode) == 1 and player isEqualTo leader player) then {
+        if (GVAR(mode) == 1) then {
             _listOfPlayers append _listOfGroupMembers;
         };
 
