@@ -23,11 +23,10 @@ GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
         name: String - same as _name in onPlayerDisconnected
     */
     params ["_unit", "_id", "_uid", "_name"];
-    LOG_2("%1 (%2) disconnected! Run GPS Cleanup",_name,_uid);
+    LOG_3("%1 (%2) disconnected! Former unit: %3. Run GPS Cleanup",_name,_uid,_unit);
 
     // search for all markers with unit name in it and delete them on all clients
-    [_unit] call FUNC(clearMarker);
-    deleteVehicle _unit; 
+    [objNull, _name] remoteExecCall [QFUNC(clearMarker), -2, false];
 
 }];
 
