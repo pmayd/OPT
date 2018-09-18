@@ -48,7 +48,7 @@ while {true} do {
 
         // mode 2: mode 1 + all other units   
         if (GVAR(mode) == 2) then {
-            _listOfPlayers append (allPlayers select {UNIT_SIDE(_x) isEqualTo PLAYER_SIDE});
+            _listOfPlayers append (allPlayers select {(UNIT_SIDE(_x)) isEqualTo (PLAYER_SIDE)});
         };
 
         // create or update player marker

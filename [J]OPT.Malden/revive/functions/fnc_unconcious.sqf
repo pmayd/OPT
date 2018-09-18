@@ -80,7 +80,7 @@ _unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 //_unit playActionNow "Down"; // verursacht ragdoll problem -> Stehaufmännchen
 _unit setUnconscious true;
 
-//_unit switchMove "AinjPpneMstpSnonWrflDnon";
+_unit switchMove "AinjPpneMstpSnonWrflDnon";
 
 // fix the key binding after respawn/revive
 disableUserInput false;
@@ -131,8 +131,8 @@ if (FAR_REVIVE_BLEEDOUT > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["F
     
     _unit allowDamage true;
     _unit setFatigue 0.9;
-    //_unit playMove "amovppnemstpsraswrfldnon";
-    //_unit playMove "";
+    _unit playMove "amovppnemstpsraswrfldnon";
+    _unit playMove "";
     _unit setUnconscious false;
 
     sleep 1;

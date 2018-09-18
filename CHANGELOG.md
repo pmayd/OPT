@@ -18,6 +18,7 @@
 - Revive: Probleme mit Down-Marker behoben. Marker sollte nicht mehr länger sichtbar sein.
 - Service-Pad: Bugfix für falsche Preisanzeige
 - Beam: Bugfix für Skriptfehler bei Mausradmenüeintrag an Fahne
+- Composition: Ab sofort lässt sich das Radar nicht mehr aufbauen, wenn das Gelände nicht geeignet ist.
 
 ### Mission
 

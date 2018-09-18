@@ -29,7 +29,10 @@ params [
 private _cargo = _vec getVariable [QEGVAR(composition,cargo), objNull];
 
 // abort script if deployment is not possible
-if (!([_vec, _composition] call EFUNC(composition,deployComposition))) exitWith{};
+private _handle = [_vec, _composition] spawn EFUNC(composition,deployComposition);
+waitUntil { scriptDone _handle; };
+
+if (!EGVAR(composition,deploymentSuccessful)) exitWith{};
 
 // remove deploy actions for side only
 [_vec, _vec getVariable [QGVAR(deployAction), -1]] remoteExecCall ["removeAction", _side, true];

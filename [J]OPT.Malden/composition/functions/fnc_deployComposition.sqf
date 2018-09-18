@@ -18,16 +18,21 @@
 */
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
     ["_centerObj", objNull, [objNull], 1],
     ["_composition", [], [[]]]
 ];
-private _retVal = false;
-private _side = [_centerObj] call EFUNC(common,getVehicleSide);
-private _cargo = _centerObj getVariable [QGVAR(cargo), objNull];
 
+/* VALIDATION */
+private _retVal = false;
 if (_centerObj isEqualTo objNull) exitWith {_retVal};
 if (_composition isEqualTo []) exitWith {_retVal};
+
+/* CODE BODY */
+GVAR(deploymentSuccessful) = FALSE;
+private _side = [_centerObj] call EFUNC(common,getVehicleSide);
+private _cargo = _centerObj getVariable [QGVAR(cargo), objNull];
 
 // calculate radius of whole composition
 // either this is the biggest offset + radius of an object
@@ -116,6 +121,4 @@ _centerObj setVariable [QGVAR(composition), _objArray, true];
 // wait until vehicle or object is null and delete objects
 [_centerObj] remoteExec [QGVAR(deleteComposition), 2, false];
 
-_retVal = true;
-
-_retVal
+GVAR(deploymentSuccessful) = TRUE;
