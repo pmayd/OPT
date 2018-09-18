@@ -1,5 +1,58 @@
 ﻿# Changelog
 
+## 1.4.13
+
+### Skript
+
+- Waffenwechsel: Log ist nun aussagekräftiger und enthält keine Leerstellen mehr
+- Revive: Probleme mit Down-Marker behoben. Marker sollte nicht mehr länger sichtbar sein.
+- GPS: Komponente sowie Skripte wurden überarbeitet. Probleme mit JIP sollten behoben sein. Performance verbessert
+
+### Editor
+
+- Port nach Lythium
+- Kleine Fixes in diversen Triggern für korrekte Anzeige von Nachrichten
+
+## 1.4.12
+
+### Skript
+
+- Waffenwechsel: Neue Komponente hinzugefügt. Aufruf via Taste CBA Keyhandler, default "F3" (selbst wählen beim ersten Mal!).
+- Letzte Änderungen an allen Komponenten zum Austausch von CBA Eventhandlersystem durch remoteExec
+- MHQ: Bugfix: Aufbau-Message wird nicht mehr global angezeigt
+- Fieldrepair: Funktioniert wieder für alle gespawnten Fahrzeuge. Umstieg von servercall auf clientcall
+- Sectorcontrol: Bugfix: HL kann keine Feindflagge mehr wählen
+- Beam: Abschalten der Komponente erlaubt noch Beamen zu Orten mit Level -1 (Marinebasen)
+- Waffenwechsel: Ich habe das Modul etwas umgeschrieben , damit du alles in der fnc_waffenconfig.sqf einstellen kann. du brauchst nicht mehr in der fnc_onLoadDialog.sqf was bearbeiten. Das müssen wir erster machen wenn sich gurndlegen etwas ändert oder neue Fahrzeuge hinzugefügt werden müssen. Die Boxen werden nun dynamisch beschrifte, so das man weis was es für eine box ist. Die Textmeldung ist jetzt wieder lokal und die Offiziere bekommt es Extra Meldung wer was gekauft hat. Und ich habe eine möglichen Fehler durch die Umstellung von James behoben , das das Geld nicht abgezogen wird. Das muss noch mal auf dem Server getestet werden zu Sicherheit. 
+- Service-Pad: Bugfix: Pad wieder funktionstüchtig. Neue Kosten für Repair und Refuel in den CBA Settings einstellbar. Neue Meldung, dass Motor abgestellt werden muss. Neue Prüfungen für die Aktionmenüeinträge, wird nur noch angezeigt, wenn Fahrzeug beschädigt oder nicht 100% Treibstoff.
+- Beam: Bugfix: Aufruf des Beam-Dialog nicht mehr möglich, wenn Kisten gezogen oder getragen werden
+- Sectorcontrol: Flaggen besitzen jetzt einen Marker für die Minensperrzone (per Skript)
+- Service-Pad: Bugfix für falsche Preisanzeige
+- Beam: Bugfix für Skriptfehler bei Mausradmenüeintrag an Fahne
+- Composition: Ab sofort lässt sich das Radar nicht mehr aufbauen, wenn das Gelände nicht geeignet ist.
+
+### Mission
+
+- Waffenwechsel: Neue Trigger für Dialogöffnen hinzugefügt
+- Ab sofort werden alle CBA Settings in der mission.sqm gespeichert, sonst kein JIP sicher!
+- Änderungen an den Triggern für Service-Pad und Beam (Zahl am Ende durch Kopieren!)
+- Änderungen an den Flaggen für Beam-Eintrag (Aufruf von opt_beam_function_openDialog)
+- Änderungen an den Waffenwechsel-Triggern: Korrektur der lokalen Nachrichten, Entfernen von hint-Meldungen
+
+## 1.4.11
+
+### Skript
+
+- umfangreiche Änderungen an allen Komponenten: Möglichkeit, optionale Komponenten an/aus zu stellen über CBA-Settings
+- umfangreiche Änderungen an allen Komponenten: Performanceverbesserungen, Umstieg von CBA EventHandler auf remoteExec
+- umfangreiche Änderungen an allen Komponenten: Performanceverbesserungen, Umstieg von onEachFrame Mission EH auf while-Schleifen
+- Möglichkeit, Update-Intervall für GPS und RADAR in den CBA-Settings clientseitig einzustellen
+- Log: Neur FPS-Log am Ende der Schlacht mit allen FPS-Werten sowie gemittelten Werten
+- Log: Transportdistanz wird nun auch für Flugzeuge geloggt
+- Persistence: Grundgerüst hinzugefügt
+- MHQ: Alpha Version hinzugefügt
+- Sectorcontrol: Flagge kann jetzt mit einer Taste gezogen werden (default: F)
+
 ## 1.4.10
 
 ### Skript
@@ -13,7 +66,7 @@
 - Log: work on [#17](https://github.com/Jamesadamar/OPT/issues/18) Kill-Log überarbeitet, nun mit Angabe des Magazines sowie Anpassung der Log-Zeile auf neuen Standard (vehicle:)(side:)(magazine:)(category:)
 - Log: work on [#17](https://github.com/Jamesadamar/OPT/issues/18) Kill-Log überarbeitet für den Fall Fahrzeugabschuss durch Fahrzeug: Jetzt wird der gesamten Besatzung ein Kill angerechnet.
 - Merge mit Schlachtversion #9, Anpassung an diversen Skripten wie setupbeamorte, setupflagpositons, setupcargosizeandspace 
-- Radar: work on [#27](https://github.com/Jamesadamar/OPT/issues/27) Bugfix im Radar-Modul, jetzt ist es wieder möglich, mit dem Feindradar zu interagieren
+- Radar: work on [#27](https://github.com/Jamesadamar/OPT/issues/27) Bugfix im Radar-Modul, jetzt ist es wieder möglich, mit dem Feindradar zu interagieren 
 
 ## 1.4.9
 
