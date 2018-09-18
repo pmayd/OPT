@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1079;
+		nextID=1116;
 	};
 	class Camera
 	{
@@ -3181,7 +3181,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -3856,7 +3856,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -22835,11 +22835,11 @@ class Mission
 						};
 					};
 					id=136;
-					atlOffset=-0.015808105;
+					atlOffset=-0.042510986;
 				};
 			};
 			id=0;
-			atlOffset=9.3644409;
+			atlOffset=7.5809021;
 		};
 		class Item1
 		{
@@ -24939,7 +24939,7 @@ class Mission
 									fillName="Border";
 									a=3500;
 									b=3500;
-									angle=57.005901;
+									angle=57.005898;
 									drawBorder=1;
 									id=424;
 									atlOffset=-0.061542511;
@@ -34570,11 +34570,11 @@ class Mission
 						};
 					};
 					id=502;
-					atlOffset=0.42725372;
+					atlOffset=-0.19791412;
 				};
 			};
 			id=369;
-			atlOffset=502090.63;
+			atlOffset=502090.41;
 		};
 		class Item2
 		{
@@ -62680,7 +62680,7 @@ class Mission
 					type="rectangle";
 					a=5;
 					b=5;
-					angle=113.15197;
+					angle=113.15196;
 					id=1587;
 					atlOffset=-0.019058228;
 				};

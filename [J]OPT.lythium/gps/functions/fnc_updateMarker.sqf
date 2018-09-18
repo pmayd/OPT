@@ -37,17 +37,17 @@ while {true} do {
         } forEach allGroups;
 
         // mode 0: only add other group leaders
-        if (GVAR(mode) == 0) then {
+        if (GVAR(mode) >= 0) then {
             _listOfPlayers append _listOfLeaders;
         };
 
         // mode 1: mode 0 + add all group units for leaders
-        if (GVAR(mode) == 1) then {
+        if (GVAR(mode) >= 1) then {
             _listOfPlayers append _listOfGroupMembers;
         };
 
         // mode 2: mode 1 + all other units   
-        if (GVAR(mode) == 2) then {
+        if (GVAR(mode) >= 2) then {
             _listOfPlayers append (allPlayers select {(UNIT_SIDE(_x)) isEqualTo (PLAYER_SIDE)});
         };
 

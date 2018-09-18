@@ -32,10 +32,22 @@ if (_unit isEqualTo objNull) exitWith{};
 // delete associated marker globally and reset variable
 private _marker = _unit getVariable [QGVAR(unitGPSMarker), ""];
 
-if !(_marker isEqualTo "") then {
-    _marker setMarkerTextLocal "";
-    deleteMarkerLocal _marker;
+if (hasInterface) then {
+    if !(_marker isEqualTo "") then {
+        _marker setMarkerTextLocal "";
+        deleteMarkerLocal _marker;
+    };
+
+    _unit setVariable [QGVAR(unitGPSMarker), nil];
 };
 
-_unit setVariable [QGVAR(unitGPSMarker), nil];
+if (isServer) then {
+    if !(_marker isEqualTo "") then {
+        _marker setMarkerText "";
+        deleteMarker _marker;
+    };
+
+    _unit setVariable [QGVAR(unitGPSMarker), nil, true];
+}
+
 
