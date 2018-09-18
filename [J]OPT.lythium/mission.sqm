@@ -22835,11 +22835,11 @@ class Mission
 						};
 					};
 					id=136;
-					atlOffset=-0.042510986;
+					atlOffset=-0.015808105;
 				};
 			};
 			id=0;
-			atlOffset=7.5809021;
+			atlOffset=9.3644409;
 		};
 		class Item1
 		{
@@ -24939,7 +24939,7 @@ class Mission
 									fillName="Border";
 									a=3500;
 									b=3500;
-									angle=57.005905;
+									angle=57.005901;
 									drawBorder=1;
 									id=424;
 									atlOffset=-0.061542511;
@@ -34570,11 +34570,11 @@ class Mission
 						};
 					};
 					id=502;
-					atlOffset=-0.19791412;
+					atlOffset=0.42725372;
 				};
 			};
 			id=369;
-			atlOffset=502090.41;
+			atlOffset=502090.63;
 		};
 		class Item2
 		{
@@ -62680,7 +62680,7 @@ class Mission
 					type="rectangle";
 					a=5;
 					b=5;
-					angle=113.15198;
+					angle=113.15197;
 					id=1587;
 					atlOffset=-0.019058228;
 				};
