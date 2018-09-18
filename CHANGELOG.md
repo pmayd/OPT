@@ -1,5 +1,14 @@
 ﻿# Changelog
 
+## 1.4.13
+
+### Skript
+- Waffenwechsel: Log ist nun aussagekräftiger und enthält keine Leerstellen mehr
+
+### Editor
+- Port nach Lythium
+- Kleine Fixes in diversen Triggern für korrekte Anzeige von Nachrichten
+
 ## 1.4.12
 
 ### Skript
