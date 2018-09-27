@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1116;
+		nextID=1227;
 	};
 	class Camera
 	{
-		pos[]={17704.129,61.290268,2802.4177};
-		dir[]={-0.0035757921,-0.40765309,0.91313618};
-		up[]={-0.001596348,0.91313237,0.40765762};
-		aside[]={0.99999857,2.145498e-008,0.0039158547};
+		pos[]={17679.186,59.349251,2812.1633};
+		dir[]={-0.029831743,-0.55468458,0.83152574};
+		up[]={-0.019887695,0.83206069,0.55432796};
+		aside[]={0.99935704,5.6065619e-007,0.035853218};
 	};
 };
 binarizationWanted=0;
@@ -24939,7 +24939,7 @@ class Mission
 									fillName="Border";
 									a=3500;
 									b=3500;
-									angle=57.005898;
+									angle=57.005871;
 									drawBorder=1;
 									id=424;
 									atlOffset=-0.061542511;
@@ -26077,8 +26077,8 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={17675.73,51.293953,2819.9451};
-										angles[]={0.013995145,5.9661813,0.0080009829};
+										position[]={17675.73,51.293648,2819.9451};
+										angles[]={0.013962634,5.9661813,0.0079936078};
 									};
 									side="Empty";
 									flags=4;
@@ -26089,7 +26089,7 @@ class Mission
 									};
 									id=472;
 									type="Land_TyreBarrier_01_F";
-									atlOffset=0.073307037;
+									atlOffset=0.073001862;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -62680,7 +62680,7 @@ class Mission
 					type="rectangle";
 					a=5;
 					b=5;
-					angle=113.15196;
+					angle=113.1519;
 					id=1587;
 					atlOffset=-0.019058228;
 				};
