@@ -20,9 +20,6 @@
 #include "script_component.hpp"
 
 /* PARAMS */
-params [
-   []
-];
 
 /* VALIDATION */
 

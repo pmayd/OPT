@@ -1,5 +1,23 @@
 ﻿# Changelog
 
+## 1.4.14
+
+### Sckript
+
+- GPS und Revive: Löschskript für Marker im Falle von Disconnects überarbeitet
+- Flagpositions (für die prologschlacht) -> setupflagpositions.sqf
+- Beampositionen (für die prologschlacht) -> setupbeamorte.sqf
+- Beamfix aus github dev-bereich (sollte in deiner letzten version ja schon mit drin sein)
+- TFAR-settings für kanäle neu gesetzt 
+- Addonsettings - sind glaub eh in der mission mit drin von daher zu vernachlässigen! check ich dann alles nochmal neu und speicher das profil! wenn dir da ein weg zufliegt, dass als ...settings.sqf direkt in die mission zu packen, wär super!
+- cargosystem für modupdate angepasst -> setcargoandspace.sqf
+- warehouse für modupdate angepasst -> setupvehiclepool.sqf
+- MHQ tarnnetze aus komposition entfernt - aber immer noch scheisse aufzubauen!
+
+## Editor
+
+- Neue Version mit je zwei diagonalen Basen
+
 ## 1.4.13
 
 ### Skript

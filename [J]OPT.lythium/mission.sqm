@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=2;
+	toggles=130;
 	class ItemIDProvider
 	{
 		nextID=3013;
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1351;
+		nextID=1414;
 	};
 	class Camera
 	{
-		pos[]={5689.4248,577.48669,17483.482};
-		dir[]={-0.1477377,-0.54806674,0.82329065};
-		up[]={-0.096803166,0.8364327,0.53945124};
-		aside[]={0.98428369,1.1259544e-007,0.17662746};
+		pos[]={20384.332,84.270866,13255.194};
+		dir[]={-0.15592612,-0.2832135,0.94630033};
+		up[]={-0.046045829,0.95905805,0.27944717};
+		aside[]={0.98670006,-3.4124241e-009,0.16258314};
 	};
 };
 binarizationWanted=0;
@@ -13692,6 +13692,7 @@ class Mission
 									};
 									id=2790;
 									type="Land_InfoStand_V1_F";
+									atlOffset=-0.00073242188;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -13752,6 +13753,7 @@ class Mission
 									};
 									id=2791;
 									type="Land_InfoStand_V1_F";
+									atlOffset=-0.00073242188;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -13812,6 +13814,7 @@ class Mission
 									};
 									id=2792;
 									type="Land_InfoStand_V1_F";
+									atlOffset=-0.00061035156;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -13871,6 +13874,7 @@ class Mission
 									};
 									id=2794;
 									type="B_Truck_01_transport_F";
+									atlOffset=-0.0017089844;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -13953,6 +13957,7 @@ class Mission
 									};
 									id=2806;
 									type="Land_Cargo10_military_green_F";
+									atlOffset=-0.00085449219;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -13979,11 +13984,11 @@ class Mission
 								};
 							};
 							id=2789;
-							atlOffset=0.0012817383;
+							atlOffset=0.00042724609;
 						};
 					};
 					id=1;
-					atlOffset=14.333191;
+					atlOffset=14.321655;
 				};
 				class Item1
 				{
@@ -32236,7 +32241,7 @@ class Mission
 				};
 			};
 			id=0;
-			atlOffset=209.59799;
+			atlOffset=209.59843;
 		};
 		class Item1
 		{
@@ -64115,7 +64120,6 @@ class Mission
 									text="Waffenwechsel";
 									type="mil_join";
 									colorName="ColorWEST";
-									angle=0.26277912;
 									id=1476;
 									atlOffset=321.12891;
 								};
@@ -64127,7 +64131,6 @@ class Mission
 									text="Waffenwechsel";
 									type="mil_join";
 									colorName="ColorWEST";
-									angle=0.0053145261;
 									id=1477;
 									atlOffset=321.20551;
 								};
@@ -64139,21 +64142,19 @@ class Mission
 									text="Verkaufen";
 									type="respawn_unknown";
 									colorName="ColorWEST";
-									angle=36.921253;
 									id=1478;
 									atlOffset=352.1759;
 								};
 								class Item3
 								{
 									dataType="Marker";
-									position[]={20380.271,75.156342,13278.203};
+									position[]={20380.271,75.155998,13278.203};
 									name="marker_267";
 									text="Teleport";
 									type="mil_start";
 									colorName="ColorWEST";
-									angle=269.72302;
 									id=1479;
-									atlOffset=1.0269012;
+									atlOffset=1.0265579;
 								};
 								class Item4
 								{
@@ -64163,7 +64164,6 @@ class Mission
 									text="Service";
 									type="n_maint";
 									colorName="ColorWEST";
-									angle=268.79376;
 									id=1480;
 									atlOffset=320.43945;
 								};
@@ -64176,7 +64176,6 @@ class Mission
 									type="rectangle";
 									a=10;
 									b=12;
-									angle=269.72839;
 									id=1481;
 									atlOffset=2.037735;
 								};
@@ -64189,7 +64188,6 @@ class Mission
 									type="rectangle";
 									a=7;
 									b=9;
-									angle=269.72839;
 									id=1482;
 									atlOffset=1.5080643;
 								};
@@ -64202,7 +64200,6 @@ class Mission
 									type="rectangle";
 									a=10;
 									b=12;
-									angle=269.72839;
 									id=1483;
 									atlOffset=1.8584976;
 								};
@@ -64213,79 +64210,72 @@ class Mission
 									name="respawn_west";
 									type="respawn_unknown";
 									colorName="ColorBlue";
-									angle=176.2025;
 									id=1484;
 									atlOffset=1.9620895;
 								};
 								class Item9
 								{
 									dataType="Marker";
-									position[]={20409.426,376.21021,13354.559};
+									position[]={20409.426,376.20999,13354.56};
 									name="marker_nato_kettenfahrzeuge_1";
 									text="Ketten-Fahrzeuge";
 									type="n_armor";
 									colorName="ColorWEST";
-									angle=269.30493;
 									id=1485;
-									atlOffset=302.63437;
+									atlOffset=302.63416;
 								};
 								class Item10
 								{
 									dataType="Marker";
-									position[]={20436.533,397.35785,13300.741};
+									position[]={20436.533,397.358,13300.74};
 									name="marker_nato_luftwaffe_1";
 									text="Luftwaffe";
 									type="b_air";
 									colorName="ColorWEST";
-									angle=270.74695;
 									id=1486;
-									atlOffset=324.01877;
+									atlOffset=324.01892;
 								};
 								class Item11
 								{
 									dataType="Marker";
-									position[]={20394.777,397.49896,13319.474};
+									position[]={20394.777,397.49899,13319.474};
 									name="Nachschubversorgung_Nato_3";
 									text="Nachschub";
 									type="o_support";
 									colorName="ColorWEST";
-									angle=269.53549;
 									id=1487;
-									atlOffset=324.07962;
+									atlOffset=324.07965;
 								};
 								class Item12
 								{
 									dataType="Marker";
-									position[]={20371.539,391.60303,13276.938};
+									position[]={20371.539,391.603,13276.938};
 									name="marker_nato_flagge_2";
 									type="flag_NATO";
-									angle=269.72839;
 									id=1488;
-									atlOffset=317.2298;
+									atlOffset=317.22977;
 								};
 								class Item13
 								{
 									dataType="Marker";
-									position[]={20410.811,376.82861,13287.257};
+									position[]={20410.811,376.82901,13287.257};
 									name="marker_nato_radfahrzeuge_1";
 									text="Rad-Fahrzeuge";
 									type="n_motor_inf";
 									colorName="ColorWEST";
-									angle=0.36861324;
 									id=1489;
-									atlOffset=303.2233;
+									atlOffset=303.22369;
 								};
 								class Item14
 								{
 									dataType="Marker";
-									position[]={20425.432,75.156342,13290.62};
+									position[]={20425.432,75.155998,13290.62};
 									name="marker_268";
 									text="Radar Container";
 									type="b_recon";
 									colorName="ColorWEST";
-									angle=180.13669;
 									id=1490;
-									atlOffset=1.6738968;
+									atlOffset=1.6735535;
 								};
 								class Item15
 								{
@@ -64295,7 +64285,6 @@ class Mission
 									text="Service";
 									type="n_maint";
 									colorName="ColorWEST";
-									angle=268.79376;
 									id=2799;
 									atlOffset=319.29541;
 								};
@@ -64336,13 +64325,13 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={20380.568,74.121445,13278.24};
-									angle=4.9870062;
+									angle=4.986999;
 									class Attributes
 									{
 										name="nato_trigger_beam";
 										text="Trigger für Beam-Dialog";
 										condition="call{this && vehicle player in thislist}";
-										onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
+										onActivation="call{[""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -64356,13 +64345,13 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={20449.271,73.570534,13269.315};
-									angle=5.7220845;
+									angle=5.7220798;
 									class Attributes
 									{
 										name="nato_trigger_Waffenwechsel1";
 										text="Trigger für Waffenwechsel-Dialog";
 										condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-										onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+										onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -64377,13 +64366,13 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={20449.729,74.289635,13364.1};
-									angle=3.3701622;
+									angle=3.3701608;
 									class Attributes
 									{
 										name="nato_trigger_Waffenwechsel2";
 										text="Trigger für Waffenwechsel-Dialog";
 										condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-										onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent; Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+										onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -64689,7 +64678,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={20449.146,73.567085,13269.781};
-										angles[]={0.0089968694,4.7098393,6.2771854};
+										angles[]={0.0089884456,4.7098408,6.2771816};
 									};
 									side="Empty";
 									flags=4;
@@ -64784,7 +64773,7 @@ class Mission
 									};
 									id=1510;
 									type="B_Truck_01_transport_F";
-									atlOffset=0.17358398;
+									atlOffset=0.17370605;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -64825,7 +64814,7 @@ class Mission
 									};
 									id=1511;
 									type="B_Truck_01_transport_F";
-									atlOffset=-0.14813232;
+									atlOffset=-0.14837646;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -69023,7 +69012,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={60.164001,595.55383,5759.4551};
-									angle=3.9921741;
+									angle=3.9921732;
 									class Attributes
 									{
 										text="befriedeter Bereich";
@@ -69092,7 +69081,6 @@ class Mission
 									text="Waffenwechsel";
 									type="mil_join";
 									colorName="ColorWEST";
-									angle=180.09247;
 									id=1612;
 									atlOffset=319.24774;
 								};
@@ -69104,7 +69092,6 @@ class Mission
 									text="Waffenwechsel";
 									type="mil_join";
 									colorName="ColorWEST";
-									angle=179.83505;
 									id=1613;
 									atlOffset=319.4906;
 								};
@@ -69116,7 +69103,6 @@ class Mission
 									text="Verkaufen";
 									type="respawn_unknown";
 									colorName="ColorWEST";
-									angle=83.01506;
 									id=1614;
 									atlOffset=351.68854;
 								};
@@ -69128,7 +69114,6 @@ class Mission
 									text="Teleport";
 									type="mil_start";
 									colorName="ColorWEST";
-									angle=89.551872;
 									id=1615;
 								};
 								class Item4
@@ -69139,7 +69124,6 @@ class Mission
 									text="Service";
 									type="n_maint";
 									colorName="ColorWEST";
-									angle=88.622543;
 									id=1616;
 									atlOffset=315.69531;
 								};
@@ -69152,7 +69136,6 @@ class Mission
 									type="rectangle";
 									a=10;
 									b=12;
-									angle=89.557091;
 									id=1617;
 									atlOffset=0.75463867;
 								};
@@ -69165,7 +69148,6 @@ class Mission
 									type="rectangle";
 									a=7;
 									b=9;
-									angle=89.557091;
 									id=1618;
 									atlOffset=0.63873291;
 								};
@@ -69178,7 +69160,6 @@ class Mission
 									type="rectangle";
 									a=10;
 									b=12;
-									angle=89.557091;
 									id=1619;
 									atlOffset=0.070495605;
 								};
@@ -69190,7 +69171,6 @@ class Mission
 									text="Ketten-Fahrzeuge";
 									type="n_armor";
 									colorName="ColorWEST";
-									angle=89.133789;
 									id=1621;
 									atlOffset=300.48737;
 								};
@@ -69202,7 +69182,6 @@ class Mission
 									text="Luftwaffe";
 									type="b_air";
 									colorName="ColorWEST";
-									angle=90.575806;
 									id=1622;
 									atlOffset=322.34174;
 								};
@@ -69214,7 +69193,6 @@ class Mission
 									text="Nachschub";
 									type="o_support";
 									colorName="ColorWEST";
-									angle=89.364349;
 									id=1623;
 									atlOffset=322.92853;
 								};
@@ -69224,7 +69202,6 @@ class Mission
 									position[]={112.61401,911.55469,5808.2568};
 									name="marker_nato_flagge_3";
 									type="flag_NATO";
-									angle=89.557091;
 									id=1624;
 									atlOffset=316.34796;
 								};
@@ -69236,7 +69213,6 @@ class Mission
 									text="Rad-Fahrzeuge";
 									type="n_motor_inf";
 									colorName="ColorWEST";
-									angle=180.19836;
 									id=1625;
 									atlOffset=301.91376;
 								};
@@ -69248,7 +69224,6 @@ class Mission
 									text="Radar Container";
 									type="b_recon";
 									colorName="ColorWEST";
-									angle=359.96118;
 									id=1626;
 									atlOffset=0.10632324;
 								};
@@ -69289,14 +69264,14 @@ class Mission
 								class Item1
 								{
 									dataType="Trigger";
-									position[]={101.5137,595.30566,5800.9375};
-									angle=1.8424264;
+									position[]={101.514,595.30566,5800.938};
+									angle=1.842422;
 									class Attributes
 									{
 										name="nato_trigger_beam_1";
 										text="Trigger für Beam-Dialog";
 										condition="call{this && vehicle player in thislist}";
-										onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
+										onActivation="call{[""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -69309,14 +69284,14 @@ class Mission
 								class Item2
 								{
 									dataType="Trigger";
-									position[]={29.358616,596.68481,5799.8354};
-									angle=2.5775123;
+									position[]={29.358999,596.6853,5799.835};
+									angle=2.5775197;
 									class Attributes
 									{
 										name="nato_trigger_Waffenwechsel1_1";
 										text="Trigger für Waffenwechsel-Dialog";
 										condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-										onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+										onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -69326,7 +69301,7 @@ class Mission
 									};
 									id=1630;
 									type="EmptyDetectorAreaR50";
-									atlOffset=0.72247314;
+									atlOffset=0.72296143;
 								};
 								class Item3
 								{
@@ -69350,7 +69325,7 @@ class Mission
 								};
 							};
 							id=1627;
-							atlOffset=0.75073242;
+							atlOffset=0.75085449;
 						};
 						class Item6
 						{
@@ -70930,11 +70905,11 @@ class Mission
 						};
 					};
 					id=1540;
-					atlOffset=7.5040283;
+					atlOffset=7.5040894;
 				};
 			};
 			id=1539;
-			atlOffset=7.5040283;
+			atlOffset=7.5040894;
 		};
 		class Item7
 		{
@@ -73072,7 +73047,6 @@ class Mission
 									type="rectangle";
 									a=10;
 									b=12;
-									angle=358.04422;
 									id=1867;
 									atlOffset=-2.9489632;
 								};
@@ -73085,7 +73059,6 @@ class Mission
 									type="rectangle";
 									a=7;
 									b=9;
-									angle=358.04422;
 									id=1868;
 									atlOffset=-2.7771416;
 								};
@@ -73098,7 +73071,6 @@ class Mission
 									type="rectangle";
 									a=10;
 									b=12;
-									angle=358.04422;
 									id=1869;
 									atlOffset=-2.6980743;
 								};
@@ -73110,7 +73082,6 @@ class Mission
 									text="Waffenwechsel";
 									type="mil_join";
 									colorName="ColorEAST";
-									angle=95.422897;
 									id=1870;
 									atlOffset=417.48254;
 								};
@@ -73122,7 +73093,6 @@ class Mission
 									text="Waffenwechsel";
 									type="mil_join";
 									colorName="ColorEAST";
-									angle=91.893883;
 									id=1871;
 									atlOffset=409.5556;
 								};
@@ -73132,7 +73102,6 @@ class Mission
 									position[]={18930.043,43.10434,80.299889};
 									name="marker_csat_flagge";
 									type="flag_CSAT";
-									angle=91.981255;
 									id=1872;
 									atlOffset=12.957794;
 								};
@@ -73144,7 +73113,6 @@ class Mission
 									text="Fahrzeuge";
 									type="n_motor_inf";
 									colorName="ColorEAST";
-									angle=90.578613;
 									id=1873;
 									atlOffset=-2.8159866;
 								};
@@ -73156,7 +73124,6 @@ class Mission
 									text="Luftwaffe";
 									type="n_air";
 									colorName="ColorEAST";
-									angle=94.641518;
 									id=1874;
 									atlOffset=16.617664;
 								};
@@ -73167,7 +73134,6 @@ class Mission
 									name="Nachschubversorgung";
 									text="Nachschub";
 									type="o_support";
-									angle=91.567345;
 									id=1875;
 									atlOffset=-4.7058544;
 								};
@@ -73179,7 +73145,6 @@ class Mission
 									text="Panzer";
 									type="n_armor";
 									colorName="ColorEAST";
-									angle=91.350487;
 									id=1876;
 									atlOffset=2.0565517e+008;
 								};
@@ -73190,7 +73155,6 @@ class Mission
 									name="respawn_east";
 									type="respawn_unknown";
 									colorName="ColorRed";
-									angle=132.78481;
 									id=1877;
 									atlOffset=9.3383636;
 								};
@@ -73202,7 +73166,6 @@ class Mission
 									text="Service";
 									type="n_maint";
 									colorName="ColorEAST";
-									angle=92.321609;
 									id=1878;
 									atlOffset=2.0565522e+008;
 								};
@@ -73214,7 +73177,6 @@ class Mission
 									text="Verkaufen";
 									type="respawn_unknown";
 									colorName="ColorEAST";
-									angle=142.25534;
 									id=1879;
 									atlOffset=0.55625153;
 								};
@@ -73232,14 +73194,14 @@ class Mission
 								class Item0
 								{
 									dataType="Trigger";
-									position[]={18936.221,29.625862,76.496986};
-									angle=0.3472597;
+									position[]={18936.221,29.625864,76.497002};
+									angle=0.34726813;
 									class Attributes
 									{
 										name="csat_trigger_beam_3";
 										text="Trigger für Beam-Dialog";
 										condition="call{this && vehicle player in thislist}";
-										onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
+										onActivation="call{[""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -73274,14 +73236,14 @@ class Mission
 								class Item2
 								{
 									dataType="Trigger";
-									position[]={19023.479,19.815233,6.7807617};
-									angle=2.8613312;
+									position[]={19023.479,19.815264,6.7810001};
+									angle=2.8613276;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel1";
 										text="Trigger für Waffenwechsel-Dialog";
 										condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-										onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+										onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -73294,14 +73256,14 @@ class Mission
 								class Item3
 								{
 									dataType="Trigger";
-									position[]={18931.895,21.938486,7.4753609};
-									angle=2.863184;
+									position[]={18931.895,21.938488,7.4749999};
+									angle=2.8631778;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel2";
 										text="Trigger für Waffenwechsel-Dialog";
 										condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-										onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+										onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -73310,11 +73272,11 @@ class Mission
 									};
 									id=1884;
 									type="EmptyDetectorAreaR50";
-									atlOffset=1.0799503;
+									atlOffset=1.0799999;
 								};
 							};
 							id=1880;
-							atlOffset=1.9423313;
+							atlOffset=1.942358;
 						};
 						class Item5
 						{
@@ -77859,7 +77821,6 @@ class Mission
 									type="rectangle";
 									a=10;
 									b=12;
-									angle=178.37778;
 									id=2133;
 									atlOffset=-3.2617188;
 								};
@@ -77872,7 +77833,6 @@ class Mission
 									type="rectangle";
 									a=7;
 									b=9;
-									angle=178.37778;
 									id=2134;
 									atlOffset=-3.1361694;
 								};
@@ -77885,7 +77845,6 @@ class Mission
 									type="rectangle";
 									a=10;
 									b=12;
-									angle=178.37778;
 									id=2135;
 									atlOffset=-3.3208618;
 								};
@@ -77897,7 +77856,6 @@ class Mission
 									text="Waffenwechsel";
 									type="mil_join";
 									colorName="ColorEAST";
-									angle=275.75342;
 									id=2136;
 									atlOffset=412.07507;
 								};
@@ -77909,7 +77867,6 @@ class Mission
 									text="Waffenwechsel";
 									type="mil_join";
 									colorName="ColorEAST";
-									angle=272.22446;
 									id=2137;
 									atlOffset=412.36707;
 								};
@@ -77919,7 +77876,6 @@ class Mission
 									position[]={7418.8096,820.60034,20357.24};
 									name="marker_csat_flagge_1";
 									type="flag_CSAT";
-									angle=182.52048;
 									id=2138;
 									atlOffset=12.660706;
 								};
@@ -77931,7 +77887,6 @@ class Mission
 									text="Fahrzeuge";
 									type="n_motor_inf";
 									colorName="ColorEAST";
-									angle=270.90918;
 									id=2139;
 									atlOffset=-3.4315186;
 								};
@@ -77943,7 +77898,6 @@ class Mission
 									text="Luftwaffe";
 									type="n_air";
 									colorName="ColorEAST";
-									angle=274.9718;
 									id=2140;
 									atlOffset=12.674561;
 								};
@@ -77954,7 +77908,6 @@ class Mission
 									name="Nachschubversorgung_1";
 									text="Nachschub";
 									type="o_support";
-									angle=271.89786;
 									id=2141;
 									atlOffset=-3.0704346;
 								};
@@ -77966,7 +77919,6 @@ class Mission
 									text="Panzer";
 									type="n_armor";
 									colorName="ColorEAST";
-									angle=271.68091;
 									id=2142;
 									atlOffset=2.0565517e+008;
 								};
@@ -77978,7 +77930,6 @@ class Mission
 									text="Service";
 									type="n_maint";
 									colorName="ColorEAST";
-									angle=272.65192;
 									id=2144;
 									atlOffset=2.056552e+008;
 								};
@@ -77990,7 +77941,6 @@ class Mission
 									text="Verkaufen";
 									type="respawn_unknown";
 									colorName="ColorEAST";
-									angle=195.13351;
 									id=2145;
 								};
 							};
@@ -78008,13 +77958,13 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7407.3789,807.30682,20363.031};
-									angle=3.4947162;
+									angle=3.4947076;
 									class Attributes
 									{
 										name="csat_trigger_beam_4";
 										text="Trigger für Beam-Dialog";
 										condition="call{this && vehicle player in thislist}";
-										onActivation="call{[""opt_gui_message"", [""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;}";
+										onActivation="call{[""Beam-System"", ""Beam-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -78050,13 +78000,13 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7320.5381,807.31049,20433.238};
-									angle=6.0086918;
+									angle=6.0086975;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel1_1";
 										text="Trigger für Waffenwechsel-Dialog";
 										condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-										onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+										onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -78069,14 +78019,14 @@ class Mission
 								class Item3
 								{
 									dataType="Trigger";
-									position[]={7410.0361,807.3125,20433.348};
-									angle=6.0105443;
+									position[]={7410.0361,807.31299,20433.348};
+									angle=6.0105472;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel2_1";
 										text="Trigger für Waffenwechsel-Dialog";
 										condition="call{opt_waffenwechsel_on and this && vehicle player in thislist && (driver vehicle player) == player}";
-										onActivation="call{[""opt_gui_message"", [""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""]] call CBA_fnc_localEvent;Hint ""Waffenwechsel-Dialog kann geöffnet werden"";}";
+										onActivation="call{[""Waffenwechsel-System"", ""Waffenwechsel-Dialog kann geöffnet werden"", ""blue""] call opt_gui_fnc_message;}";
 										sizeA=7;
 										sizeB=7;
 										sizeC=5;
@@ -78085,11 +78035,11 @@ class Mission
 									};
 									id=2150;
 									type="EmptyDetectorAreaR50";
-									atlOffset=0.42651367;
+									atlOffset=0.42700195;
 								};
 							};
 							id=2146;
-							atlOffset=0.49810791;
+							atlOffset=0.49835205;
 						};
 						class Item5
 						{
@@ -78206,7 +78156,7 @@ class Mission
 									};
 									id=2156;
 									type="O_Truck_03_transport_F";
-									atlOffset=-0.14459229;
+									atlOffset=-0.14666748;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -78247,7 +78197,7 @@ class Mission
 									};
 									id=2157;
 									type="O_Truck_03_transport_F";
-									atlOffset=-0.27783203;
+									atlOffset=-0.2800293;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -80910,7 +80860,7 @@ class Mission
 					};
 					id=2322;
 					type="Box_East_Wps_F";
-					atlOffset=-0.13006592;
+					atlOffset=-0.13012695;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -102114,7 +102064,7 @@ class Mission
 					fillName="Border";
 					a=3000;
 					b=1000;
-					angle=305.1875;
+					angle=305.18744;
 					drawBorder=1;
 					id=2569;
 					atlOffset=-229.72592;
@@ -102188,7 +102138,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=123.92137;
+					angle=123.92133;
 					drawBorder=1;
 					id=2578;
 					atlOffset=-71.282822;
@@ -102203,7 +102153,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=113.88852;
+					angle=113.8885;
 					drawBorder=1;
 					id=2580;
 					atlOffset=-72.985596;
@@ -102218,7 +102168,7 @@ class Mission
 					fillName="Border";
 					a=1500;
 					b=1000;
-					angle=228.64853;
+					angle=228.64848;
 					drawBorder=1;
 					id=2581;
 					atlOffset=-54.199738;
@@ -102233,7 +102183,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=222.81433;
+					angle=222.81429;
 					drawBorder=1;
 					id=2582;
 					atlOffset=-88.932289;
@@ -102248,7 +102198,7 @@ class Mission
 					fillName="Border";
 					a=1500;
 					b=1000;
-					angle=215.55397;
+					angle=215.55392;
 					drawBorder=1;
 					id=2584;
 					atlOffset=-114.89655;
@@ -102293,7 +102243,7 @@ class Mission
 					fillName="Border";
 					a=1000;
 					b=2000;
-					angle=209.46808;
+					angle=209.46803;
 					drawBorder=1;
 					id=2589;
 					atlOffset=-86.607544;
@@ -102322,7 +102272,7 @@ class Mission
 					fillName="Border";
 					a=1000;
 					b=2000;
-					angle=114.07451;
+					angle=114.07449;
 					drawBorder=1;
 					id=2592;
 					atlOffset=-34.648438;
@@ -102337,7 +102287,7 @@ class Mission
 					fillName="Border";
 					a=3000;
 					b=1000;
-					angle=212.05351;
+					angle=212.05347;
 					drawBorder=1;
 					id=2594;
 					atlOffset=-115.67224;
@@ -102352,7 +102302,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=208.15437;
+					angle=208.15433;
 					drawBorder=1;
 					id=2595;
 					atlOffset=-29.692108;
@@ -102367,7 +102317,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=216.3222;
+					angle=216.32216;
 					drawBorder=1;
 					id=2599;
 					atlOffset=-69.794403;
@@ -102718,7 +102668,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=119.63545;
+					angle=119.63544;
 					drawBorder=1;
 					id=2664;
 					atlOffset=-128.55481;
@@ -102733,7 +102683,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=130.17047;
+					angle=130.17046;
 					drawBorder=1;
 					id=2665;
 					atlOffset=123.01541;
@@ -102751,7 +102701,7 @@ class Mission
 					angle=301.34799;
 					drawBorder=1;
 					id=2666;
-					atlOffset=8.0308228;
+					atlOffset=10.389771;
 				};
 				class Item46
 				{
@@ -102763,7 +102713,7 @@ class Mission
 					fillName="Border";
 					a=1000;
 					b=3000;
-					angle=202.25394;
+					angle=202.25389;
 					drawBorder=1;
 					id=2667;
 					atlOffset=-27.664101;
@@ -102807,7 +102757,7 @@ class Mission
 					fillName="Border";
 					a=1000;
 					b=2000;
-					angle=67.006294;
+					angle=67.006287;
 					drawBorder=1;
 					id=2671;
 					atlOffset=-6.2218628;
@@ -103488,7 +103438,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=138.3642;
+					angle=138.36418;
 					drawBorder=1;
 					id=2749;
 					atlOffset=-6.8333359;
@@ -103650,7 +103600,7 @@ class Mission
 					fillName="Border";
 					a=3000;
 					b=1000;
-					angle=56.145161;
+					angle=56.145149;
 					drawBorder=1;
 					id=2769;
 					atlOffset=10.828049;
@@ -103926,10 +103876,10 @@ class Mission
 					fillName="Border";
 					a=1500;
 					b=1000;
-					angle=272.91699;
+					angle=272.9169;
 					drawBorder=1;
 					id=2905;
-					atlOffset=40.459774;
+					atlOffset=40.460007;
 				};
 				class Item127
 				{
@@ -104453,6 +104403,7 @@ class Mission
 			};
 			id=2838;
 			type="Flag_AAF_F";
+			atlOffset=7.6293945e-006;
 		};
 		class Item44
 		{
@@ -104576,7 +104527,7 @@ class Mission
 			};
 			id=2847;
 			type="Flag_AAF_F";
-			atlOffset=-1.9073486e-006;
+			atlOffset=-3.8146973e-006;
 		};
 		class Item52
 		{
@@ -104638,6 +104589,7 @@ class Mission
 			};
 			id=2851;
 			type="Flag_AAF_F";
+			atlOffset=1.9073486e-006;
 		};
 		class Item56
 		{
@@ -104683,6 +104635,7 @@ class Mission
 			};
 			id=2854;
 			type="Flag_AAF_F";
+			atlOffset=-1.9073486e-006;
 		};
 		class Item59
 		{
@@ -104851,7 +104804,7 @@ class Mission
 			};
 			id=2867;
 			type="Flag_AAF_F";
-			atlOffset=7.6293945e-006;
+			atlOffset=3.8146973e-006;
 		};
 		class Item70
 		{
@@ -104929,7 +104882,7 @@ class Mission
 			};
 			id=2872;
 			type="Flag_AAF_F";
-			atlOffset=-3.8146973e-006;
+			atlOffset=-7.6293945e-006;
 		};
 		class Item75
 		{
@@ -104961,6 +104914,7 @@ class Mission
 			};
 			id=2875;
 			type="Flag_AAF_F";
+			atlOffset=-1.9073486e-006;
 		};
 		class Item77
 		{
@@ -104976,6 +104930,7 @@ class Mission
 			};
 			id=2878;
 			type="Flag_AAF_F";
+			atlOffset=1.9073486e-006;
 		};
 		class Item78
 		{
@@ -104991,7 +104946,6 @@ class Mission
 			};
 			id=2880;
 			type="Flag_AAF_F";
-			atlOffset=3.8146973e-006;
 		};
 		class Item79
 		{
@@ -105022,6 +104976,7 @@ class Mission
 			};
 			id=2882;
 			type="Flag_AAF_F";
+			atlOffset=9.5367432e-007;
 		};
 		class Item81
 		{
@@ -105053,7 +105008,6 @@ class Mission
 			};
 			id=2884;
 			type="Flag_AAF_F";
-			atlOffset=3.8146973e-006;
 		};
 		class Item83
 		{
@@ -105084,7 +105038,7 @@ class Mission
 			};
 			id=2886;
 			type="Flag_AAF_F";
-			atlOffset=1.9073486e-006;
+			atlOffset=3.8146973e-006;
 		};
 		class Item85
 		{
@@ -105389,6 +105343,7 @@ class Mission
 			};
 			id=2908;
 			type="Flag_AAF_F";
+			atlOffset=-9.5367432e-007;
 		};
 		class Item105
 		{
@@ -105404,7 +105359,7 @@ class Mission
 			};
 			id=2909;
 			type="Flag_AAF_F";
-			atlOffset=-3.8146973e-006;
+			atlOffset=-7.6293945e-006;
 		};
 		class Item106
 		{
@@ -105451,6 +105406,7 @@ class Mission
 			};
 			id=2912;
 			type="Flag_AAF_F";
+			atlOffset=-3.8146973e-006;
 		};
 		class Item109
 		{
@@ -105482,6 +105438,7 @@ class Mission
 			};
 			id=2914;
 			type="Flag_AAF_F";
+			atlOffset=-7.6293945e-006;
 		};
 		class Item111
 		{
