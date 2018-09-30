@@ -24,7 +24,7 @@ if (hasInterface) then {
         QGVAR(cba_open_beam_dialog), 
         ["Beam-Dialog öffnen", "Öffnet den Beam-Dialog im Fahnenbereich."], 
         {
-            if ( vehicle player in ((list nato_trigger_beam) + (list csat_trigger_beam)) ) then {
+            if ( ({vehicle player in list _x} count GVAR(beam_trigger))  > 0  ) then {
                 [] call FUNC(openDialog);
             };
             

@@ -191,3 +191,12 @@ GVAR(heavy_vehicles) = [
     "OPT_B_MBT_01_Arty_F",                             // M4 Scorcher
     "OPT_B_MBT_01_mlrs_F"    
 ];
+
+
+/* List of triggers in Editor for beam functionality */
+GVAR(beam_trigger) = [
+	nato_trigger_beam,
+	nato_trigger_beam_1,
+	csat_trigger_beam_4,
+	csat_trigger_beam_3
+];

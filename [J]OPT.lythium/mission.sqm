@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1414;
+		nextID=1477;
 	};
 	class Camera
 	{
@@ -64325,7 +64325,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={20380.568,74.121445,13278.24};
-									angle=4.986999;
+									angle=4.9869981;
 									class Attributes
 									{
 										name="nato_trigger_beam";
@@ -64366,7 +64366,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={20449.729,74.289635,13364.1};
-									angle=3.3701608;
+									angle=3.3701603;
 									class Attributes
 									{
 										name="nato_trigger_Waffenwechsel2";
@@ -64422,15 +64422,15 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={20374.809,78.406776,13272.969};
-										angles[]={0.038979426,5.7565408,6.2531939};
+										position[]={20374.811,78.4067,13272.969};
+										angles[]={0.038973201,5.7565322,6.2532005};
 									};
 									side="Empty";
 									flags=4;
 									class Attributes
 									{
 										skill=0.60000002;
-										init="call{this allowDamage false;  [this, west] spawn opt_mhq_fnc_init; this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+										init="call{this allowDamage false;  [this, west] spawn opt_mhq_fnc_init; this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {[] call opt_beam_fnc_openDialog}, false, 5, false, true, """"]; }";
 									};
 									id=1497;
 									type="Flag_NATO_F";
@@ -69012,7 +69012,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={60.164001,595.55383,5759.4551};
-									angle=3.9921732;
+									angle=3.9921727;
 									class Attributes
 									{
 										text="befriedeter Bereich";
@@ -69265,7 +69265,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={101.514,595.30566,5800.938};
-									angle=1.842422;
+									angle=1.8424219;
 									class Attributes
 									{
 										name="nato_trigger_beam_1";
@@ -69285,7 +69285,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={29.358999,596.6853,5799.835};
-									angle=2.5775197;
+									angle=2.5775192;
 									class Attributes
 									{
 										name="nato_trigger_Waffenwechsel1_1";
@@ -69347,7 +69347,7 @@ class Mission
 									class Attributes
 									{
 										skill=0.60000002;
-										init="call{this allowDamage false;  [this, west] spawn opt_mhq_fnc_init; this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+										init="call{this allowDamage false;  [this, west] spawn opt_mhq_fnc_init; this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {[] call opt_beam_fnc_openDialog}, false, 5, false, true, """"]; }";
 									};
 									id=1633;
 									type="Flag_NATO_F";
@@ -73195,7 +73195,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={18936.221,29.625864,76.497002};
-									angle=0.34726813;
+									angle=0.34726807;
 									class Attributes
 									{
 										name="csat_trigger_beam_3";
@@ -73237,7 +73237,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={19023.479,19.815264,6.7810001};
-									angle=2.8613276;
+									angle=2.8613272;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel1";
@@ -73257,7 +73257,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={18931.895,21.938488,7.4749999};
-									angle=2.8631778;
+									angle=2.8631773;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel2";
@@ -73297,7 +73297,7 @@ class Mission
 									flags=5;
 									class Attributes
 									{
-										init="call{this allowDamage false; [this, west] spawn opt_mhq_fnc_init;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+										init="call{this allowDamage false; [this, west] spawn opt_mhq_fnc_init;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {[] call opt_beam_fnc_openDialog}, false, 5, false, true, """"]; }";
 									};
 									id=1886;
 									type="Flag_CSAT_F";
@@ -77958,7 +77958,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7407.3789,807.30682,20363.031};
-									angle=3.4947076;
+									angle=3.4947073;
 									class Attributes
 									{
 										name="csat_trigger_beam_4";
@@ -78000,7 +78000,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7320.5381,807.31049,20433.238};
-									angle=6.0086975;
+									angle=6.0086966;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel1_1";
@@ -78020,7 +78020,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7410.0361,807.31299,20433.348};
-									angle=6.0105472;
+									angle=6.0105462;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel2_1";
@@ -78060,7 +78060,7 @@ class Mission
 									flags=5;
 									class Attributes
 									{
-										init="call{this allowDamage false; [this, west] spawn opt_mhq_fnc_init;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {createDialog ""DialogBeam""}, false, 5, false, true, """"]; }";
+										init="call{this allowDamage false; [this, west] spawn opt_mhq_fnc_init;  this addAction [""<t color='#00ff00' size='1.25'>Beam-System benutzen</t>"", {[] call opt_beam_fnc_openDialog}, false, 5, false, true, """"]; }";
 									};
 									id=2152;
 									type="Flag_CSAT_F";
@@ -102153,7 +102153,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=113.8885;
+					angle=113.88848;
 					drawBorder=1;
 					id=2580;
 					atlOffset=-72.985596;
@@ -102168,7 +102168,7 @@ class Mission
 					fillName="Border";
 					a=1500;
 					b=1000;
-					angle=228.64848;
+					angle=228.64845;
 					drawBorder=1;
 					id=2581;
 					atlOffset=-54.199738;
@@ -102183,7 +102183,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=222.81429;
+					angle=222.81425;
 					drawBorder=1;
 					id=2582;
 					atlOffset=-88.932289;
@@ -102198,7 +102198,7 @@ class Mission
 					fillName="Border";
 					a=1500;
 					b=1000;
-					angle=215.55392;
+					angle=215.55389;
 					drawBorder=1;
 					id=2584;
 					atlOffset=-114.89655;
@@ -102243,7 +102243,7 @@ class Mission
 					fillName="Border";
 					a=1000;
 					b=2000;
-					angle=209.46803;
+					angle=209.468;
 					drawBorder=1;
 					id=2589;
 					atlOffset=-86.607544;
@@ -102272,7 +102272,7 @@ class Mission
 					fillName="Border";
 					a=1000;
 					b=2000;
-					angle=114.07449;
+					angle=114.07448;
 					drawBorder=1;
 					id=2592;
 					atlOffset=-34.648438;
@@ -102287,7 +102287,7 @@ class Mission
 					fillName="Border";
 					a=3000;
 					b=1000;
-					angle=212.05347;
+					angle=212.05344;
 					drawBorder=1;
 					id=2594;
 					atlOffset=-115.67224;
@@ -102317,7 +102317,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=216.32216;
+					angle=216.32213;
 					drawBorder=1;
 					id=2599;
 					atlOffset=-69.794403;
@@ -102668,7 +102668,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=119.63544;
+					angle=119.63543;
 					drawBorder=1;
 					id=2664;
 					atlOffset=-128.55481;
@@ -103600,7 +103600,7 @@ class Mission
 					fillName="Border";
 					a=3000;
 					b=1000;
-					angle=56.145149;
+					angle=56.145142;
 					drawBorder=1;
 					id=2769;
 					atlOffset=10.828049;
