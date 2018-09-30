@@ -32,8 +32,8 @@
 GVAR(nato_vehicles) = [
 	["OPT_B_Quadbike_01_F", DEF_PROD(1500)],				// Quadbike
 	["OPT_B_T_LSV_01_unarmed_F", DEF_PROD(5000)], 			// Prowler unarmed 
-	["OPT_B_T_LSV_01_armed_F_un", DEF_PROD(5000)], 			// Prowler armed
-	["OPT_B_T_LSV_01_AT_F_un", DEF_PROD(5000)], 			// Prowler AT
+	["OPT_B_T_LSV_01_armed_F", DEF_PROD(8000)], 			// Prowler armed
+	["B_T_LSV_02_AT_F", DEF_PROD(15000)], 			// Prowler AT ++++++++++++++++++++++++++++++++++++++++++TODO
 	["OPT_B_G_Offroad_01_F", DEF_PROD(0)],					// Pickup, 1000, ersetzt durch Prawler
 	["OPT_B_G_Offroad_01_armed_F", DEF_PROD(0)],			// Pickup HMG, 4000, ersetzt durch Prawler
 	["OPT_B_Truck_01_covered_F", DEF_PROD(8000)], 			// HEMTT Transport
@@ -41,11 +41,11 @@ GVAR(nato_vehicles) = [
 	["OPT_B_Truck_01_medical_F", DEF_PROD(10000)], 		    // HEMTT Medical, ersetzt durch Container
 	["OPT_B_Truck_01_transport_F", DEF_PROD(2000)], 		// HEMTT 2000 (fr Radar Container, keine Sitze auf 
 	["OPT_B_MRAP_01_F", DEF_PROD(5000)],					// Hunter
-	["OPT_B_MRAP_01_hmg_F_un", DEF_PROD(5000)],				// Hunter HMG
-	["OPT_B_MRAP_01_gmg_F_un", DEF_PROD(5000)],				// Hunter GMG
+	["OPT4_B_MRAP_01_hmg_F", DEF_PROD(15000)],				// Hunter HMG - neu
+	["OPT4_B_MRAP_01_gmg_F", DEF_PROD(15000)],				// Hunter GMG - neu
 	["OPT_B_MRAP_03_F", DEF_PROD(0)],						// Strider, 6500 
 	["OPT_B_MRAP_03_hmg_F", DEF_PROD(0)],					// Strider HMG, 
-	["OPT_B_MRAP_03_gmg_F", DEF_PROD(0)]				    // Strider GMG,  
+	["OPT4_B_MRAP_03_gmg_F", DEF_PROD(22000)]				    // Strider GMG,  
 ];
 
 // Fahrzeuge dieser Liste können nicht verkauft werden!
@@ -55,8 +55,9 @@ GVAR(nato_vehicles_supply) = [
 ];
 	
 GVAR(nato_choppers) = [
-	["OPT_B_Heli_Light_01_F", DEF_PROD(0)],					// MH-9 Hummingbird
-	["OPT_B_Heli_Light_01_armed_F_un", DEF_PROD(80000)],			// AH-9 Pawnee (Unbewaffnet)
+	["OPT4_B_Heli_light_03_green_F", DEF_PROD(80000)],					// WY-55 Hellcat (Unbewaffnet)
+	["OPT_B_Heli_Light_01_F", DEF_PROD(60000)],					// MH-9 Hummingbird
+	["OPT4_B_Heli_Light_01_armed_F", DEF_PROD(10)],			// AH-9 Pawnee (Unbewaffnet) - 80000
 	["OPT_B_Heli_Light_01_armed_2_F", DEF_PROD(0)],				// AH-9 Pawnee scalpel
 	["OPT_B_Heli_Transport_01_F", DEF_PROD(90000)],				// UH-80 Ghosthawk
 	["OPT_B_Heli_Transport_03_unarmed_F", DEF_PROD(150000)],	// CH-67 Huron unarmed (Transport+Lift)
@@ -67,24 +68,29 @@ GVAR(nato_choppers) = [
 	["OPT_B_UAV_02_AA_F", DEF_PROD(0)],					// Greyhawk AA-Raketen	
 	["OPT_B_Heli_Transport_02_F", DEF_PROD(150000)],			// CH-49 Mohawk (Transport+Lift)
 	["OPT_B_T_UAV_03_dynamicLoadout_F", DEF_PROD(0)],		// MQ12-Falcon - noch in arbeit erstma nur testweise mit preis eingebaut
-	["OPT_B_T_VTOL_01_infantry_F", DEF_PROD(200000)],			// VTOL Blackfish (Inf-Transport)
-	["OPT_B_T_VTOL_01_vehicle_F", DEF_PROD(180000)],			// VTOL Blackfish (Fahrzeug-Transport)
+	["OPT_B_T_VTOL_02_infantry_unarmed_F", DEF_PROD(250000)],		// VTOL Y-32 Xi'an (Inf-Transport)
+	["OPT_B_T_VTOL_01_infantry_F", DEF_PROD(0)],			// VTOL Blackfish (Inf-Transport) 200000
+	["OPT_B_T_VTOL_01_vehicle_F", DEF_PROD(300000)],			// VTOL Blackfish (Fahrzeug-Transport)
 	["OPT_B_T_VTOL_01_armed_F", DEF_PROD(0)],					// VTOL Blackfish BEWAFFNET
-	["OPT_B_Heli_Attack_01_F_un", DEF_PROD(200000)],				// AH-99 Blackfoot (Unbewaffnet)
+	["OPT4_B_Heli_Attack_01_F", DEF_PROD(10)],				// AH-99 Blackfoot 200000(Unbewaffnet)
 	["OPT_B_Plane_CAS_01_F", DEF_PROD(0)],				    // A-164 Wipeout
-	["OPT_B_Plane_Fighter_AA_01_F", DEF_PROD(0)]				// F/A-181 Black Wasp II (AA)
+	["OPT_B_Plane_Fighter_AA_01_F", DEF_PROD(0)],				// F/A-181 Black Wasp II (AA)
+	["OPT_B_Plane_Fighter_03_AA_F_1", DEF_PROD(0)],				    // Buzzard AA
+	["OPT_B_Plane_CAS_01_F_1", DEF_PROD(0)]				// A-164 Wipeout	
 ];
 	
 GVAR(nato_armored) = [
-	["OPT_B_APC_Tracked_01_rcws_F_un", DEF_PROD(30000)],					// IFV-6c Panther
+	["OPT4_B_APC_Tracked_01_rcws_F", DEF_PROD(30000)],					// IFV-6c Panther
 	["OPT_B_APC_Wheeled_01_cannon_light_F", DEF_PROD(0)],			// AMV-7 Marshall (Leicht)
-	["OPT_B_APC_Wheeled_01_cannon_F_un", DEF_PROD(50000)],				// AMV-7 Marshall	
-	["OPT_B_APC_Tracked_01_AA_F_un", DEF_PROD(125000)],					// IFV-6a Cheetah
-	["OPT_B_APC_tracked_03_cannon_F_un", DEF_PROD(60000)],				// FV-720 Mora	
-	["OPT_B_MBT_01_cannon_F", DEF_PROD(0)],						// M2A4 Slammer
-	["OPT_B_MBT_01_TUSK_F_un", DEF_PROD(125000)],						    // M2A4 SlammerUp
+	["OPT4_B_APC_Wheeled_01_cannon_F", DEF_PROD(50000)],				// AMV-7 Marshall	
+	["OPT4_B_APC_Tracked_01_AA_F", DEF_PROD(125000)],					// IFV-6a Cheetah
+	["OPT4_B_APC_tracked_03_cannon_F", DEF_PROD(60000)],				// FV-720 Mora	
+	["OPT4_B_MBT_01_cannon_F", DEF_PROD(0)],						// M2A4 Slammer
+	["OPT4_B_MBT_01_TUSK_F", DEF_PROD(125000)],						    // M2A4 SlammerUp
 	["OPT_B_MBT_03_cannon_F", DEF_PROD(0)],							    // MBT-52 Kuma, fliegt raus
 	["OPT_B_MBT_01_Arty_F", DEF_PROD(400000)],						    // M4 Scorcher
+	["OPT4_B_MBT_01_mlrs_F", DEF_PROD(10)],						    // M4 Scorcher	
+	["OPT4_B_MBT_01_arty_F", DEF_PROD(10)],						    // M4 Scorcher
 	["OPT_B_MBT_01_mlrs_F", DEF_PROD(400000)]							// M5 Sandstorm	
 ];
 
@@ -146,19 +152,19 @@ GVAR(nato_sea) = [
 
 GVAR(csat_vehicles) = [
 //Vanilla
-	["OPT_O_Quadbike_01_F", DEF_PROD(1500)],					// Quadbike
-	["OPT_O_T_LSV_02_unarmed_F", DEF_PROD(4000)], 					// Quilin unarmed
-	["OPT_O_T_LSV_02_armed_F_un", DEF_PROD(4000)], 					// Quilin armed
-	["OPT_O_T_LSV_02_AT_F_un", DEF_PROD(4000)],					// Quilin AT
-	["OPT_O_Truck_03_covered_F", DEF_PROD(8000)],			// Tempest Transport
-	["OPT_O_Truck_03_repair_F", DEF_PROD(10000)],			// Tempest Repair, ersetzt durch container
-	["OPT_O_Truck_03_medical_F", DEF_PROD(10000)],			// Tempest Medical, ersetzt durch container
-	["OPT_O_Truck_03_transport_F", DEF_PROD(2000)],			// Tempest (fr Radar, keine Sitze auf Ladeflche)
+	["OPT_O_Quadbike_01_F", DEF_PROD(1500)],					// Quadbike-
+	["OPT_O_T_LSV_02_unarmed_F", DEF_PROD(4000)], 					// Quilin unarmed-
+	["OPT_O_T_LSV_02_armed_F", DEF_PROD(8000)], 					// Quilin armed-
+	["O_T_LSV_02_AT_F", DEF_PROD(15000)],					// Quilin AT++++++++++++++++++++++++++TODO
+	["OPT_O_Truck_03_covered_F", DEF_PROD(8000)],			// Tempest Transport-
+	["OPT_O_Truck_03_repair_F", DEF_PROD(10000)],			// Tempest Repair, ersetzt durch container-
+	["OPT_O_Truck_03_medical_F", DEF_PROD(10000)],			// Tempest Medical, ersetzt durch container-
+	["OPT_O_Truck_03_transport_F", DEF_PROD(2000)],			// Tempest (fr Radar, keine Sitze auf Ladeflche)-
 	["OPT_O_G_Offroad_01_F", DEF_PROD(0)],							// Pickup, ersetzt durch quilin
 	["OPT_O_G_Offroad_01_armed_F", DEF_PROD(0)],					// Pickup HMG, ersetzt durch quilin
-	["OPT_O_MRAP_02_F", DEF_PROD(5500)],						// Ifrit
-	["OPT_O_MRAP_02_hmg_F_un", DEF_PROD(5000)],				// Ifrit HMG
-	["OPT_O_MRAP_02_gmg_F_un", DEF_PROD(5000)],					// Ifrit GMG
+	["OPT_O_MRAP_02_F", DEF_PROD(5500)],						// Ifrit-
+	["OPT4_O_MRAP_02_hmg_F", DEF_PROD(15500)],				// Ifrit HMG
+	["OPT4_O_MRAP_02_gmg_F", DEF_PROD(15500)],					// Ifrit GMG
 
 //Tropentarn
 	["OPT_O_T_Quadbike_01_ghex_F", DEF_PROD(0)],					// Quadbike 1500
@@ -184,18 +190,19 @@ GVAR(csat_vehicles_supply) = [
 ];
 
 GVAR(csat_choppers) = [
+	["sfp_bo105_unarmed", DEF_PROD(60000)],				// BO 105 - testweise eingebaut - textur klären!
 	["OPT_O_Heli_Light_03_unarmed_F", DEF_PROD(0)],				// WY-55 Hellcat
-	["OPT_O_Heli_Light_03_unarmed_green_F", DEF_PROD(0)],			// WY-55 Hellcat
-	["OPT_O_Heli_Light_03_F_un", DEF_PROD(80000)],					// WY-55 Hellcat (Unbewaffnet)
+	["OPT4_O_Heli_light_03_F", DEF_PROD(0)],				// WY-55 Hellcat
+	["OPT_O_Heli_Light_03_unarmed_green_F", DEF_PROD(0)],			// WY-55 Hellcat - 60000
 	["OPT_O_Heli_Light_03_green_F", DEF_PROD(0)],					// WY-55 Hellcat (DAR)
 	["OPT_O_Heli_light_03_Scalpel_green_F", DEF_PROD(0)],			// WY-55 Hellcat (scalpel)
 	["OPT_O_Heli_light_03_Scalpel_F", DEF_PROD(0)],			// WY-55 Hellcat (scalpel)	
-	["OPT_O_Heli_Light_02_unarmed_F", DEF_PROD(0)],					// PO-30 Orca
+	["OPT_O_Heli_Light_02_unarmed_F", DEF_PROD(90000)],					// PO-30 Orca
 	["OPT_O_Heli_Light_02_unarmed_black_F", DEF_PROD(0)],		// PO-30 Orca
 	["OPT_O_Heli_Light_02_Minigun_F", DEF_PROD(0)],		// PO-30 Orca minigun 90000
 	["OPT_O_Heli_Light_02_Minigun_black_F", DEF_PROD(0)],		// PO-30 Orca minigun 90000
-	["OPT_O_Heli_Light_02_F_un", DEF_PROD(80000)],						// PO-30 Orca (Unbewaffnet)
-	["OPT_O_Heli_Light_02_v2_black_F", DEF_PROD(0)],			// PO-30 Orca (DAR)
+	["OPT4_O_Heli_Light_02_F", DEF_PROD(80000)],						// PO-30 Orca (Unbewaffnet)
+	["OPT4_O_Heli_Light_02_black_F", DEF_PROD(0)],			// PO-30 Orca (DAR)
 	["OPT_O_Heli_Light_02_F", DEF_PROD(0)],							// PO-30 Orca (scalpel)
 	["OPT_O_Heli_Light_02_black_F", DEF_PROD(0)],					// PO-30 Orca (scalpel)
 	["OPT_O_Heli_Transport_04_F", DEF_PROD(85000)],						// Mi-290 Taru (Lift)
@@ -208,39 +215,40 @@ GVAR(csat_choppers) = [
 	["OPT_O_UAV_02_CAS_F", DEF_PROD(0)],						// Ababil GBU-12
 	["OPT_O_UAV_02_F", DEF_PROD(0)],							// Ababil Scalpel
 	["OPT_O_UAV_02_AA_F", DEF_PROD(0)],						// Ababil AA	
-	["OPT_O_T_VTOL_02_infantry_unarmed_F", DEF_PROD(300000)],		// VTOL Y-32 Xi'an (Inf-Transport)
-	["OPT_O_T_VTOL_02_vehicle_unarmed_F", DEF_PROD(300000)],		// VTOL Y-32 Xi'an (Fahrzeug-Transport)
+	["OPT_O_T_VTOL_02_infantry_unarmed_F", DEF_PROD(250000)],		// VTOL Y-32 Xi'an (Inf-Transport)
+	["OPT_O_T_VTOL_02_vehicle_unarmed_F", DEF_PROD(0)],		// VTOL Y-32 Xi'an (Fahrzeug-Transport) 300000
 	["OPT_O_T_VTOL_02_infantry_F", DEF_PROD(0)],					// VTOL Y-32 Xi'an (Inf-Transport)
 	["OPT_O_T_VTOL_02_vehicle_F", DEF_PROD(0)],						// VTOL Y-32 Xi'an (Fahrzeug-Transport)
-	["OPT_O_Heli_Attack_02_F_un", DEF_PROD(200000)],						// Mi-48 Kajman	(Unbewaffnet)
-	["OPT_O_Heli_Attack_02_black_F", DEF_PROD(0)],				// Mi-48 Kajman (Schwarz)
+	["OPT_O_T_VTOL_01_vehicle_F", DEF_PROD(300000)],			// VTOL Blackfish (Fahrzeug-Transport)
+	["OPT4_O_Heli_Attack_02_F", DEF_PROD(10)],						// Mi-48 Kajman	(Unbewaffnet) 200000
+	["OPT4_O_Heli_Attack_02_black_F", DEF_PROD(0)],				// Mi-48 Kajman (Schwarz)
 	["OPT_O_Plane_CAS_02_AA_F", DEF_PROD(0)],						// To-199 Neophron light - raus
 	["OPT_O_Plane_CAS_02_F", DEF_PROD(0)],						// To-199 Neophron
-	["OPT_O_Plane_Fighter_03_AA_F", DEF_PROD(0)],					// A-143 Buzzard (AA)
-	["OPT_O_Plane_Fighter_03_CAS_F" , DEF_PROD(0)],					// A-143 Buzzard (CAS)	
+	["OPT_O_Plane_Fighter_03_AA_F_1", DEF_PROD(0)],					// A-143 Buzzard (AA) 200000
+	["OPT_O_Plane_CAS_01_F_1" , DEF_PROD(0)],					// Wipeout CAS 400000
 	["OPT_O_T_UAV_04_CAS_F", DEF_PROD(0)],						// KH-3A Fenghuan - noch in arbeit erstma nur testweise mit preis eingebaut
 	["OPT_O_Plane_Fighter_AA_02_F", DEF_PROD(0)]					// To-201 Shikra (AA)
 ];
 	
 GVAR(csat_armored) = [
 //Vanilla
-	["OPT_O_APC_Wheeled_02_rcws_F_un", DEF_PROD(25000)],			// MSE-3 Marid
+	["OPT4_O_APC_Wheeled_02_rcws_F", DEF_PROD(25000)],			// MSE-3 Marid - raus wegen bug - 25000
 	["OPT_O_APC_Wheeled_03_cannon_light_F", DEF_PROD(0)],			// AFV-4 Gorgon (Leicht)
-	["OPT_O_APC_Wheeled_03_cannon_F_un", DEF_PROD(50000)],				// AFV-4 Gorgon
-	["OPT_O_APC_Tracked_02_AA_F_un", DEF_PROD(125000)],			    // ZSU-39 Tigris
+	["OPT4_O_APC_Wheeled_03_cannon_F", DEF_PROD(100000)],				// AFV-4 Gorgon
+	["OPT4_O_APC_Tracked_02_AA_F", DEF_PROD(125000)],			    // ZSU-39 Tigris
 	["OPT_O_APC_Tracked_02_cannon_light_F", DEF_PROD(0)],	// BTR-K Kamysh
-	["OPT_O_APC_Tracked_02_cannon_F_un", DEF_PROD(60000)],		    // BTR-K Kamysh (Titan)
-	["OPT_O_MBT_02_cannon_F_un", DEF_PROD(125000)],				    // T-100 Varsuk
-	["OPT_O_MBT_02_arty_F", DEF_PROD(400000)],					// 2S9 Sochor
+	["OPT4_O_APC_Tracked_02_cannon_F", DEF_PROD(120000)],		    // BTR-K Kamysh (Titan)
+	["OPT4_O_MBT_02_cannon_F", DEF_PROD(125000)],				    // T-100 Varsuk
+	["OPT4_O_MBT_02_arty_F", DEF_PROD(400000)],					// 2S9 Sochor
 //Tropentarn
-	["OPT_O_T_APC_Wheeled_02_rcws_ghex_F", DEF_PROD(0)],			// MSE-3 Marid 50000
+	["OPT4_O_T_APC_Wheeled_02_rcws_ghex_F", DEF_PROD(0)],			// MSE-3 Marid 50000
 	["OPT_O_APC_Wheeled_03_cannon_light_F", DEF_PROD(0)],			// AFV-4 Gorgon (Leicht) 90000
 	["OPT_O_APC_Wheeled_03_cannon_F", DEF_PROD(0)],				// AFV-4 Gorgon 120000
-	["OPT_O_T_APC_Tracked_02_AA_ghex_F", DEF_PROD(0)],			    // ZSU-39 Tigris 275000
+	["OPT4_O_T_APC_Tracked_02_AA_ghex_F", DEF_PROD(0)],			    // ZSU-39 Tigris 275000
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_light_F", DEF_PROD(0)],	// BTR-K Kamysh 120000
-	["OPT_O_T_APC_Tracked_02_cannon_ghex_F", DEF_PROD(0)],		    // BTR-K Kamysh (Titan) 275000
-	["OPT_O_T_MBT_02_cannon_ghex_F", DEF_PROD(0)],				    // T-100 Varsuk 450000
-	["OPT_O_T_MBT_02_arty_ghex_F", DEF_PROD(0)]					// 2S9 Sochor 400000
+	["OPT4_O_T_APC_Tracked_02_cannon_ghex_F", DEF_PROD(0)],		    // BTR-K Kamysh (Titan) 275000
+	["OPT4_O_T_MBT_02_cannon_ghex_F", DEF_PROD(0)],				    // T-100 Varsuk 450000
+	["OPT4_O_T_MBT_02_arty_ghex_F", DEF_PROD(0)]					// 2S9 Sochor 400000
 ];
 
 GVAR(csat_supplies) = [

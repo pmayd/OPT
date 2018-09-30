@@ -54,21 +54,28 @@ GVAR(canTransportCargo) =
 	["OPT_B_G_Offroad_01_armed_F", 4],				    // Pickup HMG - grad nich drin!
 	["OPT_B_T_LSV_01_unarmed_F", 4], 				    // Prowler unarmed
 	["OPT_B_T_LSV_01_armed_F", 4],                      // Prowler armed
+	["OPT_B_T_LSV_01_AT_F_un", 4], 						// Prowler AT - vanilla - lord
 	["OPT_B_MRAP_03_F", 4],							    // Strider - grad nich drin!
 	["OPT_B_MRAP_03_hmg_F", 4],						    // Strider HMG - grad nich drin!
 	["OPT_B_MRAP_03_gmg_F", 4],						    // Strider GMG
 	["OPT_B_MRAP_01_F", 4],							    // Hunter
 	["OPT_B_MRAP_01_hmg_F", 4],						    // Hunter HMG
 	["OPT_B_MRAP_01_gmg_F", 4],						    // Hunter GMG
+	["OPT4_B_MRAP_01_hmg_F", 4],				// Hunter HMG - neu
+	["OPT4_B_MRAP_01_gmg_F", 4],					// Hunter gMG - neu
 	["OPT_B_Truck_01_covered_F", 6], 					// HEMTT Inf-Transport
 	["OPT_B_Truck_01_transport_F", 8],				    // HEMTT Logistik - hinzugefügt
 // NATO Armored	
 	["OPT_B_APC_Wheeled_01_cannon_F", 4],			    // AMV-7 Marshall
+	["OPT4_B_APC_Wheeled_01_cannon_F", 4],				// AMV-7 Marshall - neu
 	["OPT_B_APC_Wheeled_01_cannon_light_F", 4],		    // AMV-7 Marshall (Leicht)
 	["OPT_B_MBT_01_cannon_F", 4],					    // M2A4 Slammer
 	["OPT_B_MBT_01_TUSK_F", 4],						    // M2A4 SlammerUp
+	["OPT4_B_MBT_01_TUSK_F", 4],				    // M2A4 SlammerUp - neu
 	["OPT_B_APC_Tracked_01_rcws_F", 4],				    // IFV-6c Panther	von 30
+	["OPT4_B_APC_Tracked_01_rcws_F", 4],		    // IFV-6c Panther - neu
 	["OPT_B_APC_tracked_03_cannon_F", 4],		        // FV-720 Mora	 von 30
+	["OPT4_B_APC_tracked_03_cannon_F", 4],	        // FV-720 Mora - neu
 // NATO Helicopters	
 	["OPT_B_Heli_Light_01_F", 4],				    	// MH-9 Hummingbird
 	["OPT_B_Heli_Transport_01_F", 4],			    	// UH-80 Ghosthawk   von 30
@@ -86,6 +93,7 @@ GVAR(canTransportCargo) =
 	["OPT_O_T_Quadbike_01_ghex_F", 2],				    // Quadbike	- checken!
 	["OPT_O_T_LSV_02_unarmed_F", 4], 				    // Quilin unarmed
 	["OPT_O_T_LSV_02_armed_F", 4],					    // Quilin armed
+	["OPT_O_T_LSV_01_AT_F_un", 4], 						// Prowler AT - vanilla	- lord
     ["OPT_O_G_Offroad_01_F", 4],					    // Pickup  - grad nich drin!
     ["OPT_O_G_Offroad_01_armed_F", 4],				    // Pickup HMG  - grad nich drin!
 	["OPT_O_T_MRAP_02_ghex_F", 4],					    // Ifrit - tropentarn hinzugefügt
@@ -98,25 +106,31 @@ GVAR(canTransportCargo) =
 	["OPT_O_MRAP_02_F", 4],						        // Ifrit - tropentarn hinzugefügt
 	["OPT_O_MRAP_02_hmg_F", 4],					        // Ifrit HMG  - tropentarn hinzugefügt
 	["OPT_O_MRAP_02_gmg_F", 4],					        // Ifrit GMG  - tropentarn hinzugefügt
+	["OPT4_O_MRAP_02_hmg_F", 4],				// Ifrit HMG - neu
+	["OPT4_O_MRAP_02_gmg_F", 4],					// Ifrit GMG - neu
 	["OPT_O_Truck_03_covered_F", 6],			        // Tempest Transport	
 	["OPT_O_Truck_03_transport_F", 8],			        // Tempest Logistik - hinzugefügt
 // CSAT Armored
 	["OPT_O_APC_Wheeled_03_cannon_F", 4],			    // AFV-4 Gorgon
 	["OPT_O_APC_Wheeled_03_cannon_light_F", 4],		    // AFV-4 Gorgon (Leicht)
+	["OPT4_O_APC_Wheeled_03_cannon_F", 4],			    // AFV-4 Gorgon - neu
 	["OPT_O_T_APC_Wheeled_02_rcws_ghex_F", 4],			// MSE-3 Marid  - tropentarn hinzugefügt
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_F", 4],		// BTR-K Kamysh (Titan)
 	["OPT_O_T_APC_Tracked_02_cannon_ghex_light_F", 4],	// BTR-K Kamysh	
+	["OPT4_O_APC_Tracked_02_cannon_F", 4],	// BTR-K Kamysh	- neu
 	["OPT_O_T_MBT_02_cannon_ghex_F", 4],				// T-100  - hinzugefügt
 //vanilla	
-	["OPT_O_APC_Wheeled_02_rcws_F", 4],			        // MSE-3 Marid  - tropentarn hinzugefügt
+	["OPT4_O_APC_Wheeled_02_rcws_F", 4],			        // MSE-3 Marid  - neu
 	["OPT_O_APC_Tracked_02_cannon_F", 4],		        // BTR-K Kamysh (Titan)
 	["OPT_O_APC_Tracked_02_cannon_light_F", 4],	        // BTR-K Kamysh	
 	["OPT_O_MBT_02_cannon_F", 4],				        // T-100  - hinzugefügt
 // CSAT Helicopter
 	["OPT_O_Heli_Light_03_unarmed_F", 4],				// WY-55 Hellcat,70000
-	["OPT_O_Heli_Light_03_unarmed_green_F", 4],		    // WY-55 Hellcat,70000
+	["OPT4_O_Heli_light_03_green_F", 4],		    // WY-55 Hellcat,70000 - neu
+	["OPT4_O_Heli_light_03_F", 4],				// hellcat - neu
 	["OPT_O_Heli_Light_02_unarmed_F", 4],				// PO-30 Orca,100000
 	["OPT_O_Heli_Light_02_unarmed_black_F", 4],	       	// PO-30 Orca,100000
+	["OPT4_O_Heli_Light_02_F", 4],					// orca - neu
 	["OPT_O_Heli_Transport_04_covered_F", 8], 	// Mi-290 Taru (Transport),110000
 	["OPT_O_Heli_Transport_04_covered_black_F", 8], 	// Mi-290 Taru (Transport),110000	
 	["OPT_O_T_VTOL_02_infantry_unarmed_F", 4],			// Y-32 Xi'an (Inf-Transport), 180000
