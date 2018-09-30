@@ -2,6 +2,7 @@
 PREP(addAction);
 PREP(addToCurator);
 PREP(clearDebugMarker);
+PREP(clearMarker);
 PREP(createDebugMarker);
 PREP(createMarker);
 PREP(execFunc);

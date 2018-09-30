@@ -1,6 +1,7 @@
 /**
-* Author: James
 * Initialize CBA settings
+*
+* Author: James
 *
 * Arguments:
 * None
@@ -8,18 +9,20 @@
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_initCBASettings.sqf;
-*
 * Server only:
 * no
 *
 * Public:
-* no
+* no - called by XEH_PreInit.sqf at mission start
 *
 * Global:
 * no
 *
+* Sideeffects:
+* no
+* 
+* Example:
+* [] call EFUNC(blankcomponent,initCBASettings);
 */
 #include "script_component.hpp"
 

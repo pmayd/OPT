@@ -8,123 +8,143 @@ east -> Angriffsziel für NATO
 #include "script_component.hpp"
 
 GVARMAIN(nato_flags_pos) = [
-	   [7164, 8996, west] // Saint Louis - Konvoi
-//	   [13424, 2792, west], // Kamyshovo - Skalisty Dorf
-//	   [12390, 3303, west], // Kamyshovo - Insel (muss gebaut werden!)
-//	   [12049, 3554, west], // Kamyshovo - Zentrum
 
-//	   [4614, 9658, west], // Flughafen - Stützpunkt
-//	   [4731, 10335, west], // Flughafen - Tower
-//	   [4195, 10953, west], // Flughafen - Militär  (muss gebaut werden!)	   
+// Basis Nordost - 7
+	   [17917, 17885, west], // TWOVILLAGES - Kamir - twovillages-kamir
+	   [19523, 18697, west], // TWOVILLAGES - Farm - twovillages-farm
+	   [19852, 19876, west], // TWOVILLAGES - Morar - twovillages-morar
 
-//	   [6242, 7748, west], // Stary Sobor - Farm
-//	   [5971, 7884, west], // Stary Sobor - Zentrum
-//	   [5342, 8626, west], // Stary Sobor - Kabanino
+	   [17412, 14800, west], // ZARATH - Zentrum - zarath-zentrum
+	   [17621, 17401, west], // ZARATH - Farm - zarath-farm
+	   [16457, 15164, west], // ZARATH - Vorort - zarath-vorort
 	   
-//	   [3794, 8908, west], // Vybor - Zentrum
-//	   [4159, 8947, west], // Vybor - Fabrik
-//	   [4361, 8174, west], // Vybor - Militär (muss gebaut werden!)
+	   [16457, 15164, west], // ANYAKAR - Zentrum - anyakar-zentrum - markstände no damage?!
+	   [17673, 9282, west], // ANYAKAR - Razbula - anyakar-razbula
+	   [16095, 10300, west], // ANYAKAR - Farm - anyakar-farm
 	   
-//	   [6540, 5603, west], // Vyshnoye - Zub
-//	   [6539, 6097, west], // Vyshnoye - Zentrum
-//	   [7533, 5120, west], // Vyshnoye - Mogilevka
-	   
-//	   [10088, 1912, west], // Elektrozavodsk - Industrie
-//	   [8687, 2428, west], // Elektrozavodsk - Vorort
-//	   [8073, 3350, west], // Elektrozavodsk - Prigorodky
+	   [16047, 19996, west], // AFARAT - Zentrum - afarat-zentrum
+	   [16274, 19531, west], // AFARAT - Bergdorf - afarat-bergdorf
+	   [15067, 19151, west], // AFARAT - Farm - afarat-farm	 
 
-//	   [2718, 10032, west], // Lopatino - Zentrum
-//	   [2880, 9746, west], // Lopatino - Farm	   
-//	   [2305, 10894, west], // Lopatino - Militär (muss gebaut werden!)
+	   [14291, 16015, west], // ZENTRALMASSIV - Getreidefarm - zentral-getreide	
+	   [15139, 14937, west], // ZENTRALMASSIV - ziegenfarm - zentral-ziegenfarm	   
+	   [14815, 14739, west], // ZENTRALMASSIV - gutshof - zentral-gut
 	   
-//	   [6492, 4660, west], // Pulkovo - Militär (muss gebaut werden!)
-//	   [5859, 4857, west], // Pulkovo - Nadezhdino
-//	   [4940, 5604, west], // Pulkovo - Zentrum
+	   [15657, 7367, west], // PUESTO CROW - Farm - puesto-farm 	   
+	   [13755, 9326, west], // PUESTO CROW - Militärstützpunkt - puesto-militär
+	   [15249, 9919, west], // PUESTO CROW - Altes Bergdorf - puesto-dorf
+
+	   [19683, 7062, west], // AFSHER - Vorort - afsher-vorort
+	   [17152, 7101, west], // AFSHER - Müllhalde - afsher-müll
+	   [16291, 6548, west], // AFSHER - Baustelle - afsher-bau  
 	   
-//	   [4498, 6477, west] // Rogovo - Zentrum
-//	   [3126, 7954, west], // Rogovo - Pustoshka
+// Basis Südwest - 9
 	   
-//	   [3699, 5986, west], // Pass Sosnovy - Green Mountain
-//	   [3005, 6734, west], // Pass Sosnovy - Farm
-//	   [2004, 7337, west], // Pass Sosnovy - Myshkino
+	   [3990, 12566, west], // KARIFT - Kloster - karift-kloster
+	   [4121, 12036, west], // KARIFT - Marktplatz - karift-markt
+	   [4973, 11829, west], // KARIFT - Zhapirs Orangenplantage - karift-zhapir	   
+
+	   [6766, 9836, west], // MAFARAZ - Fabrikruine - mafaraz-fabrik
+	   [5197, 10342, west], // MAFARAZ - Zentrum - mafaraz-zentrum
+	   [5239, 10770, west], // MAFARAZ - Militärcamp - mafaraz-militär
+
+	   [7092, 4416, west], // AMIR - Zentrum - amir-zentrum   
+	   [8425, 4832, west], // AMIR - Roggenfarm - amir-roggen
+	   [7487, 4242, west], // AMIR - Benamair - amir-ben
 	   
-//	   [2779, 5258, west], // Zelenogorsk - Zentrum
-//	   [4389, 4618, west], // Zelenogorsk - Kozlovka
-//	   [3389, 4934, west], // Zelenogorsk - Drozhino
+	   [5107, 3449, west], // MOZARAT - Pferdezucht - mozarat-pferd
+	   [5442, 3229, west], // MOZARAT - Maisplantage - mozarat-mais	 
+	   [4129, 841, west], // MOZARAT - Militär - mozarat-militär - muss oppa ran! oder bergbau?!
 	   
-//	   [6928, 2471, west], // Chernogorsk - Zentrum
-//	   [6281, 3779, west], // Chernogorsk - Farm
-//	   [5836, 3977, west] // Chernogorsk - Vorort
-    ];
+	   [1187, 14232, west], // MAYANKEL - Zentrum - mayankel-zentrum  - markstände no damage?!
+	   [1751, 13859, west], // MAYANKEL - Vorort - mayankel-vorort  - markstände no damage?!
+	   [3290, 13192, west], // MAYANKEL - Wochenmarkt - mayankel-markt - markstände no damage?!
+	   
+	   [5883, 12473, west], // BERG 447 - Gutshof - 447-gut
+	   [8834, 10928, west], // BERG 447 - Dorf am Fluss - 447-dorf
+	   [8327, 10219, west], // BERG 447 - Farm - 447-farm
+
+	   [9408, 8075, west], // MORUT - Kloster - morut-kloster
+ 	   [9456, 7279, west], // MORUT - Gutshof - morut-gut
+ 	   [9876, 6830, west], // MORUT - Plantage - morut-plantage	 
+
+	   [10816, 5364, west], // LOBORIBER - Brückenzollstation - lobo-zoll
+	   [9906, 5887, west], // LOBORIBER - Dorf - lobo-dorf	   
+	   [9915, 4163, west], // LOBORIBER - Gutshof - lobo-gut
+
+	   [10393, 3529, west], // KINDUF-VORORT - Fabrik - kinduf-v-fabrik
+	   [9296, 2786, west], // KINDUF-VORORT - Bergdorf - kinduf-v-dorf	
+	   [9509, 2052, west] // KINDUF-VORORT - Plantage - kinduf-v-plantage	   
+];
 
 GVARMAIN(csat_flags_pos) = [
-	   [7175, 8991, east] // Saint Louis - Konvoi
-//     [12781, 9635, east], // Berezino - Sägewerk (muss gebaut werden!)
-//	   [12399, 9523, east], // Berezino - Vorort
-//	   [12105, 9729, east], // Berezino - Militär (muss gebaut werden!)
-	   
-//	   [10269, 12019, east], // Black Mountain - Burg (muss gebaut werden!)
-//	   [10220, 11781, east], // Black Mountain - Ruine (muss gebaut werden!)
-//	   [10749, 10784, east], // Black Mountain - Tanke (muss gebaut werden!)
 
-//     [12933, 8121, east], // Nizhnoye - Farm
-//	   [12297, 8497, east], // Nizhnoye - Vorort
-//	   [11938, 8869, east], // Nizhnoye - Müllhalde
-	   
-//	   [10224, 9846, east], // Dubrovka - Vorort
-//	   [9882, 10326, east], // Dubrovka - Militär (muss gebaut werden!)
-//	   [10544, 9726, east], // Dubrovka - Zentrum
-	   
-//	   [8442, 6682, east], // Guglovo - Zentrum
-//	   [7778, 6888, east], // Guglovo - Farm
-//	   [7080, 7708, east], // Guglovo - Novi Sobor
-	   
-//	   [8779, 11617, east], // Gvozdno - Farm
-//	   [8557, 11927, east], // Gvozdno - Zentrum
-//	   [9160, 11015, east], // Gvozdno - Vorort
-	   
-//	   [11242, 4281, east], // Staroye - Rog-Burg
-//	   [10126, 5491, east], // Staroye - Zentrum
-//	   [8376, 5962, east], // Staroye - Ruinenstadt Kumyrna
+//Basis NORD - 7
+	   [3835, 17824, east], // NEFER - Martin FOB - nefer-martin
+	   [4891, 17004, east], // NEFER - Stadt Süd - nefer-stadt
+	   [5678, 17464, east], // NEFER - Stadt Nord, Sanatorium - nefer-stadt
 
-//	   [13372, 6237, east], // Solnichniy - Zentrum
-//	   [12945, 6276, east], // Solnichniy - Zementwerk
-//	   [12182, 6283, east], // Solnichniy - Vorort
-	   
-//	   [10652, 8051, east], // Polana - Zentrum
-//	   [11452, 7448, east], // Polana - Fabrik
-//	   [12123, 7260, east], // Polana - Vorort
+	   [8042, 16429, east], // KANDAR - Vorort east - kandar-stadt 
+	   [8353, 16704, east], // KANDAR - Zentrum Nord - kandar-stadt
+	   [9034, 16169, east], // KANDAR - Agrarstützpunkt - kandar-agrar
 
-//	   [9142, 3857, east], // Pusta - Zentrum   
-//	   [10422, 2586, east], // Pusta - Kraftwerk
-//	   [10481, 2265, east], // Pusta - Elektro-Zentrum
+	   [11623, 18650, east], // VORORT KALAE NOOWI - Radarturm east - kalae noowi-radar
+	   [11547, 17735, east], // VORORT KALAE NOOWI - Militär - kalae noowi-Reg44
+	   [12584, 19046, east], // VORORT KALAE NOOWI - Alte Zollstation - kalae noowi-grenzposten
 
-//	   [4495, 6477, east] // Rogovo - Pogorevka
- 
-//	   [9444, 8800, east], 	// Gorka - Zentrum
-//	   [9785, 8725, east], 	// Gorka - Farm
-//	   [8567, 9700, east], 	// Gorka - Militär (muss gebaut werden!)
+	   [2718, 16189, east], // LIMAR - Stadt - limar-stadt
+	   [2573, 15912, east], // LIMAR - Militär - limar-stadt - 3 eingänge
+	   [5367, 14380, east], // LIMAR - Shoran - limar-shoran
 	   
-//	   [7785, 10352, east], // Devils Castle - Ausgrabungsstelle (muss gebaut werden!)
-//	   [7227, 11018, east], // Devils Castle - Militär (muss gebaut werden!)
-//	   [6894, 11443, east], // Devils Castle - Burg
+	   [3794, 8908, east], // KUNARA - Farm - kunara-farm
+	   [8064, 12817, east], // KUNARA - Zentrum - kunara-farm
+	   [9611, 14150, east], // KUNARA - Tunkuf -  kunara-tunkuf
 	   
-//	   [12849, 4436, east], // Tulga - Zentrum
-//	   [12178, 5044, east], // Tulga - Holzfäller-Lager
-//	   [11267, 5457, east], // Tulga - Vorort
-	   
-//	   [11192, 6572, east], // Shakovka - Vorort
-//	   [9577, 6571, east], // Shakovka - Zentrum
-//	   [9023, 7828, east], // Shakovka - Militär (muss gebaut werden!)
-	   	   
-//	   [7205, 9059, east], // Grishino - Farm (muss gebaut werden!)
-//	   [5945, 10347, east], // Grishino - Zentrum
-//	   [5437, 11088, east], // Grishino - Militär (muss gebaut werden!)
-	   
-//	   [4975, 12512, east], // Petrovka - Zentrum
-//	   [4004, 11659, east], // Petrovka - Militär (muss gebaut werden!)
-//	   [1903, 12442, east], // Petrovka - Sägewerk (muss gebaut werden!)
+	   [11859, 15510, east], // RAMIR - Vorort - ramir-vorort
+	   [12428, 15473, east], // RAMIR - Farm - ramir-farm
+	   [12994, 15276, east], // RAMIR - Zentrum - ramir-zentrum
 
+	   [13064, 17284, east], // KALAE NOOWI - Alter Markt - kalae noowi-alter markt
+	   [13220, 17668, east], // KALAE NOOWI - Rathaus - kalae noowi-rathaus
+	   [13864, 17900, east], // KALAE NOOWI - Krankenhaus - kalae noowi-krankenhaus
+
+// Basis SÜD - 5  
+	   [13244, 807, east], // BAGDIR - Zentrum - bagdir-zentrum
+	   [13386, 1436, east], // BAGDIR - Farm - bagdir-farm
+	   [15965, 3096, east], // BAGDIR - Orfar - bagdir-orfar
+
+	   [19207, 3243, east], // TERUK - Zentrum - teruk-zentrum
+	   [20028, 3488, east], // TERUK - Markt - teruk-markt - zeltdächer auf damage false!
+	   [17495, 2856, east], // TERUK - Fabrik Offar - teruk-fabrik
+	   
+	   [10668, 1283, east], // KINDUF - Vorort - kinduf-vorort
+	   [11417, 2824, east], // KINDUF - Zentrum - kinduf-zentrum
+	   [12123, 2744, east], // KINDUF - Altstadt - kinduf-altstadt
+	   
+	   [13101, 3526, east], // TWOCAMPS - Hanfplantage - twocamps-hanf
+	   [13966, 3414, east], // TWOCAMPS - Iban Camp - twocamps-iban - nur 1 eingang!
+	   [15108, 4326, east], // TWOCAMPS - Peloton Camp - twocamps-peloton - nur 1 eingang!
+
+	   [16492, 5374, east], // AROBSTER - Vorort - arobster-vorort
+	   [17383, 5803, east], // AROBSTER - Funkstation - arobster-funk - 3 eingänge
+	   [18058, 6018, east], // AROBSTER - Farm - arobster-farm
+	   
+// Mittelbereich - 4
+	   [11397, 3913, east], // SHEGARA - Farm - shegara-farm
+	   [11525, 5020, east], // SHEGARA - Klärwerk - shegara-klärwerk
+	   [13359, 4859, east], // SHEGARA - Kloster - shegara-kloster
+
+	   [11948, 6141, east], // ORCARIF - Fabrik - orcarif-fabrik
+	   [11400, 6698, east], // ORCARIF - Stadt - orcarif-stadt	  
+	   [12243, 7098, east], // ORCARIF - Gutshaus - orcarif-gutshaus
+	   
+	   [10474, 9259, east], // LIMARI - Markt - limari-markt - markstände no damage?!
+	   [10703, 10108, east], // LIMARI - Stadt - limari-stadt    - markstände no damage?!
+	   [11941, 8159, east], // LIMARI - Vorort - limari-bramar    - markstände no damage?!
+	   
+	   [10329, 10837, east], // MIKIS - Fabrik - mikis-fabrik
+	   [9673, 11322, east], // MIKIS - FOB - mikis-fob    - nur 1 eingang
+	   [8921, 12697, east] // MIKIS - Vorort - mikis-vorort
     ];
 
 

@@ -1,6 +1,8 @@
 /**
-* Author: Lord
-* teleport player with vehicle to chosen location, if valid
+* Teleport player and their vehicle to selected destination.
+* Check for truce time and level of teleport location.
+*
+* Author: James
 *
 * Arguments:
 * 0: <NUMBER> current selected index of listbox control
@@ -8,17 +10,36 @@
 * Return Value:
 * None
 *
-* Example:
-* [0] call fnc_beam.sqf;
+* Server only:
+* no
 *
+* Public:
+* no - should be called from beam dialog
+*
+* Global:
+* no
+*
+* Sideeffects:
+* black out and black in effect for player
+* local gui messages for player
+* log message "%1 (%2) wurde nach %3 gebeamt"
+*
+* Example:
+* [0] spawn EFUNC(beam,beam);
 */
 #include "script_component.hpp"
 
-//Dialog Auswertung
-params ["_ix"];
+/* PARAMS */
+params [
+   ["_ix", -1, [0], 1]
+];
 
+/* VALIDATION */
+if (_ix == -1) exitWith{};
+
+/* CODE BODY */
 private _beamfrei = true;
-
+private _SF = false;
 private _arry = GVAR(box) select _ix;
 private _lvl = _arry select 2;
 private _beam_pos = _arry select 0;
@@ -29,7 +50,6 @@ if (GVARMAIN(missionStarted) and _lvl != -1) exitWith {
     closeDialog 0;
 };
 
-private _SF = false;
 if ((typeOf vehicle player) in GVAR(heavy_vehicles)) then {
     _SF = true;
 };

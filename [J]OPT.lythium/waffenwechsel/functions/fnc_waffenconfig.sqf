@@ -1,10 +1,34 @@
+/**
+* Konfig Waffenwechselmodul
+* 
+* Author: [GNC]Lord-MDB
+*
+* Arguments:
+* keine
+* 
+* Return Value:
+* keine
+* 
+* Server only:
+* nein
+*
+* Public:
+* nein
+* 
+* Global:
+* nein
+* 
+* Sideeffects:
+* Parametervorgaben für Dialog
+* 
+* Example:
+* 
+* 
+* 
+*
+*/
 #include "script_component.hpp"
-// 
-// 
-// 
-//
-//  
-//
+
 //Raketen Heli Nato
 //[Magazinename,Waffenname,Preis/Schuss,Preis Magazin,Boxname,Waffenkontrolle Pilot KHS]
 GVAR(Raktenheliwest)= [
@@ -81,7 +105,10 @@ GVAR(Gunvehwest)=[
 ["16Rnd_125mm_APFSDS","cannon_125mm",6000,96000,"16x125mm APFSDS"],  // 36.16x125mm APFSDS
 ["8Rnd_125mm_HE","cannon_125mm",3500,28000,"8x125mm HE"],  //  37.8x125mm HE
 ["4Rnd_120mm_cannon_missiles","cannon_120mm",50000,200000,"4x120mm ATGM"],  // 38.4x120mm ATGM
-["4Rnd_125mm_cannon_missiles","cannon_125mm",50000,200000,"4x125mm ATGM"]  //  39.4x125mm ATGM
+["4Rnd_125mm_cannon_missiles","cannon_125mm",50000,200000,"4x125mm ATGM"],  //  39.4x125mm ATGM
+["OPT_32Rnd_155mm_Mo_shells","OPT_mortar_155mm_AMOS",5000,160000,"32x155 mm HE"],  //  40.32x155 mm HE
+["OPT_2Rnd_155mm_Mo_Cluster","OPT_mortar_155mm_AMOS",20000,40000,"2xCluster"],  //  41.2xCluster Shells
+["6Rnd_155mm_Mo_smoke","OPT_mortar_155mm_AMOS",500,3000,"6xSmoke"]  //  42.6xSmoke 
 ];
 
 //Raketen CSAT
@@ -161,7 +188,10 @@ GVAR(Gunveheast)=[
 ["16Rnd_125mm_APFSDS","cannon_125mm",6000,96000,"16x125mm APFSDS"],  // 36.16x125mm APFSDS
 ["8Rnd_125mm_HE","cannon_125mm",3500,28000,"8x125mm HE"],  //  37.8x125mm HE
 ["4Rnd_120mm_cannon_missiles","cannon_120mm",50000,200000,"4x120mm ATGM"],  // 38.4x120mm ATGM
-["4Rnd_125mm_cannon_missiles","cannon_125mm",50000,200000,"4x125mm ATGM"]  //  39.4x125mm ATGM
+["4Rnd_125mm_cannon_missiles","cannon_125mm",50000,200000,"4x125mm ATGM"],  //  39.4x125mm ATGM
+["OPT_32Rnd_155mm_Mo_shells","OPT_mortar_155mm_AMOS",5000,160000,"32x155 mm HE"],  //  40.32x155 mm HE
+["OPT_2Rnd_155mm_Mo_Cluster","OPT_mortar_155mm_AMOS",20000,40000,"2xCluster"],  //  41.2xCluster Shells
+["6Rnd_155mm_Mo_smoke","OPT_mortar_155mm_AMOS",500,3000,"6xSmoke"]  //  42.6xSmoke 
 ];
 
 //Preis Tarnung,Drahtkäfig,Datalinksystem
@@ -182,6 +212,7 @@ GVAR(Marshall)=[[],[3,4,5,6,12,13],[1,1],[1],[0,4]]; //kallek
 GVAR(Mora)=[[],[3,4,5,6,14,15,16,18,19],[1,1],[1],[0,4]]; //kallek
 GVAR(Cheetah)=[[],[20,21,22,23],[0,1],[1],[0,4]];
 GVAR(SlammerUp)=[[],[0,1,2,3,4,5,6,24,25,26,27,28,29,30,30,32,38],[0,1],[1],[0,4]];
+GVAR(Scorcher)=[[],[40,41,42],[0,1],[1],[0,4]];
 
 //EAST Einheiten
 GVAR(Orca)=[[0,1,2,4,8,9,10,11,13],[0,1,2],[0,0],[1],[2,2]]; //kallek
@@ -196,35 +227,44 @@ GVAR(Gorgon)=[[],[3,4,5,6,12,13],[1,1],[1],[0,4]]; //kallek
 GVAR(Kamysh)=[[],[3,4,5,6,14,15,16,18,19],[1,1],[1],[0,4]]; //kallek
 GVAR(Tigris)=[[],[20,21,22,23],[0,1],[1],[0,4]];
 GVAR(Varsuk)=[[],[0,1,2,3,4,5,6,33,34,35,36,37,39],[0,1],[1],[0,4]];
+GVAR(Sochor)=[[],[40,41,42],[0,1],[1],[0,4]];
 
 //Fahrzeuge die zugelassen sind
 GVAR(vehclasswestWW)=[
-"OPT_B_Heli_Light_01_armed_F_un",                // AH-9 Pawnee
-"OPT_B_Heli_Attack_01_F_un",                     // AH-99 Blackfoot
-"OPT_B_MRAP_01_hmg_F_un",                         // Hunter HMG
-"OPT_B_MRAP_01_gmg_F_un",                         // Hunter GMG
-"OPT_B_T_LSV_01_armed_F_un",                     // Prowler HMG
-"OPT_B_T_LSV_01_AT_F_un",                         // Prowler AT
-"OPT_B_APC_Tracked_01_rcws_F_un",                // IFV-6c Panther
-"OPT_B_APC_Wheeled_01_cannon_F_un",              // AMV-7 Marshall
-"OPT_B_APC_tracked_03_cannon_F_un",              // FV-720 Mora           
-"OPT_B_APC_Tracked_01_AA_F_un",                  // IFV-6a Cheetah
-"OPT_B_MBT_01_TUSK_F_un"                         // M2A4 SlammerUp
+"OPT4_B_MBT_03_cannon_F",
+"OPT4_B_MRAP_01_gmg_F",
+"OPT4_B_MRAP_01_hmg_F",
+"OPT4_B_Heli_Attack_01_F",
+"OPT4_B_Heli_Attack_01_F",
+"OPT4_B_Heli_Light_01_armed_F",
+"OPT4_B_APC_tracked_03_cannon_F",
+"OPT4_B_APC_Wheeled_01_cannon_F",
+"OPT4_B_APC_Wheeled_01_cannon_F",
+"OPT4_B_APC_Tracked_01_rcws_F",
+"OPT4_B_APC_Tracked_01_AA_F",
+"OPT4_B_MBT_01_cannon_F",
+"OPT4_B_MBT_01_TUSK_F",
+"OPT4_B_MBT_01_arty_F",
+"OPT4_O_Heli_light_03_green_F"
 ];
 
 GVAR(vehclasseastWW)=[
-"OPT_O_Heli_Light_02_F_un",                       // PO-30 Orca
-"OPT_O_Heli_Light_03_F_un",                           // WY-55 Hellcat 
-"OPT_O_Heli_Attack_02_F_un",                      // Mi-48 Kajman
-"OPT_O_MRAP_02_hmg_F_un",                         // Ifrit HMG
-"OPT_O_MRAP_02_gmg_F_un",                         // Ifrit GMG
-"OPT_O_T_LSV_02_armed_F_un",                     // Quilin HMG
-"OPT_O_T_LSV_02_AT_F_un",                         // Quilin AT
-"OPT_O_APC_Wheeled_02_rcws_F_un",                // MSE-3 Marid
-"OPT_O_APC_Wheeled_03_cannon_F_un",              // AFV-4 Gorgon
-"OPT_O_APC_Tracked_02_cannon_F_un",                // BTR-K Kamysh
-"OPT_O_APC_Tracked_02_AA_F_un",                  // ZSU-39 Tigris
-"OPT_O_MBT_02_cannon_F_un"                       // T-100 Varsuk
+"OPT4_O_Heli_light_03_F",
+"OPT4_O_Heli_Light_02_F",
+"OPT4_O_Heli_Light_02_black_F",
+"OPT4_O_Heli_Attack_02_F",
+"OPT4_O_Heli_Attack_02_black_F",
+"OPT4_O_APC_Wheeled_02_rcws_F",
+"OPT4_O_T_APC_Wheeled_02_rcws_ghex_F",
+"OPT4_O_APC_Tracked_02_cannon_F",
+"OPT4_O_T_APC_Tracked_02_cannon_ghex_F",
+"OPT4_O_APC_Tracked_02_AA_F",
+"OPT4_O_T_APC_Tracked_02_AA_ghex_F",
+"OPT4_O_MBT_02_cannon_F",
+"OPT4_O_T_MBT_02_cannon_ghex_F",
+"OPT4_O_MBT_02_arty_F",
+"OPT4_O_T_MBT_02_arty_ghex_F",
+"OPT4_O_APC_Wheeled_03_cannon_F"
 ];
 
 GVAR(textslotwest) =[

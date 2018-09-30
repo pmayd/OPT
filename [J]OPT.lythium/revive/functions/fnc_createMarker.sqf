@@ -26,11 +26,13 @@ params [
 
 /* VALIDATION */
 if (_unit isEqualTo objNull) exitWith{};
+private _name = UNIT_NAME(_unit);
+if (_name isEqualTo "") exitWith{};
 
+/* CODE BODY */
 private _marker = _unit getVariable ["FAR_unitMarker", ""];
 	
 if (PLAYER_SIDE == UNIT_SIDE(_unit)) then {
-    private _name = UNIT_NAME(_unit);
 
 	// erzeuge neuen Marker oder...
 	if (_marker == "") then {

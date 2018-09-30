@@ -69,9 +69,9 @@ if (alive _unit and _unit getVariable ["FAR_isUnconscious", 0] == 0) then {
             };
             
         } else {
-            [_unit] call FUNC(clearMarker);
+            [_unit, QGVAR(unitGPSMarker)] call EFUNC(common,clearMarker);
         };
     };
 } else  {
-    [_unit] call FUNC(clearMarker);
+    [_unit, QGVAR(unitGPSMarker)] call EFUNC(common,clearMarker);
 };    

@@ -1,6 +1,6 @@
 /**
 * Author: James
-* initialize mission EH
+* initialize server EH
 *
 * Arguments:
 * None
@@ -9,11 +9,21 @@
 * None
 *
 * Example:
-* [] call fnc_initMissionEH.sqf;
+* [] call EFUNC(revive,initServerMissionEH);
 *
+* Server only:
+* yes
+*
+* Public:
+* no - called from XEH_PostInit.sqf
 */
 #include "script_component.hpp"
 
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
 // delete old marker if unit disconnects
 GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
     /*
@@ -25,8 +35,7 @@ GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
     params ["_unit", "_id", "_uid", "_name"];
 
     // search for all markers with unit name in it and delete them on all clients
-    [objNull, QGVAR(unitGPSMarker), format["%1_%2", QGVAR(unitGPSMarker), _name]] remoteExecCall [QEFUNC(common,clearMarker), -2, false];
+    [objNull, "FAR_unitMarker", format ["FAR_marker_%1", _name]] remoteExecCall [QEFUNC(common,clearMarker), -2, false];
+
 
 }];
-
-

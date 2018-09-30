@@ -64,7 +64,13 @@ GVARMAIN(pilots_vecs) = [
 	"OPT_O_T_VTOL_02_vehicle_F",			    // Y-32 Xi'an (Fahrzeug-Transport), 200000
 	"OPT_O_T_VTOL_02_infantry_unarmed_F",	    // Y-32 Xi'an (Inf-Transport), 180000
 	"OPT_O_T_VTOL_02_vehicle_unarmed_F",	    // Y-32 Xi'an (Fahrzeug-Transport), 180000
-	"OPT_O_Plane_Fighter_AA_02_F"			    // To-201 Shikra (AA), 180000
+	"OPT_O_Plane_Fighter_AA_02_F",			    // To-201 Shikra (AA), 180000
+	"OPT_O_Heli_Light_03_F_un",
+	"OPT_B_Heli_Light_01_armed_F_un",
+	"OPT_B_Heli_Attack_01_F_un",
+	"sfp_bo105_unarmed",
+	"OPT_O_Heli_Light_02_F_un",
+	"OPT_O_Heli_Attack_02_F_un"	
 ];
 
 
@@ -98,7 +104,16 @@ GVARMAIN(crew_vecs) = [
 	"OPT_O_APC_Tracked_02_cannon_F",	        // BTR-K Kamysh (Titan),280000
 	"OPT_O_APC_Tracked_02_AA_F",		        // ZSU-39 Tigris,275000
 	"OPT_O_MBT_02_cannon_F",			        // T-100 Varsuk,450000	
-	"OPT_O_MBT_02_arty_F"					// 2S9 Sochor,650000
+	"OPT_O_MBT_02_arty_F",							// 2S9 Sochor,650000
+	"OPT_B_APC_Tracked_01_rcws_F_un",
+	"OPT_B_APC_Wheeled_01_cannon_F_un",
+	"OPT_B_APC_tracked_03_cannon_F_un",
+	"OPT_B_APC_Tracked_01_AA_F_un",
+	"OPT_B_MBT_01_TUSK_F_un",
+	"OPT_O_APC_Wheeled_02_rcws_F_un",
+	"OPT_O_APC_Wheeled_03_cannon_F_un",
+	"OPT_O_APC_Tracked_02_cannon_F_un",
+	"OPT_O_MBT_02_cannon_F_un"
 ];
 
 /* Waffenabfrage Offizier/Pilot/Crew*/
@@ -132,7 +147,9 @@ GVARMAIN(launchers) = [
 	"OPT_launch_B_Titan_tna_F",
     "OPT_launch_O_Titan_F",
     "OPT_launch_O_Titan_short_F",
-    "OPT_launch_B_Titan_short_F"
+    "OPT_launch_B_Titan_short_F",
+	"Weapon_launch_MRAWS_green_rail_F",
+	"Weapon_launch_MRAWS_olive_rail_F"
 ];
 
 /* OPERATOR */

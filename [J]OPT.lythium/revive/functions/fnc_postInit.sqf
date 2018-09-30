@@ -45,24 +45,22 @@ GVAR(eh_EachFrame) = addMissionEventHandler ["EachFrame", {
 
 
 // 3D Marker
-[] spawn {
-	if (FAR_REVIVE_3D_ICONS) then {
-		_icons = addMissionEventHandler ["Draw3D", {
-			{
-				if (
-                    (_x distance player) < 30 and
-                    _x getVariable ["FAR_isUnconscious", 0] == 1 and
-                    _x != player and
-                    UNIT_SIDE(_x) == PLAYER_SIDE
-                ) then {
-                    private _name = UNIT_NAME(_x);
-					drawIcon3D ["\a3\ui_f\data\map\MapControl\hospital_ca.paa", [0.6,0.15,0,0.8], _x, 0.5, 0.5, 0, format["%1 (%2m)", _name, ceil (player distance _x)], 0, 0.02];
+if (FAR_REVIVE_3D_ICONS) then {
+    GVAR(missionEH_draw3D) = addMissionEventHandler ["Draw3D", {
+        private _nearbyUnits = playableUnits select {
+            (_x distance player) < 30 and
+            _x getVariable ["FAR_isUnconscious", 0] == 1 and
+            _x != player and
+            UNIT_SIDE(_x) == PLAYER_SIDE
+        };
+        {
+            private _name = UNIT_NAME(_x);
+            drawIcon3D ["\a3\ui_f\data\map\MapControl\hospital_ca.paa", [0.6,0.15,0,0.8], _x, 0.5, 0.5, 0, format["%1 (%2m)", _name, ceil (player distance _x)], 0, 0.02];
 
-				};
-			} forEach playableUnits;
-		}];
-	};
+        } count _nearbyUnits;
+    }];
 };
+
 
 
 ////////////////////////////////////////////////

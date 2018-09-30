@@ -1,3 +1,32 @@
+/**
+* Funktion Dialog Waffenwechsel
+* 
+* Author: [GNC]Lord-MDB
+*
+* Arguments:
+* keine
+* 
+* Return Value:
+* keine
+* 
+* Server only:
+* nein
+*
+* Public:
+* nein
+* 
+* Global:
+* nein
+* 
+* Sideeffects:
+* keine
+* 
+* Example:
+* 
+* 
+* 
+*
+*/
 #include "script_component.hpp"
 
 private ["_pad","_veh","_fcDialog","_Fahrzeugbild","_Fahrzeugname","_Fbild","_Magazinveh","_weaponsveh","_Magazinfilter","_Magazinfilter2","_Magazinvehpylon","_Magazinvehpylonarry","_anzahlMagazinveh","_MuniKugel","_MuniRakete","_bild","_MuniBild1","_MuniBild2","_MuniBild3","_MuniBild4","_MuniBild5","_MuniBild6","_Fname","_Objket","_typveh","_boxarry","_anzahlboxarry","_side","_bewaffnungpreis","_Magazinveharry","_Magazinveharrynew","_draht","_tranung","_datalink","_pylon","_Boxnamen","_wert","_magazin","_weapon","_kontrolle","_buykontrolle","_buyrakmagazine","_buyrakweapon","_buygunmagazine","_buygunweapon","_buyDraht","_buyTarnung","_buyDatalink"];
@@ -50,30 +79,34 @@ if (_typveh in (GVAR(vehclasswestWW)+GVAR(vehclasseastWW))) then
     {
         switch (_typveh) do 
         {
-            case "OPT_B_Heli_Light_01_armed_F_un": {_boxarry = GVAR(Pawnee);_side=west;_pylon=["pylonleft1","pylonright1"];};
-            case "OPT_B_Heli_Attack_01_F_un": {_boxarry = GVAR(Blackfoot);_side=west;_pylon=["pylonleft1","pylonleft3","pylonright1","pylonright3"];};
-            case "OPT_B_MRAP_01_hmg_F_un": {_boxarry = GVAR(HunterHMG);_side=west;_pylon=[];};
-            case "OPT_B_MRAP_01_gmg_F_un": {_boxarry = GVAR(HunterGMG);_side=west;_pylon=[];};
+            case "OPT4_B_Heli_Light_01_armed_F": {_boxarry = GVAR(Pawnee);_side=west;_pylon=["pylonleft1","pylonright1"];};
+            case "OPT4_B_Heli_Attack_01_F": {_boxarry = GVAR(Blackfoot);_side=west;_pylon=["pylonleft1","pylonleft3","pylonright1","pylonright3"];};
+            case "OPT4_B_MRAP_01_hmg_F": {_boxarry = GVAR(HunterHMG);_side=west;_pylon=[];};
+            case "OPT4_B_MRAP_01_gmg_F": {_boxarry = GVAR(HunterGMG);_side=west;_pylon=[];};
             case "OPT_B_T_LSV_01_armed_F_un": {_boxarry = GVAR(ProwlerHMG);_side=west;_pylon=[];};
             case "OPT_B_T_LSV_01_AT_F_un": {_boxarry = GVAR(ProwlerAT);_side=west;_pylon=[];};
-            case "OPT_B_APC_Tracked_01_rcws_F_un": {_boxarry = GVAR(Panther);_side=west;_pylon=[];};
-            case "OPT_B_APC_Wheeled_01_cannon_F_un": {_boxarry = GVAR(Marshall);_side=west;_pylon=[];};
-            case "OPT_B_APC_tracked_03_cannon_F_un": {_boxarry = GVAR(Mora);_side=west;_pylon=[];};
-            case "OPT_B_APC_Tracked_01_AA_F_un": {_boxarry = GVAR(Cheetah);_side=west;_pylon=[];};
-            case "OPT_B_MBT_01_TUSK_F_un": {_boxarry = GVAR(SlammerUp);_side=west;_pylon=[];};    
+            case "OPT4_B_APC_Tracked_01_rcws_F": {_boxarry = GVAR(Panther);_side=west;_pylon=[];};
+            case "OPT4_B_APC_Wheeled_01_cannon_F": {_boxarry = GVAR(Marshall);_side=west;_pylon=[];};
+            case "OPT4_B_APC_tracked_03_cannon_F": {_boxarry = GVAR(Mora);_side=west;_pylon=[];};
+            case "OPT4_B_APC_Tracked_01_AA_F": {_boxarry = GVAR(Cheetah);_side=west;_pylon=[];};
+            case "OPT4_B_MBT_01_TUSK_F": {_boxarry = GVAR(SlammerUp);_side=west;_pylon=[];};    
             
-            case "OPT_O_Heli_Light_02_F_un": {_boxarry = GVAR(Orca);_side=east;_pylon=["pylonleft1","pylonright1"];};
-            case "OPT_O_Heli_Light_03_F_un": {_boxarry = GVAR(hellcat);_side=east;_pylon=["pylonleft1","pylonright1"];};
-            case "OPT_O_Heli_Attack_02_F_un": {_boxarry = GVAR(Kajman);_side=east;_pylon=["pylonleft1","pylonleft2","pylonright1","pylonright2"];};    
-            case "OPT_O_MRAP_02_hmg_F_un": {_boxarry = GVAR(irifHMG);_side=east;_pylon=[];};
+            case "OPT4_O_Heli_Light_02_F": {_boxarry = GVAR(Orca);_side=east;_pylon=["pylonleft1","pylonright1"];};
+            case "OPT4_O_Heli_light_03_green_F": {_boxarry = GVAR(hellcat);_side=west;_pylon=["pylonleft1","pylonright1"];};
+            case "OPT4_O_Heli_Attack_02_F": {_boxarry = GVAR(Kajman);_side=east;_pylon=["pylonleft1","pylonleft2","pylonright1","pylonright2"];};    
+            case "OPT4_O_MRAP_02_hmg_F": {_boxarry = GVAR(irifHMG);_side=east;_pylon=[];};
             case "OPT_O_MRAP_02_gmg_F_un": {_boxarry = GVAR(irifGMG);_side=east;_pylon=[];};
             case "OPT_O_T_LSV_02_armed_F_un": {_boxarry = GVAR(QuilinHMG);_side=east;_pylon=[];};
             case "OPT_O_T_LSV_02_AT_F_un": {_boxarry = GVAR(QuilinAT);_side=east;_pylon=[];};
-            case "OPT_O_APC_Wheeled_02_rcws_F_un": {_boxarry = GVAR(Marid);_side=east;_pylon=[];};
-            case "OPT_O_APC_Wheeled_03_cannon_F_un": {_boxarry = GVAR(Gorgon);_side=east;_pylon=[];};
-            case "OPT_O_APC_Tracked_02_cannon_F_un": {_boxarry = GVAR(Kamysh);_side=east;_pylon=[];};
-            case "OPT_O_APC_Tracked_02_AA_F_un": {_boxarry = GVAR(Tigris);_side=east;_pylon=[];};    
-            case "OPT_O_MBT_02_cannon_F_un": {_boxarry = GVAR(Varsuk);_side=east;_pylon=[];};
+            case "OPT4_O_APC_Wheeled_02_rcws_F": {_boxarry = GVAR(Marid);_side=east;_pylon=[];};
+            case "OPT4_O_APC_Wheeled_03_cannon_F": {_boxarry = GVAR(Gorgon);_side=east;_pylon=[];};
+            case "OPT4_O_APC_Tracked_02_cannon_F": {_boxarry = GVAR(Kamysh);_side=east;_pylon=[];};
+            case "OPT4_O_APC_Tracked_02_AA_F": {_boxarry = GVAR(Tigris);_side=east;_pylon=[];};    
+            case "OPT4_O_MBT_02_cannon_F": {_boxarry = GVAR(Varsuk);_side=east;_pylon=[];};
+			
+			case "OPT4_B_MBT_01_arty_F": {_boxarry = GVAR(Scorcher);_side=west;_pylon=[];}; 
+			case "OPT4_O_MBT_02_arty_F": {_boxarry = GVAR(Sochor);_side=east;_pylon=[];}; 
+			case "OPT4_O_T_MBT_02_arty_ghex_F": {_boxarry = GVAR(Sochor);_side=east;_pylon=[];}; 
             
             default {_boxarry = [];_side=civilian;};
         };
