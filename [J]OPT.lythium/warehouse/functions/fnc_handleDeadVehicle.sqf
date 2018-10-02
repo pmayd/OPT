@@ -30,7 +30,19 @@ params [
 
 
 // delete all wrecks within the base safezone
-if (!(_vec isKindOf "CAManBase") and ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (getmarkerPos "respawn_east") < 200))) then {
+private _garbageCollectors = [];
+for "_i" from 1 to 100 do {
+    private _trigger = call compile format["%1_%2", QGVAR(garbage_collector), _i];
+    if (isNil {_trigger}) exitWith{};
+
+    _garbageCollectors pushBack _trigger;
+    
+};
+
+if (
+        !(_vec isKindOf "CAManBase") and 
+        ( ({_vec in list _x} count _garbageCollectors) > 0)
+    ) then {
     [_vec] spawn {
         params ["_vec"];
         sleep 5;

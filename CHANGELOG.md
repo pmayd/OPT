@@ -13,6 +13,7 @@
 - cargosystem für modupdate angepasst -> setcargoandspace.sqf
 - warehouse für modupdate angepasst -> setupvehiclepool.sqf
 - MHQ tarnnetze aus komposition entfernt - aber immer noch scheisse aufzubauen!
+- Warehouse: Ab sofort gibt es eine verbesserte Möglichkeit, für Wracks Garbage Collectoren (Trigger) zu platzieren. Somit sind ab sofort alle Basen und Flugfelder mit Triggern ausgestattet, die zerstörte Wracks automatische löschen. Früher gab es nur einen kreisrunden Bereich um die Basis, jetzt beliebige Flächen möglich
 
 ## Editor
 

@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=130;
+	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=3013;
+		nextID=3021;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1477;
+		nextID=1540;
 	};
 	class Camera
 	{
@@ -64298,7 +64298,7 @@ class Mission
 							name="NATO_auslöser";
 							class Entities
 							{
-								items=5;
+								items=7;
 								class Item0
 								{
 									dataType="Trigger";
@@ -64325,7 +64325,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={20380.568,74.121445,13278.24};
-									angle=4.9869981;
+									angle=4.9869976;
 									class Attributes
 									{
 										name="nato_trigger_beam";
@@ -64366,7 +64366,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={20449.729,74.289635,13364.1};
-									angle=3.3701603;
+									angle=3.3701601;
 									class Attributes
 									{
 										name="nato_trigger_Waffenwechsel2";
@@ -64406,9 +64406,44 @@ class Mission
 									type="EmptyDetectorArea10x10";
 									atlOffset=-1.5876465;
 								};
+								class Item5
+								{
+									dataType="Trigger";
+									position[]={21013.953,73.140129,13290.987};
+									angle=0.034906585;
+									class Attributes
+									{
+										name="opt_warehouse_garbage_collector_2";
+										text="Auslöser für Löschen von Wracks";
+										sizeA=800;
+										sizeB=100;
+										repeatable=1;
+										activationBy="ANY";
+										isRectangle=1;
+									};
+									id=3014;
+									type="EmptyDetectorAreaR50";
+								};
+								class Item6
+								{
+									dataType="Trigger";
+									position[]={20407.664,73.386528,13317.617};
+									class Attributes
+									{
+										name="opt_warehouse_garbage_collector_1";
+										text="Auslöser für Löschen von Wracks";
+										sizeA=100;
+										sizeB=100;
+										repeatable=1;
+										activationBy="ANY";
+									};
+									id=3013;
+									type="EmptyDetectorAreaR50";
+									atlOffset=-7.6293945e-006;
+								};
 							};
 							id=1491;
-							atlOffset=71.40271;
+							atlOffset=99.765167;
 						};
 						class Item6
 						{
@@ -66120,11 +66155,11 @@ class Mission
 						};
 					};
 					id=1404;
-					atlOffset=23.62178;
+					atlOffset=44.888153;
 				};
 			};
 			id=1403;
-			atlOffset=23.62178;
+			atlOffset=44.888153;
 		};
 		class Item6
 		{
@@ -69012,7 +69047,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={60.164001,595.55383,5759.4551};
-									angle=3.9921727;
+									angle=3.9921725;
 									class Attributes
 									{
 										text="befriedeter Bereich";
@@ -69237,7 +69272,7 @@ class Mission
 							name="NATO_auslöser_1";
 							class Entities
 							{
-								items=4;
+								items=6;
 								class Item0
 								{
 									dataType="Trigger";
@@ -69323,9 +69358,45 @@ class Mission
 									id=1631;
 									type="EmptyDetectorAreaR50";
 								};
+								class Item4
+								{
+									dataType="Trigger";
+									position[]={-543.79706,595.302,5768.2075};
+									angle=3.1482117;
+									class Attributes
+									{
+										name="opt_warehouse_garbage_collector_5";
+										text="Auslöser für Löschen von Wracks";
+										sizeA=800;
+										sizeB=100;
+										repeatable=1;
+										activationBy="ANY";
+										isRectangle=1;
+									};
+									id=3017;
+									type="EmptyDetectorAreaR50";
+									atlOffset=-0.20928955;
+								};
+								class Item5
+								{
+									dataType="Trigger";
+									position[]={63.002602,595.5484,5758.7363};
+									angle=3.1133051;
+									class Attributes
+									{
+										name="opt_warehouse_garbage_collector_6";
+										text="Auslöser für Löschen von Wracks";
+										sizeA=100;
+										sizeB=100;
+										repeatable=1;
+										activationBy="ANY";
+									};
+									id=3018;
+									type="EmptyDetectorAreaR50";
+								};
 							};
 							id=1627;
-							atlOffset=0.75085449;
+							atlOffset=0.25195313;
 						};
 						class Item6
 						{
@@ -70905,11 +70976,11 @@ class Mission
 						};
 					};
 					id=1540;
-					atlOffset=7.5040894;
+					atlOffset=10.694031;
 				};
 			};
 			id=1539;
-			atlOffset=7.5040894;
+			atlOffset=10.694031;
 		};
 		class Item7
 		{
@@ -73190,12 +73261,12 @@ class Mission
 							name="CSAT_auslöser";
 							class Entities
 							{
-								items=4;
+								items=6;
 								class Item0
 								{
 									dataType="Trigger";
 									position[]={18936.221,29.625864,76.497002};
-									angle=0.34726807;
+									angle=0.34726804;
 									class Attributes
 									{
 										name="csat_trigger_beam_3";
@@ -73237,7 +73308,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={19023.479,19.815264,6.7810001};
-									angle=2.8613272;
+									angle=2.8613269;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel1";
@@ -73274,9 +73345,46 @@ class Mission
 									type="EmptyDetectorAreaR50";
 									atlOffset=1.0799999;
 								};
+								class Item4
+								{
+									dataType="Trigger";
+									position[]={19002.861,27.549011,-572.32166};
+									angle=1.4998654;
+									class Attributes
+									{
+										name="opt_warehouse_garbage_collector_7";
+										text="Auslöser für Löschen von Wracks";
+										sizeA=800;
+										sizeB=100;
+										repeatable=1;
+										activationBy="ANY";
+										isRectangle=1;
+									};
+									id=3019;
+									type="EmptyDetectorAreaR50";
+									atlOffset=7.2742424;
+								};
+								class Item5
+								{
+									dataType="Trigger";
+									position[]={18965.293,27.79541,33.388062};
+									angle=1.4649588;
+									class Attributes
+									{
+										name="opt_warehouse_garbage_collector_8";
+										text="Auslöser für Löschen von Wracks";
+										sizeA=100;
+										sizeB=100;
+										repeatable=1;
+										activationBy="ANY";
+									};
+									id=3020;
+									type="EmptyDetectorAreaR50";
+									atlOffset=3.8793736;
+								};
 							};
 							id=1880;
-							atlOffset=1.942358;
+							atlOffset=6.0895824;
 						};
 						class Item5
 						{
@@ -75667,11 +75775,11 @@ class Mission
 						};
 					};
 					id=1809;
-					atlOffset=2008348;
+					atlOffset=2008353.1;
 				};
 			};
 			id=1808;
-			atlOffset=2008348;
+			atlOffset=2008353.1;
 		};
 		class Item8
 		{
@@ -77953,12 +78061,12 @@ class Mission
 							name="CSAT_auslöser_1";
 							class Entities
 							{
-								items=4;
+								items=6;
 								class Item0
 								{
 									dataType="Trigger";
 									position[]={7407.3789,807.30682,20363.031};
-									angle=3.4947073;
+									angle=3.4947071;
 									class Attributes
 									{
 										name="csat_trigger_beam_4";
@@ -78020,7 +78128,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7410.0361,807.31299,20433.348};
-									angle=6.0105462;
+									angle=6.0105457;
 									class Attributes
 									{
 										name="csat_trigger_Waffenwechsel2_1";
@@ -78037,9 +78145,46 @@ class Mission
 									type="EmptyDetectorAreaR50";
 									atlOffset=0.42700195;
 								};
+								class Item4
+								{
+									dataType="Trigger";
+									position[]={7374.8657,819.77899,21012.635};
+									angle=-1.5633066;
+									class Attributes
+									{
+										name="opt_warehouse_garbage_collector_3";
+										text="Auslöser für Löschen von Wracks";
+										sizeA=800;
+										sizeB=100;
+										repeatable=1;
+										activationBy="ANY";
+										isRectangle=1;
+									};
+									id=3015;
+									type="EmptyDetectorAreaR50";
+									atlOffset=12.681641;
+								};
+								class Item5
+								{
+									dataType="Trigger";
+									position[]={7364.8672,820.02539,20405.844};
+									angle=-1.5982132;
+									class Attributes
+									{
+										name="opt_warehouse_garbage_collector_4";
+										text="Auslöser für Löschen von Wracks";
+										sizeA=100;
+										sizeB=100;
+										repeatable=1;
+										activationBy="ANY";
+									};
+									id=3016;
+									type="EmptyDetectorAreaR50";
+									atlOffset=13.423523;
+								};
 							};
 							id=2146;
-							atlOffset=0.49835205;
+							atlOffset=9.729187;
 						};
 						class Item5
 						{
@@ -80490,11 +80635,11 @@ class Mission
 						};
 					};
 					id=2075;
-					atlOffset=2410021.3;
+					atlOffset=2410021.8;
 				};
 			};
 			id=2074;
-			atlOffset=2410021.3;
+			atlOffset=2410021.8;
 		};
 		class Item9
 		{
@@ -102153,7 +102298,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=113.88848;
+					angle=113.88847;
 					drawBorder=1;
 					id=2580;
 					atlOffset=-72.985596;
@@ -102168,7 +102313,7 @@ class Mission
 					fillName="Border";
 					a=1500;
 					b=1000;
-					angle=228.64845;
+					angle=228.64844;
 					drawBorder=1;
 					id=2581;
 					atlOffset=-54.199738;
@@ -102183,7 +102328,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=222.81425;
+					angle=222.81424;
 					drawBorder=1;
 					id=2582;
 					atlOffset=-88.932289;
@@ -102243,7 +102388,7 @@ class Mission
 					fillName="Border";
 					a=1000;
 					b=2000;
-					angle=209.468;
+					angle=209.46799;
 					drawBorder=1;
 					id=2589;
 					atlOffset=-86.607544;
@@ -102272,7 +102417,7 @@ class Mission
 					fillName="Border";
 					a=1000;
 					b=2000;
-					angle=114.07448;
+					angle=114.07447;
 					drawBorder=1;
 					id=2592;
 					atlOffset=-34.648438;
@@ -102317,7 +102462,7 @@ class Mission
 					fillName="Border";
 					a=2000;
 					b=1000;
-					angle=216.32213;
+					angle=216.32211;
 					drawBorder=1;
 					id=2599;
 					atlOffset=-69.794403;
@@ -103600,7 +103745,7 @@ class Mission
 					fillName="Border";
 					a=3000;
 					b=1000;
-					angle=56.145142;
+					angle=56.145138;
 					drawBorder=1;
 					id=2769;
 					atlOffset=10.828049;
