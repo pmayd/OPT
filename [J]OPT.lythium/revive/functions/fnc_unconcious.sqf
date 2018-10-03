@@ -120,7 +120,7 @@ if (FAR_REVIVE_BLEEDOUT > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["F
     // Player got revived
     _unit setVariable ["FAR_isStabilized", 0, true];
     // remove down marker
-    [_unit] remoteExecCall [QFUNC(removeMarker), -2, false];
+    [_unit, "FAR_unitMarker"] remoteExecCall [QEFUNC(common,clearMarker), -2, false];
     sleep 3;
     
     // Clear the "medic nearby" hint
