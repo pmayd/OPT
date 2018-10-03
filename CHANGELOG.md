@@ -13,10 +13,16 @@
 - cargosystem für modupdate angepasst -> setcargoandspace.sqf
 - warehouse für modupdate angepasst -> setupvehiclepool.sqf
 - MHQ tarnnetze aus komposition entfernt - aber immer noch scheisse aufzubauen!
+- Warehouse: Ab sofort gibt es eine verbesserte Möglichkeit, für Wracks Garbage Collectoren (Trigger) zu platzieren. Somit sind ab sofort alle Basen und Flugfelder mit Triggern ausgestattet, die zerstörte Wracks automatische löschen. Früher gab es nur einen kreisrunden Bereich um die Basis, jetzt beliebige Flächen möglich
+- ifrit hmg und gmg in waffenscript gefixt - erlaubte vehikelliste in der waffenconfig.hpp
+- bewaffnungspads für extrabasen nachgetragen - in postinit.sqf
 
 ## Editor
 
 - Neue Version mit je zwei diagonalen Basen
+- loadoutanpassungen bei allen infern (mündungsfeuerbremse, handguns raus, primärwaffenmuni +2, SQLs nun mit 40mm HE etc, Recon-AT NATO wieder mit schalli)
+- neue flaggenposi-baukram von oppa eingebaut
+- marker in basen überprüft und angepasst (teleport csat, diverse verschiebungen)
 
 ## 1.4.13
 

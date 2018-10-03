@@ -19,10 +19,10 @@ params [
     ["_vec", objNull, [objNull], 1]
 ];
 
-private _frequenciesSWCSAT = ["41","50","60","51","52","61","62","63"];
-private _frequenciesLRCSAT = ["40","41","42","50","60","43","44","45","46"];
-private _frequenciesSWNATO = ["151","152","153","154","155","156","157","158"];
-private _frequenciesLRNATO = ["51","52","53","54","55","56","57","58","59"];
+private _frequenciesSWCSAT = ["70","71","72","73","74","75","76","77"];
+private _frequenciesLRCSAT = ["40","41","42","43","44","45","46","47","48"];
+private _frequenciesSWNATO = ["41","50","60","51","52","61","62","63"];
+private _frequenciesLRNATO = ["40","41","42","50","60","43","44","45","46"];
 private _encryptionNATO = "_bluefor";
 private _encryptionCSAT = "_opfor";
 

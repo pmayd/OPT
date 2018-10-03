@@ -29,8 +29,13 @@ params [
 [_vec, _instigator, _source] call EFUNC(log,writeKill);
 
 
-// delete all wrecks within the base safezone
-if (!(_vec isKindOf "CAManBase") and ((_vec distance2D (getmarkerPos "respawn_west") < 200) or (_vec distance2D (getmarkerPos "respawn_east") < 200))) then {
+// delete all wrecks that are within a garbage collector trigger
+private _garbageCollectors = allMissionObjects "EmptyDetectorAreaR50" select {str(_x) find "opt_warehouse_garbage_collector" != -1};
+
+if (
+        !(_vec isKindOf "CAManBase") and 
+        ( ({_vec in list _x} count _garbageCollectors) > 0)
+    ) then {
     [_vec] spawn {
         params ["_vec"];
         sleep 5;

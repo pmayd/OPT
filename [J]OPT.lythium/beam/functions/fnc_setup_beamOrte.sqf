@@ -164,33 +164,29 @@ GVAR(locations_east) =
 
 
 GVAR(heavy_vehicles) = [
-    "OPT_O_T_APC_Wheeled_02_rcws_ghex_F",             // MSE-3 Marid
-    "OPT_O_APC_Wheeled_03_cannon_light_F",             // AFV-4 Gorgon (Leicht)
-    "OPT_O_APC_Wheeled_03_cannon_F",                 // AFV-4 Gorgon
-    "OPT_O_T_APC_Tracked_02_AA_ghex_F",                 // ZSU-39 Tigris
-    "OPT_O_T_APC_Tracked_02_cannon_ghex_light_F",     // BTR-K Kamysh
-    "OPT_O_T_APC_Tracked_02_cannon_ghex_F",             // BTR-K Kamysh (Titan)
-    "OPT_O_T_MBT_02_cannon_ghex_F",                     // T-100 Varsuk
-    "OPT_O_T_MBT_02_arty_ghex_F",                     // 2S9 Sochor 
-//vanilla
-    "OPT_O_APC_Wheeled_02_rcws_F",             // MSE-3 Marid
-    "OPT_O_APC_Tracked_02_AA_F",                 // ZSU-39 Tigris
-    "OPT_O_APC_Tracked_02_cannon_light_F",     // BTR-K Kamysh
-    "OPT_O_APC_Tracked_02_cannon_F",             // BTR-K Kamysh (Titan)
-    "OPT_O_MBT_02_cannon_F",                     // T-100 Varsuk
-    "OPT_O_MBT_02_arty_F",                     // 2S9 Sochor 
+//Vanilla
+	"OPT4_O_APC_Wheeled_02_rcws_F",				// MSE-3 Marid
+	"OPT_O_APC_Wheeled_03_cannon_light_F",		// AFV-4 Gorgon (Leicht)
+	"OPT4_O_APC_Wheeled_03_cannon_F",			// AFV-4 Gorgon
+	"OPT4_O_APC_Tracked_02_AA_F",			    // ZSU-39 Tigris
+	"OPT_O_APC_Tracked_02_cannon_light_F",		// BTR-K Kamysh
+	"OPT4_O_APC_Tracked_02_cannon_F",		    // BTR-K Kamysh (Titan)
+	"OPT4_O_MBT_02_cannon_F",				    // T-100 Varsuk
+	"OPT4_O_MBT_02_arty_F",						// 2S9 Sochor
         
-    "OPT_B_APC_Tracked_01_rcws_F",                     // IFV-6c Panther
-    "OPT_B_APC_Wheeled_01_cannon_light_F",             // AMV-7 Marshall (Leicht)
-    "OPT_B_APC_Wheeled_01_cannon_F",                 // AMV-7 Marshall    
-    "OPT_B_APC_Tracked_01_AA_F",                     // IFV-6a Cheetah
-    "OPT_B_APC_tracked_03_cannon_F",                 // FV-720 Mora    
-    "OPT_B_MBT_01_cannon_F",                         // M2A4 Slammer
-    "OPT_B_MBT_01_TUSK_F",                             // M2A4 SlammerUp
-    "OPT_B_MBT_03_cannon_F",                         // MBT-52 Kuma,  fliegt raus
-    "OPT_B_MBT_01_Arty_F",                             // M4 Scorcher
-    "OPT_B_MBT_01_mlrs_F"    
-];
+	"OPT4_B_APC_Tracked_01_rcws_F",				// IFV-6c Panther
+	"OPT_B_APC_Wheeled_01_cannon_light_F",		// AMV-7 Marshall (Leicht)
+	"OPT4_B_APC_Wheeled_01_cannon_F",			// AMV-7 Marshall	
+	"OPT4_B_APC_Tracked_01_AA_F",				// IFV-6a Cheetah
+	"OPT4_B_APC_tracked_03_cannon_F",			// FV-720 Mora	
+	"OPT4_B_MBT_01_cannon_F",					// M2A4 Slammer
+	"OPT4_B_MBT_01_TUSK_F",						// M2A4 SlammerUp
+	"OPT_B_MBT_03_cannon_F",					// MBT-52 Kuma, fliegt raus
+	"OPT_B_MBT_01_Arty_F",						    // M4 Scorcher
+	"OPT4_B_MBT_01_mlrs_F",						    // M4 Scorcher	
+	"OPT4_B_MBT_01_arty_F",						    // M4 Scorcher
+	"OPT_B_MBT_01_mlrs_F"							// M5 Sandstorm	
+ ];
 
 
 /* List of triggers in Editor for beam functionality */

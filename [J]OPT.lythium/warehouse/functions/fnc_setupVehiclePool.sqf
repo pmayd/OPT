@@ -55,7 +55,7 @@ GVAR(nato_vehicles_supply) = [
 ];
 	
 GVAR(nato_choppers) = [
-	["OPT4_B_Heli_light_03_green_F", DEF_PROD(80000)],					// WY-55 Hellcat (Unbewaffnet)
+	["OPT4_B_Heli_light_03_green_F", DEF_PROD(80000)],					// WY-55 Hellcat - neu
 	["OPT_B_Heli_Light_01_F", DEF_PROD(60000)],					// MH-9 Hummingbird
 	["OPT4_B_Heli_Light_01_armed_F", DEF_PROD(10)],			// AH-9 Pawnee (Unbewaffnet) - 80000
 	["OPT_B_Heli_Light_01_armed_2_F", DEF_PROD(0)],				// AH-9 Pawnee scalpel
