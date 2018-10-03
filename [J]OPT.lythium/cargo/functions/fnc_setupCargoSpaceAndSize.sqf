@@ -54,15 +54,13 @@ GVAR(canTransportCargo) =
 	["OPT_B_G_Offroad_01_armed_F", 4],				    // Pickup HMG - grad nich drin!
 	["OPT_B_T_LSV_01_unarmed_F", 4], 				    // Prowler unarmed
 	["OPT_B_T_LSV_01_armed_F", 4],                      // Prowler armed
-	["OPT_B_T_LSV_01_AT_F_un", 4], 						// Prowler AT - vanilla - lord
+	["B_T_LSV_01_AT_F", 4], 						// Prowler AT - vanilla - lord
 	["OPT_B_MRAP_03_F", 4],							    // Strider - grad nich drin!
 	["OPT_B_MRAP_03_hmg_F", 4],						    // Strider HMG - grad nich drin!
-	["OPT_B_MRAP_03_gmg_F", 4],						    // Strider GMG
+	["OPT4_B_MRAP_03_gmg_F", 4],						    // Strider GMG
 	["OPT_B_MRAP_01_F", 4],							    // Hunter
-	["OPT_B_MRAP_01_hmg_F", 4],						    // Hunter HMG
-	["OPT_B_MRAP_01_gmg_F", 4],						    // Hunter GMG
-	["OPT4_B_MRAP_01_hmg_F", 4],				// Hunter HMG - neu
-	["OPT4_B_MRAP_01_gmg_F", 4],					// Hunter gMG - neu
+	["OPT4_B_MRAP_01_hmg_F", 4],						    // Hunter HMG
+	["OPT4_B_MRAP_01_gmg_F", 4],						    // Hunter GMG
 	["OPT_B_Truck_01_covered_F", 6], 					// HEMTT Inf-Transport
 	["OPT_B_Truck_01_transport_F", 8],				    // HEMTT Logistik - hinzugefügt
 // NATO Armored	
@@ -70,6 +68,7 @@ GVAR(canTransportCargo) =
 	["OPT4_B_APC_Wheeled_01_cannon_F", 4],				// AMV-7 Marshall - neu
 	["OPT_B_APC_Wheeled_01_cannon_light_F", 4],		    // AMV-7 Marshall (Leicht)
 	["OPT_B_MBT_01_cannon_F", 4],					    // M2A4 Slammer
+	["OPT4_B_MBT_01_cannon_F", 4],					    // M2A4 Slammer - neu
 	["OPT_B_MBT_01_TUSK_F", 4],						    // M2A4 SlammerUp
 	["OPT4_B_MBT_01_TUSK_F", 4],				    // M2A4 SlammerUp - neu
 	["OPT_B_APC_Tracked_01_rcws_F", 4],				    // IFV-6c Panther	von 30
@@ -78,11 +77,15 @@ GVAR(canTransportCargo) =
 	["OPT4_B_APC_tracked_03_cannon_F", 4],	        // FV-720 Mora - neu
 // NATO Helicopters	
 	["OPT_B_Heli_Light_01_F", 4],				    	// MH-9 Hummingbird
+	["OPT_B_Heli_light_03_unarmed_green_F", 4],				    	// Hellcat unbew
+	["OPT4_B_Heli_light_03_green_F", 4],				    	// Hellcat bew
 	["OPT_B_Heli_Transport_01_F", 4],			    	// UH-80 Ghosthawk   von 30
 	["OPT_B_Heli_Transport_02_F", 8],			    	// CH-49 Mohawk (Transport+Lift)    von 30
 	["OPT_B_Heli_Transport_03_unarmed_F", 8],	       	// CH-67 Huron unarmed (Transport+Lift)     von 30
 	["OPT_B_Heli_Transport_03_F", 8],			    	// CH-67 Huron armed (Transport+Lift)       von 30
-	["OPT_B_T_VTOL_01_infantry_F", 4],			    	// Blackfish (Inf-Transport)   - hinzugefügt
+	["OPT_B_T_VTOL_01_infantry_F", 4],			    	// Blackfish (Inf-Transport) - grad nicht drin!
+	["OPT_B_T_VTOL_01_vehicle_F", 4],			    	// Blackfish (Vehikel-Transport)	
+	["OPT_B_T_VTOL_02_infantry_unarmed_F", 4],			    	// Xian (Inf-Transport)   - hinzugefügt
 // NATO ships
 	["OPT_B_Boat_Transport_01_F", 2],			    	// Assault Boat     - hinzugefügt
 	["OPT_B_Boat_Armed_01_minigun_F", 4],		    	// Speedboat Minigun    - hinzugefügt
@@ -93,7 +96,7 @@ GVAR(canTransportCargo) =
 	["OPT_O_T_Quadbike_01_ghex_F", 2],				    // Quadbike	- checken!
 	["OPT_O_T_LSV_02_unarmed_F", 4], 				    // Quilin unarmed
 	["OPT_O_T_LSV_02_armed_F", 4],					    // Quilin armed
-	["OPT_O_T_LSV_01_AT_F_un", 4], 						// Prowler AT - vanilla	- lord
+	["O_T_LSV_01_AT_F_un", 4], 						// Prowler AT - vanilla	- lord
     ["OPT_O_G_Offroad_01_F", 4],					    // Pickup  - grad nich drin!
     ["OPT_O_G_Offroad_01_armed_F", 4],				    // Pickup HMG  - grad nich drin!
 	["OPT_O_T_MRAP_02_ghex_F", 4],					    // Ifrit - tropentarn hinzugefügt
@@ -131,9 +134,11 @@ GVAR(canTransportCargo) =
 	["OPT_O_Heli_Light_02_unarmed_F", 4],				// PO-30 Orca,100000
 	["OPT_O_Heli_Light_02_unarmed_black_F", 4],	       	// PO-30 Orca,100000
 	["OPT4_O_Heli_Light_02_F", 4],					// orca - neu
+	["sfp_bo105_unarmed", 4],					// BO105 - neu	
 	["OPT_O_Heli_Transport_04_covered_F", 8], 	// Mi-290 Taru (Transport),110000
 	["OPT_O_Heli_Transport_04_covered_black_F", 8], 	// Mi-290 Taru (Transport),110000	
 	["OPT_O_T_VTOL_02_infantry_unarmed_F", 4],			// Y-32 Xi'an (Inf-Transport), 180000
+	["OPT_O_T_VTOL_01_vehicle_F", 4],			// Blackfish (Vehikel-Transport), 180000
 // CSAT Supplies	
 	["OPT_O_T_UGV_01_ghex_F", 6],						// UGV Saif	
 //vanilla

@@ -18,8 +18,8 @@ private _container = [] call FUNC(getRadar);
 private _size = 4500;
 private _markerwest = [];
 private _markerost = [];
-private _objekteDF = 350;
-private _Geschwindigkeitkapp = 350;
+private _objekteDF = 400; //von 350 - kallek
+private _Geschwindigkeitkapp = 400; //von 350 - kallek
 private _Geschwindigkeitfaktor = 5;
 
 for "_i" from 1 to 10 do {

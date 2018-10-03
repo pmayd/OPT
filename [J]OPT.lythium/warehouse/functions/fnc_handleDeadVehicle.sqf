@@ -29,15 +29,8 @@ params [
 [_vec, _instigator, _source] call EFUNC(log,writeKill);
 
 
-// delete all wrecks within the base safezone
-private _garbageCollectors = [];
-for "_i" from 1 to 100 do {
-    private _trigger = call compile format["%1_%2", QGVAR(garbage_collector), _i];
-    if (isNil {_trigger}) exitWith{};
-
-    _garbageCollectors pushBack _trigger;
-    
-};
+// delete all wrecks that are within a garbage collector trigger
+private _garbageCollectors = allMissionObjects "EmptyDetectorAreaR50" select {str(_x) find "opt_warehouse_garbage_collector" != -1};
 
 if (
         !(_vec isKindOf "CAManBase") and 
