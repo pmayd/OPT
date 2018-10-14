@@ -29,4 +29,16 @@ GVAR(EH_PlayerDisconnected) = addMissionEventHandler ["HandleDisconnect", {
 
 }];
 
+GVAR(EH_EntityRespawned) = addMissionEventHandler ["EntityRespawned", {
+    params ["_newEntity", "_oldEntity"];
+
+    // search for all markers with unit name in it and delete them on all clients
+    private _name = name _oldEntity;
+    [_oldEntity, QGVAR(unitGPSMarker), format["%1_%2", QGVAR(unitGPSMarker), _name]] remoteExecCall [QEFUNC(common,clearMarker), -2, false];
+
+    private _name = name _newEntity;
+    [_newEntity, QGVAR(unitGPSMarker), format["%1_%2", QGVAR(unitGPSMarker), _name]] remoteExecCall [QEFUNC(common,clearMarker), -2, false];
+
+}];
+
 
