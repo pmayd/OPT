@@ -29,7 +29,7 @@ params [
 ];
 
 /* VALIDATION */
-if (_unit isEqualTo objNull) exitWith{};
+if (_unit isEqualTo objNull) exitWith{[objNull, QGVAR(unitGPSMarker), QGVAR(unitGPSMarker)] call EFUNC(common,clearMarker)};
 
 /* CODE BODY */
 //systemChat format ["O:%1",_unit];
