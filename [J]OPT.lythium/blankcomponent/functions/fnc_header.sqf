@@ -1,7 +1,9 @@
 /**
+* Description:
 * short description of the main purpose of the script. Not longer than 2 lines
 * 
-* Author: script author name
+* Author: 
+* script author name
 *
 * Arguments:
 * for each argument one line in the format: no.: <TYPE> short description
