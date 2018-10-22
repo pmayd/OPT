@@ -23,7 +23,8 @@
         true, 
         true, 
         "", 
-        format["!(_target getVariable ['%1', false])", QEGVAR(composition,deployed)]
+        format["!(_target getVariable ['%1', false])", QEGVAR(composition,deployed)],
+        5
     ]; 
 
     _x addAction[
@@ -34,7 +35,8 @@
         true,
         true, 
         "", 
-        format["(_target getVariable ['%1', false])", QEGVAR(composition,deployed)]
+        format["(_target getVariable ['%1', false])", QEGVAR(composition,deployed)],
+        5
     ]; 
 
 } forEach [GVAR(containerWest), GVAR(containerEast)];
