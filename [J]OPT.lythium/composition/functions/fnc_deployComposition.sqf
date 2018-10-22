@@ -28,9 +28,13 @@ params [
 private _retVal = false;
 if (_centerObj isEqualTo objNull) exitWith {_retVal};
 if (_composition isEqualTo []) exitWith {_retVal};
+// if already deployed or in progress
+if (
+    _centerObj getVariable [QGVAR(deployed), false] or 
+    _centerObj getVariable [QGVAR(deploymentInProgress), false]
+    ) exitWith {["Aufbau", "Komposition bereits aufgebaut oder im Aufbau!", "red"] call EFUNC(gui,message);};
 
 /* CODE BODY */
-GVAR(deploymentSuccessful) = FALSE;
 private _side = [_centerObj] call EFUNC(common,getVehicleSide);
 private _cargo = _centerObj getVariable [QGVAR(cargo), objNull];
 
@@ -42,26 +46,21 @@ if (_centerObj getVariable [QGVAR(compositionRadius), -1] == -1) then {
     _radius = [_composition] call FUNC(calcCompositionRadius);
 };
 
-private _flatPos = (getPosASL _centerObj) isFlatEmpty [
-    _radius,	//--- Minimal distance from another object
-    0,				//--- If 0, just check position. If >0, select new one
-    0.4,			//--- Max gradient
-    _radius max 5,	//--- Gradient area
-    0,				//--- 0 for restricted water, 2 for required water,
-    false,			//--- Has to have shore nearby!
-    objNull			//--- Ignored object
+private _flatPos = selectBestPlaces [
+    position _centerObj, 
+    2, 
+    "meadow - houses - trees - (0.5 * forest) - (5*hills) - sea", 
+    5, 
+    3
 ];
 
-if (count _flatPos isEqualTo 0) exitWith {
+if ({_x select 1 > 0} count _flatPos isEqualTo 0) exitWith {
     private _message = COMPOSITION_DEPLOY_ERROR_MESSAGE(_radius);
     
     ["Aufbau", _message, "red"] call EFUNC(gui,message);
     
     _retVal
 };
-
-// exit script if another deployment script is already running
-if (_centerObj getVariable [QGVAR(deploymentInProgress), false]) exitWith {};
 
 _centerObj setVariable [QGVAR(deploymentInProgress), true, true];
 
@@ -120,5 +119,3 @@ _centerObj setVariable [QGVAR(composition), _objArray, true];
 // call on server
 // wait until vehicle or object is null and delete objects
 [_centerObj] remoteExec [QGVAR(deleteComposition), 2, false];
-
-GVAR(deploymentSuccessful) = TRUE;
