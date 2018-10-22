@@ -30,13 +30,13 @@ if (damage _container > GVAR(maxDammage)) exitWith {
 /* CODE BODY */
 
 // deploy radar, calc signal loss and save status
-if (!(_container getVariable [QGVAR(isDeployed), false])) then {
+if !(_container getVariable [QEGVAR(composition,deployed), false]) then {
 
     // create objects for better immersion
     private _handle = [_container, RADAR_COMPOSITION] spawn EFUNC(composition,deployComposition);
     waitUntil { scriptDone _handle; };
 
-    if (!EGVAR(composition,deploymentSuccessful)) exitWith{};
+    if !(_container getVariable [QEGVAR(composition,deployed), false]) exitWith{};
 
     // remove ACE dragging entries
     ["cargo", "deactivateDragging", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 0, true]; // has to be called on each client and also JIP
@@ -44,8 +44,5 @@ if (!(_container getVariable [QGVAR(isDeployed), false])) then {
 
     // calculate signal loss
     [true] call FUNC(calcSignalLoss);
-
-    // side effect: set flag for deploy status
-    _container setVariable [QGVAR(isDeployed), true, true];
 
 };

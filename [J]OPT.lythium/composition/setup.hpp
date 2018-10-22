@@ -2,7 +2,7 @@
 // einstellen können soll oder irgendwann mal ändern will
 // Beispiele: Add-Action Texte, Variablen, Konstanten, Marker etc
 
-#define COMPOSITION_DEPLOY_ERROR_MESSAGE(val1) format["Aufbau nicht möglich! Bitte einen freien Platz (%1m) ohne Objekte finden.", round val1]
+#define COMPOSITION_DEPLOY_ERROR_MESSAGE(val1) format["Aufbau nicht möglich! Bitte einen freien Platz (%1m) ohne Häuser und Bäume finden.", round val1]
 
 #define COMPOSITION_DEPLOY_BLACKOUT_TEXT "Aufbau der Komposition..."
 #define COMPOSITION_UNDEPLOY_BLACKOUT_TEXT "Abbau der Komposition..."

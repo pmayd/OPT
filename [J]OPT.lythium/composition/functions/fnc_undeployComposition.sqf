@@ -23,11 +23,15 @@ private _retVal = false;
 private _side = [_centerObj] call EFUNC(common,getVehicleSide);
 
 if (_centerObj isEqualTo objNull) exitWith{};
-if (_centerObj getVariable [QGVAR(deploymentInProgress), false]) exitWith{};
-
-_centerObj setVariable [QGVAR(deploymentInProgress), true, true];
+if (
+    !(_centerObj getVariable [QGVAR(deployed), false]) or 
+    _centerObj getVariable [QGVAR(undeploymentInProgress), false]
+    ) exitWith{};
 
 private _nearestPlayers = [_centerObj, COMPOSITION_RADIUS_NEARBY_PLAYER] call EFUNC(common,getNearestPlayer);
+
+// lock vehicle for other clients
+_centerObj setVariable [QGVAR(undeploymentInProgress), true, true];
 
 // black out and protect all near player
 [QGVAR(deployBlackout)] remoteExec ["BIS_fnc_blackOut", _nearestPlayers, false];
@@ -44,7 +48,6 @@ sleep 3;
 {
     deleteVehicle _x
 } forEach (_centerObj getVariable [QGVAR(composition), []]);
-_centerObj setVariable [QGVAR(deployed), false, true];
 
 // add cargo container, if given
 if !(_cargoInfo isEqualTo []) then {
@@ -84,7 +87,10 @@ _centerObj allowDamage true;
 
 [QGVAR(deployBlackout)] remoteExec ["BIS_fnc_blackIn", _nearestPlayers, false];
 
-_centerObj setVariable [QGVAR(deploymentinProgress), false, true];
+_centerObj setVariable [QGVAR(deployed), false, true];
+// unlock vehicle for other clients
+_centerObj setVariable [QGVAR(undeploymentInProgress), false, true];
+
 // call on server
 // wait until vehicle or object is null and delete objects
 [_centerObj, "cargo"] remoteExec [QGVAR(deleteComposition), 2, false];

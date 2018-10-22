@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2176;
+		nextID=2316;
 	};
 	class Camera
 	{
@@ -90388,7 +90388,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={62.653999,595.55615,5758.2969};
-									angle=3.9921756;
+									angle=3.9921749;
 									class Attributes
 									{
 										text="befriedeter Bereich";
@@ -90743,7 +90743,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={-538.28302,595.42615,5762.8828};
-									angle=0.0057889735;
+									angle=0.0057889721;
 									class Attributes
 									{
 										name="opt_warehouse_garbage_collector_2";
@@ -94406,7 +94406,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={18980.613,23.847013,34.008999};
-									angle=1.4960759;
+									angle=1.4960755;
 									class Attributes
 									{
 										text="befriedeter Bereich";
@@ -94672,7 +94672,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={18998.16,23.744234,-572.28003};
-									angle=1.4908948;
+									angle=1.4908944;
 									class Attributes
 									{
 										name="opt_warehouse_garbage_collector_6";
@@ -94691,7 +94691,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={18974.527,24.23999,43.692627};
-									angle=1.4908948;
+									angle=1.4908944;
 									class Attributes
 									{
 										name="opt_warehouse_garbage_collector_5";
@@ -99139,7 +99139,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7367.3193,807.20264,20405.51};
-									angle=-1.5539987;
+									angle=-1.5539985;
 									class Attributes
 									{
 										text="NATO Todeszone";
@@ -99159,7 +99159,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7366.3379,806.53003,20395.424};
-									angle=-1.3922915;
+									angle=-1.3922913;
 									class Attributes
 									{
 										text="befriedeter Bereich";
@@ -99414,7 +99414,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7385.5928,850.80298,21052.158};
-									angle=4.6916375;
+									angle=4.6916366;
 									class Attributes
 									{
 										name="opt_warehouse_garbage_collector_8";
@@ -99433,7 +99433,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={7363.8896,850.95923,20396.605};
-									angle=-3.1352711;
+									angle=-3.1352704;
 									class Attributes
 									{
 										name="opt_warehouse_garbage_collector_7";
@@ -103118,7 +103118,7 @@ class Mission
 							fillName="Border";
 							a=2000;
 							b=1000;
-							angle=113.88837;
+							angle=113.88834;
 							drawBorder=1;
 							id=2580;
 							atlOffset=-72.985596;
@@ -103133,7 +103133,7 @@ class Mission
 							fillName="Border";
 							a=1500;
 							b=1000;
-							angle=228.64825;
+							angle=228.64821;
 							drawBorder=1;
 							id=2581;
 							atlOffset=-54.199738;
@@ -103148,7 +103148,7 @@ class Mission
 							fillName="Border";
 							a=2000;
 							b=1000;
-							angle=222.81406;
+							angle=222.81401;
 							drawBorder=1;
 							id=2582;
 							atlOffset=-88.932289;
@@ -103237,7 +103237,7 @@ class Mission
 							fillName="Border";
 							a=1000;
 							b=2000;
-							angle=114.07439;
+							angle=114.07436;
 							drawBorder=1;
 							id=2592;
 							atlOffset=-34.648438;
@@ -104565,7 +104565,7 @@ class Mission
 							fillName="Border";
 							a=3000;
 							b=1000;
-							angle=56.145092;
+							angle=56.145081;
 							drawBorder=1;
 							id=2769;
 							atlOffset=10.828049;
@@ -111771,7 +111771,7 @@ class Mission
 							type="rectangle";
 							a=2;
 							b=25;
-							angle=3.5717554;
+							angle=3.5717547;
 							id=3366;
 						};
 						class Item64
@@ -111783,7 +111783,7 @@ class Mission
 							type="rectangle";
 							a=2;
 							b=18;
-							angle=3.5719967;
+							angle=3.571996;
 							id=3367;
 							atlOffset=3.0517578e-005;
 						};
@@ -111796,7 +111796,7 @@ class Mission
 							type="rectangle";
 							a=20;
 							b=20;
-							angle=3.5719967;
+							angle=3.571996;
 							id=3368;
 						};
 						class Item66
@@ -111808,7 +111808,7 @@ class Mission
 							type="rectangle";
 							a=10;
 							b=18;
-							angle=3.5719965;
+							angle=3.5719957;
 							id=3369;
 							atlOffset=0.00033569336;
 						};
@@ -111821,7 +111821,7 @@ class Mission
 							type="rectangle";
 							a=10;
 							b=18;
-							angle=3.5719962;
+							angle=3.5719955;
 							id=3370;
 							atlOffset=0.00033569336;
 						};
@@ -111834,7 +111834,7 @@ class Mission
 							type="rectangle";
 							a=5;
 							b=8;
-							angle=225.97801;
+							angle=225.97797;
 							id=3371;
 							atlOffset=0.00054931641;
 						};

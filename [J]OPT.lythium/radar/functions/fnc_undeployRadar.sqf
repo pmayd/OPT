@@ -21,8 +21,7 @@ params [
 
 if (_container isEqualTo objNull) exitWith {};
 
-if (_container getVariable [QGVAR(isDeployed), false]) then {
-    _container setVariable [QGVAR(isDeployed), false, true];
+if (_container getVariable [QEGVAR(composition,deployed), false]) then {
 
 	[_container] spawn EFUNC(composition,undeployComposition);
 
