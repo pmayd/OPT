@@ -1,8 +1,5 @@
 
-PREP(createPlayerMarker);
-PREP(createUnitMarker);
+PREP(GPS);
 PREP(initCBASettings);
-PREP(initServerMissionEH);
 PREP(postInit);
-PREP(processUnitMarker);
-PREP(updateMarker);
+

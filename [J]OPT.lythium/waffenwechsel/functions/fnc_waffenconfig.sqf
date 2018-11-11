@@ -82,14 +82,14 @@ GVAR(Gunvehwest)=[
 ["60Rnd_30mm_APFSDS_shells","OPT_autocannon_30mm_CTWS",400,24000,"60x30 mm APFSDS"],  //  13.60x30 mm APFSDS
 ["60Rnd_40mm_GPR_shells","OPT_autocannon_40mm_CTWS",200,12000,"60x40 mm HE"],  //  14.60x40 mm HE
 ["40Rnd_40mm_APFSDS_shells","OPT_autocannon_40mm_CTWS",700,28000,"40x40 mm APFSDS"],  //  15.40x40 mm APFSDS
-["OPT_2Rnd_GAT_missiles","OPT_missiles_titan",50000,100000,"2xTitan AT"],  //  16.2xTitan AT  
-["OPT_5Rnd_GAT_missiles","OPT_missiles_titan",50000,250000,"5xTitan AT"],  //  17.5xTitan AT
+["2Rnd_GAT_missiles","OPT_missiles_titan",50000,100000,"2xTitan AT"],  //  16.2xTitan AT  
+["1Rnd_GAT_missiles","OPT_missiles_titan_static",50000,50000,"1xTitan AT"],  //  17.1xTitan AT
 ["SPG9_HEAT","launcher_SPG9",25000,25000,"1xSPG-9 HEAT"],  //  18.1xSPG-9 HEAT
 ["SPG9_HE","launcher_SPG9",1000,1000,"1xSPG-9 HE"],  //  19.1xSPG-9 HE
 ["OPT_680Rnd_35mm_AA_shells_Tracer_Green","OPT_autocannon_35mm",100,68000,"680xFlak 35 mm"],  //  20.680xFlak 35 mm
-["OPT_1200Rnd_35mm_AA_shells_Tracer_Green","OPT_autocannon_35mm",100,120000,"1200xFlak 35 mm"],  //  20.1200xFlak 35 mm
-["OPT_4Rnd_Titan_long_missiles","OPT_missiles_titan_AA",12500,50000,"4xTitan AA"],  //  22.4xTitan AA
-["OPT_2Rnd_Titan_long_missiles","OPT_missiles_titan_AA",12500,25000,"2xTitan AA"],  //  23.2xTitan AA
+["OPT_1200Rnd_35mm_AA_shells_Tracer_Green","OPT_autocannon_35mm",100,120000,"1200xFlak 35 mm"],  //  21.1200xFlak 35 mm
+["4Rnd_Titan_long_missiles","OPT_missiles_titan",12500,50000,"4xTitan AA"],  //  22.4xTitan AA
+["2Rnd_Titan_long_missiles","OPT_missiles_titan",12500,25000,"2xTitan AA"],  //  23.2xTitan AA
 ["32Rnd_120mm_APFSDS_shells","cannon_120mm",5000,160000,"32x120mm APFSDS"],  //  24.32x120mm APFSDS
 ["30Rnd_120mm_HE_shells","cannon_120mm",3000,90000,"30x120mm HE"],  //  25.30x120mm HE
 ["20Rnd_120mm_HEAT_MP","cannon_120mm",4500,90000,"20x120mm HEAT"],  //  26.20x120mm HEAT
@@ -108,7 +108,9 @@ GVAR(Gunvehwest)=[
 ["4Rnd_125mm_cannon_missiles","cannon_125mm",50000,200000,"4x125mm ATGM"],  //  39.4x125mm ATGM
 ["OPT_32Rnd_155mm_Mo_shells","OPT_mortar_155mm_AMOS",5000,160000,"32x155 mm HE"],  //  40.32x155 mm HE
 ["OPT_2Rnd_155mm_Mo_Cluster","OPT_mortar_155mm_AMOS",20000,40000,"2xCluster"],  //  41.2xCluster Shells
-["6Rnd_155mm_Mo_smoke","OPT_mortar_155mm_AMOS",500,3000,"6xSmoke"]  //  42.6xSmoke 
+["6Rnd_155mm_Mo_smoke","OPT_mortar_155mm_AMOS",500,3000,"6xSmoke"],  //  42.6xSmoke 
+["Vorona_HEAT","missiles_Vorona",500,250000,"1xVorona-HEAT"],  //  43.vorona-test KalleK 
+["Vorona_HE","missiles_Vorona",500,150000,"1xVorona-HE"]  //  44.vorona-test KalleK 
 ];
 
 //Raketen CSAT
@@ -165,14 +167,14 @@ GVAR(Gunveheast)=[
 ["60Rnd_30mm_APFSDS_shells","OPT_autocannon_30mm_CTWS",400,24000,"60x30 mm APFSDS"],  //  13.60x30 mm APFSDS
 ["60Rnd_40mm_GPR_shells","OPT_autocannon_40mm_CTWS",200,12000,"60x40 mm HE"],  //  14.60x40 mm HE
 ["40Rnd_40mm_APFSDS_shells","OPT_autocannon_40mm_CTWS",700,28000,"40x40 mm APFSDS"],  //  15.40x40 mm APFSDS
-["OPT_2Rnd_GAT_missiles","OPT_missiles_titan",50000,100000,"2xTitan AT"],  //  16.2xTitan AT  
-["OPT_5Rnd_GAT_missiles","OPT_missiles_titan",50000,250000,"5xTitan AT"],  //  17.5xTitan AT
+["2Rnd_GAT_missiles","OPT_missiles_titan",50000,100000,"2xTitan AT"],  //  16.2xTitan AT  					"OPT_2Rnd_GAT_missiles" gibts nicht daher vanilla!
+["1Rnd_GAT_missiles","OPT_missiles_titan_static",50000,50000,"1xTitan AT"],  //  17.1xTitan AT					"OPT_5Rnd_GAT_missiles" gibts nicht daher vanilla!
 ["SPG9_HEAT","launcher_SPG9",25000,25000,"1xSPG-9 HEAT"],  //  18.1xSPG-9 HEAT
 ["SPG9_HE","launcher_SPG9",1000,1000,"1xSPG-9 HE"],  //  19.1xSPG-9 HE
 ["OPT_680Rnd_35mm_AA_shells_Tracer_Red","OPT_autocannon_35mm",100,68000,"680xFlak 35 mm"],  //  20.680xFlak 35 mm
 ["OPT_1200Rnd_35mm_AA_shells_Tracer_Red","OPT_autocannon_35mm",100,120000,"1200xFlak 35 mm"],  //  20.1200xFlak 35 mm
-["OPT_4Rnd_Titan_long_missiles","OPT_missiles_titan_AA",12500,50000,"4xTitan AA"],  //  22.4xTitan AA
-["OPT_2Rnd_Titan_long_missiles","OPT_missiles_titan_AA",12500,25000,"2xTitan AA"],  //  23.2xTitan AA
+["4Rnd_Titan_long_missiles","OPT_missiles_titan",12500,50000,"4xTitan AA"],  //  22.4xTitan AA				gibts nicht daher vanilla!
+["2Rnd_Titan_long_missiles","OPT_missiles_titan",12500,25000,"2xTitan AA"],  //  23.2xTitan AA				gibts nicht daher vanilla!
 ["32Rnd_120mm_APFSDS_shells","cannon_120mm",5000,160000,"32x120mm APFSDS"],  //  24.32x120mm APFSDS
 ["30Rnd_120mm_HE_shells","cannon_120mm",3000,90000,"30x120mm HE"],  //  25.30x120mm HE
 ["20Rnd_120mm_HEAT_MP","cannon_120mm",4500,90000,"20x120mm HEAT"],  //  26.20x120mm HEAT
@@ -191,7 +193,9 @@ GVAR(Gunveheast)=[
 ["4Rnd_125mm_cannon_missiles","cannon_125mm",50000,200000,"4x125mm ATGM"],  //  39.4x125mm ATGM
 ["OPT_32Rnd_155mm_Mo_shells","OPT_mortar_155mm_AMOS",5000,160000,"32x155 mm HE"],  //  40.32x155 mm HE
 ["OPT_2Rnd_155mm_Mo_Cluster","OPT_mortar_155mm_AMOS",20000,40000,"2xCluster"],  //  41.2xCluster Shells
-["6Rnd_155mm_Mo_smoke","OPT_mortar_155mm_AMOS",500,3000,"6xSmoke"]  //  42.6xSmoke 
+["6Rnd_155mm_Mo_smoke","OPT_mortar_155mm_AMOS",500,3000,"6xSmoke"],  //  42.6xSmoke 
+["Vorona_HEAT","missiles_Vorona",500,250000,"1xVorona-HEAT"],  //  43.vorona-test KalleK 
+["Vorona_HE","missiles_Vorona",500,150000,"1xVorona-HE"]  //  44.vorona-test KalleK 
 ];
 
 //Preis Tarnung,Drahtkäfig,Datalinksystem
@@ -207,12 +211,12 @@ GVAR(Blackfoot)=[[0,1,4,6,8,9,10,11,12,15],[3,4,5,6,7],[0,0],[1],[4,2]];
 GVAR(HunterHMG)=[[],[0,1,2],[0,0],[1],[0,4]];
 GVAR(HunterGMG)=[[],[7,8,9,10,11],[0,0],[1],[0,4]];
 GVAR(ProwlerHMG)=[[],[0,1,2,3,4,5,6],[0,0],[1],[0,4]];
-GVAR(ProwlerAT)=[[],[16,18,19],[0,0],[1],[0,4]];
+GVAR(ProwlerAT)=[[],[16,18,19,43,44],[0,0],[1],[0,4]];
 GVAR(Panther)=[[],[0,1,2,7,8,9,10,11],[0,0],[1],[0,4]]; //kallek
 GVAR(Marshall)=[[],[3,4,5,6,12,13],[0,0],[1],[0,4]]; //kallek
 GVAR(Mora)=[[],[3,4,5,6,14,15],[0,0],[1],[0,4]]; //kallek
-GVAR(Cheetah)=[[],[20,21,22,23],[0,0],[1],[0,4]];
-GVAR(SlammerUp)=[[],[0,1,2,3,4,5,6,24,25,26,27,28,29,30,30,32,38],[0,0],[1],[0,4]];
+GVAR(Cheetah)=[[],[20,22,23],[0,0],[1],[0,4]];
+GVAR(SlammerUp)=[[],[3,4,5,6,24,25,26,27,28,29,30,30,32,38],[0,0],[1],[0,4]];
 GVAR(Scorcher)=[[],[40,41,42],[0,0],[1],[0,4]];
 
 //EAST Einheiten
@@ -223,12 +227,12 @@ GVAR(irifHMG)=[[],[0,1,2],[0,0],[1],[0,4]];
 GVAR(irifGMG)=[[],[7,8,9,10,11],[0,0],[1],[0,4]];
 GVAR(StriderGMG) = [[],[7,8,9,10,11],[0,0],[1],[0,4]];
 GVAR(QuilinHMG)=[[],[0,1,2,3,4,5,6],[0,0],[1],[0,4]];
-GVAR(QuilinAT)=[[],[16,18,19],[0,0],[1],[0,4]];
+GVAR(QuilinAT)=[[],[16,18,19,43,44],[0,0],[1],[0,4]];
 GVAR(Marid)=[[],[0,1,2,3,7,8,9,10,11],[0,0],[1],[0,4]]; //kallek
 GVAR(Gorgon)=[[],[3,4,5,6,12,13],[0,0],[1],[0,4]]; //kallek
 GVAR(Kamysh)=[[],[3,4,5,6,14,15,16,18,19],[0,0],[1],[0,4]]; //kallek
-GVAR(Tigris)=[[],[20,21,22,23],[0,0],[1],[0,4]];
-GVAR(Varsuk)=[[],[0,1,2,3,4,5,6,33,34,35,36,37,39],[0,0],[1],[0,4]];
+GVAR(Tigris)=[[],[20,22,23],[0,0],[1],[0,4]];
+GVAR(Varsuk)=[[],[3,4,5,6,33,34,35,36,37,39],[0,0],[1],[0,4]];
 GVAR(Sochor)=[[],[40,41,42],[0,0],[1],[0,4]];
 
 //Fahrzeuge die zugelassen sind
@@ -249,7 +253,8 @@ GVAR(vehclasswestWW)=[
 "OPT4_B_MBT_01_arty_F",
 "OPT4_B_MRAP_03_gmg_F",
 "OPT4_B_Heli_light_03_green_F",
-"OPT4_B_MRAP_03_gmg_F"
+"OPT4_B_MRAP_03_gmg_F",
+"OPT4_B_LSV_01_AT_F"
 ];
 
 GVAR(vehclasseastWW)=[
@@ -270,7 +275,8 @@ GVAR(vehclasseastWW)=[
 "OPT4_O_T_MBT_02_cannon_ghex_F",
 "OPT4_O_MBT_02_arty_F",
 "OPT4_O_T_MBT_02_arty_ghex_F",
-"OPT4_O_APC_Wheeled_03_cannon_F"
+"OPT4_O_APC_Wheeled_03_cannon_F",
+"OPT4_O_LSV_02_AT_F"
 ];
 
 GVAR(textslotwest) =[

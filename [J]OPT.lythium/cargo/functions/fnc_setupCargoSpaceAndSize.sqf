@@ -54,7 +54,7 @@ GVAR(canTransportCargo) =
 	["OPT_B_G_Offroad_01_armed_F", 4],				    // Pickup HMG - grad nich drin!
 	["OPT_B_T_LSV_01_unarmed_F", 4], 				    // Prowler unarmed
 	["OPT_B_T_LSV_01_armed_F", 4],                      // Prowler armed
-	["B_T_LSV_01_AT_F", 4], 						// Prowler AT - vanilla - lord
+	["OPT4_B_LSV_01_AT_F", 4], 						// Prowler AT - vanilla - lord
 	["OPT_B_MRAP_03_F", 4],							    // Strider - grad nich drin!
 	["OPT_B_MRAP_03_hmg_F", 4],						    // Strider HMG - grad nich drin!
 	["OPT4_B_MRAP_03_gmg_F", 4],						    // Strider GMG
@@ -96,7 +96,7 @@ GVAR(canTransportCargo) =
 	["OPT_O_T_Quadbike_01_ghex_F", 2],				    // Quadbike	- checken!
 	["OPT_O_T_LSV_02_unarmed_F", 4], 				    // Quilin unarmed
 	["OPT_O_T_LSV_02_armed_F", 4],					    // Quilin armed
-	["O_T_LSV_01_AT_F_un", 4], 						// Prowler AT - vanilla	- lord
+	["OPT4_O_LSV_01_AT_F", 4], 						// Prowler AT - vanilla	- lord
     ["OPT_O_G_Offroad_01_F", 4],					    // Pickup  - grad nich drin!
     ["OPT_O_G_Offroad_01_armed_F", 4],				    // Pickup HMG  - grad nich drin!
 	["OPT_O_T_MRAP_02_ghex_F", 4],					    // Ifrit - tropentarn hinzugefügt
@@ -181,7 +181,7 @@ GVAR(canBeTransported) =
 	["OPT_B_Slingload_01_Repair_Radar_F", 8],			    // Radarcontainer NEU
 	["OPT_Box_NATO_WpsSpecial_Diver_F", 2],				    // Taucherkiste
 	["OPT_FlexibleTank_01_forest_F", 1],				    //Spritfass
-	["ACE_Box_82mm_Mo_HE", 4],				    //Mörsermuni
+	["OPT4_ACE_Box_82mm_Mo_HE", 4],				    //Mörsermuni
 // NATO ships
 	["OPT_B_Boat_Transport_01_F", 4],				        // Assault Boat     - hinzugefügt
 	["OPT_B_C_Boat_Transport_02_F", 4],					    // Rhib unbewaffnet - hinzugefügt
@@ -202,7 +202,7 @@ GVAR(canBeTransported) =
 	["OPT_O_static_AT_F", 2],							                        // Stand-AT,200000
 	["OPT_O_Mortar_01_F", 2],							                        // MK6 Mörser,200000
 	["B_Mortar_01_F", 2],						// MK6 - Mrser
-	["ACE_Box_82mm_Mo_HE", 4],				    //Mörsermuni	
+	["OPT4_ACE_Box_82mm_Mo_HE", 4],				    //Mörsermuni	
 	["OPT_FlexibleTank_01_sand_F", 1],					    // Treibstoff-Fass
 	["OPT_Land_Pod_Heli_Transport_04_fuel_F", 8],		    // Fuelcontainer
 	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", 8], 	// Fuelcontainer (schwarz)
@@ -243,7 +243,7 @@ GVAR(canBeDragged) =
 	["OPT_B_Mortar_01_F"],							                        // MK6 - Mörser,200000
 	["B_Mortar_01_F"],						// MK6 - Mrser
 	["OPT_FlexibleTank_01_forest_F"],					                    //Spritfass
-	["ACE_Box_82mm_Mo_HE"],				    //Mörsermuni
+	["OPT4_ACE_Box_82mm_Mo_HE"],				    //Mörsermuni
 	["OPT_B_Static_Designator_01_F"],					                    // Remote Designator,10000
 	["OPT_B_Slingload_01_Fuel_F",  [0, 5, 0.05], 0],                         // Fuelcontainer,5000
 	["OPT_B_Slingload_01_Ammo_F",  [0, 5, 0.05], 0],                         // Munitionscontainer,50000
@@ -276,7 +276,7 @@ GVAR(canBeDragged) =
 	["OPT_O_Mortar_01_F"],							                        // MK6 Mörser,200000
 	["B_Mortar_01_F"],						// MK6 - Mrser
 	["OPT_FlexibleTank_01_sand_F"],					                        // Treibstoff-Fass
-	["ACE_Box_82mm_Mo_HE"],				    				//Mörsermuni
+	["OPT4_ACE_Box_82mm_Mo_HE"],				    				//Mörsermuni
 	["OPT_O_Static_Designator_02_F"],					                    // Remote Designator,10000
 	["OPT_Land_Pod_Heli_Transport_04_fuel_F",  [0, 5, 0.05], 0],			    // Fuelcontainer,5000
 	["OPT_Land_Pod_Heli_Transport_04_fuel_black_F",  [0, 5, 0.05], 0],	    // Fuelcontainer (schwarz),5000

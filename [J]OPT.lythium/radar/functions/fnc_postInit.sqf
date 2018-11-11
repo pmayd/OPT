@@ -17,24 +17,26 @@
 {
     _x addAction[
         ("<t color=""#df8601"">" + STR_RADAR_DEPLOY + "</t>"),
-        {[_this select 0] call FUNC(deployRadar); },
+        {[_this select 0] spawn FUNC(deployRadar); },
         '', 
         1, 
         true, 
         true, 
         "", 
-        format["!(_target getVariable ['%1', false])", QGVAR(isDeployed)]
+        format["!(_target getVariable ['%1', false])", QEGVAR(composition,deployed)],
+        5
     ]; 
 
     _x addAction[
         ("<t color=""#df8601"">" + STR_RADAR_UNDEPLOY + "</t>"),
-        {[_this select 0] call FUNC(undeployRadar); },
+        {[_this select 0] spawn FUNC(undeployRadar); },
         '', 
         1,
         true,
         true, 
         "", 
-        format["(_target getVariable ['%1', false])", QGVAR(isDeployed)]
+        format["(_target getVariable ['%1', false])", QEGVAR(composition,deployed)],
+        5
     ]; 
 
 } forEach [GVAR(containerWest), GVAR(containerEast)];

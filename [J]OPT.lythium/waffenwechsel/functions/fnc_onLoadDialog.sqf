@@ -75,6 +75,8 @@ _side=civilian;
 _pylon=[];
 _Boxnamen =[];
 
+(gunner _veh) action ["getout",_veh];
+
 if (_typveh in (GVAR(vehclasswestWW)+GVAR(vehclasseastWW))) then 
     {
         switch (_typveh) do 
@@ -86,7 +88,7 @@ if (_typveh in (GVAR(vehclasswestWW)+GVAR(vehclasseastWW))) then
             case "OPT4_B_MRAP_01_gmg_F": {_boxarry = GVAR(HunterGMG);_side=west;_pylon=[];};
 			case "OPT4_B_MRAP_03_gmg_F": {_boxarry = GVAR(StriderGMG);_side=west;_pylon=[];};
             case "OPT_B_T_LSV_01_armed_F": {_boxarry = GVAR(ProwlerHMG);_side=west;_pylon=[];};
-            case "OPT_B_T_LSV_01_AT_F": {_boxarry = GVAR(ProwlerAT);_side=west;_pylon=[];};
+            case "OPT4_B_LSV_01_AT_F": {_boxarry = GVAR(ProwlerAT);_side=west;_pylon=[];};
             case "OPT4_B_APC_Tracked_01_rcws_F": {_boxarry = GVAR(Panther);_side=west;_pylon=[];};
             case "OPT4_B_APC_Wheeled_01_cannon_F": {_boxarry = GVAR(Marshall);_side=west;_pylon=[];};
             case "OPT4_B_APC_tracked_03_cannon_F": {_boxarry = GVAR(Mora);_side=west;_pylon=[];};
@@ -99,13 +101,12 @@ if (_typveh in (GVAR(vehclasswestWW)+GVAR(vehclasseastWW))) then
             case "OPT4_O_MRAP_02_hmg_F": {_boxarry = GVAR(irifHMG);_side=east;_pylon=[];};
             case "OPT4_O_MRAP_02_gmg_F": {_boxarry = GVAR(irifGMG);_side=east;_pylon=[];};
 			case "OPT_O_T_LSV_02_armed_F": {_boxarry = GVAR(QuilinHMG);_side=east;_pylon=[];};
-            case "OPT_O_T_LSV_02_AT_F": {_boxarry = GVAR(QuilinAT);_side=east;_pylon=[];};
+            case "OPT4_O_LSV_02_AT_F": {_boxarry = GVAR(QuilinAT);_side=east;_pylon=[];};
             case "OPT4_O_APC_Wheeled_02_rcws_F": {_boxarry = GVAR(Marid);_side=east;_pylon=[];};
             case "OPT4_O_APC_Wheeled_03_cannon_F": {_boxarry = GVAR(Gorgon);_side=east;_pylon=[];};
             case "OPT4_O_APC_Tracked_02_cannon_F": {_boxarry = GVAR(Kamysh);_side=east;_pylon=[];};
             case "OPT4_O_APC_Tracked_02_AA_F": {_boxarry = GVAR(Tigris);_side=east;_pylon=[];};    
             case "OPT4_O_MBT_02_cannon_F": {_boxarry = GVAR(Varsuk);_side=east;_pylon=[];};
-			
 			case "OPT4_B_MBT_01_arty_F": {_boxarry = GVAR(Scorcher);_side=west;_pylon=[];}; 
 			case "OPT4_O_MBT_02_arty_F": {_boxarry = GVAR(Sochor);_side=east;_pylon=[];}; 
 			case "OPT4_O_T_MBT_02_arty_ghex_F": {_boxarry = GVAR(Sochor);_side=east;_pylon=[];}; 
@@ -931,6 +932,8 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
             };        
 ctrlSetText [10001, format["$:%1",(_bewaffnungpreis -_wert)]];    
 };
+
+(gunner _veh) action ["getout",_veh];
         
 if (OPTWWbuygo == 1) then 
     {
@@ -972,7 +975,7 @@ if (OPTWWbuygo == 1) then
                             }
                         else
                             {    
-                            {_veh addMagazine _x} forEach _buygunmagazine;
+                            {_veh addMagazine [_x, 9999];} forEach _buygunmagazine;
                             {_veh addWeapon _x} forEach _buygunweapon;    
                             };
                     };    
@@ -1005,7 +1008,7 @@ if (OPTWWbuygo == 1) then
             {
                 if ((count _buygunmagazine) > 0) then 
                     {                
-                    {_veh addMagazine _x} forEach _buygunmagazine;
+                    {_veh addMagazine [_x, 9999];} forEach _buygunmagazine;
                     {_veh addWeapon _x} forEach _buygunweapon;
                     };
                 if (_buyDraht) then 

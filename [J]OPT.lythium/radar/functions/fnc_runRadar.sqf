@@ -104,7 +104,7 @@ while {true} do {
 
         } forEach (_markerost + _markerwest);
 
-        if !(_container getVariable [QGVAR(isDeployed), false]) then {
+        if !(_container getVariable [QEGVAR(composition,deployed), false]) then {
             _Radarring setMarkerAlphaLocal 0;
 
         } else {
