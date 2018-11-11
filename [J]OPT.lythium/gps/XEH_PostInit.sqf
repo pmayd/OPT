@@ -10,7 +10,3 @@ if (!GVAR(on)) exitWith{};
 if (hasInterface) then {
     [] call FUNC(postInit);
 };
-
-if (isServer) then {    
-    [] call FUNC(initServerMissionEH);
-};

@@ -49,7 +49,7 @@ if (_centerObj getVariable [QGVAR(compositionRadius), -1] == -1) then {
 private _flatPos = selectBestPlaces [
     position _centerObj, 
     _radius max 5, 
-    "meadow - houses - trees - (0.5 * forest) - (5*hills) - sea", 
+    "meadow - houses - trees - (0.5 * forest) - (0.5*hills) - sea", 	// von 5 auf 0.5 kallek
     5, 
     3
 ];
