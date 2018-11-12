@@ -21,12 +21,13 @@ params [
 
 /* VALIDATION */
 if (_unit isEqualTo objNull) exitWith{""};
+if !(_unit in playableUnits) exitWith{name _unit};
 
 /* CODE */
 private _uid = getPlayerUID _unit;
 private _id = (GVAR(playerList) apply {_x select 0}) find _uid;
 
-if (_id == -1) exitWith {""};
+if (_id == -1) exitWith {name _unit};
 
 private _nameUnit = (GVAR(playerList) select _id) select 1;
 
