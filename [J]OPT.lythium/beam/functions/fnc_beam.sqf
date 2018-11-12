@@ -1,8 +1,10 @@
 /**
+* Description:
 * Teleport player and their vehicle to selected destination.
 * Check for truce time and level of teleport location.
 *
-* Author: James
+* Author:
+* James
 *
 * Arguments:
 * 0: <NUMBER> current selected index of listbox control
