@@ -1,13 +1,3 @@
-
-// list all global variables used within the component
-// define variable with default value!
-// GVAR(...)
-GVAR(box) = []; // contains all available beam positions defined in setup_beamOrte.sqf
-GVAR(locations_west) = []; // contains all beam locations for west
-GVAR(locations_east) = []; // contains all beam locations for east
-GVAR(heavy_vehicles) = []; // contains all heavy vehicle classnames that are only allowed at lvl 3
-GVAR(beam_trigger) = []; // contains all trigger variable names that allow player to open beam dialog
-
 // hier bitte alle Variablen anlegen, die man in irgendeiner Weise
 // einstellen können soll oder irgendwann mal ändern will
 // Beispiele: Add-Action Texte, Variablen, Konstanten, Marker etc

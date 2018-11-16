@@ -6,5 +6,4 @@
 
 if (!GVAR(on)) exitWith{};
 
-[] call FUNC(setup_beamOrte);
 [] call FUNC(postInit);
