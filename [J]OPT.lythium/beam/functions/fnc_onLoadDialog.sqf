@@ -1,19 +1,41 @@
 ﻿/**
-* Author: Lord
-* initialize beam dialog and wait for user input
+* Description:
+* initialize beam dialog and fill listbox with available options
+* if component is disabled, only options with level -1 are available
+* after mission start, only options with level -1 are available
+*
+* Author:
+* Lord
 *
 * Arguments:
-* 0: <DIALOG> dialog/display
+* None
 *
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_onLoadDialog.sqf;
+* Server only:
+* no
 *
+* Public:
+* no - should be called via onLoad from beam dialog
+*
+* Global:
+* no 
+*
+* Sideeffects:
+* fill variable GVAR(box) with options to beam
+* fill listbox of beam dialog with all options of GVAR(box)
+*
+* Example:
+* [] call EFUNC(beam,onLoadDialog);
 */
 #include "script_component.hpp"
 
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
 disableSerialization;
 
 private _display = findDisplay IDD_DLG_BEAM;
