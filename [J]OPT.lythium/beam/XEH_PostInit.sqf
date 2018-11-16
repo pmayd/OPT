@@ -6,4 +6,5 @@
 
 if (!GVAR(on)) exitWith{};
 
+[] call FUNC(setup_beamOrte); // has to be called here instead of preInit because trigger do not exist earlier
 [] call FUNC(postInit);

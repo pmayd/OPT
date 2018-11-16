@@ -187,8 +187,6 @@ GVAR(locations_east) =
 	[[15043.098,45.375999,4348.3789], "TWO CAMPS - Peloton Camp", 3]
 ];
 
-
-
 GVAR(heavy_vehicles) = [
 //Vanilla
 	"OPT4_O_APC_Wheeled_02_rcws_F",				// MSE-3 Marid

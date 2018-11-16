@@ -20,4 +20,3 @@ GVAR(beam_trigger) = []; // contains all trigger variable names that allow playe
 
 // initialize CBA settings
 [] call FUNC(initCBASettings);
-[] call FUNC(setup_beamOrte);
