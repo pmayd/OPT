@@ -23,9 +23,9 @@
 if (!canSuspend) exitWith{};
 
 /* CODE BODY */
-private _timeElapsed = (serverTime - GVAR(startTime));
+private _timeElapsed = serverTime - EGVAR(serverclock,startTime);
 
-if ((OPT_PARAM_PLAYTIME - _timeElapsed) <= 0) then {
+if ((EGVAR(serverclock,playTime) - _timeElapsed) <= 0) then {
     diag_log format ["########## Schlacht automatisch beendet. Endpunktestand: NATO %1 | CSAT %2 ##########", GVARMAIN(nato_points), GVARMAIN(csat_points)];
 } else {
     diag_log format ["########## Schlacht von MT beendet. Endpunktestand: NATO %1 | CSAT %2 ##########", GVARMAIN(nato_points), GVARMAIN(csat_points)];

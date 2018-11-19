@@ -5,7 +5,6 @@
 
 if (isServer) then {
     [] call FUNC(initServerMissionEH);
-    [] spawn FUNC(startMission); // Waffenruhe und Missionsstart, für Server und Client
 
     //Function that adds dynamic groups to the mission as seen in End Game
     ["Initialize"] call BIS_fnc_dynamicGroups;

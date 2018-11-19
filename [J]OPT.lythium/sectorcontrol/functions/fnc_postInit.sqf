@@ -16,7 +16,7 @@
 
 if (isServer) then {
     [] spawn {
-        waitUntil{GVARMAIN(missionStarted)};
+        waitUntil{EGVAR(serverclock,missionStarted)};
 
         // start flag setup (setting owner)
         [] call FUNC(setupFlag);

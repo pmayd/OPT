@@ -2,7 +2,6 @@
 
 PREP(addBackpack);
 PREP(briefing);
-PREP(countdown);
 PREP(earplugs);
 PREP(endMission);
 PREP(initCBAEvents);
@@ -14,4 +13,3 @@ PREP(postInit);
 PREP(preInit);
 PREP(repairSystem);
 PREP(respawnCost);
-PREP(startMission);

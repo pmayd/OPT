@@ -47,7 +47,7 @@ private _lvl = _arry select 2;
 private _beam_pos = _arry select 0;
 
 //Zeitabgelaufen check -> oder lvl gleich -1 (Marinebasis)
-if (GVARMAIN(missionStarted) and _lvl != -1) exitWith { 
+if (EGVAR(serverclock,missionStarted) and _lvl != -1) exitWith { 
     ["Beamsystem", "Das System steht nur während der Waffenruhe zur Verfügung!", "red"] call EFUNC(gui,message);
     closeDialog 0;
 };
