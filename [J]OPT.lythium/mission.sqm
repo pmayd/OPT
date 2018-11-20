@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5088;
+		nextID=5220;
 	};
 	class Camera
 	{
@@ -97279,7 +97279,7 @@ class Mission
 								{
 									dataType="Trigger";
 									position[]={18936.221,29.625864,76.497002};
-									angle=0.34726802;
+									angle=0.34726796;
 									class Attributes
 									{
 										name="csat_trigger_beam_3";

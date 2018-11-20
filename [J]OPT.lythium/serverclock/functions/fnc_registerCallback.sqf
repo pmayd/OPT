@@ -13,7 +13,7 @@
 * None
 *
 * Server only:
-* yes - only server changes GVAR(periodicFncs)
+* yes - only server changes GVAR(registeredCallbacks)
 *
 * Public:
 * yes
@@ -22,10 +22,10 @@
 * no - effects are local on server
 *
 * Sideeffects:
-* add function name to GVAR(periodicFncs)
+* add function name to GVAR(registeredCallbacks)
 * 
 * Example:
-* ["opt_sectorcontrol_fnc_calcPoints"] call EFUNC(serverclock,addPeriodicFnc);
+* ["opt_sectorcontrol_fnc_calcPoints"] call EFUNC(serverclock,registerCallback);
 */
 #include "script_component.hpp"
 
@@ -38,5 +38,5 @@ params [
 if (_fncName isEqualTo "") exitWith{};
 
 /* CODE BODY */
-GVAR(periodicFncs) pushBack _fncName;
+GVAR(registeredCallbacks) pushBackUnique _fncName;
 

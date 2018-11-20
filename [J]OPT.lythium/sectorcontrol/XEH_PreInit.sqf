@@ -13,8 +13,4 @@ ADDON = true;
 
 if (isServer) then {
     [] call FUNC(setup_flagPositions);
-
-    // register callback function for server clock
-    [QGVAR(calcPoints)] call EFUNC(serverclock,addPeriodicFnc);
-
 };

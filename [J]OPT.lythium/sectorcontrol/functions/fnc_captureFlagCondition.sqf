@@ -36,5 +36,5 @@ if (_flag isEqualTo objNull or _unit isEqualTo objNull) exitWith{false};
 // nur von der anderen Seite
 vehicle _unit == _unit and
 EGVAR(serverclock,missionStarted) and
-EGVAR(serverclock,playTime) - (serverTime - EGVAR(serverclock,startTime)) > 0 and
+(EGVAR(serverclock,playTime) * 60 - (serverTime - EGVAR(serverclock,startTime))) > 0 and
 (UNIT_SIDE(_unit) != _flag getVariable ['owner', sideUnknown])

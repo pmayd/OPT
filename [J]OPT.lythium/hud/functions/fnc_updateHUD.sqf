@@ -94,13 +94,22 @@ while {true} do {
         private _timeStr = "";
         private _timeLeft = 0;
 
-        _timeStr = format ["---"];
-
+        systemChat format["%1, %2, %3, %4", _timeElapsed, _freezeTime, _truceTime, _playTime];
+        
         if (EGVAR(serverclock,freezeTime) > 0 and !EGVAR(serverclock,truceStarted)) then {
             _timeLeft = [_freezeTime] call CBA_fnc_formatElapsedTime;
 
-            _timeStr = format ["Ruhephase: %1", _timeLeft];
-            _control ctrlSetTextColor [0, 0, 0.7, 1];
+            if (_freezeTime > 0) then {
+
+                _timeStr = format ["Ruhephase: %1", _timeLeft];
+                _control ctrlSetTextColor [0, 0, 0.7, 1];
+
+            } else {
+
+                _timeStr = "Ruhephase: 00:00";
+                _control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
+
+            };
 
         };
 
@@ -111,10 +120,12 @@ while {true} do {
 
                 _timeStr = format ["Waffenruhe: %1", _timeLeft];
                 _control ctrlSetTextColor [0.6, 0.1, 0, 1];
+
             } else {
 
                 _timeStr = "Waffenruhe: 00:00";
                 _control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
+
             };
 
         };
@@ -128,10 +139,12 @@ while {true} do {
 
                 _timeStr = format ["Rest-Spielzeit: %1", _timeLeft];
                 _control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
+
             } else {
 
-                _timeStr = "Time: 00:00";
+                _timeStr = "Restspielzeit: 00:00";
                 _control ctrlSetTextColor [1, 0, 0, 0.9];
+
             };
         };
         

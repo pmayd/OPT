@@ -15,6 +15,10 @@
 #include "script_component.hpp"
 
 if (isServer) then {
+
+    // register callback function for server clock
+    [QFUNC(calcPoints)] call EFUNC(serverclock,registerCallback);
+    
     [] spawn {
         waitUntil{EGVAR(serverclock,missionStarted)};
 

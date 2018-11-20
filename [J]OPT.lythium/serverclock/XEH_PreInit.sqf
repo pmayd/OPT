@@ -16,7 +16,7 @@ GVAR(startTime) = 0;
 GVAR(freezeStarted) = false;
 GVAR(truceStarted) = false;
 GVAR(missionStarted) = false;
-GVAR(periodicFncs) = [];
+GVAR(registeredCallbacks) = [];
 
 // initialize CBA Settings
 [] call FUNC(initCBASettings);
