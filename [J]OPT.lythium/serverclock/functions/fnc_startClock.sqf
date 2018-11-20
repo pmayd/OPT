@@ -91,7 +91,7 @@ publicVariable QGVAR(missionStarted);
 
 estimatedTimeLeft (GVAR(playTime) * 60 - TIME_ELAPSED);
 _timeElapsed = TIME_ELAPSED;
-_log_msg = format["Beginn Rest-Spielzeit: %1 min", (GVAR(playTime) * 60 - _timeElapsed) / 60];
+_log_msg = format["Beginn Rest-Spielzeit: %1 min", (GVAR(playTime) + GVAR(freezeTime)) * 60 - _timeElapsed) / 60];
 ["Mission", _log_msg] call EFUNC(log,write);
 
 // begin with countdown of mission time
@@ -99,7 +99,7 @@ while {MISSION_IS_RUNNING} do {
 
 	// call all functions that were registered for running each minute
 	{
-		call compile format["%1", _x];
+		call compile format["[] call %1", _x];
 	} forEach GVAR(registeredCallbacks);
 
 	uiSleep 60;
@@ -107,7 +107,7 @@ while {MISSION_IS_RUNNING} do {
 };
 
 // wait last seconds exactly until mission ends
-waitUntil { _timeElapsed = TIME_ELAPSED; GVAR(playTime) * 60 - _timeElapsed < 0; };
+waitUntil { _timeElapsed = TIME_ELAPSED; (GVAR(playTime) + GVAR(freezeTime)) * 60 - _timeElapsed < 0; };
 
 [] call EFUNC(log,writeEndState);
 
