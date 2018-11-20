@@ -89,13 +89,13 @@ while {true} do {
 
         private _freezeTime = EGVAR(serverclock,freezeTime) * 60 - _timeElapsed;
         private _truceTime = (EGVAR(serverclock,truceTime) + EGVAR(serverclock,freezeTime)) * 60 - _timeElapsed;
-        private _playTime = EGVAR(serverclock,playTime) * 60 - _timeElapsed;
+        private _playTime = (EGVAR(serverclock,playTime) + EGVAR(serverclock,freezeTime)) * 60 - _timeElapsed;
 
         private _timeStr = "";
         private _timeLeft = 0;
 
-        systemChat format["%1, %2, %3, %4", _timeElapsed, _freezeTime, _truceTime, _playTime];
-        
+        //systemChat format["%1, %2, %3, %4", _timeElapsed, _freezeTime, _truceTime, _playTime];
+
         if (EGVAR(serverclock,freezeTime) > 0 and !EGVAR(serverclock,truceStarted)) then {
             _timeLeft = [_freezeTime] call CBA_fnc_formatElapsedTime;
 
