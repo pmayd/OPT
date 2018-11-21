@@ -26,6 +26,7 @@
 * Example:
 * [] call EFUNC(beam,initCBASettings);
 */
+#include "script_component.hpp"
 
 /* example of checkbox
 [
