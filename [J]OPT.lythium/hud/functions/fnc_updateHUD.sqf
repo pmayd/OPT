@@ -17,6 +17,8 @@
 disableSerialization;
 private _currentCutDisplay = uiNamespace getVariable QGVAR(display);
 
+waitUntil{ !isNil QEGVAR(mission,startTime)};
+
 while {true} do {
         //--------------------- get settings on whether to display extra labels --------------
         
