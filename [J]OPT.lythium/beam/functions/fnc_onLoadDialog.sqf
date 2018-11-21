@@ -55,7 +55,7 @@ if (PLAYER_SIDE == east) then {
 GVAR(box) = _orte select {(_x select 2) == -1};
 if (GVAR(on)) then {
     // nach Waffenruhe nur noch Orte mit -1
-    if (!GVARMAIN(missionStarted)) then {
+    if (!EGVAR(serverclock,missionStarted)) then {
         GVAR(box) append (_orte select {(_x select 2) > 0}); // only locations with level greater 0 (1,2,3 possible)
     };
 };

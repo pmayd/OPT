@@ -15,8 +15,12 @@
 #include "script_component.hpp"
 
 if (isServer) then {
+
+    // register callback function for server clock
+    [QFUNC(calcPoints)] call EFUNC(serverclock,registerCallback);
+    
     [] spawn {
-        waitUntil{GVARMAIN(missionStarted)};
+        waitUntil{EGVAR(serverclock,missionStarted)};
 
         // start flag setup (setting owner)
         [] call FUNC(setupFlag);

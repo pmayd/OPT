@@ -35,6 +35,6 @@ if (_flag isEqualTo objNull or _unit isEqualTo objNull) exitWith{false};
 // in Restspielzeit gezogen werden 
 // nur von der anderen Seite
 vehicle _unit == _unit and
-GVARMAIN(missionStarted) and
-OPT_PARAM_PLAYTIME - (serverTime - EGVAR(mission,startTime)) > 0 and
+EGVAR(serverclock,missionStarted) and
+(EGVAR(serverclock,playTime) * 60 - (serverTime - EGVAR(serverclock,startTime))) > 0 and
 (UNIT_SIDE(_unit) != _flag getVariable ['owner', sideUnknown])

@@ -16,7 +16,7 @@
 */
 #include "script_component.hpp"
 
-if GVARMAIN(missionStarted) exitWith{};
+if EGVAR(serverclock,missionStarted) exitWith{};
 
 // Mausradmenüeinträge für HL und PL
 if (typeOf player in GVARMAIN(officer)) then {
@@ -28,7 +28,7 @@ if (typeOf player in GVARMAIN(officer)) then {
         true, 
         true, 
         "", 
-        format["!%1", QGVARMAIN(missionStarted)]
+        format["!%1", QEGVAR(serverclock,missionStarted)]
     ];
 
     // inform player

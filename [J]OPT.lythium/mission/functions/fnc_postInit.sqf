@@ -62,24 +62,6 @@ if (isMultiplayer && hasInterface) then {
 
 player action ["WeaponOnBack", player];
 
-// friere Spieler, falls freezeTime aktiv
-if (!GVARMAIN(allow_movement)) then {
-
-	// init weiter durchladen
-	[] spawn {
-
-		// freeze Spieler zu Beginn
-		player enableSimulation false;
-
-		// warte OPT_PARAM_FREEZE_TIME
-		waitUntil {sleep 1; GVARMAIN(allow_movement)};
-
-		// gib Spieler frei
-		player enableSimulation true;
-	};
-
-};
-
 // new command since 1.52 - to disable the player raycasts in PvP cause not needed functionality but a lot of cpu calcuation
 disableRemoteSensors true;
 setTerrainGrid 3.125;
