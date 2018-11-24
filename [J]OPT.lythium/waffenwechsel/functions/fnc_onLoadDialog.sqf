@@ -29,12 +29,11 @@
 */
 #include "script_component.hpp"
 
-private ["_pad","_veh","_fcDialog","_Fahrzeugbild","_Fahrzeugname","_Fbild","_Magazinveh","_weaponsveh","_Magazinfilter","_Magazinfilter2","_Magazinvehpylon","_Magazinvehpylonarry","_anzahlMagazinveh","_MuniKugel","_MuniRakete","_bild","_MuniBild1","_MuniBild2","_MuniBild3","_MuniBild4","_MuniBild5","_MuniBild6","_Fname","_Objket","_typveh","_boxarry","_anzahlboxarry","_side","_bewaffnungpreis","_Magazinveharry","_Magazinveharrynew","_draht","_tranung","_datalink","_pylon","_Boxnamen","_wert","_magazin","_weapon","_kontrolle","_buykontrolle","_buyrakmagazine","_buyrakweapon","_buygunmagazine","_buygunweapon","_buyDraht","_buyTarnung","_buyDatalink"];
-
 disableSerialization;
 
-_pad = nil;
-_veh = 0;
+//Init Dialogfelder
+private _pad = nil;
+private _veh = 0;
 ctrlShow [10003, false ];
 ctrlShow [10004, false ];
 ctrlShow [10005, false ];
@@ -51,15 +50,16 @@ ctrlShow [10036, false ];
 ctrlSetText [10001, "$:0"];
 
 //Fahrzeugfestllung
-_Objket = ["Air","Tank","wheeled_apc","car"];
+private _Objket = ["Air","Tank","wheeled_apc","car"];
     
 _pad = (nearestObject [player, 'Land_HelipadCircle_F']);
 _veh = (nearestObjects[_pad,_Objket,10]) select 0;
 
-_Fname = getText (configFile >> "CfgVehicles" >> (typeof _veh) >> "displayName");
-_FBild = getText (configFile >> "CfgVehicles" >> (typeof _veh) >> "icon");
+private _Fname = getText (configFile >> "CfgVehicles" >> (typeof _veh) >> "displayName");
+private _FBild = getText (configFile >> "CfgVehicles" >> (typeof _veh) >> "icon");
 
-_typveh="";
+private _typveh="";
+
 {
     if ((typeof _veh) == _x) then {_typveh = _x};
 
@@ -70,12 +70,10 @@ _typveh="";
 
 } forEach GVAR(vehclasseastWW);
 
-_boxarry=[];
-_side=civilian;
-_pylon=[];
-_Boxnamen =[];
-
-(gunner _veh) action ["getout",_veh];
+private _boxarry=[];
+private _side=civilian;
+private _pylon=[];
+private _Boxnamen =[];
 
 if (_typveh in (GVAR(vehclasswestWW)+GVAR(vehclasseastWW))) then 
     {
@@ -118,67 +116,25 @@ else
     {
     _boxarry = [];_side=civilian;
     };
-
+	
+//Schütze aussteigen
+(gunner _veh) action ["getout",_veh];
+	
 //Festellung Bewaffnung
+private _Magazinveh = magazines _veh;
+private _weaponsveh = weapons _veh;
+private _Magazinveharrynew =[];
 
-_Magazinveh = magazines _veh;
-_weaponsveh = weapons _veh;
+_Magazinveharrynew = [_veh] call FUNC(auslesenmagazine);
 
-_weaponsveh deleteAt (_weaponsveh find "OPT_CMFlareLauncher");
-_weaponsveh deleteAt (_weaponsveh find "OPT_CMFlareLauncher_Triples");
-_weaponsveh = _weaponsveh select {_x != ""};
+// Darstellung Magazine
+private _anzahlMagazinveh = count _Magazinveharrynew; 
 
-_Magazinfilter =["96Rnd_CMFlare_Chaff_Magazine","120Rnd_CMFlare_Chaff_Magazine","240Rnd_CMFlare_Chaff_Magazine","60Rnd_CMFlare_Chaff_Magazine",
-"192Rnd_CMFlare_Chaff_Magazine","168Rnd_CMFlare_Chaff_Magazine","300Rnd_CMFlare_Chaff_Magazine","OPT_12Rnd_CMFlare_Chaff_Magazine",
-"OPT_20Rnd_CMFlare_Chaff_Magazine","OPT_30Rnd_CMFlare_Chaff_Magazine"];
-
-{
-_Magazinveh deleteAt (_Magazinveh find _X);                
-} forEach _Magazinfilter;
-
-
-_Magazinveh = _Magazinveh select {_x != ""};
-
-
-_Magazinveharry= magazinesAmmo _veh;
-_Magazinvehpylon =[];
-_Magazinvehpylonarry = getPylonMagazines _veh;
-_Magazinvehpylonarry = _Magazinvehpylonarry select {_x != ""};
-
-if ((count _Magazinvehpylonarry) > 0) then 
-    {
-    if ((count _Magazinvehpylonarry) > 4) then {_Magazinvehpylonarry resize 4};
-    for "_i" from 1 to count _Magazinvehpylonarry do
-        {
-        _Magazinvehpylon pushBack [(_Magazinvehpylonarry select _i-1),(_veh ammoOnPylon (_pylon select _i-1))];
-        //systemchat format ["MP:%1 I:%2 MN:%3 AP:%4",_Magazinvehpylon,_i,(_Magazinvehpylonarry select _i-1),(_veh ammoOnPylon (_pylon select _i-1))];
-        sleep 0.001;
-        };    
-    };    
-    
-
-//kontrolle Bewaffnung Auslesung
-
-_Magazinfilter2 =[["96Rnd_CMFlare_Chaff_Magazine",96],["120Rnd_CMFlare_Chaff_Magazine",120],["240Rnd_CMFlare_Chaff_Magazine",240],["60Rnd_CMFlare_Chaff_Magazine",60],
-["192Rnd_CMFlare_Chaff_Magazine",192],["168Rnd_CMFlare_Chaff_Magazine",168],["300Rnd_CMFlare_Chaff_Magazine",300],["OPT_12Rnd_CMFlare_Chaff_Magazine",12],
-["OPT_20Rnd_CMFlare_Chaff_Magazine",20],["OPT_30Rnd_CMFlare_Chaff_Magazine",30]];
-
-{
-_Magazinveharry deleteAt (_Magazinveharry find _X);                
-} forEach _Magazinfilter2;
-
-{
-_Magazinveharry deleteAt (_Magazinveharry find _X);                
-} forEach _Magazinvehpylon;
-
-_Magazinveharrynew=_Magazinveharry + _Magazinvehpylon;    
-
-_anzahlMagazinveh = count _Magazinveharrynew;        
 if (_anzahlMagazinveh > 0) then 
 {
-    _anzeige=[];
-    _MuniKugel = "\A3\Weapons_F\Data\UI\m_200rnd_65x39_yellow_ca.paa";
-    _MuniRakete = "\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_atl_CA.paa";
+   private _anzeige=[];
+   private _MuniKugel = "\A3\Weapons_F\Data\UI\m_200rnd_65x39_yellow_ca.paa";
+   private _MuniRakete = "\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_atl_CA.paa";
 
     if (_veh isKindOf "Air") then 
     {
@@ -190,15 +146,20 @@ if (_anzahlMagazinveh > 0) then
     {
         {if (true) then {_anzeige pushBack _MuniKugel;};} forEach _Magazinveh;
     };
-
-    //systemchat format ["M:%1 M1:%2 M3:%3",_Magazinveh,(magazines _veh),(getPylonMagazines _veh)];
-
-    _Munitext1 = "";
-    _Munitext2 = "";
-    _Munitext3 = "";
-    _Munitext4 = "";
-    _Munitext5 = "";
-    _Munitext6 = "";
+	
+    private _Munitext1 = "";
+    private _Munitext2 = "";
+    private _Munitext3 = "";
+    private _Munitext4 = "";
+    private _Munitext5 = "";
+    private _Munitext6 = "";
+	
+	private _MuniBild1 = "";
+    private _MuniBild2 = "";
+    private _MuniBild3 = "";
+    private _MuniBild4 = "";
+    private _MuniBild5 = "";
+    private _MuniBild6 = "";
 
     for "_i" from 1 to _anzahlMagazinveh do
             {
@@ -214,106 +175,32 @@ if (_anzahlMagazinveh > 0) then
                 sleep 0.001;
             };        
 };
-            
+          
 ctrlSetText [10000, _Fname];
 ctrlSetText [10002, format["%1",_FBild]];
 
 //Preis vorhandene Bewaffnung
+private _bewaffnungpreis=0;
 
-//systemchat format ["V:%1 Mva:%2 MV:%3",typeof _veh,_Magazinveharrynew,_Magazinveh];
-
-_bewaffnungpreis=0;
 if (_side == civilian) then 
     {
     //Box7 füllen
-    _index = lbAdd [10016,format ["Datalink $%1",GVAR(PreisDatalink)]];    
+    private _index = lbAdd [10016,format ["Datalink $%1",GVAR(PreisDatalink)]];    
     _index = lbAdd [10016,"Leer"];    
     ctrlSetText [10043, "Datalink"];
     }
 else
     {
-    if (_side == west) then 
-            {    
-                for "_i" from 1 to count GVAR(Raktenheliwest) do
-                {
-                    {
-                        if (((GVAR(Raktenheliwest) Select _i-1) Select 0) == (_x Select 0)) then 
-                                {                            
-                                _bewaffnungpreis = _bewaffnungpreis + (((GVAR(Raktenheliwest) Select _i-1) Select 2) * (_x Select 1));
-                                };
-
-                    } forEach _Magazinveharrynew;                
-                sleep 0.001;
-                };
-                for "_i" from 1 to count GVAR(Gunheliwest) do
-                {
-                    {
-                        if (((GVAR(Gunheliwest) Select _i-1) Select 0) == (_x Select 0)) then 
-                                {                            
-                                _bewaffnungpreis = _bewaffnungpreis + (((GVAR(Gunheliwest) Select _i-1) Select 2) * (_x Select 1));
-                                };
-
-                    } forEach _Magazinveharrynew;                
-                sleep 0.001;
-                };
-                for "_i" from 1 to count GVAR(Gunvehwest) do
-                {
-                    {
-                        if (((GVAR(Gunvehwest) Select _i-1) Select 0) == (_x Select 0)) then 
-                                {                            
-                                _bewaffnungpreis = _bewaffnungpreis + (((GVAR(Gunvehwest) Select _i-1) Select 2) * (_x Select 1));
-                                };
-
-                    } forEach _Magazinveharrynew;                
-                sleep 0.001;
-                };    
-            }
-        else
-            {    
-                for "_i" from 1 to count GVAR(Raktenhelieast) do
-                {
-                    {
-                        if (((GVAR(Raktenhelieast) Select _i-1) Select 0) == (_x Select 0)) then 
-                                {                            
-                                _bewaffnungpreis = _bewaffnungpreis + (((GVAR(Raktenhelieast) Select _i-1) Select 2) * (_x Select 1));
-                                };
-
-                    } forEach _Magazinveharrynew;                
-                sleep 0.001;
-                };
-                for "_i" from 1 to count GVAR(Gunhelieast) do
-                {
-                    {
-                        if (((GVAR(Gunhelieast) Select _i-1) Select 0) == (_x Select 0)) then 
-                                {                            
-                                _bewaffnungpreis = _bewaffnungpreis + (((GVAR(Gunhelieast) Select _i-1) Select 2) * (_x Select 1));
-                                };
-
-                    } forEach _Magazinveharrynew;                
-                sleep 0.001;
-                };
-                for "_i" from 1 to count GVAR(Gunveheast) do
-                {
-                    {
-                        if (((GVAR(Gunveheast) Select _i-1) Select 0) == (_x Select 0)) then 
-                                {                            
-                                _bewaffnungpreis = _bewaffnungpreis + (((GVAR(Gunveheast) Select _i-1) Select 2) * (_x Select 1));
-                                };
-
-                    } forEach _Magazinveharrynew;                
-                sleep 0.001;
-                };
-            };
+    _bewaffnungpreis = [_side,_Magazinveharrynew] call FUNC(GeldvorhandeneBewaffnung);
     
-        ctrlSetText [10001, format["$:%1",_bewaffnungpreis]];
-            
-        //Boxen füllen
+    ctrlSetText [10001, format["$:%1",_bewaffnungpreis]];
 
-        _Rakmag=((_boxarry Select 4) Select 0);
-        _gunmag=((_boxarry Select 4) Select 1);
-        _draht=((_boxarry Select 2) Select 0);
-        _tranung=((_boxarry Select 2) Select 1);
-        _datalink=((_boxarry Select 3) Select 0);
+    //Boxen füllen
+    private _Rakmag=((_boxarry Select 4) Select 0);
+    private _gunmag=((_boxarry Select 4) Select 1);
+    private _draht=((_boxarry Select 2) Select 0);
+    private _tranung=((_boxarry Select 2) Select 1);
+    private _datalink=((_boxarry Select 3) Select 0);
 
         if (_veh isKindOf "Air") then 
         {
@@ -491,19 +378,21 @@ else
 //Dynamische Kostenanzeige    
 OPTWWbuygo=0;    
 OPTWWlostgo=0;
-_boxindex =0;
-_wert=0;    
-_magazin="";
-_weapon="";
-_kontrolle =0;
-_buyrakmagazine=[];
-_buyrakweapon=[];
-_buygunmagazine=[];
-_buygunweapon=[];
-_buyDraht=false;
-_buyTarnung=false;
-_buyDatalink=false;
-_buykontrolle = [];
+private _boxindex =0;
+private _wert=0;    
+private _magazin="";
+private _weapon="";
+private _kontrolle =0;
+private _buyrakmagazine=[];
+private _buyrakweapon=[];
+private _buygunmagazine=[];
+private _buygunweapon=[];
+private _buyDraht=false;
+private _buyTarnung=false;
+private _buyDatalink=false;
+private _buykontrolle = [];
+private _waffenauswahlarry1="";
+private _waffenauswahlarry2="";
 
 while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
     {
@@ -530,20 +419,27 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                     };    
             }
         else
-            {
-        
-                if (_veh isKindOf "Air") then 
-                        {
+            {         
+            if (_veh isKindOf "Air") then 
+                    {
                         if (_side == west) then 
-                            {        
-                            if ((lbCurSel 10010) > -1) then 
-                                {    
+                            {    
+                            _waffenauswahlarry1 = GVAR(Gunheliwest);
+                            _waffenauswahlarry2 = GVAR(Raktenheliwest);
+                            }
+                        else
+                            {    
+                            _waffenauswahlarry1 = GVAR(Gunhelieast);
+                            _waffenauswahlarry2 = GVAR(Raktenhelieast);
+                            };
+                         if ((lbCurSel 10010) > -1) then 
+                                 {    
                                 if ((lbCurSel 10010) < (count (_boxarry Select 1))) then 
                                     {
                                     _boxindex = (_boxarry Select 1) Select lbCurSel 10010;
-                                    _wert = _wert +((GVAR(Gunheliwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunheliwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunheliwest) Select _boxindex) Select 1);
+                                    _wert = _wert +((_waffenauswahlarry1 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry1 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry1 Select _boxindex) Select 1);
                             
                                     _buygunmagazine pushBack _magazin;
                                     if (!(_weapon in _buygunweapon)) then 
@@ -557,9 +453,9 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                 if ((lbCurSel 10011) < (count (_boxarry Select 1))) then 
                                     {
                                     _boxindex = (_boxarry Select 1) Select lbCurSel 10011;
-                                    _wert = _wert +((GVAR(Gunheliwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunheliwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunheliwest) Select _boxindex) Select 1);
+                                    _wert = _wert +((_waffenauswahlarry1 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry1 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry1 Select _boxindex) Select 1);
                             
                                     _buygunmagazine pushBack _magazin;
                                     if (!(_weapon in _buygunweapon)) then 
@@ -573,10 +469,10 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                 if ((lbCurSel 10012) < (count (_boxarry Select 0))) then 
                                     {
                                     _boxindex = (_boxarry Select 0) Select lbCurSel 10012;
-                                    _wert = _wert +((GVAR(Raktenheliwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Raktenheliwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Raktenheliwest) Select _boxindex) Select 1);
-                                    _kontrolle = ((GVAR(Raktenheliwest) Select _boxindex) Select 5);
+                                    _wert = _wert +((_waffenauswahlarry2 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry2 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry2 Select _boxindex) Select 1);
+                                    _kontrolle = ((_waffenauswahlarry2 Select _boxindex) Select 5);
                             
                                     _buyrakmagazine pushBack _magazin;
                                     _buyrakweapon pushBack _weapon;
@@ -588,10 +484,10 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                 if ((lbCurSel 10013) < (count (_boxarry Select 0))) then 
                                     {
                                     _boxindex = (_boxarry Select 0) Select lbCurSel 10013;
-                                    _wert = _wert +((GVAR(Raktenheliwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Raktenheliwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Raktenheliwest) Select _boxindex) Select 1);
-                                    _kontrolle = ((GVAR(Raktenheliwest) Select _boxindex) Select 5);
+                                    _wert = _wert +((_waffenauswahlarry2 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry2 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry2 Select _boxindex) Select 1);
+                                    _kontrolle = ((_waffenauswahlarry2 Select _boxindex) Select 5);
                                                         
                                     _buyrakmagazine pushBack _magazin;
                                     _buyrakweapon pushBack _weapon;
@@ -603,10 +499,10 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                 if ((lbCurSel 10014) < (count (_boxarry Select 0))) then 
                                     {
                                     _boxindex = (_boxarry Select 0) Select lbCurSel 10014;
-                                    _wert = _wert +((GVAR(Raktenheliwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Raktenheliwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Raktenheliwest) Select _boxindex) Select 1);
-                                    _kontrolle = ((GVAR(Raktenheliwest) Select _boxindex) Select 5);
+                                    _wert = _wert +((_waffenauswahlarry2 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry2 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry2 Select _boxindex) Select 1);
+                                    _kontrolle = ((_waffenauswahlarry2 Select _boxindex) Select 5);
                                                         
                                     _buyrakmagazine pushBack _magazin;
                                     _buyrakweapon pushBack _weapon;
@@ -618,10 +514,10 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                 if ((lbCurSel 10015) < (count (_boxarry Select 0))) then 
                                     {
                                     _boxindex = (_boxarry Select 0) Select lbCurSel 10015;
-                                    _wert = _wert +((GVAR(Raktenheliwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Raktenheliwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Raktenheliwest) Select _boxindex) Select 1);
-                                    _kontrolle = ((GVAR(Raktenheliwest) Select _boxindex) Select 5);
+                                    _wert = _wert +((_waffenauswahlarry2 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry2 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry2 Select _boxindex) Select 1);
+                                    _kontrolle = ((_waffenauswahlarry2 Select _boxindex) Select 5);
                                                                 
                                     _buyrakmagazine pushBack _magazin;
                                     _buyrakweapon pushBack _weapon;
@@ -636,126 +532,26 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                     _buyDatalink=true;
                                     };
                                 };            
-                            }
-                        else    
-                            {        
-                            if ((lbCurSel 10010) > -1) then 
-                                {    
-                                if ((lbCurSel 10010) < (count (_boxarry Select 1))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 1) Select lbCurSel 10010;
-                                    _wert = _wert +((GVAR(Gunhelieast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunhelieast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunhelieast) Select _boxindex) Select 1);
-                                                                
-                                    _buygunmagazine pushBack _magazin;
-                                    if (!(_weapon in _buygunweapon)) then 
-                                        {
-                                        _buygunweapon pushBack _weapon;
-                                        };
-                                    };
-                                };    
-                            if ((lbCurSel 10011) > -1) then 
-                                {    
-                                if ((lbCurSel 10011) < (count (_boxarry Select 1))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 1) Select lbCurSel 10011;
-                                    _wert = _wert +((GVAR(Gunhelieast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunhelieast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunhelieast) Select _boxindex) Select 1);
-                            
-                                    _buygunmagazine pushBack _magazin;
-                                    if (!(_weapon in _buygunweapon)) then 
-                                        {
-                                        _buygunweapon pushBack _weapon;
-                                        };
-                                    };
-                                };    
-                            if ((lbCurSel 10012) > -1) then 
-                                {    
-                                if ((lbCurSel 10012) < (count (_boxarry Select 0))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 0) Select lbCurSel 10012;
-                                    _wert = _wert +((GVAR(Raktenhelieast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Raktenhelieast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Raktenhelieast) Select _boxindex) Select 1);
-                                    _kontrolle = ((GVAR(Raktenhelieast) Select _boxindex) Select 5);
-                                                                
-                                    _buyrakmagazine pushBack _magazin;
-                                    _buyrakweapon pushBack _weapon;
-                                    _buykontrolle pushBack _kontrolle;
-                                    };
-                                };    
-                            if ((lbCurSel 10013) > -1) then 
-                                {    
-                                if ((lbCurSel 10013) < (count (_boxarry Select 0))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 0) Select lbCurSel 10013;
-                                    _wert = _wert +((GVAR(Raktenhelieast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Raktenhelieast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Raktenhelieast) Select _boxindex) Select 1);
-                                    _kontrolle = ((GVAR(Raktenhelieast) Select _boxindex) Select 5);
-                                    
-                            
-                                    _buyrakmagazine pushBack _magazin;
-                                    _buyrakweapon pushBack _weapon;
-                                    _buykontrolle pushBack _kontrolle;
-                                    };
-                                };
-                            if ((lbCurSel 10014) > -1) then 
-                                {    
-                                if ((lbCurSel 10014) < (count (_boxarry Select 0))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 0) Select lbCurSel 10014;
-                                    _wert = _wert +((GVAR(Raktenhelieast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Raktenhelieast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Raktenhelieast) Select _boxindex) Select 1);
-                                    _kontrolle = ((GVAR(Raktenhelieast) Select _boxindex) Select 5);
-                                    
-                            
-                                    _buyrakmagazine pushBack _magazin;
-                                    _buyrakweapon pushBack _weapon;
-                                    _buykontrolle pushBack _kontrolle;
-                                    };
-                                };    
-                            if ((lbCurSel 10015) > -1) then 
-                                {    
-                                if ((lbCurSel 10015) < (count (_boxarry Select 0))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 0) Select lbCurSel 10015;
-                                    _wert = _wert +((GVAR(Raktenhelieast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Raktenhelieast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Raktenhelieast) Select _boxindex) Select 1);
-                                    _kontrolle = ((GVAR(Raktenhelieast) Select _boxindex) Select 5);
-                                    
-                            
-                                    _buyrakmagazine pushBack _magazin;
-                                    _buyrakweapon pushBack _weapon;
-                                    _buykontrolle pushBack _kontrolle;
-                                    };
-                                };
-                            if ((lbCurSel 10016) > -1) then 
-                                {    
-                                if (lbCurSel 10016 == 0) then 
-                                    {
-                                    _wert = _wert + GVAR(PreisDatalink);
-                                    _buyDatalink=true;
-                                    };
-                                };            
-                            };    
-                        }
-                    else
-                        {
+                    }
+                 else
+                    {
                         if (_side == west) then 
-                            {        
+                            {    
+                            _waffenauswahlarry1 = GVAR(Gunvehwest);                           
+                            }
+                        else
+                            {    
+                            _waffenauswahlarry1 = GVAR(Gunveheast);
+                            };       
+        
                             if ((lbCurSel 10010) > -1) then 
                                 {    
                                 if ((lbCurSel 10010) < (count (_boxarry Select 1))) then 
                                     {
                                     _boxindex = (_boxarry Select 1) Select lbCurSel 10010;
-                                    _wert = _wert +((GVAR(Gunvehwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunvehwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunvehwest) Select _boxindex) Select 1);
+                                    _wert = _wert +((_waffenauswahlarry1 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry1 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry1 Select _boxindex) Select 1);
                             
                                     _buygunmagazine pushBack _magazin;
                                     if (!(_weapon in _buygunweapon)) then 
@@ -769,9 +565,9 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                 if ((lbCurSel 10011) < (count (_boxarry Select 1))) then 
                                     {
                                     _boxindex = (_boxarry Select 1) Select lbCurSel 10011;
-                                    _wert = _wert +((GVAR(Gunvehwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunvehwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunvehwest) Select _boxindex) Select 1);
+                                    _wert = _wert +((_waffenauswahlarry1 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry1 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry1 Select _boxindex) Select 1);
                             
                                     _buygunmagazine pushBack _magazin;
                                     if (!(_weapon in _buygunweapon)) then 
@@ -785,9 +581,9 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                 if ((lbCurSel 10012) < (count (_boxarry Select 1))) then 
                                     {
                                     _boxindex = (_boxarry Select 1) Select lbCurSel 10012;
-                                    _wert = _wert +((GVAR(Gunvehwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunvehwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunvehwest) Select _boxindex) Select 1);
+                                    _wert = _wert +((_waffenauswahlarry1 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry1 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry1 Select _boxindex) Select 1);
                             
                                     _buygunmagazine pushBack _magazin;
                                     if (!(_weapon in _buygunweapon)) then 
@@ -801,9 +597,9 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                 if ((lbCurSel 10013) < (count (_boxarry Select 1))) then 
                                     {
                                     _boxindex = (_boxarry Select 1) Select lbCurSel 10013;
-                                    _wert = _wert +((GVAR(Gunvehwest) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunvehwest) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunvehwest) Select _boxindex) Select 1);
+                                    _wert = _wert +((_waffenauswahlarry1 Select _boxindex) Select 3);
+                                    _magazin = ((_waffenauswahlarry1 Select _boxindex) Select 0);
+                                    _weapon = ((_waffenauswahlarry1 Select _boxindex) Select 1);
                             
                                     _buygunmagazine pushBack _magazin;
                                     if (!(_weapon in _buygunweapon)) then 
@@ -836,100 +632,9 @@ while {((OPTWWbuygo == 0) and (OPTWWlostgo == 0) and dialog)} do
                                     _buyDatalink=true;
                                     };
                                 };            
-                            }
-                        else    
-                            {        
-                            if ((lbCurSel 10010) > -1) then 
-                                {    
-                                if ((lbCurSel 10010) < (count (_boxarry Select 1))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 1) Select lbCurSel 10010;
-                                    _wert = _wert +((GVAR(Gunveheast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunveheast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunveheast) Select _boxindex) Select 1);
-                            
-                                    _buygunmagazine pushBack _magazin;
-                                    if (!(_weapon in _buygunweapon)) then 
-                                        {
-                                        _buygunweapon pushBack _weapon;
-                                        };
-                                    };
-                                };    
-                            if ((lbCurSel 10011) > -1) then 
-                                {    
-                                if ((lbCurSel 10011) < (count (_boxarry Select 1))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 1) Select lbCurSel 10011;
-                                    _wert = _wert +((GVAR(Gunveheast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunveheast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunveheast) Select _boxindex) Select 1);
-                            
-                                    _buygunmagazine pushBack _magazin;
-                                    if (!(_weapon in _buygunweapon)) then 
-                                        {
-                                        _buygunweapon pushBack _weapon;
-                                        };
-                                    };
-                                };    
-                            if ((lbCurSel 10012) > -1) then 
-                                {    
-                                if ((lbCurSel 10012) < (count (_boxarry Select 1))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 1) Select lbCurSel 10012;
-                                    _wert = _wert +((GVAR(Gunveheast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunveheast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunveheast) Select _boxindex) Select 1);
-                            
-                                    _buygunmagazine pushBack _magazin;
-                                    if (!(_weapon in _buygunweapon)) then 
-                                        {
-                                        _buygunweapon pushBack _weapon;
-                                        };
-                                    };
-                                };    
-                            if ((lbCurSel 10013) > -1) then 
-                                {    
-                                if ((lbCurSel 10013) < (count (_boxarry Select 1))) then 
-                                    {
-                                    _boxindex = (_boxarry Select 1) Select lbCurSel 10013;
-                                    _wert = _wert +((GVAR(Gunveheast) Select _boxindex) Select 3);
-                                    _magazin = ((GVAR(Gunveheast) Select _boxindex) Select 0);
-                                    _weapon = ((GVAR(Gunveheast) Select _boxindex) Select 1);
-                            
-                                    _buygunmagazine pushBack _magazin;
-                                    if (!(_weapon in _buygunweapon)) then 
-                                        {
-                                        _buygunweapon pushBack _weapon;
-                                        };
-                                    };
-                                };
-                            if ((lbCurSel 10014) > -1) then 
-                                {    
-                                if ((lbCurSel 10014) == 0) then 
-                                    {
-                                    _wert = _wert + GVAR(PreisDrahtkafig);
-                                    _buyDraht=true;
-                                    };
-                                };    
-                            if ((lbCurSel 10015) > -1) then 
-                                {    
-                                if ((lbCurSel 10015) == 0) then 
-                                    {
-                                    _wert = _wert + GVAR(PreisTranung);
-                                    _buyTarnung=true;
-                                    };
-                                };
-                            if ((lbCurSel 10016) > -1) then 
-                                {    
-                                if (lbCurSel 10016 == 0) then 
-                                    {
-                                    _wert = _wert + GVAR(PreisDatalink);
-                                    _buyDatalink=true;
-                                    };
-                                };            
-                            };    
-                        };
-            };        
+                    };
+             };        
+                                    
 ctrlSetText [10001, format["$:%1",(_bewaffnungpreis -_wert)]];    
 };
 
@@ -937,123 +642,7 @@ ctrlSetText [10001, format["$:%1",(_bewaffnungpreis -_wert)]];
         
 if (OPTWWbuygo == 1) then 
     {
-    if (_side == civilian) then 
-        {    
-        if (_buyDatalink) then 
-            {
-            _veh setVehicleReportOwnPosition true;
-            _veh setVehicleReportRemoteTargets true;
-            _veh setVehicleReceiveRemoteTargets true;                    
-
-            [PLAYER_NAME, PLAYER_SIDE, typeOf _veh, _wert, "-", "weapons"] call EFUNC(common,updateBudget);
-            
-            private _txt = format["%1 ausgerüstet für %2 €.", typeOf _veh, _wert];
-            ["Ausrüsten", _txt, "green"] call EFUNC(gui,message);
-                                
-            };    
-        closeDialog 0;
-        }
-    else
-        {
-        {_veh removeWeapon _x} forEach _weaponsveh;    
-        {_veh removeMagazine _x} forEach _Magazinveh;    
-        
-        for "_i" from 1 to count _pylon do
-            {
-            _veh setPylonLoadOut [(_Pylon Select _i-1),""];     
-            sleep 0.001;
-            };    
-
-        if (_veh isKindOf "Air") then 
-            {    
-                if ((count _buygunmagazine) > 0) then 
-                    {    
-                    if ((_veh isKindOf "OPT_B_Heli_Attack_01_F_un") or (_veh isKindOf "OPT_O_Heli_Attack_02_F_un")) then 
-                            {
-                            {_veh addMagazineTurret [_x,[0]]} forEach _buygunmagazine;
-                            {_veh addWeaponTurret [_x,[0]]} forEach _buygunweapon;                             
-                            }
-                        else
-                            {    
-                            {_veh addMagazine [_x, 9999];} forEach _buygunmagazine;
-                            {_veh addWeapon _x} forEach _buygunweapon;    
-                            };
-                    };    
-                
-                
-                if ((count _buyrakmagazine) > 0) then 
-                    {
-                        for "_i" from 1 to count _buyrakmagazine do
-                        {
-                        if ((_veh isKindOf "OPT_B_Heli_Attack_01_F_un") or (_veh isKindOf "OPT_O_Heli_Attack_02_F_un")) then 
-                            {
-                            if ((_buykontrolle Select _i-1) == 0) then 
-                                {                            
-                                _veh setPylonLoadOut [(_Pylon Select _i-1),(_buyrakmagazine Select _i-1),true,[0]];                                 
-                                }
-                            else
-                                {
-                                _veh setPylonLoadOut [(_Pylon Select _i-1),(_buyrakmagazine Select _i-1)];     
-                                };
-                            }    
-                        else
-                            {    
-                            _veh setPylonLoadOut [(_Pylon Select _i-1),(_buyrakmagazine Select _i-1)];     
-                            };
-                        sleep 0.001;
-                        };    
-                    };
-            }
-        else    
-            {
-                if ((count _buygunmagazine) > 0) then 
-                    {                
-                    {_veh addMagazine [_x, 9999];} forEach _buygunmagazine;
-                    {_veh addWeapon _x} forEach _buygunweapon;
-                    };
-                if (_buyDraht) then 
-                    {
-                    _veh animateSource ["showSLATHull",1];
-                    _veh animateSource ["showSLATTurret",1];
-                    };
-                if (_buyTarnung) then 
-                    {
-                    _veh animateSource ["showCamonetPlates1",1];
-                    _veh animateSource ["showCamonetPlates2",1];
-                    _veh animateSource ["showCamonetHull",1];
-                    _veh animateSource ["showCamonetCannon",1];
-                    _veh animateSource ["showCamonetTurret",1];
-                    };    
-            };
-        if (_buyDatalink) then 
-            {
-            _veh setVehicleReportOwnPosition true;
-            _veh setVehicleReportRemoteTargets true;
-            _veh setVehicleReceiveRemoteTargets true;
-            };    
-        
-        
-        if ((_bewaffnungpreis - _wert) > 0) then 
-            {                
-                [PLAYER_NAME, PLAYER_SIDE, typeOf _veh, (_bewaffnungpreis - _wert), "+", "weapons"] call EFUNC(common,updateBudget);
-                
-                private _txt = format["%1 ausgerüstet, Gutschrift %2 €.", _Fname, (_bewaffnungpreis - _wert)];
-                ["Ausrüsten", _txt, "green"] call EFUNC(gui,message);
-            
-                [[[name player,_wert,_txt] call FUNC(cbatext)]] remoteExecCall ["", playerSide, false];
-            }
-        else    
-            {
-                [PLAYER_NAME, PLAYER_SIDE, typeOf _veh, ((_bewaffnungpreis - _wert) * (-1)), "-", "weapons"] call EFUNC(common,updateBudget);
-                
-                private _txt = format["%1 ausgerüstet für %2 €.", _Fname, (_bewaffnungpreis - _wert)];
-                ["Ausrüsten", _txt, "green"] call EFUNC(gui,message);
-                            
-                [[[name player,_wert,_txt] call FUNC(cbatext)]] remoteExecCall ["", playerSide, false];
-            };    
-        
-        closeDialog 0;
-        };
+    [_veh,_side,_weaponsveh,_Magazinveh,_pylon,_buyDatalink,_buygunmagazine,_buygunweapon,_bewaffnungpreis,_Fname,_buyrakmagazine,_buykontrolle] call FUNC(bewaffnen);  
     };    
     
 if (OPTWWlostgo == 1) then 
@@ -1063,20 +652,7 @@ if (OPTWWlostgo == 1) then
         }
     else
         {
-            {_veh removeWeapon _x} forEach _weaponsveh;    
-            {_veh removeMagazine _x} forEach _Magazinveh;
-
-            for "_i" from 1 to count _pylon do
-                {
-                _veh setPylonLoadOut [(_Pylon Select _i-1),""];     
-                sleep 0.001;
-                };    
-            
-            [PLAYER_NAME, PLAYER_SIDE, typeOf _veh, _bewaffnungpreis, "+", "weapons"] call EFUNC(common,updateBudget);            
-            
-            private _txt = format["%1 entwaffnet für %2 €.", _Fname, _bewaffnungpreis];
-            ["Entwaffnen", _txt, "green"] call EFUNC(gui,message);
-        };
-    closeDialog 0;    
+        [_veh,_weaponsveh,_Magazinveh,_pylon,_bewaffnungpreis,_Fname] call FUNC(entwaffnen);    
+        }; 
     };
     
