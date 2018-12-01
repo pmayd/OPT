@@ -40,5 +40,3 @@ closeDialog 5566;
 closeDialog 5651;
 
 [true] call FUNC(toggleTFAR);
-
-[player, "FAR_unitMarker"] remoteExecCall [QEFUNC(common,clearMarker), -2, false]; // remove marker on all clients

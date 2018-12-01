@@ -1,4 +1,5 @@
 
+PREP(createDownMarker);
 PREP(createPlayerMarker);
 PREP(createUnitMarker);
 PREP(gps);

@@ -37,12 +37,6 @@ if (isPlayer _unit) then {
 // activate dead man switch and delete the trigger
 [_unit] call ace_explosives_fnc_onIncapacitated;
 
-
-// create marker
-if (FAR_REVIVE_DOWN_MARKER) then {
-    [_unit] remoteExecCall [QFUNC(createMarker), -2, true];
-};
-
 // Death message
 if (FAR_REVIVE_DEATH_MESSAGE) then {
     _name = [_unit, _killer] call FUNC(showKiller);
@@ -112,15 +106,12 @@ if (_unit getVariable ["FAR_isStabilized", 1] == 1) then {
 
 // Player bled out
 if (FAR_REVIVE_BLEEDOUT > 0 && {time > GVAR(bleedOut)} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
-    //["tfar_removeMapMarker", _unit] call tcb_fnc_NetCallEvent;
     _unit setDamage 1; // sofortiger Tod -> schließt Dialog automatisch?!
     disableUserInput false;
     _unit allowDamage true;
 } else {
     // Player got revived
     _unit setVariable ["FAR_isStabilized", 0, true];
-    // remove down marker
-    [_unit, "FAR_unitMarker"] remoteExecCall [QEFUNC(common,clearMarker), -2, false];
     sleep 3;
     
     // Clear the "medic nearby" hint

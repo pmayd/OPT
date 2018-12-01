@@ -1,6 +1,7 @@
 /**
 * Description:
 * client GPS. Select all units of player side that are going to be marked by gps
+* GPS differentiates between cinscious and unconscious units
 * 
 * Author: 
 * [GNC]Lord-MDB & James
@@ -9,7 +10,7 @@
 * None
 *
 * Return Value:
-* 0: <ARRAY> list of units to mark
+* 0: [<ARRAY>, <ARRAY>] 2d array of units to mark and units unconscious
 *
 * Server only:
 * no
@@ -34,6 +35,9 @@
 /* VALIDATION */
 
 /* CODE BODY */
+// add all unconscious units of player side to the GPS
+private _unconsciousUnits = allPlayers select {side _x == PLAYER_SIDE and _x getVariable ["FAR_isUnconscious", 0] isEqualTo 1};
+
 private _unitsToMark = [];
 
 private _leaderUnits = [];    
@@ -50,7 +54,7 @@ switch (GVAR(mode)) do {
     case 0: {
         if (leader group player == leader player) then {
             _unitsToMark append _leaderUnits;
-            _unitsToMark append _groupUnits;   
+            _unitsToMark append (_groupUnits - _leaderUnits);   
 
         } else {                        
             _unitsToMark append _leaderUnits;
@@ -61,7 +65,7 @@ switch (GVAR(mode)) do {
 
     case 1: {
         _unitsToMark append _leaderUnits;
-        _unitsToMark append _groupUnits;  
+        _unitsToMark append (_groupUnits - leader player);  
 
     };
 
@@ -76,4 +80,4 @@ switch (GVAR(mode)) do {
     };
 };
 
-_unitsToMark
+[_unitsToMark, _unconsciousUnits]

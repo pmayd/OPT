@@ -55,6 +55,6 @@ switch (_playerSide) do {
 
 _marker setMarkerTypeLocal "mil_triangle";
 _marker setMarkerSizeLocal [0.8, 0.8];
-_marker setMarkerAlphaLocal 1;
+_marker setMarkerAlphaLocal 0;
 
 _marker
