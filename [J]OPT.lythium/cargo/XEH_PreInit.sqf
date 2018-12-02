@@ -14,6 +14,7 @@ GVAR(canBeTransported)  = []; // holds all objects that can be transported
 GVAR(canBeDragged) = []; // holds all objects that can be dragged
 GVAR(canBeCarried) = []; // holds all objects that can be carried
 
+// initialize CBA settings
 [] call FUNC(initCBASettings);
 
 // setup all global variables

@@ -4,10 +4,12 @@
     this line is commented, otherwise it would disturb the linter.
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
-if (!GVAR(on)) exitWith{};
 
-[] call FUNC(initCBAClassEvents);
+if (isServer) then {
+    estimatedTimeLeft (GVAR(playTime) * 60 - TIME_ELAPSED);
+    [] spawn FUNC(startClock);
+};
 
 if (hasInterface) then {
-    [] call FUNC(postInit);
-};
+    [] spawn FUNC(freeze);
+}

@@ -17,6 +17,8 @@
 disableSerialization;
 private _currentCutDisplay = uiNamespace getVariable QGVAR(display);
 
+waitUntil{ !isNil QEGVAR(serverclock,startTime)};
+
 while {true} do {
         //--------------------- get settings on whether to display extra labels --------------
         
@@ -83,13 +85,54 @@ while {true} do {
     //--------------------- update clock ---------------------------------------
     _control = _currentCutDisplay displayCtrl 5105;
     if (GVAR(timer)) then {
+        
+        // get time from server
+        private _timeElapsed = serverTime - EGVAR(serverclock,startTime);
 
-        private "_timeStr";
-        private _timeElapsed = (serverTime - EGVAR(mission,startTime));
-        private _playTime = OPT_PARAM_PLAYTIME - _timeElapsed;
-        private _truceTime = (OPT_PARAM_TRUCETIME + OPT_PARAM_FREEZE_TIME) - _timeElapsed;
+        private _freezeTime = EGVAR(serverclock,freezeTime) * 60 - _timeElapsed;
+        private _truceTime = (EGVAR(serverclock,truceTime) + EGVAR(serverclock,freezeTime)) * 60 - _timeElapsed;
+        private _playTime = (EGVAR(serverclock,playTime) + EGVAR(serverclock,freezeTime)) * 60 - _timeElapsed;
 
-        if (GVARMAIN(missionStarted)) then {
+        private _timeStr = "";
+        private _timeLeft = 0;
+
+        //systemChat format["%1, %2, %3, %4", _timeElapsed, _freezeTime, _truceTime, _playTime];
+
+        if (EGVAR(serverclock,freezeTime) > 0 and !EGVAR(serverclock,truceStarted)) then {
+            _timeLeft = [_freezeTime] call CBA_fnc_formatElapsedTime;
+
+            if (_freezeTime > 0) then {
+
+                _timeStr = format ["Ruhephase: %1", _timeLeft];
+                _control ctrlSetTextColor [0, 0, 0.7, 1];
+
+            } else {
+
+                _timeStr = "Ruhephase: 00:00";
+                _control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
+
+            };
+
+        };
+
+        if (EGVAR(serverclock,truceStarted) and !EGVAR(serverclock,missionStarted)) then {
+            _timeLeft = [_truceTime] call CBA_fnc_formatElapsedTime;
+
+            if (_truceTime > 0) then {
+
+                _timeStr = format ["Waffenruhe: %1", _timeLeft];
+                _control ctrlSetTextColor [0.6, 0.1, 0, 1];
+
+            } else {
+
+                _timeStr = "Waffenruhe: 00:00";
+                _control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
+
+            };
+
+        };
+
+        if (EGVAR(serverclock,missionStarted)) then {
 
             // Mission gestartet - Zeige verbleibende Spielzeit
             _timeLeft = [_playTime] call CBA_fnc_formatElapsedTime;
@@ -98,27 +141,15 @@ while {true} do {
 
                 _timeStr = format ["Rest-Spielzeit: %1", _timeLeft];
                 _control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
+
             } else {
 
-                _timeStr = "Time: 00:00";
+                _timeStr = "Restspielzeit: 00:00";
                 _control ctrlSetTextColor [1, 0, 0, 0.9];
+
             };
-        } else {
-
-            // Mission noch nicht gestartet - Zeige verbleibende Zeit der Waffenruhe
-            _timeLeft = [_truceTime] call CBA_fnc_formatElapsedTime;
-
-            if (_truceTime > 0) then {
-
-                _timeStr = format ["Waffenruhe: %1", _timeLeft];
-                _control ctrlSetTextColor [0.6, 0.1, 0, 1];
-            } else {
-
-                _timeStr = "Waffenruhe: 00:00";
-                _control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
-            }
         };
-
+        
         // Anzeige updaten
         // Update Text
         _control ctrlSetText _timeStr;

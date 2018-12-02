@@ -12,6 +12,11 @@ ADDON = true;
 // list all global variables used within the component
 // define variable with default value!
 // GVAR(...)
+GVAR(startTime) = 0;
+GVAR(freezeStarted) = false;
+GVAR(truceStarted) = false;
+GVAR(missionStarted) = false;
+GVAR(registeredCallbacks) = [];
 
 // initialize CBA Settings
 [] call FUNC(initCBASettings);

@@ -1,6 +1,11 @@
 /**
-* Author: Lord
-* setup locations and heavy vehicle classnames
+* Description:
+* setup available beam locations with their respective level
+* setup heavy vehicle classnames
+* setup beam trigger variable names
+*
+* Author:
+* Lord & James
 *
 * Arguments:
 * None
@@ -8,11 +13,31 @@
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_setup_beamOrte.sqf;
+* Server only:
+* no
 *
+* Public:
+* no - should be called only once by XEH_PreInit.sqf at mission start
+*
+* Global:
+* no 
+*
+* Sideeffects:
+* Define global variables
+* GVAR(locations_west), GVAR(locations_east), GVAR(heavy_vehicles), GVAR(beam_trigger) 
+*
+* Example:
+* [parameter] call EFUNC(fnc_setup_beamOrte.sqf);
 */
 #include "script_component.hpp"
+
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
+
+
 // Position=[0, 0, 0]
 // Name = "ABC"
 // Stufe = -1-0-1-2-3 // -1 nach Waffenruhe wählbar, 0 Nicht Wählbar,  1 Inf,  2 inf + leichte Fahrzeuge,  3 inf + Schwere Fahrzeuge
@@ -161,8 +186,6 @@ GVAR(locations_east) =
 	[[13939.203,20.229,3359.49], "TWO CAMPS - Iban Camp", 3],
 	[[15043.098,45.375999,4348.3789], "TWO CAMPS - Peloton Camp", 3]
 ];
-
-
 
 GVAR(heavy_vehicles) = [
 //Vanilla

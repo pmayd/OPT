@@ -1,6 +1,10 @@
 /**
-* Author: James
-* initialize CBA CLass echo
+* Description:
+* initialize CBA Class Events for land vehicle, air vehiclem units and things
+* every object is initialized according to the init functions in this component
+*
+* Author:
+* James
 *
 * Arguments:
 * None
@@ -8,11 +12,30 @@
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_initCBAClassEvents.sqf;
+* Server only:
+* no
 *
+* Public:
+* no - should be called only once by XEH_PostInit.sqf at mission start
+*
+* Global:
+* no
+*
+* Sideeffects:
+* add cba class event handler to new and existing vehicles (+air), units and things
+* deactivate ACE dragging and carrying for units
+*
+* Example:
+* [] call EFUNC(cargo,initCBAClassEvents);
 */
-#include "script_component.hpp" 
+#include "script_component.hpp"
+
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
+
 
 // setzt ACE cargo settings für jedes Fahrzeug
 ["LandVehicle", "init", {

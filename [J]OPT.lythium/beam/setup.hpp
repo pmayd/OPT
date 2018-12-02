@@ -1,9 +1,6 @@
 // hier bitte alle Variablen anlegen, die man in irgendeiner Weise
 // einstellen können soll oder irgendwann mal ändern will
 // Beispiele: Add-Action Texte, Variablen, Konstanten, Marker etc
-
-#define MAX_RADIUS_OPEN_BEAM_DIALOG 10
-
 /* IDD & IDC */
 #define IDD_DLG_BEAM 444001
 #define IDC_CTRL_LIST_BOX 10002

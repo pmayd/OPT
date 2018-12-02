@@ -2,6 +2,8 @@
 // einstellen können soll oder irgendwann mal ändern will
 // Beispiele: Add-Action Texte, Variablen, Konstanten, Marker etc
 // #define MEIN_MAKRO ...
-#define OPT_CARGO_ACE_maxWeightCarry 30000
-#define OPT_CARGO_ACE_maxWeightDrag  30000
-
+#define TIME_ELAPSED serverTime - GVAR(startTime)
+#define MISSION_IS_RUNNING GVARMAIN(csat_win) == 0 and \
+ GVARMAIN(nato_win) == 0 and \
+ GVARMAIN(draw) == 0 and \
+ (GVAR(playTime) * 60 - (TIME_ELAPSED)) > 59

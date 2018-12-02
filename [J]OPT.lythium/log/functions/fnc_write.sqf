@@ -30,6 +30,6 @@ params [
 if (_category isEqualTo "" or _message isEqualTo "") exitWith{};
 
 /* CODE BODY */
-private _timestamp = [serverTime - EGVAR(mission,startTime)] call CBA_fnc_formatElapsedTime;
+private _timestamp = [serverTime - EGVAR(serverclock,startTime)] call CBA_fnc_formatElapsedTime;
 
 diag_log LOG_MESSAGE(_category,_timestamp,_message);

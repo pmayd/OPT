@@ -1,6 +1,6 @@
 /**
 * Author: James
-* process all vehicles after mission ends and store relevant deActivateKey
+* process all vehicles after mission ends and store relevant vehicle data in hash
 *
 * Arguments:
 * None

@@ -47,7 +47,7 @@ private _lvl = _arry select 2;
 private _beam_pos = _arry select 0;
 
 //Zeitabgelaufen check -> oder lvl gleich -1 (Marinebasis)
-if (GVARMAIN(missionStarted) and _lvl != -1) exitWith { 
+if (EGVAR(serverclock,missionStarted) and _lvl != -1) exitWith { 
     ["Beamsystem", "Das System steht nur während der Waffenruhe zur Verfügung!", "red"] call EFUNC(gui,message);
     closeDialog 0;
 };
@@ -88,15 +88,16 @@ if (_beamfrei) then {
     deleteVehicle _tempLogic;
 
     (QGVAR(rsc_layer) call BIS_fnc_rscLayer) cutText ["", "BLACK IN", 3]; // return to game
+
+    private _message = format[
+        "%1 (%2) wurde nach %3 gebeamt",
+        PLAYER_NAME, 
+        PLAYER_SIDE,
+        _arry select 1
+    ];
+    ["Beam", _message] remoteExecCall [QEFUNC(log,write), 2, false];
 };
 
-private _message = format[
-    "%1 (%2) wurde nach %3 gebeamt",
-    PLAYER_NAME, 
-    PLAYER_SIDE,
-    _arry select 1
-];
-["Beam", _message] remoteExecCall [QEFUNC(log,write), 2, false];
 
 closeDialog 0;
 

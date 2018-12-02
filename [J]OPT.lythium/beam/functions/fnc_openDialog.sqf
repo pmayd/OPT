@@ -1,6 +1,10 @@
 /**
-* Author: James
-* open beam dialog
+* Description:
+* wrapper function to open beam dialog
+* triggered via action menu or CBA key
+*
+* Author:
+* James
 *
 * Arguments:
 * None
@@ -8,11 +12,28 @@
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_openDialog.sqf;
+* Server only:
+* no
 *
+* Public:
+* yes
+*
+* Global:
+* no 
+*
+* Sideeffects:
+* yes - opens the beam dialog
+*
+* Example:
+* [] call EFUNC(beam,openDialog);
 */
 #include "script_component.hpp"
+
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
 
 private _cond = (
     !dialog and 
