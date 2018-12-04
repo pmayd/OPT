@@ -51,8 +51,8 @@ HASH_REM(hash,key) 	Will remove that hash key.
 
 /* CUSTOM MACROS */
 //#define PLAYER_SIDE(var1) [var1] call EFUNC(common,getPlayerSide)
-#define PLAYER_SIDE [player] call EFUNC(common,getPlayerSide)
-#define UNIT_SIDE(var1) [var1] call EFUNC(common,getPlayerSide)
-#define PLAYER_NAME [player] call EFUNC(log,getPlayerName)
-#define UNIT_NAME(var1) [var1] call EFUNC(log,getPlayerName)
+#define PLAYER_SIDE [player] call EFUNC(common,playerSide)
+#define UNIT_SIDE(var1) [var1] call EFUNC(common,playerSide)
+#define PLAYER_NAME [player] call EFUNC(common,playerName)
+#define UNIT_NAME(var1) [var1] call EFUNC(common,playerName)
 

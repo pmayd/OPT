@@ -1,6 +1,10 @@
+
 /**
-* Author: James
+* Description:
 * add given unit to the list of editable objects for curators
+*
+* Author:
+* James
 *
 * Arguments:
 * 0: <OBJECT> unit to add to list
@@ -8,22 +12,26 @@
 * Return Value:
 * None
 *
-* Example:
-* [player] call fnc_addToCurator.sqf;
-*
 * Server only:
+* yes - addCuratorEditableObjects has to be called on server
+*
+* Public:
 * yes
 *
 * Global:
-* no
-* 
-* Public:
-* yes
+* no - only server effect
+*
+* Sideeffects:
+* add unit to list of editable objects for listed curators
+*
+* Example:
+* [player] call EFUNC(common,addToCurator);
 */
 #include "script_component.hpp"
 
 /* PARAMS */
-params [
+params 
+[
    ["_unit", objNull, [objNull], 1]
 ];
 
@@ -32,5 +40,8 @@ if (_unit isEqualTo objNull) exitWith{};
 
 /* CODE BODY */
 {
-    _x addCuratorEditableObjects [[_unit] - [zeus_ziv1, zeus_ziv2, zeus_ziv3], false];
+    if !(_unit isEqualTo _x) then 
+    {
+        _x addCuratorEditableObjects [[_unit], false];
+    };
 } forEach [zeus_ziv1, zeus_ziv2, zeus_ziv3];

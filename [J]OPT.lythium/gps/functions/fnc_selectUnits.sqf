@@ -36,44 +36,52 @@
 
 /* CODE BODY */
 // add all unconscious units of player side to the GPS
-private _unconsciousUnits = allPlayers select {side _x == PLAYER_SIDE and _x getVariable ["FAR_isUnconscious", 0] isEqualTo 1};
+private _unconsciousUnits = allPlayers select 
+{
+    side _x == PLAYER_SIDE and 
+    _x getVariable ["FAR_isUnconscious", 0] isEqualTo 1
+};
 
 private _unitsToMark = [];
 
 private _leaderUnits = [];    
 {
-    if (side (leader _x) == PLAYER_SIDE) then {    
+    if (side (leader _x) == PLAYER_SIDE) then 
+    {    
         _leaderUnits pushBack (leader _x);
-
     };                        
 } forEach allGroups;
 
 private _groupUnits = units group player;
 
-switch (GVAR(mode)) do {
-    case 0: {
-        if (leader group player == leader player) then {
+switch (GVAR(mode)) do 
+{
+    case 0: 
+    {
+        if (leader group player == leader player) then 
+        {
             _unitsToMark append _leaderUnits;
             _unitsToMark append (_groupUnits - _leaderUnits);   
-
-        } else {                        
+        }
+        else 
+        {                        
             _unitsToMark append _leaderUnits;
-
         };
 
     };
 
-    case 1: {
+    case 1: 
+    {
         _unitsToMark append _leaderUnits;
-        _unitsToMark append (_groupUnits - leader player);  
-
+        _unitsToMark append (_groupUnits - [leader player]);  
     };
 
-    case 2: {
+    case 2: 
+    {
         {
-            if (side _x == PLAYER_SIDE) then {
+            if (side _x isEqualTo PLAYER_SIDE) then 
+            {
                 _unitsToMark pushBack _x;
-
             };
         } foreach allUnits;    // Drohnen für HL sichtbar machen
 

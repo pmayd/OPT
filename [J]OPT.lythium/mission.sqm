@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5286;
+		nextID=5418;
 	};
 	class Camera
 	{
@@ -44,12 +44,12 @@ addons[]=
 	"A3_Weapons_F_Acc",
 	"ace_flashsuppressors",
 	"A3_Weapons_F",
+	"A3_Weapons_F_Exp",
 	"tfar_handhelds",
 	"A3_Characters_F",
 	"A3_Weapons_F_Items",
 	"ace_laserpointer",
 	"A3_Weapons_F_Orange",
-	"A3_Weapons_F_Exp",
 	"ace_huntir",
 	"A3_Characters_F_Heads",
 	"A3_Weapons_F_Mark_Acc",
@@ -193,35 +193,35 @@ class AddonsMetaData
 		};
 		class Item13
 		{
+			className="A3_Weapons_F_Exp";
+			name="Arma 3 Apex - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
 			className="tfar_handhelds";
 			name="tfar_handhelds";
 			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
 		};
-		class Item14
+		class Item15
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item16
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item16
+		class Item17
 		{
 			className="A3_Weapons_F_Orange";
 			name="Arma 3 Orange - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item17
-		{
-			className="A3_Weapons_F_Exp";
-			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -108691,6 +108691,7 @@ class Mission
 							};
 							id=3307;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item5
 						{
@@ -108708,6 +108709,7 @@ class Mission
 							};
 							id=3308;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item6
 						{
@@ -108725,6 +108727,7 @@ class Mission
 							};
 							id=3309;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item7
 						{
@@ -108742,7 +108745,7 @@ class Mission
 							};
 							id=3310;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=3.0517578e-005;
+							atlOffset=0.02355957;
 						};
 						class Item8
 						{
@@ -108760,7 +108763,7 @@ class Mission
 							};
 							id=3311;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=3.0517578e-005;
+							atlOffset=0.02355957;
 						};
 						class Item9
 						{
@@ -108778,7 +108781,7 @@ class Mission
 							};
 							id=3312;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=-3.0517578e-005;
+							atlOffset=0.023498535;
 						};
 						class Item10
 						{
@@ -108796,7 +108799,7 @@ class Mission
 							};
 							id=3313;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=6.1035156e-005;
+							atlOffset=0.023590088;
 						};
 						class Item11
 						{
@@ -108814,7 +108817,7 @@ class Mission
 							};
 							id=3314;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=-0.010406494;
+							atlOffset=0.013122559;
 						};
 						class Item12
 						{
@@ -108832,6 +108835,7 @@ class Mission
 							};
 							id=3315;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item13
 						{
@@ -108849,6 +108853,7 @@ class Mission
 							};
 							id=3316;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item14
 						{
@@ -108866,6 +108871,7 @@ class Mission
 							};
 							id=3317;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item15
 						{
@@ -108883,6 +108889,7 @@ class Mission
 							};
 							id=3318;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item16
 						{
@@ -108900,7 +108907,7 @@ class Mission
 							};
 							id=3319;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.65576172;
+							atlOffset=0.67929077;
 						};
 						class Item17
 						{
@@ -108918,7 +108925,7 @@ class Mission
 							};
 							id=3320;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.60165405;
+							atlOffset=0.62518311;
 						};
 						class Item18
 						{
@@ -108936,7 +108943,7 @@ class Mission
 							};
 							id=3321;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.64715576;
+							atlOffset=0.67068481;
 						};
 						class Item19
 						{
@@ -108954,6 +108961,7 @@ class Mission
 							};
 							id=3322;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item20
 						{
@@ -108971,6 +108979,7 @@ class Mission
 							};
 							id=3323;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item21
 						{
@@ -108988,6 +108997,7 @@ class Mission
 							};
 							id=3324;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item22
 						{
@@ -109005,6 +109015,7 @@ class Mission
 							};
 							id=3325;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item23
 						{
@@ -109022,6 +109033,7 @@ class Mission
 							};
 							id=3326;
 							type="Land_Wall_IndCnc_4_F";
+							atlOffset=0.023529053;
 						};
 						class Item24
 						{
@@ -109039,7 +109051,7 @@ class Mission
 							};
 							id=3327;
 							type="Land_Wall_IndCnc_4_F";
-							atlOffset=3.0517578e-005;
+							atlOffset=0.02355957;
 						};
 						class Item25
 						{

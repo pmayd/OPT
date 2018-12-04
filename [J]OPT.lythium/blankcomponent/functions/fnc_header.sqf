@@ -36,3 +36,9 @@
 *
 */
 #include "script_component.hpp"
+
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
