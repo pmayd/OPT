@@ -20,7 +20,7 @@ params [
     ["_cargoInfo", [], [[]]]
 ];
 private _retVal = false;
-private _side = [_centerObj] call EFUNC(common,getVehicleSide);
+private _side = [_centerObj] call EFUNC(common,vehicleSide);
 
 if (_centerObj isEqualTo objNull) exitWith{};
 if (
@@ -28,21 +28,21 @@ if (
     _centerObj getVariable [QGVAR(undeploymentInProgress), false]
     ) exitWith{};
 
-private _nearestPlayers = [_centerObj, COMPOSITION_RADIUS_NEARBY_PLAYER] call EFUNC(common,getNearestPlayer);
+private _nearbyPlayers = [_centerObj, COMPOSITION_RADIUS_NEARBY_PLAYER] call EFUNC(common,nearbyPlayers);
 
 // lock vehicle for other clients
 _centerObj setVariable [QGVAR(undeploymentInProgress), true, true];
 
 // black out and protect all near player
-[QGVAR(deployBlackout)] remoteExec ["BIS_fnc_blackOut", _nearestPlayers, false];
-[COMPOSITION_UNDEPLOY_BLACKOUT_TEXT] remoteExec ["BIS_fnc_dynamicText", _nearestPlayers, false];
+[QGVAR(deployBlackout)] remoteExec ["BIS_fnc_blackOut", _nearbyPlayers, false];
+[COMPOSITION_UNDEPLOY_BLACKOUT_TEXT] remoteExec ["BIS_fnc_dynamicText", _nearbyPlayers, false];
 
 sleep 3;
 
 {
     _x allowDamage false; 
     _x enableSimulationGlobal false
-} forEach _nearestPlayers;
+} forEach _nearbyPlayers;
 
 // delete composition
 {
@@ -83,9 +83,9 @@ _centerObj allowDamage true;
     _x setPos ((getPosASL _x) findEmptyPosition [0, 25, "CAManBase"]);
     _x allowDamage true; 
     _x enableSimulationGlobal true
-} forEach _nearestPlayers;
+} forEach _nearbyPlayers;
 
-[QGVAR(deployBlackout)] remoteExec ["BIS_fnc_blackIn", _nearestPlayers, false];
+[QGVAR(deployBlackout)] remoteExec ["BIS_fnc_blackIn", _nearbyPlayers, false];
 
 _centerObj setVariable [QGVAR(deployed), false, true];
 // unlock vehicle for other clients

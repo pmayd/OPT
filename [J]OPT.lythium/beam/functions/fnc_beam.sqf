@@ -32,12 +32,13 @@
 #include "script_component.hpp"
 
 /* PARAMS */
-params [
+params 
+[
    ["_ix", -1, [0], 1]
 ];
 
 /* VALIDATION */
-if (_ix == -1) exitWith{};
+if (_ix == -1) exitWith {};
 
 /* CODE BODY */
 private _beamfrei = true;
@@ -47,38 +48,44 @@ private _lvl = _arry select 2;
 private _beam_pos = _arry select 0;
 
 //Zeitabgelaufen check -> oder lvl gleich -1 (Marinebasis)
-if (EGVAR(serverclock,missionStarted) and _lvl != -1) exitWith { 
+if (EGVAR(serverclock,missionStarted) and _lvl != -1) exitWith 
+{ 
     ["Beamsystem", "Das System steht nur während der Waffenruhe zur Verfügung!", "red"] call EFUNC(gui,message);
     closeDialog 0;
 };
 
-if ((typeOf vehicle player) in GVAR(heavy_vehicles)) then {
+if ((typeOf vehicle player) in GVAR(heavy_vehicles)) then 
+{
     _SF = true;
 };
 
 // Schwere Fahrzeuge zum Beamziel klein Stufe 3 verneinen
-if (_SF and _lvl < 3) then { 
+if (_SF and _lvl < 3) then 
+{ 
     _beamfrei = false;
     
     ["Beamsystem", "Der gewählte Ort ist nicht für schwere Fahrzeuge freigegeben!", "red"] call EFUNC(gui,message);
 
 };
 
-if ((vehicle player != player) and (_lvl < 2)) then { 
+if ((vehicle player != player) and (_lvl < 2)) then 
+{ 
     _beamfrei = false;
 
     ["Beamsystem", "Der gewählte Ort ist nicht für Fahrzeuge freigegeben!", "red"] call EFUNC(gui,message);
 
 };
 
-if (_beamfrei) then { 
+if (_beamfrei) then 
+{ 
     (QGVAR(rsc_layer) call BIS_fnc_rscLayer) cutText ["Teleport...", "BLACK OUT", 3]; // fade out in black
 
     // beam vehicle and player
     // mission sqm format of x,z,y...
     private _xPos = _beam_pos select 0;
     private _yPos = _beam_pos select 2;
-    private _tempLogic = "Land_HelipadEmpty_F" createVehicle [
+    private _tempLogic = "Land_HelipadEmpty_F" createVehicle 
+    [
         (_xPos) - 10 * sin(random 360), 
         (_yPos) - 10 * cos(random 360)
     ]; 
@@ -89,7 +96,8 @@ if (_beamfrei) then {
 
     (QGVAR(rsc_layer) call BIS_fnc_rscLayer) cutText ["", "BLACK IN", 3]; // return to game
 
-    private _message = format[
+    private _message = format
+    [
         "%1 (%2) wurde nach %3 gebeamt",
         PLAYER_NAME, 
         PLAYER_SIDE,
@@ -97,7 +105,6 @@ if (_beamfrei) then {
     ];
     ["Beam", _message] remoteExecCall [QEFUNC(log,write), 2, false];
 };
-
 
 closeDialog 0;
 

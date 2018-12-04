@@ -1,6 +1,9 @@
 /**
-* Author: James
+* Description:
 * update budget for given side, log budget change and send new budget to all players
+*
+* Author:
+* James
 *
 * Arguments:
 * 0: <STRING> name of buyer or seller
@@ -9,21 +12,31 @@
 * 3: <NUMBER> cost of transaction
 * 4: <STRING> sign of transaction: "+" if cost is added to budget, "-" if cost is subtracted
 * 5: <STRING> case - transaction case ["", "respawn", "weapons"]
-* 
 *
 * Return Value:
 * None
 *
-* Example:
-* [name player, west, typeOf vehicle, 1000, "-", ""] call fnc_updateBudget.sqf;
+* Server only:
+* no 
 *
-* public: 
+* Public:
 * yes
+*
+* Global:
+* yes - changes budget of either west or east
+*
+* Sideeffects:
+* QGVARMAIN(nato_budget) or QGVARMAIN(csat_budget) is updated via publicVariable
+* buy or sell process is logged 
+*
+* Example:
+* [name player, west, typeOf vehicle, 1000, "-", ""]  call EFUNC(common,updateBudget);
 */
 #include "script_component.hpp"
 
 /* PARAMS */
-params [
+params 
+[
     ["_buyerName", "", [""], 1], 
     ["_side", sideUnknown, [sideUnknown], 1],
     ["_unitType", "", [""], 1],
@@ -33,7 +46,8 @@ params [
 ];
 
 /* VALIDATION */
-private _cond = (
+private _cond = 
+(
     _buyerName isEqualTo "" or 
     _side isEqualTo sideUnknown or 
     _unitType isEqualTo "" or 
@@ -46,35 +60,37 @@ private _cat = "Budget";
 private _message = "";
 private _budget_neu = 0;
 
-switch (_sign) do {
-    case "-": {
-            if (_side == west) then {
-                _budget_neu = GVARMAIN(nato_budget) - _unitCost;
-            } else {
-                _budget_neu = GVARMAIN(csat_budget) - _unitCost;
-            };
-
-    };
-    case "+":  {
-            if (_side == west) then {
-                _budget_neu = GVARMAIN(nato_budget) + _unitCost;
-            } else {                    
-                _budget_neu = GVARMAIN(csat_budget) + _unitCost;
-            };
-            
-    };
-};
-
+// calc new budget depending on variable _sign
 // server log sowie Aktualisierung via publicVarialbe
 private _unitName = (getText(configFile >> 'CfgVehicles' >> _unitType >> 'displayName'));
-if (_side == west) then {
-    _message = format["NATO alt: %1 - neu: %2 - Differenz: %3%4.", GVARMAIN(nato_budget), _budget_neu, _sign, _unitCost];
+if (_side == west) then 
+{
+    _budget_neu = call compile format["%1 %2 %3", GVARMAIN(nato_budget), _sign, _unitCost];
+    _message = format
+    [
+        "NATO alt: %1 - neu: %2 - Differenz: %3%4.", 
+        GVARMAIN(nato_budget), 
+        _budget_neu, 
+        _sign,
+        _unitCost
+    ];
 
     GVARMAIN(nato_budget) = _budget_neu;
     publicVariable QGVARMAIN(nato_budget);
 
-} else {
-    _message = format["CSAT alt: %1 - neu: %2 - Differenz: %3%4.", GVARMAIN(csat_budget), _budget_neu, _sign, _unitCost];
+}
+else 
+{
+    _budget_neu = call compile format["%1 %2 %3", GVARMAIN(csat_budget), _sign, _unitCost];
+    _message = format
+    [
+        "CSAT alt: %1 - neu: %2 - Differenz: %3%4.", 
+        GVARMAIN(csat_budget), 
+        _budget_neu, 
+        _sign, 
+        _unitCost    
+    ];
+    
     GVARMAIN(csat_budget) = _budget_neu;
     publicVariable QGVARMAIN(csat_budget);
 

@@ -1,6 +1,9 @@
 /**
-* Author: James
+* Description:
 * fill a listbox of a dialog with given keys
+*
+* Author:
+* James
 *
 * Arguments:
 * 0: <IDD> idd of dialog listbox belongs to
@@ -10,39 +13,61 @@
 * 4: <ARRAY> (optional) list of arbitrary data to fill data attribute
 *
 * Return Value:
-* 0: <BOOLEAN> true if lb was filled correctly, false otherwise
+* <BOOLEAN> true - if lb was filled correctly, false - otherwise
+*
+* Server only:
+* no
+*
+* Public:
+* yes
+*
+* Global:
+* no
+*
+* Sideeffects:
+* fill listbox (param 1) of dialog (param 0) with given data (param 2-4)
 *
 * Example:
-* [1000, 2000, ["a","b"],["a.paa","b.paa"], [1,2]] call fnc_fillLB.sqf;
-*
+* [1000, 2000, ["a","b"],["a.paa","b.paa"], [1,2]] call EFUNC(common,fillLB);
 */
 #include "script_component.hpp"
 
-params [
+/* PARAMS */
+params 
+[
     ["_idd", 0, [1], 1], 
     ["_idc", 0, [1], 1],
-    ["_txtToAdd", "", [["s"]]],
-    ["_picToAdd", "", [["s"]]],
-    ["_dataToAdd", "", [["s"]]]
+    ["_txtToAdd", [], [["s"]]],
+    ["_picToAdd", [], [["s"]]],
+    ["_dataToAdd", [], [["s"]]]
 ];
 
+/* VALIDATION */
 if (_idd == 0 or _idc == 0) exitWith {false};
-if (_txtToAdd isEqualTo "") exitWith {false};
+if (count _txtToAdd == 0) exitWith {false};
 if ((count _picToAdd != count _txtToAdd) or (count _dataToAdd != count _txtToAdd)) exitWith {false};
 
+/* CODE BODY */
 private _display = findDisplay _idd;
 private _lb = _display displayCtrl _idc;
 
+for "_i" from 0 to (count _txtToAdd - 1) do 
 {
-    _lb lbAdd _x;
+    _lb lbAdd (_txtToAdd select _i);
+    LOG_2("%1: %2",_i,(_txtToAdd select _i));
 
-    if (count _dataToAdd > 0) then {
-        _lb lbSetData [_forEachIndex, (_dataToAdd select _forEachIndex)];
-    };
-    if (count _picToAdd > 0) then {
-        _lb lbSetPicture [_forEachIndex, (_picToAdd select _forEachIndex)];
+    if (count _dataToAdd > 0) then 
+    {
+        _lb lbSetData [_i, (_dataToAdd select _i)];
+        LOG_2("%1: %2",_i,(_dataToAdd select _i));
     };
 
-} forEach _txtToAdd;
+    if (count _picToAdd > 0) then
+    {
+        _lb lbSetPicture [_i, (_picToAdd select _i)];
+        LOG_2("%1: %2",_i,(_picToAdd select _i));
+    };
+
+};
 
 true

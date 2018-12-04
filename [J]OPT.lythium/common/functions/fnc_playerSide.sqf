@@ -1,21 +1,36 @@
 /**
-* Author: James
-* return object variable GVARMAIN(playerSide)
+* Description:
+* return cached side of player unit
+*
+* Author:
+* James
 *
 * Arguments:
-* 0: <OBJECT> unit or list of units
+* 0: <OBJECT> unit
 *
 * Return Value:
-* 0: <SIDE> side of unit, usually equal to playerSide
+* <SIDE> side of unit, usually equal to playerSide
+*
+* Server only:
+* no
+*
+* Public:
+* yes
+*
+* Global:
+* no
+*
+* Sideeffects:
+* no
 *
 * Example:
-* [player] call fnc_getPlayerSide.sqf;
-*
+* [player] call EFUNC(common,playerSide);
 */
 #include "script_component.hpp"
 
 /* PARAMS */
-params [
+params 
+[
     ["_unit", objNull, [objNull], 1]
 ];
 
@@ -28,5 +43,3 @@ _ret = side _unit;
 _ret = _unit getVariable [QGVARMAIN(playerSide), _ret];
 
 _ret
-
-
