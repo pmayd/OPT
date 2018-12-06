@@ -255,7 +255,7 @@ private _magazineVeh = magazines _veh;
 private _weaponsVeh = weapons _veh;
 private _magazineVehArryNew  = [];
 
-_magazineVehArryNew = [_veh] call FUNC(auslesenmagazine);
+_magazineVehArryNew = [_veh] call FUNC(auslesenMagazine);
 
 // Darstellung Magazine
 private _magazineVehCount = count _magazineVehArryNew; 
