@@ -26,7 +26,8 @@
 */
 #include "script_component.hpp"
 /* PARAMS */
-params [
+params 
+[
     "_veh"
 ];
 

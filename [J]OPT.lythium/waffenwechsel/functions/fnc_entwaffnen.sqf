@@ -27,7 +27,8 @@
 #include "script_component.hpp"
 
 /* PARAMS */
-params [
+params 
+[
     "_veh",
     "_weaponsVeh",
     "_magazineVeh",

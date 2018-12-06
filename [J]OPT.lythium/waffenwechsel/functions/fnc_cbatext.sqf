@@ -31,7 +31,8 @@
 #include "script_component.hpp"
 
 /* PARAMS */
-params [
+params 
+[
     "_unit",
     "_betrag",
     "_txtcl"
