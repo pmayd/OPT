@@ -40,13 +40,15 @@ params [
 /* VALIDATION */
 
 /* CODE BODY */
-if (PLAYER_SIDE isEqualTo west and typeOf player in  GVAR(textslotwest)) then {
+if (PLAYER_SIDE isEqualTo west and typeOf player in  GVAR(textslotwest)) then 
+{
     private _txt = format["%1:%2", _unit, _txtcl];
     ["Ausrüsten", _txt, "green"] call EFUNC(gui,message);        
 
 };
     
-if (PLAYER_SIDE isEqualTo east and typeOf player in GVAR(textsloteast)) then {
+if (PLAYER_SIDE isEqualTo east and typeOf player in GVAR(textsloteast)) then 
+{
     private _txt = format["%1:%2", _unit, _txtcl];
     ["Ausrüsten", _txt, "green"] call EFUNC(gui,message);             
 };    

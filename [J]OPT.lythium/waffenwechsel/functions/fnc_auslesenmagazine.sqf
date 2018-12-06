@@ -7,7 +7,7 @@
 * _veh
 * 
 * Return Value:
-* _magazine
+* _magazineVehArryNew
 * 
 * Server only:
 * nein
@@ -64,12 +64,15 @@ private _magazineVehPylon = [];
 private _magazineVehPylonArry = getPylonMagazines _veh;
 _magazineVehPylonArry = _magazineVehPylonArry select {_x != ""};
 
-if (count _magazineVehPylonArry > 0) then {
-    if (count _magazineVehPylonArry > 4) then {
+if (count _magazineVehPylonArry > 0) then 
+{
+    if (count _magazineVehPylonArry > 4) then 
+	{
         _magazineVehPylonArry resize 4
     };
 
-    for "_i" from 1 to (count _magazineVehPylonArry) do {
+    for "_i" from 1 to (count _magazineVehPylonArry) do 
+	{
         _magazineVehPylon pushBack [_magazineVehPylonArry select (_i - 1), _veh ammoOnPylon (_pylon select (_i - 1))];
         //systemchat format ["MP:%1 I:%2 MN:%3 AP:%4",_magazineVehPylon,_i,(_magazineVehPylonArry select _i-1),(_veh ammoOnPylon (_pylon select _i-1))];
         sleep 0.001;
@@ -78,7 +81,8 @@ if (count _magazineVehPylonArry > 0) then {
     
 //kontrolle Bewaffnung Auslesung
 
-private _magazineFilter2 = [
+private _magazineFilter2 = 
+[
     ["96Rnd_CMFlare_Chaff_Magazine", 96],
     ["120Rnd_CMFlare_Chaff_Magazine", 120],
     ["240Rnd_CMFlare_Chaff_Magazine", 240],

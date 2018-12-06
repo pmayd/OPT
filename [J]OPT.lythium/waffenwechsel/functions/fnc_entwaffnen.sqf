@@ -47,7 +47,8 @@ params [
     _veh removeMagazine _x;
 } forEach _magazineVeh;
 
-for "_i" from 1 to (count _pylon) do {
+for "_i" from 1 to (count _pylon) do 
+{
     _veh setPylonLoadOut [_pylon select (_i - 1), ""];     
     sleep 0.001;
 };    

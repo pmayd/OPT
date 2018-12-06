@@ -14,6 +14,7 @@
 */
 #include "script_component.hpp"
 
-if (!dialog) then {
+if (!dialog) then 
+{
     createdialog "Dialogwaffenwechseln";
 };

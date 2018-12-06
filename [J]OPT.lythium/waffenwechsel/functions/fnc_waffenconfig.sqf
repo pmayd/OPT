@@ -28,7 +28,8 @@
 
 //Raketen Heli Nato
 //[Magazinename, Waffenname, Preis/Schuss, Preis Magazin, Boxname, Waffenkontrolle Pilot KHS]
-GVAR(Raktenheliwest) =  [
+GVAR(Raktenheliwest) =  
+[
     ["OPT_PylonRack_1Rnd_Missile_AGM_02_F", "OPT_Missile_AGM_02_Plane_CAS_01_F", 150000, 150000, "1xMacer", 0],  // 0.1xMacer
     ["OPT_PylonMissile_Missile_AMRAAM_D_INT_x1", "OPT_weapon_AMRAAMLauncher", 100000, 100000, "1xAMRAAM", 0],  //      1.1xAMRAAM
     ["OPT_PylonRack_1Rnd_LG_scalpel", "OPT_missiles_SCALPEL", 200000, 200000, "1xScalpel", 0],  //      2.1xScalpel AH9, Orca
@@ -49,7 +50,8 @@ GVAR(Raktenheliwest) =  [
 
 //Gun Heli Nato
 //[Magazinename, Waffenname, Preis/Schuss, Preis Magazin, Boxname]
-GVAR(Gunheliwest) = [
+GVAR(Gunheliwest) = 
+[
     ["5000Rnd_762x51_Yellow_Belt", "OPT_M134_minigun", 10, 50000, "5000x7.62 mm"],       // 0.5000x7.62 mm Minigun 
     ["1000Rnd_65x39_Belt_Yellow", "LMG_Minigun_heli", 10, 10000, "1000x7.62 mm"],  // 1.1000x7.62 mm Minigun 
     ["2000Rnd_65x39_Belt_Yellow", "LMG_Minigun_heli", 10, 20000, "2000x7.62 mm"],  // 2.2000x7.62 mm Minigun 
@@ -62,7 +64,8 @@ GVAR(Gunheliwest) = [
 
 //Gun Fahrzeuge Nato
 //[Magazinename, Waffenname, Preis/Schuss, Preis Magazin, Boxname]
-GVAR(Gunvehwest) = [
+GVAR(Gunvehwest) = 
+[
     ["500Rnd_127x99_mag", "HMG_127", 80, 40000, "500x12.7 mm"],  // 0.500x12.7 mm AA MG
     ["200Rnd_127x99_mag", "HMG_127", 80, 16000, "200x12.7 mm"],  // 1.200x12.7 mm AA MG
     ["100Rnd_127x99_mag", "HMG_127", 80, 8000, "100x12.7 mm"],  // 2.100x12.7 mm AA MG
@@ -112,7 +115,8 @@ GVAR(Gunvehwest) = [
 
 //Raketen CSAT
 //[Magazinename, Waffenname, Preis/Schuss, Preis Magazin, Boxname, Waffenkontrolle Pilot KHS]
-GVAR(Raktenhelieast) = [
+GVAR(Raktenhelieast) = 
+[
     ["OPT_PylonRack_1Rnd_Missile_AGM_01_F", "OPT_Missile_AGM_01_Plane_CAS_02_F", 150000, 150000, "1xSharur", 0],  // 0.1xSharur
     ["OPT_PylonMissile_Missile_AMRAAM_D_INT_x1", "OPT_weapon_AMRAAMLauncher", 100000, 100000, "1xAMRAAM", 0],  //      1.1xAMRAAM
     ["OPT_PylonRack_1Rnd_LG_scalpel", "OPT_missiles_SCALPEL", 200000, 200000, "1xScalpel", 0],  //      2.1xScalpel AH9, Orca
@@ -133,7 +137,8 @@ GVAR(Raktenhelieast) = [
 
 //Gun CSAT
 //[Magazinename, Waffenname, Preis/Schuss, Preis Magazin, Boxname]
-GVAR(Gunhelieast) = [
+GVAR(Gunhelieast) = 
+[
     ["5000Rnd_762x51_Yellow_Belt", "OPT_M134_minigun", 10, 50000, "5000x7.62 mm"],  // 0.5000x7.62 mm Minigun 
     ["1000Rnd_65x39_Belt_Yellow", "LMG_Minigun_heli", 10, 10000, "1000x7.62 mm"],  // 1.1000x7.62 mm Minigun 
     ["2000Rnd_65x39_Belt_Yellow", "LMG_Minigun_heli", 10, 20000, "2000x7.62 mm"],  // 2.2000x7.62 mm Minigun 
@@ -147,7 +152,8 @@ GVAR(Gunhelieast) = [
 
 //Gun Fahrzeuge CSAT
 //[Magazinename, Waffenname, Preis/Schuss, Preis Magazin, Boxname]
-GVAR(Gunveheast) = [
+GVAR(Gunveheast) = 
+[
     ["500Rnd_127x99_mag", "HMG_127", 80, 20000, "500x12.7 mm"],  // 0.500x12.7 mm AA MG
     ["200Rnd_127x99_mag", "HMG_127", 80, 16000, "200x12.7 mm"],  // 1.200x12.7 mm AA MG
     ["100Rnd_127x99_mag", "HMG_127", 80, 8000, "100x12.7 mm"],  // 2.100x12.7 mm AA MG
@@ -212,7 +218,7 @@ GVAR(ProwlerAT) = [[], [16, 18, 19, 43, 44], [0, 0], [1], [0, 4]];
 GVAR(Panther) = [[], [0, 1, 2, 7, 8, 9, 10, 11], [0, 0], [1], [0, 4]]; //kallek
 GVAR(Marshall) = [[], [3, 4, 5, 6, 12, 13], [0, 0], [1], [0, 4]]; //kallek
 GVAR(Mora) = [[], [3, 4, 5, 6, 14, 15], [0, 0], [1], [0, 4]]; //kallek
-GVAR(Cheetah) = [[], [20, 22, 23], [0, 0], [1], [0, 4]];
+GVAR(Cheetah) = [[], [20, 22], [0, 0], [1], [0, 4]];
 GVAR(SlammerUp) = [[], [3, 4, 5, 6, 24, 25, 26, 27, 28, 29, 30, 30, 32, 38], [0, 0], [1], [0, 4]];
 GVAR(Scorcher) = [[], [40, 41, 42], [0, 0], [1], [0, 4]];
 
@@ -228,12 +234,13 @@ GVAR(QuilinAT) = [[], [16, 18, 19, 43, 44], [0, 0], [1], [0, 4]];
 GVAR(Marid) = [[], [0, 1, 2, 3, 7, 8, 9, 10, 11], [0, 0], [1], [0, 4]]; //kallek
 GVAR(Gorgon) = [[], [3, 4, 5, 6, 12, 13], [0, 0], [1], [0, 4]]; //kallek
 GVAR(Kamysh) = [[], [3, 4, 5, 6, 14, 15, 16, 18, 19], [0, 0], [1], [0, 4]]; //kallek
-GVAR(Tigris) = [[], [20, 22, 23], [0, 0], [1], [0, 4]];
+GVAR(Tigris) = [[], [20, 22], [0, 0], [1], [0, 4]];
 GVAR(Varsuk) = [[], [3, 4, 5, 6, 33, 34, 35, 36, 37, 39], [0, 0], [1], [0, 4]];
 GVAR(Sochor) = [[], [40, 41, 42], [0, 0], [1], [0, 4]];
 
 //Fahrzeuge die zugelassen sind
-GVAR(vehclasswestWW) = [
+GVAR(vehclasswestWW) = 
+[
     "OPT4_B_MBT_03_cannon_F",
     "OPT4_B_MRAP_01_gmg_F",
     "OPT4_B_MRAP_01_hmg_F",
@@ -254,7 +261,8 @@ GVAR(vehclasswestWW) = [
     "OPT4_B_LSV_01_AT_F"
 ];
 
-GVAR(vehclasseastWW) = [
+GVAR(vehclasseastWW) = 
+[
     "OPT4_O_MRAP_02_hmg_F", 
     "OPT4_O_MRAP_02_gmg_F",
     "OPT4_O_Heli_light_03_F",
@@ -276,10 +284,12 @@ GVAR(vehclasseastWW) = [
     "OPT4_O_LSV_02_AT_F"
 ];
 
-GVAR(textslotwest) = [
+GVAR(textslotwest) = 
+[
     "OPT_NATO_Offizier"
 ];
 
-GVAR(textsloteast) = [
+GVAR(textsloteast) = 
+[
     "OPT_CSAT_Offizier"
 ];

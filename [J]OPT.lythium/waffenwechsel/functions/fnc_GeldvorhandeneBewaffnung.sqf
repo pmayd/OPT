@@ -4,7 +4,7 @@
 * Author: [GNC]Lord-MDB
 *
 * Arguments:
-* _side
+* _side,_magazineVehArryNew
 * 
 * Return Value:
 * _bewaffnungpreis
@@ -39,15 +39,19 @@ if (_side isEqualTo sideUnknown) exitWith {_bewaffnungpreis};
 
 /* CODE BODY */
 private _vehiclePool = [];
-if (_side isEqualTo west) then {    
-    private _vehiclePool = GVAR(Raktenheliwest) + GVAR(Gunheliwest) + GVAR(Gunvehwest);
+if (_side isEqualTo west) then 
+{    
+    _vehiclePool = GVAR(Raktenheliwest) + GVAR(Gunheliwest) + GVAR(Gunvehwest);
                
-} else {    
-    private _vehiclePool = GVAR(Raktenhelieast)  + GVAR(Gunhelieast) + GVAR(Gunveheast);
+} 
+else 
+{    
+    _vehiclePool = GVAR(Raktenhelieast)  + GVAR(Gunhelieast) + GVAR(Gunveheast);
 
 };
-                
-for "_i" from 1 to (count _vehiclePool) do {
+      
+for "_i" from 1 to (count _vehiclePool) do 
+{
     {
         private _magazineName = _vehiclePool select (_i - 1) select 0;
         // prüfe alle ausgewählten Magazine und vergleiche mit gewähltem Fahrzeug aus Pool
