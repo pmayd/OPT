@@ -1,26 +1,47 @@
 /**
-* Author: James
+* Description:
 * spawn all objects of a composition
 *
+* Author:
+* James
+*
 * Arguments:
-* 0: <ARRAY> composition in format [classname, relativPos (offset), dir, initCode]
+* 0: <ARRAY> composition with elements in format [classname, relativPos (offset), dir, initCode]
 *
 * Return Value:
-* 0: <ARRAY> list of spawned objects
+* <ARRAY> list of spawned objects
+*
+* Server only:
+* no
+*
+* Public:
+* no - should be called only within deployComposition.sqf
+*
+* Global:
+* yes
+*
+* Sideeffects:
+* yes
 *
 * Example:
-* [[[classname, relativPos (offset), dir, initCode]]] call fnc_spawnComposition.sqf;
-*
+* [[classname, relativPos (offset), dir, initCode]]  call EFUNC(composition,spawnComposition);
 */
 #include "script_component.hpp"
 
-params [
-    "_composition"
+/* PARAMS */
+params 
+[
+    ["_composition", [], [[]]]
 ];
 
-private _objArray = [];
+/* VALIDATION */
+if (_composition isEqualTo []) exitWith{};
+
+/* CODE BODY */
+private _retVal = [];
 {
-    _x params [
+    _x params 
+    [
         ["_type", "", ["s"], 1],
         ["_offset", [0,0,0], [[]], 3],
         ["_newDir", 0, [0], 1],
@@ -31,12 +52,13 @@ private _objArray = [];
     _obj allowDamage false;
     
     [_centerObj, _obj, _offset, _newdir, true, true] call BIS_fnc_relPosObject;
-    _objArray pushBack _obj;
+    _retVal pushBack _obj;
     
-    if !(_code isEqualTo "") then {
+    if !(_code isEqualTo "") then 
+    {
         _code = [_code] call FUNC(compileCode);
-        [[[_obj, _centerObj], _code],"BIS_fnc_spawn", true] call BIS_fnc_MP; // TODO
+        [[_obj, _centerObj], _code] remoteExec ["BIS_fnc_spawn", 0, true];
     };
 } forEach _composition;
 
-_objArray
+_retVal

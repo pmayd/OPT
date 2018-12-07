@@ -1,33 +1,61 @@
 /**
-* Author: James
+* Description:
 * undeploy a composition around a vehicle
+*
+* Author:
+* James
 *
 * Arguments:
 * 0: <OBJECT> vehicle or object (center object)
 * 1: <ARRAY> cargo info in format [classname, offset, dir, code]
 *
 * Return Value:
-* 0: <BOOL> true - composition was successfully undeployed, false - otherwise
+* <BOOL> true - composition was successfully undeployed, false - otherwise
 *
+* Server only:
+* no
+*
+* Public:
+* yes
+*
+* Global:
+* yes - composition deletion is global
+*
+* Sideeffects:
+* blackout for players with protection
+* move players to an empty position
+* deletion of composition
+* set variable GVAR(undeploymentInProgress) to true and false
+* set variable GVAR(cargo) to the created cargo object
+* set variable GVAR(deployed) to false
+* create and attach a cargo object to vehicle, if there is any
+* unlock vehicle
+* lock all cargo positions except co-driver
+* 
 * Example:
-* [vehicle] call fnc_undeployComposition.sqf;
-*
+* [vehicle] spawn EFUNC(composition,undeployComposition);
 */
 #include "script_component.hpp"
 
-params [
+/* PARAMS */
+params 
+[
     ["_centerObj", objNull, [objNull], 1],
     ["_cargoInfo", [], [[]]]
 ];
+
+/* VALIDATION */
 private _retVal = false;
 private _side = [_centerObj] call EFUNC(common,vehicleSide);
 
 if (_centerObj isEqualTo objNull) exitWith{};
-if (
+if 
+(
     !(_centerObj getVariable [QGVAR(deployed), false]) or 
     _centerObj getVariable [QGVAR(undeploymentInProgress), false]
-    ) exitWith{};
+) exitWith {};
 
+/* CODE BODY */
 private _nearbyPlayers = [_centerObj, COMPOSITION_RADIUS_NEARBY_PLAYER] call EFUNC(common,nearbyPlayers);
 
 // lock vehicle for other clients
@@ -50,7 +78,8 @@ sleep 3;
 } forEach (_centerObj getVariable [QGVAR(composition), []]);
 
 // add cargo container, if given
-if !(_cargoInfo isEqualTo []) then {
+if !(_cargoInfo isEqualTo []) then 
+{
 
     _cargoInfo params ["_cargoType", "_cargoOffset", "_cargoDir", ["_cargoCode", "", ["", {}], 1]];
 
