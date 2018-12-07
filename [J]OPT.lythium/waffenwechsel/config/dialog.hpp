@@ -1,4 +1,4 @@
-class Dialogwaffenwechseln
+class GVAR(Dialog)
 {
   idd = 444001;
   onload = QUOTE([] spawn FUNC(onLoadDialog););

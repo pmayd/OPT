@@ -9,6 +9,7 @@
 - Freeze: Freeze nun wieder aktiv (war vorrübergehend wirkungslos)
 - Intro: Fehler in Anzeige der Autoren behoben
 - Revive: Marker für bewusstlose Einheiten werden jetzt vom GPS-System gehandhabt, d.h. in Echtzeit aktualisiert. Dadurch kommt es nicht mehr zu "Ghost"-Markern an falscher Stelle
+- Waffenwechsel: Komponente wurde überarbeitet und in einzelne Funktionen aufgeteilt. Einige Fehler aus dem Forum behoben.
 
 ### Editor
 

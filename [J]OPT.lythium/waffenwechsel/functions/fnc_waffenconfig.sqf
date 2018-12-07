@@ -1,28 +1,30 @@
 /**
+* Description:
 * Konfig Waffenwechselmodul
 * 
-* Author: [GNC]Lord-MDB
+* Author: 
+* [GNC]Lord-MDB
 *
 * Arguments:
-* keine
+* None
 * 
 * Return Value:
-* keine
+* None
 * 
 * Server only:
-* nein
+* no
 *
 * Public:
-* nein
+* no - should be called only once via XEH_PreInit.sqf
 * 
 * Global:
-* nein
+* no
 * 
 * Sideeffects:
 * Parametervorgaben für Dialog
 * 
 * Example:
-* 
+* [] call EFUNC(waffenwechsel,waffenconfig);
 */
 #include "script_component.hpp"
 

@@ -1,25 +1,32 @@
 /**
+* Description:
 * Funktion Entwaffnen
 * 
-* Author: [GNC]Lord-MDB
+* Author: 
+* [GNC]Lord-MDB
 *
 * Arguments:
-* _veh,_weaponsVeh,_magazineVeh,_pylon,_bewaffnungpreis,_vehDisplayName
+* 0: <OBJECT> _veh
+* 1: <ARRAY> _weaponsVeh
+* 2: <ARRAY> _magazineVeh
+* 3: <ARRAY> _pylon
+* 4: <NUMBER> _bewaffnungPreis
+* 5: <STRING> _vehDisplayName
 * 
 * Return Value:
-* keine
+* None
 * 
 * Server only:
-* nein
+* no
 *
 * Public:
-* nein
+* no
 * 
 * Global:
-* nein
+* no
 * 
 * Sideeffects:
-* keine
+* no
 * 
 * Example:
 * 
@@ -33,7 +40,7 @@ params
     "_weaponsVeh",
     "_magazineVeh",
     "_pylon",
-    "_bewaffnungpreis",
+    "_bewaffnungPreis",
     "_vehDisplayName"
 ];
 
@@ -54,9 +61,9 @@ for "_i" from 1 to (count _pylon) do
     sleep 0.001;
 };    
 
-[PLAYER_NAME, PLAYER_SIDE, typeOf _veh, _bewaffnungpreis, "+", "weapons"] call EFUNC(common,updateBudget);            
+[PLAYER_NAME, PLAYER_SIDE, typeOf _veh, _bewaffnungPreis, "+", "weapons"] call EFUNC(common,updateBudget);            
 
-private _txt = format["%1 entwaffnet für %2 €.", _vehDisplayName, _bewaffnungpreis];
+private _txt = format["%1 entwaffnet für %2 €.", _vehDisplayName, _bewaffnungPreis];
 ["Entwaffnen", _txt, "green"] call EFUNC(gui,message);
 
 closeDialog 0;   

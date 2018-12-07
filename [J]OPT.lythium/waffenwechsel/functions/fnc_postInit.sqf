@@ -1,6 +1,9 @@
 /**
-* Author: James
+* Description:
 * initialize scripts and commands before world has initialized
+*
+* Author:
+* James
 *
 * Arguments:
 * None
@@ -8,12 +11,28 @@
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_preInit.sqf;
+* Server only:
+* no
 *
+* Public:
+* no - should be called only once by XEH_PostInit.sqf
+*
+* Global:
+* no
+*
+* Sideeffects:
+* register CBA keybind to open the waffenwechsel dialog
+*
+* Example:
+* [] call EFUNC(waffenwechsel,postInit);
 */
 #include "script_component.hpp"
 
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
 if (hasInterface) then 
 {
 

@@ -12,7 +12,8 @@ GVARMAIN(nato_budget) = parseNumber GVAR(budget);
 GVARMAIN(csat_budget) = parseNumber GVAR(budget);
 
 
-if (isServer) then {
+if (isServer) then 
+{
     [] call FUNC(initServerMissionEH);
 };
 
