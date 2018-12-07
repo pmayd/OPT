@@ -14,7 +14,8 @@
 */
 #include "script_component.hpp"
 
-if (hasInterface) then {
+if (hasInterface) then 
+{
 
     /*
     * https://cbateam.github.io/CBA_A3/docs/files/keybinding/fnc_addKeybind-sqf.html
