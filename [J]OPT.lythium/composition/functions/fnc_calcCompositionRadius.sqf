@@ -1,26 +1,47 @@
 /**
-* Author: James
-* calculate the radius of a composition (biggest distance or size)
+* Description:
+* calculate the radius of a composition (greatest distance or biggest object)
+*
+* Author:
+* James
 *
 * Arguments:
 * 0: <ARRAY> composition
 *
 * Return Value:
-* 0: <NUMBER> radius  of composition
+* <NUMBER> radius  of composition
+*
+* Server only:
+* no
+*
+* Public:
+* yes
+*
+* Global:
+* no
+*
+* Sideeffects:
+* no
 *
 * Example:
-* [[mycomp]]] call fnc_calcCompositionRadius.sqf;
-*
+* [[...]] call EFUNC(composition,calcCompositionRadius);
 */
 #include "script_component.hpp"
 
-params [
-    "_composition"
+/* PARAMS */
+params 
+[
+    ["_composition", [], [[]]]
 ];
 
+/* VALIDATION */
+if (_composition isEqualTo []) exitWith{};
+
+/* CODE BODY */
 private _radius = 0;
 
-private _sortedByDist = [
+private _sortedByDist = 
+[
     _composition,
     [],
     {
@@ -32,16 +53,20 @@ private _sortedByDist = [
 ] call BIS_fnc_sortBy;
 
 private _biggestOffset = (_sortedByDist select 0) select 1;
-private _biggestOffsetAbs = if (abs (_biggestOffset select 0) > abs (_biggestOffset select 1)) then {
+private _biggestOffsetAbs = if (abs (_biggestOffset select 0) > abs (_biggestOffset select 1)) then 
+{
     abs (_biggestOffset select 0)
-} else {
+} 
+else 
+{
     abs (_biggestOffset select 1)
 };
 
 private _boundingSize = [_sortedByDist select 0 select 0] call FUNC(getBoundingBoxSize);
 _radius = _biggestOffsetAbs + _boundingSize;
 
-private _sortedBySize = [
+private _sortedBySize = 
+[
     _composition, 
     [], 
     {sizeOf (_x select 0)}, 
@@ -50,8 +75,9 @@ private _sortedBySize = [
 
 _boundingSize = [_sortedBySize select 0 select 0] call FUNC(getBoundingBoxSize);
 
-if (_boundingSize > _radius) then {
-    _radius = _boundingSize;
+if (_boundingSize > _radius) then 
+{
+    _radius = _boundingSize
 };
 
 _radius

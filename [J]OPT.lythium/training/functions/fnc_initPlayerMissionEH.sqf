@@ -14,7 +14,8 @@
 */
 #include "script_component.hpp"
 
-if (GVAR(teleport)) then {
+if (GVAR(teleport)) then 
+{
     player addAction [TRAINING_ACTION_TELEPORT call XGreyText, {[] call FUNC(teleport)}, [], 0, false, true, '', "alive _target"];
 
     player addAction [
