@@ -10,9 +10,9 @@
 - Intro: Fehler in Anzeige der Autoren behoben
 - Revive: Marker für bewusstlose Einheiten werden jetzt vom GPS-System gehandhabt, d.h. in Echtzeit aktualisiert. Dadurch kommt es nicht mehr zu "Ghost"-Markern an falscher Stelle
 - Waffenwechsel: Komponente wurde überarbeitet und in einzelne Funktionen aufgeteilt. Einige Fehler aus dem Forum behoben.
+- Kritischer Bugfix #45: Fahne kann nicht mehr länger per Hotkey aus der Entfernung gezogen werden
 
 ### Editor
-
 
 ## 1.4.14
 
