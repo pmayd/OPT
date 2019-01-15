@@ -38,15 +38,14 @@
 // add all unconscious units of player side to the GPS
 private _unconsciousUnits = allPlayers select 
 {
-    side _x == PLAYER_SIDE and 
-    _x getVariable ["FAR_isUnconscious", 0] isEqualTo 1
+    (side _x) isEqualType (PLAYER_SIDE) and 
+    (_x getVariable ["FAR_isUnconscious", 0]) == 1
 };
 
 private _unitsToMark = [];
-
-private _leaderUnits = [];    
+private _leaderUnits = [];
 {
-    if (side (leader _x) == PLAYER_SIDE) then 
+    if (side (leader _x) isEqualType (PLAYER_SIDE)) then 
     {    
         _leaderUnits pushBack (leader _x);
     };                        
@@ -58,7 +57,7 @@ switch (GVAR(mode)) do
 {
     case 0: 
     {
-        if (leader group player == leader player) then 
+        if ((leader group player) isEqualTo (leader player)) then 
         {
             _unitsToMark append _leaderUnits;
             _unitsToMark append (_groupUnits - _leaderUnits);   
@@ -79,7 +78,7 @@ switch (GVAR(mode)) do
     case 2: 
     {
         {
-            if (side _x isEqualTo PLAYER_SIDE) then 
+            if ((side _x) isEqualType (PLAYER_SIDE)) then 
             {
                 _unitsToMark pushBack _x;
             };
