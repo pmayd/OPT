@@ -28,6 +28,7 @@ if (count _medics > 0) then
     _medics = _medics apply {[player distance _x, _x]};
     _medics sort true; // ASC
 
+    _dist = _medics select 0 select 0;
     private _san = _medics select 0 select 1;
     private _unitName = UNIT_NAME(_san);
     _hintMsg = format["Sanitäter %1 ist %2m entfernt.", _unitName, floor _dist];

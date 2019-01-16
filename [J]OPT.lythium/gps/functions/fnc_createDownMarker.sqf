@@ -34,13 +34,13 @@ params [
 ];
 
 /* VALIDATION */
-if (_markerNo isEqualTo -1) exitWith {};
+if (_markerNo == -1) exitWith {};
 
 /* CODE BODY */
 private _marker = createMarkerLocal [format["%1_%2", QGVAR(unit_marker_down), _markerNo], [0,0]];
 _marker setMarkerShapeLocal "ICON";
 _marker setMarkerTypeLocal FAR_REVIVE_MARKER_TYPE;
 _marker setMarkerColorLocal FAR_REVIVE_MARKER_COLOR;
-_marker setMarkerAlphaLocal 1;
-	
+_marker setMarkerAlphaLocal 0;
+
 _marker
