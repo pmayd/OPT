@@ -39,10 +39,10 @@ params
 if (_unit isEqualTo objNull) exitWith{};
 
 /* CODE BODY */
-{
+[zeus_ziv1, zeus_ziv2, zeus_ziv3] apply {
     if !(_unit isEqualTo _x) then
     {
         _x addCuratorEditableObjects [[_unit], false];
     };
 
-} forEach [zeus_ziv1, zeus_ziv2, zeus_ziv3];
+};

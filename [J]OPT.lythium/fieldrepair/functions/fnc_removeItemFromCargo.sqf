@@ -29,8 +29,9 @@ if (_id == -1) exitWith{true};
 (_allItems select 0) deleteAt _id;
 (_allItems select 1) deleteAt _id;
 
-{ 
-	_veh addItemCargoGlobal [_x select 0, _x select 1];
-} foreach _allItems;
+_allItems apply
+{
+    _veh addItemCargoGlobal [_x select 0, _x select 1];
+};
 
 true

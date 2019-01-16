@@ -23,7 +23,7 @@
 *
 * Sideeffects:
 * inform player if there is already a deployment process ongoing
-* inform player if surroundings are not suited for deploying 
+* inform player if surroundings are not suited for deploying
 * blackout screen for nearby players and some instructional text
 * move nearby player out of vehicles
 * delete cargo object
@@ -42,7 +42,7 @@
 #include "script_component.hpp"
 
 /* PARAMS */
-params 
+params
 [
     ["_centerObj", objNull, [objNull], 1],
     ["_composition", [], [[]]]
@@ -53,13 +53,14 @@ private _retVal = false;
 if (_centerObj isEqualTo objNull) exitWith {_retVal};
 if (_composition isEqualTo []) exitWith {_retVal};
 // if already deployed or in progress
-if (
-    _centerObj getVariable [QGVAR(deployed), false] or 
+if
+(
+    _centerObj getVariable [QGVAR(deployed), false] or
     _centerObj getVariable [QGVAR(deploymentInProgress), false]
-    ) exitWith 
-    {
-        ["Aufbau", "Komposition bereits aufgebaut oder im Aufbau!", "red"] call EFUNC(gui,message);
-    4};
+) exitWith
+{
+    ["Aufbau", "Komposition bereits aufgebaut oder im Aufbau!", "red"] call EFUNC(gui,message);
+};
 
 /* CODE BODY */
 private _side = [_centerObj] call EFUNC(common,vehicleSide);
@@ -70,25 +71,27 @@ private _cargo = _centerObj getVariable [QGVAR(cargo), objNull];
 // or the biggest size of an object
 private _radius = [_composition] call FUNC(calcCompositionRadius);
 
-private _flatPos = selectBestPlaces [
-    position _centerObj, 
-    _radius max 5, 
+private _flatPos = selectBestPlaces
+[
+    position _centerObj,
+    _radius max 5,
     "meadow - houses - trees - (0.5 * forest) - (0.5*hills) - sea", 	// von 5 auf 0.5 kallek
-    5, 
+    5,
     3
 ];
 
-if ({_x select 1 > 0} count _flatPos isEqualTo 0) exitWith {
+if ({_x select 1 > 0} count _flatPos isEqualTo 0) exitWith
+{
     private _message = COMPOSITION_DEPLOY_ERROR_MESSAGE(_radius);
-    
     ["Aufbau", _message, "red"] call EFUNC(gui,message);
-    
+
     _retVal
 };
 
 _centerObj setVariable [QGVAR(deploymentInProgress), true, true];
 
-if !(_cargo isEqualTo objNull) then {
+if !(_cargo isEqualTo objNull) then
+{
     deleteVehicle _cargo;
 };
 
@@ -99,15 +102,17 @@ private _nearbyPlayers = [_centerObj, COMPOSITION_RADIUS_NEARBY_PLAYER] call EFU
 
 sleep 3;
 // move all player out of vehicle
+(crew _centerObj) apply
 {
     moveOut _x;
-} forEach (crew _centerObj);
+};
 
 // protect player and vehicle during deploy process
+_nearbyPlayers apply
 {
-    _x allowDamage false; 
+    _x allowDamage false;
     _x enableSimulationGlobal false;
-} forEach _nearbyPlayers;
+};
 
 _centerObj enableSimulationGlobal false;
 _centerObj allowDamage false;
@@ -121,16 +126,18 @@ private _objArray = [_composition] call FUNC(spawnComposition);
 _centerObj enableSimulationGlobal true;
 _centerObj allowDamage true;
 
+_objArray apply
 {
     _x allowDamage true;
-} forEach _objArray;
+};
 
 // replace player and allow damage
+_nearbyPlayers apply
 {
     _x setPos ((getPosASL _x) findEmptyPosition [0, 25, "CAManBase"]);
-    _x allowDamage true; 
+    _x allowDamage true;
     _x enableSimulationGlobal true;
-} forEach _nearbyPlayers;
+};
 
 sleep 3;
 // black in and add addAction entries

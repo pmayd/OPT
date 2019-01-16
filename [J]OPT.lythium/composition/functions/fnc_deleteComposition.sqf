@@ -31,7 +31,7 @@
 #include "script_component.hpp"
 
 /* PARAMS */
-params 
+params
 [
     ["_vec", objNull, [objNull], 1],
     ["_type", "", ["s"], 1]
@@ -45,11 +45,11 @@ private _objArray = _vec getVariable [QGVAR(composition), []];
 private _cargo = _vec getVariable [QGVAR(cargo), objNull];
 
 waitUntil {isNull _vec};
-if (_type isEqualTo "cargo") then 
+if (_type isEqualTo "cargo") then
 {
     deleteVehicle _cargo;
 }
-else 
+else
 {
-    {deleteVehicle _x} forEach _objArray;
+    _objArray apply {deleteVehicle _x};
 };

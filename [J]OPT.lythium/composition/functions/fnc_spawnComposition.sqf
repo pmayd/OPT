@@ -29,7 +29,7 @@
 #include "script_component.hpp"
 
 /* PARAMS */
-params 
+params
 [
     ["_composition", [], [[]]]
 ];
@@ -39,26 +39,27 @@ if (_composition isEqualTo []) exitWith{};
 
 /* CODE BODY */
 private _retVal = [];
+_composition apply
 {
-    _x params 
+    _x params
     [
         ["_type", "", ["s"], 1],
         ["_offset", [0,0,0], [[]], 3],
         ["_newDir", 0, [0], 1],
         ["_code", "",  ["", {}], 1]
     ];
-    
+
     _obj = createVehicle [_type, [0,0,0], [], 0, "CAN_COLLIDE"];
     _obj allowDamage false;
-    
+
     [_centerObj, _obj, _offset, _newdir, true, true] call BIS_fnc_relPosObject;
     _retVal pushBack _obj;
-    
-    if !(_code isEqualTo "") then 
+
+    if !(_code isEqualTo "") then
     {
         _code = [_code] call FUNC(compileCode);
         [[_obj, _centerObj], _code] remoteExec ["BIS_fnc_spawn", 0, true];
     };
-} forEach _composition;
+};
 
 _retVal

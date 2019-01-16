@@ -2,8 +2,8 @@
 * Description:
 * client GPS. Select all units of player side that are going to be marked by gps
 * GPS differentiates between cinscious and unconscious units
-* 
-* Author: 
+*
+* Author:
 * [GNC]Lord-MDB & James
 *
 * Arguments:
@@ -23,7 +23,7 @@
 *
 * Sideeffects:
 * no
-* 
+*
 * Example:
 * [] call EFUNC(gps,selectUnits);
 *
@@ -36,53 +36,55 @@
 
 /* CODE BODY */
 // add all unconscious units of player side to the GPS
-private _unconsciousUnits = allPlayers select 
+private _unconsciousUnits = allPlayers select
 {
-    (side _x) isEqualType (PLAYER_SIDE) and 
+    (side _x) isEqualTo (PLAYER_SIDE) and
     (_x getVariable ["FAR_isUnconscious", 0]) == 1
 };
 
 private _unitsToMark = [];
 private _leaderUnits = [];
+allGroups apply
 {
-    if (side (leader _x) isEqualType (PLAYER_SIDE)) then 
-    {    
+    if (side (leader _x) isEqualTo (PLAYER_SIDE)) then
+    {
         _leaderUnits pushBack (leader _x);
-    };                        
-} forEach allGroups;
+    };
+};
 
 private _groupUnits = units group player;
 
-switch (GVAR(mode)) do 
+switch (GVAR(mode)) do
 {
-    case 0: 
+    case 0:
     {
-        if ((leader group player) isEqualTo (leader player)) then 
+        if ((leader group player) isEqualTo (leader player)) then
         {
             _unitsToMark append _leaderUnits;
-            _unitsToMark append (_groupUnits - _leaderUnits);   
+            _unitsToMark append (_groupUnits - _leaderUnits);
         }
-        else 
-        {                        
+        else
+        {
             _unitsToMark append _leaderUnits;
         };
 
     };
 
-    case 1: 
+    case 1:
     {
         _unitsToMark append _leaderUnits;
-        _unitsToMark append (_groupUnits - [leader player]);  
+        _unitsToMark append (_groupUnits - [leader player]);
     };
 
-    case 2: 
+    case 2:
     {
+        allUnits apply
         {
-            if ((side _x) isEqualType (PLAYER_SIDE)) then 
+            if ((side _x) isEqualTo (PLAYER_SIDE)) then
             {
                 _unitsToMark pushBack _x;
             };
-        } foreach allUnits;    // Drohnen für HL sichtbar machen
+        };    // Drohnen für HL sichtbar machen
 
     };
 };

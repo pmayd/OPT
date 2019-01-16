@@ -66,6 +66,7 @@ if (GVAR(on)) then
 };
 
 //Boxen mit Orte füllen
+GVAR(box) apply
 {
     private _loc = _x;
     private _lvl = _loc select 2;
@@ -83,4 +84,4 @@ if (GVAR(on)) then
         _lb lbSetColor [_index, DIALOG_BEAM_LB_COLOR_LVL_TWO];
     };
 
-} forEach GVAR(box);
+};
