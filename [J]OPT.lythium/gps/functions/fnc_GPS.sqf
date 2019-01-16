@@ -73,7 +73,7 @@ while {true} do
     {
         _x setMarkerPosLocal [0,0];
         _x setMarkerTextLocal "";
-        _x setMarkerAlphaLocal 1;
+        _x setMarkerAlphaLocal 0;
 
     };
 
@@ -170,7 +170,7 @@ while {true} do
                     {
                         _marker setMarkerTextLocal "";
                         _marker setMarkerPosLocal [0,0];
-                        _marker setMarkerAlphaLocal 1;
+                        _marker setMarkerAlphaLocal 0;
                     };
 
                 };
@@ -179,7 +179,7 @@ while {true} do
             {
                 _marker setMarkerTextLocal "";
                 _marker setMarkerPosLocal [0,0];
-                _marker setMarkerAlphaLocal 1;
+                _marker setMarkerAlphaLocal 0;
 
             };
         };
