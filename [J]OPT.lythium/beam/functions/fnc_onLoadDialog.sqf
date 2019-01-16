@@ -20,7 +20,7 @@
 * no - should be called via onLoad from beam dialog
 *
 * Global:
-* no 
+* no
 *
 * Sideeffects:
 * fill variable GVAR(box) with options to beam
@@ -43,23 +43,23 @@ private _lb = _display displayCtrl DIALOG_BEAM_LB_IDC;
 
 //Zeitabgelaufen check
 private _orte = [];
-if (PLAYER_SIDE == east) then 
-{ 
-    _orte = GVAR(locations_east); 
+if (PLAYER_SIDE == east) then
+{
+    _orte = GVAR(locations_east);
 
-} 
-else 
-{ 
+}
+else
+{
     _orte = GVAR(locations_west);
 
 };
 
 // if component is disabled -> only allow locations with level equal -1
 GVAR(box) = _orte select {(_x select 2) == -1};
-if (GVAR(on)) then 
+if (GVAR(on)) then
 {
     // nach Waffenruhe nur noch Orte mit -1
-    if (!EGVAR(serverclock,missionStarted)) then 
+    if (!EGVAR(serverclock,missionStarted)) then
     {
         GVAR(box) append (_orte select {(_x select 2) > 0}); // only locations with level greater 0 (1,2,3 possible)
     };
@@ -72,15 +72,16 @@ if (GVAR(on)) then
 
     private _index = lbAdd [DIALOG_BEAM_LB_IDC, format["%1", (_loc select 1)]]; // readable name
     _lb lbSetColor [_index, DIALOG_BEAM_LB_COLOR_DEFAULT];
-    
-    if (_lvl == 1) then 
-    { 
+
+    if (_lvl == 1) then
+    {
         _lb lbSetColor [_index, DIALOG_BEAM_LB_COLOR_LVL_ONE];
     };
 
-    if (_lvl == 2) then 
-    { 
+    if (_lvl == 2) then
+    {
         _lb lbSetColor [_index, DIALOG_BEAM_LB_COLOR_LVL_TWO];
     };
 
-} forEach GVAR(box);
+    true
+} count GVAR(box);

@@ -30,7 +30,7 @@
 #include "script_component.hpp"
 
 /* PARAMS */
-params 
+params
 [
    ["_unit", objNull, [objNull], 1]
 ];
@@ -40,8 +40,10 @@ if (_unit isEqualTo objNull) exitWith{};
 
 /* CODE BODY */
 {
-    if !(_unit isEqualTo _x) then 
+    if !(_unit isEqualTo _x) then
     {
         _x addCuratorEditableObjects [[_unit], false];
     };
-} forEach [zeus_ziv1, zeus_ziv2, zeus_ziv3];
+
+    true
+} count [zeus_ziv1, zeus_ziv2, zeus_ziv3];
