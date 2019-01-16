@@ -83,5 +83,4 @@ if (GVAR(on)) then
         _lb lbSetColor [_index, DIALOG_BEAM_LB_COLOR_LVL_TWO];
     };
 
-    true
-} count GVAR(box);
+} forEach GVAR(box);

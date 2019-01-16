@@ -45,5 +45,4 @@ if (_unit isEqualTo objNull) exitWith{};
         _x addCuratorEditableObjects [[_unit], false];
     };
 
-    true
-} count [zeus_ziv1, zeus_ziv2, zeus_ziv3];
+} forEach [zeus_ziv1, zeus_ziv2, zeus_ziv3];
