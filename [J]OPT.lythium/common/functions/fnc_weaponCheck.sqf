@@ -14,107 +14,130 @@
 * [unit, container, item] call fnc_weaponCheck.sqf;
 *
 */
+/**
+* Description:
+* remove weapons and items that are not allowed according to player class
+*
+* Author:
+* James
+*
+* Arguments:
+* 0: <OBJECT> unit to which the event handler is assigned
+* 1: <OBJECT> the container from which the item was taken (vehicle, box, etc.)
+* 2: <STRING> the class name of the item that was picked-up
+*
+* Return Value:
+* None
+*
+* Server only:
+* no
+*
+* Public:
+* no - only called via Take EH in fnc_initPlayerEH in component mission
+*
+* Global:
+* yes - argument has to be local but effect is global
+*
+* Sideeffects:
+* no
+*
+* Example:
+* [player, crate, "weapon"] call EFUNC(common,weaponCheck);
+*/
 #include "script_component.hpp"
 
-params ["_unit", "_container","_item"];
+/* PARAMS */
+params [
+    ["_unit", objNull, [objNull], 1],
+    ["_container", objNull, [objNull], 1],
+    ["_item", "", [""], 1]
+];
+
+/* VALIDATION */
+if (_unit isEqualTo objNull or "_item" == "") exitWith{};
+if !(_item in (GVARMAIN(restrictedWeapons) + GVARMAIN(restrictedItems))) exitWith {};
+
+/* CODE BODY */
 private _typeOfPlayer = typeOf _unit;
-private _bad_item_used = false;
+private _restrictedWeapons = GVARMAIN(restrictedWeapons);
+private _restrictedItems = GVARMAIN(restrictedItems);
 
-// check SMG
-if !(_typeOfPlayer in (GVARMAIN(officer) + GVARMAIN(pilots) + GVARMAIN(crew))) then {
+// allow weapons for player class and delete all other restricted weapons from inventory
+// look up player calss and remove weapons of this class from restricted weapons
+switch (true) do
+{
+    case (_typeOfPlayer in (GVARMAIN(officer) + GVARMAIN(pilots) + GVARMAIN(crew))):
     {
-        if (_x in GVARMAIN(SMG)) then {
-            _unit removeWeapon _x;
-            _bad_item_used = true;
-        };
-    } forEach (weapons _unit);
+        _restrictedWeapons = _restrictedWeapons - GVARMAIN(SMG);
+    };
+
+    case (_typeOfPlayer in GVARMAIN(operator)):
+    {
+        _restrictedItems = _restrictedItems - GVARMAIN(operatorItems);
+    };
+
+    case (_typeOfPlayer in GVARMAIN(rocketmen)):
+    {
+        _restrictedWeapons = _restrictedWeapons - GVARMAIN(launchers);
+    };
+
+    case (_typeOfPlayer in GVARMAIN(reconSnipers)):
+    {
+        _restrictedWeapons = _restrictedWeapons - GVARMAIN(reconSniperRifles);
+    };
+
+    case (_typeOfPlayer in GVARMAIN(snipers)):
+    {
+        _restrictedWeapons = _restrictedWeapons - GVARMAIN(sniperRifles);
+    };
+
+    case (_typeOfPlayer in GVARMAIN(soldatMG)):
+    {
+        _restrictedWeapons = _restrictedWeapons - GVARMAIN(LMG);
+    };
+
+    case (_typeOfPlayer in  GVARMAIN(soldatSMG)):
+    {
+        _restrictedWeapons = _restrictedWeapons - GVARMAIN(MMG);
+    };
+
+    case (_typeOfPlayer in GVARMAIN(recon)):
+    {
+        _restrictedWeapons = _restrictedWeapons - GVARMAIN(reconRifles);
+    };
+
+    case (_typeOfPlayer in GVARMAIN(grenadiers)):
+    {
+        _restrictedWeapons = _restrictedWeapons - GVARMAIN(grenadelaunchers);
+    };
+
+    case (_typeOfPlayer in GVARMAIN(medic)):
+    {
+        _restrictedItems = _restrictedItems - GVARMAIN(medicItems);
+    };
+
 };
 
-// check launcher
-if !(_typeOfPlayer in GVARMAIN(rocketmen)) then {
-    {
-        if (_x in GVARMAIN(launchers)) then {
-            _unit removeWeapon _x;
-            _bad_item_used = true;
-        };
-    } forEach (weapons _unit);
+private _weaponsToDelete = (weapons _unit) arrayIntersect _restrictedWeapons;
+if ( count _weaponsToDelete > 0) then
+{
+    _weaponsToDelete apply {_unit removeWeapon _x};
+
+    [
+        "Regelverstoß",
+        "Waffe unzulässig für aktuelle Spielerklasse.<br/>Waffe wurde entfernt.",
+        "red"
+    ] call EFUNC(gui,message);
 };
 
-// check recon Sniper
-if !(_typeOfPlayer in GVARMAIN(reconSnipers)) then {
-    {
-        if (_x in GVARMAIN(reconSniperRifles)) then {
-            _unit removeWeapon _x;
-            _bad_item_used = true;
-        };
-    } forEach (weapons _unit);
-};
+private _itemsToDelete = (items _unit + assignedItems _unit) arrayIntersect _restrictedItems;
+if ( count _itemsToDelete > 0) then
+{
+    _itemsToDelete apply {_unit unassignItem _x; _unit removeItem _x;};
 
-// check sniper
-if !(_typeOfPlayer in GVARMAIN(snipers)) then {
-    {
-        if (_x in GVARMAIN(sniperRifles)) then {
-            _unit removeWeapon _x;
-            _bad_item_used = true;
-        };
-    } forEach (weapons _unit);
-};
-
-// check MG
-if !(_typeOfPlayer in GVARMAIN(soldatMG)) then {
-    {
-        if (_x in GVARMAIN(MG)) then {
-            _unit removeWeapon _x;
-            _bad_item_used = true;
-        };
-    } forEach (weapons _unit);
-};
-
-// check SMG
-if !(_typeOfPlayer in GVARMAIN(soldatSMG)) then {
-    {
-        if (_x in GVARMAIN(SMG)) then {
-            _unit removeWeapon _x;
-            _bad_item_used = true;
-        };
-    } forEach (weapons _unit);
-};
-
-// check recon
-if !(_typeOfPlayer in GVARMAIN(recon)) then {
-    {
-        if (_x in GVARMAIN(reconRifles)) then {
-            _unit removeWeapon _x;
-            _bad_item_used = true;
-        };
-    } forEach (weapons _unit);
-};
-
-// check grenade launcher
-if !(_typeOfPlayer in GVARMAIN(grenadiers)) then {
-    {
-        if (_x in GVARMAIN(grenadelaunchers)) then {
-            _unit removeWeapon _x;
-            _bad_item_used = true;
-        };
-    } forEach (weapons _unit);
-};
-
-// check UAV Terminal
-if !(_typeOfPlayer in GVARMAIN(operator)) then {
-    {
-        _unit unassignItem _x; 
-        _unit removeItems _x
-    } forEach ["B_UavTerminal","O_UavTerminal"];
-};
-
-// check medic item
-if !(_typeOfPlayer in GVARMAIN(medic)) then {
-    {
-        _unit removeItems _x
-    } forEach ["Medikit"]; //TODO: ACE
-};
-
-if (_bad_item_used) then {
-    ["Regelverstoß", "Waffe unzulässig für aktuelle Spielerklasse.<br/>Waffe wurde entfernt.", "red"] call EFUNC(gui,message);
+    [
+        "Regelverstoß",
+        "Item unzulässig für aktuelle Spielerklasse.<br/>Item wurde entfernt.",
+        "red"
+    ] call EFUNC(gui,message);
 };

@@ -14,7 +14,13 @@
 */
 #include "script_component.hpp"
 
-addMissionEventHandler ["PreloadFinished", {[] spawn FUNC(gps);}]
+addMissionEventHandler 
+[
+    "PreloadFinished", 
+    {
+        [] spawn FUNC(gps);
+    }
+];
 
 
 

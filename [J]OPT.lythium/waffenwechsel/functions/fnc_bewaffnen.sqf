@@ -1,33 +1,43 @@
 /**
-* Funktion 
+* Description: 
 * bewaffnet ein Fahrzeug mit der Auswahl aus dem Waffenwechsel-Dialog
 * 
-* Author: [GNC]Lord-MDB
+* Author: 
+* [GNC]Lord-MDB
 *
-* Arguments:_veh,_side,_weaponsVeh,_magazineVeh,_pylon,_buyDatalink,_buygunmagazine,_buygunweapon,_bewaffnungpreis,_vehDisplayName,_buyrakmagazine,_buykontrolle,_wert
+* Arguments:
+* 0: <OBJECT>   _veh
+* 1: <SIDE>     _side
+* 2: <ARRAY>    _weaponsVeh
+* 3: <ARRAY>    _magazineVeh
+* 4: <ARRAY>    _pylon
+* 5: <BOOLEAN>  _buyDatalink
+* 6: <ARRAY>    _buyGunMagazine
+* 7: <ARRAY>    _buyGunWeapon
+* 8: <NUMBER>   _bewaffnungPreis
+* 9: <STRING>   _vehDisplayName
+* 10: <ARRAY>   _buyRakMagazine
+* 11: <ARRAY>   _buyControl
+* 12: <NUMBER>  _wert
 * 
 * Return Value:
-* keine
+* None
 * 
 * Server only:
-* nein
+* no
 *
 * Public:
-* nein
+* no
 * 
 * Global:
-* nein
+* no
 * 
 * Sideeffects:
-* keine
+* no
 * 
 * Example:
 * 
-* 
-* 
-*
 */
-
 #include "script_component.hpp"
 
 /* PARAMS */
@@ -41,7 +51,7 @@ params
     "_buyDatalink",
     "_buyGunMagazine",
     "_buyGunWeapon",
-    "_bewaffnungpreis",
+    "_bewaffnungPreis",
     "_vehDisplayName",
     "_buyRakMagazine",
     "_buyControl",
@@ -76,7 +86,7 @@ else
         
     for "_i" from 1 to (count _pylon) do 
 	{
-        _veh setPylonLoadOut [_pylon select (_i -1), ""];     
+        _veh setPylonLoadOut [_pylon select (_i - 1), ""];     
         sleep 0.001;
     };    
 
@@ -167,20 +177,20 @@ else
         _veh setVehicleReceiveRemoteTargets true;
     };    
     
-    if ((_bewaffnungpreis - _wert) > 0) then 
+    if ((_bewaffnungPreis - _wert) > 0) then 
 	{                
-        [PLAYER_NAME, PLAYER_SIDE, typeOf _veh, (_bewaffnungpreis - _wert), "+", "weapons"] call EFUNC(common,updateBudget);
+        [PLAYER_NAME, PLAYER_SIDE, typeOf _veh, (_bewaffnungPreis - _wert), "+", "weapons"] call EFUNC(common,updateBudget);
         
-        private _txt = format["%1 ausgerüstet, Gutschrift %2 €.", _vehDisplayName, (_bewaffnungpreis - _wert)];
+        private _txt = format["%1 ausgerüstet, Gutschrift %2 €.", _vehDisplayName, (_bewaffnungPreis - _wert)];
         ["Ausrüsten", _txt, "green"] call EFUNC(gui,message);
     
         [name player, _wert, _txt] remoteExecCall [QFUNC(cbatext), playerSide, false];
     } 
 	else 
 	{
-        [PLAYER_NAME, PLAYER_SIDE, typeOf _veh, ((_bewaffnungpreis - _wert) * (-1)), "-", "weapons"] call EFUNC(common,updateBudget);
+        [PLAYER_NAME, PLAYER_SIDE, typeOf _veh, ((_bewaffnungPreis - _wert) * (-1)), "-", "weapons"] call EFUNC(common,updateBudget);
         
-        private _txt = format["%1 ausgerüstet für %2 €.", _vehDisplayName, (_bewaffnungpreis - _wert)];
+        private _txt = format["%1 ausgerüstet für %2 €.", _vehDisplayName, (_bewaffnungPreis - _wert)];
         ["Ausrüsten", _txt, "green"] call EFUNC(gui,message);
                     
         [name player, _wert, _txt] remoteExecCall [QFUNC(cbatext), playerSide, false];

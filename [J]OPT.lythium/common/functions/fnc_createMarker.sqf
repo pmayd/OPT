@@ -1,6 +1,9 @@
 /**
-* Author: James
-* create marker with given params and return it
+* Description:
+* create local or global marker with given params and return it
+*
+* Author:
+* James
 *
 * Arguments:
 * 0: <STRING> marker name
@@ -12,17 +15,32 @@
 * 6: <COLOR> marker color
 * 7: <STRING> marker brush
 * 8: <NUMBER> marker alpha
-* 9: <BOOL> marker global?
+* 9: <BOOL> true - global marker, false - local marker
 *
 * Return Value:
-* 0: <MARKER> created marker
+* <MARKER> marker name
+*
+* Server only:
+* no
+*
+* Public:
+* yes
+*
+* Global:
+* no - if param 9 is false
+* yes - if param 9 is true
+*
+* Sideeffects:
+* create local or global marker
 *
 * Example:
-* ["mymarker", [0,0,0], "mil_dot", "hierher", [1,1], "", "ColorBlue", "", 1, false] call fnc_createMarker.sqf;
+* ["mymarker", [0,0,0], "mil_dot", "hierher", [1,1], "", "ColorBlue", "", 1, false] call EFUNC(common,createMarker);
 */
 #include "script_component.hpp"
 
-params [
+/* PARAMS */
+params 
+[
     ["_markerName", "", [""], [1]],                 // 0
     ["_markerPos", [0,0,0], [[]], [2,3]],           // 1
     ["_markerType", "Empty", [""], [1]],            // 2
@@ -36,11 +54,14 @@ params [
     ["_markerIsGlobal", false, [false], [1]]        // 10
 ];
 
-private _marker = "";
-
+/* VALIDATION */
 if (_markerName in allMapMarkers) exitWith {_markerName};
 
-if (_markerIsGlobal) then {
+/* CODE BODY */
+private _marker = "";
+
+if (_markerIsGlobal) then 
+{
     _marker = createMarker [_markerName, _markerPos];
     _marker setMarkerType _markerType;
     _marker setMarkerText _markerText;
@@ -50,7 +71,9 @@ if (_markerIsGlobal) then {
     _marker setMarkerBrush _markerBrush;
     _marker setMarkerAlpha _markerAlpha;
     _marker setMarkerDir _markerDir;
-} else {
+}
+else 
+{
     _marker = createMarkerLocal [_markerName, _markerPos];
     _marker setMarkerTypeLocal _markerType;
     _marker setMarkerTextLocal _markerText;

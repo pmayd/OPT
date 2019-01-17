@@ -1,37 +1,42 @@
 /**
+* Description:
 * Funktion Magazine auslesen
 * 
-* Author: [GNC]Lord-MDB
+* Author: 
+* [GNC]Lord-MDB
 *
 * Arguments:
-* _veh
+* 0: <OBJECT> Fahrzeug, dass ausgelesen werden soll
 * 
 * Return Value:
-* _magazineVehArryNew
+* <ARRAY> _magazineVehArryNew
 * 
 * Server only:
-* nein
+* no
 *
 * Public:
-* nein
+* no
 * 
 * Global:
-* nein
+* no
 * 
 * Sideeffects:
-* keine
+* no
 * 
 * Example:
-* 
+* [vehicle] call EFUNC(waffenwechsel,auslesenMagazine);
 */
 #include "script_component.hpp"
+
 /* PARAMS */
 params 
 [
-    "_veh"
+    ["_veh", objNull, [objNull], 1]
 ];
 
 /* VALIDATION */
+
+if (_veh isEqualTo objNull) exitWith{[]};
 
 /* CODE BODY */
 private _magazineVeh = magazines _veh;
@@ -41,7 +46,8 @@ _weaponsVeh deleteAt (_weaponsVeh find "OPT_CMFlareLauncher");
 _weaponsVeh deleteAt (_weaponsVeh find "OPT_CMFlareLauncher_Triples");
 _weaponsVeh = _weaponsVeh select {_x != ""};
 
-private _magazineFilter = [
+private _magazineFilter = 
+[
     "96Rnd_CMFlare_Chaff_Magazine",
     "120Rnd_CMFlare_Chaff_Magazine",
     "240Rnd_CMFlare_Chaff_Magazine",
@@ -55,7 +61,7 @@ private _magazineFilter = [
 ];
 
 {
-    _magazineVeh deleteAt (_magazineVeh find _X);                
+    _magazineVeh deleteAt (_magazineVeh find _x);                
 } forEach _magazineFilter;
 
 _magazineVeh = _magazineVeh select {_x != ""};
@@ -81,7 +87,6 @@ if (count _magazineVehPylonArry > 0) then
 };    
     
 //kontrolle Bewaffnung Auslesung
-
 private _magazineFilter2 = 
 [
     ["96Rnd_CMFlare_Chaff_Magazine", 96],

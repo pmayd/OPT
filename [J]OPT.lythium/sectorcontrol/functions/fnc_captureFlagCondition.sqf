@@ -30,10 +30,13 @@ params [
 if (_flag isEqualTo objNull or _unit isEqualTo objNull) exitWith{false};
 
 /* CODE BODY */
+// Objekt ist in der Liste der Flaggenobjekte
 // Flagge kann nur nach Missionsstart, in 5 m Radius, 
 // ausserhalb eines Fahrzeugs 
 // in Restspielzeit gezogen werden 
 // nur von der anderen Seite
+_flag in (GVARMAIN(nato_flags) + GVARMAIN(csat_flags)) and
+_flag distance2D player < GVAR(flagDistanceToPlayer) and
 vehicle _unit == _unit and
 EGVAR(serverclock,missionStarted) and
 (EGVAR(serverclock,playTime) * 60 - (serverTime - EGVAR(serverclock,startTime))) > 0 and

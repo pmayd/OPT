@@ -2,8 +2,8 @@
 * Description:
 * client GPS. Select all units of player side that are going to be marked by gps
 * GPS differentiates between cinscious and unconscious units
-* 
-* Author: 
+*
+* Author:
 * [GNC]Lord-MDB & James
 *
 * Arguments:
@@ -16,14 +16,14 @@
 * no
 *
 * Public:
-* no
+* yes
 *
 * Global:
 * no
 *
 * Sideeffects:
 * no
-* 
+*
 * Example:
 * [] call EFUNC(gps,selectUnits);
 *
@@ -36,46 +36,41 @@
 
 /* CODE BODY */
 // add all unconscious units of player side to the GPS
-private _unconsciousUnits = allPlayers select {side _x == PLAYER_SIDE and _x getVariable ["FAR_isUnconscious", 0] isEqualTo 1};
+private _unconsciousUnits = allPlayers select
+{
+    (UNIT_SIDE(_x)) isEqualTo (PLAYER_SIDE) and
+    (_x getVariable ["FAR_isUnconscious", 0]) == 1
+};
 
 private _unitsToMark = [];
-
-private _leaderUnits = [];    
-{
-    if (side (leader _x) == PLAYER_SIDE) then {    
-        _leaderUnits pushBack (leader _x);
-
-    };                        
-} forEach allGroups;
-
+private _leaderUnits = (allGroups select {(UNIT_SIDE(leader _x)) isEqualTo (PLAYER_SIDE)}) apply {leader _x};
 private _groupUnits = units group player;
 
-switch (GVAR(mode)) do {
-    case 0: {
-        if (leader group player == leader player) then {
+switch (GVAR(mode)) do
+{
+    case 0:
+    {
+        if ((leader group player) isEqualTo (leader player)) then
+        {
             _unitsToMark append _leaderUnits;
-            _unitsToMark append (_groupUnits - _leaderUnits);   
-
-        } else {                        
+            _unitsToMark append (_groupUnits - _leaderUnits);
+        }
+        else
+        {
             _unitsToMark append _leaderUnits;
-
         };
 
     };
 
-    case 1: {
+    case 1:
+    {
         _unitsToMark append _leaderUnits;
-        _unitsToMark append (_groupUnits - leader player);  
-
+        _unitsToMark append (_groupUnits - [leader player]);
     };
 
-    case 2: {
-        {
-            if (side _x == PLAYER_SIDE) then {
-                _unitsToMark pushBack _x;
-
-            };
-        } foreach allUnits;    // Drohnen für HL sichtbar machen
+    case 2:
+    {
+        _unitsToMark = allUnits select {(UNIT_SIDE(_x)) isEqualTo (PLAYER_SIDE)}; // Drohnen für HL sichtbar machen
 
     };
 };

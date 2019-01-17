@@ -21,11 +21,13 @@ if (_veh isEqualTo objNull) exitWith {false};
 private _type = typeOf _veh;
 private _flag = false;
 
+GVAR(repair_hps) apply
 {
-	private _cdmg = _veh getHitPointDamage (_x);
-	if (not isNil {_cdmg} ) then {
-		if (_cdmg > 0.64) exitWith {_flag = true};
-	};
-} forEach GVAR(repair_hps);
+    private _cdmg = _veh getHitPointDamage (_x);
+    if (not isNil {_cdmg} ) then
+    {
+        if (_cdmg > 0.64) exitWith {_flag = true};
+    };
+};
 
 _flag
