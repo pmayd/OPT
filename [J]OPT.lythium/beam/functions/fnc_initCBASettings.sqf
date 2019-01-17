@@ -1,6 +1,9 @@
 /**
-* Author: James
+* Description:
 * initialize CBA settings
+*
+* Author:
+* James
 *
 * Arguments:
 * None
@@ -8,12 +11,28 @@
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_initCBASettings.sqf;
+* Server only:
+* no
 *
+* Public:
+* no - should be called only once from XEH_PreInit.sqf at mission start
+*
+* Global:
+* no
+*
+* Sideeffects:
+* yes - create a new setting in the game addons options (according to category and name)
+*
+* Example:
+* [] call EFUNC(beam,initCBASettings);
 */
 #include "script_component.hpp"
 
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
 [
     QGVAR(on), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "CHECKBOX", // setting type

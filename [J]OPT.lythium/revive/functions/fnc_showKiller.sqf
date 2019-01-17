@@ -19,21 +19,21 @@ params ["_unit", "_killer"];
 private _name = "";
 
 if (_unit != _killer) then {
-	if (isPlayer _killer) then {
-		if (vehicle _killer != _killer) then {
-			_vec = vehicle _killer;
-			_obj = gunner _vec;
+    if (isPlayer _killer) then {
+        if (vehicle _killer != _killer) then {
+            _vec = vehicle _killer;
+            _obj = gunner _vec;
 
-			if (isNull _obj) then {
-				_obj = effectiveCommander _vec;
-			};
-			_name = UNIT_NAME(_obj);
+            if (isNull _obj) then {
+                _obj = effectiveCommander _vec;
+            };
+            _name = UNIT_NAME(_obj);
 
-		} else {
-			_name = UNIT_NAME(_killer);
+        } else {
+            _name = UNIT_NAME(_killer);
 
-		};
-	};
+        };
+    };
 };
 
 _name

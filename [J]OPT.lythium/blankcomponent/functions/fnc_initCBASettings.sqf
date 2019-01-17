@@ -1,7 +1,9 @@
 /**
-* Initialize CBA settings
+* Description:
+* initialize CBA settings
 *
-* Author: James
+* Author:
+* James
 *
 * Arguments:
 * None
@@ -13,16 +15,16 @@
 * no
 *
 * Public:
-* no - called by XEH_PreInit.sqf at mission start
+* no - should be called only once from XEH_PreInit.sqf at mission start
 *
 * Global:
 * no
 *
 * Sideeffects:
-* no
-* 
+* yes - create a new setting in the game addons options (according to category and name)
+*
 * Example:
-* [] call EFUNC(blankcomponent,initCBASettings);
+* [] call EFUNC(beam,initCBASettings);
 */
 #include "script_component.hpp"
 

@@ -1,28 +1,28 @@
 /* #Jevuwa
 $[
-	1.063,
-	["orderDialog",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
-	[-2200,"",[2,"",["0 * GUI_GRID_W + GUI_GRID_X","0 * GUI_GRID_H + GUI_GRID_Y","40 * GUI_GRID_W","25 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[-1800,"",[2,"Bestellsystem",["0 * GUI_GRID_W + GUI_GRID_X","-0.83 * GUI_GRID_H + GUI_GRID_Y","40 * GUI_GRID_W","26 * GUI_GRID_H"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1.5"],[]],
-	[1200,"",[2,"#(argb,8,8,3)color(1,1,1,1)",["1 * GUI_GRID_W + GUI_GRID_X","1 * GUI_GRID_H + GUI_GRID_Y","8 * GUI_GRID_W","3.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1801,"",[2,"",["1 * GUI_GRID_W + GUI_GRID_X","5 * GUI_GRID_H + GUI_GRID_Y","38 * GUI_GRID_W","18 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1500,"",[2,"",["1 * GUI_GRID_W + GUI_GRID_X","6.5 * GUI_GRID_H + GUI_GRID_Y","22 * GUI_GRID_W","16.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1000,"",[2,"Budget: ",["10 * GUI_GRID_W + GUI_GRID_X","1 * GUI_GRID_H + GUI_GRID_Y","29 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1600,"",[2,"Bestellen",["1.03 * GUI_GRID_W + GUI_GRID_X","23.23 * GUI_GRID_H + GUI_GRID_Y","7.5 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1601,"",[2,"Verkaufen",["9.8 * GUI_GRID_W + GUI_GRID_X","23.2 * GUI_GRID_H + GUI_GRID_Y","7 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1400,"",[2,"Suchzeile...",["1 * GUI_GRID_W + GUI_GRID_X","5 * GUI_GRID_H + GUI_GRID_Y","38 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1001,"",[2,"Infobereich...",["23 * GUI_GRID_W + GUI_GRID_X","6.5 * GUI_GRID_H + GUI_GRID_Y","16 * GUI_GRID_W","16.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1602,"",[2,"SchlieÃŸen",["32 * GUI_GRID_W + GUI_GRID_X","23.2 * GUI_GRID_H + GUI_GRID_Y","7 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+    1.063,
+    ["orderDialog",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+    [-2200,"",[2,"",["0 * GUI_GRID_W + GUI_GRID_X","0 * GUI_GRID_H + GUI_GRID_Y","40 * GUI_GRID_W","25 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [-1800,"",[2,"Bestellsystem",["0 * GUI_GRID_W + GUI_GRID_X","-0.83 * GUI_GRID_H + GUI_GRID_Y","40 * GUI_GRID_W","26 * GUI_GRID_H"],[1,1,1,1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1.5"],[]],
+    [1200,"",[2,"#(argb,8,8,3)color(1,1,1,1)",["1 * GUI_GRID_W + GUI_GRID_X","1 * GUI_GRID_H + GUI_GRID_Y","8 * GUI_GRID_W","3.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1801,"",[2,"",["1 * GUI_GRID_W + GUI_GRID_X","5 * GUI_GRID_H + GUI_GRID_Y","38 * GUI_GRID_W","18 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1500,"",[2,"",["1 * GUI_GRID_W + GUI_GRID_X","6.5 * GUI_GRID_H + GUI_GRID_Y","22 * GUI_GRID_W","16.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1000,"",[2,"Budget: ",["10 * GUI_GRID_W + GUI_GRID_X","1 * GUI_GRID_H + GUI_GRID_Y","29 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1600,"",[2,"Bestellen",["1.03 * GUI_GRID_W + GUI_GRID_X","23.23 * GUI_GRID_H + GUI_GRID_Y","7.5 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1601,"",[2,"Verkaufen",["9.8 * GUI_GRID_W + GUI_GRID_X","23.2 * GUI_GRID_H + GUI_GRID_Y","7 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1400,"",[2,"Suchzeile...",["1 * GUI_GRID_W + GUI_GRID_X","5 * GUI_GRID_H + GUI_GRID_Y","38 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1001,"",[2,"Infobereich...",["23 * GUI_GRID_W + GUI_GRID_X","6.5 * GUI_GRID_H + GUI_GRID_Y","16 * GUI_GRID_W","16.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1602,"",[2,"SchlieÃŸen",["32 * GUI_GRID_W + GUI_GRID_X","23.2 * GUI_GRID_H + GUI_GRID_Y","7 * GUI_GRID_W","1.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
 ]
 */
 
 /* GRID MACROS */
-#define GUI_GRID_X	(0)
-#define GUI_GRID_Y	(0)
-#define GUI_GRID_W	(0.025)
-#define GUI_GRID_H	(0.04)
-#define GUI_GRID_WAbs	(1)
-#define GUI_GRID_HAbs	(1)
+#define GUI_GRID_X    (0)
+#define GUI_GRID_Y    (0)
+#define GUI_GRID_W    (0.025)
+#define GUI_GRID_H    (0.04)
+#define GUI_GRID_WAbs    (1)
+#define GUI_GRID_HAbs    (1)
 
 #define COLOR_CONTROL_BG {0,0,0,0.7}
 #define COLOR_BUTTON_BACKGROUND {0,0,0,0.7}
@@ -35,12 +35,12 @@ $[
 ////////////////////////////////////////////////////////
 class GVAR(dlg_order)
 {
-	idd = 20000;
-	movingenable = false;
-	onLoad = __EVAL(format["uiNamespace setVariable ['%1', _this select 0]", QGVAR(orderDialog)]);
-	
+    idd = 20000;
+    movingenable = false;
+    onLoad = __EVAL(format["uiNamespace setVariable ['%1', _this select 0]", QGVAR(orderDialog)]);
+    
     class controlsBackground
-	{
+    {
         class IGUIBack_Main: IGUIBack
         {
             idc = 2200;
@@ -140,7 +140,7 @@ class GVAR(dlg_order)
             w = 7.5 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
             tooltip = "Ausgewähltes Fahrzeug bestellen";
-			action = QUOTE([] call FUNC(sendVehicleOrder););
+            action = QUOTE([] call FUNC(sendVehicleOrder););
             sizeEx = FONTSIZE;
         };
         class RscButtonSell: RscButton
@@ -152,7 +152,7 @@ class GVAR(dlg_order)
             w = 7.5 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
             tooltip = "Verkaufe Fahrzeug auf dem Bestell-Pad";
-			action = QUOTE([] call FUNC(sellVehicle););
+            action = QUOTE([] call FUNC(sellVehicle););
             sizeEx = FONTSIZE;
         };
          class RscButtonClear: RscButton
@@ -164,7 +164,7 @@ class GVAR(dlg_order)
             w = 7.5 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
             tooltip = "Löscht alle Fahrzeuge um das Bestell-Pad (kein Verkauf!)";
-			action = QUOTE([] call FUNC(deleteVehicle););
+            action = QUOTE([] call FUNC(deleteVehicle););
             sizeEx = FONTSIZE;
             colorBackground[] = Color_DarkRed;
         };
@@ -177,7 +177,7 @@ class GVAR(dlg_order)
             w = 7 * GUI_GRID_W;
             h = 1.5 * GUI_GRID_H;
             tooltip = "Dialog schliessen";
-			action = "closeDialog 0";
+            action = "closeDialog 0";
             sizeEx = FONTSIZE;
         };
     };

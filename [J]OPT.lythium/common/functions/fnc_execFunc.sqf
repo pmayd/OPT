@@ -1,8 +1,11 @@
 /**
-* Author: James
+* Description:
 * Helper function to call or spawn any function of a component. 
 * Check if component is activated (GVAR(on) = true).
 * If component is deactivated or something goes wrong, return default.
+*
+* Author:
+* James
 *
 * Arguments:
 * 0: <STRING> component name
@@ -14,14 +17,24 @@
 * Return Value:
 * <ANY> return value of function or objNull
 *
-* Example:
-* ["cargo", "deactivateDragging", [crate], <optional: false>] call fnc_execFunc.sqf;
+* Server only:
+* no
 *
 * Public:
 * yes
+*
+* Global:
+* no
+*
+* Sideeffects:
+* call function (param 1) if component (param 0) is active
+*
+* Example:
+* ["cargo", "deactivateDragging", [crate], <optional: false>] call EFUNC(common,execFunc);
 */
 #include "script_component.hpp"
 
+/* PARAMS */
 params [
     ["_component", "", ["s"], 1],
     ["_func", "", ["s"], 1],
@@ -30,13 +43,16 @@ params [
     ["_default", objNull]
 ];
 
+/* VALIDATION */
 if (_component isEqualTo "" or _func isEqualTo "") exitWith{_default};
 
+/* CODE BODY */
 // check if component is active. If variable is not defined, always execute function
 private _code = {call compile format["opt_%1_on", _component]}; // identical to GVAR(on) in given component
 private _check = true;
 
-if (!(isNil _code)) then {
+if (!(isNil _code)) then 
+{
     _check = call _code;
 };
 
@@ -48,9 +64,12 @@ if (isNil {_fncCode}) exitWith{_default};
 
 // call func
 private _retVal = nil;
-if (_spawnFlag) then {
+if (_spawnFlag) then 
+{
     _retVal = _args spawn _fncCode;
-} else {
+} 
+else 
+{
     _retVal = _args call _fncCode;
 };
 

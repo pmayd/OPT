@@ -1,8 +1,21 @@
 ﻿# Changelog
 
+## 1.4.15
+
+### Skript
+
+- Neue Komponente serverclock (Missionsuhr): steuert die globale Zeit und händelt Freeze, Waffenruhe und Spielzeit sowie Endbildschirm
+- HUD: Fehler zu fehlender startTime wird nicht mehr ausgegeben
+- Freeze: Freeze nun wieder aktiv (war vorrübergehend wirkungslos)
+- Intro: Fehler in Anzeige der Autoren behoben
+- Revive: Marker für bewusstlose Einheiten werden jetzt vom GPS-System gehandhabt, d.h. in Echtzeit aktualisiert. Dadurch kommt es nicht mehr zu "Ghost"-Markern an falscher Stelle
+
+### Editor
+
+
 ## 1.4.14
 
-### Sckript
+### Skript
 
 - GPS und Revive: Löschskript für Marker im Falle von Disconnects überarbeitet
 - Flagpositions (für die prologschlacht) -> setupflagpositions.sqf
@@ -17,7 +30,7 @@
 - ifrit hmg und gmg in waffenscript gefixt - erlaubte vehikelliste in der waffenconfig.hpp
 - bewaffnungspads für extrabasen nachgetragen - in postinit.sqf
 
-## Editor
+### Editor
 
 - Neue Version mit je zwei diagonalen Basen
 - loadoutanpassungen bei allen infern (mündungsfeuerbremse, handguns raus, primärwaffenmuni +2, SQLs nun mit 40mm HE etc, Recon-AT NATO wieder mit schalli)

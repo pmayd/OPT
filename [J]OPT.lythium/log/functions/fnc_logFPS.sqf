@@ -17,7 +17,7 @@
 #include "script_component.hpp"
 
 // log fps only after truce
-waitUntil {GVARMAIN(missionStarted)};
+waitUntil {EGVAR(serverclock,missionStarted)};
 
 // log fps each update intervall on server
 while {true} do {

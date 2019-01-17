@@ -1,6 +1,9 @@
 /**
-* Author: James
+* Description:
 * initialize scripts and commands before world has initialized
+*
+* Author:
+* James
 *
 * Arguments:
 * None
@@ -8,13 +11,30 @@
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_preInit.sqf;
+* Server only:
+* no
 *
+* Public:
+* no - should be called only once by XEH_PostInit.sqf
+*
+* Global:
+* no
+*
+* Sideeffects:
+* register CBA keybind to open the waffenwechsel dialog
+*
+* Example:
+* [] call EFUNC(waffenwechsel,postInit);
 */
 #include "script_component.hpp"
 
-if (hasInterface) then {
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
+if (hasInterface) then 
+{
 
     /*
     * https://cbateam.github.io/CBA_A3/docs/files/keybinding/fnc_addKeybind-sqf.html
@@ -27,7 +47,6 @@ if (hasInterface) then {
             private _triggerUnits = (list csat_trigger_Waffenwechsel1) + (list nato_trigger_Waffenwechsel1) + (list csat_trigger_Waffenwechsel2) + (list nato_trigger_Waffenwechsel2) + (list csat_trigger_Waffenwechsel1_1) + (list nato_trigger_Waffenwechsel1_1)+ (list csat_trigger_Waffenwechsel2_1) + (list nato_trigger_Waffenwechsel2_1);
             if (player isEqualTo assignedDriver vehicle player and (vehicle player in _triggerUnits)) then {
                 [] call FUNC(openDialog);
-                
             };
             
         }, 
