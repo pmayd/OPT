@@ -43,7 +43,8 @@ if (!hasInterface) exitWith{};
     QGVAR(cba_addKeybind_beam_dialog), 
     ["Beam-Dialog öffnen", "Öffnet den Beam-Dialog im Fahnenbereich."], 
     {
-        if ( ({vehicle player in list _x} count GVAR(beam_trigger))  > 0  ) then {
+        if ( ({vehicle player in list _x} count GVAR(beam_trigger)) > 0 ) then 
+        {
             [] call FUNC(openDialog);
         };
         

@@ -15,16 +15,17 @@
 #include "script_component.hpp"
 
 private _container = objNull;
-switch (PLAYER_SIDE) do {
-    case west: {
+switch (PLAYER_SIDE) do
+{
+    case west:
+    {
         _container = GVAR(containerWest);
     };
-    case east: {
+    case east:
+    {
         _container = GVAR(containerEast);
     };
-    default {
-
-    };
+    default {};
 };
 
 _container

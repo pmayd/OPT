@@ -31,7 +31,7 @@ This event happens every time a soldier enters a vehicle.
      
     _vec addAction [
         "Fahrzeug aufrichten" call XTuerkiesText, 
-        {[] call EFUNC(common,unFlip);},
+        {[_target] call EFUNC(common,unFlip);},
         [], 
         0, 
         false, 
@@ -47,7 +47,7 @@ This event happens every time a soldier enters a vehicle.
         
     _vec addAction [
         "Fahrzeug aufrichten" call XTuerkiesText,
-        {[] call EFUNC(common,unFlip);}, 
+        {[_target] call EFUNC(common,unFlip);}, 
         [], 
         0, 
         false, 

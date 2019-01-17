@@ -15,8 +15,12 @@
 #include "script_component.hpp"
 
 if (isServer) then {
+
+    // register callback function for server clock
+    [QFUNC(calcPoints)] call EFUNC(serverclock,registerCallback);
+    
     [] spawn {
-        waitUntil{GVARMAIN(missionStarted)};
+        waitUntil{EGVAR(serverclock,missionStarted)};
 
         // start flag setup (setting owner)
         [] call FUNC(setupFlag);
@@ -36,10 +40,8 @@ if (hasInterface) then {
         QGVAR(cba_capture_flag), 
         ["Flagge ziehen", "Flagge ziehen, wenn anvisiert."], 
         {
-            if (
-                cursorObject in (GVARMAIN(nato_flags) + GVARMAIN(csat_flags)) and
-                [cursorObject, player] call FUNC(captureFlagCondition)
-            ) then {
+            if ([cursorObject, player] call FUNC(captureFlagCondition)) then 
+            {
                 [cursorObject, player] call FUNC(captureFlag);
             };
             

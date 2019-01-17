@@ -2,6 +2,7 @@
 
 PREP(addFlagMenu);
 PREP(calcDominator);
+PREP(calcPoints);
 PREP(captureFlag);
 PREP(captureFlagCondition);
 PREP(chooseFlag);

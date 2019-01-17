@@ -28,7 +28,7 @@ if (!GVAR(on)) exitWith{};
 waitUntil {time > 1};
 
 if (_side isEqualTo sideUnknown && toLower typeOf _obj != toLower "MapBoard_altis_F") then {
-    _side = [_obj] call EFUNC(common,getVehicleSide);
+    _side = [_obj] call EFUNC(common,vehicleSide);
 };
 
 [] spawn FUNC(clearNullFromArray);

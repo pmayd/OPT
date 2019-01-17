@@ -27,5 +27,9 @@
 _log_msg = format["Startbudget: NATO %1 - CSAT %2", GVARMAIN(nato_budget), GVARMAIN(csat_budget)];
 ["Budget", _log_msg] call FUNC(write);
 
-_log_msg = format["Beginn Waffenruhe: %1 min", (OPT_PARAM_TRUCETIME + OPT_PARAM_FREEZE_TIME) / 60];
-["Mission", _log_msg] call FUNC(write);
+_log_msg = format[
+    "Spieleranzahl: NATO %1 - CSAT %2", 
+    count (allPlayers select {side _x isEqualTo west}),
+    count (allPlayers select {side _x isEqualTo east})
+];
+["Spieler", _log_msg] call FUNC(write);

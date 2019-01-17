@@ -19,6 +19,7 @@
 // 1. Namen aller Parameter
 // 2. führe globale Variable mit diesem Namen ein
 _paramNames = ("true" configClasses (getMissionConfig "Params")) apply {configName _x};
-{	
-	missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue, true];
-} forEach _paramNames;
+_paramNames apply
+{
+    missionNamespace setVariable [_x, [_x] call BIS_fnc_getParamValue, true];
+};

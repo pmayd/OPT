@@ -20,7 +20,7 @@
 * no - should be called via onLoad from beam dialog
 *
 * Global:
-* no 
+* no
 *
 * Sideeffects:
 * fill variable GVAR(box) with options to beam
@@ -38,42 +38,50 @@
 /* CODE BODY */
 disableSerialization;
 
-private _display = findDisplay IDD_DLG_BEAM;
-private _lb = _display displayCtrl IDC_CTRL_LIST_BOX;
+private _display = findDisplay DIALOG_BEAM_IDD;
+private _lb = _display displayCtrl DIALOG_BEAM_LB_IDC;
 
 //Zeitabgelaufen check
 private _orte = [];
-if (PLAYER_SIDE == east) then { 
-    _orte = GVAR(locations_east); 
+if (PLAYER_SIDE == east) then
+{
+    _orte = GVAR(locations_east);
 
-} else { 
+}
+else
+{
     _orte = GVAR(locations_west);
 
 };
 
 // if component is disabled -> only allow locations with level equal -1
 GVAR(box) = _orte select {(_x select 2) == -1};
-if (GVAR(on)) then {
+if (GVAR(on)) then
+{
     // nach Waffenruhe nur noch Orte mit -1
-    if (!GVARMAIN(missionStarted)) then {
+    if (!EGVAR(serverclock,missionStarted)) then
+    {
         GVAR(box) append (_orte select {(_x select 2) > 0}); // only locations with level greater 0 (1,2,3 possible)
     };
 };
 
 //Boxen mit Orte füllen
+GVAR(box) apply
 {
     private _loc = _x;
     private _lvl = _loc select 2;
 
-    private _index = lbAdd [IDC_CTRL_LIST_BOX, format["%1", (_loc select 1)]]; // readable name
-    _lb lbSetColor [_index, LB_COLOR_DEFAULT];
+    private _index = lbAdd [DIALOG_BEAM_LB_IDC, format["%1", (_loc select 1)]]; // readable name
+    _lb lbSetColor [_index, DIALOG_BEAM_LB_COLOR_DEFAULT];
 
-    if (_lvl == 1) then { 
-        _lb lbSetColor [_index, LB_COLOR_LVL_ONE];
+    if (_lvl == 1) then
+    {
+        _lb lbSetColor [_index, DIALOG_BEAM_LB_COLOR_LVL_ONE];
     };
 
-    if (_lvl == 2) then { 
-        _lb lbSetColor [_index, LB_COLOR_LVL_TWO];
+    if (_lvl == 2) then
+    {
+        _lb lbSetColor [_index, DIALOG_BEAM_LB_COLOR_LVL_TWO];
     };
 
-} forEach GVAR(box);
+};

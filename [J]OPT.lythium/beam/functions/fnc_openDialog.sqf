@@ -41,6 +41,7 @@ private _cond = (
     !(player getVariable ["ace_dragging_isCarrying", false])
 );
 
-if (_cond) then {
+if (_cond) then 
+{
     createDialog "DialogBeam";
 };

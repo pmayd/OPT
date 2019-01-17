@@ -1,6 +1,9 @@
 /**
-* Author: James
+* Description:
 * open waffenwechsel dialog
+*
+* Author:
+* James
 *
 * Arguments:
 * None
@@ -8,12 +11,29 @@
 * Return Value:
 * None
 *
-* Example:
-* [] call fnc_openDialog.sqf;
+* Server only:
+* no
 *
+* Public:
+* yes
+*
+* Global:
+* no
+*
+* Sideeffects:
+* no
+*
+* Example:
+* [] call EFUNC(waffenwechsel,openDialog);
 */
 #include "script_component.hpp"
 
-if (!dialog) then {
-    createdialog "Dialogwaffenwechseln";
+/* PARAMS */
+
+/* VALIDATION */
+
+/* CODE BODY */
+if (!dialog) then 
+{
+    createdialog QGVAR(Dialog);
 };

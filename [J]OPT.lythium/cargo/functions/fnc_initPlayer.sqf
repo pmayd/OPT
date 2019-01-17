@@ -34,6 +34,6 @@
 
 /* CODE BODY */
 /* set maximal weight values */
-missionNamespace setVariable ["ACE_maxWeightCarry", OPT_CARGO_ACE_maxWeightCarry];
-missionNamespace setVariable ["ACE_maxWeightDrag", OPT_CARGO_ACE_maxWeightDrag];
+missionNamespace setVariable ["ACE_maxWeightCarry", ACE_maxWeightCarry];
+missionNamespace setVariable ["ACE_maxWeightDrag", ACE_maxWeightDrag];
 

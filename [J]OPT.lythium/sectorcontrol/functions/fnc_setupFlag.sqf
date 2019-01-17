@@ -70,7 +70,7 @@ unverwundbar, Logistik-Script aus sowie Actionmeneintrag fuer Spieler
             true,                                                        // showWindow
             true,                                                        // hideOnUse 
             "",                                                          // shortcut
-            SECTORCONTROL_FLAG_CONDITION,                                // condition
+            format["[_target, _this] call %1", QFUNC(captureFlagCondition)],                   // condition
             GVAR(flagDistanceToPlayer)                                   // radius
         ]
     ] remoteExecCall ["addAction", 0, true];

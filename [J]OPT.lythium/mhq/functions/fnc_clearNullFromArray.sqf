@@ -15,7 +15,8 @@
 #include "script_component.hpp"
 
 waitUntil {!isNil QGVAR(HQarray)};
-for "_i" from 0 to 1 step 0 do {
+for "_i" from 0 to 1 step 0 do
+{
     waitUntil {{isNull _x} count GVAR(HQarray) > 0};
     CHHQ_HQarray = CHHQ_HQarray - [objNull];
 };

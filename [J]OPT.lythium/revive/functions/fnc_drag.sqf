@@ -42,11 +42,6 @@ waitUntil {
 	!alive player || player getVariable "FAR_isUnconscious" == 1 || !alive _target || _target getVariable "FAR_isUnconscious" == 0 || !FAR_isDragging || _target getVariable "FAR_isDragged" == 0 
 };
 
-// setze Marker neu
-if (FAR_REVIVE_DOWN_MARKER) then {
-	[_target] remoteExecCall [QFUNC(createMarker), -2, true];
-};
-
 // Handle release action
 FAR_isDragging = false;
 	

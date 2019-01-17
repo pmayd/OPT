@@ -16,9 +16,10 @@
 
 if (!hasInterface) exitWith {};
 
+FAR_medequipArray apply
 {
-	deleteVehicle _x;
-} forEach FAR_medequipArray;
+    deleteVehicle _x;
+};
 
 
 true

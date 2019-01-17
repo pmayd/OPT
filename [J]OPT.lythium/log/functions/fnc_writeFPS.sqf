@@ -23,10 +23,10 @@
 /* VALIDATION */
 
 /* CODE BODY */
-
- private _cat = "FPS";
+private _cat = "FPS";
 private _keys = HASH_GETKEYS(GVAR(fpsHash));
-{   
+_keys apply
+{
     private _key = _x;
     private _val = HASH_GET(GVAR(fpsHash),_key);
 
@@ -39,21 +39,21 @@ private _keys = HASH_GETKEYS(GVAR(fpsHash));
     [_cat, _message] call FUNC(write);
 
     private _sum = 0;
-    {
+    _unitFps apply {
         _sum = _sum + _x;
-    } forEach _unitFps;
+    };
     private _mean = _sum / (count _unitFps);
 
     private _message = format["Single avg. FPS for %1: %2", _key, _mean];
     [_cat, _message] call FUNC(write);
 
     private _sum = 0;
-    {
+    _unitFpsMin apply {
         _sum = _sum + _x;
-    } forEach _unitFpsMin;
+    };
     private _mean = _sum / (count _unitFpsMin);
 
     private _message = format["Single min. FPS for %1: %2", _key, _mean];
     [_cat, _message] call FUNC(write);
 
-} forEach _keys;
+};
