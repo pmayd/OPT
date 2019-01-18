@@ -18,8 +18,6 @@ private _container = [] call FUNC(getRadar);
 private _size = 4500;
 private _markerwest = [];
 private _markerost = [];
-private _objekteDF = 400; //von 350 - kallek
-private _Geschwindigkeitkapp = 400; //von 350 - kallek
 private _Geschwindigkeitfaktor = 5;
 
 for "_i" from 1 to 10 do
@@ -117,7 +115,8 @@ while {true} do
         {
             _Radarring setMarkerAlphaLocal 0;
 
-        } else
+        } 
+		else
         {
 
             if (markerAlpha _Radarring == 0) then
@@ -132,15 +131,14 @@ while {true} do
             private _units = list _RadarZONE;
             private _signalLoss = [false] call FUNC(calcSignalLoss);
 
-            _units apply {
-
-                if ((_x iskindof "AIR") and ((275 - ((getPos _x select 2) * (5 - _signalLoss))) < (speed _x))) then
-                {
-                    _Radaranzeige pushBack _x;
-                };
-
-            //systemChat format ["X:%1 R:%2 B1:%3 B2:%4",_x,_Radaranzeige,(_x iskindof "AIR"),((275 - ((getPos _x select 2)*(5 - _signalLoss)))< (speed _x))];
-            };
+			_Radaranzeige = 
+			[
+			_units,
+			_signalLoss	
+			] 
+			call FUNC(runRadarFormel); 
+			
+			//systemChat format ["R:%1",_Radaranzeige];   
 
             if (count _Radaranzeige > 0) then
             {

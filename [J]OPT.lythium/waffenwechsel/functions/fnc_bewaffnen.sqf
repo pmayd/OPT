@@ -12,6 +12,8 @@
 * 3: <ARRAY>    _magazineVeh
 * 4: <ARRAY>    _pylon
 * 5: <BOOLEAN>  _buyDatalink
+* 5: <BOOLEAN>  _buyDraht
+* 5: <BOOLEAN>  _buyTarnung
 * 6: <ARRAY>    _buyGunMagazine
 * 7: <ARRAY>    _buyGunWeapon
 * 8: <NUMBER>   _bewaffnungPreis
@@ -49,6 +51,8 @@ params
     "_magazineVeh",
     "_pylon",
     "_buyDatalink",
+	"_buyDraht",
+	"_buyTarnung",
     "_buyGunMagazine",
     "_buyGunWeapon",
     "_bewaffnungPreis",
