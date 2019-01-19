@@ -14,6 +14,8 @@
 
 ### Editor
 
+- Neue Basismission auf Altis für Missionsbauer
+
 ## 1.4.14
 
 ### Skript
@@ -22,7 +24,7 @@
 - Flagpositions (für die prologschlacht) -> setupflagpositions.sqf
 - Beampositionen (für die prologschlacht) -> setupbeamorte.sqf
 - Beamfix aus github dev-bereich (sollte in deiner letzten version ja schon mit drin sein)
-- TFAR-settings für kanäle neu gesetzt 
+- TFAR-settings für kanäle neu gesetzt
 - Addonsettings - sind glaub eh in der mission mit drin von daher zu vernachlässigen! check ich dann alles nochmal neu und speicher das profil! wenn dir da ein weg zufliegt, dass als ...settings.sqf direkt in die mission zu packen, wär super!
 - cargosystem für modupdate angepasst -> setcargoandspace.sqf
 - warehouse für modupdate angepasst -> setupvehiclepool.sqf
@@ -61,7 +63,7 @@
 - Fieldrepair: Funktioniert wieder für alle gespawnten Fahrzeuge. Umstieg von servercall auf clientcall
 - Sectorcontrol: Bugfix: HL kann keine Feindflagge mehr wählen
 - Beam: Abschalten der Komponente erlaubt noch Beamen zu Orten mit Level -1 (Marinebasen)
-- Waffenwechsel: Ich habe das Modul etwas umgeschrieben , damit du alles in der fnc_waffenconfig.sqf einstellen kann. du brauchst nicht mehr in der fnc_onLoadDialog.sqf was bearbeiten. Das müssen wir erster machen wenn sich gurndlegen etwas ändert oder neue Fahrzeuge hinzugefügt werden müssen. Die Boxen werden nun dynamisch beschrifte, so das man weis was es für eine box ist. Die Textmeldung ist jetzt wieder lokal und die Offiziere bekommt es Extra Meldung wer was gekauft hat. Und ich habe eine möglichen Fehler durch die Umstellung von James behoben , das das Geld nicht abgezogen wird. Das muss noch mal auf dem Server getestet werden zu Sicherheit. 
+- Waffenwechsel: Ich habe das Modul etwas umgeschrieben , damit du alles in der fnc_waffenconfig.sqf einstellen kann. du brauchst nicht mehr in der fnc_onLoadDialog.sqf was bearbeiten. Das müssen wir erster machen wenn sich gurndlegen etwas ändert oder neue Fahrzeuge hinzugefügt werden müssen. Die Boxen werden nun dynamisch beschrifte, so das man weis was es für eine box ist. Die Textmeldung ist jetzt wieder lokal und die Offiziere bekommt es Extra Meldung wer was gekauft hat. Und ich habe eine möglichen Fehler durch die Umstellung von James behoben , das das Geld nicht abgezogen wird. Das muss noch mal auf dem Server getestet werden zu Sicherheit.
 - Service-Pad: Bugfix: Pad wieder funktionstüchtig. Neue Kosten für Repair und Refuel in den CBA Settings einstellbar. Neue Meldung, dass Motor abgestellt werden muss. Neue Prüfungen für die Aktionmenüeinträge, wird nur noch angezeigt, wenn Fahrzeug beschädigt oder nicht 100% Treibstoff.
 - Beam: Bugfix: Aufruf des Beam-Dialog nicht mehr möglich, wenn Kisten gezogen oder getragen werden
 - Sectorcontrol: Flaggen besitzen jetzt einen Marker für die Minensperrzone (per Skript)
@@ -103,8 +105,8 @@
 - Deadmanswitch: work on [#18](https://github.com/Jamesadamar/OPT/issues/17): Bei Bewusstlosigkeit werden alle Sprengladungen mit Deadmanswitch gezündet und der Trigger aus dem Inventar gelöscht
 - Log: work on [#17](https://github.com/Jamesadamar/OPT/issues/18) Kill-Log überarbeitet, nun mit Angabe des Magazines sowie Anpassung der Log-Zeile auf neuen Standard (vehicle:)(side:)(magazine:)(category:)
 - Log: work on [#17](https://github.com/Jamesadamar/OPT/issues/18) Kill-Log überarbeitet für den Fall Fahrzeugabschuss durch Fahrzeug: Jetzt wird der gesamten Besatzung ein Kill angerechnet.
-- Merge mit Schlachtversion #9, Anpassung an diversen Skripten wie setupbeamorte, setupflagpositons, setupcargosizeandspace 
-- Radar: work on [#27](https://github.com/Jamesadamar/OPT/issues/27) Bugfix im Radar-Modul, jetzt ist es wieder möglich, mit dem Feindradar zu interagieren 
+- Merge mit Schlachtversion #9, Anpassung an diversen Skripten wie setupbeamorte, setupflagpositons, setupcargosizeandspace
+- Radar: work on [#27](https://github.com/Jamesadamar/OPT/issues/27) Bugfix im Radar-Modul, jetzt ist es wieder möglich, mit dem Feindradar zu interagieren
 
 ## 1.4.9
 

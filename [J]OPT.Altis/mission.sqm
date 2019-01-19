@@ -16,11 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-<<<<<<< HEAD
 		nextID=952;
-=======
-		nextID=5550;
->>>>>>> Update-Radar-und-Waffenwechsel
 	};
 	class Camera
 	{
@@ -62,14 +58,7 @@ addons[]=
 	"A3_Structures_F_Bootcamp_Civ_SportsGrounds",
 	"A3_Weapons_F_Acc",
 	"ace_flashsuppressors",
-<<<<<<< HEAD
 	"A3_Weapons_F_Exp",
-=======
-	"A3_Weapons_F",
-	"A3_Weapons_F_Exp",
-	"tfar_handhelds",
-	"A3_Characters_F",
->>>>>>> Update-Radar-und-Waffenwechsel
 	"A3_Weapons_F_Items",
 	"ace_laserpointer",
 	"A3_Weapons_F_Orange",
@@ -178,57 +167,37 @@ class AddonsMetaData
 		};
 		class Item12
 		{
-<<<<<<< HEAD
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item13
-=======
-			className="A3_Weapons_F_Exp";
-			name="Arma 3 Apex - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item14
-		{
-			className="tfar_handhelds";
-			name="tfar_handhelds";
-			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
-		};
-		class Item15
->>>>>>> Update-Radar-und-Waffenwechsel
 		{
 			className="A3_Structures_F_Exp_Infrastructure";
 			name="Arma 3 Apex - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-<<<<<<< HEAD
 		class Item14
 		{
 			className="opt_a3_characters";
 			name="opt_a3_characters";
 		};
 		class Item15
-=======
-		class Item16
->>>>>>> Update-Radar-und-Waffenwechsel
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item16
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-<<<<<<< HEAD
 		class Item17
 		{
 			className="A3_Structures_F_Bootcamp";
@@ -236,8 +205,6 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-=======
->>>>>>> Update-Radar-und-Waffenwechsel
 		class Item18
 		{
 			className="ace_flashsuppressors";
@@ -45407,7 +45374,6 @@ class Mission
 										};
 									};
 								};
-<<<<<<< HEAD
 								class Attribute1
 								{
 									property="pitch";
@@ -45429,388 +45395,6 @@ class Mission
 								};
 								nAttributes=2;
 							};
-=======
-								nAttributes=1;
-							};
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4087.3511,358.10437,822.6709};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3307;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4087.6836,358.35461,828.72119};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3308;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4087.998,358.46548,834.75049};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3309;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item7
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4088.3682,358.55414,840.79346};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3310;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.02355957;
-						};
-						class Item8
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4088.7158,358.56979,846.75244};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3311;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.02355957;
-						};
-						class Item9
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4089.0259,358.54501,852.79932};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3312;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023498535;
-						};
-						class Item10
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4089.4365,358.40726,860.42188};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3313;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023590088;
-						};
-						class Item11
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4094.3857,358.49725,875.56787};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3314;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.013122559;
-						};
-						class Item12
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4096.7036,358.49512,881.06738};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3315;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item13
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4099.0015,358.5015,886.60547};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3316;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item14
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4101.3438,358.50406,892.17676};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3317;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item15
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4103.6914,358.50073,897.78906};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3318;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item16
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4105.9731,358.59119,903.29346};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=1;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3319;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.67929077;
-						};
-						class Item17
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4108.2964,358.60971,908.85352};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=1;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3320;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.62518311;
-						};
-						class Item18
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4110.71,358.68088,914.427};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=1;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3321;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.67068481;
-						};
-						class Item19
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4113.1523,358.14453,919.95386};
-								angles[]={0,1.9710565,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3322;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item20
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4236.2207,361.91336,798.6499};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3323;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item21
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4236.5308,361.93011,804.69727};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3324;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item22
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4236.9414,362.0527,812.31982};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3325;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item23
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4235.4272,360.81421,785.04492};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3326;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.023529053;
-						};
-						class Item24
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={4235.7373,361.27081,791.0918};
-								angles[]={0,1.6303295,0};
-							};
-							side="Empty";
-							flags=5;
-							class Attributes
-							{
-								disableSimulation=1;
-							};
-							id=3327;
-							type="Land_Wall_IndCnc_4_F";
-							atlOffset=0.02355957;
->>>>>>> Update-Radar-und-Waffenwechsel
 						};
 						class Item1
 						{
