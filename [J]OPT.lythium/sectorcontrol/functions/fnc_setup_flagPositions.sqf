@@ -10,9 +10,9 @@ east -> Angriffsziel für NATO
 GVARMAIN(nato_flags_pos) = [
 
 // Basis Nordost - 7
-//	   [17917, 17885, west], // TWOVILLAGES - Kamir - twovillages-kamir
-//	   [19523, 18697, west], // TWOVILLAGES - Farm - twovillages-farm
-//	   [19852, 19876, west], // TWOVILLAGES - Morar - twovillages-morar
+	   [10208, 7592, west], // TWOVILLAGES - Kamir - twovillages-kamir
+	   [8063, 11315, west], // TWOVILLAGES - Farm - twovillages-farm
+	   [10307, 10490, west] // TWOVILLAGES - Morar - twovillages-morar
 
 //	   [17412, 14800, west], // ZARATH - Zentrum - zarath-zentrum
 //	   [17621, 17401, west], // ZARATH - Farm - zarath-farm
@@ -34,9 +34,9 @@ GVARMAIN(nato_flags_pos) = [
 //	   [13755, 9326, west], // PUESTO CROW - Militärstützpunkt - puesto-militär
 //	   [15249, 9919, west], // PUESTO CROW - Altes Bergdorf - puesto-dorf
 
-	   [19683, 7062, west], // AFSHER - Vorort - afsher-vorort
-	   [17152, 7101, west], // AFSHER - Müllhalde - afsher-müll
-	   [16291, 6548, west] // AFSHER - Baustelle - afsher-bau  
+//	   [19683, 7062, west], // AFSHER - Vorort - afsher-vorort
+//	   [17152, 7101, west], // AFSHER - Müllhalde - afsher-müll
+//	   [10205, 7641, west] // AFSHER - Baustelle - afsher-bau  
 	   
 // Basis Südwest - 9
 	   
@@ -115,10 +115,8 @@ GVARMAIN(csat_flags_pos) = [
 // Basis SÜD - 5  
 //	   [13244, 807, east], // BAGDIR - Zentrum - bagdir-zentrum
 //	   [13386, 1436, east], // BAGDIR - Farm - bagdir-farm
-//	   [15965, 3096, east], // BAGDIR - Orfar - bagdir-orfar
-
-//	   [19207, 3243, east], // TERUK - Zentrum - teruk-zentrum
-//	   [20028, 3488, east], // TERUK - Markt - teruk-markt - zeltdächer auf damage false!
+//	   [15965, 3096, east], // BAGDIR - Orfar - bagdir-orfarAAAAA
+//	   [20028, 3488, east], // TERUK - Markt - teruk-markt - zeltdächer auf damage false!AAAAAAAAAAAA
 //	   [17495, 2856, east], // TERUK - Fabrik Offar - teruk-fabrik
 	   
 //	   [10668, 1283, east], // KINDUF - Vorort - kinduf-vorort
@@ -134,9 +132,9 @@ GVARMAIN(csat_flags_pos) = [
 //	   [18058, 6018, east], // AROBSTER - Farm - arobster-farm
 	   
 // Mittelbereich - 4
-	   [11397, 3913, east], // SHEGARA - Farm - shegara-farm
-	   [11525, 5020, east], // SHEGARA - Klärwerk - shegara-klärwerk
-	   [13359, 4859, east] // SHEGARA - Kloster - shegara-kloster
+	   [13439, 11428, east], // SHEGARA - Farm - shegara-farm
+	   [11921, 9321, east], // SHEGARA - Klärwerk - shegara-klärwerk
+	   [11264, 10186, east] // SHEGARA - Kloster - shegara-kloster
 
 //	   [11948, 6141, east], // ORCARIF - Fabrik - orcarif-fabrik
 //	   [11400, 6698, east], // ORCARIF - Stadt - orcarif-stadt	  
