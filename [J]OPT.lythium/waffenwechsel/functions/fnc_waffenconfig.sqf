@@ -189,7 +189,7 @@ GVAR(Gunveheast) =
     ["12Rnd_120mm_APFSDS_shells", "cannon_120mm", 5000, 60000, "12x120mm APFSDS"],  //  30.12x120mm APFSDS
     ["8Rnd_120mm_HE_shells", "cannon_120mm", 3000, 24000, "8x120mm HE"],  //  31.8x120mm HE
     ["8Rnd_120mm_HEAT_MP", "cannon_120mm", 4500, 36000, "8x120mm HEAT"],  //  32.8x120mm HEAT
-    ["24Rnd_125mm_APFSDS", "cannon_125mm", 6000, 144000, "24x125mm APFSDS"],  //  33.20x125mm APFSDS
+    ["24Rnd_125mm_APFSDS", "cannon_125mm", 6000, 144000, "24x125mm APFSDS"],  //  33.24x125mm APFSDS
     ["12Rnd_125mm_HE", "cannon_125mm", 3500, 42000, "12x125mm HE"],  //  34.12x125mm HE
     ["12Rnd_125mm_HEAT", "cannon_125mm", 5000, 60000, "12x125mm HEAT"],  //  35.12x125mm HEAT
     ["16Rnd_125mm_APFSDS", "cannon_125mm", 6000, 96000, "16x125mm APFSDS"],  // 36.16x125mm APFSDS
@@ -295,3 +295,35 @@ GVAR(textsloteast) =
 [
     "OPT_CSAT_Offizier"
 ];
+
+//West Einheiten Loadouts
+//[[Raketen], [Gun], [Drahtkäfig, Tranung], [Datalink]]
+GVAR(Pawneeloadout) = [[4,13], [0], [0, 0], [1]];    
+GVAR(hellcat1loadout) = [[4,13], [0], [0, 0], [1]]; 
+GVAR(Blackfootloadout) = [[4,4,12, 15], [3], [0, 0], [1]];
+GVAR(HunterHMGloadout) = [[], [0], [0, 0], [1]];
+GVAR(HunterGMGloadout) = [[], [10], [0, 0], [1]];
+GVAR(ProwlerHMGloadout) = [[], [0], [0, 0], [1]];
+GVAR(ProwlerATloadout) = [[], [16,16], [0, 0], [1]];
+GVAR(Pantherloadout) = [[], [0, 10], [0, 0], [1]]; 
+GVAR(Marshallloadout) = [[], [3, 12, 13], [0, 0], [1]]; 
+GVAR(Moraloadout) = [[], [3, 14, 15], [0, 0], [1]]; 
+GVAR(Cheetahloadout) = [[], [20, 22], [0, 0], [1]];
+GVAR(SlammerUploadout) = [[], [3,24, 25], [0, 0], [1]];
+GVAR(Scorcherloadout) = [[], [40,40], [0, 0], [1]];
+
+//EAST Einheiten Loadouts
+GVAR(Orcaloadout) = [[4,13], [0], [0, 0], [1]]; 
+GVAR(hellcatloadout)  =  [[4,13], [0], [0, 0], [1]]; 
+GVAR(Kajmanloadout) = [[4,4, 12, 15], [3], [0, 0], [1]];
+GVAR(irifHMGloadout) = [[], [0], [0, 0], [1]];
+GVAR(irifGMGloadout) = [[], [10], [0, 0], [1]];
+GVAR(StriderGMGloadout)  =  [[], [10], [0, 0], [1]];
+GVAR(QuilinHMGloadout) = [[], [0], [0, 0], [1]];
+GVAR(QuilinATloadout) = [[], [16, 16], [0, 0], [1]];
+GVAR(Maridloadout) = [[], [0, 10], [0, 0], [1]]; 
+GVAR(Gorgonloadout) = [[], [3, 12, 13], [0, 0], [1]]; 
+GVAR(Kamyshloadout) = [[], [3,14, 15], [0, 0], [1]]; 
+GVAR(Tigrisloadout) = [[], [20, 22], [0, 0], [1]];
+GVAR(Varsukloadout) = [[], [3,33, 34], [0, 0], [1]];
+GVAR(Sochorloadout) = [[], [40,40], [0, 0], [1]];

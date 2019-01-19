@@ -1,31 +1,29 @@
 /**
 * Funktion Dialog Waffenwechsel
 * 
-* Author: [GNC]Lord-MDB
+* Author:
+* [GNC]Lord-MDB
 *
 * Arguments:
-* keine
-* 
+* None
+*
 * Return Value:
-* keine
-* 
+* None
+*
 * Server only:
-* nein
+* no
 *
 * Public:
-* nein
-* 
-* Global:
-* nein
-* 
-* Sideeffects:
-* keine
-* 
-* Example:
-* 
-* 
-* 
+* no 
 *
+* Global:
+* Yes
+*
+* Sideeffects:
+* yes - Datenübergabe an Log, Budget und CBA Text
+*
+* Example:
+* [] call EFUNC(waffenwechsel,onLoadDialog);
 */
 #include "script_component.hpp"
 
@@ -62,6 +60,7 @@ private _boxArry = [];
 private _side = civilian;
 private _pylon = [];
 private _boxNames = [];
+private _loadouts = [];
 
 if (_vehType in (GVAR(vehclasswestWW) + GVAR(vehclasseastWW))) then 
 {
@@ -73,84 +72,98 @@ if (_vehType in (GVAR(vehclasswestWW) + GVAR(vehclasseastWW))) then
             _boxArry = GVAR(Pawnee);
             _side = west;
             _pylon = ["pylonleft1", "pylonright1"];
+			_loadouts = GVAR(Pawneeloadout);
         };
         case "OPT4_B_Heli_light_03_green_F": 
 		{
             _boxArry = GVAR(hellcat1);
             _side = west;
             _pylon = ["pylonleft1", "pylonright1"];
+			_loadouts = GVAR(hellcat1loadout);
         }; 
         case "OPT4_B_Heli_Attack_01_F": 
 		{
             _boxArry = GVAR(Blackfoot);
             _side = west;
             _pylon = ["pylonleft1","pylonleft3","pylonright1","pylonright3"];
+			_loadouts = GVAR(Blackfootloadout);
         };
         case "OPT4_B_MRAP_01_hmg_F": 
 		{
             _boxArry = GVAR(HunterHMG);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(HunterHMGloadout);
         };
         case "OPT4_B_MRAP_01_gmg_F": 
 		{
             _boxArry = GVAR(HunterGMG);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(HunterGMGloadout);
         };
         case "OPT4_B_MRAP_03_gmg_F": 
 		{
             _boxArry = GVAR(StriderGMG);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(StriderGMGloadout);
         };
         case "OPT_B_T_LSV_01_armed_F": 
 		{
             _boxArry = GVAR(ProwlerHMG);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(ProwlerHMGloadout);
         };
         case "OPT4_B_LSV_01_AT_F": 
 		{
             _boxArry = GVAR(ProwlerAT);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(ProwlerATloadout);
         };
         case "OPT4_B_APC_Tracked_01_rcws_F": 
 		{
             _boxArry = GVAR(Panther);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(Pantherloadout);
         };
         case "OPT4_B_APC_Wheeled_01_cannon_F": 
 		{
             _boxArry = GVAR(Marshall);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(Marshallloadout);
         };
         case "OPT4_B_APC_tracked_03_cannon_F": 
 		{
             _boxArry = GVAR(Mora);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(Moraloadout);
         };
         case "OPT4_B_APC_Tracked_01_AA_F": 
 		{
             _boxArry = GVAR(Cheetah);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(Cheetahloadout);
         };
         case "OPT4_B_MBT_01_TUSK_F": 
 		{
             _boxArry = GVAR(SlammerUp);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(SlammerUploadout);
         };    
         case "OPT4_B_MBT_01_arty_F": 
 		{
             _boxArry = GVAR(Scorcher);
             _side = west;
             _pylon = [];
+			_loadouts = GVAR(Scorcherloadout);
         }; 
         
         // EAST
@@ -159,90 +172,105 @@ if (_vehType in (GVAR(vehclasswestWW) + GVAR(vehclasseastWW))) then
             _boxArry = GVAR(Orca);
             _side = east;
             _pylon = ["pylonleft1", "pylonright1"];
+			_loadouts = GVAR(Orcaloadout);
         };
         case "OPT4_O_Heli_Attack_02_F": 
 		{
             _boxArry = GVAR(Kajman);
             _side = east;
             _pylon = ["pylonleft1","pylonleft2","pylonright1","pylonright2"];
+			_loadouts = GVAR(Kajmanloadout);
         };  
         case "OPT4_O_Heli_light_03_green_F": 
 		{
             _boxArry = GVAR(hellcat);
             _side = east;
             _pylon = ["pylonleft1","pylonright1"];
+			_loadouts = GVAR(hellcatloadout);
         }; 			
         case "OPT4_O_MRAP_02_hmg_F": 
 		{
             _boxArry = GVAR(irifHMG);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(irifHMGloadout);
         };
         case "OPT4_O_MRAP_02_gmg_F": 
 		{
             _boxArry = GVAR(irifGMG);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(irifGMGloadout);
         };
         case "OPT_O_T_LSV_02_armed_F": 
 		{
             _boxArry = GVAR(QuilinHMG);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(QuilinHMGloadout);
         };
         case "OPT4_O_LSV_02_AT_F": 
 		{
             _boxArry = GVAR(QuilinAT);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(QuilinATloadout);
         };
         case "OPT4_O_APC_Wheeled_02_rcws_F": 
 		{
             _boxArry = GVAR(Marid);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(Maridloadout);
         };
         case "OPT4_O_APC_Wheeled_03_cannon_F": 
 		{
             _boxArry = GVAR(Gorgon);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(Gorgonloadout);
         };
         case "OPT4_O_APC_Tracked_02_cannon_F": 
 		{
             _boxArry = GVAR(Kamysh);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(Kamyshloadout);
         };
         case "OPT4_O_APC_Tracked_02_AA_F": 
 		{
             _boxArry = GVAR(Tigris);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(Tigrisloadout);
         };    
         case "OPT4_O_MBT_02_cannon_F": 
 		{
             _boxArry = GVAR(Varsuk);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(Varsukloadout);
         };
         case "OPT4_O_MBT_02_arty_F": 
 		{
             _boxArry = GVAR(Sochor);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(Sochorloadout);
         }; 
         case "OPT4_O_T_MBT_02_arty_ghex_F": 
 		{
             _boxArry = GVAR(Sochor);
             _side = east;
             _pylon = [];
+			_loadouts = GVAR(Sochorloadout);
         }; 
         
         default 
 		{
             _boxArry = [];
             _side = civilian;
+			_loadouts = [];
         };
     };
 };
@@ -572,7 +600,43 @@ else
     };
 	
     ctrlSetText [10001, format["$:%1", _bewaffnungpreis]];	
-};        
+};     
+
+// Abfrage Laden Loadouts
+
+if (GVAR(WWloadout)) then  
+{ 
+	if (_veh isKindOf "Air") then 
+	{
+		//Gun
+		lbSetCurSel [10010, (_loadouts select 1) select 0]; 
+		//Raketten
+		lbSetCurSel [10012, (_loadouts select 0) select 0]; 
+		lbSetCurSel [10013, (_loadouts select 0) select 1]; 
+		
+		if (count (_loadouts select 0) > 2) then 
+		{
+			lbSetCurSel [10014, (_loadouts select 0) select 2]; 
+			lbSetCurSel [10015, (_loadouts select 0) select 3]; 
+		};
+		//Datalink	
+		lbSetCurSel [10016, (_loadouts select 3) select 0];	
+		
+	}
+	else
+	{
+		//Gun
+		for "_i" from 0 to (count (_loadouts select 1)) do 
+		{
+			lbSetCurSel [10010+_i, (_loadouts select 1) select _i]; 
+			sleep 0.001;
+		};
+		
+		//Datalink	
+		lbSetCurSel [10016, (_loadouts select 3) select 0];	
+		
+	};
+};
     
 //Dynamische Kostenanzeige    
 OPTWWbuygo = 0;    
@@ -894,14 +958,17 @@ if (OPTWWbuygo == 1) then
         _magazineVeh,
         _pylon,
         _buyDatalink,
+		_buyDraht,
+		_buyTarnung,
         _buygunmagazine,
         _buygunweapon,
         _bewaffnungpreis,
         _vehDisplayName,
         _buyrakmagazine,
         _buykontrolle,
-        _wert
-    ] call FUNC(bewaffnen);  
+        _wert		
+    ] 
+	call FUNC(bewaffnen);  
 };    
     
 if (OPTWWlostgo == 1) then 
@@ -915,7 +982,8 @@ if (OPTWWlostgo == 1) then
             _pylon,
             _bewaffnungpreis,
             _vehDisplayName
-        ] call FUNC(entwaffnen);    
+        ] 
+		call FUNC(entwaffnen);    
     }; 
 };
     

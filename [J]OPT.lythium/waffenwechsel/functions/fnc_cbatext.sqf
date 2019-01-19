@@ -3,7 +3,7 @@
 * send message about a unit's actions to specific players
 *
 * Author:
-* Lord
+* [GNC]Lord-MDB
 *
 * Arguments:
 * 0: <OBJECT> unit that has done the action 
