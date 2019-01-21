@@ -24,7 +24,7 @@
 * no
 *
 * Example:
-* [cursorObject] call EFUNC(common,unFlip);
+* [cursorObject] call EFUNC(flip,unFlip);
 */
 #include "script_component.hpp"
 
@@ -39,9 +39,9 @@ if (_veh isEqualTo objNull) exitWith{};
 
 /* CODE BODY */
 _veh setVectorUp [0,0,1];
-_veh setPosATL 
+_veh setPosATL
 [
-    (getPosATL _veh) select 0, 
-    (getPosATL _veh) select 1, 
+    (getPosATL _veh) select 0,
+    (getPosATL _veh) select 1,
     0.3
 ];
