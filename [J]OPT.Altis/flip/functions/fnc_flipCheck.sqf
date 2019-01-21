@@ -16,7 +16,7 @@
 * no
 *
 * Public:
-* no - should be called via condition of addAction
+* no - should be called via condition check of addAction command
 *
 * Global:
 * no
@@ -25,12 +25,12 @@
 * no
 *
 * Example:
-* [vec, unit] call EFUNC(common,flipCheck);
+* [vec, unit] call EFUNC(flip,flipCheck);
 */
 #include "script_component.hpp"
 
 /* PARAMS */
-params 
+params
 [
     ["_target", objNull, [objNull], 1],
     ["_caller", objNull, [objNull], 1]
@@ -41,17 +41,17 @@ private _ret = false;
 if (_target isEqualTo objNull or _caller isEqualTo objNull) exitWith{_ret};
 
 /* CODE BODY */
-// check speed of vehicle, distance between target and caller, type and status of vehicle and facing dir 
-private _cond = 
+// check speed of vehicle, distance between target and caller, type and status of vehicle and facing dir
+private _cond =
 (
-    (speed _target < 1) and 
-    ((_target distance _caller) < 10) and 
-    (_target isKindOf 'landVehicle') and 
-    (alive _target) and 
+    (speed _target < 1) and
+    (crew _target isEqualTo []) and
+    ((_target distance _caller) < 10) and
+    (alive _target) and
     ((vectorUp _target) select 2 < 0.4)
 );
 
-if (_cond) then 
+if (_cond) then
 {
     _ret = true;
 };
