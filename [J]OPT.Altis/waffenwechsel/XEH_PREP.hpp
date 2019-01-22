@@ -9,3 +9,4 @@ PREP(onLoadDialog);
 PREP(openDialog);
 PREP(postInit);
 PREP(waffenconfig);
+PREP(waffenMagazinFilter);
