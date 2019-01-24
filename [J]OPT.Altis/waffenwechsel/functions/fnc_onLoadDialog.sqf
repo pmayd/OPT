@@ -270,6 +270,7 @@ if (_vehType in (GVAR(vehclasswestWW) + GVAR(vehclasseastWW))) then
 		{
             _boxArry = [];
             _side = civilian;
+			_pylon = [];
 			_loadouts = [];
         };
     };
@@ -278,13 +279,19 @@ if (_vehType in (GVAR(vehclasswestWW) + GVAR(vehclasseastWW))) then
 //Schütze aussteigen
 (gunner _veh) action ["getout", _veh];
 	
+//auslesen und filtern
+private _waffenMagazinArry  = [];
+private _weaponsVeh =[];
+private _magazineVeh=[];
+
+_waffenMagazinArry = [_veh] call FUNC(waffenMagazinFilter);	
+
+_weaponsVeh =_waffenMagazinArry select 0;
+_magazineVeh = _waffenMagazinArry select 1;
+	
 //Festellung Bewaffnung
-private _magazineVeh = magazines _veh;
-private _weaponsVeh = weapons _veh;
-private _magazineVehArryNew  = [];
-
 _magazineVehArryNew = [_veh] call FUNC(auslesenMagazine);
-
+       
 // Darstellung Magazine
 private _magazineVehCount = count _magazineVehArryNew; 
 
@@ -604,40 +611,43 @@ else
 
 // Abfrage Laden Loadouts
 
-if (GVAR(WWloadout)) then  
-{ 
-	if (_veh isKindOf "Air") then 
-	{
-		//Gun
-		lbSetCurSel [10010, (_loadouts select 1) select 0]; 
-		//Raketten
-		lbSetCurSel [10012, (_loadouts select 0) select 0]; 
-		lbSetCurSel [10013, (_loadouts select 0) select 1]; 
-		
-		if (count (_loadouts select 0) > 2) then 
+if (_vehType in (GVAR(vehclasswestWW) + GVAR(vehclasseastWW))) then 
+{
+	if (GVAR(WWloadout)) then  
+	{ 
+		if (_veh isKindOf "Air") then 
 		{
-			lbSetCurSel [10014, (_loadouts select 0) select 2]; 
-			lbSetCurSel [10015, (_loadouts select 0) select 3]; 
-		};
-		//Datalink	
-		lbSetCurSel [10016, (_loadouts select 3) select 0];	
-		
-	}
-	else
-	{
-		//Gun
-		for "_i" from 0 to (count (_loadouts select 1)) do 
+			//Gun
+			lbSetCurSel [10010, (_loadouts select 1) select 0]; 
+			//Raketten
+			lbSetCurSel [10012, (_loadouts select 0) select 0]; 
+			lbSetCurSel [10013, (_loadouts select 0) select 1]; 
+			
+			if (count (_loadouts select 0) > 2) then 
+			{
+				lbSetCurSel [10014, (_loadouts select 0) select 2]; 
+				lbSetCurSel [10015, (_loadouts select 0) select 3]; 
+			};
+			//Datalink	
+			lbSetCurSel [10016, (_loadouts select 3) select 0];	
+			
+		}
+		else
 		{
-			lbSetCurSel [10010+_i, (_loadouts select 1) select _i]; 
-			sleep 0.001;
+			//Gun
+			for "_i" from 0 to (count (_loadouts select 1)) do 
+			{
+				lbSetCurSel [10010+_i, (_loadouts select 1) select _i]; 
+				sleep 0.001;
+			};
+			
+			//Datalink	
+			lbSetCurSel [10016, (_loadouts select 3) select 0];	
+			
 		};
-		
-		//Datalink	
-		lbSetCurSel [10016, (_loadouts select 3) select 0];	
-		
 	};
-};
-    
+};  
+
 //Dynamische Kostenanzeige    
 OPTWWbuygo = 0;    
 OPTWWlostgo = 0;

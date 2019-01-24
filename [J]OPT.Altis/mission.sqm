@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=952;
+		nextID=1028;
 	};
 	class Camera
 	{
@@ -51,6 +51,7 @@ addons[]=
 	"A3_Structures_F_Exp_Infrastructure_Pavements",
 	"opt_a3_characters",
 	"A3_Weapons_F",
+	"tfar_handhelds",
 	"A3_Characters_F",
 	"A3_Structures_F_Heli_Ind_Cargo",
 	"A3_Structures_F_Ind_AirPort",
@@ -68,6 +69,7 @@ addons[]=
 	"A3_Weapons_F_LongRangeRifles_M320",
 	"A3_Weapons_F_Mark_LongRangeRifles_M320",
 	"A3_Characters_F_Exp",
+	"ace_reload",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Weapons_F_Tank_Launchers_MRAWS",
 	"A3_Weapons_F_Tank",
@@ -82,7 +84,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=29;
+		items=32;
 		class Item0
 		{
 			className="A3_Structures_F";
@@ -193,96 +195,109 @@ class AddonsMetaData
 		};
 		class Item16
 		{
+			className="tfar_handhelds";
+			name="tfar_handhelds";
+			url="https://github.com/michail-nikolaev/task-force-arma-3-radio";
+		};
+		class Item17
+		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item18
 		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item19
 		{
 			className="ace_flashsuppressors";
 			name="ACE3 - Flash Suppressors";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item19
+		class Item20
 		{
 			className="A3_Weapons_F_Exp";
 			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item21
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item21
+		class Item22
 		{
 			className="A3_Weapons_F_Orange";
 			name="Arma 3 Orange - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item23
 		{
 			className="ace_huntir";
 			name="ACE3 - HuntIR";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item23
+		class Item24
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item25
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item26
+		{
+			className="ace_reload";
+			name="ACE3 - Reload";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item27
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item28
 		{
 			className="A3_Weapons_F_Tank";
 			name="Arma 3 Tank - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item29
 		{
 			className="A3_Drones_F";
 			name="Arma 3 Beta - Drones";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item30
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item29
+		class Item31
 		{
 			className="A3_Characters_F_Tacops";
 			name="Arma 3 Tac-Ops - Characters and Clothing";
@@ -1387,7 +1402,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_luftwaffe.paa";
+													value="assets\paa\schild_luftwaffe.paa";
 												};
 											};
 										};
@@ -1447,7 +1462,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_luftwaffe.paa";
+													value="assets\paa\schild_luftwaffe.paa";
 												};
 											};
 										};
@@ -1507,7 +1522,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_luftwaffe.paa";
+													value="assets\paa\schild_luftwaffe.paa";
 												};
 											};
 										};
@@ -1567,7 +1582,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_verkaufen.paa";
+													value="assets\paa\schild_verkaufen.paa";
 												};
 											};
 										};
@@ -1627,7 +1642,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_verkaufen.paa";
+													value="assets\paa\schild_verkaufen.paa";
 												};
 											};
 										};
@@ -1687,7 +1702,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_verkaufen.paa";
+													value="assets\paa\schild_verkaufen.paa";
 												};
 											};
 										};
@@ -1747,7 +1762,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_panzer.paa";
+													value="assets\paa\schild_panzer.paa";
 												};
 											};
 										};
@@ -1807,7 +1822,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_panzer.paa";
+													value="assets\paa\schild_panzer.paa";
 												};
 											};
 										};
@@ -1867,7 +1882,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_panzer.paa";
+													value="assets\paa\schild_panzer.paa";
 												};
 											};
 										};
@@ -1927,7 +1942,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_radar.paa";
+													value="assets\paa\schild_radar.paa";
 												};
 											};
 										};
@@ -1987,7 +2002,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_radar.paa";
+													value="assets\paa\schild_radar.paa";
 												};
 											};
 										};
@@ -2047,7 +2062,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_radar.paa";
+													value="assets\paa\schild_radar.paa";
 												};
 											};
 										};
@@ -2107,7 +2122,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_nachschub.paa";
+													value="assets\paa\schild_nachschub.paa";
 												};
 											};
 										};
@@ -2167,7 +2182,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_nachschub.paa";
+													value="assets\paa\schild_nachschub.paa";
 												};
 											};
 										};
@@ -2227,7 +2242,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_nachschub.paa";
+													value="assets\paa\schild_nachschub.paa";
 												};
 											};
 										};
@@ -2286,7 +2301,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_fahrzeuge.paa";
+													value="assets\paa\schild_fahrzeuge.paa";
 												};
 											};
 										};
@@ -2345,7 +2360,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_fahrzeuge.paa";
+													value="assets\paa\schild_fahrzeuge.paa";
 												};
 											};
 										};
@@ -2404,7 +2419,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_fahrzeuge.paa";
+													value="assets\paa\schild_fahrzeuge.paa";
 												};
 											};
 										};
@@ -2464,7 +2479,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -2524,7 +2539,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -2584,7 +2599,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -2644,7 +2659,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_service.paa";
+													value="assets\paa\schild_service.paa";
 												};
 											};
 										};
@@ -2704,7 +2719,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_service.paa";
+													value="assets\paa\schild_service.paa";
 												};
 											};
 										};
@@ -2764,7 +2779,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_service.paa";
+													value="assets\paa\schild_service.paa";
 												};
 											};
 										};
@@ -2824,7 +2839,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -2884,7 +2899,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -2944,7 +2959,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -3004,7 +3019,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -3064,7 +3079,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -3124,7 +3139,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -3184,7 +3199,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -3244,7 +3259,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -3304,7 +3319,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -3364,7 +3379,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -3424,7 +3439,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -3484,7 +3499,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -3525,7 +3540,7 @@ class Mission
 									};
 									id=1339;
 									type="Land_Billboard_F";
-									atlOffset=0.1099999;
+									atlOffset=0.10999966;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -7689,7 +7704,7 @@ class Mission
 									type="rectangle";
 									a=0.30000001;
 									b=1.5;
-									angle=225.10907;
+									angle=225.10904;
 									id=709;
 									atlOffset=0.017092228;
 								};
@@ -10501,7 +10516,7 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=817;
-									atlOffset=0.1099999;
+									atlOffset=185.97;
 								};
 								class Item1
 								{
@@ -10635,7 +10650,7 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=819;
-									atlOffset=0.10994148;
+									atlOffset=185.97;
 								};
 								class Item2
 								{
@@ -10769,7 +10784,7 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=821;
-									atlOffset=0.10994148;
+									atlOffset=185.97;
 								};
 								class Item3
 								{
@@ -10903,7 +10918,7 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=823;
-									atlOffset=0.10994148;
+									atlOffset=185.97;
 								};
 								class Item4
 								{
@@ -11047,15 +11062,15 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=825;
-									atlOffset=0.1099999;
+									atlOffset=185.97;
 								};
 							};
 							id=816;
-							atlOffset=0.10997438;
+							atlOffset=185.97;
 						};
 					};
 					id=1;
-					atlOffset=0.29880166;
+					atlOffset=-43.694275;
 				};
 				class Item1
 				{
@@ -11102,7 +11117,7 @@ class Mission
 				};
 			};
 			id=0;
-			atlOffset=0.038498878;
+			atlOffset=-11.443501;
 		};
 		class Item1
 		{
@@ -15702,7 +15717,7 @@ class Mission
 									type="rectangle";
 									a=0.30000001;
 									b=1.5;
-									angle=112.67313;
+									angle=112.67311;
 									id=747;
 									atlOffset=-0.032529354;
 								};
@@ -17380,7 +17395,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_luftwaffe.paa";
+													value="assets\paa\schild_luftwaffe.paa";
 												};
 											};
 										};
@@ -17440,7 +17455,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_luftwaffe.paa";
+													value="assets\paa\schild_luftwaffe.paa";
 												};
 											};
 										};
@@ -17500,7 +17515,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_luftwaffe.paa";
+													value="assets\paa\schild_luftwaffe.paa";
 												};
 											};
 										};
@@ -17560,7 +17575,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_verkaufen.paa";
+													value="assets\paa\schild_verkaufen.paa";
 												};
 											};
 										};
@@ -17620,7 +17635,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_verkaufen.paa";
+													value="assets\paa\schild_verkaufen.paa";
 												};
 											};
 										};
@@ -17680,7 +17695,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_verkaufen.paa";
+													value="assets\paa\schild_verkaufen.paa";
 												};
 											};
 										};
@@ -17740,7 +17755,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_panzer.paa";
+													value="assets\paa\schild_panzer.paa";
 												};
 											};
 										};
@@ -17800,7 +17815,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_panzer.paa";
+													value="assets\paa\schild_panzer.paa";
 												};
 											};
 										};
@@ -17860,7 +17875,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_panzer.paa";
+													value="assets\paa\schild_panzer.paa";
 												};
 											};
 										};
@@ -17920,7 +17935,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_radar.paa";
+													value="assets\paa\schild_radar.paa";
 												};
 											};
 										};
@@ -17980,7 +17995,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_radar.paa";
+													value="assets\paa\schild_radar.paa";
 												};
 											};
 										};
@@ -18040,7 +18055,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_radar.paa";
+													value="assets\paa\schild_radar.paa";
 												};
 											};
 										};
@@ -18100,7 +18115,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_nachschub.paa";
+													value="assets\paa\schild_nachschub.paa";
 												};
 											};
 										};
@@ -18160,7 +18175,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_nachschub.paa";
+													value="assets\paa\schild_nachschub.paa";
 												};
 											};
 										};
@@ -18220,7 +18235,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_nachschub.paa";
+													value="assets\paa\schild_nachschub.paa";
 												};
 											};
 										};
@@ -18280,7 +18295,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_fahrzeuge.paa";
+													value="assets\paa\schild_fahrzeuge.paa";
 												};
 											};
 										};
@@ -18340,7 +18355,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_fahrzeuge.paa";
+													value="assets\paa\schild_fahrzeuge.paa";
 												};
 											};
 										};
@@ -18400,7 +18415,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_fahrzeuge.paa";
+													value="assets\paa\schild_fahrzeuge.paa";
 												};
 											};
 										};
@@ -18460,7 +18475,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -18520,7 +18535,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -18580,7 +18595,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -18640,7 +18655,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_service.paa";
+													value="assets\paa\schild_service.paa";
 												};
 											};
 										};
@@ -18700,7 +18715,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_service.paa";
+													value="assets\paa\schild_service.paa";
 												};
 											};
 										};
@@ -18760,7 +18775,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_service.paa";
+													value="assets\paa\schild_service.paa";
 												};
 											};
 										};
@@ -18820,7 +18835,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -18880,7 +18895,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -18940,7 +18955,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -19000,7 +19015,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -19060,7 +19075,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -19120,7 +19135,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -19180,7 +19195,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -19240,7 +19255,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -19300,7 +19315,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_muni.paa";
+													value="assets\paa\schild_muni.paa";
 												};
 											};
 										};
@@ -19360,7 +19375,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -19420,7 +19435,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -19480,7 +19495,7 @@ class Mission
 															"STRING"
 														};
 													};
-													value="ingame_bilder\schild_teleport.paa";
+													value="assets\paa\schild_teleport.paa";
 												};
 											};
 										};
@@ -19570,7 +19585,7 @@ class Mission
 									class PositionInfo
 									{
 										position[]={23779.016,4.933187,18808.525};
-										angles[]={0,4.6652865,-0};
+										angles[]={0,4.6652865,0};
 									};
 									side="Empty";
 									flags=5;
@@ -21158,7 +21173,7 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=800;
-									atlOffset=0.10949993;
+									atlOffset=185.97;
 								};
 								class Item1
 								{
@@ -21292,7 +21307,7 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=803;
-									atlOffset=0.10957623;
+									atlOffset=185.97;
 								};
 								class Item2
 								{
@@ -21407,7 +21422,7 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=805;
-									atlOffset=1.4781952e-005;
+									atlOffset=185.97;
 								};
 								class Item3
 								{
@@ -21541,7 +21556,7 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=807;
-									atlOffset=0.10975552;
+									atlOffset=185.97;
 								};
 								class Item4
 								{
@@ -21666,11 +21681,11 @@ class Mission
 										speedMode="LIMITED";
 									};
 									id=812;
-									atlOffset=0.10978603;
+									atlOffset=185.97;
 								};
 							};
 							id=814;
-							atlOffset=0.10977602;
+							atlOffset=185.97;
 						};
 						class Item12
 						{
@@ -21885,7 +21900,7 @@ class Mission
 						};
 					};
 					id=311;
-					atlOffset=0.13767529;
+					atlOffset=-11.559929;
 				};
 				class Item1
 				{
@@ -21931,7 +21946,7 @@ class Mission
 				};
 			};
 			id=310;
-			atlOffset=0.068837881;
+			atlOffset=-30.29866;
 		};
 		class Item2
 		{
@@ -51819,7 +51834,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="ingame_bilder\schild_muni.paa";
+									value="assets\paa\schild_muni.paa";
 								};
 							};
 						};
@@ -51878,7 +51893,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="ingame_bilder\schild_muni.paa";
+									value="assets\paa\schild_muni.paa";
 								};
 							};
 						};
@@ -51937,7 +51952,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="ingame_bilder\schild_muni.paa";
+									value="assets\paa\schild_muni.paa";
 								};
 							};
 						};
@@ -52056,7 +52071,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="ingame_bilder\schild_muni.paa";
+									value="assets\paa\schild_muni.paa";
 								};
 							};
 						};
@@ -52115,7 +52130,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="ingame_bilder\schild_muni.paa";
+									value="assets\paa\schild_muni.paa";
 								};
 							};
 						};
@@ -52174,7 +52189,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="ingame_bilder\schild_muni.paa";
+									value="assets\paa\schild_muni.paa";
 								};
 							};
 						};
