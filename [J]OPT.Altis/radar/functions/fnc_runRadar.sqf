@@ -15,7 +15,7 @@
 #include "script_component.hpp"
 
 private _container = [] call FUNC(getRadar);
-private _size = 4500;
+private _size = GVAR(radarDruchmesser);
 private _markerwest = [];
 private _markerost = [];
 private _Geschwindigkeitfaktor = 5;

@@ -85,6 +85,8 @@ if (_side == civilian) then
 } 
 else 
 {
+	//systemchat format ["BewaffAV:%1 BM:%2",_magazineVeh,_buyGunMagazine];
+
     {_veh removeWeapon _x} forEach _weaponsVeh;    
     {_veh removeMagazine _x} forEach _magazineVeh;    
         

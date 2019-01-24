@@ -39,32 +39,6 @@ params
 if (_veh isEqualTo objNull) exitWith{[]};
 
 /* CODE BODY */
-private _magazineVeh = magazines _veh;
-private _weaponsVeh = weapons _veh;
-
-_weaponsVeh deleteAt (_weaponsVeh find "OPT_CMFlareLauncher");
-_weaponsVeh deleteAt (_weaponsVeh find "OPT_CMFlareLauncher_Triples");
-_weaponsVeh = _weaponsVeh select {_x != ""};
-
-private _magazineFilter = 
-[
-    "96Rnd_CMFlare_Chaff_Magazine",
-    "120Rnd_CMFlare_Chaff_Magazine",
-    "240Rnd_CMFlare_Chaff_Magazine",
-    "60Rnd_CMFlare_Chaff_Magazine",
-    "192Rnd_CMFlare_Chaff_Magazine",
-    "168Rnd_CMFlare_Chaff_Magazine",
-    "300Rnd_CMFlare_Chaff_Magazine",
-    "OPT_12Rnd_CMFlare_Chaff_Magazine",
-    "OPT_20Rnd_CMFlare_Chaff_Magazine",
-    "OPT_30Rnd_CMFlare_Chaff_Magazine"
-];
-
-{
-    _magazineVeh deleteAt (_magazineVeh find _x);                
-} forEach _magazineFilter;
-
-_magazineVeh = _magazineVeh select {_x != ""};
 
 private _magazineVehArry = magazinesAmmo _veh;
 private _magazineVehPylon = [];
@@ -84,7 +58,7 @@ if (count _magazineVehPylonArry > 0) then
         //systemchat format ["MP:%1 I:%2 MN:%3 AP:%4",_magazineVehPylon,_i,(_magazineVehPylonArry select _i-1),(_veh ammoOnPylon (_pylon select _i-1))];
         sleep 0.001;
     };    
-};    
+};   
     
 //kontrolle Bewaffnung Auslesung
 private _magazineFilter2 = 
@@ -109,6 +83,9 @@ private _magazineFilter2 =
     _magazineVehArry deleteAt (_magazineVehArry find _x);                
 } forEach _magazineVehPylon;
 
-_magazineVehArryNew = _magazineVehArry + _magazineVehPylon;    
+private _magazineVehArryNew  = [];
+_magazineVehArryNew = _magazineVehArry + _magazineVehPylon;   
 
+//systemchat format ["MAV:%1 MP:%2",_magazineVehArry,_magazineVehPylon];
+   
 _magazineVehArryNew
