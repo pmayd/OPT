@@ -12,6 +12,7 @@
 - Waffenwechsel: Komponente wurde überarbeitet und in einzelne Funktionen aufgeteilt. Einige Fehler aus dem Forum behoben.
 - Kritischer Bugfix #45: Fahne kann nicht mehr länger per Hotkey aus der Entfernung gezogen werden
 - Flip: Bugfix sowie Refactoring in der Komponente Flip. Fahrzeuge und Flugzeuge können wieder umgedreht werden, falls sie schief liegen oder umgekippt sind
+- Waffenwechsel: Weitere Bugfixes durch Lord
 
 ### Editor
 
