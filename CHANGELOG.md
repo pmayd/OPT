@@ -13,6 +13,11 @@
 - Kritischer Bugfix #45: Fahne kann nicht mehr länger per Hotkey aus der Entfernung gezogen werden
 - Flip: Bugfix #49 sowie Refactoring in der Komponente Flip. Fahrzeuge und Flugzeuge können wieder umgedreht werden, falls sie schief liegen oder umgekippt sind
 - Waffenwechsel: #51 Weitere Bugfixes durch Lord
+    - Bei einigen Fahrzeuge wurde beim Waffenwechselsystem Loadout noch einigen falsches Magazin geladen.
+    - Heli verlieren nicht mehr ihre Flears bei bewaffnen
+    - Nicht erkannte  Fahrzeuge erzeuge eine Fehlermeldung
+- Radar: Neue Formel und CBA Settings
+
 
 ### Editor
 
