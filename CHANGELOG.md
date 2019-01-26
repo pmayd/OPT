@@ -21,6 +21,7 @@
 ### Editor
 
 - Neue Basismission auf Altis für Missionsbauer
+- Änderungen an den Basen von oppa
 
 ## 1.4.14
 
