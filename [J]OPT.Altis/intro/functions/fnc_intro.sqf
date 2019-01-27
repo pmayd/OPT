@@ -128,12 +128,20 @@ allGroups apply
         titleCut ["", "BLACK FADED", 1];
         sleep 1;
         titleCut ["", "BLACK IN", 1];
-        titleText [format["%1", groupID _x], "Plain Down", 0.5];
         sleep 2;
 
         (units _x) apply {
-            titleText [format["%1", UNIT_NAME(_x)], "Plain Down", 1];
-            _cam camSetTarget (leader _x);
+            private _side = ["CSAT","NATO"] select (UNIT_SIDE(_x) isEqualTo west);
+            [
+                format["%1 - %2<br/>%3", UNIT_NAME(_x), groupID (group _x), _side],
+                0,
+                0,
+                2,
+                0.5,
+                -0.1,
+                9999
+            ] spawn bis_fnc_dynamicText;
+            _cam camSetTarget _x;
             _cam camSetRelPos [0, 3, 2];
             _cam camCommit 1;
             waitUntil {camCommitted _cam};
