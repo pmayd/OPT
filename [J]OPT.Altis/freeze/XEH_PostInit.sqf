@@ -5,7 +5,8 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
-if (isServer) then {
-    estimatedTimeLeft (GVAR(playTime) * 60 - TIME_ELAPSED);
-    [] spawn FUNC(startClock);
-};
+if (!GVAR(on)) exitWith{};
+
+if (hasInterface) then {
+    [] spawn FUNC(freeze);
+}

@@ -1,6 +1,9 @@
 /**
-* Author: James
-* start intro
+* Description:
+* play intro
+*
+* Author:
+* James
 *
 * Arguments:
 * None
@@ -8,15 +11,20 @@
 * Return Value:
 * None
 *
-* Example:
-* [] spawn fnc_intro.sqf;
-*
 * Server only:
 * no
 *
 * Public:
-* yes
+* no - should be called only at mission start by server
 *
+* Global:
+* no
+*
+* Sideeffects:
+* cinematic effects
+*
+* Example:
+* [] call EFUNC(intro,intro);
 */
 #include "script_component.hpp"
 
@@ -26,6 +34,7 @@ if (!canSuspend) exitWith{};
 // wait until player is initializied
 waitUntil {!isNull player && !((findDisplay 46) isEqualTo displayNull)};
 
+/* SETUP */
 enableRadio false;
 EnableEnvironment false;
 allUnits apply
@@ -46,6 +55,7 @@ sleep 2;
 "dynamicBlur" ppEffectCommit 8;
 waitUntil{ppEffectCommitted "dynamicBlur"};
 
+/* INTRO */
 sleep 2;
 [
     parseText format
@@ -62,7 +72,6 @@ sleep 2;
 ] spawn BIS_fnc_textTiles;
 
 schrift0 = ["<t size='1.2'>" + "Habt alle viel Spaß! Spielt hart, aber fair!"+"</t>",0,0.8,3,4,0,3010] spawn bis_fnc_dynamicText;
-
 sleep 8;
 
 titlecut["","BLACK OUT",3];
@@ -78,61 +87,73 @@ for "_i" from 30 to 44 do
 {
     _quotes pushBack format["STR_A3_Campaign_Quote_%1", _i];
 };
-_quote = localize (_quotes select (floor random (count _quotes)));
+private _quote = localize (_quotes select (floor random (count _quotes)));
 _quote = _quote splitString "-";
 
-private _txt = format["<t size='1.3' align='center'>%1</t><br/><t size='1.2' align='right' color='#cccccc'>%2</t>", _quote select 0, _quote select 1];
+private _txt = format
+[
+    "<t size='1.3' align='center'>%1</t><br/><t size='1.2' align='right' color='#cccccc'>%2</t>",
+    _quote select 0,
+    _quote select 1
+];
 [_txt,0,0,8,3,0,3010] spawn bis_fnc_dynamicText;
 sleep 13;
 
-// Liste alle Spieler beider Seiten
-private _playerNATO = [];
-private _playerCSAT = [];
-(playableUnits -  (entities "HeadlessClient_F")) apply {
-    _name = UNIT_NAME(_x);
-
-    if (UNIT_SIDE(_x) isEqualTo west) then {
-        _playerNATO pushBack _name;
-    };
-
-    if (UNIT_SIDE(_x) isEqualTo east) then {
-        _playerCSAT pushBack _name;
-    };
-};
-
+// number of players on each side
 _txt = format["<t size='1' align='center'> <br/>
 Zu dieser Schlacht haben sich zusammengefunden: <br/>
 <t size='1.5' color='#0000ff'>NATO %1</t> vs <t size='1.5' color='#ff0000'>CSAT %2</t></t><br/><t size='0.7'>", playersNumber west, playersNumber east];
 
-private _playerNames = [];
-private _natoIsMore = [false, true] select (count _playerNATO > count _playerCSAT);
-private _min = ((count _playerCSAT) min (count _playerNATO));
-private _max = ((count _playerCSAT) max (count _playerNATO));
-for "_i" from 0 to _min - 1 do
-{
-    _playerNames pushBack [_playerNATO select _i, _playerCSAT select _i];
-};
-
-for "_i" from _min to _max - 1 do
-{
-    if (_natoIsMore) then {
-        _playerNames pushBack [_playerNATO select _i, ""];
-    } else {
-        _playerNames pushBack ["", _playerCSAT select _i];
-    };
-};
-
-_playerNames apply {
-    _txt = format["%1 <t color='#0000ff'>%2</t> -- <t color='#ff0000'>%3</t><br/>", _txt, _x select 0, _x select 1];
-};
-_txt = format["%1</t>", _txt];
-
 [_txt,0,0,14,2,-0.5,3010] spawn bis_fnc_dynamicText;
-sleep 25;
+sleep 8;
 
-titlecut ["","BLACK IN",1];
-sleep 0.1;
 "dynamicBlur" ppEffectEnable false;
+
+private _cam = "camera" camCreate [0,0,0];
+_cam cameraEffect ["internal", "back"];
+_cam camPrepareFOV 0.750;
+_cam camCommit 0;
+
+/* SHOW ALL GROUPS */
+allGroups apply
+{
+
+    if (isPlayer (leader _x)) then
+    {
+        _cam camSetTarget (leader _x);
+        _cam camSetRelPos [0, 8, 4];
+        _cam camCommit 0;
+        waitUntil {camCommitted _cam};
+
+        titleCut ["", "BLACK FADED", 1];
+        sleep 1;
+        titleCut ["", "BLACK IN", 1];
+        titleText [format["%1", groupID _x], "Plain Down", 0.5];
+        sleep 2;
+
+        (units _x) apply {
+            titleText [format["%1", UNIT_NAME(_x)], "Plain Down", 1];
+            _cam camSetTarget (leader _x);
+            _cam camSetRelPos [0, 3, 2];
+            _cam camCommit 1;
+            waitUntil {camCommitted _cam};
+
+            sleep 2;
+        };
+
+        titleCut ["", "BLACK OUT", 2];
+        titleText ["", "Plain Down", 1];
+        sleep 2;
+    }
+};
+
+
+/* FINISH INTRO */
+_cam cameraEffect ["terminate", "back"];
+camDestroy  _cam;
+
+titleCut ["", "BLACK IN", 2];
+sleep 2;
 
 [1,nil,false] spawn BIS_fnc_cinemaBorder;
 enableRadio true;
@@ -141,8 +162,7 @@ allUnits apply
 {
     _x disableConversation false;
     _x setVariable ["BIS_noCoreConversations", false];
-
 };
 
 playMusic "";
-GVAR(introDone) = true;
+GVAR(done) = true;

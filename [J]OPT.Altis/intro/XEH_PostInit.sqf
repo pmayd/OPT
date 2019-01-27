@@ -5,7 +5,8 @@
 ["LandVehicle", "init", FUNC(onInit), nil, nil, true] call CBA_fnc_addClassEventHandler;
 */
 
+if (!GVAR(on)) exitWith{};
+
 if (isServer) then {
-    estimatedTimeLeft (GVAR(playTime) * 60 - TIME_ELAPSED);
-    [] spawn FUNC(startClock);
+    [] call FUNC(initServerMissionEH);
 };

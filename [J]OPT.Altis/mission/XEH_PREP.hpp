@@ -8,7 +8,6 @@ PREP(initCBAEvents);
 PREP(initCBASettings);
 PREP(initPlayerEH);
 PREP(initServerMissionEH);
-PREP(intro);
 PREP(postInit);
 PREP(preInit);
 PREP(repairSystem);

@@ -1,5 +1,13 @@
 ﻿# Changelog
 
+## 1.4.15.3
+
+### Skript
+
+- Intro: Refactoring des Codes in neue Komponente + Codeoptimierungen. Neugestaltung des Intro mit Kamera auf Gruppen
+- Freeze: Refactoring des Codes in neue Komponente + Codeoptimierungen
+- Serverclock: Freeze wird nicht mehr länger vor der Waffenruhe ausgeführt, sondern währenddessen
+
 ## 1.4.15
 
 ### Skript
@@ -22,6 +30,7 @@
 
 - Neue Basismission auf Altis für Missionsbauer
 - Änderungen an den Basen von oppa
+- vorübergehende Bilder im assets/paa Ordner für die Schilder
 
 ## 1.4.14
 
