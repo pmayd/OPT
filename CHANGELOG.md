@@ -7,6 +7,10 @@
 - Intro: Refactoring des Codes in neue Komponente + Codeoptimierungen. Neugestaltung des Intro mit Kamera auf Gruppen
 - Freeze: Refactoring des Codes in neue Komponente + Codeoptimierungen
 - Serverclock: Freeze wird nicht mehr länger vor der Waffenruhe ausgeführt, sondern währenddessen
+- Slotsperre
+- GPS: Settings für HL entfernt (immer modus 2). Marker für SQL geändert auf Gruppen-ID
+- Revive: Einheitliche Dauer für Stabilisieren und Revive, neue Settings für die verschiedenen Behandlungsdauern, überflüssige Settings entfernt
+- FPS: Server FPS werden nun mitgeloggt unter dem Namen "SERVER"
 
 ## 1.4.15
 
