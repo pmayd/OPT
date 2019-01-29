@@ -17,6 +17,8 @@
 ["LandVehicle", "init", {
     params ["_vec"];
 
+    if (_vec isKindOf "StaticWeapon") exitWith{};
+
     _vec addAction [
         "<t color='#ff0000'>" + STR_FIELD_REPAIR + "</t>",
         {[_this select 0] call FUNC(repairVehicle)},
