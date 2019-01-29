@@ -12,7 +12,7 @@
 - Revive: Einheitliche Dauer für Stabilisieren und Revive, neue Settings für die verschiedenen Behandlungsdauern, überflüssige Settings entfernt
 - FPS: Server FPS werden nun mitgeloggt unter dem Namen "SERVER"
 - Autoparachute: Neue Komponente, die BackpackOnChest ablöst: Spieler bekommen automatisch einen Fallschirm, wenn sie aus einem Flugzeug oder Helikopter springen. Minimale Absprunghöhe sowie Zeit bis zum Öffnen sind per CBA Settings einstellbar.
-
+- Fieldrepair: Einträge sind aus dem Mausradmenü ins ACE-Menü gewandert. Komplettreparatur muss nicht mehr länger aus dem Rep-LKW aufgerufen werden, jetzt ebenfalls am Fahrzeug verfügbar, falls ein Rep-LKW in der Nähe ist (siehe CBA-Settings). Außerdem Bugfix behoben mit BI-Vanilla System: ist wieder deaktiviert.
 ## 1.4.15
 
 ### Skript
