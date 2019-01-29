@@ -14,9 +14,14 @@
 */
 #include "script_component.hpp"
 
-params [["_veh", objNull]];
+/* PARAMS */
+params
+[
+    ["_veh", objNull, [objNull], 1]
+];
 
-if (_veh isEqualTo objNull) exitWith {false};
+/* VALIDATION */
+if (_veh isEqualTo objNull) exitWith{false};
 
 // if another action is ongoing
 if (GVAR(mutexAction)) exitWith {
@@ -29,7 +34,7 @@ if (not alive player or (player distance _veh) > 7 or (vehicle player != player)
 };
 
 // if player has no tool kit or vehicle was repaired more often than free repair
-if (!(typeOf player in GVARMAIN(pioniers)) and (_veh getVariable [QGVAR(longRepairTimes), 0] > 0)) exitWith {
+if (!(typeOf player in GVARMAIN(pioniers)) and (_veh getVariable [QGVAR(longRepairTimes), 0] >= DEFAULT_FREE_REPAIRS)) exitWith {
     ["Feldreparatur", STR_NEED_TOOLKIT, "red"] call EFUNC(gui,message);
 };
 
@@ -51,7 +56,7 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
     _maxlength = (_veh getVariable QGVAR(repTimeLeft)) max 10; // reduce max length
 };
 
-/*        
+/*
     * Arguments:
     * 0: Total Time (in game "time" seconds) <NUMBER>
     * 1: Arguments, passed to condition, fail and finish <ARRAY>
@@ -75,7 +80,7 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
         _veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
         _veh setVariable [QGVAR(repTimeLeft), 0, true];
     },
-    {   
+    {
         (_this select 0) params ["_veh", "_startTime", "_maxlength"];
 
         ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"] call EFUNC(gui,message);
@@ -84,13 +89,13 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
     format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],
     {
         (_this select 0) params ["_veh"];
-        alive player and (player distance _veh) < 7 and 
+        alive player and (player distance _veh) < 7 and
         player getVariable ["FAR_isUnconscious", 0] == 0 and
-        isNull objectParent player and 
+        isNull objectParent player and
         speed _veh < 3
     }
 ] call ace_common_fnc_progressBar;
 
-GVAR(mutexAction) = false; 
+GVAR(mutexAction) = false;
 
 true
