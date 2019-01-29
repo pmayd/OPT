@@ -92,14 +92,17 @@
         ] call ace_interact_menu_fnc_addActionToObject;
     };
 
-    LOG_1("RepairCargo: %1",getRepairCargo _vec);
-    if (finite (getRepairCargo _vec)) then {
-        [_vec] spawn {
-            params ["_vec"];
-            sleep 1;
-            [_this select 0, 0] remoteExecCall ["setRepairCargo", _vec, true];
-        };
-        _vec setVariable [QGVAR(repair_cargo), 1, true];
-    };
+}, nil, nil, true] call CBA_fnc_addClassEventHandler;
 
+["All", "init", {
+    params ["_obj"];
+
+    if (finite (getRepairCargo _obj)) then {
+        [_obj] spawn {
+            params ["_obj"];
+            sleep 1; // needed for proper setting, see #57
+            [_this select 0, 0] remoteExecCall ["setRepairCargo", _obj, true];
+        };
+        _obj setVariable [QGVAR(repair_cargo), 1, true];
+    };
 }, nil, nil, true] call CBA_fnc_addClassEventHandler;
