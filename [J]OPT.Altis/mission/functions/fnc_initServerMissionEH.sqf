@@ -42,10 +42,6 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler
             // reset earplugs
             {GVAR(earplugsInUse) = 1;} remoteExecCall ["call", _newEntity, false];
 
-            // give backpack back to player
-            // fix BackpackonChest Bug #15
-            [] remoteExecCall [QFUNC(addBackpack), _newEntity, true];
-
         };
 
         // renew zeus
