@@ -1,6 +1,6 @@
 /**
 * Description:
-* open parachute whenever player leaves an air vehicle that is at least GVAR(minHeight) above ground
+* open parachute whenever player ejects from an air vehicle that is at least GVAR(minHeight) above ground
 *
 * Author:
 * James
@@ -23,6 +23,7 @@
 *
 * Sideeffects:
 * atach parachute to unit
+* delete parachute after landing
 *
 * Example:
 * [player, heli] call EFUNC(autoparachute,openParachute);
@@ -53,10 +54,17 @@ if (vehicle player != player) exitWith{};
         (_this select 0) params ["_unit", "_pos", "_isWater"];
 
         private _parachute = createVehicle ["Steerable_Parachute_F", [0,0,0], [], 0, "FLY"];
-
+        private _pos =  [getPosATL _unit, getPosASLW _unit] select _isWater;
         [_parachute setPosATL _pos, parachute setPosASLW _pos] select _isWater;
 
         _unit moveinDriver _parachute;
+
+        [_parachute] spawn 
+        {
+            params ["_parachute"];
+            waitUntil {driver _parachute isEqualTo objNull};
+            deleteVehicle _parachute;
+        }
 
     },
     {
@@ -66,12 +74,6 @@ if (vehicle player != player) exitWith{};
     {
         (_this select 0) params ["_unit", "_pos", "_isWater"];
 
-        // solange Zeit nicht abgelaufen,
-        // beide am Leben,
-        // Abstand zu Patient kleiner 2m,
-        // Heiler nicht bewusstlos und
-        // Animation nicht abgebrochen
-        // -> aktualisiere Fortschrittsbalken
         alive _unit
     }
 ] call ace_common_fnc_progressBar;
