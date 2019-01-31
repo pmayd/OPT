@@ -49,9 +49,9 @@ if (vehicle player != player) exitWith{};
 // use different getPos commands depending on surface type
 [
     GVAR(openingTime),
-    [_unit, _pos, _isWater],
+    [_unit, _isWater],
     {
-        (_this select 0) params ["_unit", "_pos", "_isWater"];
+        (_this select 0) params ["_unit", "_isWater"];
 
         private _parachute = createVehicle ["Steerable_Parachute_F", [0,0,0], [], 0, "FLY"];
         private _pos =  [getPosATL _unit, getPosASLW _unit] select _isWater;
