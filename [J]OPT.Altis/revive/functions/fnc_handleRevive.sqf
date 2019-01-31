@@ -113,7 +113,7 @@ sleep 1;
         };
 
     },
-    format[FAR_REVIVE_ACTION_REVIVE_BAR_TEXT, _damage],
+    format[FAR_REVIVE_ACTION_REVIVE_BAR_TEXT, FAR_REVIVE_REVIVE_TIME],
     {
         (_this select 0) params ["_healer", "_patient"];
 

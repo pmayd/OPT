@@ -109,7 +109,7 @@ if (!GVAR(on)) exitWith{};
 [
     "FAR_REVIVE_STABILIZE_TIME", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "SLIDER", // setting type
-    "Dauer der Eigenversorgung", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Dauer des Stabilisierens", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [10, 60, 20, 0], // [min, max, default, decimal]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
@@ -119,7 +119,7 @@ if (!GVAR(on)) exitWith{};
 [
     "FAR_REVIVE_REVIVE_TIME", // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "SLIDER", // setting type
-    "Dauer der Eigenversorgung", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
+    "Dauer der Wiederbelebung", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT San-System", // Pretty name of the category where the setting can be found. Can be stringtable entry.
     [10, 60, 10, 0], // [min, max, default, decimal]
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer

@@ -90,7 +90,7 @@ sleep 1;
         ["San-System", FAR_REVIVE_ACTION_REVIVE_CANCLED, "red"] call EFUNC(gui,message);
 
     },
-    format[FAR_REVIVE_ACTION_STABILIZE_BAR_TEXT, _damage],
+    format[FAR_REVIVE_ACTION_STABILIZE_BAR_TEXT, FAR_REVIVE_STABILIZE_TIME],
     {
         (_this select 0) params ["_healer", "_patient"];
 
