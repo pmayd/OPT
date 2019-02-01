@@ -7,4 +7,3 @@ PREP(initServerMissionEH);
 PREP(postInit);
 PREP(preInit);
 PREP(repairSystem);
-PREP(respawnCost);

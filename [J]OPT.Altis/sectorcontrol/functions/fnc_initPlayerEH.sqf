@@ -34,7 +34,7 @@ if (EGVAR(training,on)) then {
         _flag = objNull;
         {
             if (_x getVariable [QGVAR(isFlagMovable), false]) exitWith {_flag = _x};
-        } foreach GVARMAIN(csat_flags) + GVARMAIN(nato_flags);
+        } foreach GVARMAIN(eastFlags) + GVARMAIN(westFlags);
 
         if (_flag isEqualTo objNull) then {
 
@@ -76,7 +76,7 @@ if (GVAR(flagFreeMineZoneOn)) then {
                 if ((typeOf _explosive) find "SatchelCharge" != -1 or (typeOf _explosive) find "DemoCharge" != -1) exitWith {};    
 
                 // only if near flag
-                if ({_explosive distance _x <= GVAR(flagFreeMineZoneRadius)} count (GVARMAIN(nato_flags) + GVARMAIN(csat_flags)) == 0) exitWith {};
+                if ({_explosive distance _x <= GVAR(flagFreeMineZoneRadius)} count (GVARMAIN(westFlags) + GVARMAIN(eastFlags)) == 0) exitWith {};
 
                 deleteVehicle _explosive;    
                 // Warnhinweis

@@ -9,6 +9,7 @@ PREP(playerName);
 PREP(playerSide);
 PREP(renderBudget);
 PREP(renewCurator);
+PREP(respawnCost);
 PREP(updateBudget);
 PREP(vehicleSide);
 PREP(weaponCheck);

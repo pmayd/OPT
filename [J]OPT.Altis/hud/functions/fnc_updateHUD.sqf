@@ -78,7 +78,7 @@ while {!(_cutRSC isEqualTo displayNull)} do
     if (GVAR(score)) then
     {
 
-        private _scoreStr = format ["Punkte: (N) %1 : %2 (C)", GVARMAIN(nato_points), GVARMAIN(csat_points)];
+        private _scoreStr = format ["Punkte: (N) %1 : %2 (C)", GVARMAIN(westPoints), GVARMAIN(eastPoints)];
 
         // Anzeige updaten
         // Update Text

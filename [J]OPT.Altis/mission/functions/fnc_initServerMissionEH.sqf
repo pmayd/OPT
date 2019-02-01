@@ -27,7 +27,7 @@ GVAR(EH_EntityRespawned) = addMissionEventHandler
             [_newEntity] remoteExecCall [QEFUNC(common,addToCurator), 2, false];
 
             // Kosten für Seite abziehen + log
-            private _cost = [] call FUNC(respawnCost);
+            private _cost = [] call EFUNC(common,respawnCost);
 
             [
                 UNIT_NAME(_newEntity),
