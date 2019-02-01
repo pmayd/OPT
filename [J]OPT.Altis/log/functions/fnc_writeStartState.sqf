@@ -24,7 +24,7 @@
 /* VALIDATION */
 
 /* CODE BODY */
-_log_msg = format["Startbudget: NATO %1 - CSAT %2", GVARMAIN(westBudget), GVARMAIN(eastBudget)];
+_log_msg = format["Startbudget: NATO %1 - CSAT %2", QGVARMAIN(westBudget), GVARMAIN(eastBudget)];
 ["Budget", _log_msg] call FUNC(write);
 
 _log_msg = format[

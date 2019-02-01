@@ -25,7 +25,7 @@
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVARMAIN(westBudget), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    QGVARMAIN(westBudgetStart), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "EDITBOX", // setting type
     "Budget NATO", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
@@ -33,12 +33,12 @@
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];
-        GVARMAIN(westBudget) = parseNumber _value;
+        GVARMAIN(westBudgetStart) = parseNumber _value;
     } // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 
 [
-    QGVARMAIN(eastBudget), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
+    QGVARMAIN(eastBudgetStart), // Internal setting name, should always contain a tag! This will be the global variable which takes the value of the setting.
     "EDITBOX", // setting type
     "Budget CSAT", // Pretty name shown inside the ingame settings menu. Can be stringtable entry.
     "OPT Mission", // Pretty name of the category where the setting can be found. Can be stringtable entry.
@@ -46,7 +46,7 @@
     1, // "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
     {
         params ["_value"];
-        GVARMAIN(eastBudget) = parseNumber _value;
+        GVARMAIN(eastBudgetStart) = parseNumber _value;
     } // function that will be executed once on mission start and every time the setting is changed.
 ] call CBA_Settings_fnc_init;
 

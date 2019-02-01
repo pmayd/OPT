@@ -5,6 +5,12 @@
 if (isServer) then {
     [] call FUNC(initServerMissionEH);
 
+    GVARMAIN(westBudget) = parseNumber GVARMAIN(westBudgetStart);
+    publicVariable QGVARMAIN(westBudget);
+
+    GVARMAIN(eastBudget) = parseNumber GVARMAIN(eastBudgetStart);
+    publicVariable QGVARMAIN(eastBudget);
+
     //Function that adds dynamic groups to the mission as seen in End Game
     ["Initialize"] call BIS_fnc_dynamicGroups;
 };

@@ -26,7 +26,7 @@
 * yes - changes budget of either west or east
 *
 * Sideeffects:
-* QGVARMAIN(westBudget) or QGVARMAIN(eastBudget) is updated
+*QGVARMAIN(westBudget) or GVARMAIN(eastBudget) is updated
 * buy or sell process is logged 
 *
 * Example:
