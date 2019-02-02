@@ -20,7 +20,6 @@ GVAR(EH_PreloadFinished) = addMissionEventHandler ["PreloadFinished",  {
     /*  	
         Executes assigned code after the mission preload screen. Stackable version of onPreloadFinished. 
     */
-
-    [] call FUNC(initPlayerEH);
+    
     [] call FUNC(postInit); // führt alle wichtigen Skripte aus
 }];

@@ -183,6 +183,13 @@ GVARMAIN(recon) =
     "OPT_NATO_Soldat"
 ];
 
+/* CAN USE GUNNER SLOT */
+GVARMAIN(gunner) = 
+[
+
+] + GVARMAIN(pilots) + GVARMAIN(crew);
+
+
 #ifdef __ONLY_PIO_CAN_BUILD_FARPS__
     GVARMAIN(engineers) =
     [

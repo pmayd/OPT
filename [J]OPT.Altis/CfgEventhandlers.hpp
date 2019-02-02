@@ -76,6 +76,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(revive) {
         init = QUOTE(call compile preProcessFileLineNumbers 'revive\XEH_PreInit.sqf');
     };
+    class GVARMAIN(classlock) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'classlock\XEH_PreInit.sqf');
+    };
     class GVARMAIN(sectorcontrol) {
         init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_PreInit.sqf');
     };
@@ -160,6 +163,9 @@ class Extended_PostInit_EventHandlers {
     };
     class GVARMAIN(revive) {
         init = QUOTE(call compile preProcessFileLineNumbers 'revive\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(classlock) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'classlock\XEH_PostInit.sqf');
     };
     class GVARMAIN(sectorcontrol) {
         init = QUOTE(call compile preProcessFileLineNumbers 'sectorcontrol\XEH_PostInit.sqf');
