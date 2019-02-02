@@ -16,6 +16,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(beam) {
         init = QUOTE(call compile preProcessFileLineNumbers 'beam\XEH_PreInit.sqf');
     };
+    class GVARMAIN(berggang) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'berggang\XEH_PreInit.sqf');
+    };
     class GVARMAIN(cargo) {
         init = QUOTE(call compile preProcessFileLineNumbers 'cargo\XEH_PreInit.sqf');
     };
@@ -103,6 +106,9 @@ class Extended_PostInit_EventHandlers {
     };
     class GVARMAIN(beam) {
         init = QUOTE(call compile preProcessFileLineNumbers 'beam\XEH_PostInit.sqf');
+    };
+    class GVARMAIN(berggang) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'berggang\XEH_PostInit.sqf');
     };
     class GVARMAIN(cargo) {
         init = QUOTE(call compile preProcessFileLineNumbers 'cargo\XEH_PostInit.sqf');
