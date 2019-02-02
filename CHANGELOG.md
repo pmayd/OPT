@@ -5,14 +5,16 @@
 ### Skript
 
 - Intro: Refactoring des Codes in neue Komponente + Codeoptimierungen. Neugestaltung des Intro mit Kamera auf Gruppen
-- Freeze: Refactoring des Codes in neue Komponente + Codeoptimierungen
+- Freeze: Refactoring des Codes in neue Komponente + Codeoptimierungen. Freeze und Intro sind nur im Schlachtmodus gültig, im Trainingsmodus haben sie keine Bedeutung. Wenn Freeze aktiviert wird, ist Freeze entweder für die Dauer des Intros oder für die Dauer in den CBA Settings aktiv. ACHTUNG: Freeze friert Spieler ab sofort komplett ein (disableUserInput), d.h. ihr könnt auch nicht mehr mit ESC ins Spielmenü. Bitte nicht in Panik verfallen.
 - Serverclock: Freeze wird nicht mehr länger vor der Waffenruhe ausgeführt, sondern währenddessen
 - Slotsperre
-- GPS: Settings für HL entfernt (immer modus 2). Marker für SQL geändert auf Gruppen-ID
-- Revive: Einheitliche Dauer für Stabilisieren und Revive, neue Settings für die verschiedenen Behandlungsdauern, überflüssige Settings entfernt
+- GPS: Settings für HL entfernt (immer modus 2). Zusatz-Information für SQL-Marker auf Gruppen-ID geändert
+- Revive: Einheitliche Dauer für Stabilisieren u Revive, neue Settings für die verschiedenen Behandlungsdauern, überflüssige Settings entfernt, Kosten für Respawn werden nun dynamisch berechnet und sinken linear mit der Bleedout Zeit
 - FPS: Server FPS werden nun mitgeloggt unter dem Namen "SERVER"
-- Autoparachute: Neue Komponente, die BackpackOnChest ablöst: Spieler bekommen automatisch einen Fallschirm, wenn sie aus einem Flugzeug oder Helikopter springen. Minimale Absprunghöhe sowie Zeit bis zum Öffnen sind per CBA Settings einstellbar.
+- Autoparachute: Neue Komponente, die BackpackOnChest ablöst: Spieler bekommen automatisch einen Fallschirm, wenn sie aus einem Flugzeug oder Helikopter springen. Minimale Absprunghöhe sowie Zeit bis zum Öffnen sind per CBA Settings einstellbar. Der Fallschirm wird automatisch beim Landen entfernt. Rucksack bleibt die ganze Zeit normal auf dem Rücken, kein Wechsel mehr notwendig.
 - Fieldrepair: Einträge sind aus dem Mausradmenü ins ACE-Menü gewandert. Komplettreparatur muss nicht mehr länger aus dem Rep-LKW aufgerufen werden, jetzt ebenfalls am Fahrzeug verfügbar, falls ein Rep-LKW in der Nähe ist (siehe CBA-Settings). Außerdem Bugfix behoben mit BI-Vanilla System: ist wieder deaktiviert.
+- Berggang: Ab sofort als eigenständige Komponente in der Mission und nicht mehr in der Mod. Berggang ist für alle Fahrzeuge (Rad und Kette) verfügbar. Es gibt umfangreiche CBA Settings, die sowoh l den Berggag als auch den Zugriff steuern. Berggang steht nur dem Fahrer zur Verfügung, wenn das Fahrzeug eine gewisse Geschwindigkeit nicht überschritten hat, wenn es eine Mindeststeigung bewältigen muss und wenn Kette oder Rad nicht zu stark beschäigt sind.
+
 ## 1.4.15
 
 ### Skript

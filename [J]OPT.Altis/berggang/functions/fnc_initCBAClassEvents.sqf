@@ -41,7 +41,7 @@
 				[_target, _caller] spawn FUNC(speedUp);
 			},
 			[],
-			0,
+			6,
 			false,
 			true,
 			"",

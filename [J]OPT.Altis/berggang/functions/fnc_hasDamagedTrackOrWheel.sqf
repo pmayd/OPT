@@ -41,11 +41,12 @@ if (_vehicle isEqualTo objNull) exitWith{_return};
 
 /* CODE BODY */
 private _allHitpoints = getAllHitPointsDamage _vehicle;
-
+private _N = count (_allHitpoints select 0) - 1;
 // filter only hitpoints with damage
 // if track or wheel, exit with true
-{
-	_hitPoint = tolower (_allHitpoints select 0 select _forEachIndex);
+for "_i" from 0 to _N do {
+	private _hitPoint = tolower (_allHitpoints select 0 select _i);
+	private _dmg = _allHitpoints select 2 select _i;
 
 	if 
 	(
@@ -53,9 +54,9 @@ private _allHitpoints = getAllHitPointsDamage _vehicle;
 			_hitPoint find "track" != -1 or 
 			_hitPoint find "wheel" != -1
 		) and
-		_x > GVAR(maxDamageToTracksOrWheels)
+		_dmg > GVAR(maxDamageToTracksOrWheels)
 	) exitWith{_return = true};
-		
-} forEach ((_allHitpoints select 2) select {_x > 0}) ;
+	
+};
 
 _return
