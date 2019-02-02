@@ -15,7 +15,9 @@
 - Serverclock 
   - Freeze wird nicht mehr länger vor der Waffenruhe ausgeführt, sondern währenddessen
 - Slotsperre
-  - ...
+  - Komplett überarbeitet und aus Mission ausgegliedert in eigene Komponente classlock.
+  - Neue CBA Settings für Speere von Schützenplätzen
+  - Es gibt damit jetzt 3 Sperren: Pilotslots (Fahrer Air), Schwere Fahrzeugslots (Fahrer in crew_vecs oder Fahrzeugen vom Typ "Tank") und Gunnerslots (Schützen in allen Fahrzeugen und statischen Geschützen)
 - GPS
   - Settings für HL entfernt (Ofiziere immer im GPS Modus 2). 
   - Zusatz-Information für SQL-Marker auf Gruppen-ID geändert

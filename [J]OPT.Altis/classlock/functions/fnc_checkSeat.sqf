@@ -60,7 +60,7 @@ if (_vec isKindOf "Air") then
 		GVAR(blockDriverAir) and
 		!(_unitClass in GVARMAIN(pilots)) and
 		_pos isEqualTo "driver" and
-		!(_vecType not in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])
+		!(_vecType in ["Steerable_Parachute_F", "NonSteerable_Parachute_F"])
 	) then 
 	{        
 		_unit action ["GetOut", _vec];
@@ -83,7 +83,7 @@ if (_vec isKindOf "Tank" or _vecType in GVARMAIN(crew_vecs)) then {
 	};
 };
 
-if (_pos isEqualTo "gunner") then {
+if (_pos in ["gunner", "turret"]) then {
 	if 
 	(
 		GVAR(blockGunner) and 
