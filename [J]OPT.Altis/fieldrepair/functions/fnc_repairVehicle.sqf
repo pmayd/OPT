@@ -39,7 +39,7 @@ if (!(typeOf player in GVARMAIN(pioniers)) and (_veh getVariable [QGVAR(longRepa
 };
 
 GVAR(mutexAction) = true;
-
+private _fireMode = currentWeaponMode player;
 player selectWeapon primaryWeapon player;    // psycho, animation only able to play while primary weapon is in use
 sleep 1;
 private _lastPlayerState = animationState player;
@@ -97,5 +97,21 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
 ] call ace_common_fnc_progressBar;
 
 GVAR(mutexAction) = false;
+private _fireModeIndex = switch (_fireMode) do {
+    case "Single":
+    {
+        0
+    };
+    case "Burst":
+    {
+        1
+    };
+    case "FullAuto": 
+    {
+        2
+    };
+    default {0};
+};
+player action ["SwitchWeapon", player, player, _fireModeIndex];
 
 true
