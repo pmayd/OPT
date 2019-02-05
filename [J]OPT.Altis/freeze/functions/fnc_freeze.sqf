@@ -31,23 +31,22 @@
 /* PARAMS */
 
 /* VALIDATION */
-if (didJIP or EGVAR(training,on)) exitWith{};
+if (EGVAR(training,on)) exitWith{};
 waitUntil {time > 1}; // already called during briefing! So we have to wait until player is ingame
-
-// get time from server
-private _timeElapsed = serverTime - EGVAR(serverclock,startTime);
+waitUntil { EGVAR(serverclock,startTime) != 0 };
 
 /* CODE BODY */
-// freeze player for the duration of the intro
-// or if intro is off, for the duration of the freeze time
+// freeze player until all players have finished intro
+// or - if intro is off -, for the duration of the freeze time
 private _checkCondition =
 {
-    if (EGVAR(intro,on) and !EGVAR(training,on)) then
+    if (EGVAR(intro,on)) then
     {
-        !EGVAR(intro,done)
+        !EGVAR(intro,allDone)
     } else
     {
-        (serverTime - EGVAR(serverclock,startTime)) < (GVAR(freezeTime) * 60)
+        private _timeElapsed = serverTime - EGVAR(serverclock,startTime);
+        _timeElapsed < (GVAR(freezeTime) * 60)
     };
 };
 

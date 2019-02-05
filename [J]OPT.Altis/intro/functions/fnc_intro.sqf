@@ -117,10 +117,11 @@ _cam camCommit 0;
 /* SHOW ALL GROUPS */
 allGroups apply
 {
+    private _grp = _x;
 
-    if (isPlayer (leader _x)) then
+    if (isPlayer (leader _grp)) then
     {
-        _cam camSetTarget (leader _x);
+        _cam camSetTarget (leader _grp);
         _cam camSetRelPos [0, 8, 4];
         _cam camCommit 0;
         waitUntil {camCommitted _cam};
@@ -128,30 +129,32 @@ allGroups apply
         titleCut ["", "BLACK FADED", 1];
         sleep 1;
         titleCut ["", "BLACK IN", 1];
-        sleep 2;
+        sleep 1;
 
-        (units _x) apply {
-            private _side = ["CSAT","NATO"] select (UNIT_SIDE(_x) isEqualTo west);
-            [
-                format["%1 - %2<br/>%3", UNIT_NAME(_x), groupID (group _x), _side],
-                0,
-                0,
-                2,
-                0.5,
-                -0.1,
-                9999
-            ] spawn bis_fnc_dynamicText;
-            _cam camSetTarget _x;
-            _cam camSetRelPos [0, 3, 2];
-            _cam camCommit 1;
-            waitUntil {camCommitted _cam};
-
-            sleep 2;
-        };
+        private _names = ((units _grp) apply {UNIT_NAME(_x)}) joinString ", ";
+        private _side = ["CSAT","NATO"] select (UNIT_SIDE(leader _grp) isEqualTo west);
+        [
+            format["%1<br/>%2<br/>%3", _names, groupID _grp, _side],
+            0,
+            0,
+            3,
+            0.5,
+            -0.1,
+            9999
+        ] spawn bis_fnc_dynamicText;
 
         titleCut ["", "BLACK OUT", 2];
         titleText ["", "Plain Down", 1];
         sleep 2;
+        [
+            "",
+            0,
+            0,
+            0,
+            0,
+            -0.1,
+            9999
+        ] spawn bis_fnc_dynamicText;
     }
 };
 
@@ -173,4 +176,5 @@ allUnits apply
 };
 
 playMusic "";
-GVAR(done) = true;
+
+[getPlayerUID player] remoteExecCall [QFUNC(updateIntroStatus), 2, false];
