@@ -37,5 +37,5 @@
 GVAR(EH_GetOutMan) = player addEventHandler ["GetOutMan", {
 	params ["_unit", "_role", "_vehicle", "_turret"];
 
-	[_unit, _vehicle] call FUNC(openParachute);
+	[_unit, _vehicle] call FUNC(parachuteController);
 }];

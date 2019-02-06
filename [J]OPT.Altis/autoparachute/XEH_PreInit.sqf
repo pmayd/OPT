@@ -12,6 +12,7 @@ ADDON = true;
 // list all global variables used within the component
 // define variable with default value!
 // GVAR(...)
+GVAR(actionID) = -1;
 
 // initialize CBA Settings
 [] call FUNC(initCBASettings);

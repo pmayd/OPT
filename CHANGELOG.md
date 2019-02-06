@@ -5,21 +5,21 @@
 
 ### Skript
 
-- Intro 
-  - Refactoring des Codes in neue Komponente + Codeoptimierungen. 
+- Intro
+  - Refactoring des Codes in neue Komponente + Codeoptimierungen.
   - Neugestaltung des Intro mit Kamera auf Gruppen
-- Freeze 
-  - Refactoring des Codes in neue Komponente + Codeoptimierungen. 
-  - Freeze und Intro sind nur im Schlachtmodus gültig, im Trainingsmodus haben sie keine Bedeutung. Wenn Freeze aktiviert wird, ist Freeze entweder für die Dauer des Intros oder für die Dauer in den CBA Settings aktiv. 
+- Freeze
+  - Refactoring des Codes in neue Komponente + Codeoptimierungen.
+  - Freeze und Intro sind nur im Schlachtmodus gültig, im Trainingsmodus haben sie keine Bedeutung. Wenn Freeze aktiviert wird, ist Freeze entweder für die Dauer des Intros oder für die Dauer in den CBA Settings aktiv.
   - ACHTUNG: Freeze friert Spieler ab sofort komplett ein (disableUserInput), d.h. ihr könnt auch nicht mehr mit ESC ins Spielmenü. Bitte nicht in Panik verfallen.
-- Serverclock 
+- Serverclock
   - Freeze wird nicht mehr länger vor der Waffenruhe ausgeführt, sondern währenddessen
 - Slotsperre
   - Komplett überarbeitet und aus Mission ausgegliedert in eigene Komponente classlock.
   - Neue CBA Settings für Speere von Schützenplätzen
   - Es gibt damit jetzt 3 Sperren: Pilotslots (Fahrer Air), Schwere Fahrzeugslots (Fahrer in crew_vecs oder Fahrzeugen vom Typ "Tank") und Gunnerslots (Schützen in allen Fahrzeugen und statischen Geschützen)
 - GPS
-  - Settings für HL entfernt (Ofiziere immer im GPS Modus 2). 
+  - Settings für HL entfernt (Ofiziere immer im GPS Modus 2).
   - Zusatz-Information für SQL-Marker auf Gruppen-ID geändert
 - Revive
   - Einheitliche Dauer für Stabilisieren u Revive
@@ -27,21 +27,22 @@
   - überflüssige Settings entfernt
   - Kosten für Respawn werden nun dynamisch berechnet und sinken linear mit der Bleedout Zeit
   - Bugfix: Nächster Sanitäter wird wieder korrekt angezeigt
-- FPS: 
+- FPS:
   - Server FPS werden nun mitgeloggt unter dem Namen "SERVER"
-- Autoparachute: 
-  -  Neue Komponente, die BackpackOnChest ablöst: Spieler bekommen automatisch einen Fallschirm, wenn sie aus einem Flugzeug oder Helikopter springen. 
-  - Minimale Absprunghöhe sowie Zeit bis zum Öffnen sind per CBA Settings einstellbar. 
-  - Der Fallschirm wird automatisch beim Landen entfernt. 
+- Autoparachute:
+  - Neue Komponente, die BackpackOnChest ablöst: Spieler bekommen automatisch einen Fallschirm, wenn sie aus einem Flugzeug oder Helikopter springen.
+  - Fallschirm wird entweder per Mausradmenü geöffnet oder automatisch, sobald der Spieler die Höhe für automatische Reißleine erreicht.
+  - Automatische Reißleinhöhe sowie Zeit bis zum Öffnen sind per CBA Settings einstellbar.
+  - Der Fallschirm wird automatisch beim Landen entfernt.
   - Rucksack bleibt die ganze Zeit normal auf dem Rücken, kein Wechsel mehr notwendig.
-- Fieldrepair: 
-  - Einträge sind aus dem Mausradmenü ins ACE-Menü gewandert. 
-  - Komplettreparatur muss nicht mehr länger aus dem Rep-LKW aufgerufen werden, jetzt ebenfalls am Fahrzeug verfügbar, falls ein Rep-LKW in der Nähe ist (siehe CBA-Settings). 
+- Fieldrepair:
+  - Einträge sind aus dem Mausradmenü ins ACE-Menü gewandert.
+  - Komplettreparatur muss nicht mehr länger aus dem Rep-LKW aufgerufen werden, jetzt ebenfalls am Fahrzeug verfügbar, falls ein Rep-LKW in der Nähe ist (siehe CBA-Settings).
   - Bugfix: BI-Vanilla System: ist wieder deaktiviert, d.h. Rep-LKW und Container haben keine BI Repair-Funktion mehr, nur noch OPT Repair System.
   - Bugfix: Feuermodus wird nach der Feldreparatur wieder korrekt hergestellt (Burst oder Vollautomatik)
-- Berggang: 
-  - Ab sofort als eigenständige Komponente in der Mission und nicht mehr in der Mod. 
-  - Berggang ist für alle Fahrzeuge (Rad und Kette) verfügbar. Es gibt umfangreiche CBA Settings, die sowohl den Berggag als auch den Zugriff steuern. 
+- Berggang:
+  - Ab sofort als eigenständige Komponente in der Mission und nicht mehr in der Mod.
+  - Berggang ist für alle Fahrzeuge (Rad und Kette) verfügbar. Es gibt umfangreiche CBA Settings, die sowohl den Berggag als auch den Zugriff steuern.
   - Berggang steht nur dem Fahrer zur Verfügung, wenn das Fahrzeug eine gewisse Geschwindigkeit nicht überschritten hat, wenn es eine Mindeststeigung bewältigen muss und wenn Kette oder Rad nicht zu stark beschädigt sind.
 - Sectorcontrol
   - Minensperrzone blockiert nun auch Gräben (ACE trenches). Gräben werden in der Sperrzone blockiert. Gräben, die außerhalb der Sperrzone gestartet und innerhalb gebaut werden, werden ebenfalls gelöscht
