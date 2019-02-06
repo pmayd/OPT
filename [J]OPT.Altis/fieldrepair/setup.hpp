@@ -13,3 +13,4 @@
 #define STR_SCRIPTS_NAME "Scripts"
 #define STR_SCRIPT_NAME "Field repair"
 #define STR_PUSH_APC "Push vehicle"
+#define FIELDREPAIR_MIN_DAMAGE_FOR_EASY_PARTS 0.2

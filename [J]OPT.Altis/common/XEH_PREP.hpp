@@ -7,6 +7,7 @@ PREP(fillLB);
 PREP(nearbyPlayers);
 PREP(playerName);
 PREP(playerSide);
+PREP(readOutHitpoints);
 PREP(renderBudget);
 PREP(renewCurator);
 PREP(respawnCost);

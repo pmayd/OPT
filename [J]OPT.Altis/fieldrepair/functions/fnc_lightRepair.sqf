@@ -1,6 +1,9 @@
 /**
-* Author: James
-* field repair of a vehicle
+* Description:
+* conduct a field repair on vehicle. Uses ACE progress bar
+*
+* Author:
+* James
 *
 * Arguments:
 * 0: <OBJECT> vehicle to repair
@@ -8,9 +11,23 @@
 * Return Value:
 * None
 *
-* Example:
-* [vehicle] call fnc_repairVehicle.sqf;
+* Server only:
+* no
 *
+* Public:
+* no - should be called via ACE interaction menu on vehicle
+*
+* Global:
+* no
+*
+* Sideeffects:
+* plays animation for given player
+* show ACE progress bar during fieldrepair
+* increase GVAR(noRepairs) of vehicle by 1
+* when aborted, set GVAR(repTimeLeft) to time left on repair
+*
+* Example:
+* [vehicle player] call EFUNC(fieldrepair,lightRepair);
 */
 #include "script_component.hpp"
 
@@ -28,13 +45,13 @@ if (GVAR(mutexAction)) exitWith {
     ["Feldreparatur", STR_ANOTHER_ACTION, "yellow"] call EFUNC(gui,message);
 };
 
-// if conditions are not met
-if (not alive player or (player distance _veh) > 7 or (vehicle player != player) or speed _veh > 3) exitWith {
-    ["Feldreparatur", STR_REPAIR_CONDITIONS, "red"] call EFUNC(gui,message);
-};
-
 // if player has no tool kit or vehicle was repaired more often than free repair
-if (!(typeOf player in GVARMAIN(pioniers)) and (_veh getVariable [QGVAR(longRepairTimes), 0] >= DEFAULT_FREE_REPAIRS)) exitWith {
+if
+(
+    !(typeOf player in (GVARMAIN(pioniers) + GVARMAIN(engineers))) and
+    (_veh getVariable [QGVAR(noRepairs), 0]) >= GVAR(freeRepairCount)
+) exitWith
+{
     ["Feldreparatur", STR_NEED_TOOLKIT, "red"] call EFUNC(gui,message);
 };
 
@@ -47,14 +64,19 @@ private _lastPlayerState = animationState player;
 // player playActionNow "medicStartRightSide";
 player playMove "Acts_carFixingWheel";
 sleep 0.5;
-private _maxlength = (_veh getVariable [QGVAR(longrepair), [_veh] call FUNC(getPartsRepairTime)]) min DEFAULT_FIELDREPAIR_MAX_REP_TIME;
+private _maxlength =
+(
+    _veh getVariable
+    [
+        QGVAR(repTimeLeft),
+        [_veh] call FUNC(getPartsRepairTime)
+    ]
+) min GVAR(maxFieldRepairTime);
+
 private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 
 // was vehicle already repaired?
 private _startTime = time;
-if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
-    _maxlength = (_veh getVariable QGVAR(repTimeLeft)) max 10; // reduce max length
-};
 
 /*
     * Arguments:
@@ -77,19 +99,22 @@ if (_veh getVariable [QGVAR(repTimeLeft), 0] > 0) then {
 
         [_veh] remoteExecCall [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
 
-        _veh setVariable [QGVAR(longRepairTimes), (_veh getVariable [QGVAR(longRepairTimes), 0]) + 1 , true ];
+        _veh setVariable [QGVAR(noRepairs), (_veh getVariable [QGVAR(noRepairs), 0]) + 1 , true];
         _veh setVariable [QGVAR(repTimeLeft), 0, true];
     },
     {
         (_this select 0) params ["_veh", "_startTime", "_maxlength"];
 
         ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"] call EFUNC(gui,message);
+        // store rep time on vehicle so next repair goes faster
         _veh setVariable [QGVAR(repTimeLeft), _maxlength - (time - _startTime), true];
     },
     format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],
     {
         (_this select 0) params ["_veh"];
-        alive player and (player distance _veh) < 7 and
+
+        alive player and
+        (player distance _veh) < 7 and
         player getVariable ["FAR_isUnconscious", 0] == 0 and
         isNull objectParent player and
         speed _veh < 3
@@ -106,7 +131,7 @@ private _fireModeIndex = switch (_fireMode) do {
     {
         1
     };
-    case "FullAuto": 
+    case "FullAuto":
     {
         2
     };

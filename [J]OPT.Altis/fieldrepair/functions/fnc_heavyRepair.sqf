@@ -4,7 +4,7 @@
 *
 * Arguments:
 * 0: <OBJECT> vehicle to repair
-* 1: <OBJECT> repair truck
+* 1: <OBJECT> repair truck or engineer
 *
 * Return Value:
 * None
@@ -30,12 +30,14 @@ if (_veh isEqualTo objNull or _truck isEqualTo objNull) exitWith {false};
 if (GVAR(mutexAction)) exitWith {
     ["Feldreparatur", STR_ANOTHER_ACTION, "yellow"] call EFUNC(gui,message);
 };
-if (_truck getVariable [QGVAR(repair_cargo), 0] <= 0) then {
+
+private _truckIsEngineer = _truck isKindOf "CAManBase";
+if (!_truckIsEngineer and _truck getVariable [QGVAR(repair_cargo), 0] <= 0) then {
     ["Feldreparatur", STR_REPAIR_TRUCK_DEPLETED, "yellow"] call EFUNC(gui,message);
 };
 
 GVAR(mutexAction) = true;
-private _maxlength = DEFAULT_FULLREPAIR_LENGTH;
+private _maxlength = GVAR(fullRepairTime);
 private _vehname = getText ( configFile >> "CfgVehicles" >> typeOf(_veh) >> "displayName");
 private _length = _maxlength;
 
@@ -57,11 +59,15 @@ private _length = _maxlength;
 
         ["Feldreparatur", STR_REPAIR_FINISHED, "green"] call EFUNC(gui,message);
         [_veh] remoteExecCall [QFUNC(fullRepair), _veh, false]; // called where vehicle is local!
-        _truck setVariable [
-            QGVAR(repair_cargo),
-            ((_truck getVariable [QGVAR(repair_cargo), 0]) - (1 / DEFAULT_REPAIR_TRUCK_USES)),
-            true
-        ];
+
+        if (!_truckIsEngineer) then
+        {
+            _truck setVariable [
+                QGVAR(repair_cargo),
+                ((_truck getVariable [QGVAR(repair_cargo), 0]) - (1 / GVAR(repairTruckUseCount))),
+                true
+            ];
+        };
 
     },
     {
@@ -78,7 +84,7 @@ private _length = _maxlength;
         alive _veh and
         speed _veh <= 3 and
         speed _truck <= 3 and
-        _veh distance _truck <= GVAR(maxDistanceRepairTruck)
+        _veh distance _truck <= GVAR(maxDistanceToRepairTruck)
     },
     ["isnotinside"]
 ] call ace_common_fnc_progressBar;

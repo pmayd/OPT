@@ -184,19 +184,18 @@ GVARMAIN(recon) =
 ];
 
 /* CAN USE GUNNER SLOT */
-GVARMAIN(gunner) = 
+GVARMAIN(gunner) =
 [
 
 ] + GVARMAIN(pilots) + GVARMAIN(crew);
 
+/* Ingenieur */
+GVARMAIN(engineers) =
+[
+    "OPT_NATO_Pionier_T",
+    "OPT_CSAT_Pionier_T"
+];
 
-#ifdef __ONLY_PIO_CAN_BUILD_FARPS__
-    GVARMAIN(engineers) =
-    [
-        "OPT_NATO_Pionier_T",
-        "OPT_CSAT_Pionier_T"
-    ];
-#endif
 
 /*
 * ALL VEHICLES
