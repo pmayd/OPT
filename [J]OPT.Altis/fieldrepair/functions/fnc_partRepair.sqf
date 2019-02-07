@@ -57,7 +57,7 @@ if (_veh isEqualTo objNull) exitWith {false};
     (
         GVAR(engineerCanRepairGun) and
         (typeOf player) in GVARMAIN(engineers) and
-        (tolower) _x in ["hitgun", "hitturret"] and
+        (tolower _x) in ["hitgun", "hitturret"] and
         _dmg > 0.5
     ) then
     {

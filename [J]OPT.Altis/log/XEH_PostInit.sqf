@@ -8,6 +8,7 @@
 if (isServer) then {
     [] call FUNC(initCBAClassEvents);
     [] spawn FUNC(logFPS);
+    [] spawn FUNC(logPlayerCount);
 };
 
 

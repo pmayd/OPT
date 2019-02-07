@@ -1,5 +1,4 @@
 ﻿# Changelog
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=2 orderedList=false} -->
 
 ## 1.4.15.3
 
@@ -46,7 +45,8 @@
   - Berggang steht nur dem Fahrer zur Verfügung, wenn das Fahrzeug eine gewisse Geschwindigkeit nicht überschritten hat, wenn es eine Mindeststeigung bewältigen muss und wenn Kette oder Rad nicht zu stark beschädigt sind.
 - Sectorcontrol
   - Minensperrzone blockiert nun auch Gräben (ACE trenches). Gräben werden in der Sperrzone blockiert. Gräben, die außerhalb der Sperrzone gestartet und innerhalb gebaut werden, werden ebenfalls gelöscht
-
+- Log: Ab sofort werden für das Kommandcenter die Anzhahl der Spieler pro Seite mitgeloggt
+- 
 ## 1.4.15
 
 ### Skript
