@@ -39,7 +39,7 @@
 private _cost = linearConversion
 [
     0, 
-    EGVAR(revive,bleedOut) + 10,
+    FAR_REVIVE_BLEEDOUT,
     EGVAR(revive,bleedOut) + 10 - time,
     GVARMAIN(respawnCostMin), 
     GVARMAIN(respawnCostMax),
