@@ -46,6 +46,7 @@ GVAR(EH_PlayerConnected) = addMissionEventHandler
         */
         params ["_id", "_uid", "_name", "_jip", "_owner"];
         //LOG_2("PlayerConnected - jip: %1 - owner: %2",_jip,_owner);
+        if (_uid isEqualTo "") exitWith{};
 
         if (GVAR(on) and !EGVAR(training,on) and !(_jip)) then
         {

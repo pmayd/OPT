@@ -129,7 +129,7 @@ allGroups apply
         titleCut ["", "BLACK FADED", 1];
         sleep 1;
         titleCut ["", "BLACK IN", 1];
-        sleep 1;
+        sleep 2;
 
         private _names = ((units _grp) apply {UNIT_NAME(_x)}) joinString ", ";
         private _side = ["CSAT","NATO"] select (UNIT_SIDE(leader _grp) isEqualTo west);
@@ -142,6 +142,7 @@ allGroups apply
             -0.1,
             9999
         ] spawn bis_fnc_dynamicText;
+        sleep (2 * (count units _grp) min 10);
 
         titleCut ["", "BLACK OUT", 2];
         titleText ["", "Plain Down", 1];
