@@ -98,7 +98,7 @@
                 params ["_target", "_player", "_params"];
 
                 // All engineers can perform a heavy repair
-                if (typeOf _player in GVARMAIN(engineers)) exitWith{true};
+                if (typeOf _player in GVARMAIN(engineers)) exitWith{[_target] call FUNC(needRepair);};
 
                 _truck = nearestObjects [_player, ["Car"], GVAR(maxDistanceToRepairTruck)];
                 _truck = _truck select {finite (getRepairCargo _x)};

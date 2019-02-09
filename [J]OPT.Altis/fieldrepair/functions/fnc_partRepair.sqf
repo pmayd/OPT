@@ -48,7 +48,7 @@ if (_veh isEqualTo objNull) exitWith {false};
     {
         if ( _dmg > FIELDREPAIR_MIN_DAMAGE_FOR_EASY_PARTS) then
         {
-            _veh setHitPointDamage [_x, 0.1];
+            [_veh, [_x, 0.1]] remoteExecCall ["setHitPointDamage", _veh, true];
         };
     };
 
@@ -61,8 +61,8 @@ if (_veh isEqualTo objNull) exitWith {false};
         _dmg > 0.5
     ) then
     {
-        _veh setHitPointDamage [_x, 0.5];
-    }
+        [_veh, [_x, 0.5]] remoteExecCall ["setHitPointDamage", _veh, true];
+    };
 
 };
 
