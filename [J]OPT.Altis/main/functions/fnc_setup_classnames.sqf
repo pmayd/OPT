@@ -193,7 +193,9 @@ GVARMAIN(gunner) =
 GVARMAIN(engineers) =
 [
     "OPT_NATO_Pionier_T",
-    "OPT_CSAT_Pionier_T"
+    "OPT_CSAT_Pionier_T",
+	"OPT_NATO_Pionier",
+    "OPT_CSAT_Pionier"
 ];
 
 

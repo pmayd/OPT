@@ -94,6 +94,9 @@ class Extended_PreInit_EventHandlers {
     class GVARMAIN(uav) {
         init = QUOTE(call compile preProcessFileLineNumbers 'uav\XEH_PreInit.sqf');
     };
+	class GVARMAIN(Waffenruhemarker) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'Waffenruhemarker\XEH_PreInit.sqf');
+    };
     class GVARMAIN(warehouse) {
         init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_PreInit.sqf');
     };
@@ -182,6 +185,9 @@ class Extended_PostInit_EventHandlers {
     class GVARMAIN(uav) {
         init = QUOTE(call compile preProcessFileLineNumbers 'uav\XEH_PostInit.sqf');
     };
+	class GVARMAIN(Waffenruhemarker) {
+        init = QUOTE(call compile preProcessFileLineNumbers 'Waffenruhemarker\XEH_PostInit.sqf');
+	};	
     class GVARMAIN(warehouse) {
         init = QUOTE(call compile preProcessFileLineNumbers 'warehouse\XEH_PostInit.sqf');
     };
