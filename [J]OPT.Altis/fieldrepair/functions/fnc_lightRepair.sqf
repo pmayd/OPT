@@ -24,7 +24,7 @@
 * plays animation for given player
 * show ACE progress bar during fieldrepair
 * increase GVAR(noRepairs) of vehicle by 1
-* when aborted, set GVAR(repTimeLeft) to time left on repair
+* when aborted, set GVAR(easyRepTimeLeft) to time left on repair
 *
 * Example:
 * [vehicle player] call EFUNC(fieldrepair,lightRepair);
@@ -68,7 +68,7 @@ private _maxlength =
 (
     _veh getVariable
     [
-        QGVAR(repTimeLeft),
+        QGVAR(easyRepTimeLeft),
         [_veh] call FUNC(getPartsRepairTime)
     ]
 ) min GVAR(maxFieldRepairTime);
@@ -99,15 +99,19 @@ private _startTime = time;
 
         [_veh] remoteExecCall [QFUNC(partRepair), _veh, false]; // called where vehicle is local!
 
-        _veh setVariable [QGVAR(noRepairs), (_veh getVariable [QGVAR(noRepairs), 0]) + 1 , true];
-        _veh setVariable [QGVAR(repTimeLeft), 0, true];
+        if !(typeOf player in (GVARMAIN(pioniers) + GVARMAIN(engineers))) then
+        {
+            _veh setVariable [QGVAR(noRepairs), (_veh getVariable [QGVAR(noRepairs), 0]) + 1 , true];
+        };
+
+        _veh setVariable [QGVAR(easyRepTimeLeft), nil, true];
     },
     {
         (_this select 0) params ["_veh", "_startTime", "_maxlength"];
 
         ["Feldreparatur", STR_REPAIR_INTERRUPTED, "red"] call EFUNC(gui,message);
         // store rep time on vehicle so next repair goes faster
-        _veh setVariable [QGVAR(repTimeLeft), _maxlength - (time - _startTime), true];
+        _veh setVariable [QGVAR(easyRepTimeLeft), _maxlength - (time - _startTime), true];
     },
     format[STR_REPAIR_MSG_STRING, _maxlength, _vehname],
     {
