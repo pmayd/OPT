@@ -48,16 +48,16 @@
 //West
 GVAR(locations_west) =
 [
-    [[24321.338,1.6112642,18059.895], "NATO Marine", -1],
-    [[23827.555,3.1986239,18319.91], "NATO Basis", -1],
+    [[12106.12,1.1671892,10429.729], "NATO Marine", -1],
+    [[14681.888,17.91781,16714.824], "NATO Basis", -1],
     
-    [[12538,31.9272,16319], "1 - Lakka - Fabrik", 2],
-    [[12261.611,24.580132,15468.185], "1 - Lakka - Zentrum", 2],
-    [[13009.863,23.24024,14861.646], "1 - Lakka - Stavros", 2],    
+    [[12538,31.9272,16319], "1 - Lakka - Fabrik", 1],
+    [[12261.611,24.580132,15468.185], "1 - Lakka - Zentrum", 1],
+    [[13009.863,23.24024,14861.646], "1 - Lakka - Stavros", 1],    
 
-    [[16660.316,32.487659,19089.379], "2 - Athira - Militär", 3],    
-    [[14165.508,27.977919,18659.793], "2 - Athira - Stadt", 3],            
-    [[14430.449,39.187088,18884.332], "2 - Athira - Industrie", 3],    
+    [[16660.316,32.487659,19089.379], "2 - Athira - Militär", 1],    
+    [[14165.508,27.977919,18659.793], "2 - Athira - Stadt", 1],            
+    [[14430.449,39.187088,18884.332], "2 - Athira - Industrie", 1],    
 
     [[16737.273,17.730064,16132.73], "3 - Telos - Anthrakia", 1],
     [[16295.838,16.738787,17099.875], "3 - Telos - Stadt", 1],
@@ -99,48 +99,51 @@ GVAR(locations_west) =
 //East
 GVAR(locations_east) =
 [
-    [[24289.662,1.9317054,17991.496], "CSAT Marine", -1],
-    [[23813.395,3.1941841,18832.475], "CSAT Basis", -1],
-    
-    [[21378.822,36.758911,8976.4902], "1 - Panagia - Umspannwerk", 3],        
-    [[20432.518,39.498234,8917.2764], "1 - Panagia - Stadt", 3],    
-    [[19304.264,188.92511,9650.2051], "1 - Panagia - Antenne", 3],
+    [[12659.308,1.7263871,8472.4277], "CSAT Marine", -1],
+    [[20814.648,108.14597,7201.3696], "SO_CSAT Basis", -1],
+    [[3722.1772,19.425463,10445.089], "SW_CSAT Basis", -1],
+	[[5891.7026,225.63435,20118.406], "NW_CSAT Basis", -1],
+	[[26654.154,23.840014,22928.588], "NO_CSAT Basis", -1],
+	
+    [[21378.822,36.758911,8976.4902], "1 - Panagia - Umspannwerk", 1],        
+    [[20432.518,39.498234,8917.2764], "1 - Panagia - Stadt", 1],    
+    [[19304.264,188.92511,9650.2051], "1 - Panagia - Antenne", 1],
 
-    [[17047.197,23.779554,11319.724], "2 - Chalkeia - Steinbruch", 3],    
-    [[21552.613,14.999241,10965.695], "2 - Chalkeia - Ausgrabungsstätte", 3],    
-    [[20279.32,66.769104,11592.766], "2 - Chalkeia - Zentrum", 3],
+    [[17047.197,23.779554,11319.724], "2 - Chalkeia - Steinbruch", 1],    
+    [[21552.613,14.999241,10965.695], "2 - Chalkeia - Ausgrabungsstätte", 1],    
+    [[20279.32,66.769104,11592.766], "2 - Chalkeia - Zentrum", 1],
 
-    [[20154.674,20.015493,19991.996], "3 - Ioannina - Ausgrabungsstätte", 3],        
-    [[21033.391,17.245554,19274.801], "3 - Ioannina - Militärposten", 3],    
-    [[22178.254,17.411903,18389.48], "3 - Ioannina - Zollstation", 3],
+    [[20154.674,20.015493,19991.996], "3 - Ioannina - Ausgrabungsstätte", 2],        
+    [[21033.391,17.245554,19274.801], "3 - Ioannina - Militärposten", 2],    
+    [[22178.254,17.411903,18389.48], "3 - Ioannina - Zollstation", 2],
 
-    [[25334.148,10.723906,20351.393], "4 - Delfinaki - Kraftwerk", 3],
-    [[23507.813,92.002312,21134.75], "4 - Delfinaki - Militär", 3],
-    [[21900.697,23.09441,21013.383], "4 - Delfinaki - Hotelanlage", 3],
+    [[25334.148,10.723906,20351.393], "4 - Delfinaki - Kraftwerk", 1],
+    [[23507.813,92.002312,21134.75], "4 - Delfinaki - Militär", 1],
+    [[21900.697,23.09441,21013.383], "4 - Delfinaki - Hotelanlage", 1],
     
-    [[9679.2852,4.1055808,22269.486], "5 - Abdera - Krya Nera", 3],    
-    [[12202.975,2.3049662,22949.342], "5 - Abdera - Tonos Bay", 3],
-    [[9407.8926,118.60757,20303.814], "5 - Abdera - Zentrum", 3],
+    [[9679.2852,4.1055808,22269.486], "5 - Abdera - Krya Nera", 1],    
+    [[12202.975,2.3049662,22949.342], "5 - Abdera - Tonos Bay", 1],
+    [[9407.8926,118.60757,20303.814], "5 - Abdera - Zentrum", 1],
 
-    [[10279.33,131.39256,19127.998], "6 - Galati - Zentrum", 3],
-    [[11457.833,136.5833,20568.986], "6 - Galati - Steinbruch", 3],
-    [[14163.031,60.523945,22131.926], "6 - Galati - Jagdhaus", 3],
+    [[10279.33,131.39256,19127.998], "6 - Galati - Zentrum", 1],
+    [[11457.833,136.5833,20568.986], "6 - Galati - Steinbruch", 1],
+    [[14163.031,60.523945,22131.926], "6 - Galati - Jagdhaus", 1],
     
-    [[8633.3174,181.03595,18283.008], "7 - Syrta - Zentrum", 3],    
-    [[5444.7119,76.440422,17925.609], "7 - Syrta - Verladestation", 3],        
-    [[3919.8413,9.3780146,17309.154], "7 - Syrta - Agios Konstantinos", 3],
+    [[8633.3174,181.03595,18283.008], "7 - Syrta - Zentrum", 1],    
+    [[5444.7119,76.440422,17925.609], "7 - Syrta - Verladestation", 1],        
+    [[3919.8413,9.3780146,17309.154], "7 - Syrta - Agios Konstantinos", 1],
     
-    [[7111.814,111.81547,16434.742], "8 - Kore - Zentrum", 3],    
-    [[6788.9038,51.23349,15824.688], "8 - Kore - Müllkippe", 3], 
-    [[4871.9341,79.06218,16144.493], "8 - Kore - Negades", 3],     
+    [[7111.814,111.81547,16434.742], "8 - Kore - Zentrum", 1],    
+    [[6788.9038,51.23349,15824.688], "8 - Kore - Müllkippe", 1], 
+    [[4871.9341,79.06218,16144.493], "8 - Kore - Negades", 1],     
 
-    [[3378.1877,27.699886,14338.034], "9 - Aggelochori - Villenviertel", 3],
-    [[6432.2759,118.61,13770.329], "9 - Aggelochori - Schaffarm", 3],
-    [[3753.0562,14.725172,13572.595], "9 - Aggelochori - Zentrum", 3],
+    [[3378.1877,27.699886,14338.034], "9 - Aggelochori - Villenviertel", 1],
+    [[6432.2759,118.61,13770.329], "9 - Aggelochori - Schaffarm", 1],
+    [[3753.0562,14.725172,13572.595], "9 - Aggelochori - Zentrum", 1],
     
-    [[7493.9761,27.520681,12177.818], "10 - Edessa - Farm", 3],
-    [[7114.9277,6.1351104,11061.224], "10 - Edessa - Strand", 3],
-    [[8281.8408,15.422586,10903.659], "10 - Edessa - Kraftwerk", 3],
+    [[7493.9761,27.520681,12177.818], "10 - Edessa - Farm", 1],
+    [[7114.9277,6.1351104,11061.224], "10 - Edessa - Strand", 1],
+    [[8281.8408,15.422586,10903.659], "10 - Edessa - Kraftwerk", 1],
 
     [[10066.178,20.615116,11325.61], "11 - Zaros - Villa", 1],
     [[9046.04,22.475744,11960.659], "11 - Zaros - Zentrum", 1],
@@ -159,6 +162,8 @@ GVAR(heavy_vehicles) =
     "OPT4_O_APC_Tracked_02_cannon_F",               // BTR-K Kamysh (Titan)
     "OPT4_O_MBT_02_cannon_F",                       // T-100 Varsuk
     "OPT4_O_MBT_02_arty_F",                         // 2S9 Sochor
+	"OPT4_O_MRAP_02_gmg_F",
+	"OPT4_O_LSV_02_AT_F",
             
     "OPT4_B_APC_Tracked_01_rcws_F",                 // IFV-6c Panther
     "OPT_B_APC_Wheeled_01_cannon_light_F",          // AMV-7 Marshall (Leicht)
@@ -171,7 +176,9 @@ GVAR(heavy_vehicles) =
     "OPT_B_MBT_01_Arty_F",                          // M4 Scorcher
     "OPT4_B_MBT_01_mlrs_F",                         // M4 Scorcher    
     "OPT4_B_MBT_01_arty_F",                         // M4 Scorcher
-    "OPT_B_MBT_01_mlrs_F"                           // M5 Sandstorm    
+    "OPT_B_MBT_01_mlrs_F",                           // M5 Sandstorm    
+	"OPT4_B_MRAP_01_gmg_F",
+	"OPT4_B_LSV_01_AT_F"
  ];
 
 
@@ -181,5 +188,7 @@ GVAR(beam_trigger) =
     nato_trigger_beam,
     nato_trigger_beam_1,
     csat_trigger_beam_4,
-    csat_trigger_beam_3
+    csat_trigger_beam_3,
+	csat_trigger_beam_5,
+	csat_trigger_beam_6
 ];

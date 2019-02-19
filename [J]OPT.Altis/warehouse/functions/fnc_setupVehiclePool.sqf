@@ -40,6 +40,7 @@ GVAR(nato_vehicles) =
     ["OPT_B_Truck_01_Repair_F", DEF_PROD(10000)],               // HEMTT Repair, ersetzt durch Container
     ["OPT_B_Truck_01_medical_F", DEF_PROD(10000)],              // HEMTT Medical, ersetzt durch Container
     ["OPT_B_Truck_01_transport_F", DEF_PROD(2000)],             // HEMTT 2000 (fr Radar Container, keine Sitze auf 
+		["OPT4_B_MRAP_01_hmg_F", DEF_PROD(20000)],                  // Hunter HMG - neu
     ["OPT_B_MRAP_01_F", DEF_PROD(5000)]                        // Hunter
 ];
 
@@ -90,7 +91,6 @@ GVAR(nato_armored) =
     ["OPT4_B_MBT_01_mlrs_F", DEF_PROD(0)],                      // M5 Sandstorm    
     ["OPT4_B_MBT_01_arty_F", DEF_PROD(300000)],                 // M4 Scorcher
     ["OPT_B_MBT_01_mlrs_F", DEF_PROD(400000)],                   // M5 Sandstorm    
-	["OPT4_B_MRAP_01_hmg_F", DEF_PROD(20000)],                  // Hunter HMG - neu
     ["OPT4_B_MRAP_01_gmg_F", DEF_PROD(0)],                  // Hunter GMG - neu
     ["OPT_B_MRAP_03_F", DEF_PROD(0)],                           // Strider, 6500 
     ["OPT_B_MRAP_03_hmg_F", DEF_PROD(0)],                       // Strider HMG, 
@@ -116,7 +116,7 @@ GVAR(nato_supplies) =
     ["OPT_B_UAV_01_F", DEF_PROD(0)],                            // Darter AR-2
     ["OPT_FlexibleTank_01_forest_F", DEF_PROD(1000)],           // Treibstoff-Fass
     ["OPT4_ACE_Box_82mm_Mo_HE", DEF_PROD(100000)],              // Mörsermuni
-    ["OPT_B_Slingload_01_Ammo_F", 90000, 10000, 20000],         // Munitionscontainer
+    ["OPT_B_Slingload_01_Ammo_F", 0, 0, 0],         // Munitionscontainer
     ["OPT_B_Slingload_01_Fuel_F", DEF_PROD(8000)],              // Fuelcontainer
     ["OPT_B_Slingload_01_Repair_F", DEF_PROD(8000)],            // Reparaturcontainer
     ["OPT_B_Slingload_01_Medevac_F", DEF_PROD(0)],              // Lazarettcontainer, 5000            //psycho, dieser container verursacht Probleme mit den Load-Scripts und wird durch den weien Container ersetzt welcher zum Lazarett ausgebaut werden kann
@@ -170,6 +170,7 @@ GVAR(csat_vehicles) =
     ["OPT_O_G_Offroad_01_F", DEF_PROD(0)],                      // Pickup, ersetzt durch quilin
     ["OPT_O_G_Offroad_01_armed_F", DEF_PROD(0)],                // Pickup HMG, ersetzt durch quilin
     ["OPT_O_MRAP_02_F", DEF_PROD(5500)],                        // Ifrit-
+	["OPT4_O_MRAP_02_hmg_F", DEF_PROD(15500)],                  // Ifrit HMG
     //Tropentarn
     ["OPT_O_T_Quadbike_01_ghex_F", DEF_PROD(0)],                // Quadbike 1500
     ["OPT_O_T_LSV_02_unarmed_F", DEF_PROD(0)],                  // Quilin unarmed 3000
@@ -248,7 +249,6 @@ GVAR(csat_armored) =
     ["OPT4_O_MBT_02_cannon_F", DEF_PROD(125000)],               // T-100 Varsuk
     ["OPT4_O_MBT_02_arty_F", DEF_PROD(300000)],                 // 2S9 Sochor
     ["OPT_O_Truck_02_MRL_F", DEF_PROD(400000)],                 // 2S9 Sochor    
-	["OPT4_O_MRAP_02_hmg_F", DEF_PROD(15500)],                  // Ifrit HMG
     ["OPT4_O_MRAP_02_gmg_F", DEF_PROD(0)],                  // Ifrit GMG
 	["OPT4_O_LSV_02_AT_F", DEF_PROD(80000)],                    // Quilin AT++++++++++++++++++++++++++ 20000
 //Tropentarn
@@ -281,7 +281,7 @@ GVAR(csat_supplies) =
     ["OPT4_ACE_Box_82mm_Mo_HE", DEF_PROD(100000)],                          // Mörsermuni
     ["OPT_Land_Pod_Heli_Transport_04_fuel_F", DEF_PROD(8000)],              // Fuelcontainer
     ["OPT_Land_Pod_Heli_Transport_04_fuel_black_F", DEF_PROD(0)],           // Fuelcontainer (schwarz)
-    ["OPT_Land_Pod_Heli_Transport_04_ammo_F", 90000, 10000, 20000],         // Munitionscontainer
+    ["OPT_Land_Pod_Heli_Transport_04_ammo_F", 0, 0, 0],         // Munitionscontainer
     ["OPT_Land_Pod_Heli_Transport_04_ammo_black_F", DEF_PROD(0)],           // Munitionscontainer (Schwarz)
     ["OPT_Land_Pod_Heli_Transport_04_repair_F", DEF_PROD(8000)],            // Reparaturcontainer
     ["OPT_Land_Pod_Heli_Transport_04_repair_black_F", DEF_PROD(0)],         // Reparaturcontainer (schwarz)
