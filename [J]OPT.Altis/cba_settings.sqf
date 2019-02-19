@@ -205,7 +205,7 @@ cba_ui_StorePasswords = 1;
 
 // OPT Autoparachute
 force OPT_autoparachute_minHeight = 80;
-force OPT_autoparachute_openingTime = 5;
+force OPT_autoparachute_openingTime = 1.5;
 
 // OPT Berggang
 force OPT_berggang_boost = 0.25;
