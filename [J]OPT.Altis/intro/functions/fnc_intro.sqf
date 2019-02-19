@@ -78,7 +78,7 @@ titlecut["","BLACK OUT",3];
 sleep 3;
 
 // number of players on each side
-_txt = format["<t size='1' align='center'> <br/>
+private _txt = format["<t size='1' align='center'> <br/>
 Zu dieser Schlacht haben sich zusammengefunden: <br/>
 <t size='1.5' color='#0000ff'>NATO %1</t> vs <t size='1.5' color='#ff0000'>CSAT %2</t></t><br/><t size='0.7'>", playersNumber west, playersNumber east];
 
@@ -91,7 +91,7 @@ _cam cameraEffect ["internal", "back"];
 _cam camPrepareFOV 0.750;
 _cam camCommit 0;
 
-_cam camSetTarget player;
+_cam camSetTarget (leader (allGroups select {side _x isEqualTo west and isPlayer leader _x} select 0));
 _cam camSetRelPos [0, 8, 4];
 _cam camCommit 0;
 waitUntil {camCommitted _cam};
@@ -129,7 +129,7 @@ sleep 1;
 titleCut ["", "BLACK IN", 1];
 sleep 2;
 
-(allGroups select {side _x isEqualTo west}) apply
+(allGroups select {side _x isEqualTo west and isPlayer leader _x}) apply
 {
     private _grp = _x;
     private _side = side _grp;
@@ -142,7 +142,7 @@ titleText ["", "Plain Down", 1];
 sleep 2;
 
 // next group on other side
-_cam camSetTarget (leader (allGroups select {side _x isEqualTo east} select 0));
+_cam camSetTarget (leader (allGroups select {side _x isEqualTo east and isPlayer leader _x} select 0));
 _cam camSetRelPos [0, 8, 4];
 _cam camCommit 0.1;
 waitUntil {camCommitted _cam};
@@ -182,7 +182,7 @@ sleep 1;
 titleCut ["", "BLACK IN", 1];
 sleep 2;
 
-(allGroups select {side _x isEqualTo east}) apply
+(allGroups select {side _x isEqualTo east and isPlayer leader _x}) apply
 {
     private _grp = _x;
     private _side = side _grp;
