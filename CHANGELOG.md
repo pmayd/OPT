@@ -1,5 +1,37 @@
 ﻿# Changelog
 
+## 1.4.15.5
+
+### Skript
+
+- Intro
+  - überarbeitete Intro-Version mit kürzerer Laufzeit und Kamerafahrt auf Gruppen statt einzelne Spieler
+- Respawn
+  - Kosten werden wieder korrekt berechnet, abgezogen und geloggt
+
+- Merge mit der Trainingsversion
+  - Hunter und Ifrit HMG wieder an Radfahrzeugpad und ohne crew-beschränkung
+  - quilin AT in cargo gefixt (falscher classname)
+  - Beams auf 3 für Beampositest (für schlacht rückgängig gemacht!)
+  - Ingenieur bzw pionier_F in setupclassnames nachgetragen
+  - Kauflisten und Preise angepasst (Mun-container raus, div. Preisanpassungen bei kisten etc)
+  - classname MAAWS in setuprclassnames launcherteil gefixt
+  - TFAR-script funkkanäle CSAT erneut angepasst
+
+### Editor
+
+- CSAT-Radarcontainer-Modell getauscht
+- ACE-Spaten an Sprengmeisterslots verteilt, da nicht mehr in Ausrüstungskiste
+- ACE-Dreibein an Sniper verteilt (Wunsch aus der NATO)
+- Einheiten komplett neu sortiert und aufgestellt (CSAT und NATO-Wunschliste und Squadaufteilung)
+- Piloten einzeln gestellt wegen GPS-Kennung
+- Ausrüstungskisten gegen neue Modelle getauscht wegen Fixes im Inventar (FAKs, Fallschirme und LR-Funke) - auf NATO wohl noch immer falsche LR-funken drin (muss ich erneut checken und fixen!)
+- Bilder der Funktabellen in den Basen getauscht - NATO <-> CSAT
+- ZEUS für Infer gesetzt (CSAT-Alpha muss nochma!) bzw musste ich rausnehmen, da irgendwie trotz abgeschaltetem Trainmodus aktiv!
+- Grenzmarkerordner gelöscht! muss rückgängig, wenn Scriptlösung am Start oder dort verbaut!
+- Beamliste Marine rausgenommen - muss wieder rein, wenn Posi geklärt!
+- CBA-settings neu gesetzt und exportiert und in cba_settings.sqf und überall! (komplettrep auf 90, waffenruhe +2 wegen intro, div. andre anpassungen) - FALLSCHIRM GING NICHT UNTER 5!
+
 ## 1.4.15.3
 
 ### Skript
