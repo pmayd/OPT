@@ -8,7 +8,9 @@
   - überarbeitete Intro-Version mit kürzerer Laufzeit und Kamerafahrt auf Gruppen statt einzelne Spieler
 - Respawn
   - Kosten werden wieder korrekt berechnet, abgezogen und geloggt
-
+- Fieldrepair
+  - Eintrag für die Feldreparatur ist nur noch sichtbar, wenn der Soldat den Schaden auch beheben kann. Bei Schäden an schweren Teilen folglich kein Eintrag für Feldreparatur, außer im Sonderfall von Geschützen und auch nur für den Ingenieur. Ingenieur hat den Eintrag zur Komplettreparatur oder Soldat, wenn Rep-LKW in der Nähe, sobald ein bel. Part am Fahrzeug beschädigt ist
+  - Feldreparatur setzt sich nach Komplettreparatur zurück
 - Merge mit der Trainingsversion
   - Hunter und Ifrit HMG wieder an Radfahrzeugpad und ohne crew-beschränkung
   - quilin AT in cargo gefixt (falscher classname)
@@ -17,6 +19,7 @@
   - Kauflisten und Preise angepasst (Mun-container raus, div. Preisanpassungen bei kisten etc)
   - classname MAAWS in setuprclassnames launcherteil gefixt
   - TFAR-script funkkanäle CSAT erneut angepasst
+
 
 ### Editor
 
