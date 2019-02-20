@@ -42,7 +42,7 @@ if (_veh isEqualTo objNull) exitWith {_ret};
 private _type = typeOf _veh;
 
 
-private _damagedParts = (getAllHitPointsDamage _veh select 2) select {_x > GVAR(minDamageOnAnyPart)};
+private _damagedParts = (getAllHitPointsDamage _veh select 2) select {_x >= GVAR(minDamageOnAnyPart)};
 
 if (count _damagedParts > 0) then
 {

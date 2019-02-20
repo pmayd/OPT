@@ -59,7 +59,8 @@ private _startTime = time;
 
         ["Feldreparatur", STR_REPAIR_FINISHED, "green"] call EFUNC(gui,message);
         [_veh] remoteExecCall [QFUNC(fullRepair), _veh, false]; // called where vehicle is local!
-        _veh setVariable [QGVAR(hardRepTimeLeft), nil, true];
+        _veh setVariable [QGVAR(hardRepTimeLeft), nil, true]; // reset rep time left on vehicle from aborted repair attempt
+        _veh setVariable [QGVAR(noRepairs), 0, true]; // reset field repair counter
 
         if (!_truckIsEngineer) then
         {

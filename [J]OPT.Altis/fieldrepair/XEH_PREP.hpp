@@ -1,4 +1,5 @@
 
+PREP(canBeRepaired);
 PREP(fullRepair);
 PREP(getPartsRepairTime);
 PREP(heavyRepair);

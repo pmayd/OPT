@@ -68,7 +68,8 @@
             {
                 params ["_target", "_player", "_params"];
 
-                [_target] call FUNC(needRepair);
+                [_target] call FUNC(vehicleDamaged) and
+                [_target, _player] call FUNC(canBeRepaired)
             }
         ] call ace_interact_menu_fnc_createAction;
 
@@ -98,7 +99,7 @@
                 params ["_target", "_player", "_params"];
 
                 // All engineers can perform a heavy repair
-                if (typeOf _player in GVARMAIN(engineers)) exitWith{[_target] call FUNC(needRepair);};
+                if (typeOf _player in GVARMAIN(engineers)) exitWith{[_target] call FUNC(vehicleDamaged);};
 
                 _truck = nearestObjects [_player, ["Car"], GVAR(maxDistanceToRepairTruck)];
                 _truck = _truck select {finite (getRepairCargo _x)};
@@ -108,7 +109,7 @@
                     _truck getVariable [QGVAR(repair_cargo), -1] != -1 and
                     {alive _target} and
                     {speed _truck < 3} and
-                    [_target] call FUNC(needRepair);
+                    [_target] call FUNC(vehicleDamaged);
 
                 } else
                 {

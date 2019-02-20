@@ -57,7 +57,7 @@ if (_veh isEqualTo objNull) exitWith {false};
     (
         GVAR(engineerCanRepairGun) and
         (typeOf player) in GVARMAIN(engineers) and
-        (tolower _x) in ["hitgun", "hitturret"] and
+        (count (["hitgun", "hitturret"] select {_x find (tolower _x) > -1}) > 0) and
         _dmg > 0.5
     ) then
     {
