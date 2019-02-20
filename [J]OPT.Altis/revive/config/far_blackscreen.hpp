@@ -93,7 +93,7 @@
             y= 0.75 * safezoneH + safezoneY;
             w = 0.14 * safezoneW; h = 0.04 * safezoneH;
             text = "Respawn";
-            action = "player setVariable ['FAR_isUnconscious', 0, false]; player setDamage 1;";    // setVar only local at this point to kill the dialogs on local machine!
+            action = QUOTE([] call FUNC(closeDialog));// setVar only local at this point to kill the dialogs on local machine!
         };
 
         class GREUH_ReviveLabel {

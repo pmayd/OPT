@@ -6,6 +6,7 @@ PREP(checkRevive);
 PREP(checkStabilize);
 PREP(checkSuicide);
 PREP(clearGarbage);
+PREP(closeDialog);
 PREP(drag);
 PREP(handleAction);
 PREP(handleDamage);
