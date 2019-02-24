@@ -29,7 +29,6 @@
   - Freeze gilt nun nur noch zeitlich, ist also nicht mehr an das Intro gekoppelt
   - Serverclock überarbeitet, um freezeTime zu berücksichtigen
 
-
 ### Editor
 
 - CSAT-Radarcontainer-Modell getauscht
