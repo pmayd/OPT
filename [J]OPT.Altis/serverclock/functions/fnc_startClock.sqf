@@ -47,6 +47,16 @@ waitUntil { time > 1};
 GVAR(startTime) = serverTime;
 publicVariable QGVAR(startTime);
 
+// freezeTime
+// independent of all other times, always runs full freezeTime minutes
+_log_msg = format["Beginn Freeze: %1 min", EGVAR(freeze,freezeTime)];
+["Mission", _log_msg] call EFUNC(log,write);
+
+for "_t" from ceil(FREEZE_TIME_IN_SECONDS) to 0 step -1 do
+{
+    uisleep 1;
+};
+
 // truceTime
 // broadcast start of truceTime to all clients
 GVAR(truceStarted) = true;
@@ -54,14 +64,12 @@ publicVariable QGVAR(truceStarted);
 
 [] call EFUNC(log,writeStartState);
 
-estimatedTimeLeft (GVAR(playTime) * 60 - TIME_ELAPSED);
-_timeElapsed = TIME_ELAPSED;
-private _timeUntilTruceEnds = GVAR(truceTime) * 60 - _timeElapsed;
-
-_log_msg = format["Beginn Waffenruhe: %1 min", _timeUntilTruceEnds / 60];
+UPDATE_TIME;
+// truceTime is independent of all other times, always runs full truceTime minutes
+_log_msg = format["Beginn Waffenruhe: %1 min", GVAR(truceTime)];
 ["Mission", _log_msg] call EFUNC(log,write);
 
-for "_t" from ceil(_timeUntilTruceEnds) to 0 step -1 do
+for "_t" from ceil(TRUCE_TIME_IN_SECONDS) to 0 step -1 do
 {
     uisleep 1;
 };
@@ -73,14 +81,17 @@ publicVariable QGVAR(missionStarted);
 // Benachrichtigung über Missionsstart an alle Clients
 ["Mission", "Mission gestartet", "green"] remoteExecCall [QEFUNC(gui,message), -2, false];
 
-estimatedTimeLeft (GVAR(playTime) * 60 - TIME_ELAPSED);
-_timeElapsed = TIME_ELAPSED;
-_log_msg = format["Beginn Rest-Spielzeit: %1 min", (GVAR(playTime) * 60 - _timeElapsed) / 60];
+UPDATE_TIME;
+// playTime IS dependent on truceTime, but not freezeTime!
+_log_msg = format["Beginn Rest-Spielzeit: %1 min", PLAY_TIME_IN_SECONDS * 60];
 ["Mission", _log_msg] call EFUNC(log,write);
 
 // begin with countdown of mission time
-while {MISSION_IS_RUNNING} do
+// decrease time in minutes by one for each minute
+private _minuteCounter = 0;
+for "_t" from ceil(PLAY_TIME_IN_SECONDS * 60) to 0 step -1 do 
 {
+	if !(MISSION_IS_RUNNING) exitWith{};
 
 	// call all functions that were registered for running each minute
 	GVAR(registeredCallbacks) apply {
@@ -88,14 +99,13 @@ while {MISSION_IS_RUNNING} do
 	};
 
 	uiSleep 60;
-    estimatedTimeLeft (GVAR(playTime) * 60 - TIME_ELAPSED);
+    UPDATE_TIME;
 };
 
 // wait last seconds exactly until mission ends
 waitUntil
 {
-    _timeElapsed = TIME_ELAPSED;
-    GVAR(playTime) * 60 - _timeElapsed < 0;
+    PLAY_TIME_LEFT < 0;
 };
 
 [] call EFUNC(log,writeEndState);

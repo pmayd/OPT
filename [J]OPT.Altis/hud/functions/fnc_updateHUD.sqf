@@ -99,23 +99,26 @@ while {!(_cutRSC isEqualTo displayNull)} do
         // get time from server
         private _timeElapsed = serverTime - EGVAR(serverclock,startTime);
 
-        private _truceTime = EGVAR(serverclock,truceTime) * 60 - _timeElapsed;
-        private _playTime = EGVAR(serverclock,playTime) * 60 - _timeElapsed;
+        private _freezeTimeLeft = EGVAR(freeze,freezeTime) * 60 - _timeElapsed;
+        private _truceTimeLeft = (EGVAR(serverclock,truceTime) + EGVAR(freeze,freezeTime)) * 60 - _timeElapsed;
+        private _playTimeLeft = (EGVAR(serverclock,playTime) + EGVAR(freeze,freezeTime) - EGVAR(serverclock,truceTime)) * 60 - _timeElapsed;
 
         private _timeStr = "";
         private _timeLeft = 0;
 
-        if (!EGVAR(serverclock,truceStarted) and !EGVAR(serverclock,missionStarted)) then
+        if (EGVAR(freeze,on) and _freezeTimeLeft > 0) then
         {
-            _timeStr = format ["Mission wird geladen..."];
-            _control ctrlSetTextColor [0.7, 0.7, 0.7, 1];
+            _timeLeft = [_freezeTimeLeft] call CBA_fnc_formatElapsedTime;
+
+            _timeStr = format ["Missionsvorbereitung: %1", _timeLeft];
+            _control ctrlSetTextColor [0.0, 0.0, 0.7, 1];
         };
 
         if (EGVAR(serverclock,truceStarted) and !EGVAR(serverclock,missionStarted)) then
         {
-            _timeLeft = [_truceTime] call CBA_fnc_formatElapsedTime;
+            _timeLeft = [_truceTimeLeft] call CBA_fnc_formatElapsedTime;
 
-            if (_truceTime > 0) then
+            if (_truceTimeLeft > 0) then
             {
 
                 _timeStr = format ["Waffenruhe: %1", _timeLeft];
@@ -135,9 +138,9 @@ while {!(_cutRSC isEqualTo displayNull)} do
         {
 
             // Mission gestartet - Zeige verbleibende Spielzeit
-            _timeLeft = [_playTime] call CBA_fnc_formatElapsedTime;
+            _timeLeft = [_playTimeLeft] call CBA_fnc_formatElapsedTime;
 
-            if (_playTime > 0) then
+            if (_playTimeLeft > 0) then
             {
 
                 _timeStr = format ["Rest-Spielzeit: %1", _timeLeft];
@@ -156,7 +159,7 @@ while {!(_cutRSC isEqualTo displayNull)} do
         // Update Text
         _control ctrlSetText _timeStr;
         // Färbe Uhr in den letzten 5 Minuten rot
-        if (_playTime < 300) then
+        if (_playTimeLeft < 300) then
         {
             _control ctrlSetTextColor [0.9, 0.2, 0.2, 1];
         };

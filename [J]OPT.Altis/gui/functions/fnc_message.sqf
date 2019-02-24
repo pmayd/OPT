@@ -82,7 +82,7 @@ If (GVAR(msg_cur) isEqualTo []) then {
         private _curPos = ctrlPosition(_display displayCtrl IDC_MSG_stripe);
         _curPos set [3, (ctrlPosition(_display displayCtrl IDC_MSG_content))select 3];
         (_display displayCtrl IDC_MSG_stripe) ctrlSetPosition _curPos;
-        (_display displayCtrl IDC_MSG_stripe) ctrlCommit 0;
+        (_display displayCtrl IDC_MSG_stripe) ctrlCommit 0; 
     };
 
     If (_content isEqualTo "") then {

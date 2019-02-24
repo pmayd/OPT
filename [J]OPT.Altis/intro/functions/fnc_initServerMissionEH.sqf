@@ -51,7 +51,6 @@ GVAR(EH_PlayerConnected) = addMissionEventHandler
         if (GVAR(on) and !EGVAR(training,on) and !(_jip)) then
         {
             [] remoteExec [QFUNC(intro), _owner, false];
-            HASH_SET(GVAR(introHash),_uid,false); // remember that client is in intro
         };
 
     }

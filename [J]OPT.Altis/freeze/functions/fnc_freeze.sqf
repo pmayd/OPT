@@ -40,22 +40,16 @@ waitUntil { EGVAR(serverclock,startTime) != 0 };
 // or - if intro is off -, for the duration of the freeze time
 private _checkCondition =
 {
-    if (EGVAR(intro,on)) then
-    {
-        !EGVAR(intro,allDone)
-    } else
-    {
-        private _timeElapsed = serverTime - EGVAR(serverclock,startTime);
-        _timeElapsed < (GVAR(freezeTime) * 60)
-    };
+    private _timeElapsed = serverTime - EGVAR(serverclock,startTime);
+    _timeElapsed < (GVAR(freezeTime) * 60)
 };
 
-disableUserInput true;
+player enableSimulation false;
 
 while {[] call _checkCondition} do {
     uiSleep 1;
 };
 
 // make sure input is enabled again
-waitUntil{disableUserInput false; !userInputDisabled;};
+waitUntil{player enableSimulation true; simulationEnabled player;};
 

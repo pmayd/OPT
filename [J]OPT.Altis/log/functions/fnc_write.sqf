@@ -30,6 +30,7 @@ params [
 if (_category isEqualTo "" or _message isEqualTo "") exitWith{};
 
 /* CODE BODY */
-private _timestamp = [serverTime - EGVAR(serverclock,startTime)] call CBA_fnc_formatElapsedTime;
+// subtract freezeTime from all log times so that time 0 is start of truce time
+private _timestamp = [serverTime - EGVAR(serverclock,startTime) - (EGVAR(freeze,freezeTime) * 60)] call CBA_fnc_formatElapsedTime;
 
 diag_log LOG_MESSAGE(_category,_timestamp,_message);

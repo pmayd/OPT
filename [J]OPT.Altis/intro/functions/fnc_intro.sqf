@@ -1,6 +1,6 @@
 /**
 * Description:
-* play intro
+* play intro on client
 *
 * Author:
 * James
@@ -55,7 +55,6 @@ sleep 2;
 "dynamicBlur" ppEffectCommit 8;
 waitUntil{ppEffectCommitted "dynamicBlur"};
 
-/* INTRO */
 sleep 2;
 [
     parseText format
@@ -72,80 +71,11 @@ sleep 2;
 ] spawn BIS_fnc_textTiles;
 
 schrift0 = ["<t size='1.2'>" + "Habt alle viel Spaß! Spielt hart, aber fair!"+"</t>",0,0.8,3,4,0,3010] spawn bis_fnc_dynamicText;
+
 sleep 8;
 
 titlecut["","BLACK OUT",3];
 sleep 3;
-
-// number of players on each side
-private _txt = format["<t size='1' align='center'> <br/>
-Zu dieser Schlacht haben sich zusammengefunden: <br/>
-<t size='1.5' color='#0000ff'>NATO %1</t> vs <t size='1.5' color='#ff0000'>CSAT %2</t></t><br/><t size='0.7'>", playersNumber west, playersNumber east];
-
-[_txt,0,-0.45,999,2,0,3010] spawn bis_fnc_dynamicText;
-
-"dynamicBlur" ppEffectEnable false;
-
-private _cam = "camera" camCreate [0,0,0];
-_cam cameraEffect ["internal", "back"];
-_cam camPrepareFOV 0.750;
-_cam camCommit 0;
-
-_cam camSetTarget (leader (allGroups select {side _x isEqualTo west and isPlayer leader _x} select 0));
-_cam camSetRelPos [0, 8, 4];
-_cam camCommit 0;
-waitUntil {camCommitted _cam};
-
-private _fnc_showGroup =
-{
-    params ["_grp", "_side", "_cam"];
-
-    if (isPlayer (leader _grp)) then
-    {
-        _cam camSetTarget (leader _grp);
-        _cam camSetRelPos [0, 8, 4];
-        _cam camCommit 1.5;
-        waitUntil {camCommitted _cam};
-        sleep 1.5;
-
-        private _names = ((units _grp) apply {UNIT_NAME(_x)}) joinString ", ";
-        [
-            format["<t size='0.85'>%1<br/>%2<br/>%3</t>", _names, groupID _grp, _side],
-            0,
-            0,
-            3,
-            0.5,
-            0,
-            9999
-        ] spawn bis_fnc_dynamicText;
-        sleep 4.5;
-
-    }
-};
-
-/* SHOW ALL NATO GROUPS */
-titleCut ["", "BLACK FADED", 1];
-sleep 1;
-titleCut ["", "BLACK IN", 1];
-sleep 2;
-
-(allGroups select {side _x isEqualTo west and isPlayer leader _x}) apply
-{
-    private _grp = _x;
-    private _side = side _grp;
-    [_grp, _side, _cam] call _fnc_showGroup;
-};
-
-['',0,-0.45,999,2,0,3010] spawn bis_fnc_dynamicText;
-titleCut ["", "BLACK OUT", 2];
-titleText ["", "Plain Down", 1];
-sleep 2;
-
-// next group on other side
-_cam camSetTarget (leader (allGroups select {side _x isEqualTo east and isPlayer leader _x} select 0));
-_cam camSetRelPos [0, 8, 4];
-_cam camCommit 0.1;
-waitUntil {camCommitted _cam};
 
 // Zufallsauswahl eines von 40 Quotes
 private _quotes = [];
@@ -157,45 +87,51 @@ for "_i" from 30 to 44 do
 {
     _quotes pushBack format["STR_A3_Campaign_Quote_%1", _i];
 };
-private _quote = localize (_quotes select (floor random (count _quotes)));
+_quote = localize (_quotes select (floor random (count _quotes)));
 _quote = _quote splitString "-";
 
-private _txt = format
-[
-    "<t size='1.3' align='center'>%1</t><br/><t size='1.2' align='right' color='#cccccc'>%2</t>",
-    _quote select 0,
-    _quote select 1
+private _txt = format["<t size='1.3' align='center'>%1</t><br/><t size='1.2' align='right' color='#cccccc'>%2</t>", _quote select 0, _quote select 1];
+[_txt,0,0,8,3,0,3010] spawn bis_fnc_dynamicText;
+sleep 13;
+
+// Liste alle Spieler beider Seiten
+private _playerNATO = (playableUnits -  (entities "HeadlessClient_F")) select {UNIT_SIDE(_x) isEqualTo west};
+private _playerCSAT = (playableUnits -  (entities "HeadlessClient_F")) select {UNIT_SIDE(_x) isEqualTo east};
+
+_txt = format["<t size='1' align='center'> <br/>Zu dieser Schlacht haben sich zusammengefunden: <br/><t size='1.5' color='#0000ff'>NATO %1</t> vs <t size='1.5' color='#ff0000'>CSAT %2</t></t><br/>", 
+    playersNumber west, 
+    playersNumber east
 ];
-[_txt,0,0,6,4,0,3010] spawn bis_fnc_dynamicText;
-sleep 11;
 
-/* SHOW ALL CSAT GROUPS */
-// number of players on each side
-_txt = format["<t size='1' align='center'> <br/>
-Zu dieser Schlacht haben sich zusammengefunden: <br/>
-<t size='1.5' color='#0000ff'>NATO %1</t> vs <t size='1.5' color='#ff0000'>CSAT %2</t></t><br/><t size='0.7'>", playersNumber west, playersNumber east];
-
-[_txt,0,-0.45,999,2,0,3010] spawn bis_fnc_dynamicText;
-
-titleCut ["", "BLACK FADED", 1];
-sleep 1;
-titleCut ["", "BLACK IN", 1];
-sleep 2;
-
-(allGroups select {side _x isEqualTo east and isPlayer leader _x}) apply
+private _playerNames = [];
+private _natoIsMore = [false, true] select (count _playerNATO > count _playerCSAT);
+private _min = ((count _playerCSAT) min (count _playerNATO));
+private _max = ((count _playerCSAT) max (count _playerNATO));
+for "_i" from 0 to _min - 1 do
 {
-    private _grp = _x;
-    private _side = side _grp;
-    [_grp, _side, _cam] call _fnc_showGroup;
+    _playerNames pushBack [_playerNATO select _i, _playerCSAT select _i];
 };
 
-['',0,0,0,2,0,3010] spawn bis_fnc_dynamicText;
+for "_i" from _min to _max - 1 do
+{
+    if (_natoIsMore) then {
+        _playerNames pushBack [_playerNATO select _i, ""];
+    } else {
+        _playerNames pushBack ["", _playerCSAT select _i];
+    };
+};
 
-/* FINISH INTRO */
-_cam cameraEffect ["terminate", "back"];
-camDestroy  _cam;
+_playerNames apply {
+    _txt = format["%1 <t size='0.7' color='#0000ff'>%2</t> -- <t color='#ff0000'>%3</t><br/>", _txt, _x select 0, _x select 1];
+};
 
-sleep 2;
+private _duration = count (_playerNames);
+[_txt, 0, 0, _duration, 2, -0.02 * _duration, 3010] spawn bis_fnc_dynamicText;
+sleep _duration + 2;
+
+titlecut ["","BLACK IN",1];
+sleep 0.1;
+"dynamicBlur" ppEffectEnable false;
 
 [1,nil,false] spawn BIS_fnc_cinemaBorder;
 enableRadio true;
@@ -204,8 +140,8 @@ allUnits apply
 {
     _x disableConversation false;
     _x setVariable ["BIS_noCoreConversations", false];
+
 };
 
 playMusic "";
-
-[getPlayerUID player] remoteExecCall [QFUNC(updateIntroStatus), 2, false];
+GVAR(introDone) = true;

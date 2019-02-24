@@ -5,7 +5,8 @@
 ### Skript
 
 - Intro
-  - überarbeitete Intro-Version mit kürzerer Laufzeit und Kamerafahrt auf Gruppen statt einzelne Spieler
+  - ~~überarbeitete Intro-Version mit kürzerer Laufzeit und Kamerafahrt auf Gruppen statt einzelne Spieler~~
+  - altes Intro wieder eingebaut, dafür wurde die Zeit für die Spielernamen dynamisch angepasst
 - Respawn
   - Kosten werden wieder korrekt berechnet, abgezogen und geloggt
 - Fieldrepair
@@ -19,6 +20,14 @@
   - Kauflisten und Preise angepasst (Mun-container raus, div. Preisanpassungen bei kisten etc)
   - classname MAAWS in setuprclassnames launcherteil gefixt
   - TFAR-script funkkanäle CSAT erneut angepasst
+- HUD
+  - HUD zeigt wieder Freezetime getrennt von Waffenruhe in blau an
+- LOG
+  - Log gibt alle Log Einträge jetzt bezogen auf reine Spielzeit aus, d.h. die FreezeTime wird jeweils abgezogen, daher startet der Log nun nicht bei 0 sondern -freezeTime, dafür sind alle Zeitangaben jetzt identisch mit der reinen Spielzeit, Beginn Waffenruhe
+- Freeze & Serverclock
+  - Freeze ist nun wieder separat von Waffenruhe und Spielzeit getrennt
+  - Freeze gilt nun nur noch zeitlich, ist also nicht mehr an das Intro gekoppelt
+  - Serverclock überarbeitet, um freezeTime zu berücksichtigen
 
 
 ### Editor
