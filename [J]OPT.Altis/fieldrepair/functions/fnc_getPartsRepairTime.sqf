@@ -38,20 +38,23 @@ if (_veh isEqualTo objNull) exitWith {_rprTime};
 /* CODE BODY */
 (getAllHitPointsDamage _veh select 0) apply
 {
-    private _cdmg = _veh getHitPointDamage (_x);
+    private _hitPoint = _x;
+    private _cdmg = _veh getHitPointDamage (_hitPoint);
 
-    if (_cdmg > FIELDREPAIR_MIN_DAMAGE_FOR_EASY_PARTS) then
+    if ({(tolower _hitpoint) find (tolower _x) != -1} count GVAR(ignoreParts) == 0) then 
     {
-        if ([_x] call FUNC(isHardPart)) then
+        if (_cdmg > FIELDREPAIR_MIN_DAMAGE_FOR_EASY_PARTS) then
         {
-            _rprTime = _rprTime + GVAR(repairTimeHardPart);
+            if ([_hitPoint] call FUNC(isHardPart)) then
+            {
+                _rprTime = _rprTime + GVAR(repairTimeHardPart);
 
-        } else
-        {
-            _rprTime = _rprTime + GVAR(repairTimeEasyPart);
+            } else
+            {
+                _rprTime = _rprTime + GVAR(repairTimeEasyPart);
 
+            };
         };
-
     };
 
 };

@@ -12,6 +12,7 @@
 - Fieldrepair
   - Eintrag für die Feldreparatur ist nur noch sichtbar, wenn der Soldat den Schaden auch beheben kann. Bei Schäden an schweren Teilen folglich kein Eintrag für Feldreparatur, außer im Sonderfall von Geschützen und auch nur für den Ingenieur. Ingenieur hat den Eintrag zur Komplettreparatur oder Soldat, wenn Rep-LKW in der Nähe, sobald ein bel. Part am Fahrzeug beschädigt ist
   - Feldreparatur setzt sich nach Komplettreparatur zurück
+  - Gläser und andere Kleinteile werden nicht mehr bei der Reparaturzeit berücksichtigt
 - Merge mit der Trainingsversion
   - Hunter und Ifrit HMG wieder an Radfahrzeugpad und ohne crew-beschränkung
   - quilin AT in cargo gefixt (falscher classname)
