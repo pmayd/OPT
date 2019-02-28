@@ -64,3 +64,9 @@ GVAR(hardRepairParts) =
 	"HitTurret",
 	"HitVRotor"
 ];
+
+GVAR(ignoreParts) = 
+[
+	"HitGlass",
+	"glass"
+];

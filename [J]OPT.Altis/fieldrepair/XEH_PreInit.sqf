@@ -13,6 +13,7 @@ ADDON = true;
 // define variable with default value!
 // GVAR(...)
 GVAR(hardRepairParts) = []; // list of hard repair parts
+GVAR(ignoreParts) = []; // list of hitpoints to ignore when calculating rep time
 GVAR(mutexAction) = false; // true if another action is ongoing
 
 // CBA settings
