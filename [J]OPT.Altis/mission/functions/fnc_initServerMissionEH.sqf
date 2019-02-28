@@ -94,9 +94,5 @@ GVAR(EH_PlayerDisconnected) = addMissionEventHandler
             };
 
         };
-
-        if !(_jip) then {
-            HASH_REM(GVAR(introHash),_uid); // remove player from intro hash so that we do not wait infinitely
-        }
     }
 ];
