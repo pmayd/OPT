@@ -101,7 +101,7 @@ while {!(_cutRSC isEqualTo displayNull)} do
 
         private _freezeTimeLeft = EGVAR(freeze,freezeTime) * 60 - _timeElapsed;
         private _truceTimeLeft = (EGVAR(serverclock,truceTime) + EGVAR(freeze,freezeTime)) * 60 - _timeElapsed;
-        private _playTimeLeft = (EGVAR(serverclock,playTime) + EGVAR(freeze,freezeTime) - EGVAR(serverclock,truceTime)) * 60 - _timeElapsed;
+        private _playTimeLeft = (EGVAR(serverclock,playTime) + EGVAR(freeze,freezeTime)) * 60 - _timeElapsed;
 
         private _timeStr = "";
         private _timeLeft = 0;

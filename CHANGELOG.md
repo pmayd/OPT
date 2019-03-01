@@ -29,6 +29,7 @@
   - Freeze ist nun wieder separat von Waffenruhe und Spielzeit getrennt
   - Freeze gilt nun nur noch zeitlich, ist also nicht mehr an das Intro gekoppelt
   - Serverclock überarbeitet, um freezeTime zu berücksichtigen
+  - Bugfixes mit diversen Fehlern in der Zeitberechnung
 
 ### Editor
 

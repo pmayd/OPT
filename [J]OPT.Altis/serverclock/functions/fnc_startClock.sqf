@@ -83,18 +83,19 @@ publicVariable QGVAR(missionStarted);
 
 UPDATE_TIME;
 // playTime IS dependent on truceTime, but not freezeTime!
-_log_msg = format["Beginn Rest-Spielzeit: %1 min", PLAY_TIME_IN_SECONDS * 60];
+_log_msg = format["Beginn Rest-Spielzeit: %1 min", PLAY_TIME_LEFT / 60];
 ["Mission", _log_msg] call EFUNC(log,write);
 
 // begin with countdown of mission time
 // decrease time in minutes by one for each minute
 private _minuteCounter = 0;
-for "_t" from ceil(PLAY_TIME_IN_SECONDS * 60) to 0 step -1 do 
+for "_t" from ceil(PLAY_TIME_LEFT / 60) to 0 step -1 do 
 {
 	if !(MISSION_IS_RUNNING) exitWith{};
 
 	// call all functions that were registered for running each minute
-	GVAR(registeredCallbacks) apply {
+	GVAR(registeredCallbacks) apply 
+	{
 		call compile format["[] call %1", _x];
 	};
 
