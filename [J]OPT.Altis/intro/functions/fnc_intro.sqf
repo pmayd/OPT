@@ -109,19 +109,20 @@ private _min = ((count _playerCSAT) min (count _playerNATO));
 private _max = ((count _playerCSAT) max (count _playerNATO));
 for "_i" from 0 to _min - 1 do
 {
-    _playerNames pushBack [_playerNATO select _i, _playerCSAT select _i];
+    _playerNames pushBack [name (_playerNATO select _i), name (_playerCSAT select _i)];
 };
 
 for "_i" from _min to _max - 1 do
 {
     if (_natoIsMore) then {
-        _playerNames pushBack [_playerNATO select _i, ""];
+        _playerNames pushBack [name (_playerNATO select _i), ""];
     } else {
-        _playerNames pushBack ["", _playerCSAT select _i];
+        _playerNames pushBack ["", name (_playerCSAT select _i)];
     };
 };
 
-_playerNames apply {
+_playerNames apply 
+{
     _txt = format["%1 <t size='0.7' color='#0000ff'>%2</t> -- <t color='#ff0000'>%3</t><br/>", _txt, _x select 0, _x select 1];
 };
 
