@@ -109,15 +109,15 @@ private _min = ((count _playerCSAT) min (count _playerNATO));
 private _max = ((count _playerCSAT) max (count _playerNATO));
 for "_i" from 0 to _min - 1 do
 {
-    _playerNames pushBack [name (_playerNATO select _i), name (_playerCSAT select _i)];
+    _playerNames pushBack [UNIT_NAME(_playerNATO select _i), UNIT_NAME(_playerCSAT select _i)];
 };
 
 for "_i" from _min to _max - 1 do
 {
     if (_natoIsMore) then {
-        _playerNames pushBack [name (_playerNATO select _i), ""];
+        _playerNames pushBack [UNIT_NAME(_playerNATO select _i), ""];
     } else {
-        _playerNames pushBack ["", name (_playerCSAT select _i)];
+        _playerNames pushBack ["", UNIT_NAME(_playerCSAT select _i)];
     };
 };
 
