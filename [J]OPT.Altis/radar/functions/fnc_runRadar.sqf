@@ -36,6 +36,7 @@ for "_i" from 1 to 10 do
         0,
         false
     ] call EFUNC(common,createMarker);
+
     _markerwest pushBack _marker;
 };
 
@@ -55,6 +56,7 @@ for "_i" from 1 to 10 do
         0,
         false
     ] call EFUNC(common,createMarker);
+
     _markerost pushBack _marker;
 };
 
@@ -87,19 +89,22 @@ while {true} do
 
         if (damage _container > GVAR(maxDammage)) exitWith
         {
-
-            _markerost apply {deleteMarker _x;};
-            _markerwest apply {deleteMarker _x;};
-            deleteMarker _Radarring;
-            deleteVehicle _RadarZONE;
-            // delete objects around container - James
-            [] call FUNC(undeployRadar);
-
+            // client actions
+            _markerost apply {deleteMarkerLocal _x;};
+            _markerwest apply {deleteMarkerLocal _x;};
+            deleteMarkerLocal _Radarring;
             removeAllActions _container;
 
+            // server actions
+            // delete trigger on server -> global effect
+            [[_RadarZONE], {deleteVehicle (_this select 0);}] remoteExecCall ["spawn", 2, false];
+            // delete objects around container -> global
+            [_container] remoteExec [QEFUNC(composition,undeployComposition), 2, false];
+
             // remove ACE dragging entries
-            ["cargo", "deactivateDragging", [GVAR(containerEast)], false] remoteExecCall [QEFUNC(common,execFunc), 0, true]; // has to be called on each client and also JIP
-        };
+            ["cargo", "deactivateDragging", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 0, true]; // has to be called on each client and also JIP
+            ["cargo", "deactivateCargo", [_container], false] remoteExecCall [QEFUNC(common,execFunc), 2, true]; // global effect
+        };  
 
         // reset all marker
         (_markerost + _markerwest) apply

@@ -1,5 +1,16 @@
 ﻿# Changelog
 
+## 1.4.15.6
+
+### Skript
+
+- Radar
+  - Bugfix: Abhängigkeit zwischen Radarcontainer NATO und CSAT behoben. Wenn der Container einer Fraktion zerstört wird, hat dies keine Auswirkungen mehr auf die andere Seite
+- Warehouse
+  - Bugfix Dispokredit: Es gab einen Fehler beim Kaufen von Fahrzeugen, der den Dispokredit der Gegenfraktion abgefragt hat, statt den eigenen Dispokredit. Dadurch konnte man nichts mehr kaufen, obwohl der Gegner im Minus war.
+
+### Editor
+
 ## 1.4.15.5
 
 ### Skript

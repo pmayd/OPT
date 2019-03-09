@@ -16,7 +16,8 @@
 
 [GVAR(containerWest), GVAR(containerEast)] apply
 {
-    _x addAction[
+    _x addAction
+    [
         ("<t color=""#df8601"">" + STR_RADAR_DEPLOY + "</t>"),
         {[_this select 0] spawn FUNC(deployRadar); },
         '',
@@ -28,7 +29,8 @@
         5
     ];
 
-    _x addAction[
+    _x addAction
+    [
         ("<t color=""#df8601"">" + STR_RADAR_UNDEPLOY + "</t>"),
         {[_this select 0] spawn FUNC(undeployRadar); },
         '',
